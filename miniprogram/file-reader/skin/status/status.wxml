@@ -1,0 +1,9 @@
+<view wx:if="{{loading}}" class="reader-loading" role="status" aria-live="polite">
+  <view class="loading-dot" aria-hidden="true"/>
+  <view class="loading-copy">
+    <text class="loading-label">{{label || '打开中…'}}</text>
+    <text wx:if="{{detail}}" class="loading-detail">{{detail}}</text>
+  </view>
+</view>
+<view wx:if="{{error}}" class="error-card">{{error}}<button class="retry-button" wx:if="{{retryable}}" size="mini" bindtap="onRetry">重试</button></view>
+<view wx:if="{{native}}" class="native-status">{{native}}</view>

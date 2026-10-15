@@ -1,0 +1,6243 @@
+{
+  "schemaVersion": 1,
+  "id": "svg-path-length-calibration",
+  "testedAt": "2026-09-18T10:41:38.237215+00:00",
+  "rootCause": "Canvas stroke dash arrays/offsets did not use the element pathLength or current geometric length. Every number was treated as an uncalibrated user-space length.",
+  "change": "Measure complete local geometry including closure, independent subpaths, cubic/quadratic curves and analytical elliptical arcs. Apply author-length ratio to dash arrays/offsets only. Cache static lengths with viewport geometry; rebuild for animated attributes. Zero resets to Chrome-compatible solid strokes. Parent/use attributes do not leak into shape calibration. New length evaluation is limited to262144 segment/sample operations per frame; an actual6000-cusp component input reports failure and the next valid source renders exactly.",
+  "construction": {
+    "generator": "tests/helpers/svg-path-length.js",
+    "seed": null,
+    "description": "60 deterministic complete SVGs:15 geometries x2 author lengths plus units/odd lists/zero controls/malformed attrs/nested/use/transforms/animated length and endpoint frames.",
+    "oracle": "Native Chrome SVG originals are the primary visible-content oracle. Independently rewritten no-pathLength SVGs using native getTotalLength are secondary evidence, not silently substituted for originals.",
+    "numerical": "11 independent analytic or NumPy Gauss-Legendre length goldens, including reversal cusp, eccentric ellipse and closed subpaths. Relative1e-7 length tolerance is numerical integration accuracy, not a raster pass threshold.",
+    "files": [
+      {
+        "name": "line-100",
+        "time": 0,
+        "sha256": "d77876942d9e529ff7d00492eae09f5df6d1cc8090c96cb4fbd9ad530f61f35f"
+      },
+      {
+        "name": "line-400",
+        "time": 0,
+        "sha256": "39403d6386ee3c21baef8fca1c1223fc82f26637ea4d64399b9ac1a3b0c32451"
+      },
+      {
+        "name": "path-100",
+        "time": 0,
+        "sha256": "0e1392ad4df4e188322b7a91fd2a48bedc5da4eafc63148da7e87c795f7c8135"
+      },
+      {
+        "name": "path-400",
+        "time": 0,
+        "sha256": "68f36024d2079892274c6ba9cfdacd5d91785e94ba54203d8ac6c89209d853c6"
+      },
+      {
+        "name": "closed-100",
+        "time": 0,
+        "sha256": "dd88df31b239d4015205aa6c1dafe3e7a20b6891a1fd8d6f40dbfee2e0204927"
+      },
+      {
+        "name": "closed-400",
+        "time": 0,
+        "sha256": "59d6381570bbcf95f72607a2b7585a34ad8482e1ef48c3e8d1dd94b0ecb1e7d7"
+      },
+      {
+        "name": "subpaths-100",
+        "time": 0,
+        "sha256": "48f57ba2522508359e81cc613a11c902a82fece3c6223f3cd7b68dde972ea3cb"
+      },
+      {
+        "name": "subpaths-400",
+        "time": 0,
+        "sha256": "f94d02a36ce9b294321d385e2fc5731993edbf20c8e8d28625622df777ba1bbc"
+      },
+      {
+        "name": "rect-100",
+        "time": 0,
+        "sha256": "2c18538ee8b368e91468e12f66c4e9d203f375dc3ccfb9d903928b9c6f046c64"
+      },
+      {
+        "name": "rect-400",
+        "time": 0,
+        "sha256": "8140202a58ecd553cae57cffbe1103dfbe92e1136e01f80896d6b101b4817ff2"
+      },
+      {
+        "name": "rounded-100",
+        "time": 0,
+        "sha256": "4f436f0049901f073bb82c86b7ddc2b2a7f25db2936866098beb5841026f6beb"
+      },
+      {
+        "name": "rounded-400",
+        "time": 0,
+        "sha256": "9c299fe577167eb469c511846bb4df69fc3c07de12485dde7c8b3352faff1174"
+      },
+      {
+        "name": "circle-100",
+        "time": 0,
+        "sha256": "9c9d0f32d890f2e9c0d29b6876cbb94bb992fb937bac49553ce1b583a305c04c"
+      },
+      {
+        "name": "circle-400",
+        "time": 0,
+        "sha256": "48cf3d45534f5d8a7b20b1030b83ea43b43ada9de4565ba4740cd560a6131a05"
+      },
+      {
+        "name": "ellipse-100",
+        "time": 0,
+        "sha256": "385e72496c90ba7e0926c79ba247b99b7d36f99a124028cc36839d61f006ab1b"
+      },
+      {
+        "name": "ellipse-400",
+        "time": 0,
+        "sha256": "60507cd586c517221f196354dfd0216b7d6743445e9fc3f586492cda4cd51833"
+      },
+      {
+        "name": "polyline-100",
+        "time": 0,
+        "sha256": "07a1a82aa7f965a1d556f2f8cc0965396abab26e1d7bd63c984173f5d43a5093"
+      },
+      {
+        "name": "polyline-400",
+        "time": 0,
+        "sha256": "9c4ccbca960a9fff398bc7c44a5ca1cd93cba6f62bcd5b97668df89676667cb9"
+      },
+      {
+        "name": "polygon-100",
+        "time": 0,
+        "sha256": "95786d37f90d10bd2190e7bd3961e37e37c2144f78ec39db401e2f77cc83c021"
+      },
+      {
+        "name": "polygon-400",
+        "time": 0,
+        "sha256": "e80a0b2c8e5e8fe126df4fca34614ef9efaf047b70e76e39804ead80a3b373aa"
+      },
+      {
+        "name": "cubic-100",
+        "time": 0,
+        "sha256": "7a923541be9b054ddfbadf5f814d6ab3a9728134f2c53f4c309c2e6ec9468fb6"
+      },
+      {
+        "name": "cubic-400",
+        "time": 0,
+        "sha256": "c6af262c10a8f7f6ff45638831e3afd05a85a76465d467f337cf8d02061458b0"
+      },
+      {
+        "name": "quadratic-100",
+        "time": 0,
+        "sha256": "2743ce54381bdda03630a53224c4f1e564f273adfd466549685802139e4eff4e"
+      },
+      {
+        "name": "quadratic-400",
+        "time": 0,
+        "sha256": "722f927792964f67107e8ae022bd8d1538b364185c796dae5ee868f85ccc597a"
+      },
+      {
+        "name": "smooth-100",
+        "time": 0,
+        "sha256": "23134ce6412cea7a0023ec8dbd21864c64aca32b08ba02fbd02014792128ac8b"
+      },
+      {
+        "name": "smooth-400",
+        "time": 0,
+        "sha256": "7d243a010bd462a6b7500fb2d047389db72ae9e1b0438444d6c2cc0781fa9e8b"
+      },
+      {
+        "name": "arc-100",
+        "time": 0,
+        "sha256": "4c93a5a8d899261b6f3a53709d121fb93ca52c7d6eccec58022c38bad1434a16"
+      },
+      {
+        "name": "arc-400",
+        "time": 0,
+        "sha256": "ed89e658efe1635e4408b3d8973dd1153ad8e636f7150534bab02d6456fdea9b"
+      },
+      {
+        "name": "cusp-100",
+        "time": 0,
+        "sha256": "ccaf11c882242960f6826ca0cead37f3e109b6f0abcdd0f61c3ece5480794c24"
+      },
+      {
+        "name": "cusp-400",
+        "time": 0,
+        "sha256": "7f01437ca86f9287a9030489b1495804e6bdf18f50319244b91067a29fa40148"
+      },
+      {
+        "name": "units-percent",
+        "time": 0,
+        "sha256": "6e90a03a9e2d8c4d1a5cba13105c8f8de66134ef96a2e230f404f86bd401a2bc"
+      },
+      {
+        "name": "units-mixed",
+        "time": 0,
+        "sha256": "9432fdaec6add72047740ee45d331f33ada6eee0ea68220293a9025c4e278e64"
+      },
+      {
+        "name": "units-px",
+        "time": 0,
+        "sha256": "66a7f967b4acdc57f5396f7f40037a0cb5f7d4d6d61aaf56a25d190868830a41"
+      },
+      {
+        "name": "units-font",
+        "time": 0,
+        "sha256": "f4624f3602fdcd50864880850a8184946bf0feff6229248b9277e34c15d16610"
+      },
+      {
+        "name": "units-odd",
+        "time": 0,
+        "sha256": "b8cac8255bd59dfa7a8909dc651dd187341b2e39c36df991873872c4725c85d6"
+      },
+      {
+        "name": "units-zero-dash",
+        "time": 0,
+        "sha256": "ce9d05eab9fabb989bcbde790ca05f975649cd96dd9e7f261ac56060424d4429"
+      },
+      {
+        "name": "units-solid",
+        "time": 0,
+        "sha256": "141e74f42890300c9e4f4012631359c7feda8008ed1d20fe8d4e5663c05453d9"
+      },
+      {
+        "name": "units-none",
+        "time": 0,
+        "sha256": "7fb0e6bddbe39d43b7d0abc012c0ad8c5fc782ad6507a2ff83c3309d6d384e1b"
+      },
+      {
+        "name": "author--2",
+        "time": 0,
+        "sha256": "27389e7afdf2a2d1cd08df328352e0f14b5ba4913164b005b6d54a6fcbf4e44e"
+      },
+      {
+        "name": "author-bad",
+        "time": 0,
+        "sha256": "7739a153792120a96fb587752d382bb96102a69424a3cfbd8494eb0070df1435"
+      },
+      {
+        "name": "author-100px",
+        "time": 0,
+        "sha256": "52125add101d199dfe3eb35af57160741487ea46ebabf5ee4630f39dc99a452a"
+      },
+      {
+        "name": "author-empty",
+        "time": 0,
+        "sha256": "d88a8d056cba98dfb406174885211450022a3612aa9714e5615eb6cd7d2c43e1"
+      },
+      {
+        "name": "author-0",
+        "time": 0,
+        "sha256": "f96ebdd9a409730d22c1f48230916954fb2caf7bb13d6321783d0bd7da49bae9"
+      },
+      {
+        "name": "zero-no-offset",
+        "time": 0,
+        "sha256": "1d4b86ef754126560400c128fe444570e64c7a1c1799441a3de7b08bed8988c2"
+      },
+      {
+        "name": "zero-zero-first",
+        "time": 0,
+        "sha256": "6b812c184e7ef5e8f31005716d0039bb87f1eb4c5df7b54304a323a1ae5cff5f"
+      },
+      {
+        "name": "zero-negative-offset",
+        "time": 0,
+        "sha256": "ffb94e67cf079d41f5cdb5947f0631e743a7a89d5caefa21ec4eba5e07704ffa"
+      },
+      {
+        "name": "zero-solid",
+        "time": 0,
+        "sha256": "d42260422f560cb4feafdde773015eb2cbe43e7df6cc429a76d9985af6f66fb7"
+      },
+      {
+        "name": "zero-all-zero",
+        "time": 0,
+        "sha256": "9c4e7027daeae14a88dbb74b85f34f4bbab660cc494cab6597f4cb695e55dd49"
+      },
+      {
+        "name": "animated-length-0",
+        "time": 0,
+        "sha256": "13ac76a93e9e460f93c8b5ed636f220895f37ec1a0d85f98c94757af85623307"
+      },
+      {
+        "name": "animated-length-0.5",
+        "time": 0.5,
+        "sha256": "13ac76a93e9e460f93c8b5ed636f220895f37ec1a0d85f98c94757af85623307"
+      },
+      {
+        "name": "animated-length-1",
+        "time": 1,
+        "sha256": "13ac76a93e9e460f93c8b5ed636f220895f37ec1a0d85f98c94757af85623307"
+      },
+      {
+        "name": "animated-length-1.5",
+        "time": 1.5,
+        "sha256": "13ac76a93e9e460f93c8b5ed636f220895f37ec1a0d85f98c94757af85623307"
+      },
+      {
+        "name": "inherited-paint",
+        "time": 0,
+        "sha256": "3deefc76d0ce72424fc64233f1bb7c2c3182c1d3014338d5a307bb10eeca4fed"
+      },
+      {
+        "name": "transform",
+        "time": 0,
+        "sha256": "f17e569211d891d3415b8bebf1d1d22681eb5569f59fedce5c03328eb18b42c0"
+      },
+      {
+        "name": "nested",
+        "time": 0,
+        "sha256": "9776483e4aa640ddd26055301e38944a55e6f25806f500c6c6fc61d90186c812"
+      },
+      {
+        "name": "use-instance",
+        "time": 0,
+        "sha256": "28b8db20116ce289b581bb331fccfac1b2f816fb4570d13a74f7759311108898"
+      },
+      {
+        "name": "animated-geometry-0",
+        "time": 0,
+        "sha256": "e137e01a4daa022672ed248f8a7507731050cc3418d4a01dc5812ab1a8886931"
+      },
+      {
+        "name": "animated-geometry-0.5",
+        "time": 0.5,
+        "sha256": "e137e01a4daa022672ed248f8a7507731050cc3418d4a01dc5812ab1a8886931"
+      },
+      {
+        "name": "animated-geometry-1",
+        "time": 1,
+        "sha256": "e137e01a4daa022672ed248f8a7507731050cc3418d4a01dc5812ab1a8886931"
+      },
+      {
+        "name": "animated-geometry-1.5",
+        "time": 1.5,
+        "sha256": "e137e01a4daa022672ed248f8a7507731050cc3418d4a01dc5812ab1a8886931"
+      }
+    ]
+  },
+  "metrics": {
+    "format": "SVG pathLength stroke calibration",
+    "originalFiles": 60,
+    "beforeWrongNativeViews": 52,
+    "afterWrongNativeViews": 19,
+    "exactNativeViews": 41,
+    "exactFallbackViews": 41,
+    "exactActualComponentViews": 41,
+    "beforeNativePixelDifferenceSum": 7224562,
+    "afterNativePixelDifferenceSum": 356900,
+    "regressionsAgainstOriginal": 0,
+    "independentLengthGoldens": 11,
+    "recovery": {
+      "rejected": true,
+      "ready": true,
+      "errors": [],
+      "sum": 0,
+      "max": 0
+    },
+    "relatedNodeTests": 27,
+    "fullNodeTests": 1273,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "strictNewCorpus": "fail: curve/native metric and malformed attribute differences retained; one intermediate numeric-reference seek differs by40/max1",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run",
+    "complexityRecovery": {
+      "rejected": true,
+      "ready": true,
+      "errors": [],
+      "sum": 0,
+      "max": 0
+    },
+    "pathLengthWorkLimitPerFrame": 262144
+  },
+  "results": [
+    {
+      "name": "line-100",
+      "before": {
+        "name": "line-100",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 109140,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 109140,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "line-100",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "line-400",
+      "before": {
+        "name": "line-400",
+        "nativeLength": 200,
+        "nativeInk": 136224,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 107556,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 107556,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 107556,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 107556,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 107556,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 107556,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 107556,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 107556,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "line-400",
+        "nativeLength": 200,
+        "nativeInk": 136224,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "path-100",
+      "before": {
+        "name": "path-100",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 109140,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 109140,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "path-100",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "path-400",
+      "before": {
+        "name": "path-400",
+        "nativeLength": 200,
+        "nativeInk": 136224,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 107556,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 107556,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 107556,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 107556,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 107556,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 107556,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 107556,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 107556,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "path-400",
+        "nativeLength": 200,
+        "nativeInk": 136224,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "closed-100",
+      "before": {
+        "name": "closed-100",
+        "nativeLength": 640,
+        "nativeInk": 437352,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 287784,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 287784,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 287784,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 287784,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 287784,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 287784,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 287784,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 287784,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "closed-100",
+        "nativeLength": 640,
+        "nativeInk": 437352,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "closed-400",
+      "before": {
+        "name": "closed-400",
+        "nativeLength": 640,
+        "nativeInk": 436460,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 293228,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 293228,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 293228,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 293228,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 293228,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 293228,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 293228,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 293228,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "closed-400",
+        "nativeLength": 640,
+        "nativeInk": 436460,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "subpaths-100",
+      "before": {
+        "name": "subpaths-100",
+        "nativeLength": 400,
+        "nativeInk": 220320,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 135660,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 135660,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 135660,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 135660,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 135660,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 135660,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 135660,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 135660,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "subpaths-100",
+        "nativeLength": 400,
+        "nativeInk": 220320,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "subpaths-400",
+      "before": {
+        "name": "subpaths-400",
+        "nativeLength": 400,
+        "nativeInk": 213180,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "subpaths-400",
+        "nativeLength": 400,
+        "nativeInk": 213180,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "rect-100",
+      "before": {
+        "name": "rect-100",
+        "nativeLength": 704,
+        "nativeInk": 481198,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 288554,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 288554,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 288554,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 288554,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 288554,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 288554,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 288554,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 288554,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "rect-100",
+        "nativeLength": 704,
+        "nativeInk": 481198,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "rect-400",
+      "before": {
+        "name": "rect-400",
+        "nativeLength": 704,
+        "nativeInk": 479356,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 322136,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 322136,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 322136,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 322136,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 322136,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 322136,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 322136,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 322136,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "rect-400",
+        "nativeLength": 704,
+        "nativeInk": 479356,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "rounded-100",
+      "before": {
+        "name": "rounded-100",
+        "nativeLength": 668.4163818359375,
+        "nativeInk": 457004,
+        "reference": {
+          "sum": 20,
+          "max": 4
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 303812,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 303822,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 303812,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 303812,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 303822,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 303812,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 303812,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 303822,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "rounded-100",
+        "nativeLength": 668.4163818359375,
+        "nativeInk": 457004,
+        "reference": {
+          "sum": 20,
+          "max": 4
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 3534,
+            "max": 109,
+            "nativeOriginal": {
+              "sum": 3542,
+              "max": 109
+            },
+            "numericReference": {
+              "sum": 3534,
+              "max": 109
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 3534,
+            "max": 109,
+            "nativeOriginal": {
+              "sum": 3542,
+              "max": 109
+            },
+            "numericReference": {
+              "sum": 3534,
+              "max": 109
+            }
+          }
+        ],
+        "component": {
+          "sum": 3534,
+          "max": 109,
+          "nativeOriginal": {
+            "sum": 3542,
+            "max": 109
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "rounded-400",
+      "before": {
+        "name": "rounded-400",
+        "nativeLength": 668.4163818359375,
+        "nativeInk": 454080,
+        "reference": {
+          "sum": 29,
+          "max": 3
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 305661,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 305688,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 305661,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 305661,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 305688,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 305661,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 305661,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 305688,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "rounded-400",
+        "nativeLength": 668.4163818359375,
+        "nativeInk": 454080,
+        "reference": {
+          "sum": 29,
+          "max": 3
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 13749,
+            "max": 128,
+            "nativeOriginal": {
+              "sum": 13740,
+              "max": 128
+            },
+            "numericReference": {
+              "sum": 13749,
+              "max": 128
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 13749,
+            "max": 128,
+            "nativeOriginal": {
+              "sum": 13740,
+              "max": 128
+            },
+            "numericReference": {
+              "sum": 13749,
+              "max": 128
+            }
+          }
+        ],
+        "component": {
+          "sum": 13749,
+          "max": 128,
+          "nativeOriginal": {
+            "sum": 13740,
+            "max": 128
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "circle-100",
+      "before": {
+        "name": "circle-100",
+        "nativeLength": 501.8427734375,
+        "nativeInk": 344664,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 215629,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 215629,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 213102,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 215629,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 215629,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 213102,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 215629,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 215629,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "circle-100",
+        "nativeLength": 501.8427734375,
+        "nativeInk": 344664,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 14504,
+            "max": 138,
+            "nativeOriginal": {
+              "sum": 14504,
+              "max": 138
+            },
+            "numericReference": {
+              "sum": 12983,
+              "max": 201
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 14504,
+            "max": 138,
+            "nativeOriginal": {
+              "sum": 14504,
+              "max": 138
+            },
+            "numericReference": {
+              "sum": 12983,
+              "max": 201
+            }
+          }
+        ],
+        "component": {
+          "sum": 14504,
+          "max": 138,
+          "nativeOriginal": {
+            "sum": 14504,
+            "max": 138
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "circle-400",
+      "before": {
+        "name": "circle-400",
+        "nativeLength": 501.8427734375,
+        "nativeInk": 341460,
+        "reference": {
+          "sum": 21,
+          "max": 2
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 234406,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 234415,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 234328,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 234406,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 234415,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 234328,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 234406,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 234415,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "circle-400",
+        "nativeLength": 501.8427734375,
+        "nativeInk": 341460,
+        "reference": {
+          "sum": 21,
+          "max": 2
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 23066,
+            "max": 174,
+            "nativeOriginal": {
+              "sum": 23079,
+              "max": 174
+            },
+            "numericReference": {
+              "sum": 31174,
+              "max": 223
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 23066,
+            "max": 174,
+            "nativeOriginal": {
+              "sum": 23079,
+              "max": 174
+            },
+            "numericReference": {
+              "sum": 31174,
+              "max": 223
+            }
+          }
+        ],
+        "component": {
+          "sum": 23066,
+          "max": 174,
+          "nativeOriginal": {
+            "sum": 23079,
+            "max": 174
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "ellipse-100",
+      "before": {
+        "name": "ellipse-100",
+        "nativeLength": 461.45404052734375,
+        "nativeInk": 313906,
+        "reference": {
+          "sum": 15,
+          "max": 4
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 214268,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 214253,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 214771,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 214268,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 214253,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 214771,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 214268,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 214253,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "ellipse-100",
+        "nativeLength": 461.45404052734375,
+        "nativeInk": 313906,
+        "reference": {
+          "sum": 15,
+          "max": 4
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 11268,
+            "max": 123,
+            "nativeOriginal": {
+              "sum": 11253,
+              "max": 123
+            },
+            "numericReference": {
+              "sum": 12527,
+              "max": 212
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 11268,
+            "max": 123,
+            "nativeOriginal": {
+              "sum": 11253,
+              "max": 123
+            },
+            "numericReference": {
+              "sum": 12527,
+              "max": 212
+            }
+          }
+        ],
+        "component": {
+          "sum": 11268,
+          "max": 123,
+          "nativeOriginal": {
+            "sum": 11253,
+            "max": 123
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "ellipse-400",
+      "before": {
+        "name": "ellipse-400",
+        "nativeLength": 461.45404052734375,
+        "nativeInk": 314527,
+        "reference": {
+          "sum": 138,
+          "max": 7
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 208770,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 208756,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 211277,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 208770,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 208756,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 211277,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 208770,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 208756,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "ellipse-400",
+        "nativeLength": 461.45404052734375,
+        "nativeInk": 314527,
+        "reference": {
+          "sum": 138,
+          "max": 7
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 19430,
+            "max": 142,
+            "nativeOriginal": {
+              "sum": 19462,
+              "max": 142
+            },
+            "numericReference": {
+              "sum": 27559,
+              "max": 193
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 19430,
+            "max": 142,
+            "nativeOriginal": {
+              "sum": 19462,
+              "max": 142
+            },
+            "numericReference": {
+              "sum": 27559,
+              "max": 193
+            }
+          }
+        ],
+        "component": {
+          "sum": 19430,
+          "max": 142,
+          "nativeOriginal": {
+            "sum": 19462,
+            "max": 142
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "polyline-100",
+      "before": {
+        "name": "polyline-100",
+        "nativeLength": 289.4427185058594,
+        "nativeInk": 198005,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 134495,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 134495,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 134495,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 134495,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 134495,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 134495,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 134495,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 134495,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "polyline-100",
+        "nativeLength": 289.4427185058594,
+        "nativeInk": 198005,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "polyline-400",
+      "before": {
+        "name": "polyline-400",
+        "nativeLength": 289.4427185058594,
+        "nativeInk": 197507,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 131069,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 131069,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 131069,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 131069,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 131069,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 131069,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 131069,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 131069,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "polyline-400",
+        "nativeLength": 289.4427185058594,
+        "nativeInk": 197507,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "polygon-100",
+      "before": {
+        "name": "polygon-100",
+        "nativeLength": 560,
+        "nativeInk": 382732,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 256320,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 256320,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 256320,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 256320,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 256320,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 256320,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 256320,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 256320,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "polygon-100",
+        "nativeLength": 560,
+        "nativeInk": 382732,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "polygon-400",
+      "before": {
+        "name": "polygon-400",
+        "nativeLength": 560,
+        "nativeInk": 381380,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 254032,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 254032,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 254032,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 254032,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 254032,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 254032,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 254032,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 254032,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "polygon-400",
+        "nativeLength": 560,
+        "nativeInk": 381380,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "cubic-100",
+      "before": {
+        "name": "cubic-100",
+        "nativeLength": 363.113037109375,
+        "nativeInk": 247981,
+        "reference": {
+          "sum": 5454,
+          "max": 79
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 165213,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 165399,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 165213,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 165213,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 165399,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 165213,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 165213,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 165399,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "cubic-100",
+        "nativeLength": 363.113037109375,
+        "nativeInk": 247981,
+        "reference": {
+          "sum": 5454,
+          "max": 79
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 5454,
+              "max": 79
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 5454,
+              "max": 79
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 5454,
+            "max": 79
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "cubic-400",
+      "before": {
+        "name": "cubic-400",
+        "nativeLength": 363.113037109375,
+        "nativeInk": 246721,
+        "reference": {
+          "sum": 5689,
+          "max": 68
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 164532,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 165087,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 164532,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 164532,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 165087,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 164532,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 164532,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 165087,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "cubic-400",
+        "nativeLength": 363.113037109375,
+        "nativeInk": 246721,
+        "reference": {
+          "sum": 5689,
+          "max": 68
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 33,
+            "max": 4,
+            "nativeOriginal": {
+              "sum": 5670,
+              "max": 68
+            },
+            "numericReference": {
+              "sum": 33,
+              "max": 4
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 33,
+            "max": 4,
+            "nativeOriginal": {
+              "sum": 5670,
+              "max": 68
+            },
+            "numericReference": {
+              "sum": 33,
+              "max": 4
+            }
+          }
+        ],
+        "component": {
+          "sum": 33,
+          "max": 4,
+          "nativeOriginal": {
+            "sum": 5670,
+            "max": 68
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "quadratic-100",
+      "before": {
+        "name": "quadratic-100",
+        "nativeLength": 266.74114990234375,
+        "nativeInk": 181305,
+        "reference": {
+          "sum": 6632,
+          "max": 82
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 120774,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 120044,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 120774,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 120774,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 120044,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 120774,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 120774,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 120044,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "quadratic-100",
+        "nativeLength": 266.74114990234375,
+        "nativeInk": 181305,
+        "reference": {
+          "sum": 6632,
+          "max": 82
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 6632,
+              "max": 82
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 6632,
+              "max": 82
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 6632,
+            "max": 82
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "quadratic-400",
+      "before": {
+        "name": "quadratic-400",
+        "nativeLength": 266.74114990234375,
+        "nativeInk": 181853,
+        "reference": {
+          "sum": 7613,
+          "max": 91
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 124087,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 124380,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 124087,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 124087,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 124380,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 124101,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 124087,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 124380,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "quadratic-400",
+        "nativeLength": 266.74114990234375,
+        "nativeInk": 181853,
+        "reference": {
+          "sum": 7613,
+          "max": 91
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 7613,
+              "max": 91
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 55,
+            "max": 12,
+            "nativeOriginal": {
+              "sum": 7648,
+              "max": 91
+            },
+            "numericReference": {
+              "sum": 15,
+              "max": 4
+            }
+          }
+        ],
+        "component": {
+          "sum": 55,
+          "max": 12,
+          "nativeOriginal": {
+            "sum": 7648,
+            "max": 91
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "smooth-100",
+      "before": {
+        "name": "smooth-100",
+        "nativeLength": 394.4342041015625,
+        "nativeInk": 270049,
+        "reference": {
+          "sum": 8837,
+          "max": 138
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 179818,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 177267,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 179818,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 179862,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 177267,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 179868,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 179862,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 177267,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "smooth-100",
+        "nativeLength": 394.4342041015625,
+        "nativeInk": 270049,
+        "reference": {
+          "sum": 8837,
+          "max": 138
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 53,
+            "max": 5,
+            "nativeOriginal": {
+              "sum": 8820,
+              "max": 138
+            },
+            "numericReference": {
+              "sum": 53,
+              "max": 5
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 133,
+            "max": 9,
+            "nativeOriginal": {
+              "sum": 8872,
+              "max": 138
+            },
+            "numericReference": {
+              "sum": 53,
+              "max": 5
+            }
+          }
+        ],
+        "component": {
+          "sum": 133,
+          "max": 9,
+          "nativeOriginal": {
+            "sum": 8872,
+            "max": 138
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "smooth-400",
+      "before": {
+        "name": "smooth-400",
+        "nativeLength": 394.4342041015625,
+        "nativeInk": 268436,
+        "reference": {
+          "sum": 16157,
+          "max": 136
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 148999,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 158112,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 148999,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 148943,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 158108,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 148919,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 148943,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 158108,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "smooth-400",
+        "nativeLength": 394.4342041015625,
+        "nativeInk": 268436,
+        "reference": {
+          "sum": 16157,
+          "max": 136
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 25,
+            "max": 3,
+            "nativeOriginal": {
+              "sum": 16164,
+              "max": 136
+            },
+            "numericReference": {
+              "sum": 25,
+              "max": 3
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 115,
+            "max": 8,
+            "nativeOriginal": {
+              "sum": 16204,
+              "max": 136
+            },
+            "numericReference": {
+              "sum": 31,
+              "max": 3
+            }
+          }
+        ],
+        "component": {
+          "sum": 115,
+          "max": 8,
+          "nativeOriginal": {
+            "sum": 16204,
+            "max": 136
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "arc-100",
+      "before": {
+        "name": "arc-100",
+        "nativeLength": 308.6048583984375,
+        "nativeInk": 212256,
+        "reference": {
+          "sum": 6100,
+          "max": 90
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 146030,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 145766,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 146030,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 144580,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 144764,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 144467,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 144580,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 144764,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "arc-100",
+        "nativeLength": 308.6048583984375,
+        "nativeInk": 212256,
+        "reference": {
+          "sum": 6100,
+          "max": 90
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 597,
+            "max": 52,
+            "nativeOriginal": {
+              "sum": 6023,
+              "max": 88
+            },
+            "numericReference": {
+              "sum": 597,
+              "max": 52
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 7595,
+            "max": 99,
+            "nativeOriginal": {
+              "sum": 10143,
+              "max": 159
+            },
+            "numericReference": {
+              "sum": 854,
+              "max": 59
+            }
+          }
+        ],
+        "component": {
+          "sum": 7595,
+          "max": 99,
+          "nativeOriginal": {
+            "sum": 10143,
+            "max": 159
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "arc-400",
+      "before": {
+        "name": "arc-400",
+        "nativeLength": 308.6048583984375,
+        "nativeInk": 209978,
+        "reference": {
+          "sum": 14014,
+          "max": 141
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 140706,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 140572,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 140706,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 142170,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 142070,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 140122,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 142170,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 142070,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "arc-400",
+        "nativeLength": 308.6048583984375,
+        "nativeInk": 209978,
+        "reference": {
+          "sum": 14014,
+          "max": 141
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 1130,
+            "max": 58,
+            "nativeOriginal": {
+              "sum": 13508,
+              "max": 118
+            },
+            "numericReference": {
+              "sum": 1130,
+              "max": 58
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 11794,
+            "max": 108,
+            "nativeOriginal": {
+              "sum": 21772,
+              "max": 167
+            },
+            "numericReference": {
+              "sum": 1294,
+              "max": 66
+            }
+          }
+        ],
+        "component": {
+          "sum": 11794,
+          "max": 108,
+          "nativeOriginal": {
+            "sum": 21772,
+            "max": 167
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "cusp-100",
+      "before": {
+        "name": "cusp-100",
+        "nativeLength": 203.8194580078125,
+        "nativeInk": 125054,
+        "reference": {
+          "sum": 510,
+          "max": 22
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 69446,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 69796,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 69446,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 69446,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 69796,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 69446,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 69446,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 69796,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "cusp-100",
+        "nativeLength": 203.8194580078125,
+        "nativeInk": 125054,
+        "reference": {
+          "sum": 510,
+          "max": 22
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 510,
+              "max": 22
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 510,
+              "max": 22
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 510,
+            "max": 22
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "cusp-400",
+      "before": {
+        "name": "cusp-400",
+        "nativeLength": 203.8194580078125,
+        "nativeInk": 127470,
+        "reference": {
+          "sum": 2026,
+          "max": 24
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 80624,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 81334,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 80624,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 80624,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 81334,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 80624,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 80624,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 81334,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "cusp-400",
+        "nativeLength": 203.8194580078125,
+        "nativeInk": 127470,
+        "reference": {
+          "sum": 2026,
+          "max": 24
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 2026,
+              "max": 24
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 2026,
+              "max": 24
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 2026,
+            "max": 24
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "units-percent",
+      "before": {
+        "name": "units-percent",
+        "nativeLength": 200,
+        "nativeInk": 151468,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 83868,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 83868,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 83868,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 83868,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 83868,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 83868,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 83868,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 83868,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "units-percent",
+        "nativeLength": 200,
+        "nativeInk": 151468,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "units-mixed",
+      "before": {
+        "name": "units-mixed",
+        "nativeLength": 200,
+        "nativeInk": 128296,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 78644,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 78644,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 78644,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 78644,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 78644,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 78644,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 78644,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 78644,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "units-mixed",
+        "nativeLength": 200,
+        "nativeInk": 128296,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "units-px",
+      "before": {
+        "name": "units-px",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 69360,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 69360,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 69360,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 69360,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 69360,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 69360,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 69360,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 69360,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "units-px",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "units-font",
+      "before": {
+        "name": "units-font",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 69360,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 69360,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 69360,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 69360,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 69360,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 69360,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 69360,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 69360,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "units-font",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "units-odd",
+      "before": {
+        "name": "units-odd",
+        "nativeLength": 200,
+        "nativeInk": 97920,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 102000,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 102000,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 102000,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 102000,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 102000,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 102000,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 102000,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 102000,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "units-odd",
+        "nativeLength": 200,
+        "nativeInk": 97920,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "units-zero-dash",
+      "before": {
+        "name": "units-zero-dash",
+        "nativeLength": 200,
+        "nativeInk": 30750,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 30750,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 30750,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 30750,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 30750,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 30750,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 30750,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 30750,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 30750,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "units-zero-dash",
+        "nativeLength": 200,
+        "nativeInk": 30750,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "units-solid",
+      "before": {
+        "name": "units-solid",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "units-solid",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "units-none",
+      "before": {
+        "name": "units-none",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "units-none",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "author--2",
+      "before": {
+        "name": "author--2",
+        "nativeLength": 200,
+        "nativeInk": 137700,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "author--2",
+        "nativeLength": 200,
+        "nativeInk": 137700,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "author-bad",
+      "before": {
+        "name": "author-bad",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 66300,
+          "max": 255
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 66300,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "author-bad",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 66300,
+          "max": 255
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 66300,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "author-100px",
+      "before": {
+        "name": "author-100px",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 66300,
+          "max": 255
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 66300,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "author-100px",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 66300,
+          "max": 255
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 66300,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "author-empty",
+      "before": {
+        "name": "author-empty",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 66300,
+          "max": 255
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 66300,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "author-empty",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 66300,
+          "max": 255
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 66300,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "author-0",
+      "before": {
+        "name": "author-0",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 66300,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 66300,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 66300,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 66300,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 66300,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 66300,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "author-0",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "zero-no-offset",
+      "before": {
+        "name": "zero-no-offset",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 66300,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 66300,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 66300,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 66300,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 66300,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 66300,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 66300,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "zero-no-offset",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "zero-zero-first",
+      "before": {
+        "name": "zero-zero-first",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 204000,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 204000,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 204000,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 204000,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 204000,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 204000,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 204000,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 204000,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "zero-zero-first",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "zero-negative-offset",
+      "before": {
+        "name": "zero-negative-offset",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 69360,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 69360,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 69360,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 69360,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 69360,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 69360,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 69360,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 69360,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "zero-negative-offset",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "zero-solid",
+      "before": {
+        "name": "zero-solid",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "zero-solid",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "zero-all-zero",
+      "before": {
+        "name": "zero-all-zero",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "zero-all-zero",
+        "nativeLength": 200,
+        "nativeInk": 204000,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "animated-length-0",
+      "before": {
+        "name": "animated-length-0",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 109140,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 109140,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "animated-length-0",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "animated-length-0.5",
+      "before": {
+        "name": "animated-length-0.5",
+        "nativeLength": 200,
+        "nativeInk": 136000,
+        "reference": {
+          "sum": 40,
+          "max": 1
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 88044,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 88060,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 88044,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 88044,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 88060,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 88044,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 88044,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 88060,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "animated-length-0.5",
+        "nativeLength": 200,
+        "nativeInk": 136000,
+        "reference": {
+          "sum": 40,
+          "max": 1
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 40,
+            "max": 1,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 40,
+              "max": 1
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 40,
+            "max": 1,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 40,
+              "max": 1
+            }
+          }
+        ],
+        "component": {
+          "sum": 40,
+          "max": 1,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "animated-length-1",
+      "before": {
+        "name": "animated-length-1",
+        "nativeLength": 200,
+        "nativeInk": 137700,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "animated-length-1",
+        "nativeLength": 200,
+        "nativeInk": 137700,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "animated-length-1.5",
+      "before": {
+        "name": "animated-length-1.5",
+        "nativeLength": 200,
+        "nativeInk": 136336,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 89524,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 89524,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 89524,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 89524,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 89524,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 89524,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 89524,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 89524,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "animated-length-1.5",
+        "nativeLength": 200,
+        "nativeInk": 136336,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "inherited-paint",
+      "before": {
+        "name": "inherited-paint",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 109140,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 109140,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "inherited-paint",
+        "nativeLength": 200,
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "transform",
+      "before": {
+        "name": "transform",
+        "nativeLength": 200,
+        "nativeInk": 76990,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 61458,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 61458,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 61458,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 61458,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 61458,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 61458,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 61458,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 61458,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "transform",
+        "nativeLength": 200,
+        "nativeInk": 76990,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "nested",
+      "before": {
+        "name": "nested",
+        "nativeLength": 200,
+        "nativeInk": 53444,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 42652,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 42652,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 42652,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 42652,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 42652,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 42652,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 42652,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 42652,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "nested",
+        "nativeLength": 200,
+        "nativeInk": 53444,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "use-instance",
+      "before": {
+        "name": "use-instance",
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 109140,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 109140,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 109140,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 109140,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 109140,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "use-instance",
+        "nativeInk": 136680,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "animated-geometry-0",
+      "before": {
+        "name": "animated-geometry-0",
+        "nativeLength": 100,
+        "nativeInk": 68340,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "animated-geometry-0",
+        "nativeLength": 100,
+        "nativeInk": 68340,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "animated-geometry-0.5",
+      "before": {
+        "name": "animated-geometry-0.5",
+        "nativeLength": 125,
+        "nativeInk": 85444,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 59928,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 59928,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 59928,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 59928,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 59928,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 59928,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 59928,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 59928,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "animated-geometry-0.5",
+        "nativeLength": 125,
+        "nativeInk": 85444,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "animated-geometry-1",
+      "before": {
+        "name": "animated-geometry-1",
+        "nativeLength": 150,
+        "nativeInk": 102524,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 67844,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 67844,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 67844,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 67844,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 67844,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 67844,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 67844,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 67844,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "animated-geometry-1",
+        "nativeLength": 150,
+        "nativeInk": 102524,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "animated-geometry-1.5",
+      "before": {
+        "name": "animated-geometry-1.5",
+        "nativeLength": 175,
+        "nativeInk": 119616,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 81844,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 81844,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 81844,
+              "max": 255
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 81844,
+            "max": 255,
+            "nativeOriginal": {
+              "sum": 81844,
+              "max": 255
+            },
+            "numericReference": {
+              "sum": 81844,
+              "max": 255
+            }
+          }
+        ],
+        "component": {
+          "sum": 81844,
+          "max": 255,
+          "nativeOriginal": {
+            "sum": 81844,
+            "max": 255
+          },
+          "ready": true,
+          "errors": []
+        }
+      },
+      "after": {
+        "name": "animated-geometry-1.5",
+        "nativeLength": 175,
+        "nativeInk": 119616,
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0,
+            "nativeOriginal": {
+              "sum": 0,
+              "max": 0
+            },
+            "numericReference": {
+              "sum": 0,
+              "max": 0
+            }
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "nativeOriginal": {
+            "sum": 0,
+            "max": 0
+          },
+          "ready": true,
+          "errors": []
+        }
+      }
+    }
+  ],
+  "seeking": [
+    {
+      "name": "animated-length-0",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-length-1.5",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-length-0.5",
+      "sum": 40,
+      "max": 1
+    },
+    {
+      "name": "animated-length-0",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-geometry-0",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-geometry-1.5",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-geometry-0.5",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-geometry-0",
+      "sum": 0,
+      "max": 0
+    }
+  ],
+  "regression": {
+    "percent64": "all exact",
+    "declarations62": "all exact",
+    "earlierExploration6": "all exact; previous pathLength witness repaired",
+    "font55": "53 exact; existing text-inherited-stroke and text-absolute-control strict failures retained"
+  },
+  "limits": [
+    "19 of60 original native views still differ:16 curved cases and3 malformed attribute strings. No raster tolerance was relaxed; strict new corpus command exits1.",
+    "Length integration is independent of Canvas implementation; native SVG painting can use different approximations from its getTotalLength result. Curved dash raster fidelity remains pending rather than calibrated to match fixture pixels.",
+    "One same-player length seek matches original native output but differs from the independently rewritten decimal length reference bysum40/max1. It remains a strict reference failure.",
+    "Percentage dash lengths follow observed Chrome stroke calibration; SVG2 pathLength prose and dash algorithm are not fully consistent. Other engines need independent validation.",
+    "Zero pathLength follows measured Chrome solid-outline behavior. General motion-path/textPath calibration, non-scaling-stroke and other unsupported SVG features are not newly certified.",
+    "Actual SVG component uses wx selector plumbing substitutes and real Chrome Canvas. No current WeChat developer-tools or device evidence. User qin-bear original remains unavailable."
+  ],
+  "commands": [
+    "python scripts/probe-svg-path-length.py tests/fixtures/svg-path-length.json",
+    "node --test tests/svg-path-length.test.js tests/svg-player.test.js tests/svg-stroke-percent.test.js tests/svg-stroke-declarations.test.js tests/svg-font-strokes.test.js",
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-path-length/strict --path-length (exit1 retained)",
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-path-length/after --path-length --record",
+    "npm run check",
+    "npm run check:production"
+  ],
+  "sources": [
+    "https://www.w3.org/TR/SVG2/paths.html#PathLengthAttribute",
+    "https://www.w3.org/TR/SVG2/painting.html#StrokeDashing",
+    "https://raw.githubusercontent.com/google/skia/main/src/core/SkContourMeasure.cpp"
+  ]
+}

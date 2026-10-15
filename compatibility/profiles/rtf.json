@@ -1,0 +1,766 @@
+{
+  "schemaVersion": 1,
+  "format": "RTF",
+  "extensions": [
+    "rtf"
+  ],
+  "mime": [
+    "application/rtf",
+    "text/rtf"
+  ],
+  "signatures": [
+    "7b5c72746631"
+  ],
+  "userShouldSee": "\u771f\u5b9e\u53ef\u8bfb\u6b63\u6587\u3001\u6b63\u786e\u4e2d\u6587\u3001\u6bb5\u843d\uff0c\u4ee5\u53ca\u4e0e\u6b63\u6587\u5bf9\u5e94\u7684\u811a\u6ce8\u548c\u5c3e\u6ce8\uff1b\u4e0d\u663e\u793a\u63a7\u5236\u4ee3\u7801\u6216\u5d4c\u5165\u5bf9\u8c61\u7684\u4e8c\u8fdb\u5236\u6570\u636e\u3002",
+  "currentVisibleResult": "\u672c\u673a\u63d0\u53d6\u6b63\u6587\uff1bGBK\u3001Big5\u3001Shift_JIS\u3001Windows-874\u3001Windows-1250\u81f31258\u3001Unicode \u56de\u9000\u53ca\u5b57\u4f53\u4ee3\u7801\u9875\u53d7\u63a7\u89e3\u6790\u3002\u4fdd\u7559upr/ud\u5206\u652f\u3001\u5d4c\u5957\u8868\u683c\u6587\u672c\u884c\u5217\u5206\u9694\u5e76\u8df3\u8fc7nonesttables\u526f\u672c\uff1b\u672a\u5b8c\u6574\u8fd8\u539f\u539f\u7248\u5e03\u5c40\u3001\u5217\u8868\u81ea\u52a8\u7f16\u53f7\u6216\u5d4c\u5165\u56fe\u7247\u9884\u89c8\u3002\uff1bv1.4.111\u8865\u5145\u6bb5\u843d/\u5b57\u7b26\u6837\u5f0f\u7684\u9690\u85cf\u5c5e\u6027\u548cbasedon\u7ee7\u627f\u3001\u76f4\u63a5v/v0\u8986\u76d6\u3001plain/pard\u91cd\u7f6e\uff1b\u4e0d\u63d0\u4f9b\u663e\u793a\u9690\u85cf\u6587\u5b57\u5f00\u5173\u3002\u6bb5\u843d\u4e2d\u9014\u6362\u6bb5\u843d\u6837\u5f0f\u4ecd\u6709\u72ec\u7acb\u5bf9\u7167\u5dee\u5f02\u5f85\u8c03\u67e5\u3002\uff1bv1.4.117 \u63a7\u5236\u5b57\u533a\u5206\u5927\u5c0f\u5199\uff0c\u72ec\u7acb ud Unicode \u76ee\u6807\u53ef\u89c1\uff1b42 \u4e2a\u7ec4\u5408\u4e2d 40 \u4e2a\u89c4\u8303/\u72ec\u7acb\u5951\u7ea6\u7b26\u5408\uff0c2 \u4e2a\u65e2\u6709\u6837\u5f0f\u7ed1\u5b9a\u5dee\u5f02\u4fdd\u7559\u3002 v1.4.122 \u5206\u5f00\u663e\u793a\u811a\u6ce8/\u5c3e\u6ce8\u4e0e\u6b63\u6587\uff0c\u4fdd\u7559\u5e38\u89c1\u6ce8\u53f7\u3001\u81ea\u5b9a\u4e49\u6807\u8bb0\u548c\u53cc\u5411\u5f15\u7528\uff1b\u6574\u6bb5\u9690\u85cf\u6ce8\u91ca\u4e0d\u663e\u793a\u4f46\u4ecd\u5360\u6e90\u7f16\u53f7\u3002\u539f\u59cb\u5206\u9875\u4e0e\u672a\u8986\u76d6\u7f16\u53f7\u6837\u5f0f\u660e\u786e\u63d0\u793a\uff0c\u5fae\u4fe1\u4e0e\u771f\u673a\u4ecd\u5f85\u9a8c\u8bc1\u3002 v1.4.132 development uploaded: named Symbol Greek/math glyphs and Word private-use forms resolve to readable Unicode; unknown symbol faces remain explicit unsupported errors. \u5df2\u96c6\u6210\u4fee\u590d\u9690\u85cf\u5b57\u7b26\u5c5e\u6027\u8de8\u5355\u5143\u683c/\u884c\u6807\u8bb0\u65f6\u7684\u6587\u5b57\u7c98\u8fde\u4e0e\u7a7a\u5217\u4f4d\u7f6e\u4e22\u5931\uff1b130 \u4e2a Node/Chrome \u5185\u5bb9\u5951\u7ea6\u901a\u8fc7\uff0c48 \u4e2a\u89c6\u56fe\u4e0e Writer \u5b9e\u9645\u5355\u5143\u683c\u5e8f\u5217\u6838\u5bf9\u3002\u4ecd\u4e3a\u6587\u672c\u5206\u9694\u89c6\u56fe\uff0c\u975e\u5b8c\u6574\u8868\u683c\u6392\u7248\u3002 \u672c\u6b21\u6574\u5408\u53e6\u542b\u5408\u6cd5 starred field/fldrslt \u6b63\u6587\u4fdd\u7559\uff1b\u539f\u6709\u9690\u85cf\u72b6\u6001\u4e0e\u975e\u663e\u793a\u5206\u652f\u9694\u79bb\u4fdd\u6301\u3002 v1.4.140 \u5fae\u4fe1\u5f00\u53d1\u7248\u5df2\u4e0a\u4f20\uff0c\u8865\u9f50\u7279\u6b8a\u7a7a\u683c\u3001\u8fde\u63a5/\u975e\u8fde\u63a5\u7b26\u3001\u65b9\u5411\u6807\u8bb0\u53ca\u5f3a\u5236\u5206\u9875/\u5206\u680f\u7684\u8fde\u7eed\u6587\u672c\u5206\u9694\uff1b138 \u4e2a\u89c4\u8303\u5951\u7ea6\u4e0e\u9605\u8bfb\u5165\u53e3\u3001138 \u4e2a\u7f16\u8bd1 WXML Chrome \u89c6\u56fe\u300116 \u4e2a\u5fae\u4fe1\u5b9e\u9645\u89c6\u56fe\u901a\u8fc7\u3002\u5e94\u7528\u5bf9\u7167\u5dee\u5f02\u5355\u72ec\u4fdd\u7559\u3002 v1.4.145\u5f00\u53d1\u7248\u5df2\u4e0a\u4f20\uff1aCP949/UHC \u97e9\u6587\u6b63\u6587\u63a5\u5165\u5171\u4eab\u89e3\u7801\u5668\uff0c\u652f\u6301\u6587\u6863\u4ee3\u7801\u9875\u4e0e\u5b57\u4f53 charset129/cpg949\uff1b\u9a8c\u8bc1\u8303\u56f4\u89c1 runs/2026-10-13-rtf-korean.json\u3002",
+  "oracles": [
+    "Microsoft RTF 1.9.1 https://officeprotocoldoc.z19.web.core.windows.net/files/Archive_References/%5BMSFT-RTF%5D.pdf pp.14-16,84-85,94-96,108-109",
+    "macOS Cocoa textutil -convert txt -stdin -stdout -format rtf",
+    "LibreOffice Writer actual RTF export and TXT/XHTML reimport; scripts/verify-rtf-tables.js records versions and exact differences"
+  ],
+  "capabilities": [
+    {
+      "id": "notes-and-references",
+      "axis": {
+        "version": "RTF 1.9.1",
+        "feature": "footnote/ftnalt/chftn and starred destinations",
+        "encoding": "Unicode and scoped legacy fonts",
+        "anomaly": "hidden enclosing note and delayed callbacks"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "Node/Chrome \u4e2d\u6b63\u6587\u4e0e\u6ce8\u91ca\u5206\u79bb\u3001\u5f15\u7528\u53cc\u5411\u8df3\u8f6c\u3001\u5e38\u89c1\u6ce8\u53f7\u4e0e\u81ea\u5b9a\u4e49\u6807\u8bb0\u4fdd\u7559\uff1b\u5fae\u4fe1\u548c\u771f\u673a\u5f85\u9a8c\u8bc1",
+      "evidence": [
+        "tests/rtf-notes.test.js",
+        "scripts/verify-rtf-views.js",
+        "runs/2026-09-05-rtf-notes.json"
+      ]
+    },
+    {
+      "id": "byte-runs",
+      "axis": {
+        "version": "RTF 1",
+        "feature": "raw/hex/mixed/soft-newline",
+        "encoding": "GBK/Big5/Shift_JIS/Windows-1252",
+        "anomaly": "none"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5b8c\u6574\u591a\u5b57\u8282\u6b63\u6587\uff0c\u4e0d\u6309\u5355\u5b57\u8282\u53d8\u6210\u66ff\u4ee3\u7b26",
+      "evidence": [
+        "tests/rtf-reader.test.js",
+        "scripts/verify-rtf-references.js: 60 generated oracle matches"
+      ]
+    },
+    {
+      "id": "unicode-fallback",
+      "axis": {
+        "version": "1.9.1",
+        "feature": "uc/u scoped fallback/control words/bin/braces/surrogates",
+        "anomaly": "none",
+        "content": "Unicode body with fallback controls"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u517c\u5bb9\u5b57\u7b26\u6309\u5b8c\u6574 token \u8df3\u8fc7\uff0c\u5206\u7ec4\u8fb9\u754c\u7ec8\u6b62\u8df3\u8fc7\uff0c\u4e0d\u6cc4\u6f0f\u63a7\u5236\u5b57\u6216\u9690\u85cf\u7ec4",
+      "evidence": [
+        "tests/rtf-reader.test.js",
+        "Microsoft RTF 1.9.1 pp.14-15"
+      ]
+    },
+    {
+      "id": "font-codepage",
+      "axis": {
+        "version": "RTF 1",
+        "feature": "fonttbl/fcharset/cpg/f/deff/plain",
+        "anomaly": "none",
+        "content": "mixed western and CJK body"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u53d7\u652f\u6301\u5b57\u4f53\u7f16\u7801\u8986\u76d6\u6587\u6863\u9ed8\u8ba4\uff0c\u79bb\u7ec4\u6062\u590d",
+      "evidence": [
+        "tests/rtf-reader.test.js"
+      ]
+    },
+    {
+      "id": "binary-isolation",
+      "axis": {
+        "version": "RTF 1",
+        "feature": "bin payload",
+        "anomaly": "brace-containing/negative/truncated length",
+        "content": "body surrounding embedded payload"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u4e8c\u8fdb\u5236\u4e0d\u53c2\u4e0e\u5206\u7ec4\u89e3\u6790\u3001\u4e0d\u8fdb\u5165\u6b63\u6587\uff1b\u574f\u957f\u5ea6\u660e\u786e\u62d2\u7edd",
+      "evidence": [
+        "tests/rtf-reader.test.js"
+      ]
+    },
+    {
+      "id": "unsupported-codepage",
+      "axis": {
+        "version": "RTF 1",
+        "feature": "legacy codepages outside bundled decoder",
+        "anomaly": "none",
+        "content": "non-ASCII body"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u5176\u4ed6\u4ee3\u7801\u9875\u4ecd\u9700\u9010\u9879\u52a0\u5165\u5e76\u9a8c\u8bc1\uff1b\u672a\u6346\u7ed1\u7f16\u7801\u7684\u975eASCII\u6b63\u6587\u660e\u786e\u63d0\u793a\u672a\u652f\u6301\uff0cUnicode\u6b63\u6587\u4ecd\u53ef\u4f7f\u7528",
+      "evidence": [
+        "tests/rtf-reader.test.js"
+      ]
+    },
+    {
+      "id": "windows-single-byte-codepages",
+      "axis": {
+        "version": "RTF 1",
+        "feature": "document and font codepages",
+        "encoding": "Windows-874/1250-1258",
+        "anomaly": "raw/hex/mixed/soft-newline/undefined bytes"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5341\u4e2a\u4ee3\u7801\u9875\u6b63\u6587\u548c\u5b57\u4f53\u5206\u7ec4\u5207\u6362\u5b8c\u6574\u663e\u793a\uff1b1280\u4e2a\u9ad8\u5b57\u8282\u9010\u9879\u6838\u5bf9\uff0c\u672a\u5b9a\u4e49\u5b57\u8282\u660e\u786e\u62d2\u7edd\u800c\u975e\u9759\u9ed8\u4e71\u7801",
+      "evidence": [
+        "tests/rtf-codepages.test.js",
+        "scripts/verify-rtf-codepages.js",
+        "scripts/verify-rtf-views.js",
+        "scripts/verify-wechat-simulator.js"
+      ]
+    },
+    {
+      "id": "upr-unicode-alternative",
+      "axis": {
+        "version": "1.9.1",
+        "feature": "upr/ud nested branches/fonts/hidden metadata",
+        "anomaly": "valid/missing/malformed",
+        "content": "Unicode replaces ANSI copy"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "83\u4e2a\u6709\u6548\u53d8\u4f53\u4ec5\u663e\u793a Unicode\uff1b17\u7c7b\u635f\u574f\u5907\u9009\u62a5\u9519\uff0c\u4e0d\u62fc\u63a5\u65e7\u526f\u672c\u6216\u6cc4\u6f0f\u5143\u6570\u636e\uff1bNode \u5019\u9009\u901a\u8fc7\uff0c\u5fae\u4fe1\u5f85\u9a8c\u8bc1",
+      "evidence": [
+        "tests/rtf-alternatives.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-rtf-alternatives.js",
+        "Microsoft RTF 1.9.1 pp.15-16"
+      ]
+    },
+    {
+      "id": "cp1250-body",
+      "axis": {
+        "version": "RTF 1",
+        "feature": "CP1250 document/font",
+        "anomaly": "defined/undefined bytes",
+        "content": "Czech/Central European body"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "123\u4e2a\u5df2\u5b9a\u4e49\u9ad8\u5b57\u8282 raw/hex \u4e0e ICU \u4e00\u81f4\uff0c\u4e94\u4e2a\u672a\u5b9a\u4e49\u503c\u62d2\u7edd\uff1b\u5b57\u4f53\u5207\u6362\u6b63\u6587\u4e0d\u4e22\u5931",
+      "evidence": [
+        "tests/rtf-alternatives.test.js",
+        "tests/fixtures/rtf-alternatives/testUnicode.rtf"
+      ]
+    },
+    {
+      "id": "trailing-nul-padding",
+      "axis": {
+        "version": "RTF 1",
+        "feature": "NUL after complete root",
+        "anomaly": "padding/payload/truncation",
+        "content": "negative Unicode private-use characters"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u4ec5\u5b8c\u6574\u6839\u540e\u7684\u96f6\u5b57\u8282\u53ca\u7a7a\u767d\u53ef\u5bb9\u5fcd\uff1b\u5176\u4ed6\u5c3e\u968f\u6570\u636e/\u622a\u65ad\u4e0d\u6210\u529f\uff1b\u4e0d\u662f\u79c1\u7528\u533a\u5b57\u5f62\u6620\u5c04",
+      "evidence": [
+        "tests/rtf-alternatives.test.js",
+        "tests/fixtures/rtf-alternatives/testNegativeUnicode.rtf"
+      ]
+    },
+    {
+      "id": "nested-table-text-boundaries",
+      "axis": {
+        "version": "1.9.1",
+        "feature": "nestcell/nestrow/nesttableprops/nonesttables",
+        "anomaly": "valid/hidden/truncated/bin/source-newlines",
+        "content": "nested cells and following body"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5019\u9009 Node/Chrome \u4e2d\u5355\u5143\u683ctab\u548c\u884cnewline\u4e0d\u4e22\u5931\uff0c\u65e0\u5907\u7528\u6587\u672c\u526f\u672c\uff1b75\u4e2a\u751f\u6210\u8fb9\u754c\u3001Writer\u5b9e\u9645\u5bfc\u51fa\u539f\u4ef6\u901a\u8fc7\uff0c\u4ecd\u5f85\u5fae\u4fe1\u9a8c\u8bc1\uff0c\u4e0d\u7b49\u4e8e\u8868\u683c\u5e03\u5c40",
+      "evidence": [
+        "tests/rtf-tables.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-rtf-views.js",
+        "scripts/verify-rtf-tables.js"
+      ]
+    },
+    {
+      "id": "table-layout-and-empty-cells",
+      "axis": {
+        "version": "RTF 1.9.1",
+        "feature": "nesting/grid/merged/empty cells",
+        "anomaly": "none",
+        "content": "visual table topology"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u4fdd\u7559\u5b8c\u6574\u7a7a\u5355\u5143\u683c\u4f4d\u7f6e\u3001\u5408\u5e76\u5173\u7cfb\u3001\u5d4c\u5957\u5c42\u7ea7\u548c\u53ef\u8bfb\u5e03\u5c40\uff1b\u76ee\u524d\u53ea\u5c55\u5e73\u4e3a\u6587\u672c\uff0c\u672b\u5c3e\u7a7a\u767d\u4f1atrim",
+      "evidence": []
+    },
+    {
+      "id": "list-numbering",
+      "axis": {
+        "version": "RTF 1.9.1",
+        "feature": "pn/listtable/listoverridetable",
+        "anomaly": "none",
+        "content": "computed markers and indentation"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u6839\u636e\u6837\u5f0f\u8ba1\u7b97\u6709\u5e8f/\u65e0\u5e8f/\u5d4c\u5957\u5217\u8868\uff1b\u76ee\u524d\u4ec5\u4fdd\u7559\u6587\u4ef6\u81ea\u5e26pntext/listtext\uff0c\u4e0eLO\u91cd\u65b0\u8ba1\u7b97\u7684\u7b26\u53f7/\u7f29\u8fdb\u53ef\u80fd\u4e0d\u540c",
+      "evidence": [
+        "tests/fixtures/rtf-tables/testRTFListMicrosoftWord.rtf",
+        "tests/fixtures/rtf-tables/samples.json"
+      ]
+    },
+    {
+      "id": "hidden-character-formatting",
+      "axis": {
+        "version": "RTF 1",
+        "feature": "v/v0/plain, scoped groups, Unicode, font codepages, fields and upr",
+        "anomaly": "valid and malformed hidden content",
+        "content": "Visible multilingual body mixed with hidden runs, nested visibility changes, field results and repeated file loads"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u76f4\u63a5\u9690\u85cf\u683c\u5f0f\u6b63\u6587\u4e0d\u663e\u793a\uff1b\u5d4c\u5957v0\u6216plain\u6062\u590d\u53ef\u89c1\uff0c\u79bb\u7ec4\u6062\u590d\u9690\u85cf\u72b6\u6001\uff1b\u4ecd\u6821\u9a8c\u9690\u85cf\u5b57\u8282\u3001Unicode\u548c\u7ed3\u6784\u300249\u4e2a\u751f\u6210\u5185\u5bb9\u5951\u7ea6\u53ca\u751f\u4ea7\u5165\u53e3\u901a\u8fc7\uff0c\u5fae\u4fe1\u5f85\u767b\u5f55\u9a8c\u8bc1\u3002",
+      "evidence": [
+        "tests/rtf-hidden.test.js",
+        "tests/helpers/rtf-hidden.js",
+        "scripts/verify-rtf-hidden.js",
+        "runs/2026-09-05-rtf-hidden-oracles.json"
+      ]
+    },
+    {
+      "id": "hidden-style-inheritance",
+      "status": "pass",
+      "axis": {
+        "version": "RTF 1",
+        "feature": "stylesheet/s/cs/sbasedon/v/v0/plain/pard",
+        "content": "Hidden runs with inherited display properties and explicit overrides",
+        "anomaly": "valid, missing bases, cyclic chains and malformed hidden bytes"
+      },
+      "expectedVisibleResult": "36\u4e2a\u7cbe\u786e\u6b63\u6587\u5951\u7ea6\u901a\u8fc7\uff1b\u9690\u85cf\u6837\u5f0f\u4e0d\u6cc4\u6f0f\u6b63\u6587\uff0c\u663e\u5f0fv0\u4fdd\u7559\u53ef\u89c1\u5185\u5bb9\uff0c\u91cd\u7f6e\u540e\u6062\u590d\u9002\u5f53\u7ee7\u627f\u3002\u4e0d\u662f\u6bb5\u843d\u6837\u5f0f\u5e03\u5c40\u6216\u6240\u6709\u6bb5\u843d\u5185\u5207\u6362\u8bed\u4e49\u7684\u5b8c\u6574\u652f\u6301\u3002",
+      "evidence": [
+        "tests/rtf-styles.test.js",
+        "scripts/verify-rtf-styles.js",
+        "runs/2026-09-05-rtf-styles.json"
+      ]
+    },
+    {
+      "id": "case-sensitive-controls-and-ud",
+      "axis": {
+        "version": "RTF 1.9.1",
+        "feature": "case-sensitive controls, standalone Unicode destinations",
+        "complexity": "42 combinations; binary/fallback/starred/hidden/alternative scopes; 40 certified, 2 existing gaps",
+        "platform": "Node and Chrome production reader; Writer XHTML/PDF and Cocoa oracle audit"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u672a\u77e5\u5927\u5c0f\u5199\u63a7\u5236\u5b57\u4e0d\u518d\u5220\u6539\u6b63\u6587\u6216\u6d88\u8d39\u4e8c\u8fdb\u5236\uff0c\u5408\u6cd5\u72ec\u7acb Unicode \u76ee\u6807\u5185\u5bb9\u4fdd\u7559\uff1b\u4e22\u5f03\u4e0e\u9690\u85cf\u7684\u7236\u5206\u7ec4\u4e0d\u80fd\u88ab\u91cd\u65b0\u542f\u7528\u3002",
+      "evidence": [
+        "tests/rtf-control-case.test.js",
+        "runs/2026-09-05-rtf-control-case.json"
+      ]
+    },
+    {
+      "id": "named-symbol-font",
+      "status": "pass",
+      "axis": {
+        "version": "RTF1.9.1",
+        "feature": "charset2/cpg42, font names, byte runs, Word F020-F0FF, scoped font switches",
+        "platform": "Node and Chrome only",
+        "encoding": "raw/hex bytes and Word F020-F0FF private-use codes",
+        "anomaly": "unknown symbol faces, private glyphs, undefined bytes and delayed file reads"
+      },
+      "expectedVisibleResult": "Known Symbol Greek/math content readable; ordinary Unicode remains readable, unknown symbol faces and undefined glyphs explicitly fail, subsequent files recover.",
+      "evidence": [
+        "tests/rtf-symbol.test.js",
+        "scripts/verify-rtf-symbol.js",
+        "scripts/probe-rtf-symbol-mapping.js",
+        "runs/2026-09-08-rtf-symbol.json"
+      ]
+    },
+    {
+      "id": "hidden-table-structural-boundaries",
+      "status": "pass",
+      "axis": {
+        "version": "RTF 1.9.1; unversioned candidate over v1.4.137",
+        "feature": "cell/nestcell/row/nestrow structural marks independent of hidden text",
+        "complexity": "120 authored sources plus 10 isolation controls; direct/style/field/empty/hidden rows; notes and stale reads",
+        "platform": "Node host and Chrome; 48 retained Writer HTML cell sequences; no WeChat/device claim"
+      },
+      "expectedVisibleResult": "\u9690\u85cf\u6587\u5b57\u4ecd\u4e0d\u663e\u793a\uff0c\u666e\u901a\u4e0e\u5d4c\u5957\u8868\u683c\u7684\u5355\u5143\u683c\u5206\u9694\u3001\u7a7a\u5355\u5143\u683c\u4f4d\u7f6e\u548c\u884c\u5206\u9694\u4fdd\u7559\uff1b\u4e0d\u590d\u6d3b\u8df3\u8fc7\u7684\u76ee\u7684\u5730\u548c\u9690\u85cf\u6ce8\u91ca\u3002",
+      "evidence": [
+        "tests/rtf-hidden-boundaries.test.js",
+        "scripts/verify-rtf-hidden-boundaries.js",
+        "runs/2026-09-13-rtf-hidden-boundaries.json"
+      ]
+    },
+    {
+      "id": "rtf-known-starred-field-destinations",
+      "status": "pass",
+      "axis": {
+        "version": "RTF 1.9.1",
+        "feature": "Known starred field/result destinations with inherited visibility",
+        "complexity": "46 authored documents, 3 malformed results, nested alternatives and destination guards",
+        "platform": "Node and actual host WXML in Chrome; Writer 38/46; WeChat not run"
+      },
+      "expectedVisibleResult": "\u5df2\u8bc6\u522b\u57df\u7684\u7ed3\u679c\u6587\u5b57\u6b63\u5e38\u4fdd\u7559\uff0c\u672a\u77e5\u76ee\u6807\u548c\u57df\u6307\u4ee4\u4ecd\u4e0d\u8fdb\u5165\u6b63\u6587\u3002",
+      "evidence": [
+        "runs/2026-09-18-rtf-field-destinations.json",
+        "tests/rtf-field-destinations.test.js",
+        "scripts/verify-rtf-field-destinations.js"
+      ]
+    },
+    {
+      "id": "special-body-characters",
+      "axis": {
+        "version": "RTF1.9.1 / v1.4.140",
+        "feature": "spaces, joiners, directional marks and required breaks",
+        "complexity": "138 authored scope/fallback/field/hidden/bidi combinations",
+        "platform": "Node, compiled WXML in Chrome and native WeChat DevTools; physical devices not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u7279\u6b8a\u7a7a\u683c\u3001\u8fde\u5b57\u548c\u65b9\u5411\u6807\u8bb0\u4e0d\u518d\u6f0f\u8bfb\uff1b\u5f3a\u5236\u5206\u9875\u548c\u5206\u680f\u5728\u8fde\u7eed\u6587\u672c\u89c6\u56fe\u4e2d\u5206\u884c\u3002",
+      "evidence": [
+        "runs/2026-09-18-rtf-special-characters.json",
+        "tests/rtf-special-characters.test.js"
+      ]
+    },
+    {
+      "id": "korean-cp949-combinations",
+      "axis": {
+        "version": "RTF 1.9.1",
+        "encoding": "CP949/UHC, document and font codepages",
+        "feature": "extended Hangul/Hanja/ASCII, Unicode fallback, raw+hex bytes, 8192-byte boundary",
+        "anomaly": "hidden malformed runs and unsupported Johab remain explicit errors"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "18 generated RTF body strings displayed exactly in actual DevTools WXML. No rich layout or physical-device claim. Cocoa/Writer differences retained.",
+      "evidence": [
+        "tests/rtf-korean.test.js",
+        "tests/fixtures/rtf-korean/README.md",
+        "scripts/verify-rtf-korean.js",
+        "scripts/verify-rtf-korean-wechat.js",
+        "runs/2026-10-13-rtf-korean.json"
+      ],
+      "release": "1.4.145"
+    }
+  ],
+  "publicSamples": [
+    {
+      "name": "accent.rtf",
+      "source": "https://github.com/jgm/pandoc/blob/fa0dfdf0e146ff5ec97e46dedb3492ebd3a35808/test/rtf/accent.rtf",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "af34e9fd55222e25f022c1c6029ec4a4e0dee3424e3ebeb5d52379ce461b9bac",
+      "expectedVisibleResult": "25 trimmed characters identical to Cocoa"
+    },
+    {
+      "name": "unicode.rtf",
+      "source": "https://github.com/jgm/pandoc/blob/fa0dfdf0e146ff5ec97e46dedb3492ebd3a35808/test/rtf/unicode.rtf",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "0724e00559b01ff7639eca25ecd6a7c0a24a253d06ba65ef0ee1dec4260639e8",
+      "expectedVisibleResult": "11 trimmed characters identical to Cocoa"
+    },
+    {
+      "name": "formatting.rtf",
+      "source": "https://github.com/jgm/pandoc/blob/fa0dfdf0e146ff5ec97e46dedb3492ebd3a35808/test/rtf/formatting.rtf",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "abca13508e29e97fc13609e1143b2a705e3fc8b0a35ef0cf6196588339d6f14c",
+      "expectedVisibleResult": "140 trimmed characters identical to Cocoa"
+    },
+    {
+      "name": "testUpr.rtf",
+      "source": "https://github.com/joniles/rtfparserkit/blob/26c80c8700eef4c127a7a12ec4af35f190993b21/src/test/resources/com/rtfparserkit/parser/standard/data/testUpr.rtf",
+      "license": "Apache-2.0",
+      "redistributed": true,
+      "sha256": "c0ca25634734078cdb85d771b74b09177a6bba325671bef60dd3684233be6882",
+      "expectedVisibleResult": "TEST / End User License Agreement / TEST\uff1b\u7cbe\u786e\u6bb5\u843d\u89c1 manifest"
+    },
+    {
+      "name": "testUnicode.rtf",
+      "source": "https://github.com/joniles/rtfparserkit/blob/26c80c8700eef4c127a7a12ec4af35f190993b21/src/test/resources/com/rtfparserkit/parser/standard/data/testUnicode.rtf",
+      "license": "Apache-2.0",
+      "redistributed": true,
+      "sha256": "c00f11b9ecb2ed083787955c7d05b2ef1d998a4826af41d0aa839efd5abb76b7",
+      "expectedVisibleResult": "\u5b8c\u6574\u591a\u8bed\u8a00\u6b63\u6587\uff0c\u5305\u62ec\u4e2d\u56fd\u4e0e \u010cesk\u00e1 republika\uff0c\u9010\u5b57\u9884\u671f\u89c1 manifest"
+    },
+    {
+      "name": "testNegativeUnicode.rtf",
+      "source": "https://github.com/joniles/rtfparserkit/blob/26c80c8700eef4c127a7a12ec4af35f190993b21/src/test/resources/com/rtfparserkit/parser/standard/data/testNegativeUnicode.rtf",
+      "license": "Apache-2.0",
+      "redistributed": true,
+      "sha256": "9dfaa2fa0d46fa5e01b32de8c342c99eee63d326e59e044a279bf9bb6305c03e",
+      "expectedVisibleResult": "\u6807\u9898\u548c F700-F726 \u539f\u59cb\u79c1\u7528\u533a\u7801\u70b9\uff1b\u65e0\u5b57\u5f62\u6620\u5c04\u627f\u8bfa"
+    },
+    {
+      "name": "testRTFTableCellSeparation.rtf",
+      "source": "https://github.com/apache/tika/blob/519866c7da5138d346a0ad982c29de996cd8cf46/tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testRTFTableCellSeparation.rtf",
+      "license": "Apache-2.0",
+      "redistributed": true,
+      "sha256": "87eeb5be0d8fa43514279e83a31cf80df3077e5f725747f151b4469e53813047",
+      "expectedVisibleResult": "\u666e\u901a\u8868\u683ca/b/c/d/\u00e4/\u00eb/\u00f6/\u00fc\u5206\u683c\u5206\u884c\uff1b\u4e0eLO\u6709\u884c\u5c3etab\u5dee\u5f02\uff0c\u7cbe\u786e\u9884\u671f\u89c1samples.json"
+    },
+    {
+      "name": "testRTFTableCellSeparation2.rtf",
+      "source": "https://github.com/apache/tika/blob/519866c7da5138d346a0ad982c29de996cd8cf46/tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testRTFTableCellSeparation2.rtf",
+      "license": "Apache-2.0",
+      "redistributed": true,
+      "sha256": "a318ec4e22d0ec73e5c4a339db587f404033c56f50668360a4c055cc13adb7b1",
+      "expectedVisibleResult": "Station\u4e0eFax\u901a\u8fc7cell\u5206\u9694\uff0c\u4e24\u4e2a\u72ec\u7acb\u8f6f\u4ef6TXT\u5bfc\u51fa\u62fc\u63a5\u7684\u5dee\u5f02\u4fdd\u7559"
+    },
+    {
+      "name": "testRTFListMicrosoftWord.rtf",
+      "source": "https://github.com/apache/tika/blob/519866c7da5138d346a0ad982c29de996cd8cf46/tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testRTFListMicrosoftWord.rtf",
+      "license": "Apache-2.0",
+      "redistributed": true,
+      "sha256": "e57b9bfba4d11d1b8b15dd347ed514beab04ccb54146a882e9398ca843afb43d",
+      "expectedVisibleResult": "\u4e09\u79cd\u5217\u8868\u6b63\u6587\u4e0e\u81ea\u5e26\u6807\u8bb0\u4fdd\u7559\uff1b\u4e0d\u662f\u81ea\u52a8\u7f16\u53f7\u6216\u7f29\u8fdb\u8fd8\u539f"
+    }
+  ],
+  "oracleDifferences": [
+    {
+      "case": "uc1/u20320/par X",
+      "reader": "\u4f60X",
+      "cocoa": "\u4f60\nX",
+      "reason": "\u89c4\u8303\u8981\u6c42\u5b8c\u6574\u63a7\u5236\u5b57\u8ba1\u4e3a\u4e00\u4e2a\u517c\u5bb9\u5b57\u7b26\uff1b\u4fdd\u7559\u5dee\u5f02\uff0c\u4e0d\u58f0\u79f0\u5b8c\u5168\u4e00\u81f4"
+    },
+    {
+      "case": "minimal-body-upr",
+      "reader": "Unicode",
+      "cocoa": "OLD",
+      "libreoffice": "OLDUnicode",
+      "reason": "MSFT-RTF pp.15-16 \u8981\u6c42\u5ffd\u7565 ANSI \u5206\u652f\uff1b83\u4e2a\u751f\u6210\u6837\u672c\u4e2d Cocoa \u5dee\u5f0281\u9879\uff0c\u516d\u4e2a LO \u5bf9\u7167\u4e2d\u5dee\u5f025\u9879\uff0c\u660e\u786e\u8bb0\u5f55\uff0c\u4e0d\u80fd\u5305\u88c5\u6210\u5916\u90e8\u4e00\u81f4"
+    }
+  ],
+  "generatedSamples": [
+    {
+      "name": "libreoffice-nested.rtf",
+      "path": "tests/fixtures/rtf-tables/libreoffice-nested.rtf",
+      "sha256": "99dcde021441391ff4174d1a04ccc52d50286c20304d6c7708482da42f95ff8c",
+      "sourcePath": "tests/fixtures/rtf-tables/libreoffice-nested-source.html",
+      "sourceSha256": "f5c39b238fc6705cca0bc2903f4f304dbd04b0657237b06554eb2eb2794f4708",
+      "generator": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+      "expectedVisibleResult": "\u5185\u5c42\u56db\u683c\u3001\u5916\u5c42\u56db\u683c\u53ca\u540e\u7eed\u6b63\u6587\u987a\u5e8f\u548c\u5206\u9694\u4fdd\u7559\uff0c\u65e0\u5907\u7528\u6587\u672c\u526f\u672c\uff1b\u4e0d\u662f\u5b8c\u6574\u7f51\u683c\u5e03\u5c40"
+    }
+  ],
+  "tableOracleDifferences": {
+    "manifest": "tests/fixtures/rtf-tables/samples.json",
+    "reproduce": "scripts/verify-rtf-tables.js",
+    "fullCocoaMatches": 0,
+    "fullLibreOfficeMatches": 0,
+    "samples": 4,
+    "reasons": [
+      "ordinary and nested tables retain a trailing cell tab per row; Cocoa emits one cell per line",
+      "small incomplete table retains cell delimiter where both tools concatenate",
+      "list fallback text differs from LibreOffice calculated symbols and indentation; Cocoa strips markers"
+    ],
+    "claim": "four exact text contracts plus independently recorded tool outputs, not four full oracle matches"
+  },
+  "platformResults": {
+    "node": {
+      "status": "pass",
+      "testedAt": "2026-09-01",
+      "candidate": "1.4.73",
+      "evidence": "46 RTF\u4e13\u9879\u6d4b\u8bd5\u901a\u8fc7\uff1bWindows-874/1250-1258\u51711280\u4e2a\u9ad8\u5b57\u8282\u300140\u79cd\u6b63\u6587\u7f16\u7801\u53d8\u4f53\u3001\u5b57\u4f53\u8986\u76d6\u548c\u591a\u4ee3\u7801\u9875\u5207\u6362\u5747\u6709\u786e\u5b9a\u6027\u65ad\u8a00\uff0c\u53e6\u4e0emacOS iconv\u548ctextutil\u9010\u4ee3\u7801\u9875\u5bf9\u7167"
+    },
+    "chrome": {
+      "status": "pass",
+      "candidate": "1.4.73",
+      "testedAt": "2026-09-01",
+      "evidence": "scripts/verify-rtf-views.js: 18\u4e2a\u7cbe\u786e\u6b63\u6587\u89c6\u56fe\uff1b\u751f\u4ea7\u5165\u53e3\u548c\u6e32\u67d3\u6811\u5728390px Chrome\u91cd\u5efa\uff0c\u5341\u79cd\u65b0\u589e\u4ee3\u7801\u9875\u5747\u65e0\u6a2a\u5411\u88c1\u5207\uff1b\u4e0d\u662fWeChat\u6216\u5bccRTF\u5e03\u5c40\u8bc1\u636e"
+    },
+    "wechat-devtools": {
+      "status": "pass",
+      "candidate": "1.4.73",
+      "testedAt": "2026-09-01",
+      "baseLibrary": "3.16.2",
+      "evidence": "\u5b8c\u6574\u6a21\u62df\u5668\u56de\u5f52\u8fd0\u884c\u65f6\u9519\u8bef0\uff1b17\u4e2aRTF\u5206\u522b\u901a\u8fc7\u771f\u5b9e\u538b\u7f29\u76ee\u5f55\u6761\u76ee\u70b9\u51fb\u8fdb\u5165dom-render-root\uff0c\u5341\u79cdWindows\u4ee3\u7801\u9875\u53ca\u4e03\u79cd\u65e2\u6709\u6b63\u6587\u9010\u5b57\u5339\u914d\uff1b\u9996\u6b21\u5207\u6362\u9879\u76ee\u7684PSD\u521d\u59cb\u8def\u7531\u51b7\u542f\u52a8\u5931\u8d25\uff0c\u4fdd\u6301\u65ad\u8a00\u4e0d\u53d8\u91cd\u8dd1\u901a\u8fc7"
+    },
+    "ios": {
+      "status": "pending",
+      "reason": "independent device run required"
+    },
+    "android": {
+      "status": "pending",
+      "reason": "independent device run required"
+    }
+  },
+  "hiddenFormattingResults": {
+    "candidate": "1.4.108",
+    "node": {
+      "status": "pass",
+      "targetedTests": 99,
+      "generatedContracts": 49,
+      "baselineWrong": 45,
+      "malformedRejected": 6,
+      "entryRecovery": true,
+      "staleReadIsolation": true
+    },
+    "chrome": {
+      "status": "pass",
+      "views": 66,
+      "writerVisibleMatches": 43,
+      "writerCases": 49,
+      "differences": 6,
+      "evidence": "runs/2026-09-05-rtf-hidden-oracles.json"
+    },
+    "wechatDevtools": {
+      "status": "blocked",
+      "reason": "Local CLI auto returned code 10: \u9700\u8981\u91cd\u65b0\u767b\u5f55; no simulator run claimed."
+    },
+    "ios": {
+      "status": "pending"
+    },
+    "android": {
+      "status": "pending"
+    }
+  },
+  "limits": {
+    "inputBytes": 5242880,
+    "groupDepth": 1024,
+    "controlWordLetters": 32,
+    "unicodeFallbackBytes": 32767,
+    "notes": 4096,
+    "noteReferences": 16384
+  },
+  "styleInheritanceExploration": {
+    "samples": 10,
+    "writerHtmlDifferences": 7,
+    "writerPdfPagesVisuallyInspected": 3,
+    "htmlExportDifferencesResolved": 1,
+    "status": "candidate-fixed-for-named-inheritance-cases",
+    "evidence": "runs/2026-09-05-next-rtf-styles.json",
+    "followup": "runs/2026-09-05-next-rtf-paragraph-styles.json"
+  },
+  "lastTestedAt": "2026-10-13",
+  "candidateVersion": null,
+  "mutationQueue": [
+    {
+      "id": "footnote-body-separation",
+      "priority": "high",
+      "status": "development-uploaded-awaiting-wechat-validation",
+      "evidence": "runs/2026-09-05-rtf-notes.json",
+      "expectedVisibleResult": "\u6b63\u6587\u4e0d\u88ab\u811a\u6ce8/\u5c3e\u6ce8\u63d2\u65ad\uff0c\u6ce8\u91ca\u5185\u5bb9\u4e0e\u5f15\u7528\u4fdd\u7559\uff1bCocoa \u7684\u7701\u7565\u6ce8\u91ca\u4e0d\u80fd\u4f5c\u4e3a\u5b8c\u6574\u9884\u671f",
+      "originEvidence": "runs/2026-09-05-next-rtf-notes.json"
+    },
+    {
+      "id": "upr-unicode-alternative",
+      "priority": "high",
+      "status": "candidate-fixed-awaiting-wechat"
+    },
+    {
+      "id": "upr-fields-list-names-and-optional-destinations",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "symbol-font-glyph-mapping",
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "additional-codepages",
+      "priority": "high",
+      "status": "windows-single-byte-released-pass"
+    },
+    {
+      "id": "rich-layout-and-images",
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "nested-table-text-boundaries",
+      "priority": "high",
+      "status": "candidate-fixed-awaiting-wechat"
+    },
+    {
+      "id": "table-grid-empty-merged-and-nesting",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "calculated-list-numbering-and-indentation",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "device-memory-and-render-time",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "hidden-style-inheritance",
+      "priority": "high",
+      "status": "development-uploaded-awaiting-wechat-validation",
+      "expectedVisibleResult": "\u6839\u636estylesheet\u548ccs/s\u7ee7\u627f\u9690\u85cf\u5c5e\u6027\uff1b\u9700\u5148\u9a8c\u8bc1\u72ec\u7acb\u8f6f\u4ef6\u5bf9\u7167\uff0c\u4e0d\u628a\u76f4\u63a5v\u63a7\u5236\u5b57\u8986\u76d6\u7b49\u540c\u6837\u5f0f\u8986\u76d6\u3002"
+    },
+    {
+      "id": "hidden-table-paragraph-boundaries",
+      "priority": "high",
+      "status": "fixed-scoped",
+      "expectedVisibleResult": "\u7ec4\u5408\u9690\u85cf\u6bb5\u843d\u6807\u8bb0\u3001\u8868\u683c\u884c\u5217\u8fb9\u754c\u548cUnicode\u5907\u7528\u5b57\u7b26\uff0c\u6309Writer\u53ef\u89c1\u5185\u5bb9\u786e\u8ba4\u662f\u5426\u4fdd\u7559\u5206\u9694\u3002",
+      "action": "Table boundaries repaired in candidate. Explicit hidden paragraph marks retain 12 Writer differences pending application policy review.",
+      "evidence": "runs/2026-09-13-rtf-hidden-boundaries.json"
+    },
+    {
+      "id": "paragraph-style-binding",
+      "priority": "high",
+      "status": "needs-expanded-application-fixture",
+      "samples": 32,
+      "visibleDifferences": 16,
+      "evidence": "runs/2026-09-06-next-rtf-style-binding.json",
+      "previousEvidence": "runs/2026-09-05-next-rtf-paragraph-styles.json",
+      "action": "Keep original differences; specification permits shorthand-only reader variance. Obtain expanded properties/application-generated source before changing hidden text.",
+      "reviewEvidence": "runs/2026-09-06-rtf-style-binding-review.json"
+    },
+    {
+      "id": "explicit-hidden-paragraph-mark-policy",
+      "priority": "medium",
+      "status": "pending",
+      "action": "12 retained Writer paragraph-mark differences; validate Word application behavior and explicit hidden-mark policy before changing prior paragraph semantics. Keep separate from table boundaries."
+    },
+    {
+      "id": "special-body-characters",
+      "status": "fixed-scoped",
+      "evidence": "runs/2026-09-18-rtf-special-characters.json",
+      "version": "1.4.140"
+    }
+  ],
+  "styleInheritanceResults": {
+    "candidate": "1.4.111",
+    "contracts": 36,
+    "baselineWrong": 23,
+    "readerMatches": 36,
+    "writerPdfMatches": 35,
+    "writerHtmlMatches": 30,
+    "independentContractsConfirmed": 36,
+    "visualPdfPages": 5,
+    "targetedNodeTests": 140,
+    "entryRecovery": true,
+    "evidence": "runs/2026-09-05-rtf-styles.json",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "notesResults": {
+    "candidate": "1.4.122",
+    "evidence": "runs/2026-09-05-rtf-notes.json",
+    "status": "development-uploaded",
+    "relatedTests": 290,
+    "relatedFailures": 0,
+    "contracts": 47,
+    "contractExact": 47,
+    "componentFileOpens": 47,
+    "componentAnchorActions": 146,
+    "oldFileReadAndNodeRecovery": "pass",
+    "largeNoteBytes": 1048576,
+    "noteBoundary": 4096,
+    "noteLimitFailure": 4097,
+    "referenceLimitFailure": 16385,
+    "nativeContentMatches": 31,
+    "nativeDifferences": 16,
+    "nativeScope": "PDF extracted body/note order and text without whitespace; exact source whitespace checked separately at core, component and Chrome. Not page layout certification.",
+    "chrome": "pass",
+    "node": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run: previously verified compiler startup block",
+    "ios": "not-run",
+    "android": "not-run",
+    "chromeViews": 188,
+    "chromeNotes": 47,
+    "chromeAnchorActions": 146,
+    "nodeTests": 1122,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "chromeOracle": "pass",
+    "productPR": 239,
+    "productCI": "33994181342",
+    "mainCI": "33994545405",
+    "runAttempt": "1",
+    "receipt": "runs/2026-09-05-v1.4.122-wechat-upload.json",
+    "receiptBytes": 490,
+    "remotePeeledTagExact": true
+  },
+  "styleBindingExploration": {
+    "date": "2026-09-06",
+    "cases": 32,
+    "rawWriterMatches": 11,
+    "normalizedTextMatches": 16,
+    "historicalPdfsRechecked": 2,
+    "status": "native-differences-awaiting-specification-decision",
+    "evidence": "runs/2026-09-06-next-rtf-style-binding.json"
+  },
+  "symbolFontExploration": {
+    "id": "rtf-symbol-font-glyph-mapping",
+    "status": "reproduced-symbol-font-content-gap",
+    "originals": 15,
+    "actualHostOpens": 15,
+    "certifiedSymbolCases": 5,
+    "silentLatinSubstitutions": 3,
+    "unsupportedHighByte": 1,
+    "unicodeControlPass": 1,
+    "otherFontCasesAwaitingFontSpecificOracle": 10,
+    "evidence": "runs/2026-09-08-next-rtf-symbol.json",
+    "limitations": [
+      "Only the named Symbol font is currently certified against Adobe mapping and Cocoa. Cocoa maps all three charset2 font names identically; this is not evidence that Wingdings or Arial should use Symbol glyphs.",
+      "Writer XHTML preserves F000-offset private-use code points, including space. Raw innerText is not a Unicode text or visual glyph oracle; no pixel match claimed.",
+      "No product patch made yet. Font name parsing, font-specific mappings, explicit codepage override, fallback/escape runs and lifecycle require investigation."
+    ]
+  },
+  "symbolFontResults": {
+    "candidate": "1.4.132",
+    "status": "development-uploaded",
+    "sourceVariants": 672,
+    "supportedGlyphs": 188,
+    "controls": 1,
+    "actualHostOpens": 696,
+    "chromeViews": 42,
+    "nativeExactGlyphs": 184,
+    "relatedNodeTests": 245,
+    "evidence": "runs/2026-09-08-rtf-symbol.json",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run",
+    "fullNodeTests": 1225,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "productPR": 261,
+    "receipt": "runs/2026-09-08-v1.4.132-wechat-upload.json"
+  },
+  "hiddenBoundaryCandidate": {
+    "status": "validated-local-awaiting-gates",
+    "version": null,
+    "evidence": "runs/2026-09-13-rtf-hidden-boundaries.json"
+  },
+  "fieldDestinationsValidation": {
+    "status": "locally-fixed-unreleased-with-oracle-differences",
+    "evidence": "runs/2026-09-18-rtf-field-destinations.json",
+    "baselineWrong": 27,
+    "readerExpectedExact": 46,
+    "actualHostOpens": 46,
+    "productionWxmlViews": 46,
+    "writerExact": 38,
+    "writerDifferences": 8,
+    "initiallyExpectedWriterDifferences": 4,
+    "strictWriterComparison": "not-passed: 4 unexpected differences; record mode retains them without relaxing assertions",
+    "relatedTests": 166,
+    "fullNodeTests": 1263,
+    "fullNodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "invalidFileRecovery": "pass",
+    "staleReadIsolation": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  }
+}

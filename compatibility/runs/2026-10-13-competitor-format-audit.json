@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-13T10:12:36.021240+00:00",
+  "scope": "User competitor format research; official published claims compared with reader code, not competitor app execution",
+  "readerRegisteredSuffixes": 54,
+  "countCaveat": "Includes aliases, WeChat-native previews, partial/conditional formats and DWG identity only; not 54 fully rendered independent formats.",
+  "competitors": [
+    {
+      "name": "OneOpen",
+      "source": "https://apps.apple.com/us/app/oneopen-file-viewer/id6792251542",
+      "confirmedDeclared": [
+        "HTML",
+        "ZIP website packages",
+        "Markdown",
+        "PDF",
+        "Office",
+        "iWork",
+        "images/audio/video",
+        "JSON",
+        "YAML",
+        "XML",
+        "CSV",
+        "source code",
+        "STEP/STP",
+        "IGES",
+        "BREP",
+        "DXF",
+        "STL",
+        "OBJ",
+        "PLY",
+        "RAW/design images (category only)",
+        "fonts/certificates/property lists/email/subtitles/contacts/calendars (categories only)",
+        "specialist archives/data/circuit files/binary inspection (categories only)"
+      ],
+      "notEstablished": "No exhaustive suffix matrix found for category-only claims; PSD/Ai and named RAW/font/email suffixes not individually established by inspected pages. Geometry is preview, not CAD editing."
+    },
+    {
+      "name": "HTML Keep / 随手网页",
+      "source": "https://apps.apple.com/cn/app/随手网页-移动端-html-查看器/id6767142789",
+      "confirmedDeclared": [
+        "HTML",
+        "Markdown",
+        "ZIP website packages",
+        "PDF/images (store subtitle)"
+      ],
+      "notEstablished": "No specific image suffix matrix or arbitrary-browser compatibility claim; description explicitly retains missing resource/script caveats."
+    },
+    {
+      "name": "即览",
+      "source": "https://apps.apple.com/cn/app/即览-html-与-markdown-预览/id6775229471",
+      "confirmedDeclared": [
+        "HTML",
+        "Markdown",
+        "TXT",
+        "ZIP website packages"
+      ],
+      "correction": "Provided draft said no ZIP; current official description includes ZIP and TXT."
+    },
+    {
+      "name": "即阅",
+      "source": "https://apps.apple.com/hk/app/即阅-markdown-html阅读器/id6779896819",
+      "confirmedDeclared": [
+        "md",
+        "markdown",
+        "html",
+        "htm",
+        "txt"
+      ],
+      "notEstablished": "PDF export is not proof of PDF import; ZIP not declared in inspected page."
+    },
+    {
+      "name": "Htmllit",
+      "source": "https://apps.apple.com/cn/app/htmllit-html预览查看器/id6760379188?platform=mac",
+      "confirmedDeclared": [
+        "HTML/HTML5",
+        "JSX",
+        "TSX",
+        "Markdown",
+        "multi-file website folder import"
+      ],
+      "notEstablished": "JSX/TSX runtime is a rendering feature, not just source text or file acceptance; PDF/long image mentioned as export."
+    },
+    {
+      "name": "PeekMD",
+      "source": "https://apps.apple.com/cn/app/peekmd-markdown-html预览/id6775353195",
+      "confirmedDeclared": [
+        "Markdown",
+        "HTML",
+        "clipboard/share text",
+        "web article to Markdown"
+      ],
+      "notEstablished": "ZIP and specialized design formats not declared; do not infer full browser support from HTML snippet preview."
+    },
+    {
+      "name": "Marvis",
+      "source": "https://apps.apple.com/cn/app/marvis-马维斯-腾讯旗下ai助手/id6776078618?platform=mac",
+      "confirmedDeclared": [
+        "file processing/knowledge base/remote PC capabilities"
+      ],
+      "notEstablished": "No exhaustive preview suffix matrix in inspected official page; unlimited-format search is unverified and not comparable to actual file rendering."
+    }
+  ],
+  "confirmedReaderGaps": [
+    {
+      "formats": [
+        "JSON",
+        "XML",
+        "CSV"
+      ],
+      "status": "partial-entry",
+      "details": "Archive members inferred text/plain and displayed as text. Direct application MIME routes to binary inspector; no structured data preview."
+    },
+    {
+      "formats": [
+        "YAML/YML",
+        "JS",
+        "TS",
+        "CSS",
+        "LOG and other code/config files"
+      ],
+      "status": "not-registered",
+      "details": "May display under explicit text/plain MIME, but no reliable suffix-based entry or specialist reading mode."
+    },
+    {
+      "formats": [
+        "JSX",
+        "TSX"
+      ],
+      "status": "not-rendered",
+      "details": "No React component preview/transpilation runtime; unknown application MIME is binary info only."
+    },
+    {
+      "formats": [
+        "ZIP multi-file websites"
+      ],
+      "status": "partial",
+      "details": "Extracts chosen member and opens basename as standalone file; no site root mount/resource map for sibling CSS/JS/images or multi-page navigation."
+    },
+    {
+      "formats": [
+        "STL",
+        "OBJ",
+        "PLY"
+      ],
+      "status": "not-rendered",
+      "details": "Existing DXF/STEP model view is reusable, but there are no corresponding standalone file importers."
+    },
+    {
+      "formats": [
+        "IGS/IGES",
+        "BREP"
+      ],
+      "status": "not-rendered",
+      "details": "Existing STEP/DXF partial rendering does not imply IGES/BREP support."
+    },
+    {
+      "formats": [
+        "Apple iWork Pages/Numbers/Keynote"
+      ],
+      "status": "not-registered",
+      "details": "No layout decoding; generic archive or embedded image access would be a partial preview, not complete document support."
+    },
+    {
+      "formats": [
+        "RAW images",
+        "fonts",
+        "email",
+        "subtitles",
+        "contacts",
+        "calendar",
+        "certificates",
+        "property lists",
+        "circuit files"
+      ],
+      "status": "no-specialized-preview",
+      "details": "Competitor advertises categories; exact suffix matrices require further evidence. Do not fabricate competitor support for individual extensions."
+    }
+  ],
+  "readerAlreadyPresent": [
+    "HTML",
+    "XHTML conditional",
+    "Markdown",
+    "TXT",
+    "RTF text",
+    "SVG",
+    "Ai conditional",
+    "PSD/PSB conditional",
+    "ZIP/RAR/7Z/TAR conditional",
+    "DXF and STEP partial geometry",
+    "CDR partial graphics",
+    "Office/PDF and selected images via WeChat native viewers",
+    "platform-dependent audio/video"
+  ],
+  "planningOnly": true,
+  "recommendedOrder": [
+    "Unify JSON/XML/CSV and code/config text entry; bounded readable content before claiming structured views.",
+    "Mount ZIP website resources locally with path and execution boundaries; improve opening latency.",
+    "Add bounded STL/OBJ/PLY importers using existing interactive model view.",
+    "Investigate JSX/TSX/React runtime and library compatibility separately.",
+    "Specialist RAW/iWork/IGES/BREP only after independent producer and fidelity validation."
+  ],
+  "evidence": [
+    "miniprogram/file-reader/shared/file-types.js",
+    "miniprogram/file-reader/shared/format-capabilities.js",
+    "miniprogram/file-reader/engine/components/reader/reader.js:1803",
+    "miniprogram/file-reader/engine/core/file-inspector.js:2775",
+    "miniprogram/file-reader/document/inline-image-store.js:33"
+  ],
+  "jsonEntryExperiment": [
+    {
+      "mime": "",
+      "result": "reject unrecognized suffix"
+    },
+    {
+      "mime": "application/json",
+      "result": "binary metadata only, no JSON body"
+    },
+    {
+      "mime": "text/plain",
+      "result": "actual full original JSON text rendered"
+    }
+  ],
+  "jsonEntryExperimentEvidence": "RTF stage worktree outputs/competitor-audit/json-entry.json"
+}

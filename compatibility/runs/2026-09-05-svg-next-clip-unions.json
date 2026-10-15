@@ -1,0 +1,4049 @@
+{
+  "knownOpen": [
+    "multi-child-union"
+  ],
+  "nativeSVGImageDifferenceCases": 32,
+  "mode": "discovery",
+  "inputs": [
+    {
+      "name": "clip-union-1",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M20 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H20V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-2",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M21 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H21V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-3",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M22 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H22V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-4",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M23 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H23V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-5",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M24 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H24V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-6",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M25 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H25V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-7",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M26 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H26V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-8",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M27 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H27V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-9",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M28 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H28V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-10",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M29 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H29V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-11",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M30 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H30V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-12",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M31 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H31V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-13",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M32 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H32V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-14",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M33 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H33V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-15",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M34 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H34V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-16",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M35 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H35V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-17",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M36 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H36V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-18",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M37 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H37V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-19",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M38 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H38V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-20",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M39 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H39V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-21",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M40 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H40V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-22",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M41 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H41V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-23",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M42 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H42V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-24",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M43 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H43V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-25",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M44 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H44V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-26",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M45 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H45V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-27",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M46 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H46V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-28",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M47 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H47V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-29",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M48 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H48V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-30",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M49 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H49V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-31",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M50 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H50V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clip-union-32",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\"/><path d=\"M51 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H70V30H90V90H51V70H10Z"
+          }
+        ]
+      }
+    }
+  ],
+  "testedAt": "2026-09-05T00:09:21.400Z",
+  "cases": 32,
+  "exactNativeCases": 0,
+  "pending": [],
+  "failures": [
+    "clip-union-1",
+    "clip-union-2",
+    "clip-union-3",
+    "clip-union-4",
+    "clip-union-5",
+    "clip-union-6",
+    "clip-union-7",
+    "clip-union-8",
+    "clip-union-9",
+    "clip-union-10",
+    "clip-union-11",
+    "clip-union-12",
+    "clip-union-13",
+    "clip-union-14",
+    "clip-union-15",
+    "clip-union-16",
+    "clip-union-17",
+    "clip-union-18",
+    "clip-union-19",
+    "clip-union-20",
+    "clip-union-21",
+    "clip-union-22",
+    "clip-union-23",
+    "clip-union-24",
+    "clip-union-25",
+    "clip-union-26",
+    "clip-union-27",
+    "clip-union-28",
+    "clip-union-29",
+    "clip-union-30",
+    "clip-union-31",
+    "clip-union-32"
+  ],
+  "results": [
+    {
+      "name": "clip-union-1",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 6688806,
+          "svgAlphaError": 3385536,
+          "svgChangedChannels": 27013,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 3345512,
+          "rgbaError": 6648782,
+          "maxChannelError": 255,
+          "changedChannels": 26370,
+          "fallbackError": 0,
+          "ink": 25555
+        },
+        {
+          "svgRGBAError": 6688806,
+          "svgAlphaError": 3385536,
+          "svgChangedChannels": 27013,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3345512,
+          "rgbaError": 6648782,
+          "maxChannelError": 255,
+          "changedChannels": 26370,
+          "fallbackError": 0,
+          "ink": 25555
+        },
+        {
+          "svgRGBAError": 6688806,
+          "svgAlphaError": 3385536,
+          "svgChangedChannels": 27013,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 3345512,
+          "rgbaError": 6648782,
+          "maxChannelError": 255,
+          "changedChannels": 26370,
+          "fallbackError": 0,
+          "ink": 25555
+        },
+        {
+          "svgRGBAError": 6688806,
+          "svgAlphaError": 3385536,
+          "svgChangedChannels": 27013,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 3345512,
+          "rgbaError": 6648782,
+          "maxChannelError": 255,
+          "changedChannels": 26370,
+          "fallbackError": 0,
+          "ink": 25555
+        },
+        {
+          "svgRGBAError": 6688806,
+          "svgAlphaError": 3385536,
+          "svgChangedChannels": 27013,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3345512,
+          "rgbaError": 6648782,
+          "maxChannelError": 255,
+          "changedChannels": 26370,
+          "fallbackError": 0,
+          "ink": 25555
+        },
+        {
+          "svgRGBAError": 6688806,
+          "svgAlphaError": 3385536,
+          "svgChangedChannels": 27013,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3345512,
+          "rgbaError": 6648782,
+          "maxChannelError": 255,
+          "changedChannels": 26370,
+          "fallbackError": 0,
+          "ink": 25555
+        },
+        {
+          "svgRGBAError": 6688806,
+          "svgAlphaError": 3385536,
+          "svgChangedChannels": 27013,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3345512,
+          "rgbaError": 6648782,
+          "maxChannelError": 255,
+          "changedChannels": 26370,
+          "fallbackError": 0,
+          "ink": 25555
+        }
+      ]
+    },
+    {
+      "name": "clip-union-2",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 6569692,
+          "svgAlphaError": 3318442,
+          "svgChangedChannels": 26599,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 3278582,
+          "rgbaError": 6529832,
+          "maxChannelError": 255,
+          "changedChannels": 25958,
+          "fallbackError": 0,
+          "ink": 25657
+        },
+        {
+          "svgRGBAError": 6569692,
+          "svgAlphaError": 3318442,
+          "svgChangedChannels": 26599,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3278582,
+          "rgbaError": 6529832,
+          "maxChannelError": 255,
+          "changedChannels": 25958,
+          "fallbackError": 0,
+          "ink": 25657
+        },
+        {
+          "svgRGBAError": 6569692,
+          "svgAlphaError": 3318442,
+          "svgChangedChannels": 26599,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 3278582,
+          "rgbaError": 6529832,
+          "maxChannelError": 255,
+          "changedChannels": 25958,
+          "fallbackError": 0,
+          "ink": 25657
+        },
+        {
+          "svgRGBAError": 6569692,
+          "svgAlphaError": 3318442,
+          "svgChangedChannels": 26599,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 3278582,
+          "rgbaError": 6529832,
+          "maxChannelError": 255,
+          "changedChannels": 25958,
+          "fallbackError": 0,
+          "ink": 25657
+        },
+        {
+          "svgRGBAError": 6569692,
+          "svgAlphaError": 3318442,
+          "svgChangedChannels": 26599,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3278582,
+          "rgbaError": 6529832,
+          "maxChannelError": 255,
+          "changedChannels": 25958,
+          "fallbackError": 0,
+          "ink": 25657
+        },
+        {
+          "svgRGBAError": 6569692,
+          "svgAlphaError": 3318442,
+          "svgChangedChannels": 26599,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3278582,
+          "rgbaError": 6529832,
+          "maxChannelError": 255,
+          "changedChannels": 25958,
+          "fallbackError": 0,
+          "ink": 25657
+        },
+        {
+          "svgRGBAError": 6569692,
+          "svgAlphaError": 3318442,
+          "svgChangedChannels": 26599,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3278582,
+          "rgbaError": 6529832,
+          "maxChannelError": 255,
+          "changedChannels": 25958,
+          "fallbackError": 0,
+          "ink": 25657
+        }
+      ]
+    },
+    {
+      "name": "clip-union-3",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 6424672,
+          "svgAlphaError": 3251452,
+          "svgChangedChannels": 25978,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 3211756,
+          "rgbaError": 6384976,
+          "maxChannelError": 255,
+          "changedChannels": 25340,
+          "fallbackError": 0,
+          "ink": 25810
+        },
+        {
+          "svgRGBAError": 6424672,
+          "svgAlphaError": 3251452,
+          "svgChangedChannels": 25978,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3211756,
+          "rgbaError": 6384976,
+          "maxChannelError": 255,
+          "changedChannels": 25340,
+          "fallbackError": 0,
+          "ink": 25810
+        },
+        {
+          "svgRGBAError": 6424672,
+          "svgAlphaError": 3251452,
+          "svgChangedChannels": 25978,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 3211756,
+          "rgbaError": 6384976,
+          "maxChannelError": 255,
+          "changedChannels": 25340,
+          "fallbackError": 0,
+          "ink": 25810
+        },
+        {
+          "svgRGBAError": 6424672,
+          "svgAlphaError": 3251452,
+          "svgChangedChannels": 25978,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 3211756,
+          "rgbaError": 6384976,
+          "maxChannelError": 255,
+          "changedChannels": 25340,
+          "fallbackError": 0,
+          "ink": 25810
+        },
+        {
+          "svgRGBAError": 6424672,
+          "svgAlphaError": 3251452,
+          "svgChangedChannels": 25978,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3211756,
+          "rgbaError": 6384976,
+          "maxChannelError": 255,
+          "changedChannels": 25340,
+          "fallbackError": 0,
+          "ink": 25810
+        },
+        {
+          "svgRGBAError": 6424672,
+          "svgAlphaError": 3251452,
+          "svgChangedChannels": 25978,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3211756,
+          "rgbaError": 6384976,
+          "maxChannelError": 255,
+          "changedChannels": 25340,
+          "fallbackError": 0,
+          "ink": 25810
+        },
+        {
+          "svgRGBAError": 6424672,
+          "svgAlphaError": 3251452,
+          "svgChangedChannels": 25978,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3211756,
+          "rgbaError": 6384976,
+          "maxChannelError": 255,
+          "changedChannels": 25340,
+          "fallbackError": 0,
+          "ink": 25810
+        }
+      ]
+    },
+    {
+      "name": "clip-union-4",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 6305449,
+          "svgAlphaError": 3184249,
+          "svgChangedChannels": 25563,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 3144717,
+          "rgbaError": 6265917,
+          "maxChannelError": 255,
+          "changedChannels": 24927,
+          "fallbackError": 0,
+          "ink": 25912
+        },
+        {
+          "svgRGBAError": 6305449,
+          "svgAlphaError": 3184249,
+          "svgChangedChannels": 25563,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3144717,
+          "rgbaError": 6265917,
+          "maxChannelError": 255,
+          "changedChannels": 24927,
+          "fallbackError": 0,
+          "ink": 25912
+        },
+        {
+          "svgRGBAError": 6305449,
+          "svgAlphaError": 3184249,
+          "svgChangedChannels": 25563,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 3144717,
+          "rgbaError": 6265917,
+          "maxChannelError": 255,
+          "changedChannels": 24927,
+          "fallbackError": 0,
+          "ink": 25912
+        },
+        {
+          "svgRGBAError": 6305449,
+          "svgAlphaError": 3184249,
+          "svgChangedChannels": 25563,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 3144717,
+          "rgbaError": 6265917,
+          "maxChannelError": 255,
+          "changedChannels": 24927,
+          "fallbackError": 0,
+          "ink": 25912
+        },
+        {
+          "svgRGBAError": 6305449,
+          "svgAlphaError": 3184249,
+          "svgChangedChannels": 25563,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3144717,
+          "rgbaError": 6265917,
+          "maxChannelError": 255,
+          "changedChannels": 24927,
+          "fallbackError": 0,
+          "ink": 25912
+        },
+        {
+          "svgRGBAError": 6305449,
+          "svgAlphaError": 3184249,
+          "svgChangedChannels": 25563,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3144717,
+          "rgbaError": 6265917,
+          "maxChannelError": 255,
+          "changedChannels": 24927,
+          "fallbackError": 0,
+          "ink": 25912
+        },
+        {
+          "svgRGBAError": 6305449,
+          "svgAlphaError": 3184249,
+          "svgChangedChannels": 25563,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3144717,
+          "rgbaError": 6265917,
+          "maxChannelError": 255,
+          "changedChannels": 24927,
+          "fallbackError": 0,
+          "ink": 25912
+        }
+      ]
+    },
+    {
+      "name": "clip-union-5",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 6160437,
+          "svgAlphaError": 3117267,
+          "svgChangedChannels": 24943,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 3077898,
+          "rgbaError": 6121068,
+          "maxChannelError": 255,
+          "changedChannels": 24310,
+          "fallbackError": 0,
+          "ink": 26065
+        },
+        {
+          "svgRGBAError": 6160437,
+          "svgAlphaError": 3117267,
+          "svgChangedChannels": 24943,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3077898,
+          "rgbaError": 6121068,
+          "maxChannelError": 255,
+          "changedChannels": 24310,
+          "fallbackError": 0,
+          "ink": 26065
+        },
+        {
+          "svgRGBAError": 6160437,
+          "svgAlphaError": 3117267,
+          "svgChangedChannels": 24943,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 3077898,
+          "rgbaError": 6121068,
+          "maxChannelError": 255,
+          "changedChannels": 24310,
+          "fallbackError": 0,
+          "ink": 26065
+        },
+        {
+          "svgRGBAError": 6160437,
+          "svgAlphaError": 3117267,
+          "svgChangedChannels": 24943,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 3077898,
+          "rgbaError": 6121068,
+          "maxChannelError": 255,
+          "changedChannels": 24310,
+          "fallbackError": 0,
+          "ink": 26065
+        },
+        {
+          "svgRGBAError": 6160437,
+          "svgAlphaError": 3117267,
+          "svgChangedChannels": 24943,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3077898,
+          "rgbaError": 6121068,
+          "maxChannelError": 255,
+          "changedChannels": 24310,
+          "fallbackError": 0,
+          "ink": 26065
+        },
+        {
+          "svgRGBAError": 6160437,
+          "svgAlphaError": 3117267,
+          "svgChangedChannels": 24943,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3077898,
+          "rgbaError": 6121068,
+          "maxChannelError": 255,
+          "changedChannels": 24310,
+          "fallbackError": 0,
+          "ink": 26065
+        },
+        {
+          "svgRGBAError": 6160437,
+          "svgAlphaError": 3117267,
+          "svgChangedChannels": 24943,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3077898,
+          "rgbaError": 6121068,
+          "maxChannelError": 255,
+          "changedChannels": 24310,
+          "fallbackError": 0,
+          "ink": 26065
+        }
+      ]
+    },
+    {
+      "name": "clip-union-6",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 6041222,
+          "svgAlphaError": 3050072,
+          "svgChangedChannels": 24424,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 3010867,
+          "rgbaError": 6002017,
+          "maxChannelError": 255,
+          "changedChannels": 23794,
+          "fallbackError": 0,
+          "ink": 26116
+        },
+        {
+          "svgRGBAError": 6041222,
+          "svgAlphaError": 3050072,
+          "svgChangedChannels": 24424,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3010867,
+          "rgbaError": 6002017,
+          "maxChannelError": 255,
+          "changedChannels": 23794,
+          "fallbackError": 0,
+          "ink": 26116
+        },
+        {
+          "svgRGBAError": 6041222,
+          "svgAlphaError": 3050072,
+          "svgChangedChannels": 24424,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 3010867,
+          "rgbaError": 6002017,
+          "maxChannelError": 255,
+          "changedChannels": 23794,
+          "fallbackError": 0,
+          "ink": 26116
+        },
+        {
+          "svgRGBAError": 6041222,
+          "svgAlphaError": 3050072,
+          "svgChangedChannels": 24424,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 3010867,
+          "rgbaError": 6002017,
+          "maxChannelError": 255,
+          "changedChannels": 23794,
+          "fallbackError": 0,
+          "ink": 26116
+        },
+        {
+          "svgRGBAError": 6041222,
+          "svgAlphaError": 3050072,
+          "svgChangedChannels": 24424,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3010867,
+          "rgbaError": 6002017,
+          "maxChannelError": 255,
+          "changedChannels": 23794,
+          "fallbackError": 0,
+          "ink": 26116
+        },
+        {
+          "svgRGBAError": 6041222,
+          "svgAlphaError": 3050072,
+          "svgChangedChannels": 24424,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3010867,
+          "rgbaError": 6002017,
+          "maxChannelError": 255,
+          "changedChannels": 23794,
+          "fallbackError": 0,
+          "ink": 26116
+        },
+        {
+          "svgRGBAError": 6041222,
+          "svgAlphaError": 3050072,
+          "svgChangedChannels": 24424,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 3010867,
+          "rgbaError": 6002017,
+          "maxChannelError": 255,
+          "changedChannels": 23794,
+          "fallbackError": 0,
+          "ink": 26116
+        }
+      ]
+    },
+    {
+      "name": "clip-union-7",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 5896203,
+          "svgAlphaError": 2983083,
+          "svgChangedChannels": 23908,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2944042,
+          "rgbaError": 5857162,
+          "maxChannelError": 255,
+          "changedChannels": 23280,
+          "fallbackError": 0,
+          "ink": 26320
+        },
+        {
+          "svgRGBAError": 5896203,
+          "svgAlphaError": 2983083,
+          "svgChangedChannels": 23908,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2944042,
+          "rgbaError": 5857162,
+          "maxChannelError": 255,
+          "changedChannels": 23280,
+          "fallbackError": 0,
+          "ink": 26320
+        },
+        {
+          "svgRGBAError": 5896203,
+          "svgAlphaError": 2983083,
+          "svgChangedChannels": 23908,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2944042,
+          "rgbaError": 5857162,
+          "maxChannelError": 255,
+          "changedChannels": 23280,
+          "fallbackError": 0,
+          "ink": 26320
+        },
+        {
+          "svgRGBAError": 5896203,
+          "svgAlphaError": 2983083,
+          "svgChangedChannels": 23908,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2944042,
+          "rgbaError": 5857162,
+          "maxChannelError": 255,
+          "changedChannels": 23280,
+          "fallbackError": 0,
+          "ink": 26320
+        },
+        {
+          "svgRGBAError": 5896203,
+          "svgAlphaError": 2983083,
+          "svgChangedChannels": 23908,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2944042,
+          "rgbaError": 5857162,
+          "maxChannelError": 255,
+          "changedChannels": 23280,
+          "fallbackError": 0,
+          "ink": 26320
+        },
+        {
+          "svgRGBAError": 5896203,
+          "svgAlphaError": 2983083,
+          "svgChangedChannels": 23908,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2944042,
+          "rgbaError": 5857162,
+          "maxChannelError": 255,
+          "changedChannels": 23280,
+          "fallbackError": 0,
+          "ink": 26320
+        },
+        {
+          "svgRGBAError": 5896203,
+          "svgAlphaError": 2983083,
+          "svgChangedChannels": 23908,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2944042,
+          "rgbaError": 5857162,
+          "maxChannelError": 255,
+          "changedChannels": 23280,
+          "fallbackError": 0,
+          "ink": 26320
+        }
+      ]
+    },
+    {
+      "name": "clip-union-8",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 5751183,
+          "svgAlphaError": 2916093,
+          "svgChangedChannels": 23287,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2877216,
+          "rgbaError": 5712306,
+          "maxChannelError": 255,
+          "changedChannels": 22662,
+          "fallbackError": 0,
+          "ink": 26473
+        },
+        {
+          "svgRGBAError": 5751183,
+          "svgAlphaError": 2916093,
+          "svgChangedChannels": 23287,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2877216,
+          "rgbaError": 5712306,
+          "maxChannelError": 255,
+          "changedChannels": 22662,
+          "fallbackError": 0,
+          "ink": 26473
+        },
+        {
+          "svgRGBAError": 5751183,
+          "svgAlphaError": 2916093,
+          "svgChangedChannels": 23287,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2877216,
+          "rgbaError": 5712306,
+          "maxChannelError": 255,
+          "changedChannels": 22662,
+          "fallbackError": 0,
+          "ink": 26473
+        },
+        {
+          "svgRGBAError": 5751183,
+          "svgAlphaError": 2916093,
+          "svgChangedChannels": 23287,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2877216,
+          "rgbaError": 5712306,
+          "maxChannelError": 255,
+          "changedChannels": 22662,
+          "fallbackError": 0,
+          "ink": 26473
+        },
+        {
+          "svgRGBAError": 5751183,
+          "svgAlphaError": 2916093,
+          "svgChangedChannels": 23287,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2877216,
+          "rgbaError": 5712306,
+          "maxChannelError": 255,
+          "changedChannels": 22662,
+          "fallbackError": 0,
+          "ink": 26473
+        },
+        {
+          "svgRGBAError": 5751183,
+          "svgAlphaError": 2916093,
+          "svgChangedChannels": 23287,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2877216,
+          "rgbaError": 5712306,
+          "maxChannelError": 255,
+          "changedChannels": 22662,
+          "fallbackError": 0,
+          "ink": 26473
+        },
+        {
+          "svgRGBAError": 5751183,
+          "svgAlphaError": 2916093,
+          "svgChangedChannels": 23287,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2877216,
+          "rgbaError": 5712306,
+          "maxChannelError": 255,
+          "changedChannels": 22662,
+          "fallbackError": 0,
+          "ink": 26473
+        }
+      ]
+    },
+    {
+      "name": "clip-union-9",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 5631967,
+          "svgAlphaError": 2848897,
+          "svgChangedChannels": 22873,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2810184,
+          "rgbaError": 5593254,
+          "maxChannelError": 255,
+          "changedChannels": 22250,
+          "fallbackError": 0,
+          "ink": 26575
+        },
+        {
+          "svgRGBAError": 5631967,
+          "svgAlphaError": 2848897,
+          "svgChangedChannels": 22873,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2810184,
+          "rgbaError": 5593254,
+          "maxChannelError": 255,
+          "changedChannels": 22250,
+          "fallbackError": 0,
+          "ink": 26575
+        },
+        {
+          "svgRGBAError": 5631967,
+          "svgAlphaError": 2848897,
+          "svgChangedChannels": 22873,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2810184,
+          "rgbaError": 5593254,
+          "maxChannelError": 255,
+          "changedChannels": 22250,
+          "fallbackError": 0,
+          "ink": 26575
+        },
+        {
+          "svgRGBAError": 5631967,
+          "svgAlphaError": 2848897,
+          "svgChangedChannels": 22873,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2810184,
+          "rgbaError": 5593254,
+          "maxChannelError": 255,
+          "changedChannels": 22250,
+          "fallbackError": 0,
+          "ink": 26575
+        },
+        {
+          "svgRGBAError": 5631967,
+          "svgAlphaError": 2848897,
+          "svgChangedChannels": 22873,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2810184,
+          "rgbaError": 5593254,
+          "maxChannelError": 255,
+          "changedChannels": 22250,
+          "fallbackError": 0,
+          "ink": 26575
+        },
+        {
+          "svgRGBAError": 5631967,
+          "svgAlphaError": 2848897,
+          "svgChangedChannels": 22873,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2810184,
+          "rgbaError": 5593254,
+          "maxChannelError": 255,
+          "changedChannels": 22250,
+          "fallbackError": 0,
+          "ink": 26575
+        },
+        {
+          "svgRGBAError": 5631967,
+          "svgAlphaError": 2848897,
+          "svgChangedChannels": 22873,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2810184,
+          "rgbaError": 5593254,
+          "maxChannelError": 255,
+          "changedChannels": 22250,
+          "fallbackError": 0,
+          "ink": 26575
+        }
+      ]
+    },
+    {
+      "name": "clip-union-10",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 5486947,
+          "svgAlphaError": 2781907,
+          "svgChangedChannels": 22252,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2743358,
+          "rgbaError": 5448398,
+          "maxChannelError": 255,
+          "changedChannels": 21632,
+          "fallbackError": 0,
+          "ink": 26728
+        },
+        {
+          "svgRGBAError": 5486947,
+          "svgAlphaError": 2781907,
+          "svgChangedChannels": 22252,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2743358,
+          "rgbaError": 5448398,
+          "maxChannelError": 255,
+          "changedChannels": 21632,
+          "fallbackError": 0,
+          "ink": 26728
+        },
+        {
+          "svgRGBAError": 5486947,
+          "svgAlphaError": 2781907,
+          "svgChangedChannels": 22252,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2743358,
+          "rgbaError": 5448398,
+          "maxChannelError": 255,
+          "changedChannels": 21632,
+          "fallbackError": 0,
+          "ink": 26728
+        },
+        {
+          "svgRGBAError": 5486947,
+          "svgAlphaError": 2781907,
+          "svgChangedChannels": 22252,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2743358,
+          "rgbaError": 5448398,
+          "maxChannelError": 255,
+          "changedChannels": 21632,
+          "fallbackError": 0,
+          "ink": 26728
+        },
+        {
+          "svgRGBAError": 5486947,
+          "svgAlphaError": 2781907,
+          "svgChangedChannels": 22252,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2743358,
+          "rgbaError": 5448398,
+          "maxChannelError": 255,
+          "changedChannels": 21632,
+          "fallbackError": 0,
+          "ink": 26728
+        },
+        {
+          "svgRGBAError": 5486947,
+          "svgAlphaError": 2781907,
+          "svgChangedChannels": 22252,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2743358,
+          "rgbaError": 5448398,
+          "maxChannelError": 255,
+          "changedChannels": 21632,
+          "fallbackError": 0,
+          "ink": 26728
+        },
+        {
+          "svgRGBAError": 5486947,
+          "svgAlphaError": 2781907,
+          "svgChangedChannels": 22252,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2743358,
+          "rgbaError": 5448398,
+          "maxChannelError": 255,
+          "changedChannels": 21632,
+          "fallbackError": 0,
+          "ink": 26728
+        }
+      ]
+    },
+    {
+      "name": "clip-union-11",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 5367834,
+          "svgAlphaError": 2714814,
+          "svgChangedChannels": 21838,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2676428,
+          "rgbaError": 5329448,
+          "maxChannelError": 255,
+          "changedChannels": 21220,
+          "fallbackError": 0,
+          "ink": 26830
+        },
+        {
+          "svgRGBAError": 5367834,
+          "svgAlphaError": 2714814,
+          "svgChangedChannels": 21838,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2676428,
+          "rgbaError": 5329448,
+          "maxChannelError": 255,
+          "changedChannels": 21220,
+          "fallbackError": 0,
+          "ink": 26830
+        },
+        {
+          "svgRGBAError": 5367834,
+          "svgAlphaError": 2714814,
+          "svgChangedChannels": 21838,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2676428,
+          "rgbaError": 5329448,
+          "maxChannelError": 255,
+          "changedChannels": 21220,
+          "fallbackError": 0,
+          "ink": 26830
+        },
+        {
+          "svgRGBAError": 5367834,
+          "svgAlphaError": 2714814,
+          "svgChangedChannels": 21838,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2676428,
+          "rgbaError": 5329448,
+          "maxChannelError": 255,
+          "changedChannels": 21220,
+          "fallbackError": 0,
+          "ink": 26830
+        },
+        {
+          "svgRGBAError": 5367834,
+          "svgAlphaError": 2714814,
+          "svgChangedChannels": 21838,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2676428,
+          "rgbaError": 5329448,
+          "maxChannelError": 255,
+          "changedChannels": 21220,
+          "fallbackError": 0,
+          "ink": 26830
+        },
+        {
+          "svgRGBAError": 5367834,
+          "svgAlphaError": 2714814,
+          "svgChangedChannels": 21838,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2676428,
+          "rgbaError": 5329448,
+          "maxChannelError": 255,
+          "changedChannels": 21220,
+          "fallbackError": 0,
+          "ink": 26830
+        },
+        {
+          "svgRGBAError": 5367834,
+          "svgAlphaError": 2714814,
+          "svgChangedChannels": 21838,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2676428,
+          "rgbaError": 5329448,
+          "maxChannelError": 255,
+          "changedChannels": 21220,
+          "fallbackError": 0,
+          "ink": 26830
+        }
+      ]
+    },
+    {
+      "name": "clip-union-12",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 5222712,
+          "svgAlphaError": 2647722,
+          "svgChangedChannels": 21217,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2609500,
+          "rgbaError": 5184490,
+          "maxChannelError": 255,
+          "changedChannels": 20602,
+          "fallbackError": 0,
+          "ink": 26983
+        },
+        {
+          "svgRGBAError": 5222712,
+          "svgAlphaError": 2647722,
+          "svgChangedChannels": 21217,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2609500,
+          "rgbaError": 5184490,
+          "maxChannelError": 255,
+          "changedChannels": 20602,
+          "fallbackError": 0,
+          "ink": 26983
+        },
+        {
+          "svgRGBAError": 5222712,
+          "svgAlphaError": 2647722,
+          "svgChangedChannels": 21217,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2609500,
+          "rgbaError": 5184490,
+          "maxChannelError": 255,
+          "changedChannels": 20602,
+          "fallbackError": 0,
+          "ink": 26983
+        },
+        {
+          "svgRGBAError": 5222712,
+          "svgAlphaError": 2647722,
+          "svgChangedChannels": 21217,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2609500,
+          "rgbaError": 5184490,
+          "maxChannelError": 255,
+          "changedChannels": 20602,
+          "fallbackError": 0,
+          "ink": 26983
+        },
+        {
+          "svgRGBAError": 5222712,
+          "svgAlphaError": 2647722,
+          "svgChangedChannels": 21217,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2609500,
+          "rgbaError": 5184490,
+          "maxChannelError": 255,
+          "changedChannels": 20602,
+          "fallbackError": 0,
+          "ink": 26983
+        },
+        {
+          "svgRGBAError": 5222712,
+          "svgAlphaError": 2647722,
+          "svgChangedChannels": 21217,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2609500,
+          "rgbaError": 5184490,
+          "maxChannelError": 255,
+          "changedChannels": 20602,
+          "fallbackError": 0,
+          "ink": 26983
+        },
+        {
+          "svgRGBAError": 5222712,
+          "svgAlphaError": 2647722,
+          "svgChangedChannels": 21217,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2609500,
+          "rgbaError": 5184490,
+          "maxChannelError": 255,
+          "changedChannels": 20602,
+          "fallbackError": 0,
+          "ink": 26983
+        }
+      ]
+    },
+    {
+      "name": "clip-union-13",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 5103595,
+          "svgAlphaError": 2580625,
+          "svgChangedChannels": 20802,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2542567,
+          "rgbaError": 5065537,
+          "maxChannelError": 255,
+          "changedChannels": 20189,
+          "fallbackError": 0,
+          "ink": 27085
+        },
+        {
+          "svgRGBAError": 5103595,
+          "svgAlphaError": 2580625,
+          "svgChangedChannels": 20802,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2542567,
+          "rgbaError": 5065537,
+          "maxChannelError": 255,
+          "changedChannels": 20189,
+          "fallbackError": 0,
+          "ink": 27085
+        },
+        {
+          "svgRGBAError": 5103595,
+          "svgAlphaError": 2580625,
+          "svgChangedChannels": 20802,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2542567,
+          "rgbaError": 5065537,
+          "maxChannelError": 255,
+          "changedChannels": 20189,
+          "fallbackError": 0,
+          "ink": 27085
+        },
+        {
+          "svgRGBAError": 5103595,
+          "svgAlphaError": 2580625,
+          "svgChangedChannels": 20802,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2542567,
+          "rgbaError": 5065537,
+          "maxChannelError": 255,
+          "changedChannels": 20189,
+          "fallbackError": 0,
+          "ink": 27085
+        },
+        {
+          "svgRGBAError": 5103595,
+          "svgAlphaError": 2580625,
+          "svgChangedChannels": 20802,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2542567,
+          "rgbaError": 5065537,
+          "maxChannelError": 255,
+          "changedChannels": 20189,
+          "fallbackError": 0,
+          "ink": 27085
+        },
+        {
+          "svgRGBAError": 5103595,
+          "svgAlphaError": 2580625,
+          "svgChangedChannels": 20802,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2542567,
+          "rgbaError": 5065537,
+          "maxChannelError": 255,
+          "changedChannels": 20189,
+          "fallbackError": 0,
+          "ink": 27085
+        },
+        {
+          "svgRGBAError": 5103595,
+          "svgAlphaError": 2580625,
+          "svgChangedChannels": 20802,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2542567,
+          "rgbaError": 5065537,
+          "maxChannelError": 255,
+          "changedChannels": 20189,
+          "fallbackError": 0,
+          "ink": 27085
+        }
+      ]
+    },
+    {
+      "name": "clip-union-14",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 4958580,
+          "svgAlphaError": 2513640,
+          "svgChangedChannels": 20182,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2475746,
+          "rgbaError": 4920686,
+          "maxChannelError": 255,
+          "changedChannels": 19572,
+          "fallbackError": 0,
+          "ink": 27238
+        },
+        {
+          "svgRGBAError": 4958580,
+          "svgAlphaError": 2513640,
+          "svgChangedChannels": 20182,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2475746,
+          "rgbaError": 4920686,
+          "maxChannelError": 255,
+          "changedChannels": 19572,
+          "fallbackError": 0,
+          "ink": 27238
+        },
+        {
+          "svgRGBAError": 4958580,
+          "svgAlphaError": 2513640,
+          "svgChangedChannels": 20182,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2475746,
+          "rgbaError": 4920686,
+          "maxChannelError": 255,
+          "changedChannels": 19572,
+          "fallbackError": 0,
+          "ink": 27238
+        },
+        {
+          "svgRGBAError": 4958580,
+          "svgAlphaError": 2513640,
+          "svgChangedChannels": 20182,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2475746,
+          "rgbaError": 4920686,
+          "maxChannelError": 255,
+          "changedChannels": 19572,
+          "fallbackError": 0,
+          "ink": 27238
+        },
+        {
+          "svgRGBAError": 4958580,
+          "svgAlphaError": 2513640,
+          "svgChangedChannels": 20182,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2475746,
+          "rgbaError": 4920686,
+          "maxChannelError": 255,
+          "changedChannels": 19572,
+          "fallbackError": 0,
+          "ink": 27238
+        },
+        {
+          "svgRGBAError": 4958580,
+          "svgAlphaError": 2513640,
+          "svgChangedChannels": 20182,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2475746,
+          "rgbaError": 4920686,
+          "maxChannelError": 255,
+          "changedChannels": 19572,
+          "fallbackError": 0,
+          "ink": 27238
+        },
+        {
+          "svgRGBAError": 4958580,
+          "svgAlphaError": 2513640,
+          "svgChangedChannels": 20182,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2475746,
+          "rgbaError": 4920686,
+          "maxChannelError": 255,
+          "changedChannels": 19572,
+          "fallbackError": 0,
+          "ink": 27238
+        }
+      ]
+    },
+    {
+      "name": "clip-union-15",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 4813465,
+          "svgAlphaError": 2446555,
+          "svgChangedChannels": 19561,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2408825,
+          "rgbaError": 4775735,
+          "maxChannelError": 255,
+          "changedChannels": 18954,
+          "fallbackError": 0,
+          "ink": 27391
+        },
+        {
+          "svgRGBAError": 4813465,
+          "svgAlphaError": 2446555,
+          "svgChangedChannels": 19561,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2408825,
+          "rgbaError": 4775735,
+          "maxChannelError": 255,
+          "changedChannels": 18954,
+          "fallbackError": 0,
+          "ink": 27391
+        },
+        {
+          "svgRGBAError": 4813465,
+          "svgAlphaError": 2446555,
+          "svgChangedChannels": 19561,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2408825,
+          "rgbaError": 4775735,
+          "maxChannelError": 255,
+          "changedChannels": 18954,
+          "fallbackError": 0,
+          "ink": 27391
+        },
+        {
+          "svgRGBAError": 4813465,
+          "svgAlphaError": 2446555,
+          "svgChangedChannels": 19561,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2408825,
+          "rgbaError": 4775735,
+          "maxChannelError": 255,
+          "changedChannels": 18954,
+          "fallbackError": 0,
+          "ink": 27391
+        },
+        {
+          "svgRGBAError": 4813465,
+          "svgAlphaError": 2446555,
+          "svgChangedChannels": 19561,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2408825,
+          "rgbaError": 4775735,
+          "maxChannelError": 255,
+          "changedChannels": 18954,
+          "fallbackError": 0,
+          "ink": 27391
+        },
+        {
+          "svgRGBAError": 4813465,
+          "svgAlphaError": 2446555,
+          "svgChangedChannels": 19561,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2408825,
+          "rgbaError": 4775735,
+          "maxChannelError": 255,
+          "changedChannels": 18954,
+          "fallbackError": 0,
+          "ink": 27391
+        },
+        {
+          "svgRGBAError": 4813465,
+          "svgAlphaError": 2446555,
+          "svgChangedChannels": 19561,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2408825,
+          "rgbaError": 4775735,
+          "maxChannelError": 255,
+          "changedChannels": 18954,
+          "fallbackError": 0,
+          "ink": 27391
+        }
+      ]
+    },
+    {
+      "name": "clip-union-16",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 4694344,
+          "svgAlphaError": 2379454,
+          "svgChangedChannels": 19147,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2341888,
+          "rgbaError": 4656778,
+          "maxChannelError": 255,
+          "changedChannels": 18542,
+          "fallbackError": 0,
+          "ink": 27493
+        },
+        {
+          "svgRGBAError": 4694344,
+          "svgAlphaError": 2379454,
+          "svgChangedChannels": 19147,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2341888,
+          "rgbaError": 4656778,
+          "maxChannelError": 255,
+          "changedChannels": 18542,
+          "fallbackError": 0,
+          "ink": 27493
+        },
+        {
+          "svgRGBAError": 4694344,
+          "svgAlphaError": 2379454,
+          "svgChangedChannels": 19147,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2341888,
+          "rgbaError": 4656778,
+          "maxChannelError": 255,
+          "changedChannels": 18542,
+          "fallbackError": 0,
+          "ink": 27493
+        },
+        {
+          "svgRGBAError": 4694344,
+          "svgAlphaError": 2379454,
+          "svgChangedChannels": 19147,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2341888,
+          "rgbaError": 4656778,
+          "maxChannelError": 255,
+          "changedChannels": 18542,
+          "fallbackError": 0,
+          "ink": 27493
+        },
+        {
+          "svgRGBAError": 4694344,
+          "svgAlphaError": 2379454,
+          "svgChangedChannels": 19147,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2341888,
+          "rgbaError": 4656778,
+          "maxChannelError": 255,
+          "changedChannels": 18542,
+          "fallbackError": 0,
+          "ink": 27493
+        },
+        {
+          "svgRGBAError": 4694344,
+          "svgAlphaError": 2379454,
+          "svgChangedChannels": 19147,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2341888,
+          "rgbaError": 4656778,
+          "maxChannelError": 255,
+          "changedChannels": 18542,
+          "fallbackError": 0,
+          "ink": 27493
+        },
+        {
+          "svgRGBAError": 4694344,
+          "svgAlphaError": 2379454,
+          "svgChangedChannels": 19147,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2341888,
+          "rgbaError": 4656778,
+          "maxChannelError": 255,
+          "changedChannels": 18542,
+          "fallbackError": 0,
+          "ink": 27493
+        }
+      ]
+    },
+    {
+      "name": "clip-union-17",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 4549325,
+          "svgAlphaError": 2312465,
+          "svgChangedChannels": 18526,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2275062,
+          "rgbaError": 4511922,
+          "maxChannelError": 255,
+          "changedChannels": 17924,
+          "fallbackError": 0,
+          "ink": 27646
+        },
+        {
+          "svgRGBAError": 4549325,
+          "svgAlphaError": 2312465,
+          "svgChangedChannels": 18526,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2275062,
+          "rgbaError": 4511922,
+          "maxChannelError": 255,
+          "changedChannels": 17924,
+          "fallbackError": 0,
+          "ink": 27646
+        },
+        {
+          "svgRGBAError": 4549325,
+          "svgAlphaError": 2312465,
+          "svgChangedChannels": 18526,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2275062,
+          "rgbaError": 4511922,
+          "maxChannelError": 255,
+          "changedChannels": 17924,
+          "fallbackError": 0,
+          "ink": 27646
+        },
+        {
+          "svgRGBAError": 4549325,
+          "svgAlphaError": 2312465,
+          "svgChangedChannels": 18526,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2275062,
+          "rgbaError": 4511922,
+          "maxChannelError": 255,
+          "changedChannels": 17924,
+          "fallbackError": 0,
+          "ink": 27646
+        },
+        {
+          "svgRGBAError": 4549325,
+          "svgAlphaError": 2312465,
+          "svgChangedChannels": 18526,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2275062,
+          "rgbaError": 4511922,
+          "maxChannelError": 255,
+          "changedChannels": 17924,
+          "fallbackError": 0,
+          "ink": 27646
+        },
+        {
+          "svgRGBAError": 4549325,
+          "svgAlphaError": 2312465,
+          "svgChangedChannels": 18526,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2275062,
+          "rgbaError": 4511922,
+          "maxChannelError": 255,
+          "changedChannels": 17924,
+          "fallbackError": 0,
+          "ink": 27646
+        },
+        {
+          "svgRGBAError": 4549325,
+          "svgAlphaError": 2312465,
+          "svgChangedChannels": 18526,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2275062,
+          "rgbaError": 4511922,
+          "maxChannelError": 255,
+          "changedChannels": 17924,
+          "fallbackError": 0,
+          "ink": 27646
+        }
+      ]
+    },
+    {
+      "name": "clip-union-18",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 4430109,
+          "svgAlphaError": 2245269,
+          "svgChangedChannels": 18112,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2208030,
+          "rgbaError": 4392870,
+          "maxChannelError": 255,
+          "changedChannels": 17512,
+          "fallbackError": 0,
+          "ink": 27748
+        },
+        {
+          "svgRGBAError": 4430109,
+          "svgAlphaError": 2245269,
+          "svgChangedChannels": 18112,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2208030,
+          "rgbaError": 4392870,
+          "maxChannelError": 255,
+          "changedChannels": 17512,
+          "fallbackError": 0,
+          "ink": 27748
+        },
+        {
+          "svgRGBAError": 4430109,
+          "svgAlphaError": 2245269,
+          "svgChangedChannels": 18112,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2208030,
+          "rgbaError": 4392870,
+          "maxChannelError": 255,
+          "changedChannels": 17512,
+          "fallbackError": 0,
+          "ink": 27748
+        },
+        {
+          "svgRGBAError": 4430109,
+          "svgAlphaError": 2245269,
+          "svgChangedChannels": 18112,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2208030,
+          "rgbaError": 4392870,
+          "maxChannelError": 255,
+          "changedChannels": 17512,
+          "fallbackError": 0,
+          "ink": 27748
+        },
+        {
+          "svgRGBAError": 4430109,
+          "svgAlphaError": 2245269,
+          "svgChangedChannels": 18112,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2208030,
+          "rgbaError": 4392870,
+          "maxChannelError": 255,
+          "changedChannels": 17512,
+          "fallbackError": 0,
+          "ink": 27748
+        },
+        {
+          "svgRGBAError": 4430109,
+          "svgAlphaError": 2245269,
+          "svgChangedChannels": 18112,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2208030,
+          "rgbaError": 4392870,
+          "maxChannelError": 255,
+          "changedChannels": 17512,
+          "fallbackError": 0,
+          "ink": 27748
+        },
+        {
+          "svgRGBAError": 4430109,
+          "svgAlphaError": 2245269,
+          "svgChangedChannels": 18112,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2208030,
+          "rgbaError": 4392870,
+          "maxChannelError": 255,
+          "changedChannels": 17512,
+          "fallbackError": 0,
+          "ink": 27748
+        }
+      ]
+    },
+    {
+      "name": "clip-union-19",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 4285091,
+          "svgAlphaError": 2178281,
+          "svgChangedChannels": 17491,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2141206,
+          "rgbaError": 4248016,
+          "maxChannelError": 255,
+          "changedChannels": 16894,
+          "fallbackError": 0,
+          "ink": 27901
+        },
+        {
+          "svgRGBAError": 4285091,
+          "svgAlphaError": 2178281,
+          "svgChangedChannels": 17491,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2141206,
+          "rgbaError": 4248016,
+          "maxChannelError": 255,
+          "changedChannels": 16894,
+          "fallbackError": 0,
+          "ink": 27901
+        },
+        {
+          "svgRGBAError": 4285091,
+          "svgAlphaError": 2178281,
+          "svgChangedChannels": 17491,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2141206,
+          "rgbaError": 4248016,
+          "maxChannelError": 255,
+          "changedChannels": 16894,
+          "fallbackError": 0,
+          "ink": 27901
+        },
+        {
+          "svgRGBAError": 4285091,
+          "svgAlphaError": 2178281,
+          "svgChangedChannels": 17491,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2141206,
+          "rgbaError": 4248016,
+          "maxChannelError": 255,
+          "changedChannels": 16894,
+          "fallbackError": 0,
+          "ink": 27901
+        },
+        {
+          "svgRGBAError": 4285091,
+          "svgAlphaError": 2178281,
+          "svgChangedChannels": 17491,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2141206,
+          "rgbaError": 4248016,
+          "maxChannelError": 255,
+          "changedChannels": 16894,
+          "fallbackError": 0,
+          "ink": 27901
+        },
+        {
+          "svgRGBAError": 4285091,
+          "svgAlphaError": 2178281,
+          "svgChangedChannels": 17491,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2141206,
+          "rgbaError": 4248016,
+          "maxChannelError": 255,
+          "changedChannels": 16894,
+          "fallbackError": 0,
+          "ink": 27901
+        },
+        {
+          "svgRGBAError": 4285091,
+          "svgAlphaError": 2178281,
+          "svgChangedChannels": 17491,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2141206,
+          "rgbaError": 4248016,
+          "maxChannelError": 255,
+          "changedChannels": 16894,
+          "fallbackError": 0,
+          "ink": 27901
+        }
+      ]
+    },
+    {
+      "name": "clip-union-20",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 4165875,
+          "svgAlphaError": 2111085,
+          "svgChangedChannels": 17077,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2074174,
+          "rgbaError": 4128964,
+          "maxChannelError": 255,
+          "changedChannels": 16482,
+          "fallbackError": 0,
+          "ink": 28003
+        },
+        {
+          "svgRGBAError": 4165875,
+          "svgAlphaError": 2111085,
+          "svgChangedChannels": 17077,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2074174,
+          "rgbaError": 4128964,
+          "maxChannelError": 255,
+          "changedChannels": 16482,
+          "fallbackError": 0,
+          "ink": 28003
+        },
+        {
+          "svgRGBAError": 4165875,
+          "svgAlphaError": 2111085,
+          "svgChangedChannels": 17077,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2074174,
+          "rgbaError": 4128964,
+          "maxChannelError": 255,
+          "changedChannels": 16482,
+          "fallbackError": 0,
+          "ink": 28003
+        },
+        {
+          "svgRGBAError": 4165875,
+          "svgAlphaError": 2111085,
+          "svgChangedChannels": 17077,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2074174,
+          "rgbaError": 4128964,
+          "maxChannelError": 255,
+          "changedChannels": 16482,
+          "fallbackError": 0,
+          "ink": 28003
+        },
+        {
+          "svgRGBAError": 4165875,
+          "svgAlphaError": 2111085,
+          "svgChangedChannels": 17077,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2074174,
+          "rgbaError": 4128964,
+          "maxChannelError": 255,
+          "changedChannels": 16482,
+          "fallbackError": 0,
+          "ink": 28003
+        },
+        {
+          "svgRGBAError": 4165875,
+          "svgAlphaError": 2111085,
+          "svgChangedChannels": 17077,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2074174,
+          "rgbaError": 4128964,
+          "maxChannelError": 255,
+          "changedChannels": 16482,
+          "fallbackError": 0,
+          "ink": 28003
+        },
+        {
+          "svgRGBAError": 4165875,
+          "svgAlphaError": 2111085,
+          "svgChangedChannels": 17077,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2074174,
+          "rgbaError": 4128964,
+          "maxChannelError": 255,
+          "changedChannels": 16482,
+          "fallbackError": 0,
+          "ink": 28003
+        }
+      ]
+    },
+    {
+      "name": "clip-union-21",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 4020855,
+          "svgAlphaError": 2044095,
+          "svgChangedChannels": 16456,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 2007348,
+          "rgbaError": 3984108,
+          "maxChannelError": 255,
+          "changedChannels": 15864,
+          "fallbackError": 0,
+          "ink": 28156
+        },
+        {
+          "svgRGBAError": 4020855,
+          "svgAlphaError": 2044095,
+          "svgChangedChannels": 16456,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2007348,
+          "rgbaError": 3984108,
+          "maxChannelError": 255,
+          "changedChannels": 15864,
+          "fallbackError": 0,
+          "ink": 28156
+        },
+        {
+          "svgRGBAError": 4020855,
+          "svgAlphaError": 2044095,
+          "svgChangedChannels": 16456,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 2007348,
+          "rgbaError": 3984108,
+          "maxChannelError": 255,
+          "changedChannels": 15864,
+          "fallbackError": 0,
+          "ink": 28156
+        },
+        {
+          "svgRGBAError": 4020855,
+          "svgAlphaError": 2044095,
+          "svgChangedChannels": 16456,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 2007348,
+          "rgbaError": 3984108,
+          "maxChannelError": 255,
+          "changedChannels": 15864,
+          "fallbackError": 0,
+          "ink": 28156
+        },
+        {
+          "svgRGBAError": 4020855,
+          "svgAlphaError": 2044095,
+          "svgChangedChannels": 16456,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2007348,
+          "rgbaError": 3984108,
+          "maxChannelError": 255,
+          "changedChannels": 15864,
+          "fallbackError": 0,
+          "ink": 28156
+        },
+        {
+          "svgRGBAError": 4020855,
+          "svgAlphaError": 2044095,
+          "svgChangedChannels": 16456,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2007348,
+          "rgbaError": 3984108,
+          "maxChannelError": 255,
+          "changedChannels": 15864,
+          "fallbackError": 0,
+          "ink": 28156
+        },
+        {
+          "svgRGBAError": 4020855,
+          "svgAlphaError": 2044095,
+          "svgChangedChannels": 16456,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 2007348,
+          "rgbaError": 3984108,
+          "maxChannelError": 255,
+          "changedChannels": 15864,
+          "fallbackError": 0,
+          "ink": 28156
+        }
+      ]
+    },
+    {
+      "name": "clip-union-22",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 3901737,
+          "svgAlphaError": 1976997,
+          "svgChangedChannels": 16040,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1940416,
+          "rgbaError": 3865156,
+          "maxChannelError": 255,
+          "changedChannels": 15451,
+          "fallbackError": 0,
+          "ink": 28257
+        },
+        {
+          "svgRGBAError": 3901737,
+          "svgAlphaError": 1976997,
+          "svgChangedChannels": 16040,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1940416,
+          "rgbaError": 3865156,
+          "maxChannelError": 255,
+          "changedChannels": 15451,
+          "fallbackError": 0,
+          "ink": 28257
+        },
+        {
+          "svgRGBAError": 3901737,
+          "svgAlphaError": 1976997,
+          "svgChangedChannels": 16040,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1940416,
+          "rgbaError": 3865156,
+          "maxChannelError": 255,
+          "changedChannels": 15451,
+          "fallbackError": 0,
+          "ink": 28257
+        },
+        {
+          "svgRGBAError": 3901737,
+          "svgAlphaError": 1976997,
+          "svgChangedChannels": 16040,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1940416,
+          "rgbaError": 3865156,
+          "maxChannelError": 255,
+          "changedChannels": 15451,
+          "fallbackError": 0,
+          "ink": 28257
+        },
+        {
+          "svgRGBAError": 3901737,
+          "svgAlphaError": 1976997,
+          "svgChangedChannels": 16040,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1940416,
+          "rgbaError": 3865156,
+          "maxChannelError": 255,
+          "changedChannels": 15451,
+          "fallbackError": 0,
+          "ink": 28257
+        },
+        {
+          "svgRGBAError": 3901737,
+          "svgAlphaError": 1976997,
+          "svgChangedChannels": 16040,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1940416,
+          "rgbaError": 3865156,
+          "maxChannelError": 255,
+          "changedChannels": 15451,
+          "fallbackError": 0,
+          "ink": 28257
+        },
+        {
+          "svgRGBAError": 3901737,
+          "svgAlphaError": 1976997,
+          "svgChangedChannels": 16040,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1940416,
+          "rgbaError": 3865156,
+          "maxChannelError": 255,
+          "changedChannels": 15451,
+          "fallbackError": 0,
+          "ink": 28257
+        }
+      ]
+    },
+    {
+      "name": "clip-union-23",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 3756619,
+          "svgAlphaError": 1909909,
+          "svgChangedChannels": 15421,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1873490,
+          "rgbaError": 3720200,
+          "maxChannelError": 255,
+          "changedChannels": 14834,
+          "fallbackError": 0,
+          "ink": 28411
+        },
+        {
+          "svgRGBAError": 3756619,
+          "svgAlphaError": 1909909,
+          "svgChangedChannels": 15421,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1873490,
+          "rgbaError": 3720200,
+          "maxChannelError": 255,
+          "changedChannels": 14834,
+          "fallbackError": 0,
+          "ink": 28411
+        },
+        {
+          "svgRGBAError": 3756619,
+          "svgAlphaError": 1909909,
+          "svgChangedChannels": 15421,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1873490,
+          "rgbaError": 3720200,
+          "maxChannelError": 255,
+          "changedChannels": 14834,
+          "fallbackError": 0,
+          "ink": 28411
+        },
+        {
+          "svgRGBAError": 3756619,
+          "svgAlphaError": 1909909,
+          "svgChangedChannels": 15421,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1873490,
+          "rgbaError": 3720200,
+          "maxChannelError": 255,
+          "changedChannels": 14834,
+          "fallbackError": 0,
+          "ink": 28411
+        },
+        {
+          "svgRGBAError": 3756619,
+          "svgAlphaError": 1909909,
+          "svgChangedChannels": 15421,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1873490,
+          "rgbaError": 3720200,
+          "maxChannelError": 255,
+          "changedChannels": 14834,
+          "fallbackError": 0,
+          "ink": 28411
+        },
+        {
+          "svgRGBAError": 3756619,
+          "svgAlphaError": 1909909,
+          "svgChangedChannels": 15421,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1873490,
+          "rgbaError": 3720200,
+          "maxChannelError": 255,
+          "changedChannels": 14834,
+          "fallbackError": 0,
+          "ink": 28411
+        },
+        {
+          "svgRGBAError": 3756619,
+          "svgAlphaError": 1909909,
+          "svgChangedChannels": 15421,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1873490,
+          "rgbaError": 3720200,
+          "maxChannelError": 255,
+          "changedChannels": 14834,
+          "fallbackError": 0,
+          "ink": 28411
+        }
+      ]
+    },
+    {
+      "name": "clip-union-24",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 3611600,
+          "svgAlphaError": 1842920,
+          "svgChangedChannels": 14800,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1806664,
+          "rgbaError": 3575344,
+          "maxChannelError": 255,
+          "changedChannels": 14216,
+          "fallbackError": 0,
+          "ink": 28564
+        },
+        {
+          "svgRGBAError": 3611600,
+          "svgAlphaError": 1842920,
+          "svgChangedChannels": 14800,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1806664,
+          "rgbaError": 3575344,
+          "maxChannelError": 255,
+          "changedChannels": 14216,
+          "fallbackError": 0,
+          "ink": 28564
+        },
+        {
+          "svgRGBAError": 3611600,
+          "svgAlphaError": 1842920,
+          "svgChangedChannels": 14800,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1806664,
+          "rgbaError": 3575344,
+          "maxChannelError": 255,
+          "changedChannels": 14216,
+          "fallbackError": 0,
+          "ink": 28564
+        },
+        {
+          "svgRGBAError": 3611600,
+          "svgAlphaError": 1842920,
+          "svgChangedChannels": 14800,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1806664,
+          "rgbaError": 3575344,
+          "maxChannelError": 255,
+          "changedChannels": 14216,
+          "fallbackError": 0,
+          "ink": 28564
+        },
+        {
+          "svgRGBAError": 3611600,
+          "svgAlphaError": 1842920,
+          "svgChangedChannels": 14800,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1806664,
+          "rgbaError": 3575344,
+          "maxChannelError": 255,
+          "changedChannels": 14216,
+          "fallbackError": 0,
+          "ink": 28564
+        },
+        {
+          "svgRGBAError": 3611600,
+          "svgAlphaError": 1842920,
+          "svgChangedChannels": 14800,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1806664,
+          "rgbaError": 3575344,
+          "maxChannelError": 255,
+          "changedChannels": 14216,
+          "fallbackError": 0,
+          "ink": 28564
+        },
+        {
+          "svgRGBAError": 3611600,
+          "svgAlphaError": 1842920,
+          "svgChangedChannels": 14800,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1806664,
+          "rgbaError": 3575344,
+          "maxChannelError": 255,
+          "changedChannels": 14216,
+          "fallbackError": 0,
+          "ink": 28564
+        }
+      ]
+    },
+    {
+      "name": "clip-union-25",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 3492488,
+          "svgAlphaError": 1775828,
+          "svgChangedChannels": 14386,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1739736,
+          "rgbaError": 3456396,
+          "maxChannelError": 255,
+          "changedChannels": 13804,
+          "fallbackError": 0,
+          "ink": 28666
+        },
+        {
+          "svgRGBAError": 3492488,
+          "svgAlphaError": 1775828,
+          "svgChangedChannels": 14386,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1739736,
+          "rgbaError": 3456396,
+          "maxChannelError": 255,
+          "changedChannels": 13804,
+          "fallbackError": 0,
+          "ink": 28666
+        },
+        {
+          "svgRGBAError": 3492488,
+          "svgAlphaError": 1775828,
+          "svgChangedChannels": 14386,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1739736,
+          "rgbaError": 3456396,
+          "maxChannelError": 255,
+          "changedChannels": 13804,
+          "fallbackError": 0,
+          "ink": 28666
+        },
+        {
+          "svgRGBAError": 3492488,
+          "svgAlphaError": 1775828,
+          "svgChangedChannels": 14386,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1739736,
+          "rgbaError": 3456396,
+          "maxChannelError": 255,
+          "changedChannels": 13804,
+          "fallbackError": 0,
+          "ink": 28666
+        },
+        {
+          "svgRGBAError": 3492488,
+          "svgAlphaError": 1775828,
+          "svgChangedChannels": 14386,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1739736,
+          "rgbaError": 3456396,
+          "maxChannelError": 255,
+          "changedChannels": 13804,
+          "fallbackError": 0,
+          "ink": 28666
+        },
+        {
+          "svgRGBAError": 3492488,
+          "svgAlphaError": 1775828,
+          "svgChangedChannels": 14386,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1739736,
+          "rgbaError": 3456396,
+          "maxChannelError": 255,
+          "changedChannels": 13804,
+          "fallbackError": 0,
+          "ink": 28666
+        },
+        {
+          "svgRGBAError": 3492488,
+          "svgAlphaError": 1775828,
+          "svgChangedChannels": 14386,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1739736,
+          "rgbaError": 3456396,
+          "maxChannelError": 255,
+          "changedChannels": 13804,
+          "fallbackError": 0,
+          "ink": 28666
+        }
+      ]
+    },
+    {
+      "name": "clip-union-26",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 3347366,
+          "svgAlphaError": 1708736,
+          "svgChangedChannels": 13765,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1672808,
+          "rgbaError": 3311438,
+          "maxChannelError": 255,
+          "changedChannels": 13186,
+          "fallbackError": 0,
+          "ink": 28819
+        },
+        {
+          "svgRGBAError": 3347366,
+          "svgAlphaError": 1708736,
+          "svgChangedChannels": 13765,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1672808,
+          "rgbaError": 3311438,
+          "maxChannelError": 255,
+          "changedChannels": 13186,
+          "fallbackError": 0,
+          "ink": 28819
+        },
+        {
+          "svgRGBAError": 3347366,
+          "svgAlphaError": 1708736,
+          "svgChangedChannels": 13765,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1672808,
+          "rgbaError": 3311438,
+          "maxChannelError": 255,
+          "changedChannels": 13186,
+          "fallbackError": 0,
+          "ink": 28819
+        },
+        {
+          "svgRGBAError": 3347366,
+          "svgAlphaError": 1708736,
+          "svgChangedChannels": 13765,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1672808,
+          "rgbaError": 3311438,
+          "maxChannelError": 255,
+          "changedChannels": 13186,
+          "fallbackError": 0,
+          "ink": 28819
+        },
+        {
+          "svgRGBAError": 3347366,
+          "svgAlphaError": 1708736,
+          "svgChangedChannels": 13765,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1672808,
+          "rgbaError": 3311438,
+          "maxChannelError": 255,
+          "changedChannels": 13186,
+          "fallbackError": 0,
+          "ink": 28819
+        },
+        {
+          "svgRGBAError": 3347366,
+          "svgAlphaError": 1708736,
+          "svgChangedChannels": 13765,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1672808,
+          "rgbaError": 3311438,
+          "maxChannelError": 255,
+          "changedChannels": 13186,
+          "fallbackError": 0,
+          "ink": 28819
+        },
+        {
+          "svgRGBAError": 3347366,
+          "svgAlphaError": 1708736,
+          "svgChangedChannels": 13765,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1672808,
+          "rgbaError": 3311438,
+          "maxChannelError": 255,
+          "changedChannels": 13186,
+          "fallbackError": 0,
+          "ink": 28819
+        }
+      ]
+    },
+    {
+      "name": "clip-union-27",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 3228252,
+          "svgAlphaError": 1641642,
+          "svgChangedChannels": 13351,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1605878,
+          "rgbaError": 3192488,
+          "maxChannelError": 255,
+          "changedChannels": 12774,
+          "fallbackError": 0,
+          "ink": 28921
+        },
+        {
+          "svgRGBAError": 3228252,
+          "svgAlphaError": 1641642,
+          "svgChangedChannels": 13351,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1605878,
+          "rgbaError": 3192488,
+          "maxChannelError": 255,
+          "changedChannels": 12774,
+          "fallbackError": 0,
+          "ink": 28921
+        },
+        {
+          "svgRGBAError": 3228252,
+          "svgAlphaError": 1641642,
+          "svgChangedChannels": 13351,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1605878,
+          "rgbaError": 3192488,
+          "maxChannelError": 255,
+          "changedChannels": 12774,
+          "fallbackError": 0,
+          "ink": 28921
+        },
+        {
+          "svgRGBAError": 3228252,
+          "svgAlphaError": 1641642,
+          "svgChangedChannels": 13351,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1605878,
+          "rgbaError": 3192488,
+          "maxChannelError": 255,
+          "changedChannels": 12774,
+          "fallbackError": 0,
+          "ink": 28921
+        },
+        {
+          "svgRGBAError": 3228252,
+          "svgAlphaError": 1641642,
+          "svgChangedChannels": 13351,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1605878,
+          "rgbaError": 3192488,
+          "maxChannelError": 255,
+          "changedChannels": 12774,
+          "fallbackError": 0,
+          "ink": 28921
+        },
+        {
+          "svgRGBAError": 3228252,
+          "svgAlphaError": 1641642,
+          "svgChangedChannels": 13351,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1605878,
+          "rgbaError": 3192488,
+          "maxChannelError": 255,
+          "changedChannels": 12774,
+          "fallbackError": 0,
+          "ink": 28921
+        },
+        {
+          "svgRGBAError": 3228252,
+          "svgAlphaError": 1641642,
+          "svgChangedChannels": 13351,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1605878,
+          "rgbaError": 3192488,
+          "maxChannelError": 255,
+          "changedChannels": 12774,
+          "fallbackError": 0,
+          "ink": 28921
+        }
+      ]
+    },
+    {
+      "name": "clip-union-28",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 3083232,
+          "svgAlphaError": 1574652,
+          "svgChangedChannels": 12730,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1539052,
+          "rgbaError": 3047632,
+          "maxChannelError": 255,
+          "changedChannels": 12156,
+          "fallbackError": 0,
+          "ink": 29074
+        },
+        {
+          "svgRGBAError": 3083232,
+          "svgAlphaError": 1574652,
+          "svgChangedChannels": 12730,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1539052,
+          "rgbaError": 3047632,
+          "maxChannelError": 255,
+          "changedChannels": 12156,
+          "fallbackError": 0,
+          "ink": 29074
+        },
+        {
+          "svgRGBAError": 3083232,
+          "svgAlphaError": 1574652,
+          "svgChangedChannels": 12730,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1539052,
+          "rgbaError": 3047632,
+          "maxChannelError": 255,
+          "changedChannels": 12156,
+          "fallbackError": 0,
+          "ink": 29074
+        },
+        {
+          "svgRGBAError": 3083232,
+          "svgAlphaError": 1574652,
+          "svgChangedChannels": 12730,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1539052,
+          "rgbaError": 3047632,
+          "maxChannelError": 255,
+          "changedChannels": 12156,
+          "fallbackError": 0,
+          "ink": 29074
+        },
+        {
+          "svgRGBAError": 3083232,
+          "svgAlphaError": 1574652,
+          "svgChangedChannels": 12730,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1539052,
+          "rgbaError": 3047632,
+          "maxChannelError": 255,
+          "changedChannels": 12156,
+          "fallbackError": 0,
+          "ink": 29074
+        },
+        {
+          "svgRGBAError": 3083232,
+          "svgAlphaError": 1574652,
+          "svgChangedChannels": 12730,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1539052,
+          "rgbaError": 3047632,
+          "maxChannelError": 255,
+          "changedChannels": 12156,
+          "fallbackError": 0,
+          "ink": 29074
+        },
+        {
+          "svgRGBAError": 3083232,
+          "svgAlphaError": 1574652,
+          "svgChangedChannels": 12730,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1539052,
+          "rgbaError": 3047632,
+          "maxChannelError": 255,
+          "changedChannels": 12156,
+          "fallbackError": 0,
+          "ink": 29074
+        }
+      ]
+    },
+    {
+      "name": "clip-union-29",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 2964009,
+          "svgAlphaError": 1507449,
+          "svgChangedChannels": 12315,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1472013,
+          "rgbaError": 2928573,
+          "maxChannelError": 255,
+          "changedChannels": 11743,
+          "fallbackError": 0,
+          "ink": 29176
+        },
+        {
+          "svgRGBAError": 2964009,
+          "svgAlphaError": 1507449,
+          "svgChangedChannels": 12315,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1472013,
+          "rgbaError": 2928573,
+          "maxChannelError": 255,
+          "changedChannels": 11743,
+          "fallbackError": 0,
+          "ink": 29176
+        },
+        {
+          "svgRGBAError": 2964009,
+          "svgAlphaError": 1507449,
+          "svgChangedChannels": 12315,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1472013,
+          "rgbaError": 2928573,
+          "maxChannelError": 255,
+          "changedChannels": 11743,
+          "fallbackError": 0,
+          "ink": 29176
+        },
+        {
+          "svgRGBAError": 2964009,
+          "svgAlphaError": 1507449,
+          "svgChangedChannels": 12315,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1472013,
+          "rgbaError": 2928573,
+          "maxChannelError": 255,
+          "changedChannels": 11743,
+          "fallbackError": 0,
+          "ink": 29176
+        },
+        {
+          "svgRGBAError": 2964009,
+          "svgAlphaError": 1507449,
+          "svgChangedChannels": 12315,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1472013,
+          "rgbaError": 2928573,
+          "maxChannelError": 255,
+          "changedChannels": 11743,
+          "fallbackError": 0,
+          "ink": 29176
+        },
+        {
+          "svgRGBAError": 2964009,
+          "svgAlphaError": 1507449,
+          "svgChangedChannels": 12315,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1472013,
+          "rgbaError": 2928573,
+          "maxChannelError": 255,
+          "changedChannels": 11743,
+          "fallbackError": 0,
+          "ink": 29176
+        },
+        {
+          "svgRGBAError": 2964009,
+          "svgAlphaError": 1507449,
+          "svgChangedChannels": 12315,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1472013,
+          "rgbaError": 2928573,
+          "maxChannelError": 255,
+          "changedChannels": 11743,
+          "fallbackError": 0,
+          "ink": 29176
+        }
+      ]
+    },
+    {
+      "name": "clip-union-30",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 2818997,
+          "svgAlphaError": 1440467,
+          "svgChangedChannels": 11695,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1405194,
+          "rgbaError": 2783724,
+          "maxChannelError": 255,
+          "changedChannels": 11126,
+          "fallbackError": 0,
+          "ink": 29329
+        },
+        {
+          "svgRGBAError": 2818997,
+          "svgAlphaError": 1440467,
+          "svgChangedChannels": 11695,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1405194,
+          "rgbaError": 2783724,
+          "maxChannelError": 255,
+          "changedChannels": 11126,
+          "fallbackError": 0,
+          "ink": 29329
+        },
+        {
+          "svgRGBAError": 2818997,
+          "svgAlphaError": 1440467,
+          "svgChangedChannels": 11695,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1405194,
+          "rgbaError": 2783724,
+          "maxChannelError": 255,
+          "changedChannels": 11126,
+          "fallbackError": 0,
+          "ink": 29329
+        },
+        {
+          "svgRGBAError": 2818997,
+          "svgAlphaError": 1440467,
+          "svgChangedChannels": 11695,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1405194,
+          "rgbaError": 2783724,
+          "maxChannelError": 255,
+          "changedChannels": 11126,
+          "fallbackError": 0,
+          "ink": 29329
+        },
+        {
+          "svgRGBAError": 2818997,
+          "svgAlphaError": 1440467,
+          "svgChangedChannels": 11695,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1405194,
+          "rgbaError": 2783724,
+          "maxChannelError": 255,
+          "changedChannels": 11126,
+          "fallbackError": 0,
+          "ink": 29329
+        },
+        {
+          "svgRGBAError": 2818997,
+          "svgAlphaError": 1440467,
+          "svgChangedChannels": 11695,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1405194,
+          "rgbaError": 2783724,
+          "maxChannelError": 255,
+          "changedChannels": 11126,
+          "fallbackError": 0,
+          "ink": 29329
+        },
+        {
+          "svgRGBAError": 2818997,
+          "svgAlphaError": 1440467,
+          "svgChangedChannels": 11695,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1405194,
+          "rgbaError": 2783724,
+          "maxChannelError": 255,
+          "changedChannels": 11126,
+          "fallbackError": 0,
+          "ink": 29329
+        }
+      ]
+    },
+    {
+      "name": "clip-union-31",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 2699782,
+          "svgAlphaError": 1373272,
+          "svgChangedChannels": 11176,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1338163,
+          "rgbaError": 2664673,
+          "maxChannelError": 255,
+          "changedChannels": 10610,
+          "fallbackError": 0,
+          "ink": 29380
+        },
+        {
+          "svgRGBAError": 2699782,
+          "svgAlphaError": 1373272,
+          "svgChangedChannels": 11176,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1338163,
+          "rgbaError": 2664673,
+          "maxChannelError": 255,
+          "changedChannels": 10610,
+          "fallbackError": 0,
+          "ink": 29380
+        },
+        {
+          "svgRGBAError": 2699782,
+          "svgAlphaError": 1373272,
+          "svgChangedChannels": 11176,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1338163,
+          "rgbaError": 2664673,
+          "maxChannelError": 255,
+          "changedChannels": 10610,
+          "fallbackError": 0,
+          "ink": 29380
+        },
+        {
+          "svgRGBAError": 2699782,
+          "svgAlphaError": 1373272,
+          "svgChangedChannels": 11176,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1338163,
+          "rgbaError": 2664673,
+          "maxChannelError": 255,
+          "changedChannels": 10610,
+          "fallbackError": 0,
+          "ink": 29380
+        },
+        {
+          "svgRGBAError": 2699782,
+          "svgAlphaError": 1373272,
+          "svgChangedChannels": 11176,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1338163,
+          "rgbaError": 2664673,
+          "maxChannelError": 255,
+          "changedChannels": 10610,
+          "fallbackError": 0,
+          "ink": 29380
+        },
+        {
+          "svgRGBAError": 2699782,
+          "svgAlphaError": 1373272,
+          "svgChangedChannels": 11176,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1338163,
+          "rgbaError": 2664673,
+          "maxChannelError": 255,
+          "changedChannels": 10610,
+          "fallbackError": 0,
+          "ink": 29380
+        },
+        {
+          "svgRGBAError": 2699782,
+          "svgAlphaError": 1373272,
+          "svgChangedChannels": 11176,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1338163,
+          "rgbaError": 2664673,
+          "maxChannelError": 255,
+          "changedChannels": 10610,
+          "fallbackError": 0,
+          "ink": 29380
+        }
+      ]
+    },
+    {
+      "name": "clip-union-32",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 2554763,
+          "svgAlphaError": 1306283,
+          "svgChangedChannels": 10660,
+          "error": null,
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 1271338,
+          "rgbaError": 2519818,
+          "maxChannelError": 255,
+          "changedChannels": 10096,
+          "fallbackError": 0,
+          "ink": 29584
+        },
+        {
+          "svgRGBAError": 2554763,
+          "svgAlphaError": 1306283,
+          "svgChangedChannels": 10660,
+          "error": null,
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1271338,
+          "rgbaError": 2519818,
+          "maxChannelError": 255,
+          "changedChannels": 10096,
+          "fallbackError": 0,
+          "ink": 29584
+        },
+        {
+          "svgRGBAError": 2554763,
+          "svgAlphaError": 1306283,
+          "svgChangedChannels": 10660,
+          "error": null,
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 1271338,
+          "rgbaError": 2519818,
+          "maxChannelError": 255,
+          "changedChannels": 10096,
+          "fallbackError": 0,
+          "ink": 29584
+        },
+        {
+          "svgRGBAError": 2554763,
+          "svgAlphaError": 1306283,
+          "svgChangedChannels": 10660,
+          "error": null,
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 1271338,
+          "rgbaError": 2519818,
+          "maxChannelError": 255,
+          "changedChannels": 10096,
+          "fallbackError": 0,
+          "ink": 29584
+        },
+        {
+          "svgRGBAError": 2554763,
+          "svgAlphaError": 1306283,
+          "svgChangedChannels": 10660,
+          "error": null,
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1271338,
+          "rgbaError": 2519818,
+          "maxChannelError": 255,
+          "changedChannels": 10096,
+          "fallbackError": 0,
+          "ink": 29584
+        },
+        {
+          "svgRGBAError": 2554763,
+          "svgAlphaError": 1306283,
+          "svgChangedChannels": 10660,
+          "error": null,
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1271338,
+          "rgbaError": 2519818,
+          "maxChannelError": 255,
+          "changedChannels": 10096,
+          "fallbackError": 0,
+          "ink": 29584
+        },
+        {
+          "svgRGBAError": 2554763,
+          "svgAlphaError": 1306283,
+          "svgChangedChannels": 10660,
+          "error": null,
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 1271338,
+          "rgbaError": 2519818,
+          "maxChannelError": 255,
+          "changedChannels": 10096,
+          "fallbackError": 0,
+          "ink": 29584
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+@import "../../styles/file-queue.wxss";
+
+.preview-host {
+  box-sizing: border-box;
+  min-height: 100vh;
+  color: #171715;
+  background: #fff9f2;
+}
+
+.preview-host-with-queue {
+  padding-bottom: calc(144rpx + env(safe-area-inset-bottom));
+}
+
+.error-card {
+  margin: 22rpx 32rpx;
+  padding: 24rpx;
+  border: 3rpx solid #171715;
+  border-radius: 22rpx;
+  color: #7f2119;
+  background: #ffe7df;
+  box-shadow: 6rpx 6rpx 0 #ff5b43;
+  font-size: 24rpx;
+  line-height: 1.6;
+}

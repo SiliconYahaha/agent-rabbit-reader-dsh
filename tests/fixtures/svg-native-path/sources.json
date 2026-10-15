@@ -1,0 +1,26 @@
+[
+  {
+    "name": "pie-chart.svg",
+    "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/pie-chart.svg",
+    "license": "MIT; LICENSE retained alongside samples",
+    "redistributed": true,
+    "sha256": "0703cbce66122b0406d8a4e67ad483b8964359567c1975000f398f7662f86aff",
+    "expectedVisibleResult": "完整饼图轮廓及扇区"
+  },
+  {
+    "name": "life-preserver.svg",
+    "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/life-preserver.svg",
+    "license": "MIT; LICENSE retained alongside samples",
+    "redistributed": true,
+    "sha256": "38c4797970dc91ab86ab2c542c106e64092600e2abe9d38e11730d93fa86df09",
+    "expectedVisibleResult": "完整救生圈及四段连接区"
+  },
+  {
+    "name": "record-circle.svg",
+    "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/record-circle.svg",
+    "license": "MIT; LICENSE retained alongside samples",
+    "redistributed": true,
+    "sha256": "a17ad669a4a8028d1f660639804dfd4b2fac94df7ed8b5352bc50494a6997e2a",
+    "expectedVisibleResult": "同心圆形录制图标"
+  }
+]

@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "id": "next-rar-crc",
+  "status": "reproduced-unfixed",
+  "scope": "Stored RAR fallback inspection/extraction and actual reader entry; native UnRAR path remains a separate result",
+  "specification": "https://www.rarlab.com/technote.htm",
+  "generator": "Deterministic RAR4/RAR5 stored headers; CRC32-zero payload derived by GF(2) elimination; 13 named controls",
+  "libarchiveVersion": "bsdtar 3.5.3 - libarchive 3.7.4 zlib/1.2.12 liblzma/5.4.3 bz2lib/1.0.8",
+  "results": [
+    {
+      "name": "rar4-valid",
+      "kind": "valid",
+      "version": 4,
+      "sha256": "f62d8e99d849cac8229c9cefab25d56f76b405ff8f0d220506a6f9d702c03a20",
+      "sourceBase64": "UmFyIRoHAM+QcwAADQAAAAAAAACZmnQAgCkAEAAAABAAAAAD6kCRgAAAAAAUMAkApIEAAGVudHJ5LnR4dE9SSUdJTkFMIENPTlRFTlTEPXsAQAcA",
+      "fallback": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": "ORIGINAL CONTENT"
+      }
+    },
+    {
+      "name": "rar4-crc-zero-invalid",
+      "kind": "crc-zero-invalid",
+      "version": 4,
+      "sha256": "7af13c3c8465d1a281642f1fd65fe78196a085fed9854a9ca83a9a9ebd3e63b6",
+      "sourceBase64": "UmFyIRoHAM+QcwAADQAAAAAAAABnLnQAgCkAEAAAABAAAAADAAAAAAAAAAAUMAkApIEAAGVudHJ5LnR4dE9SSUdJTkFMIENPTlRFTlTEPXsAQAcA",
+      "fallback": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": "ORIGINAL CONTENT"
+      }
+    },
+    {
+      "name": "rar4-crc-zero-valid",
+      "kind": "crc-zero-valid",
+      "version": 4,
+      "sha256": "b47c4f989020ae7af757cd5db3576d0de27b7511e63550afbdaa85e2bb172b56",
+      "sourceBase64": "UmFyIRoHAM+QcwAADQAAAAAAAADw4HQAgCkADQAAAA0AAAADAAAAAAAAAAAUMAkApIEAAGVudHJ5LnR4dENSQyBaRVJPICFJXfTEPXsAQAcA",
+      "fallback": {
+        "accepted": true,
+        "bytes": 13,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "435243205a45524f2021495df4",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": true,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": "CRC ZERO !I]�"
+      }
+    },
+    {
+      "name": "rar4-empty-zero-valid",
+      "kind": "empty-zero-valid",
+      "version": 4,
+      "sha256": "48a21a1d07f348af1bcfe6010f9d5ad6576e502308d875cd7d4d05aad0fad029",
+      "sourceBase64": "UmFyIRoHAM+QcwAADQAAAAAAAADGC3QAgCkAAAAAAAAAAAADAAAAAAAAAAAUMAkApIEAAGVudHJ5LnR4dMQ9ewBABwA=",
+      "fallback": {
+        "accepted": true,
+        "bytes": 0,
+        "hex": ""
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": true,
+        "hex": ""
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": null
+      }
+    },
+    {
+      "name": "rar4-data-flip",
+      "kind": "data-flip",
+      "version": 4,
+      "sha256": "390a7c1378f2f0a62567e5f8d69621acbcb332552637bd19e38acd6216ce1af2",
+      "sourceBase64": "UmFyIRoHAM+QcwAADQAAAAAAAACZmnQAgCkAEAAAABAAAAAD6kCRgAAAAAAUMAkApIEAAGVudHJ5LnR4dE1PRElGSUVEIENPTlRFTlTEPXsAQAcA",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 包内文件 CRC 校验失败，压缩包可能损坏"
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "4d4f44494649454420434f4e54454e54",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "componentFallback": {
+        "writes": 0,
+        "error": "包内文件打开失败：RAR 包内文件 CRC 校验失败，压缩包可能损坏",
+        "text": null
+      }
+    },
+    {
+      "name": "rar4-header-crc",
+      "kind": "header-crc",
+      "version": 4,
+      "sha256": "570c96334280bb92b60504768e9de9ff23cf6f39de7d3aa53125a96200a9160a",
+      "sourceBase64": "UmFyIRoHAM+QcwAADQAAAAAAAACYmnQAgCkAEAAAABAAAAAD6kCRgAAAAAAUMAkApIEAAGVudHJ5LnR4dE9SSUdJTkFMIENPTlRFTlTEPXsAQAcA",
+      "fallback": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "libarchive": {
+        "accepted": false,
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: Header CRC error\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      },
+      "unrar": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": "ORIGINAL CONTENT"
+      }
+    },
+    {
+      "name": "rar5-valid",
+      "kind": "valid",
+      "version": 5,
+      "sha256": "443499010d82855d1efa325685885cdb403e8efe12120f6586f195e25e59201e",
+      "sourceBase64": "UmFyIRoHAQDFGjMyAwEAAF74UFMYAgIQBBCkgwLqQJGAAAEJZW50cnkudHh0T1JJR0lOQUwgQ09OVEVOVBmyOjUDBQAA",
+      "fallback": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": "ORIGINAL CONTENT"
+      }
+    },
+    {
+      "name": "rar5-crc-zero-invalid",
+      "kind": "crc-zero-invalid",
+      "version": 5,
+      "sha256": "b564fb9109312cf3899b8f02f837a80afda140896cfa7ddd5559ee9e46671a33",
+      "sourceBase64": "UmFyIRoHAQDFGjMyAwEAAJNOANAYAgIQBBCkgwIAAAAAAAEJZW50cnkudHh0T1JJR0lOQUwgQ09OVEVOVBmyOjUDBQAA",
+      "fallback": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": "ORIGINAL CONTENT"
+      }
+    },
+    {
+      "name": "rar5-crc-zero-valid",
+      "kind": "crc-zero-valid",
+      "version": 5,
+      "sha256": "7683588d7fcec3c359f042dc71c8ae2db03220282018b19c46dfe4bcf1aa1fc5",
+      "sourceBase64": "UmFyIRoHAQDFGjMyAwEAAJp4qt0YAgINBA2kgwIAAAAAAAEJZW50cnkudHh0Q1JDIFpFUk8gIUld9BmyOjUDBQAA",
+      "fallback": {
+        "accepted": true,
+        "bytes": 13,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "435243205a45524f2021495df4",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": true,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": "CRC ZERO !I]�"
+      }
+    },
+    {
+      "name": "rar5-empty-zero-valid",
+      "kind": "empty-zero-valid",
+      "version": 5,
+      "sha256": "47d7d2dd26054843d3aceaad9dc001bf019a8a4a30f6a3e4f2513e86b6c5e296",
+      "sourceBase64": "UmFyIRoHAQDFGjMyAwEAAPevMZkYAgIABACkgwIAAAAAAAEJZW50cnkudHh0GbI6NQMFAAA=",
+      "fallback": {
+        "accepted": true,
+        "bytes": 0,
+        "hex": ""
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": true,
+        "hex": ""
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": null
+      }
+    },
+    {
+      "name": "rar5-data-flip",
+      "kind": "data-flip",
+      "version": 5,
+      "sha256": "a3de9f47623d983625696138142b4ef4cb1bcc71eb59643971a8bdcdec3823ac",
+      "sourceBase64": "UmFyIRoHAQDFGjMyAwEAAF74UFMYAgIQBBCkgwLqQJGAAAEJZW50cnkudHh0TU9ESUZJRUQgQ09OVEVOVBmyOjUDBQAA",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 包内文件 CRC 校验失败，压缩包可能损坏"
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "4d4f44494649454420434f4e54454e54",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "componentFallback": {
+        "writes": 0,
+        "error": "包内文件打开失败：RAR 包内文件 CRC 校验失败，压缩包可能损坏",
+        "text": null
+      }
+    },
+    {
+      "name": "rar5-header-crc",
+      "kind": "header-crc",
+      "version": 5,
+      "sha256": "b29a4b1b1d462b1b19a75ffc55dd48f6fb2f2f676137f8376c4889bb34ca0b3a",
+      "sourceBase64": "UmFyIRoHAQDFGjMyAwEAAF/4UFMYAgIQBBCkgwLqQJGAAAEJZW50cnkudHh0T1JJR0lOQUwgQ09OVEVOVBmyOjUDBQAA",
+      "fallback": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "libarchive": {
+        "accepted": false,
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: Header CRC error\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      },
+      "unrar": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": "ORIGINAL CONTENT"
+      }
+    },
+    {
+      "name": "rar5-crc-absent",
+      "kind": "crc-absent",
+      "version": 5,
+      "sha256": "d6c38fc30db21317faaa25effcf1284e2e6ca394cb12b7019f5aa5e446f13001",
+      "sourceBase64": "UmFyIRoHAQDFGjMyAwEAAG0TDVoUAgIQABCkgwIAAQllbnRyeS50eHRPUklHSU5BTCBDT05URU5UGbI6NQMFAAA=",
+      "fallback": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "libarchive": {
+        "accepted": true,
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      },
+      "unrar": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "componentFallback": {
+        "writes": 1,
+        "error": "",
+        "text": "ORIGINAL CONTENT"
+      }
+    }
+  ],
+  "fullEntry": [
+    {
+      "name": "rar4-valid",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已读取 1 个文件头。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    },
+    {
+      "name": "rar4-crc-zero-invalid",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已读取 1 个文件头。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    },
+    {
+      "name": "rar4-header-crc",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已读取 1 个文件头。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    },
+    {
+      "name": "rar5-valid",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已读取 1 个文件头。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    },
+    {
+      "name": "rar5-crc-zero-invalid",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已读取 1 个文件头。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    },
+    {
+      "name": "rar5-header-crc",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已读取 1 个文件头。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    },
+    {
+      "name": "rar4-valid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    },
+    {
+      "name": "rar4-crc-zero-invalid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 0,
+      "error": "包内文件打开失败：Archive header or data are damaged",
+      "text": null
+    },
+    {
+      "name": "rar4-header-crc",
+      "mode": "native-wasm",
+      "archiveType": "rar4",
+      "summary": "已读取 1 个文件头。 RAR 解压内核未能启动：Archive header or data are damaged",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    },
+    {
+      "name": "rar5-valid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    },
+    {
+      "name": "rar5-crc-zero-invalid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 0,
+      "error": "包内文件打开失败：Archive header or data are damaged",
+      "text": null
+    },
+    {
+      "name": "rar5-header-crc",
+      "mode": "native-wasm",
+      "archiveType": "rar5",
+      "summary": "已读取 1 个文件头。 RAR 解压内核未能启动：Archive header or data are damaged",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT"
+    }
+  ],
+  "findings": {
+    "invalidZeroCrcAcceptedByFallback": 2,
+    "badHeaderCrcAcceptedByFallback": 2,
+    "badHeadersAutomaticallyDowngradeEvenWithNativeWasm": 2,
+    "libarchiveAudit": "bsdtar -xO does not reject the data-CRC failures in these samples; use actual UnRAR and format field semantics for that contract",
+    "zeroCrcControls": "Nonempty GF(2)-derived CRC-zero payload, empty CRC-zero payload, and RAR5 omitted CRC all accepted by UnRAR",
+    "next": "Validate RAR stored headers and explicit data-CRC presence; prevent native corruption failures from being silently downgraded into unchecked stored extraction."
+  },
+  "platforms": {
+    "node": "actual reader component with absent WASM and a real UnRAR WebAssembly bridge",
+    "wechatDevtools": "not-run: compiler startup block",
+    "ios": "not-run",
+    "android": "not-run"
+  }
+}

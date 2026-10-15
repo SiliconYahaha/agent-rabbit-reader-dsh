@@ -1,0 +1,891 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "status": "reproduced-needs-product-fix",
+  "productionMarkdownModified": false,
+  "baseVersion": "1.4.115",
+  "oracle": {
+    "implementation": "Jekyll Document delimiter regex executed independently with Ruby 2.6.10",
+    "commit": "74d751339d3e534aa51d5d7b0640e9bd743509e4",
+    "source": "https://github.com/jekyll/jekyll/blob/74d751339d3e534aa51d5d7b0640e9bd743509e4/lib/jekyll/document.rb#L13",
+    "documentation": "https://jekyllrb.com/docs/front-matter/",
+    "sourceSha256": "f26fb22bdec25dcd97e05d5cab212b9ab3463d5e01b46052863a0e42a1c8fa4a"
+  },
+  "cases": 36,
+  "falseClosingDelimiterCases": 12,
+  "unrecognizedDotClosers": 4,
+  "next": "Require a whole delimiter line, preserve body when closing marker is invalid; separately decide support for dot terminator and blank metadata. Validate actual reader route, newline combinations, EOF, unclosed blocks and next-file recovery.",
+  "limitations": [
+    "This audit isolates delimiter recognition, not a full YAML/front-matter implementation.",
+    "Dots are accepted by Jekyll but current product intentionally supports a limited front-matter subset; this is a compatibility gap, not conflated with silent deletion."
+  ],
+  "results": [
+    {
+      "name": "case-0",
+      "close": "---",
+      "newline": "\n",
+      "eof": false,
+      "source": "---\ntitle: Example\n---\nKEEP AFTER\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "KEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "KEEP AFTER\n"
+    },
+    {
+      "name": "case-1",
+      "close": "---",
+      "newline": "\n",
+      "eof": true,
+      "source": "---\ntitle: Example\n---",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": ""
+      },
+      "html": "",
+      "jekyllRecognized": true,
+      "jekyllBody": ""
+    },
+    {
+      "name": "case-2",
+      "close": "---",
+      "newline": "\r\n",
+      "eof": false,
+      "source": "---\r\ntitle: Example\r\n---\r\nKEEP AFTER\r\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "KEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "KEEP AFTER\r\n"
+    },
+    {
+      "name": "case-3",
+      "close": "---",
+      "newline": "\r\n",
+      "eof": true,
+      "source": "---\r\ntitle: Example\r\n---",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": ""
+      },
+      "html": "",
+      "jekyllRecognized": true,
+      "jekyllBody": ""
+    },
+    {
+      "name": "case-4",
+      "close": "---suffix",
+      "newline": "\n",
+      "eof": false,
+      "source": "---\ntitle: Example\n---suffix\nKEEP AFTER\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "suffix\nKEEP AFTER\n"
+      },
+      "html": "<p>suffix\nKEEP AFTER</p>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\ntitle: Example\n---suffix\nKEEP AFTER\n"
+    },
+    {
+      "name": "case-5",
+      "close": "---suffix",
+      "newline": "\n",
+      "eof": true,
+      "source": "---\ntitle: Example\n---suffix",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "suffix"
+      },
+      "html": "<p>suffix</p>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\ntitle: Example\n---suffix"
+    },
+    {
+      "name": "case-6",
+      "close": "---suffix",
+      "newline": "\r\n",
+      "eof": false,
+      "source": "---\r\ntitle: Example\r\n---suffix\r\nKEEP AFTER\r\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "suffix\nKEEP AFTER\n"
+      },
+      "html": "<p>suffix\nKEEP AFTER</p>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\r\ntitle: Example\r\n---suffix\r\nKEEP AFTER\r\n"
+    },
+    {
+      "name": "case-7",
+      "close": "---suffix",
+      "newline": "\r\n",
+      "eof": true,
+      "source": "---\r\ntitle: Example\r\n---suffix",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "suffix"
+      },
+      "html": "<p>suffix</p>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\r\ntitle: Example\r\n---suffix"
+    },
+    {
+      "name": "case-8",
+      "close": "----",
+      "newline": "\n",
+      "eof": false,
+      "source": "---\ntitle: Example\n----\nKEEP AFTER\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "-\nKEEP AFTER\n"
+      },
+      "html": "<ul>\n<li></li>\n</ul>\n<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\ntitle: Example\n----\nKEEP AFTER\n"
+    },
+    {
+      "name": "case-9",
+      "close": "----",
+      "newline": "\n",
+      "eof": true,
+      "source": "---\ntitle: Example\n----",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "-"
+      },
+      "html": "<ul>\n<li></li>\n</ul>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\ntitle: Example\n----"
+    },
+    {
+      "name": "case-10",
+      "close": "----",
+      "newline": "\r\n",
+      "eof": false,
+      "source": "---\r\ntitle: Example\r\n----\r\nKEEP AFTER\r\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "-\nKEEP AFTER\n"
+      },
+      "html": "<ul>\n<li></li>\n</ul>\n<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\r\ntitle: Example\r\n----\r\nKEEP AFTER\r\n"
+    },
+    {
+      "name": "case-11",
+      "close": "----",
+      "newline": "\r\n",
+      "eof": true,
+      "source": "---\r\ntitle: Example\r\n----",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "-"
+      },
+      "html": "<ul>\n<li></li>\n</ul>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\r\ntitle: Example\r\n----"
+    },
+    {
+      "name": "case-12",
+      "close": "--- # comment",
+      "newline": "\n",
+      "eof": false,
+      "source": "---\ntitle: Example\n--- # comment\nKEEP AFTER\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": " # comment\nKEEP AFTER\n"
+      },
+      "html": "<h1>comment</h1>\n<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\ntitle: Example\n--- # comment\nKEEP AFTER\n"
+    },
+    {
+      "name": "case-13",
+      "close": "--- # comment",
+      "newline": "\n",
+      "eof": true,
+      "source": "---\ntitle: Example\n--- # comment",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": " # comment"
+      },
+      "html": "<h1>comment</h1>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\ntitle: Example\n--- # comment"
+    },
+    {
+      "name": "case-14",
+      "close": "--- # comment",
+      "newline": "\r\n",
+      "eof": false,
+      "source": "---\r\ntitle: Example\r\n--- # comment\r\nKEEP AFTER\r\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": " # comment\nKEEP AFTER\n"
+      },
+      "html": "<h1>comment</h1>\n<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\r\ntitle: Example\r\n--- # comment\r\nKEEP AFTER\r\n"
+    },
+    {
+      "name": "case-15",
+      "close": "--- # comment",
+      "newline": "\r\n",
+      "eof": true,
+      "source": "---\r\ntitle: Example\r\n--- # comment",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": " # comment"
+      },
+      "html": "<h1>comment</h1>\n",
+      "jekyllRecognized": false,
+      "jekyllBody": "---\r\ntitle: Example\r\n--- # comment"
+    },
+    {
+      "name": "case-16",
+      "close": "---\t",
+      "newline": "\n",
+      "eof": false,
+      "source": "---\ntitle: Example\n---\t\nKEEP AFTER\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "\t\nKEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "KEEP AFTER\n"
+    },
+    {
+      "name": "case-17",
+      "close": "---\t",
+      "newline": "\n",
+      "eof": true,
+      "source": "---\ntitle: Example\n---\t",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "\t"
+      },
+      "html": "",
+      "jekyllRecognized": true,
+      "jekyllBody": ""
+    },
+    {
+      "name": "case-18",
+      "close": "---\t",
+      "newline": "\r\n",
+      "eof": false,
+      "source": "---\r\ntitle: Example\r\n---\t\r\nKEEP AFTER\r\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "\t\nKEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "KEEP AFTER\r\n"
+    },
+    {
+      "name": "case-19",
+      "close": "---\t",
+      "newline": "\r\n",
+      "eof": true,
+      "source": "---\r\ntitle: Example\r\n---\t",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "\t"
+      },
+      "html": "",
+      "jekyllRecognized": true,
+      "jekyllBody": ""
+    },
+    {
+      "name": "case-20",
+      "close": "---   ",
+      "newline": "\n",
+      "eof": false,
+      "source": "---\ntitle: Example\n---   \nKEEP AFTER\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "   \nKEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "KEEP AFTER\n"
+    },
+    {
+      "name": "case-21",
+      "close": "---   ",
+      "newline": "\n",
+      "eof": true,
+      "source": "---\ntitle: Example\n---   ",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "   "
+      },
+      "html": "",
+      "jekyllRecognized": true,
+      "jekyllBody": ""
+    },
+    {
+      "name": "case-22",
+      "close": "---   ",
+      "newline": "\r\n",
+      "eof": false,
+      "source": "---\r\ntitle: Example\r\n---   \r\nKEEP AFTER\r\n",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "   \nKEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "KEEP AFTER\r\n"
+    },
+    {
+      "name": "case-23",
+      "close": "---   ",
+      "newline": "\r\n",
+      "eof": true,
+      "source": "---\r\ntitle: Example\r\n---   ",
+      "actual": {
+        "meta": {
+          "title": "Example"
+        },
+        "body": "   "
+      },
+      "html": "",
+      "jekyllRecognized": true,
+      "jekyllBody": ""
+    },
+    {
+      "name": "case-24",
+      "close": "...",
+      "newline": "\n",
+      "eof": false,
+      "source": "---\ntitle: Example\n...\nKEEP AFTER\n",
+      "actual": {
+        "meta": {},
+        "body": "---\ntitle: Example\n...\nKEEP AFTER\n"
+      },
+      "html": "<hr>\n<p>title: Example\n...\nKEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "KEEP AFTER\n"
+    },
+    {
+      "name": "case-25",
+      "close": "...",
+      "newline": "\n",
+      "eof": true,
+      "source": "---\ntitle: Example\n...",
+      "actual": {
+        "meta": {},
+        "body": "---\ntitle: Example\n..."
+      },
+      "html": "<hr>\n<p>title: Example\n...</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": ""
+    },
+    {
+      "name": "case-26",
+      "close": "...",
+      "newline": "\r\n",
+      "eof": false,
+      "source": "---\r\ntitle: Example\r\n...\r\nKEEP AFTER\r\n",
+      "actual": {
+        "meta": {},
+        "body": "---\ntitle: Example\n...\nKEEP AFTER\n"
+      },
+      "html": "<hr>\n<p>title: Example\n...\nKEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "KEEP AFTER\r\n"
+    },
+    {
+      "name": "case-27",
+      "close": "...",
+      "newline": "\r\n",
+      "eof": true,
+      "source": "---\r\ntitle: Example\r\n...",
+      "actual": {
+        "meta": {},
+        "body": "---\ntitle: Example\n..."
+      },
+      "html": "<hr>\n<p>title: Example\n...</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": ""
+    },
+    {
+      "name": "empty-28",
+      "source": "---\n---\n# KEEP HEADER\n\n---\nKEEP AFTER\n",
+      "actual": {
+        "meta": {},
+        "body": "KEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+    },
+    {
+      "name": "empty-29",
+      "source": "---\n---\n# KEEP HEADER\n",
+      "actual": {
+        "meta": {},
+        "body": "---\n---\n# KEEP HEADER\n"
+      },
+      "html": "<hr>\n<hr>\n<h1>KEEP HEADER</h1>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "# KEEP HEADER\n"
+    },
+    {
+      "name": "empty-30",
+      "source": "---\n---  \n# KEEP HEADER\n\n---\nKEEP AFTER\n",
+      "actual": {
+        "meta": {},
+        "body": "KEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+    },
+    {
+      "name": "empty-31",
+      "source": "---\n---  \n# KEEP HEADER\n",
+      "actual": {
+        "meta": {},
+        "body": "---\n---  \n# KEEP HEADER\n"
+      },
+      "html": "<hr>\n<hr>\n<h1>KEEP HEADER</h1>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "# KEEP HEADER\n"
+    },
+    {
+      "name": "empty-32",
+      "source": "---\r\n---\r\n# KEEP HEADER\r\n\r\n---\r\nKEEP AFTER\r\n",
+      "actual": {
+        "meta": {},
+        "body": "KEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "# KEEP HEADER\r\n\r\n---\r\nKEEP AFTER\r\n"
+    },
+    {
+      "name": "empty-33",
+      "source": "---\r\n---\r\n# KEEP HEADER\r\n",
+      "actual": {
+        "meta": {},
+        "body": "---\n---\n# KEEP HEADER\n"
+      },
+      "html": "<hr>\n<hr>\n<h1>KEEP HEADER</h1>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "# KEEP HEADER\r\n"
+    },
+    {
+      "name": "empty-34",
+      "source": "---\r\n---  \r\n# KEEP HEADER\r\n\r\n---\r\nKEEP AFTER\r\n",
+      "actual": {
+        "meta": {},
+        "body": "KEEP AFTER\n"
+      },
+      "html": "<p>KEEP AFTER</p>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "# KEEP HEADER\r\n\r\n---\r\nKEEP AFTER\r\n"
+    },
+    {
+      "name": "empty-35",
+      "source": "---\r\n---  \r\n# KEEP HEADER\r\n",
+      "actual": {
+        "meta": {},
+        "body": "---\n---  \n# KEEP HEADER\n"
+      },
+      "html": "<hr>\n<hr>\n<h1>KEEP HEADER</h1>\n",
+      "jekyllRecognized": true,
+      "jekyllBody": "# KEEP HEADER\r\n"
+    }
+  ],
+  "readerRoute": {
+    "platform": "Node production reader component then actual emitted DOM rendered in Chrome; 390px layout viewport",
+    "cases": 20,
+    "results": [
+      {
+        "name": "case-4",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "suffix KEEP AFTER"
+      },
+      {
+        "name": "case-5",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "suffix"
+      },
+      {
+        "name": "case-6",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "suffix KEEP AFTER"
+      },
+      {
+        "name": "case-7",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "suffix"
+      },
+      {
+        "name": "case-8",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP AFTER"
+      },
+      {
+        "name": "case-9",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": ""
+      },
+      {
+        "name": "case-10",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP AFTER"
+      },
+      {
+        "name": "case-11",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": ""
+      },
+      {
+        "name": "case-12",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "comment\n\nKEEP AFTER"
+      },
+      {
+        "name": "case-13",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "comment"
+      },
+      {
+        "name": "case-14",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "comment\n\nKEEP AFTER"
+      },
+      {
+        "name": "case-15",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "comment"
+      },
+      {
+        "name": "empty-28",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP AFTER"
+      },
+      {
+        "name": "empty-29",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP HEADER"
+      },
+      {
+        "name": "empty-30",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP AFTER"
+      },
+      {
+        "name": "empty-31",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP HEADER"
+      },
+      {
+        "name": "empty-32",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP AFTER"
+      },
+      {
+        "name": "empty-33",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP HEADER"
+      },
+      {
+        "name": "empty-34",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP AFTER"
+      },
+      {
+        "name": "empty-35",
+        "error": "",
+        "hasContent": true,
+        "chromeVisibleText": "KEEP HEADER"
+      }
+    ],
+    "limitations": "Not WeChat DevTools or physical devices. All 12 false delimiters drop metadata-shaped body text; 4 empty blocks followed by a later separator lose the intervening header."
+  },
+  "emptyMetadataCases": 8,
+  "emptyMetadataLosesHeaderCases": 4,
+  "emptyMetadataDelimiterRemainsCases": 4,
+  "prototype": {
+    "productionModified": false,
+    "cases": 36,
+    "exact": 32,
+    "mismatches": [
+      {
+        "name": "case-24",
+        "expected": "KEEP AFTER\n",
+        "actual": "---\ntitle: Example\n...\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-25",
+        "expected": "",
+        "actual": "---\ntitle: Example\n..."
+      },
+      {
+        "name": "case-26",
+        "expected": "KEEP AFTER\n",
+        "actual": "---\ntitle: Example\n...\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-27",
+        "expected": "",
+        "actual": "---\ntitle: Example\n..."
+      }
+    ],
+    "results": [
+      {
+        "name": "case-0",
+        "expected": "KEEP AFTER\n",
+        "actual": "KEEP AFTER\n"
+      },
+      {
+        "name": "case-1",
+        "expected": "",
+        "actual": ""
+      },
+      {
+        "name": "case-2",
+        "expected": "KEEP AFTER\n",
+        "actual": "KEEP AFTER\n"
+      },
+      {
+        "name": "case-3",
+        "expected": "",
+        "actual": ""
+      },
+      {
+        "name": "case-4",
+        "expected": "---\ntitle: Example\n---suffix\nKEEP AFTER\n",
+        "actual": "---\ntitle: Example\n---suffix\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-5",
+        "expected": "---\ntitle: Example\n---suffix",
+        "actual": "---\ntitle: Example\n---suffix"
+      },
+      {
+        "name": "case-6",
+        "expected": "---\ntitle: Example\n---suffix\nKEEP AFTER\n",
+        "actual": "---\ntitle: Example\n---suffix\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-7",
+        "expected": "---\ntitle: Example\n---suffix",
+        "actual": "---\ntitle: Example\n---suffix"
+      },
+      {
+        "name": "case-8",
+        "expected": "---\ntitle: Example\n----\nKEEP AFTER\n",
+        "actual": "---\ntitle: Example\n----\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-9",
+        "expected": "---\ntitle: Example\n----",
+        "actual": "---\ntitle: Example\n----"
+      },
+      {
+        "name": "case-10",
+        "expected": "---\ntitle: Example\n----\nKEEP AFTER\n",
+        "actual": "---\ntitle: Example\n----\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-11",
+        "expected": "---\ntitle: Example\n----",
+        "actual": "---\ntitle: Example\n----"
+      },
+      {
+        "name": "case-12",
+        "expected": "---\ntitle: Example\n--- # comment\nKEEP AFTER\n",
+        "actual": "---\ntitle: Example\n--- # comment\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-13",
+        "expected": "---\ntitle: Example\n--- # comment",
+        "actual": "---\ntitle: Example\n--- # comment"
+      },
+      {
+        "name": "case-14",
+        "expected": "---\ntitle: Example\n--- # comment\nKEEP AFTER\n",
+        "actual": "---\ntitle: Example\n--- # comment\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-15",
+        "expected": "---\ntitle: Example\n--- # comment",
+        "actual": "---\ntitle: Example\n--- # comment"
+      },
+      {
+        "name": "case-16",
+        "expected": "KEEP AFTER\n",
+        "actual": "KEEP AFTER\n"
+      },
+      {
+        "name": "case-17",
+        "expected": "",
+        "actual": ""
+      },
+      {
+        "name": "case-18",
+        "expected": "KEEP AFTER\n",
+        "actual": "KEEP AFTER\n"
+      },
+      {
+        "name": "case-19",
+        "expected": "",
+        "actual": ""
+      },
+      {
+        "name": "case-20",
+        "expected": "KEEP AFTER\n",
+        "actual": "KEEP AFTER\n"
+      },
+      {
+        "name": "case-21",
+        "expected": "",
+        "actual": ""
+      },
+      {
+        "name": "case-22",
+        "expected": "KEEP AFTER\n",
+        "actual": "KEEP AFTER\n"
+      },
+      {
+        "name": "case-23",
+        "expected": "",
+        "actual": ""
+      },
+      {
+        "name": "case-24",
+        "expected": "KEEP AFTER\n",
+        "actual": "---\ntitle: Example\n...\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-25",
+        "expected": "",
+        "actual": "---\ntitle: Example\n..."
+      },
+      {
+        "name": "case-26",
+        "expected": "KEEP AFTER\n",
+        "actual": "---\ntitle: Example\n...\nKEEP AFTER\n"
+      },
+      {
+        "name": "case-27",
+        "expected": "",
+        "actual": "---\ntitle: Example\n..."
+      },
+      {
+        "name": "empty-28",
+        "expected": "# KEEP HEADER\n\n---\nKEEP AFTER\n",
+        "actual": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+      },
+      {
+        "name": "empty-29",
+        "expected": "# KEEP HEADER\n",
+        "actual": "# KEEP HEADER\n"
+      },
+      {
+        "name": "empty-30",
+        "expected": "# KEEP HEADER\n\n---\nKEEP AFTER\n",
+        "actual": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+      },
+      {
+        "name": "empty-31",
+        "expected": "# KEEP HEADER\n",
+        "actual": "# KEEP HEADER\n"
+      },
+      {
+        "name": "empty-32",
+        "expected": "# KEEP HEADER\n\n---\nKEEP AFTER\n",
+        "actual": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+      },
+      {
+        "name": "empty-33",
+        "expected": "# KEEP HEADER\n",
+        "actual": "# KEEP HEADER\n"
+      },
+      {
+        "name": "empty-34",
+        "expected": "# KEEP HEADER\n\n---\nKEEP AFTER\n",
+        "actual": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+      },
+      {
+        "name": "empty-35",
+        "expected": "# KEEP HEADER\n",
+        "actual": "# KEEP HEADER\n"
+      }
+    ]
+  }
+}

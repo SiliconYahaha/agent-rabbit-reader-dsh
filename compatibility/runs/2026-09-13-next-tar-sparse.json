@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T09:17:53.838683+00:00",
+  "status": "confirmed-bug-awaiting-repair",
+  "feature": "GNU PAX sparse maps are ignored, exposing condensed data and synthetic names",
+  "sourceFixture": "tests/fixtures/tar-sparse/complete-before.json",
+  "sourceFixtureSha256": "7fbdcde2fded59ac9812d4957dffa1587228cb8776b069ef5326c548a5b03eb7",
+  "generation": "3 GNU PAX sparse formats0.0/0.1/1.0 x five extent patterns:leading/interior/trailing holes,all-hole and multi-block map; following ordinary member; deterministic authored archives.",
+  "sources": 15,
+  "native": {
+    "pythonAndBsdtarExactBodies": 15,
+    "pythonFollowingMemberExact": 15,
+    "sourceRewriting": false,
+    "basis": "Exact original archive bytes via Python tarfile and /usr/bin/tar; sizes/hashes match separately authored logical byte arrays."
+  },
+  "reader": {
+    "wrongBodies": 15,
+    "wrongNames": 10,
+    "followingMemberExact": 15,
+    "behavior": "0.0 returns only packed extents. 0.1/1.0 expose GNUSparseFile synthetic names; selected actual members still produce incorrect bytes, including1.0 map data."
+  },
+  "primaryReference": "https://www.gnu.org/software/tar/manual/html_chapter/Tar-Internals.html",
+  "next": [
+    "Read pinned native TarIn/TarHandler sparse/PAX support and decide a bounded shared-engine fix; no host-only reconstruction shortcut.",
+    "Add old GNU sparse, malformed/overlapping/overflow maps, PAX scoped identity and zero-length extents; preserve logical size and selected-member allocation limit.",
+    "Exercise actual reader opening meaningful sparse image/document content, following ordinary member and recovery; retain initial originals.",
+    "Run required gates and draft PR; publication block still separate."
+  ],
+  "limits": [
+    "No product patch yet.",
+    "No actual host/UI/browser/WeChat/device verification in this sparse batch yet.",
+    "No compressed TAR wrappers or link-component fixes included; PR275 remains separate pending delivery."
+  ]
+}

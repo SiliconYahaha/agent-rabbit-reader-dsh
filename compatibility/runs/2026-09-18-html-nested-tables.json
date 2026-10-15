@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "html-nested-table-scope",
+  "testedAt": "2026-09-18T08:49:01.690Z",
+  "status": "locally-verified-unreleased",
+  "rootCause": "Implicit tr/row-group closure searched beyond the nearest table, closing an outer row or group while opening a nested table. Explicit table end tags also crossed inner-table scope.",
+  "minimalSource": "<table id=\"outer\"><tr><td>A</td><td><table id=\"inner\"><tr><td>Inner</td></tr></table></td></tr></table>",
+  "userVisibleBefore": "Inner table was empty; its rows appeared in the outer grid and outer trailing cells could disappear from rendering.",
+  "change": "Stop implicit closing at table/template boundaries; resolve explicit table-family end tags only within table scope.",
+  "oracle": {
+    "source": "https://html.spec.whatwg.org/multipage/parsing.html#has-an-element-in-table-scope",
+    "inCell": "https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-intd",
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "reference": "tests/fixtures/html-nested-tables-reference.json",
+    "referenceSha256": "36daff8ab38d61c6705ce82129108ed97f82f3b1bd28db013786ebac0cf3724a",
+    "snapshot": "Each table owner cell, caption, row group, row order, cell text and spans; no reader-derived expected values."
+  },
+  "fixtures": {
+    "generator": "tests/helpers/html-nested-tables.js",
+    "cases": 56,
+    "tables": 160,
+    "cells": 597,
+    "seed": "none: deterministic authored combinations",
+    "axes": [
+      "td/th",
+      "implicit tbody and explicit tbody/thead/tfoot",
+      "optional row/cell/group end tags",
+      "one to three nested levels",
+      "caption, colspan and rowspan",
+      "sibling table control",
+      "six stray inner table closing tags"
+    ]
+  },
+  "validation": {
+    "baselineParserFailures": 55,
+    "baselineHostFailures": 55,
+    "baselineWxmlFailures": 55,
+    "parserExact": 56,
+    "actualHostExact": 56,
+    "productionWxmlExact": 56,
+    "relatedTests": 49,
+    "fullNodeTests": 1263,
+    "fullNodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "fragmentReplacement": "pass",
+    "htmlMarkdownReopenAndTap": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "limitations": [
+    "Browser validation compiles production WXML through official glass-easel; it does not substitute for native WeChat or physical devices.",
+    "Painted checks cover table containment, cell content/order and nonzero table boxes, not pixel-identical native table geometry.",
+    "This is not a complete HTML tree-construction implementation; foster parenting, generic table-context fragments, formatting adoption and broader malformed HTML remain outside this batch."
+  ],
+  "commands": [
+    "node --test tests/html-nested-tables.test.js tests/html-dom-shim.test.js tests/document-renderer.test.js",
+    "node scripts/verify-html-nested-tables.js outputs/nested-table-scope/final",
+    "npm run check",
+    "npm run check:production"
+  ]
+}

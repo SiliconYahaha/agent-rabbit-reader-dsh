@@ -1,0 +1,824 @@
+{
+  "seed": null,
+  "rules": "Six filename byte sequences x stored/deflate x EFS set/clear, identical CRC-valid visible payloads.",
+  "results": [
+    {
+      "name": "invalidLeading-0-true",
+      "kind": "invalidLeading",
+      "method": 0,
+      "efs": true,
+      "sha256": "43c1e4504800b6a6df497dc27f55c0fa0ad8cd675589934a4f872a301d1146da",
+      "rawNameHex": "ff2e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": " .txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte"
+      }
+    },
+    {
+      "name": "invalidLeading-0-false",
+      "kind": "invalidLeading",
+      "method": 0,
+      "efs": false,
+      "sha256": "21dd4f671e5305a0e3d03b006b5f059680000a461a21f7de8d3eb490399540f7",
+      "rawNameHex": "ff2e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": " .txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          " .txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "invalidLeading-8-true",
+      "kind": "invalidLeading",
+      "method": 8,
+      "efs": true,
+      "sha256": "a68338474c803d9c9443e092f227f7ea04edd3b5d0d6854468eb063dda10b20b",
+      "rawNameHex": "ff2e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": " .txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte"
+      }
+    },
+    {
+      "name": "invalidLeading-8-false",
+      "kind": "invalidLeading",
+      "method": 8,
+      "efs": false,
+      "sha256": "0c23bbf9f5b4321fdaea1c6d1f03c983ee7ae22a43ac9fd3727bf54d54293689",
+      "rawNameHex": "ff2e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": " .txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          " .txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "truncatedTwoByte-0-true",
+      "kind": "truncatedTwoByte",
+      "method": 0,
+      "efs": true,
+      "sha256": "4eb59787f77875a709fc121d03cefc3ec3b07de22a54cb55d3ef7081d790de46",
+      "rawNameHex": "c32e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "├.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xc3 in position 0: invalid continuation byte"
+      }
+    },
+    {
+      "name": "truncatedTwoByte-0-false",
+      "kind": "truncatedTwoByte",
+      "method": 0,
+      "efs": false,
+      "sha256": "e30d3671af9fc0cb76f451eb9d468283ae4b09ebba4deaffdbdea99ca3886d6f",
+      "rawNameHex": "c32e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "├.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "├.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "truncatedTwoByte-8-true",
+      "kind": "truncatedTwoByte",
+      "method": 8,
+      "efs": true,
+      "sha256": "8c66fdd6d1af008badc7d1f1b80434321cd7b6af0fc545519ccc736aaf9fc760",
+      "rawNameHex": "c32e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "├.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xc3 in position 0: invalid continuation byte"
+      }
+    },
+    {
+      "name": "truncatedTwoByte-8-false",
+      "kind": "truncatedTwoByte",
+      "method": 8,
+      "efs": false,
+      "sha256": "e008ee98dcd64034b7e53bf89e2488f6c92a45e2ab7476aab50d81d51d12ff74",
+      "rawNameHex": "c32e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "├.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "├.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "overlongSlash-0-true",
+      "kind": "overlongSlash",
+      "method": 0,
+      "efs": true,
+      "sha256": "de0614efe1bfbe74e0824b88cf91742df6fc1e29c1a8deff3b9ca19c3a94936a",
+      "rawNameHex": "c0af2e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "└».txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xc0 in position 0: invalid start byte"
+      }
+    },
+    {
+      "name": "overlongSlash-0-false",
+      "kind": "overlongSlash",
+      "method": 0,
+      "efs": false,
+      "sha256": "261383842749e33a6642667dbc544664cf916a56434e52d2bca9d0bd019fea28",
+      "rawNameHex": "c0af2e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "└».txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "└».txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "overlongSlash-8-true",
+      "kind": "overlongSlash",
+      "method": 8,
+      "efs": true,
+      "sha256": "8c7b5b3e76d42f4c2da4b4b9fbc66ec7af49231620ba65f127b03be3f4ccf307",
+      "rawNameHex": "c0af2e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "└».txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xc0 in position 0: invalid start byte"
+      }
+    },
+    {
+      "name": "overlongSlash-8-false",
+      "kind": "overlongSlash",
+      "method": 8,
+      "efs": false,
+      "sha256": "67cadad250b2185a520a918948c6c91177d3520d862b8f9cf454c6525e66ef03",
+      "rawNameHex": "c0af2e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "└».txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "└».txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "surrogate-0-true",
+      "kind": "surrogate",
+      "method": 0,
+      "efs": true,
+      "sha256": "8ef516175ce33bfd5c3b3d0724cd78a0498325cbc8d6b55ca8758973de188581",
+      "rawNameHex": "eda0802e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "φáÇ.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xed in position 0: invalid continuation byte"
+      }
+    },
+    {
+      "name": "surrogate-0-false",
+      "kind": "surrogate",
+      "method": 0,
+      "efs": false,
+      "sha256": "a64aafc226727f42954b397e53072339cdf5ea6a6108d03172d31ed7ac9a2065",
+      "rawNameHex": "eda0802e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "φáÇ.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "φáÇ.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "surrogate-8-true",
+      "kind": "surrogate",
+      "method": 8,
+      "efs": true,
+      "sha256": "fd006a9d41e0d9730eb9b282a13504074002340f49342bdffe4a5875afc2380a",
+      "rawNameHex": "eda0802e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "φáÇ.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xed in position 0: invalid continuation byte"
+      }
+    },
+    {
+      "name": "surrogate-8-false",
+      "kind": "surrogate",
+      "method": 8,
+      "efs": false,
+      "sha256": "d25fbc05a0705d89137cb3503762340efba229541f983bf171fcfe2d854a9436",
+      "rawNameHex": "eda0802e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "φáÇ.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "φáÇ.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "aboveUnicode-0-true",
+      "kind": "aboveUnicode",
+      "method": 0,
+      "efs": true,
+      "sha256": "e1f69707d6259c7305740d4354b156815aa7d69876e628e857b1996a3f303f80",
+      "rawNameHex": "f49080802e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "⌠ÉÇÇ.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xf4 in position 0: invalid continuation byte"
+      }
+    },
+    {
+      "name": "aboveUnicode-0-false",
+      "kind": "aboveUnicode",
+      "method": 0,
+      "efs": false,
+      "sha256": "c032dbfc45083197d09faaa8870bf8a7e0ab1beea841215ef797b492413a1188",
+      "rawNameHex": "f49080802e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "⌠ÉÇÇ.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "⌠ÉÇÇ.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "aboveUnicode-8-true",
+      "kind": "aboveUnicode",
+      "method": 8,
+      "efs": true,
+      "sha256": "b01567be9e70d43d112a33290002b2b09812593b7488b6c997e80c2c4faf9748",
+      "rawNameHex": "f49080802e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "⌠ÉÇÇ.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": false,
+        "errorType": "UnicodeDecodeError",
+        "error": "'utf-8' codec can't decode byte 0xf4 in position 0: invalid continuation byte"
+      }
+    },
+    {
+      "name": "aboveUnicode-8-false",
+      "kind": "aboveUnicode",
+      "method": 8,
+      "efs": false,
+      "sha256": "3a16081a42ef9ab5415c9a1c0275cf4b5bf41527cc674a82a69efbf4645e04fa",
+      "rawNameHex": "f49080802e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "⌠ÉÇÇ.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "⌠ÉÇÇ.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "validEmoji-0-true",
+      "kind": "validEmoji",
+      "method": 0,
+      "efs": true,
+      "sha256": "1f3eec285d9dabefb9fe47ac6d4ed860dd078ef90041d50e93f054553e0525e6",
+      "rawNameHex": "f09f90872e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "🐇.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "🐇.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "validEmoji-0-false",
+      "kind": "validEmoji",
+      "method": 0,
+      "efs": false,
+      "sha256": "99b2c038e0ca7e5df564db46196d308bd65e8420259503d9c2dfe3c3eb2d6ed6",
+      "rawNameHex": "f09f90872e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "🐇.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "≡ƒÉç.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "validEmoji-8-true",
+      "kind": "validEmoji",
+      "method": 8,
+      "efs": true,
+      "sha256": "8b3e1db76e809eb98a2d77c039050c61c18ee5a46048d56b23e636dbfb4ef7cc",
+      "rawNameHex": "f09f90872e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "🐇.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "🐇.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    },
+    {
+      "name": "validEmoji-8-false",
+      "kind": "validEmoji",
+      "method": 8,
+      "efs": false,
+      "sha256": "6fd36af9d6b09f95914a8d5c7eea9cda1d5f90595c27ec2a93062d4629c8a9f1",
+      "rawNameHex": "f09f90872e747874",
+      "readerAccepted": true,
+      "entries": [
+        {
+          "name": "🐇.txt"
+        }
+      ],
+      "resultKeys": [
+        "archiveType",
+        "title",
+        "summary",
+        "filenameEncoding",
+        "filenameEncodingLabel",
+        "filenameEncodingOptions",
+        "ambiguousFilenameCount",
+        "metadata",
+        "entries",
+        "zipIdentityEntries"
+      ],
+      "python": {
+        "accepted": true,
+        "names": [
+          "≡ƒÉç.txt"
+        ],
+        "contents": [
+          "UNIQUE VISIBLE BODY"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "cases": 24,
+    "readerAcceptedMalformedEfs": 10,
+    "pythonRejectedMalformedEfs": 10
+  },
+  "testedAt": "2026-09-05T08:12:47.963Z",
+  "status": "reproduced-no-fix",
+  "references": [
+    "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT section 4.4.4 bit 11 and Appendix D.2"
+  ],
+  "generator": {
+    "helper": "tests/helpers/zip-integrity.js zipMember",
+    "content": "UNIQUE VISIBLE BODY",
+    "name": "Buffer.from(rawNameHex, hex)",
+    "method": "record.method",
+    "efs": "zipMember sets bit 11 by default; false clears local offset 6 and central offset 8 flags"
+  },
+  "action": "After RTF delivery, validate complete entry/recovery and compatibility-engine paths, then correct malformed EFS handling without changing legitimate unflagged legacy names."
+}

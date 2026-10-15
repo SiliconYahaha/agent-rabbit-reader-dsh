@@ -1,0 +1,35 @@
+[
+  {
+    "name": "inner-outer-svg-overflow-auto.html",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/painting/inner-outer-svg-overflow-auto.html",
+    "sha256": "94f5527dc0b9a12ec437804929b8a50434ebe9b0177fc23aa618ecefab754bd1",
+    "reference": "inner-outer-svg-overflow-auto-ref.html",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/painting/inner-outer-svg-overflow-auto-ref.html",
+    "referenceSha256": "084efc93c0f65ee4d643453036c9f46b80345bd542583763daef1a77f07a0805",
+    "license": "BSD-3-Clause; WPT repository license retained",
+    "expectedVisibleResult": "Only green squares; no red overflow for the auto case, no oversized green region for clip cases.",
+    "scope": "Unmodified complete HTML reference test in Chrome; not imported as standalone SVG in WeChat."
+  },
+  {
+    "name": "nested-svg-overflow-clip.html",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/render/reftests/nested-svg-overflow-clip.html",
+    "sha256": "3896a729ba5cf91f0504e97380a485e46dddd84f7abb273009c98fa3ae9f63e4",
+    "reference": "rect-ref.html",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/render/reftests/rect-ref.html",
+    "referenceSha256": "16d60bfe02488eba6ffc619923e8798f8f32c5fed15184bc86c94dcad07a8f4b",
+    "license": "BSD-3-Clause; WPT repository license retained",
+    "expectedVisibleResult": "Only green squares; no red overflow for the auto case, no oversized green region for clip cases.",
+    "scope": "Unmodified complete HTML reference test in Chrome; not imported as standalone SVG in WeChat."
+  },
+  {
+    "name": "overflow-clip.html",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/render/reftests/overflow-clip.html",
+    "sha256": "5c71b427f76846b20dacefa3c877e46c3517cd26138d7436f93e7c1ec4a3877a",
+    "reference": "rect-ref.html",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/render/reftests/rect-ref.html",
+    "referenceSha256": "16d60bfe02488eba6ffc619923e8798f8f32c5fed15184bc86c94dcad07a8f4b",
+    "license": "BSD-3-Clause; WPT repository license retained",
+    "expectedVisibleResult": "Only green squares; no red overflow for the auto case, no oversized green region for clip cases.",
+    "scope": "Unmodified complete HTML reference test in Chrome; not imported as standalone SVG in WeChat."
+  }
+]

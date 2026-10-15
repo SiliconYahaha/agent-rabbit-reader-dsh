@@ -1,0 +1,1608 @@
+{
+  "schemaVersion": 1,
+  "scope": "32 high-resolution slice boundary variations; 22 current native/reference mismatches, 10 exact. No tolerance relaxed.",
+  "inputs": [
+    {
+      "name": "slice-boundary-0",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"20\" y=\"20\" width=\"96\" height=\"48\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"20\" y=\"20\" width=\"96\" height=\"48\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"20\" y=\"-4\" width=\"96\" height=\"96\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-1",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"24\" y=\"24\" width=\"100\" height=\"50\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"24\" y=\"24\" width=\"100\" height=\"50\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"24\" y=\"-1\" width=\"100\" height=\"100\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-2",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"28\" y=\"28\" width=\"104\" height=\"52\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"28\" y=\"28\" width=\"104\" height=\"52\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"28\" y=\"2\" width=\"104\" height=\"104\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-3",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"32\" y=\"20\" width=\"108\" height=\"54\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"32\" y=\"20\" width=\"108\" height=\"54\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"32\" y=\"-7\" width=\"108\" height=\"108\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-4",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"20\" y=\"24\" width=\"112\" height=\"56\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"20\" y=\"24\" width=\"112\" height=\"56\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"20\" y=\"-4\" width=\"112\" height=\"112\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-5",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"24\" y=\"28\" width=\"116\" height=\"58\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"24\" y=\"28\" width=\"116\" height=\"58\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"24\" y=\"-1\" width=\"116\" height=\"116\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-6",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"28\" y=\"20\" width=\"120\" height=\"60\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"28\" y=\"20\" width=\"120\" height=\"60\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"28\" y=\"-10\" width=\"120\" height=\"120\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-7",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"32\" y=\"24\" width=\"124\" height=\"62\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"32\" y=\"24\" width=\"124\" height=\"62\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"32\" y=\"-7\" width=\"124\" height=\"124\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-8",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"20\" y=\"28\" width=\"128\" height=\"64\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"20\" y=\"28\" width=\"128\" height=\"64\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"20\" y=\"-4\" width=\"128\" height=\"128\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-9",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"24\" y=\"20\" width=\"132\" height=\"66\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"24\" y=\"20\" width=\"132\" height=\"66\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"24\" y=\"-13\" width=\"132\" height=\"132\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-10",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"28\" y=\"24\" width=\"136\" height=\"68\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"28\" y=\"24\" width=\"136\" height=\"68\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"28\" y=\"-10\" width=\"136\" height=\"136\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-11",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"32\" y=\"28\" width=\"140\" height=\"70\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"32\" y=\"28\" width=\"140\" height=\"70\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"32\" y=\"-7\" width=\"140\" height=\"140\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-12",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"20\" y=\"20\" width=\"144\" height=\"72\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"20\" y=\"20\" width=\"144\" height=\"72\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"20\" y=\"-16\" width=\"144\" height=\"144\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-13",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"24\" y=\"24\" width=\"148\" height=\"74\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"24\" y=\"24\" width=\"148\" height=\"74\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"24\" y=\"-13\" width=\"148\" height=\"148\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-14",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"28\" y=\"28\" width=\"152\" height=\"76\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"28\" y=\"28\" width=\"152\" height=\"76\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"28\" y=\"-10\" width=\"152\" height=\"152\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-15",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"32\" y=\"20\" width=\"156\" height=\"78\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"32\" y=\"20\" width=\"156\" height=\"78\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"32\" y=\"-19\" width=\"156\" height=\"156\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-16",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"20\" y=\"24\" width=\"160\" height=\"80\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"20\" y=\"24\" width=\"160\" height=\"80\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"20\" y=\"-16\" width=\"160\" height=\"160\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-17",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"24\" y=\"28\" width=\"164\" height=\"82\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"24\" y=\"28\" width=\"164\" height=\"82\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"24\" y=\"-13\" width=\"164\" height=\"164\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-18",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"28\" y=\"20\" width=\"168\" height=\"84\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"28\" y=\"20\" width=\"168\" height=\"84\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"28\" y=\"-22\" width=\"168\" height=\"168\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-19",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"32\" y=\"24\" width=\"172\" height=\"86\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"32\" y=\"24\" width=\"172\" height=\"86\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"32\" y=\"-19\" width=\"172\" height=\"172\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-20",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"20\" y=\"28\" width=\"176\" height=\"88\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"20\" y=\"28\" width=\"176\" height=\"88\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"20\" y=\"-16\" width=\"176\" height=\"176\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-21",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"24\" y=\"20\" width=\"180\" height=\"90\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"24\" y=\"20\" width=\"180\" height=\"90\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"24\" y=\"-25\" width=\"180\" height=\"180\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-22",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"28\" y=\"24\" width=\"184\" height=\"92\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"28\" y=\"24\" width=\"184\" height=\"92\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"28\" y=\"-22\" width=\"184\" height=\"184\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-23",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"32\" y=\"28\" width=\"188\" height=\"94\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"32\" y=\"28\" width=\"188\" height=\"94\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"32\" y=\"-19\" width=\"188\" height=\"188\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-24",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"20\" y=\"20\" width=\"192\" height=\"96\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"20\" y=\"20\" width=\"192\" height=\"96\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"20\" y=\"-28\" width=\"192\" height=\"192\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-25",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"24\" y=\"24\" width=\"196\" height=\"98\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"24\" y=\"24\" width=\"196\" height=\"98\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"24\" y=\"-25\" width=\"196\" height=\"196\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-26",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"28\" y=\"28\" width=\"200\" height=\"100\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"28\" y=\"28\" width=\"200\" height=\"100\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"28\" y=\"-22\" width=\"200\" height=\"200\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-27",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"32\" y=\"20\" width=\"204\" height=\"102\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"32\" y=\"20\" width=\"204\" height=\"102\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"32\" y=\"-31\" width=\"204\" height=\"204\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-28",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"20\" y=\"24\" width=\"208\" height=\"104\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"20\" y=\"24\" width=\"208\" height=\"104\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"20\" y=\"-28\" width=\"208\" height=\"208\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-29",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"24\" y=\"28\" width=\"212\" height=\"106\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"24\" y=\"28\" width=\"212\" height=\"106\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"24\" y=\"-25\" width=\"212\" height=\"212\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-30",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"28\" y=\"20\" width=\"216\" height=\"108\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"28\" y=\"20\" width=\"216\" height=\"108\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"28\" y=\"-34\" width=\"216\" height=\"216\" fill=\"green\"/></g></svg>"
+    },
+    {
+      "name": "slice-boundary-31",
+      "width": 1170,
+      "height": 1170,
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><svg x=\"32\" y=\"24\" width=\"220\" height=\"110\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMidYMid slice\"><rect width=\"64\" height=\"64\" fill=\"green\"/><rect width=\"64\" height=\"16\" fill=\"blue\"/></svg></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"red\"/><defs><clipPath id=\"vp\"><rect x=\"32\" y=\"24\" width=\"220\" height=\"110\"/></clipPath></defs><g clip-path=\"url(#vp)\"><rect x=\"32\" y=\"-31\" width=\"220\" height=\"220\" fill=\"green\"/></g></svg>"
+    }
+  ],
+  "chrome": {
+    "testedAt": "2026-09-05T03:58:39.066Z",
+    "reference": "Native Chrome DOM getBBox plus independent Canvas Path2D paints; pinned WPT reference SVGs",
+    "cases": 32,
+    "exactPixels": 10,
+    "nativeSvgExactPixels": 10,
+    "requireNativeSvg": true,
+    "failures": [
+      "slice-boundary-0",
+      "slice-boundary-1",
+      "slice-boundary-3",
+      "slice-boundary-4",
+      "slice-boundary-6",
+      "slice-boundary-7",
+      "slice-boundary-9",
+      "slice-boundary-10",
+      "slice-boundary-12",
+      "slice-boundary-13",
+      "slice-boundary-15",
+      "slice-boundary-16",
+      "slice-boundary-18",
+      "slice-boundary-19",
+      "slice-boundary-21",
+      "slice-boundary-22",
+      "slice-boundary-24",
+      "slice-boundary-25",
+      "slice-boundary-27",
+      "slice-boundary-28",
+      "slice-boundary-30",
+      "slice-boundary-31"
+    ],
+    "results": [
+      {
+        "name": "slice-boundary-0",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 39896,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 39896,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 39896,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 39896,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 39896,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 39896,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-1",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 37902,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 37902,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 37902,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 37902,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 37902,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 37902,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-2",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-3",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 44894,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 44894,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 44894,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 44894,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 44894,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 44894,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-4",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 42450,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 42450,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 42450,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 42450,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 42450,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 42450,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-5",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-6",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 49885,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 49885,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 49885,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 49885,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 49885,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 49885,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-7",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 47022,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 47022,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 47022,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 47022,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 47022,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 47022,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-8",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-9",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 54879,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 54879,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 54879,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 54879,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 54879,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 54879,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-10",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 51568,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 51568,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 51568,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 51568,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 51568,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 51568,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-11",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-12",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 59849,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 59849,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 59849,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 59849,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 59849,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 59849,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-13",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 56117,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 56117,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 56117,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 56117,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 56117,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 56117,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-14",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-15",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 64852,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 64852,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 64852,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 64852,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 64852,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 64852,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-16",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 60658,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 60658,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 60658,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 60658,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 60658,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 60658,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-17",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-18",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 69855,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 69855,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 69855,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 69855,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 69855,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 69855,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-19",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 65215,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 65215,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 65215,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 65215,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 65215,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 65215,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-20",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-21",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 74826,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 74826,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 74826,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 74826,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 74826,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 74826,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-22",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 69789,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 69789,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 69789,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 69789,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 69789,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 69789,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-23",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-24",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 79827,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 79827,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 79827,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 79827,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 79827,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 79827,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-25",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 74315,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 74315,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 74315,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 74315,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 74315,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 74315,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-26",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-27",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 84811,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 84811,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 84811,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 84811,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 84811,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 84811,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-28",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 78880,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 78880,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 78880,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 78880,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 78880,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 78880,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-29",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-30",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 89820,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 89820,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 89820,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 89820,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 89820,
+            "maxChannelError": 52,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 52,
+            "svgRGBAError": 89820,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      },
+      {
+        "name": "slice-boundary-31",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 83426,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 83426,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 83426,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 83426,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 83426,
+            "maxChannelError": 44,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 44,
+            "svgRGBAError": 83426,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": null
+      }
+    ]
+  }
+}

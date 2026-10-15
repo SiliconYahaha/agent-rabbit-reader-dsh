@@ -1,0 +1,32 @@
+[
+  {
+    "name": "animate-path-animation-Cc-Ss.tentative.html",
+    "source": "https://github.com/web-platform-tests/wpt/blob/c29bd2aeeb937753c3b946a3670b24e5dfb62f88/svg/animations/animate-path-animation-Cc-Ss.tentative.html",
+    "license": "BSD-3-Clause; LICENSE.md retained alongside originals",
+    "redistributed": true,
+    "sha256": "9a3ac443e9a4c0fe4267cf16a25d5d023386df1d83c39d4a4310bc3b135f64bc",
+    "expectedVisibleResult": "路径按原生 SMIL 在绝对和相对坐标之间连续形变；到期恢复原路径。",
+    "upstreamStatus": "tentative",
+    "oracleScope": "Extract literal path/animate attributes and compare native Chrome geometry at original sample times; upstream harness itself is not run."
+  },
+  {
+    "name": "animate-path-animation-Mm-Aa-Z.tentative.html",
+    "source": "https://github.com/web-platform-tests/wpt/blob/c29bd2aeeb937753c3b946a3670b24e5dfb62f88/svg/animations/animate-path-animation-Mm-Aa-Z.tentative.html",
+    "license": "BSD-3-Clause; LICENSE.md retained alongside originals",
+    "redistributed": true,
+    "sha256": "21efeb8795c377ecba9ed8485002e5c3d778c975ba091b3fde43eb761c44626a",
+    "expectedVisibleResult": "路径按原生 SMIL 在绝对和相对坐标之间连续形变；到期恢复原路径。",
+    "upstreamStatus": "tentative",
+    "oracleScope": "Extract literal path/animate attributes and compare native Chrome geometry at original sample times; upstream harness itself is not run."
+  },
+  {
+    "name": "animate-path-animation-Qq-Tt.tentative.html",
+    "source": "https://github.com/web-platform-tests/wpt/blob/c29bd2aeeb937753c3b946a3670b24e5dfb62f88/svg/animations/animate-path-animation-Qq-Tt.tentative.html",
+    "license": "BSD-3-Clause; LICENSE.md retained alongside originals",
+    "redistributed": true,
+    "sha256": "1337abf35b729df9aa52b03a997fa9fb250f4b78620f7f55c89ec909ee713fce",
+    "expectedVisibleResult": "路径按原生 SMIL 在绝对和相对坐标之间连续形变；到期恢复原路径。",
+    "upstreamStatus": "tentative",
+    "oracleScope": "Extract literal path/animate attributes and compare native Chrome geometry at original sample times; upstream harness itself is not run."
+  }
+]

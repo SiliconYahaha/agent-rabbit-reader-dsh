@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "sevenzip-symbolic-links",
+  "status": "reproduced-entry-failure",
+  "testedAt": "2026-09-06T03:11:07.063Z",
+  "baselineVersion": "1.4.127",
+  "license": "Original synthetic archive under repository ISC",
+  "expected": "Opening docs/link.html must read docs/page.html body <h1>SevenZip linked body</h1> through the archive-local target.",
+  "readerAndCreation": {
+    "base64": "N3q8ryccAARGNK//ogAAAAAAAAAhAAAAAAAAAGRBu44BACVwYWdlLmh0bWw8aDE+U2V2ZW5aaXAgbGlua2VkIGJvZHk8L2gxPgAAAIEzB64P0KYGvJ8/R0EED3EM/IO0eGWTYN+nNZbVQBiNjOACyfTZJ52RCu6RXFT6OV5ZM7AiTLVlUqz39Sye97oVuukg6Pi+NJ5gFlw+5o1CSaTAumL7dk2aSDpa9ujULA12uSTUP3ghTHDRlGJLmBZ97GYAAAAXBioBCXgABwsBAAEjAwEBBV0AEAAADICqCgGcaBVrAAA=",
+    "sha256": "d6790896401de9fa84ba33b007ca9fca80d127b6861111c35bd374800ffc2764",
+    "creation": {
+      "status": 0,
+      "logs": [
+        "",
+        "7-Zip (z) 24.09 (LE) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29",
+        " 32-bit ILP32 locale=en_US.UTF-8 Threads:1 OPEN_MAX:1024",
+        "",
+        "Scanning the drive:",
+        "  0M Scan \b\b\b\b\b\b\b\b\b\b          \b\b\b\b\b\b\b\b\b\b1 folder, 2 files, 29 bytes (1 KiB)",
+        "",
+        "Creating archive: /links.7z",
+        "",
+        "Add new data to archive: 1 folder, 2 files, 38 bytes (1 KiB)",
+        "",
+        "  0%\b\b\b\b    \b\b\b\b",
+        "Files read from disk: 2",
+        "Archive size: 227 bytes (1 KiB)",
+        "Everything is Ok"
+      ]
+    },
+    "results": [
+      {
+        "entry": {
+          "id": 1,
+          "memberIndex": 1,
+          "archiveType": "7z-engine",
+          "pathSeparator": "slash",
+          "name": "docs/link.html",
+          "detail": "9 B · LZMA2:12",
+          "isDirectory": false,
+          "canOpen": true,
+          "encrypted": false,
+          "compressedSize": 42,
+          "uncompressedSize": 9,
+          "method": "LZMA2:12",
+          "crc": "5B0F2D40",
+          "duplicateIndex": 0,
+          "duplicateCount": 1,
+          "displayName": "docs/link.html"
+        },
+        "reader": {
+          "error": "[object Object]",
+          "errno": 44
+        },
+        "bsd": {
+          "status": 0,
+          "text": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "error": ""
+        }
+      },
+      {
+        "entry": {
+          "id": 2,
+          "memberIndex": 2,
+          "archiveType": "7z-engine",
+          "pathSeparator": "slash",
+          "solidDecodeSize": 38,
+          "name": "docs/page.html",
+          "detail": "29 B · LZMA2:12",
+          "isDirectory": false,
+          "canOpen": true,
+          "encrypted": false,
+          "compressedSize": 0,
+          "uncompressedSize": 29,
+          "method": "LZMA2:12",
+          "crc": "BD3835C6",
+          "duplicateIndex": 0,
+          "duplicateCount": 1,
+          "displayName": "docs/page.html"
+        },
+        "reader": {
+          "text": "<h1>SevenZip linked body</h1>"
+        },
+        "bsd": {
+          "status": 0,
+          "text": "<h1>SevenZip linked body</h1>",
+          "error": ""
+        }
+      }
+    ]
+  },
+  "actualEntry": [
+    {
+      "name": "docs/link.html",
+      "index": 1,
+      "error": "包内文件打开失败：[object Object]",
+      "hasContent": true,
+      "inspectorMode": true,
+      "events": [
+        {
+          "name": "ready",
+          "detail": {
+            "name": "links.7z"
+          }
+        },
+        {
+          "name": "error",
+          "detail": {
+            "name": "links.7z",
+            "message": "包内文件打开失败：[object Object]"
+          }
+        }
+      ]
+    }
+  ],
+  "independent": {
+    "tool": "bsdtar3.5.3/libarchive3.7.4",
+    "listing": "drwxrwxrwx  0 0      0           0 Sep  5 20:07 docs/\nlrwxrwxrwx  0 0      0           0 Sep  5 20:07 docs/link.html -> page.html\n-rw-rw-rw-  0 0      0          29 Sep  5 20:07 docs/page.html\n",
+    "resolved": {
+      "symbolicLink": true,
+      "target": "page.html",
+      "resolvedBody": "<h1>SevenZip linked body</h1>",
+      "scope": "Generated and inspected safe links extracted under ignored native oracle directory; not user archives"
+    },
+    "warning": "tar -xOf the symbolic link emits zero bytes of its declared length; that stdout is not the target-body oracle. Read the safely extracted inspected symbolic link instead."
+  },
+  "reproduce": {
+    "generator": "const fs=require('fs'),zlib=require('zlib'),crypto=require('crypto'),{spawnSync}=require('child_process'),SevenZip=require('../../../miniprogram/file-reader/sevenzip/runtime/7zz'),seven=require('../../../miniprogram/file-reader/archive/sevenzip-runtime');\n(async()=>{const wasmBinary=zlib.brotliDecompressSync(fs.readFileSync('miniprogram/file-reader/sevenzip/runtime/7zz.wasm.br')),logs=[],engine=await SevenZip({wasmBinary,print:s=>logs.push(s),printErr:s=>logs.push(s)});engine.FS.mkdir('/docs');engine.FS.writeFile('/docs/page.html',Buffer.from('<h1>SevenZip linked body</h1>'));engine.FS.symlink('page.html','/docs/link.html');const status=engine.callMain(['a','-t7z','-snl','/links.7z','--','docs']);if(status)throw Error('create '+status+' '+logs.join('\\n'));const b=engine.FS.readFile('/links.7z'),file='outputs/svg-clip-chains/next-tar/links.7z';fs.writeFileSync(file,b);const info=await seven.inspect7zArchive(b,{wasmBinary}),results=[];for(const e of info.entries.filter(e=>!e.isDirectory)){let outcome;try{outcome={text:Buffer.from(await seven.extract7zEntry(b,e,{wasmBinary})).toString()}}catch(error){outcome={error:error.message||String(error),errno:error.errno}}const native=spawnSync('/usr/bin/tar',['-xOf',file,e.name]);results.push({entry:e,reader:outcome,bsd:{status:native.status,text:native.stdout.toString(),error:native.stderr.toString()}})}const r={base64:Buffer.from(b).toString('base64'),sha256:crypto.createHash('sha256').update(b).digest('hex'),creation:{status,logs},results};fs.writeFileSync('outputs/svg-clip-chains/next-tar/sevenzip-link-report.json',JSON.stringify(r,null,2));console.log(JSON.stringify(results,null,2))})()\n",
+    "entryProbe": "const fs=require('fs'),zlib=require('zlib'),seven=require('../../../miniprogram/file-reader/archive/sevenzip-runtime'),{readerPage}=require('../../../tests/helpers/reader-host');\n(async()=>{const bytes=fs.readFileSync('outputs/svg-clip-chains/next-tar/links.7z'),wasmBinary=zlib.brotliDecompressSync(fs.readFileSync('miniprogram/file-reader/sevenzip/runtime/7zz.wasm.br'));await seven.inspect7zArchive(bytes,{wasmBinary});const reads=[],page=readerPage({env:{USER_DATA_PATH:'/fixture'},getFileSystemManager:()=>({readFile:o=>reads.push(o)})}),results=[];for(const name of ['docs/link.html']){page.openSelectedFile({name:'links.7z',path:'/fixture/links.7z',size:bytes.length});await reads.shift().success({data:bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.length)});const entries=page._inspectorVisibleEntries||page._inspectorEntries,index=entries.findIndex(e=>e.name===name);await page.openInspectorEntry({detail:{index}});results.push({name,index,error:page.data.error,hasContent:page.data.hasContent,inspectorMode:page.data.inspectorMode,nodes:page.data.nodes,events:page.events})}fs.writeFileSync('outputs/svg-clip-chains/next-tar/sevenzip-entry.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results,null,2))})()\n",
+    "originalLocation": "outputs/svg-clip-chains/next-tar"
+  },
+  "rootCauseHypothesis": "7z POSIX symlink is listed as an ordinary canOpen file without link metadata; selected extraction creates a dangling MEMFS link and FS.readFile fails ErrnoError44. Verify native attributes and safe target-byte extraction before implementing.",
+  "next": "Prioritize existing 7z actual entry/link content failure. Expand independent ordinary/solid/encrypted/volume/path/cycle/duplicate cases, ensure safe archive-local resolution and content resources; then return to TAR entry expansion.",
+  "platform": {
+    "node": "reproduced actual reader entry; regular target bytes independently exact",
+    "chrome": "not-run for this candidate",
+    "wechat": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  }
+}

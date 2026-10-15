@@ -1,0 +1,144 @@
+{
+  "writer": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "seed": null,
+  "rules": "Ten named style/reset/font-codepage combinations with explicit ANSI codepage, default font and font table",
+  "oracle": "Actual RTF imported by Writer; unmodified HTML paragraph innerText in Chrome",
+  "results": [
+    {
+      "name": "paragraph-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}}\\pard\\s0 BEFORE\\par\\pard\\s1 SECRET\\par\\pard\\s0 AFTER}",
+      "sha256": "fee766e4e3aeef893a465722dc63cc83bfb0d0c7ec89f5418c211d8892365e8e",
+      "reader": "BEFORE\nSECRET\nAFTER",
+      "writerChrome": "BEFORE\nAFTER",
+      "matches": false,
+      "status": "candidate-hidden-style-gap"
+    },
+    {
+      "name": "character-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\additive\\v Hidden;}}\\pard BEFORE{\\cs1 SECRET}AFTER}",
+      "sha256": "d4f075981511aafa821c64f5ed14538b6116de5d8464c1bd83a68519911c4aa5",
+      "reader": "BEFORESECRETAFTER",
+      "writerChrome": "BEFOREAFTER",
+      "matches": false,
+      "status": "candidate-hidden-style-gap"
+    },
+    {
+      "name": "character-visible-override",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\additive\\v Hidden;}}BEFORE{\\cs1 SECRET\\v0 VISIBLE}AFTER}",
+      "sha256": "1b936552f6abcbe5d755f62ad55d42004c856f2f5e8da92bab9fbb7e0f1b5ca6",
+      "reader": "BEFORESECRETVISIBLEAFTER",
+      "writerChrome": "BEFOREAFTER",
+      "matches": false,
+      "status": "html-export-difference-resolved-by-writer-pdf",
+      "expected": "BEFOREVISIBLEAFTER",
+      "writerPdf": "BEFOREVISIBLEAFTER"
+    },
+    {
+      "name": "paragraph-based-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherit;}}\\pard\\s0 BEFORE\\par\\pard\\s2 SECRET\\par\\pard\\s0 AFTER}",
+      "sha256": "2855dfa61a4b59118418cccca8cf09684a1bc11fa3b2802e330ee2ffd1221b99",
+      "reader": "BEFORE\nSECRET\nAFTER",
+      "writerChrome": "BEFORE\nAFTER",
+      "matches": false,
+      "status": "candidate-hidden-style-gap"
+    },
+    {
+      "name": "character-plain-reset",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\additive\\v Hidden;}}BEFORE{\\cs1 SECRET\\plain VISIBLE}AFTER}",
+      "sha256": "a0bb503536bab487a92c9d6297c3878da47ce1f8a0e990c30d1a67217785bd7b",
+      "reader": "BEFORESECRETVISIBLEAFTER",
+      "writerChrome": "BEFOREVISIBLEAFTER",
+      "matches": false,
+      "status": "candidate-hidden-style-gap"
+    },
+    {
+      "name": "paragraph-reset",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}}\\pard\\s1 SECRET\\par\\pard VISIBLE}",
+      "sha256": "3a9fdf5232a0094fa1b01f11dede8e6f226223a2efdf1d5394443ffae680bbaa",
+      "reader": "SECRET\nVISIBLE",
+      "writerChrome": "VISIBLE",
+      "matches": false,
+      "status": "candidate-hidden-style-gap"
+    },
+    {
+      "name": "character-font-codepage",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fnil\\fcharset134 SimSun;}}{\\stylesheet{\\s0\\f0 Normal;}{\\*\\cs1\\additive\\f1 Chinese;}}BEFORE{\\cs1 \\'c4\\'e3\\'ba\\'c3}AFTER}",
+      "sha256": "773d36dc013e784cc41459277ac7feb891cfaf5a0df2a2db99be28e195e97595",
+      "reader": "BEFOREÄãºÃAFTER",
+      "writerChrome": "BEFOREÄãºÃAFTER",
+      "matches": true,
+      "status": "both-tools-latin-text-review-before-changing"
+    },
+    {
+      "name": "paragraph-font-codepage",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fnil\\fcharset134 SimSun;}}{\\stylesheet{\\s0\\f0 Normal;}{\\s1\\f1 Chinese;}}\\pard\\s1 \\'c4\\'e3\\'ba\\'c3\\par\\pard\\s0 AFTER}",
+      "sha256": "3316d0a7e069d2ceca8fb94ddfd6e2dbc977baa12331dd3b6b4b47c3091ad3a7",
+      "reader": "ÄãºÃ\nAFTER",
+      "writerChrome": "ÄãºÃ\nAFTER",
+      "matches": true,
+      "status": "both-tools-latin-text-review-before-changing"
+    },
+    {
+      "name": "direct-font-control",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fnil\\fcharset134 SimSun;}}BEFORE{\\f1 \\'c4\\'e3\\'ba\\'c3}AFTER}",
+      "sha256": "779d8dafc354dd7b3b346287a12273e7ffb00a9934667b02b74ab71c4635b910",
+      "reader": "BEFORE你好AFTER",
+      "writerChrome": "BEFORE你好AFTER",
+      "matches": true,
+      "status": "matched-positive-control"
+    },
+    {
+      "name": "character-hidden-font-codepage",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fnil\\fcharset134 SimSun;}}{\\stylesheet{\\s0\\f0 Normal;}{\\*\\cs1\\additive\\f1\\v HiddenChinese;}}BEFORE{\\cs1 \\'c4\\'e3\\'ba\\'c3}AFTER}",
+      "sha256": "b7aae072307de1d0280d35d86b21f2bfba019a8f816f56a19d5acc1674b201f6",
+      "reader": "BEFOREÄãºÃAFTER",
+      "writerChrome": "BEFOREAFTER",
+      "matches": false,
+      "status": "candidate-hidden-style-gap"
+    }
+  ],
+  "limitation": "No implementation or WeChat/device run. Writer HTML differs from PDF for explicit v0; evidence retained.",
+  "summary": {
+    "samples": 10,
+    "visibleDifferences": 7,
+    "matchingResults": 3,
+    "overrideOracleConflicts": 0,
+    "action": "Hidden-style visibility gap confirmed; explicit v0 expectation resolved by real Writer PDF rendering. Keep font-style decoding differences separate until normative review.",
+    "resolvedHtmlExportDifferences": 1
+  },
+  "references": [
+    "https://latex2rtf.sourceforge.net/rtfspec_6.html",
+    "https://learn.microsoft.com/en-us/windows/win32/controls/about-text-object-model#tom-rtf"
+  ],
+  "writerPdfOracle": {
+    "scope": "Same actual RTF files -> Writer PDF -> pdfplumber text plus full rendered PNG visual inspection",
+    "results": [
+      {
+        "name": "character-hidden",
+        "pages": 1,
+        "pdfText": "BEFOREAFTER",
+        "renderedPageVisuallyInspected": true,
+        "pdfSha256": "bc742de3859c19201574c443a205596534ababa8bfdd688b287ddac3e30e4f9e",
+        "pngSha256": "9b6328cb557b4730464075110fb2ce140d54f32d52c28a6b3779405bc47f9fb0"
+      },
+      {
+        "name": "character-plain-reset",
+        "pages": 1,
+        "pdfText": "BEFOREVISIBLEAFTER",
+        "renderedPageVisuallyInspected": true,
+        "pdfSha256": "76e5a4eb990364439005856727ceb23e45b0013837ba85104732ac465682765f",
+        "pngSha256": "6c0e0b7e8330df17fc9244bc09359f3bcf2b5ccffb22e9d163ee3e77b7a1a6e6"
+      },
+      {
+        "name": "character-visible-override",
+        "pages": 1,
+        "pdfText": "BEFOREVISIBLEAFTER",
+        "renderedPageVisuallyInspected": true,
+        "pdfSha256": "c10ed441a382196835bc4b86d59cd609a1e4429269aad2d6f1b067abad686769",
+        "pngSha256": "1133e7e4a0a159237c55b36600cbb29d098269c905b18f69669debacd0d1fae1"
+      }
+    ],
+    "finding": "Explicit v0 restores VISIBLE in Writer PDF but unmodified Writer HTML suppresses it. Use BEFOREVISIBLEAFTER for this sample, not the HTML-export result.",
+    "viewedAt": "2026-09-05"
+  }
+}

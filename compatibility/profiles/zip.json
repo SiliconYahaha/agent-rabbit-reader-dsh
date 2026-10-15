@@ -1,0 +1,1071 @@
+{
+  "schemaVersion": 1,
+  "format": "zip",
+  "extensions": [
+    "zip"
+  ],
+  "mimeTypes": [
+    "application/zip"
+  ],
+  "signatures": [
+    "50 4B 03 04",
+    "50 4B 05 06",
+    "50 4B 06 06"
+  ],
+  "userShouldSee": "\u771f\u5b9e\u76ee\u5f55\u6811\uff1b\u53d7\u652f\u6301\u6761\u76ee\u53ef\u7ee7\u7eed\u6253\u5f00\u6b63\u6587\u3001\u56fe\u7247\u3001\u6587\u6863\u6216\u5176\u4ed6\u5df2\u652f\u6301\u6587\u4ef6\u3002\u6587\u4ef6\u540d\u5fc5\u987b\u4e0e\u6807\u51c6 ZIP \u5de5\u5177\u4e00\u81f4\uff0c\u4e0d\u80fd\u4ee5\u4e71\u7801\u6216\u9648\u65e7\u6269\u5c55\u5b57\u6bb5\u66ff\u6362\u771f\u5b9e\u8def\u5f84\u3002",
+  "currentVisibleResult": "v1.4.88\u5df2\u4e0a\u4f20\u5fae\u4fe1\u5f00\u53d1\u7248\uff0c\u4fee\u590dZIP\u91cd\u590d0x7075 Unicode Path\u5b57\u6bb5\u5bfc\u81f4\u6587\u4ef6\u540d\u968f\u89e3\u6790\u5668\u6216\u5b57\u6bb5\u987a\u5e8f\u53d8\u5316\u7684\u95ee\u9898\u3002\u91cd\u590d\u5b57\u6bb5\u6216\u622a\u65adextra\u5143\u6570\u636e\u4e0d\u518d\u8986\u76d6\u4e2d\u592e\u76ee\u5f55\u539f\u59cb\u540d\u79f0\uff0c\u666e\u901a\u89e3\u6790\u4e0e7-Zip\u517c\u5bb9\u5185\u6838\u5747\u56de\u9000\u539f\u59cb\u6210\u5458\u8eab\u4efd\u5e76\u7ee7\u7eed\u6253\u5f00\u771f\u5b9e\u6b63\u6587\u3002\u4e94\u7ec4\u786e\u5b9a\u6027\u6837\u672c\u5df2\u7ecf\u8fc7CPython\u3001bsdtar\u3001\u56fa\u5b9a7-Zip\u5185\u6838\u548c\u9605\u8bfb\u5668\u5bf9\u7167\uff1b\u5fae\u4fe1\u5f00\u53d1\u8005\u5de5\u5177SDK3.16.2\u5b9e\u9645WXML\u6761\u76ee\u70b9\u51fb\u4e5f\u663e\u793a\u539f\u59cb\u540d\u79f0\u5e76\u6253\u5f00\u771f\u5b9e\u6b63\u6587\u3002 \u5f85\u53d1\u5e03\u4fee\u590d\uff1a\u7279\u6b8a\u76ee\u5f55\u540d\u3001\u5927\u5c0f\u5199\u76ee\u5f55\u5206\u7ec4\u4e0e\u9ed8\u8ba4\u68c0\u67e5\u5361\u7f29\u8fdb\u901a\u8fc720\u4efd\u771f\u5b9eTAR/ZIP\u548c176\u6b21\u6b63\u6587\u6253\u5f00\u9a8c\u8bc1\uff1b\u771f\u673a\u672a\u6d4b\u3002",
+  "oracles": [
+    {
+      "name": "PKWARE APPNOTE Unicode Path Extra Field",
+      "type": "specification",
+      "url": "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
+      "expected": "EFS \u6807\u8bb0\u51b3\u5b9a UTF-8\uff1b0x7075 \u53ea\u6709\u7248\u672c\u53d7\u652f\u6301\u4e14\u539f\u540d CRC32 \u5339\u914d\u65f6\u624d\u53ef\u8986\u76d6\u4e3b\u6587\u4ef6\u540d\u3002"
+    },
+    {
+      "name": "Common ZIP Specification extra field rules",
+      "type": "specification",
+      "url": "https://commonzip.org/spec/",
+      "expected": "\u989d\u5916\u5b57\u6bb5\u53ef\u6309\u4efb\u610f\u987a\u5e8f\u51fa\u73b0\uff0c\u4f460x7075\u7b49\u6307\u5b9a\u5b57\u6bb5\u4e0d\u5f97\u91cd\u590d\uff1b\u91cd\u590d\u65f6\u4e0d\u80fd\u6309\u89e3\u6790\u987a\u5e8f\u9759\u9ed8\u9009\u62e9\u6587\u4ef6\u540d\u3002"
+    },
+    {
+      "name": "PKWARE APPNOTE split ZIP layout",
+      "type": "specification",
+      "url": "https://support.pkware.com/pkzip/appnote",
+      "expected": "\u7ecf\u5178\u5206\u5377\u6309.z01\u81f3\u6700\u7ec8.zip\u547d\u540d\uff1b\u9996\u5377\u53ef\u5e260x08074b50\u6807\u8bb0\uff0c\u4e2d\u592e\u76ee\u5f55\u4ee5\u8d77\u59cb\u78c1\u76d8\u53f7\u548c\u5377\u5185\u504f\u79fb\u5b9a\u4f4d\u6bcf\u4e2a\u672c\u5730\u5934\u3002"
+    },
+    {
+      "name": "Apache Commons Compress ZipFileTest",
+      "type": "reference-implementation",
+      "url": "https://github.com/apache/commons-compress/blob/master/src/test/java/org/apache/commons/compress/archivers/zip/ZipFileTest.java",
+      "expected": "utf8-7zip-test.zip \u7684\u6b27\u5143\u6587\u4ef6\u540d\u6765\u81ea EFS\uff1b\u672a\u6807\u8bb0\u7684 \u00d6lf\u00e4sser.txt \u6309 CP437 \u89e3\u7801\u3002"
+    },
+    {
+      "name": "CPython zipfile ZipInfo._decodeExtra",
+      "type": "reference-implementation",
+      "url": "https://github.com/python/cpython/blob/main/Lib/zipfile/__init__.py",
+      "expected": "0x7075 \u7248\u672c 1 \u4e14\u6587\u4ef6\u540d CRC \u5339\u914d\u65f6\u4f7f\u7528 UTF-8 \u540d\u79f0\uff1b\u4e0d\u5339\u914d\u65f6\u5ffd\u7565\u6269\u5c55\u5b57\u6bb5\u3002"
+    },
+    {
+      "name": "Unicode CP437 mapping and CPython codec",
+      "type": "reference-implementation",
+      "url": "https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/PC/CP437.TXT",
+      "expected": "\u6240\u6709 128 \u4e2a\u9ad8\u4f4d\u5b57\u8282\u4e0e CP437 \u5bf9\u7167\u4e00\u81f4\uff1b0xB5 \u662f \u2561\uff0c\u4e0d\u662f CP850 \u7684 \u00c1\u3002"
+    },
+    {
+      "name": "WHATWG Encoding Standard",
+      "type": "specification",
+      "url": "https://encoding.spec.whatwg.org/",
+      "expected": "Shift_JIS \u4f7f\u7528 Windows-31J \u517c\u5bb9\u6620\u5c04\uff1bBig5 \u4f7f\u7528\u6807\u51c6\u7d22\u5f15\u548c\u53cc\u5b57\u8282\u72b6\u6001\u673a\uff0c\u622a\u65ad\u6216\u672a\u5206\u914d\u5e8f\u5217\u5fc5\u987b\u62a5\u544a\u89e3\u7801\u9519\u8bef\u3002"
+    },
+    {
+      "name": "macOS iconv and bsdtar CP949 cross-check",
+      "type": "system-reference-implementation",
+      "expected": "\u666e\u901aEUC-KR\u8def\u5f84\u4e0eCP949/UHC\u6269\u5c55\u8def\u5f84\u7684\u539f\u59cb\u5b57\u8282\u5206\u522b\u7ecf/usr/bin/iconv\u89e3\u7801\uff0c\u5e76\u7531bsdtar/libarchive\u7684zip:hdrcharset=CP949\u5217\u51fa\u76f8\u540c\u76ee\u5f55\u540d\uff1b\u63d0\u53d6\u6b63\u6587\u4e0e\u9605\u8bfb\u5668\u9010\u5b57\u8282\u4e00\u81f4\u3002"
+    },
+    {
+      "name": "libarchive ZIP symlink tests",
+      "type": "reference-implementation",
+      "url": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_zip_symlink.c",
+      "expected": "\u666e\u901aUnix\u94fe\u63a5\u89e3\u6790\u5230\u771f\u5b9e\u6587\u4ef6\uff1b\u4e0d\u652f\u6301\u538b\u7f29\u65b9\u6cd5\u7684\u94fe\u63a5\u53ea\u8ba9\u8be5\u9879\u5931\u8d25\uff0c\u540e\u7eed\u666e\u901a\u6210\u5458\u4ecd\u53ef\u8bfb\u53d6\u3002"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "visible-directory-hierarchy",
+      "axis": {
+        "version": "TAR USTAR/GNU/PAX; ZIP Store/Deflate",
+        "feature": "Implicit folders, case-distinct subtrees and same-name file/folder",
+        "complexity": "Forward/reversed member order and Chinese/literal-backslash paths",
+        "platform": "Actual Node host and production WXML in Chrome/glass-easel"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u76ee\u5f55\u540d\u79f0\u4e0e\u5c42\u7ea7\u5b8c\u6574\uff0c\u7236\u76ee\u5f55\u4e0e\u5b50\u6587\u4ef6\u4fdd\u6301\u8fde\u7eed\uff0c\u754c\u9762\u663e\u793a\u7f29\u8fdb\u4e14\u70b9\u51fb\u4ecd\u6253\u5f00\u539f\u59cb\u6210\u5458\u6b63\u6587\u3002",
+      "evidence": [
+        "tests/archive-folder-paths.test.js",
+        "runs/2026-09-18-archive-folder-paths.json"
+      ]
+    },
+    {
+      "id": "local-central-name-disagreement",
+      "axis": {
+        "version": "ordinary ZIP / local ZIP64",
+        "feature": "raw member identity before payload read",
+        "platform": "Node candidate, WeChat pending",
+        "failureType": "conflicting local name"
+      },
+      "expectedVisibleResult": "60\u4e2a\u6b63\u6587CRC\u76f8\u540c\u7684\u540d\u79f0\u51b2\u7a81\u6761\u76ee\u62d2\u7edd\uff0c\u6b63\u5e38Unicode Path/\u4e2d\u6587\u53ca\u540c\u540d\u6587\u4ef6\u4ecd\u663e\u793a\u6b63\u786e\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-local-identity.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-zip-local-identity.js"
+      ]
+    },
+    {
+      "id": "local-header-fields-and-placeholders",
+      "axis": {
+        "version": "ordinary ZIP / local ZIP64",
+        "feature": "complete header and valid placeholders",
+        "platform": "Node candidate, WeChat pending",
+        "failureType": "truncation or contradiction"
+      },
+      "expectedVisibleResult": "\u6838\u5bf9\u65b9\u6cd5/flags/\u975e\u63cf\u8ff0\u7b26CRC\u53ca\u5927\u5c0f\uff0cZIP64\u4eceextra\u53d6\u5b9e\u9645\u5927\u5c0f\uff0cbit3\u5360\u4f4d\u4e0d\u4f5c\u5b9e\u9645\u503c\uff1b\u53d8\u91cf\u5934\u6700\u5927131100bytes\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-local-identity.test.js: six ZIP64 cases,65535-byte name/extra"
+      ]
+    },
+    {
+      "id": "archive-stale-callback-isolation",
+      "axis": {
+        "version": "archive page flow",
+        "feature": "open revision isolation",
+        "platform": "Node candidate, WeChat pending",
+        "failureType": "switch file during async operation"
+      },
+      "expectedVisibleResult": "\u65e7\u5934\u90e8\u8bfb\u53d6/\u4fdd\u5b58\u6210\u529f\u6216\u5931\u8d25\u5747\u4e0d\u8986\u76d6\u65b0HTML\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/page-state.test.js: four deferred read/write cases"
+      ]
+    },
+    {
+      "id": "central-offset-recovery-stored-data-descriptor",
+      "axis": {
+        "version": "ordinary ZIP method 0/8",
+        "feature": "omitted signed/unsigned descriptor accounting",
+        "platform": "Node candidate, WeChat pending",
+        "failureType": "stale central offsets"
+      },
+      "expectedVisibleResult": "\u76ee\u5f55\u6062\u590d\u540e\u80fd\u6253\u5f00\u539f\u59cb\u6b63\u6587\uff0c\u540c\u540d\u6210\u5458\u53ca\u7f16\u7801\u9009\u62e9\u4fdd\u7559\u771f\u5b9e\u504f\u79fb\uff1b\u4e0d\u80fd\u53ea\u663e\u793a\u5217\u8868\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-recovery.test.js: 120 variants and unchanged public originals",
+        "tests/page-state.test.js: four public XML bodies and duplicate text"
+      ]
+    },
+    {
+      "id": "recovery-integrity-and-resource-gates",
+      "axis": {
+        "version": "ordinary ZIP method 0/8",
+        "feature": "complete sequential identity and bounded content verification",
+        "platform": "Node candidate, WeChat pending",
+        "failureType": "malformed or ambiguous"
+      },
+      "expectedVisibleResult": "\u5b57\u6bb5\u77db\u76fe\u3001\u622a\u65ad\u3001CRC\u9519\u8bef\u3001\u8d85\u8fc78MiB/500\u9879/20MiB\u603b\u6b63\u6587\u4e0d\u6062\u590d\uff1b\u539f\u6587\u4ef6\u4e0d\u6539\u5199\uff0c\u574f\u6b63\u6587\u4e0d\u5c55\u793a\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-recovery.test.js: 17 contradictions, 1022 truncations, limits, input immutability",
+        "tests/page-state.test.js: no large whole-file read or invalid write"
+      ]
+    },
+    {
+      "id": "filename-unflagged-manual-overrides-valid-utf8",
+      "axis": {
+        "version": "legacy",
+        "feature": "no-encoding-flag",
+        "complexity": "1920-valid-utf8-pairs-and-65535-byte-name",
+        "platform": "all",
+        "size": "boundary",
+        "failureType": "ambiguous-encoding"
+      },
+      "expectedVisibleResult": "\u660e\u786e\u9009\u62e9 CP437 \u540e C2 A5 \u663e\u793a\u4e3a \u252c\u00d1\uff0c\u4e0d\u88ab UTF-8 \u7684 \u00a5 \u8986\u76d6\uff1b\u5207\u56de\u81ea\u52a8/UTF-8 \u53ef\u6062\u590d\uff0c\u5e76\u6253\u5f00\u540c\u4e00\u4efd\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/file-inspector.test.js: 1920 byte combinations and 65535-byte boundary",
+        "tests/page-state.test.js: mode switching and extraction"
+      ]
+    },
+    {
+      "id": "compat-engine-multi-entry",
+      "axis": {
+        "version": "ZIP",
+        "feature": "7zip-technical-listing",
+        "complexity": "three-files-including-empty",
+        "platform": "all",
+        "size": "small",
+        "failureType": "lost-record-separators"
+      },
+      "expectedVisibleResult": "\u517c\u5bb9\u5185\u6838\u8fd4\u56de\u5168\u90e8\u6587\u4ef6\u800c\u4e0d\u662f\u6700\u540e\u4e00\u9879\uff1b\u6bcf\u4e2a\u6761\u76ee\u90fd\u80fd\u89e3\u538b\u51fa\u539f\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: multi-entry ZIP",
+        "Apache utf8-winzip-test.zip: all 3 names and contents match 7-Zip"
+      ]
+    },
+    {
+      "id": "filename-efs-utf8",
+      "axis": {
+        "version": "ZIP 2.0+",
+        "feature": "general-purpose-bit-11",
+        "complexity": "nested-path",
+        "platform": "all",
+        "size": "small",
+        "failureType": "none"
+      },
+      "expectedVisibleResult": "EFS \u6587\u4ef6\u540d\u6309 UTF-8 \u663e\u793a\uff0c\u9648\u65e7 0x7075 \u4e0d\u80fd\u8986\u76d6\u4e3b\u6587\u4ef6\u540d\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/file-inspector.test.js: stale Unicode Path",
+        "tests/file-inspector.test.js: utf8-7zip-test.zip"
+      ]
+    },
+    {
+      "id": "filename-unicode-path",
+      "axis": {
+        "version": "Info-ZIP 0x7075 v1",
+        "feature": "unicode-path-extra",
+        "complexity": "three-level-Chinese-path",
+        "platform": "all",
+        "size": "small",
+        "failureType": "none"
+      },
+      "expectedVisibleResult": "CRC \u5339\u914d\u65f6\u663e\u793a Unicode \u76ee\u5f55\u548c\u6587\u4ef6\u540d\uff0c\u5e76\u80fd\u6253\u5f00\u771f\u5b9e\u6761\u76ee\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/file-inspector.test.js: valid Unicode Path + extraction"
+      ]
+    },
+    {
+      "id": "filename-unicode-path-stale-crc",
+      "axis": {
+        "version": "Info-ZIP 0x7075 v1",
+        "feature": "unicode-path-extra",
+        "complexity": "nested-path",
+        "platform": "all",
+        "size": "small",
+        "failureType": "stale-crc"
+      },
+      "expectedVisibleResult": "\u5ffd\u7565 CRC \u4e0d\u5339\u914d\u7684\u9648\u65e7\u6216\u4f2a\u9020\u540d\u79f0\uff0c\u7ee7\u7eed\u4f7f\u7528\u771f\u5b9e\u4e3b\u6587\u4ef6\u540d\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/file-inspector.test.js: stale CRC with EFS",
+        "tests/file-inspector.test.js: stale CRC without EFS"
+      ]
+    },
+    {
+      "id": "filename-unicode-path-duplicate-or-truncated",
+      "axis": {
+        "version": "Info-ZIP 0x7075 v1",
+        "feature": "unicode-path-extra",
+        "complexity": "conflicting, identical, valid-invalid order and truncated tail",
+        "platform": "Node and WeChat DevTools 3.16.2",
+        "size": "small",
+        "failureType": "duplicate-or-malformed-extra"
+      },
+      "expectedVisibleResult": "\u4e0d\u91c7\u7528\u987a\u5e8f\u76f8\u5173\u6216\u622a\u65ad\u7684\u6269\u5c55\u540d\u79f0\uff0c\u56de\u9000\u4e2d\u592e\u76ee\u5f55\u539f\u59cb\u540d\u79f0\uff0c\u5e76\u6309\u539f\u6210\u5458\u8eab\u4efd\u6253\u5f00\u771f\u5b9e\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/file-inspector.test.js",
+        "tests/page-state.test.js",
+        "tests/zip-engine-legacy-names.test.js",
+        "scripts/verify-zip-duplicate-unicode-path.js"
+      ]
+    },
+    {
+      "id": "filename-cp437",
+      "axis": {
+        "version": "legacy",
+        "feature": "no-encoding-flag",
+        "complexity": "accented-Latin",
+        "platform": "all",
+        "size": "365 B",
+        "failureType": "ambiguous-encoding"
+      },
+      "expectedVisibleResult": "\u9ed8\u8ba4\u663e\u793a \u00d6lf\u00e4sser.txt\uff0c\u800c\u4e0d\u662f\u628a CP437 \u5b57\u8282\u8bef\u731c\u6210\u4e2d\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "Apache utf8-7zip-test.zip",
+        "tests/file-inspector.test.js",
+        "tests/page-state.test.js"
+      ]
+    },
+    {
+      "id": "filename-cp437-full-high-byte-map",
+      "axis": {
+        "version": "legacy",
+        "feature": "no-encoding-flag",
+        "complexity": "all-128-high-bytes",
+        "platform": "all",
+        "size": "small",
+        "failureType": "wrong-code-page-table"
+      },
+      "expectedVisibleResult": "CP437 \u7ebf\u6846\u3001\u5e0c\u814a\u5b57\u6bcd\u548c\u6570\u5b66\u7b26\u53f7\u9010\u5b57\u8282\u6b63\u786e\u663e\u793a\uff0c\u5e76\u7ee7\u7eed\u6253\u5f00\u5bf9\u5e94\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/file-inspector.test.js: all 128 high bytes",
+        "CPython cp437 codec 128/128",
+        "verify:simulator CP437 symbols real WXML tap"
+      ]
+    },
+    {
+      "id": "filename-gbk-manual",
+      "axis": {
+        "version": "legacy",
+        "feature": "no-encoding-flag",
+        "complexity": "Chinese-poem-path",
+        "platform": "all",
+        "size": "small",
+        "failureType": "ambiguous-encoding"
+      },
+      "expectedVisibleResult": "\u7528\u6237\u53ef\u5207\u6362\u5230 GBK/GB18030\uff0c\u770b\u5230\u674e\u767d/\u6708\u4e0b\u72ec\u914c.txt\uff0c\u518d\u5207\u56de CP437 \u5bf9\u7167\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/file-inspector.test.js",
+        "tests/page-state.test.js"
+      ]
+    },
+    {
+      "id": "filename-shift-jis-manual",
+      "axis": {
+        "version": "legacy",
+        "feature": "no-encoding-flag",
+        "complexity": "Japanese-path",
+        "platform": "all",
+        "size": "small",
+        "failureType": "ambiguous-encoding"
+      },
+      "expectedVisibleResult": "\u7528\u6237\u53ef\u660e\u786e\u9009\u62e9 Shift_JIS\uff0c\u800c\u4e0d\u662f\u63a5\u53d7 CP437 \u4e71\u7801\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/text-decoder.test.js",
+        "tests/file-inspector.test.js",
+        "tests/page-state.test.js",
+        "verify:simulator real WXML tap"
+      ]
+    },
+    {
+      "id": "filename-cp949-manual",
+      "axis": {
+        "version": "legacy",
+        "feature": "no-encoding-flag",
+        "complexity": "EUC-KR-common-and-UHC-extension",
+        "platform": "Node and WeChat DevTools",
+        "size": "small",
+        "failureType": "ambiguous-encoding"
+      },
+      "expectedVisibleResult": "\u7528\u6237\u53ef\u660e\u786e\u9009\u62e9\u97e9\u6587CP949/EUC-KR\uff0c\u770b\u5230\u51c6\u786e\u7684\u591a\u5c42\u97e9\u6587\u8def\u5f84\u5e76\u6253\u5f00\u540c\u4e00\u771f\u5b9e\u6761\u76ee\u6b63\u6587\uff1bUnicode\u6807\u8bb0\u540d\u79f0\u4e0d\u88ab\u624b\u52a8\u7f16\u7801\u8986\u76d6\uff0c\u539f\u59cb\u6210\u5458\u8eab\u4efd\u4e0d\u53d8\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/text-decoder.test.js: 22428 legal-shaped double-byte slots and malformed resynchronization",
+        "tests/file-inspector.test.js: common EUC-KR, UHC extension, Unicode protection and body extraction",
+        "tests/page-state.test.js: exact path plus actual entry open",
+        "scripts/verify-zip-cp949.js: /usr/bin/iconv and bsdtar oracles",
+        "scripts/verify-wechat-simulator.js: actual WXML selection and entry tap"
+      ]
+    },
+    {
+      "id": "compat-engine-legacy-filename-decoding",
+      "axis": {
+        "version": "ZIP with 7-Zip compatibility engine",
+        "feature": "legacy filename overlay and member-index extraction",
+        "complexity": "BZip2, AES and duplicate members",
+        "platform": "Node and WeChat DevTools",
+        "size": "single archive up to 80 MB",
+        "failureType": "native filename mojibake or wrong-member extraction"
+      },
+      "expectedVisibleResult": "\u517c\u5bb9\u5185\u6838\u63a5\u7ba1\u540e\u4ecd\u663e\u793a\u6587\u4ef6\u540d\u7f16\u7801\u9009\u62e9\uff1b\u9009\u62e9CP949/EUC-KR\u540e\u663e\u793a\u51c6\u786e\u8def\u5f84\uff0cBZip2\u548cAES\u6210\u5458\u53ef\u6253\u5f00\u771f\u5b9e\u6b63\u6587\uff0c\u540c\u540d\u6210\u5458\u4e0d\u4f1a\u4e92\u76f8\u66ff\u6362\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-engine-legacy-names.test.js: EUC-KR, UHC, AES, duplicate identity, traversal and mismatch rejection",
+        "scripts/verify-zip-engine-legacy-names.js: /usr/bin/iconv and bsdtar body oracle",
+        "scripts/verify-wechat-simulator.js: actual WXML CP949 selection and BZip2 entry tap"
+      ]
+    },
+    {
+      "id": "compat-engine-unix-link-target",
+      "axis": {
+        "version": "ZIP with 7-Zip compatibility engine",
+        "feature": "Unix symlink payload isolation and package-relative resolution",
+        "complexity": "BZip2-compressed link, BZip2 target, unlocked AES target, repeated open",
+        "platform": "Node and WeChat DevTools",
+        "size": "single archive up to 80 MB",
+        "failureType": "link displayed as path text, source mutation or unsupported method"
+      },
+      "expectedVisibleResult": "\u76ee\u5f55\u4fdd\u7559\u4e2d\u592e\u76ee\u5f55\u58f0\u660e\u7684\u94fe\u63a5\u8eab\u4efd\uff1b\u70b9\u51fb\u540e\u6253\u5f00\u5305\u5185\u771f\u5b9e\u76ee\u6807\u6b63\u6587\uff0c\u8fde\u7eed\u4e24\u6b21\u6253\u5f00\u7ed3\u679c\u4e00\u81f4\uff0c\u539fZIP\u5b57\u8282\u4e0d\u53d8\u3002\u4e0d\u652f\u6301\u7684\u65b9\u6cd5\u53ea\u7981\u7528\u5bf9\u5e94\u6210\u5458\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-engine-legacy-names.test.js: BZip2 link payload, BZip2/AES targets, CRC and input immutability",
+        "scripts/verify-zip-engine-links.js: CPython zipfile, bsdtar/libarchive and pinned 7-Zip WASM",
+        "scripts/verify-wechat-simulator.js: actual WXML link row tapped twice"
+      ]
+    },
+    {
+      "id": "compat-engine-zip64-numeric-volume-link",
+      "axis": {
+        "version": "ZIP64 split as .zip.001 numeric volumes",
+        "feature": "Unix symlink identity and target extraction across joined volumes",
+        "complexity": "three reversed input volumes, BZip2 link and target, repeated open",
+        "platform": "Node and WeChat DevTools",
+        "size": "up to 10 volumes and 80 MB combined",
+        "failureType": "lost link identity, wrong volume order, path text or source mutation"
+      },
+      "expectedVisibleResult": "\u9009\u62e9\u5b8c\u6574\u6570\u5b57\u5206\u5377\u540e\u663e\u793a\u771f\u5b9e\u76ee\u5f55\u548c\u7b26\u53f7\u94fe\u63a5\uff1b\u70b9\u51fb\u94fe\u63a5\u6253\u5f00\u5305\u5185\u76ee\u6807HTML\uff0c\u8fde\u7eed\u4e24\u6b21\u7ed3\u679c\u4e00\u81f4\uff0c\u4e09\u4e2a\u539f\u5206\u5377\u5b57\u8282\u4e0d\u53d8\u3002\u7f3a\u5c11\u4e2d\u95f4\u5377\u65f6\u5728\u542f\u52a8\u5185\u6838\u524d\u660e\u786e\u5217\u51fa\u7f3a\u5377\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: ZIP64 three-volume link and two exact opens",
+        "tests/archive-volumes.test.js: missing .zip.002 preflight",
+        "scripts/verify-zip-engine-links.js: CPython, bsdtar and pinned 7-Zip 24.09",
+        "scripts/verify-wechat-simulator.js: three actual volume files and real WXML link tap twice"
+      ]
+    },
+    {
+      "id": "compat-engine-classic-z01-volume-link",
+      "axis": {
+        "version": "ordinary ZIP split as .z01/.z02/.zip",
+        "feature": "disk-relative local offsets, Unix link identity and target extraction",
+        "complexity": "three reversed input volumes, BZip2 link, target spanning volumes, repeated open",
+        "platform": "Node and WeChat DevTools",
+        "size": "up to 10 volumes and 80 MB combined",
+        "failureType": "lost link identity, wrong disk offset, path text or source mutation"
+      },
+      "expectedVisibleResult": "\u9009\u62e9\u5b8c\u6574\u7ecf\u5178\u5206\u5377\u540e\u663e\u793a\u771f\u5b9e\u76ee\u5f55\u548c\u7b26\u53f7\u94fe\u63a5\uff1b\u70b9\u51fb\u94fe\u63a5\u6253\u5f00\u5305\u5185\u76ee\u6807HTML\uff0c\u8fde\u7eed\u4e24\u6b21\u7ed3\u679c\u4e00\u81f4\uff0c\u4e09\u4e2a\u539f\u5206\u5377\u5b57\u8282\u4e0d\u53d8\u3002\u7f3a\u5377\u548c\u4e0d\u5b58\u5728\u7684\u78c1\u76d8\u5f15\u7528\u5728\u5c55\u793a\u6b63\u6587\u524d\u62d2\u7edd\uff0c\u968f\u540e\u6b63\u5e38\u6587\u4ef6\u4ecd\u53ef\u6253\u5f00\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: classic three-volume link, damaged disk and retry",
+        "tests/archive-volumes.test.js: ordering and missing .z02",
+        "scripts/verify-zip-engine-links.js: Info-ZIP split join, CPython zipfile and pinned 7-Zip 24.09",
+        "scripts/verify-wechat-simulator.js: three actual volume files, source-byte comparison and real WXML link tap twice"
+      ]
+    },
+    {
+      "id": "compat-engine-zip64-classic-z01-volume-link",
+      "axis": {
+        "version": "ZIP64 split as .z01/.z02/.zip",
+        "feature": "ZIP64 EOCD, locator, disk-relative 64-bit member offsets and Unix link extraction",
+        "complexity": "three reversed volumes, direct or ZIP64-extra disk number, BZip2 link, repeated open and three corruptions",
+        "platform": "Node and WeChat DevTools",
+        "size": "up to 10 volumes and 80 MB combined",
+        "failureType": "lost link identity, wrong locator/disk offset, path text or source mutation"
+      },
+      "expectedVisibleResult": "\u9009\u62e9\u5b8c\u6574ZIP64\u7ecf\u5178\u5206\u5377\u540e\u663e\u793a\u771f\u5b9e\u76ee\u5f55\u548c\u94fe\u63a5\uff1b\u70b9\u51fb\u6253\u5f00\u5305\u5185\u76ee\u6807HTML\uff0c\u8fde\u7eed\u4e24\u6b21\u4e00\u81f4\u4e14\u539f\u5206\u5377\u4e0d\u53d8\u3002\u5b9a\u4f4d\u5668\u3001\u7ed3\u675f\u8bb0\u5f55\u6216\u6210\u5458\u78c1\u76d8\u77db\u76fe\u5728\u6b63\u6587\u5c55\u793a\u524d\u62d2\u7edd\uff0c\u968f\u540e\u6b63\u5e38\u6587\u4ef6\u4ecd\u53ef\u6253\u5f00\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: direct/extra disk fields, repeated opens and three damaged metadata variants",
+        "scripts/verify-zip-engine-links.js: two Info-ZIP split joins, CPython zipfile and pinned 7-Zip 24.09",
+        "scripts/verify-wechat-simulator.js: three actual files, two real WXML link taps and source-byte comparison"
+      ]
+    },
+    {
+      "id": "filename-big5-manual",
+      "axis": {
+        "version": "legacy",
+        "feature": "no-encoding-flag",
+        "complexity": "Traditional-Chinese-path",
+        "platform": "all",
+        "size": "small",
+        "failureType": "ambiguous-encoding"
+      },
+      "expectedVisibleResult": "\u7528\u6237\u53ef\u660e\u786e\u9009\u62e9\u7e41\u4f53 Big5\uff0c\u770b\u5230\u7e41\u9ad4\u4e2d\u6587/\u8a2d\u8a08\u5716.ai\uff0c\u800c\u4e0d\u662f\u63a5\u53d7 CP437 \u6216 GBK \u4e71\u7801\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/text-decoder.test.js",
+        "tests/file-inspector.test.js",
+        "tests/page-state.test.js",
+        "verify:simulator real WXML tap"
+      ]
+    },
+    {
+      "id": "decoded-and-normalized-duplicate-identity",
+      "axis": {
+        "version": "ordinary and compatibility-engine ZIP",
+        "feature": "display-name normalization without member-identity loss",
+        "complexity": "two distinct Big5 byte names decoding identically, repeated slashes and unsafe absolute path",
+        "platform": "Node and WeChat DevTools",
+        "size": "small",
+        "failureType": "silent wrong member or unsafe path made clickable"
+      },
+      "expectedVisibleResult": "\u6700\u7ec8\u663e\u793a\u540c\u540d\u7684\u6587\u4ef6\u5206\u522b\u6807\u8bb01/2\u30012/2\uff0c\u9010\u9879\u6253\u5f00\u5404\u81ea\u6b63\u6587\uff1b\u539f\u59cb\u7edd\u5bf9\u8def\u5f84\u4fdd\u7559\u5b8c\u6574\u8b66\u544a\u5e76\u4e0d\u53ef\u70b9\u51fb\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/archive-identity.test.js",
+        "tests/zip-engine-legacy-names.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-zip-decoded-duplicates.js: macOS iconv and CPython zipfile per-header hashes",
+        "scripts/verify-archive-native-wechat.js: actual Big5 choice and two WXML row taps"
+      ]
+    },
+    {
+      "id": "crc-zero-integrity",
+      "axis": {
+        "version": "ZIP method 0/8",
+        "feature": "CRC32 including value zero",
+        "complexity": "60 corruptions plus empty/nonempty zero",
+        "platform": "Node candidate, WeChat pending",
+        "failureType": "corrupt-or-misdeclared"
+      },
+      "expectedVisibleResult": "\u6bcf\u4e2a\u666e\u901aZIP\u6210\u5458\u90fd\u6838\u5bf9\u4e2d\u592eCRC\uff1b\u503c0\u4e0d\u662f\u7f3a\u7701\u300260\u4e2a\u9519\u8bef0\u4e0ePython\u4e00\u81f4\u62d2\u7edd\uff0c\u5408\u6cd5\u7a7a/\u975e\u7a7a0\u7ee7\u7eed\u663e\u793a\u539f\u5b57\u8282\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-integrity.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-zip-integrity.js"
+      ]
+    },
+    {
+      "id": "deflate-output-prewrite-bound",
+      "axis": {
+        "version": "ZIP method 0/8",
+        "feature": "raw RFC1951 bounded writes",
+        "complexity": "stored/fixed/dynamic and four MiB expansion",
+        "platform": "Node candidate, WeChat pending",
+        "failureType": "corrupt-or-misdeclared"
+      },
+      "expectedVisibleResult": "\u58f0\u660e20\u5b57\u8282\u7684\u5185\u5bb9\u5728\u9996\u6b21\u8d8a\u754c\u5199\u5165\u524d\u505c\u6b62\uff0c\u4e0d\u5148\u751f\u62104MiB\uff1b120\u4e2a\u6709\u6548\u5c3a\u5bf8/\u7b56\u7565/\u7a97\u53e3\u4e0eNode\u9010\u5b57\u8282\u4e00\u81f4\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-integrity.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-zip-integrity.js"
+      ]
+    },
+    {
+      "id": "zip-entry-failure-recovery",
+      "axis": {
+        "version": "ZIP method 0/8",
+        "feature": "actual ranged page entry",
+        "complexity": "bad CRC / inflation / valid descriptor",
+        "platform": "Node and WeChat DevTools",
+        "failureType": "corrupt-or-misdeclared"
+      },
+      "expectedVisibleResult": "\u9519\u8bef\u5185\u5bb9\u4e0d\u5199\u4e34\u65f6\u6587\u4ef6\u3001\u52a0\u8f7d\u72b6\u6001\u7ed3\u675f\u4e14\u4fdd\u7559\u76ee\u5f55\uff1b\u968f\u540e\u6b63\u5e38\u6761\u76ee\u4ecd\u80fd\u6253\u5f00\u771f\u5b9e\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-integrity.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-zip-integrity.js"
+      ]
+    },
+    {
+      "id": "deflate-empty-trailing-stream-compatibility",
+      "axis": {
+        "version": "ZIP method 8",
+        "feature": "complete zero-output raw Deflate streams after payload",
+        "complexity": "fixed/stored tails, at most four",
+        "platform": "Node and WeChat DevTools",
+        "failureType": "legacy-writer-trailing-stream"
+      },
+      "expectedVisibleResult": "\u6b63\u6587\u6d41\u540e\u8ffd\u52a0\u5b8c\u6574\u7a7aDeflate\u6d41\u7684\u65e7ZIP\u4ecd\u6253\u5f00\u771f\u5b9e\u6b63\u6587\uff1b\u968f\u673a\u6216\u622a\u65ad\u5c3e\u5b57\u8282\u3001\u7b2c\u4e8c\u6b63\u6587\u3001\u9519\u8befCRC\u53ca\u8d85\u91cf\u5c3e\u6d41\u660e\u786e\u62d2\u7edd\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/zip-integrity.test.js",
+        "tests/zip-local-identity.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-zip-local-identity.js",
+        "scripts/verify-wechat-simulator.js"
+      ]
+    },
+    {
+      "id": "invalid-utf8-under-efs",
+      "axis": {
+        "version": "ZIP and ZIP64",
+        "feature": "EFS name validation, overrides, recovery and volumes",
+        "encoding": "flagged UTF-8 versus unflagged legacy names",
+        "anomaly": "invalid leading/truncated/overlong/surrogate/out-of-range bytes"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u635f\u574fUTF-8\u58f0\u660e\u660e\u786e\u62a5\u9519\uff0c\u4e0d\u80fd\u9759\u9ed8\u56de\u9000\u4e3a\u65e7\u7f16\u7801\u6216\u75287075\u8986\u76d6\uff1b\u6b63\u5e38\u6587\u4ef6\u540d\u548c\u6b63\u6587\u4fdd\u7559\uff0c\u540e\u7eed\u6587\u4ef6\u4ecd\u53ef\u6253\u5f00\u3002",
+      "evidence": [
+        "tests/zip-efs.test.js",
+        "scripts/verify-zip-efs.js",
+        "runs/2026-09-05-zip-efs.json"
+      ]
+    }
+  ],
+  "publicSamples": [
+    {
+      "name": "archive_with_trailer.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/archive_with_trailer.zip",
+      "license": "Apache-2.0",
+      "sha256": "1aa26f92999ece92cb721a1ea0aad8abbcc446dce3c144ecd02f26fb04d38bf6",
+      "redistributed": true,
+      "expectedVisibleResult": "test1.xml/test2.xml\u5168\u90e8610/82bytes\u6b63\u6587\u4e0ePython/raw7z\u4e00\u81f4",
+      "result": "pass-local-content"
+    },
+    {
+      "name": "archive_with_bytes_after_data.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/archive_with_bytes_after_data.zip",
+      "license": "Apache-2.0",
+      "sha256": "eef19843aac2e535a8c83596087fc48a3f29c5aecd2717db38b682e59c223d6c",
+      "redistributed": true,
+      "expectedVisibleResult": "\u5b89\u5168\u63d0\u53d6\u6b63\u6587\u6d41\u540e\u5e26\u5b8c\u6574\u7a7aDeflate\u6d41\u7684610/82byte\u6b63\u6587\uff0c\u4e14\u7ee7\u7eed\u6838\u5bf9\u76ee\u5f55CRC",
+      "result": "pass-local-content-python-and-raw7z-hash"
+    },
+    {
+      "name": "utf8-7zip-test.zip",
+      "source": "https://raw.githubusercontent.com/apache/commons-compress/master/src/test/resources/utf8-7zip-test.zip",
+      "license": "Apache-2.0",
+      "sha256": "411daee97a8f6e5fd3b50cfac08a326ac55b5862364b7d692b44967134d4c571",
+      "redistributed": true,
+      "expectedVisibleResult": [
+        "ascii.txt",
+        "\u00d6lf\u00e4sser.txt",
+        "\u20ac_for_Dollar.txt"
+      ],
+      "result": "pass"
+    },
+    {
+      "name": "utf8-winzip-test.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/utf8-winzip-test.zip",
+      "license": "Apache-2.0",
+      "sha256": "fd5aeb74f430739a93b21f107237f74f31de5a59c66729dab68281f47ed1ec61",
+      "redistributed": true,
+      "expectedVisibleResult": [
+        "ascii.txt",
+        "\u00d6lf\u00e4sser.txt",
+        "\u20ac_for_Dollar.txt"
+      ],
+      "result": "pass-local-content-and-raw7z-names; Python3.9 ignores Unicode Path"
+    },
+    {
+      "name": "chinese.zip from yauzl issue 33",
+      "source": "https://github.com/thejoshwolfe/yauzl/issues/33",
+      "license": "unknown-not-redistributed",
+      "sha256": "21e042d88097d910a41f58d5413e682e47ba22eb5a8db7a770a3917cb3e078dc",
+      "redistributed": false,
+      "expectedVisibleResult": [
+        "\u4e03\u4e2a\u623f\u95f4.txt"
+      ],
+      "result": "pass-local-oracle"
+    },
+    {
+      "name": "bla.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/bla.zip",
+      "license": "Apache-2.0",
+      "sha256": "16dff1b8998a6a95f2d2decf9c287a740fda29188b9d90b37ffc4aea1359d6ef",
+      "redistributed": true,
+      "expectedVisibleResult": "test1.xml: 610 bytes, SHA256 506c377ae6116a19e020954828e03175d91a67c49e83e2fdd14b7ba65f64b19d; test2.xml: 82 bytes, SHA256 6b335a8bb246771e6ad0e9eac1aea6e541eb74ac0ce8e465d9bad0425078756a",
+      "result": "pass-local-three-oracle-content"
+    },
+    {
+      "name": "bla-stored.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/bla-stored.zip",
+      "license": "Apache-2.0",
+      "sha256": "3f77665ab0b248ea3cfa241bc07f544a92f4726f0071f56edb773e134af96003",
+      "redistributed": true,
+      "expectedVisibleResult": "test1.xml: 610 bytes, SHA256 506c377ae6116a19e020954828e03175d91a67c49e83e2fdd14b7ba65f64b19d; test2.xml: 82 bytes, SHA256 6b335a8bb246771e6ad0e9eac1aea6e541eb74ac0ce8e465d9bad0425078756a",
+      "result": "pass-local-three-oracle-content"
+    },
+    {
+      "name": "mixed.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/mixed.zip",
+      "license": "Apache-2.0",
+      "sha256": "977cf7e3e83af822542b6cc817eb6e5ac11b7b6c6492d02c516ecc968242f2b1",
+      "redistributed": true,
+      "expectedVisibleResult": "inflated.txt: 48891 bytes, SHA256 f283b70fa20d6863df7827b0297362b3287ccab53007ea069522f4b2836d85b8; stored.txt: 48891 bytes, SHA256 f283b70fa20d6863df7827b0297362b3287ccab53007ea069522f4b2836d85b8",
+      "result": "pass-local-three-oracle-content"
+    },
+    {
+      "name": "bla-stored-dd.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/bla-stored-dd.zip",
+      "license": "Apache-2.0",
+      "sha256": "984dc4732901ee9f38d4ab5be8d356866f5b69494a9175a0cf860f43dc37ba24",
+      "redistributed": true,
+      "expectedVisibleResult": "test1.xml/test2.xml\u6062\u590d610/82\u5b57\u8282\uff0c\u4e0e\u6b63\u5e38\u539f\u4ef6\u72ec\u7acb\u63d0\u53d6\u7684\u54c8\u5e0c\u4e00\u81f4\uff1b\u4e0d\u662f\u4e09\u5de5\u5177\u5747\u6210\u529f\u63d0\u53d6\u6b64\u574f\u5305",
+      "result": "pass-local-recovered-counterpart-content"
+    },
+    {
+      "name": "bla-stored-dd-nosig.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/bla-stored-dd-nosig.zip",
+      "license": "Apache-2.0",
+      "sha256": "7adcf56c2eb0e95558a0f8ae038158b4502db096b8ed1511bd8246a98e0e7058",
+      "redistributed": true,
+      "expectedVisibleResult": "\u65e0\u7b7e\u540d\u63cf\u8ff0\u7b26\u539f\u4ef6\u6062\u590d\u4e24\u4efdXML\u6b63\u6587\uff0c\u540c\u6837\u6838\u5bf9\u5927\u5c0f\u53ca\u54c8\u5e0c",
+      "result": "pass-local-recovered-counterpart-content"
+    },
+    {
+      "name": "bla-stored-dd-sizes-differ.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/bla-stored-dd-sizes-differ.zip",
+      "license": "Apache-2.0",
+      "sha256": "f39c7f7987ad60de6c6756795ac36201a1ef298b723badf6a2c0b103ee426e29",
+      "redistributed": true,
+      "expectedVisibleResult": "\u62d2\u7edd\u4e0d\u4e00\u81f4\u7684\u63cf\u8ff0\u7b26\u5c3a\u5bf8\uff0c\u4e0d\u663e\u793a\u9519\u8bef\u6b63\u6587",
+      "result": "pass-local-explicit-rejection-not-content"
+    },
+    {
+      "name": "bla-stored-dd-contradicts-actualsize.zip",
+      "source": "https://github.com/apache/commons-compress/blob/f8106cd28e8787c4c1e1efc90f5316b969681d8a/src/test/resources/bla-stored-dd-contradicts-actualsize.zip",
+      "license": "Apache-2.0",
+      "sha256": "1fe52bd3515c7d18734429e5501aa4f9cd3173f7512370791e9625fcbde1860c",
+      "redistributed": true,
+      "expectedVisibleResult": "\u62d2\u7edd\u63cf\u8ff0\u7b26\u4e0e\u6b63\u6587\u957f\u5ea6\u77db\u76fe\uff0c\u4e0d\u663e\u793a\u9519\u8bef\u6b63\u6587",
+      "result": "pass-local-explicit-rejection-not-content"
+    },
+    {
+      "name": "test_read_format_zip_symlink.zip",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_zip_symlink.zip.uu",
+      "license": "BSD-2-Clause",
+      "sha256": "a2870ff361b39a3a3adfe40ebf34a36734812e483fcbee30ee37fbe1b4fee90a",
+      "redistributed": true,
+      "expectedVisibleResult": "symlink\u89e3\u6790\u5230file\uff0c\u6b63\u6587file\\n\u4e0ebsdtar/libarchive\u4e00\u81f4",
+      "result": "pass-local-content"
+    },
+    {
+      "name": "test_read_format_zip_symlink_unsupported_compression.zip",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_zip_symlink_unsupported_compression.zip.uu",
+      "license": "BSD-2-Clause",
+      "sha256": "65da02ac0c9592f67704c444f8d66acb49cb72b9cf7b6b111149a37d01e07974",
+      "redistributed": true,
+      "expectedVisibleResult": "\u4e0d\u652f\u6301\u65b9\u6cd5200\u7684bad_symlink\u660e\u786e\u7981\u7528\uff0c\u540e\u7eedsecond\u6b63\u6587hello world\u4ecd\u53ef\u6253\u5f00",
+      "result": "pass-local-explicit-rejection-and-later-content"
+    }
+  ],
+  "deterministicSamples": [
+    {
+      "id": "valid-7075-three-level",
+      "kind": "minimal-complex",
+      "expectedVisibleResult": "\u8d44\u6599/\u6d77\u62a5/\u6700\u7ec8\u7248.html and extractable text"
+    },
+    {
+      "id": "stale-7075-efs",
+      "kind": "damaged",
+      "expectedVisibleResult": "\u771f\u5b9e/\u6b63\u6587.txt; stale .exe ignored"
+    },
+    {
+      "id": "stale-7075-no-efs",
+      "kind": "damaged",
+      "expectedVisibleResult": "safe/readme.txt; traversal-like stale name ignored"
+    },
+    {
+      "id": "legacy-gbk-poem",
+      "kind": "encoding-variant",
+      "expectedVisibleResult": "manual GB18030 switch yields \u674e\u767d/\u6708\u4e0b\u72ec\u914c.txt"
+    },
+    {
+      "id": "legacy-shift-jis-design",
+      "kind": "encoding-variant",
+      "expectedVisibleResult": "manual Shift_JIS selection yields \u65e5\u672c\u8a9e/\u8a2d\u8a08\u8cc7\u6599.txt"
+    },
+    {
+      "id": "legacy-big5-design",
+      "kind": "encoding-variant",
+      "expectedVisibleResult": "manual Big5 selection yields \u7e41\u9ad4\u4e2d\u6587/\u8a2d\u8a08\u5716.ai"
+    },
+    {
+      "id": "legacy-euc-kr-path",
+      "kind": "encoding-variant",
+      "expectedVisibleResult": "manual CP949/EUC-KR selection yields \ud55c\uae00/\ud3f4\ub354/\uc77d\uae30.html and exact body"
+    },
+    {
+      "id": "legacy-cp949-uhc-extension",
+      "kind": "encoding-variant",
+      "expectedVisibleResult": "manual CP949/EUC-KR selection decodes UHC extension bytes as \uac02\ud7a3/\ud655\uc7a5.txt and extracts exact body"
+    },
+    {
+      "id": "legacy-cp949-bzip2-engine",
+      "kind": "method-and-encoding-variant",
+      "expectedVisibleResult": "compatibility engine keeps CP949 selector, displays \ud55c\uae00/\uc77d\uae30.txt and extracts exact BZip2 body"
+    },
+    {
+      "id": "legacy-cp949-aes-engine",
+      "kind": "encryption-and-encoding-variant",
+      "expectedVisibleResult": "after password unlock the selected CP949 name remains and exact AES member body opens"
+    },
+    {
+      "id": "cp949-unassigned-resynchronization",
+      "kind": "damaged",
+      "expectedVisibleResult": "an unassigned shaped pair reports replacement for the lead and reprocesses the following byte instead of silently consuming it"
+    },
+    {
+      "id": "truncated-cjk-lead-byte",
+      "kind": "damaged",
+      "expectedVisibleResult": "decoder reports replacement and an error; reader does not silently drop bytes"
+    },
+    {
+      "id": "cp437-all-high-bytes",
+      "kind": "encoding-exhaustive",
+      "expectedVisibleResult": "128 individually encoded filenames and extracted content match CP437, not CP850"
+    },
+    {
+      "id": "unflagged-1920-utf8-pairs",
+      "kind": "encoding-exhaustive",
+      "expectedVisibleResult": "explicit CP437 honors all 1920 two-byte sequences even when valid UTF-8"
+    },
+    {
+      "id": "filename-65535-bytes",
+      "kind": "resource-boundary",
+      "expectedVisibleResult": "complete name and unchanged content across automatic and manual choices"
+    },
+    {
+      "id": "invalid-manual-utf8",
+      "kind": "damaged",
+      "expectedVisibleResult": "keep the prior directory and active choice, show an error, recover with automatic selection"
+    },
+    {
+      "id": "compat-engine-bzip2-link",
+      "kind": "method-and-link-variant",
+      "expectedVisibleResult": "BZip2-compressed shortcut resolves to docs/page.html and opens exact HTML twice without changing source bytes"
+    },
+    {
+      "id": "compat-engine-link-to-aes-target",
+      "kind": "encryption-and-link-variant",
+      "expectedVisibleResult": "link stays unavailable before password and opens exact AES target after unlock"
+    },
+    {
+      "id": "compat-engine-zip64-bzip2-link",
+      "kind": "zip64-method-and-link-variant",
+      "expectedVisibleResult": "ZIP64 central sizes and offsets isolate the exact BZip2 link member and open docs/page.html twice without changing source bytes"
+    },
+    {
+      "id": "compat-engine-zip64-three-numeric-volumes",
+      "kind": "zip64-volume-and-link-variant",
+      "expectedVisibleResult": "three .zip.001 numeric volumes are sorted, joined and opened through the real link row twice; a missing middle volume is rejected before engine startup"
+    },
+    {
+      "id": "compat-engine-classic-three-volumes",
+      "kind": "classic-volume-and-link-variant",
+      "expectedVisibleResult": "three .z01/.z02/.zip volumes restore disk-relative local offsets, open docs/page.html through the link twice and keep every source volume unchanged"
+    },
+    {
+      "id": "compat-engine-zip64-classic-three-volumes",
+      "kind": "zip64-classic-volume-and-link-variant",
+      "expectedVisibleResult": "three ZIP64 .z01/.z02/.zip volumes normalize the EOCD, locator and member disk-relative offsets, open docs/page.html twice and keep every source volume unchanged"
+    },
+    {
+      "id": "big5-decoded-duplicate-members",
+      "kind": "encoding-and-identity-variant",
+      "expectedVisibleResult": "raw names A2A5 and F9E9 both decode to \u255e.txt, display 1/2 and 2/2, and open two different bodies by central-directory identity in ordinary and BZip2 ZIP"
+    },
+    {
+      "id": "normalized-slash-duplicate-members",
+      "kind": "display-path-identity-variant",
+      "expectedVisibleResult": "docs//same.html and docs/same.html share duplicate labels but retain separate original names and bodies"
+    },
+    {
+      "id": "absolute-member-path",
+      "kind": "unsafe-path",
+      "expectedVisibleResult": "/escape.html remains visibly unsafe and cannot be opened"
+    }
+  ],
+  "platformResults": {
+    "node": {
+      "status": "pass",
+      "testedAt": "2026-09-01",
+      "candidate": "1.4.88",
+      "evidence": "788/788 tests, 141/141 compatibility probes and renderer smoke pass. Duplicate or truncated 0x7075 metadata falls back to the raw central name and retains exact member identity; deterministic bodies match CPython, bsdtar and pinned 7-Zip oracle results."
+    },
+    "chrome": {
+      "status": "not-applicable",
+      "reason": "This iteration changes ZIP byte extraction, not browser layout; full existing HTML/RTF Chrome regression is separate evidence, not a WeChat archive UI pass."
+    },
+    "wechat-devtools": {
+      "status": "pass",
+      "testedAt": "2026-09-01",
+      "candidate": "1.4.88",
+      "evidence": "SDK 3.16.2\u4e2d\u5b9e\u9645\u5199\u5165\u91cd\u590dUnicode Path\u5b57\u6bb5ZIP\u3001\u8bfb\u53d6\u771f\u5b9eWXML\u6761\u76ee\u5e76\u70b9\u51fbsafe/raw.html\uff0c\u8fde\u540c\u5df2\u6709\u5f52\u6863\u573a\u666f\u517122\u6b21\u771f\u5b9e\u6761\u76ee\u70b9\u51fb\u901a\u8fc7\u3002\u6574\u5957\u6a21\u62df\u5668\u540c\u65f6\u590d\u6d4bHTML/CSS/XHTML\u3001\u8ba1\u7b97\u5668\u3001\u961f\u5217\u3001\u666e\u901a\u53ca\u5206\u5377\u5f52\u6863\u3001PSD/PSB\u3001Ai\u3001CDR\u3001DXF/STEP\u3001\u97f3\u89c6\u9891\u548c\u5206\u4eab\u5165\u53e3\uff0c\u8fd0\u884c\u9519\u8bef\u4e3a0\uff1biOS/Android\u771f\u673a\u4ecd\u72ec\u7acb\u6392\u961f\u3002",
+      "historical": {
+        "status": "pass",
+        "testedAt": "2026-08-30",
+        "evidence": "verify:simulator opened Apache and deterministic ZIPs; actual WXML taps switched ambiguous C2 A5 through UTF-8, automatic, and CP437, then opened the same entry text"
+      }
+    },
+    "wechat-development": {
+      "status": "pass",
+      "testedAt": "2026-09-01",
+      "release": "1.4.88"
+    },
+    "ios": {
+      "status": "pending",
+      "reason": "requires experience/development build device check"
+    },
+    "android": {
+      "status": "pending",
+      "reason": "requires experience/development build device check"
+    }
+  },
+  "limits": {
+    "combinedArchiveBytes": 83886080,
+    "entryBytes": 20971520,
+    "centralDirectoryBytes": 33554432,
+    "displayEntries": 500,
+    "recoveryArchiveBytes": 8388608,
+    "recoveryTotalOutputBytes": 20971520,
+    "recoveryEntries": 500
+  },
+  "oracleNotes": [
+    "2026-09-01T13:00:00.000Z: Common ZIP Specification\u7981\u6b62\u91cd\u590d0x7075\u3002\u56db\u7ec4\u91cd\u590d\u5b57\u6bb5\u548c\u4e00\u7ec4\u622a\u65ad\u5c3e\u90e8\u6837\u672c\u5747\u56de\u9000safe/raw.html\u4e14\u6b63\u6587SHA-256\u4e0e\u751f\u6210\u9884\u671f\u4e00\u81f4\u3002CPython\u5bf9\u56db\u7ec4\u91cd\u590d\u5b57\u6bb5\u4e5f\u4fdd\u7559\u539f\u59cb\u540d\u79f0\u3001\u5bf9\u622a\u65ad\u5b57\u6bb5\u62d2\u7edd\uff1bbsdtar\u4e0e\u56fa\u5b9a7-Zip\u4f1a\u56e0\u5b57\u6bb5\u987a\u5e8f\u9009\u62e9\u4e0d\u540c\u540d\u79f0\uff0c\u8bc1\u660e\u4e0d\u80fd\u6cbf\u7528\u5176\u987a\u5e8f\u76f8\u5173\u663e\u793a\u3002",
+    "2026-09-01T13:50:00.000Z: raw Big5 names A2A5 and F9E9 both decode to U+255E with macOS /usr/bin/iconv. Reader duplicate labels preserve central indices 0/1; body SHA-256 8e775cb49c0d9044e772d9d951e2fd3b200665067af584ec77c637eaa79f7017 and 1086ff29ee14d497486f522b96bf1fa9c84bf5bef406ea9a938d2ecbdc6b3ed9 match CPython zipfile header offsets 0/57. Actual WeChat WXML Big5 selection and both row taps return the corresponding bodies.",
+    "2026-09-01T11:30:00.000Z: two deterministic ZIP64 classic .z01/.z02/.zip BZip2 link variants cover direct and ZIP64-extra disk start fields. Info-ZIP 3.0 joins both with zip -s 0; CPython zipfile and pinned 7-Zip 24.09 WASM open docs/page.html with SHA-256 38274b89f8af21169ab904aa75e8b16a2f1f58a7e7e0db8819f37e4ed42f1b40. Invalid locator totals, end-record disks and member disks reject before content. Actual WeChat WXML opens the link twice and all three source volumes remain unchanged.",
+    "2026-09-01T11:05:00.000Z: deterministic classic .z01/.z02/.zip BZip2 link volumes match PKWARE disk-relative layout. Info-ZIP 3.0 joins them with zip -s 0; CPython zipfile, pinned 7-Zip 24.09 WASM and actual WeChat WXML all open docs/page.html twice with SHA-256 38274b89f8af21169ab904aa75e8b16a2f1f58a7e7e0db8819f37e4ed42f1b40. All source volumes remain unchanged; ZIP64 classic splits remain pending.",
+    "2026-09-01T10:30:00.000Z: ZIP64 BZip2 link fixture SHA-256 95021cd67edf65e4caf1c32d803a0d37efea007624aa73b6b6134a38b6656705 matches CPython zipfile and bsdtar/libarchive contents. Pinned 7-Zip 24.09 WASM and actual WeChat WXML both open docs/page.html twice from three numeric volumes; all source volume bytes remain unchanged. Classic .z01 + .zip link combinations remain pending.",
+    "2026-09-01T09:58:35.000Z: compatibility-engine Unix links preserve central identity, decode the link payload only from an owned one-member in-memory copy, and resolve BZip2/unlocked AES targets. CPython zipfile, bsdtar/libarchive, pinned 7-Zip WASM and actual WeChat WXML taps agree; two repeated opens leave the source archive unchanged. Unsupported method 200 disables only that link and later content remains readable.",
+    "2026-09-01T04:59:00.641Z: Apache public original with complete empty 03 00 raw-Deflate tails now yields both exact XML bodies. Python3.9.6 and reader hashes match; native 7-Zip 24.09 reports trailing payload data but writes the same two hashes. Twenty-four generated fixed/stored-tail variants also match Python. Random/truncated tails, visible second payloads, wrong CRC and more than four empty streams remain rejected.",
+    "2026-08-31T07:46:12.130Z: three public originals checked. Two/five bodies match Python3.9.6 and raw7z; Python3.9 ignores WinZip Unicode Path but bytes match. bsdtar combined output only. Trailing-data original: Python extracts; raw7z outputs correct bytes/exit2,bsdtar exit1/no output,current reader rejects. Not counted as content success.",
+    "2026-08-31T07:27:09.889Z: Python3.9.6/bsdtar/libarchive/7-Zip rechecked seven original hashes. Three normal archives/six bodies match all engines. Two recovered archives/four bodies match independently extracted normal-counterpart hashes; native tools still fail original malformed directories. Two descriptor-corrupt archives rejected. Apache Java source read, not run.",
+    "Recovery deliberately excludes ZIP64, encryption, multi-volume, SFX prefixes, reordered central records and arbitrary corruption. Only exactly accounted omitted descriptor bytes are corrected; no raw signature scan or original file overwrite.",
+    "1.4.38 rechecked SHA-256 and expected names for all 3 public samples; WinZip and chinese.zip also matched all 4 extracted contents against the raw 7-Zip kernel. The unflagged CP437 7-Zip fixture still exposes an independent compatibility-engine name-decoding mismatch; this is not counted as an engine pass.",
+    "2026-08-31T07:07:52.343Z: Python 3.9.6, bsdtar and 7-Zip raw extraction match six entries in three public ZIPs; 64 generated valid and 60 bad CRC agree with Python. bla-stored-dd.zip retains a bad-directory gap; upstream sequential-reader recovery not implemented.",
+    "The generic raw decoder still rejects all bytes after one stream. ZIP recovery is narrower: only complete zero-output raw Deflate streams after an exact-size first stream are accepted, capped at four and followed by mandatory central CRC validation."
+  ],
+  "lastTestedAt": "2026-09-01",
+  "mutationQueue": [
+    {
+      "id": "shift-jis-toggle",
+      "priority": "high",
+      "status": "completed"
+    },
+    {
+      "id": "big5-toggle",
+      "priority": "high",
+      "status": "completed"
+    },
+    {
+      "id": "euc-kr-toggle",
+      "priority": "high",
+      "status": "completed"
+    },
+    {
+      "id": "euc-jp-toggle",
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "unflagged-valid-utf8-vs-legacy",
+      "priority": "high",
+      "status": "completed"
+    },
+    {
+      "id": "compat-engine-legacy-filename-decoding",
+      "priority": "high",
+      "status": "completed"
+    },
+    {
+      "id": "compat-engine-unix-link-target",
+      "priority": "high",
+      "status": "completed",
+      "evidence": "tests/zip-engine-legacy-names.test.js; scripts/verify-zip-engine-links.js; scripts/verify-wechat-simulator.js; GitHub Actions 33495616158"
+    },
+    {
+      "id": "compat-engine-zip64-numeric-volume-links",
+      "priority": "high",
+      "status": "completed",
+      "evidence": "tests/7z-runtime.test.js; tests/archive-volumes.test.js; scripts/verify-zip-engine-links.js; scripts/verify-wechat-simulator.js; GitHub Actions 33498604406"
+    },
+    {
+      "id": "compat-engine-classic-z01-links",
+      "priority": "high",
+      "status": "completed",
+      "evidence": "tests/7z-runtime.test.js; tests/archive-volumes.test.js; scripts/verify-zip-engine-links.js; scripts/verify-wechat-simulator.js; GitHub Actions 33501144389"
+    },
+    {
+      "id": "compat-engine-zip64-classic-z01-links",
+      "priority": "high",
+      "status": "completed",
+      "evidence": "tests/7z-runtime.test.js; scripts/verify-zip-engine-links.js; scripts/verify-wechat-simulator.js: actual WXML twice, source mutations 0; GitHub Actions 33503445049"
+    },
+    {
+      "id": "duplicate-decoded-entry-names",
+      "priority": "high",
+      "status": "completed",
+      "evidence": "tests/archive-identity.test.js; tests/zip-engine-legacy-names.test.js; tests/page-state.test.js; scripts/verify-zip-decoded-duplicates.js; scripts/verify-archive-native-wechat.js; GitHub Actions 33506612276"
+    },
+    {
+      "id": "duplicate-7075-fields",
+      "priority": "medium",
+      "status": "completed",
+      "evidence": "tests/file-inspector.test.js; tests/page-state.test.js; tests/zip-engine-legacy-names.test.js; scripts/verify-zip-duplicate-unicode-path.js; scripts/verify-archive-native-wechat.js: actual WXML row tap"
+    },
+    {
+      "id": "invalid-utf8-under-efs",
+      "priority": "medium",
+      "status": "development-uploaded-awaiting-wechat-validation"
+    },
+    {
+      "id": "10000-entry-name-budget",
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "local-central-name-disagreement",
+      "priority": "high",
+      "status": "completed-candidate-wechat-pending"
+    },
+    {
+      "id": "deflate-trailing-whole-byte-compatibility",
+      "priority": "high",
+      "status": "completed",
+      "evidence": "tests/fixtures/zip-local-identity/archive_with_bytes_after_data.zip; complete zero-output tails only; Actions 33472872856"
+    },
+    {
+      "id": "central-offset-recovery-stored-data-descriptor",
+      "priority": "high",
+      "status": "completed-candidate-wechat-pending"
+    },
+    {
+      "id": "recovery-device-time-memory-8MiB-500-entries",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "raw-deflate-block-budget-device-time-memory",
+      "priority": "high",
+      "status": "pending"
+    }
+  ],
+  "historicalMetrics": {
+    "registeredCases": 16,
+    "passingCases": 16,
+    "pendingCases": 0,
+    "publicSamplesChecked": 5,
+    "silentContentErrorsFixed": 14
+  },
+  "iterationMetrics": {
+    "candidate": "1.4.88",
+    "publicOriginals": 5,
+    "publicContentPasses": 5,
+    "publicEntriesMatched": 10,
+    "knownDeflateTrailingGap": 0,
+    "generatedEmptyTailStreams": 24,
+    "generatedNormal": 60,
+    "generatedRawNameRejects": 60,
+    "localZip64Variants": 6,
+    "highCp437ByteNames": 128,
+    "deferredReadWriteCases": 4,
+    "cp949GeneratedArchives": 2,
+    "cp949DoubleByteSlots": 22428,
+    "cp949SystemOracles": 2,
+    "cp949ActualPageEntryOpen": 1,
+    "compatEngineLegacyArchives": 3,
+    "compatEngineMemberIdentityRejects": 5,
+    "compatEngineDuplicateEntries": 3,
+    "compatEngineSystemOracles": 2,
+    "compatEngineActualWxmlOpen": 1,
+    "compatEngineLinkArchives": 4,
+    "compatEngineLinkSystemOracles": 2,
+    "compatEngineLinkRepeatedWxmlOpens": 2,
+    "compatEngineLinkSourceMutations": 0,
+    "zip64LinkArchives": 1,
+    "zip64NumericVolumes": 3,
+    "zip64NumericVolumeRepeatedWxmlOpens": 2,
+    "zip64NumericVolumeSourceMutations": 0,
+    "classicZipVolumes": 3,
+    "classicZipVolumeRepeatedWxmlOpens": 2,
+    "classicZipVolumeSourceMutations": 0,
+    "zip64ClassicVolumes": 3,
+    "zip64ClassicVolumeVariants": 2,
+    "zip64ClassicVolumeRepeatedWxmlOpens": 2,
+    "zip64ClassicVolumeSourceMutations": 0,
+    "decodedDuplicateRawNames": 2,
+    "decodedDuplicateActualWxmlOpens": 2,
+    "normalizedDisplayDuplicateMembers": 2,
+    "unsafeAbsoluteMemberRejections": 1,
+    "duplicateUnicodePathVariants": 4,
+    "truncatedExtraVariants": 1,
+    "duplicateUnicodePathSystemOracles": 3,
+    "duplicateUnicodePathActualWxmlOpen": 1,
+    "emptyTailActualWxmlOpen": 1,
+    "deviceResults": "WeChat DevTools target scenario and full suite pass with real WXML text, style, size and tap assertions"
+  },
+  "candidateVersion": null,
+  "efsValidationResults": {
+    "version": "1.4.112",
+    "cases": 24,
+    "malformedRejected": 10,
+    "validOrLegacyPayloads": 14,
+    "productionEntries": 24,
+    "relatedNodeTests": 201,
+    "evidence": "runs/2026-09-05-zip-efs.json",
+    "wechat": "not-run",
+    "devices": "not-run"
+  }
+}

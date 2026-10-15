@@ -1,0 +1,458 @@
+[
+  {
+    "name": "case-0",
+    "source": "---\ntitle: Example\n---\nKEEP AFTER\n",
+    "recognized": true,
+    "expectedBody": "KEEP AFTER\n"
+  },
+  {
+    "name": "case-1",
+    "source": "---\ntitle: Example\n---",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "case-2",
+    "source": "---\r\ntitle: Example\r\n---\r\nKEEP AFTER\r\n",
+    "recognized": true,
+    "expectedBody": "KEEP AFTER\n"
+  },
+  {
+    "name": "case-3",
+    "source": "---\r\ntitle: Example\r\n---",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "case-4",
+    "source": "---\ntitle: Example\n---suffix\nKEEP AFTER\n",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n---suffix\nKEEP AFTER\n"
+  },
+  {
+    "name": "case-5",
+    "source": "---\ntitle: Example\n---suffix",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n---suffix"
+  },
+  {
+    "name": "case-6",
+    "source": "---\r\ntitle: Example\r\n---suffix\r\nKEEP AFTER\r\n",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n---suffix\nKEEP AFTER\n"
+  },
+  {
+    "name": "case-7",
+    "source": "---\r\ntitle: Example\r\n---suffix",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n---suffix"
+  },
+  {
+    "name": "case-8",
+    "source": "---\ntitle: Example\n----\nKEEP AFTER\n",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n----\nKEEP AFTER\n"
+  },
+  {
+    "name": "case-9",
+    "source": "---\ntitle: Example\n----",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n----"
+  },
+  {
+    "name": "case-10",
+    "source": "---\r\ntitle: Example\r\n----\r\nKEEP AFTER\r\n",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n----\nKEEP AFTER\n"
+  },
+  {
+    "name": "case-11",
+    "source": "---\r\ntitle: Example\r\n----",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n----"
+  },
+  {
+    "name": "case-12",
+    "source": "---\ntitle: Example\n--- # comment\nKEEP AFTER\n",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n--- # comment\nKEEP AFTER\n"
+  },
+  {
+    "name": "case-13",
+    "source": "---\ntitle: Example\n--- # comment",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n--- # comment"
+  },
+  {
+    "name": "case-14",
+    "source": "---\r\ntitle: Example\r\n--- # comment\r\nKEEP AFTER\r\n",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n--- # comment\nKEEP AFTER\n"
+  },
+  {
+    "name": "case-15",
+    "source": "---\r\ntitle: Example\r\n--- # comment",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n--- # comment"
+  },
+  {
+    "name": "case-16",
+    "source": "---\ntitle: Example\n---\t\nKEEP AFTER\n",
+    "recognized": true,
+    "expectedBody": "KEEP AFTER\n"
+  },
+  {
+    "name": "case-17",
+    "source": "---\ntitle: Example\n---\t",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "case-18",
+    "source": "---\r\ntitle: Example\r\n---\t\r\nKEEP AFTER\r\n",
+    "recognized": true,
+    "expectedBody": "KEEP AFTER\n"
+  },
+  {
+    "name": "case-19",
+    "source": "---\r\ntitle: Example\r\n---\t",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "case-20",
+    "source": "---\ntitle: Example\n---   \nKEEP AFTER\n",
+    "recognized": true,
+    "expectedBody": "KEEP AFTER\n"
+  },
+  {
+    "name": "case-21",
+    "source": "---\ntitle: Example\n---   ",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "case-22",
+    "source": "---\r\ntitle: Example\r\n---   \r\nKEEP AFTER\r\n",
+    "recognized": true,
+    "expectedBody": "KEEP AFTER\n"
+  },
+  {
+    "name": "case-23",
+    "source": "---\r\ntitle: Example\r\n---   ",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "case-24",
+    "source": "---\ntitle: Example\n...\nKEEP AFTER\n",
+    "recognized": true,
+    "expectedBody": "KEEP AFTER\n"
+  },
+  {
+    "name": "case-25",
+    "source": "---\ntitle: Example\n...",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "case-26",
+    "source": "---\r\ntitle: Example\r\n...\r\nKEEP AFTER\r\n",
+    "recognized": true,
+    "expectedBody": "KEEP AFTER\n"
+  },
+  {
+    "name": "case-27",
+    "source": "---\r\ntitle: Example\r\n...",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "empty-28",
+    "source": "---\n---\n# KEEP HEADER\n\n---\nKEEP AFTER\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+  },
+  {
+    "name": "empty-29",
+    "source": "---\n---\n# KEEP HEADER\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n"
+  },
+  {
+    "name": "empty-30",
+    "source": "---\n---  \n# KEEP HEADER\n\n---\nKEEP AFTER\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+  },
+  {
+    "name": "empty-31",
+    "source": "---\n---  \n# KEEP HEADER\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n"
+  },
+  {
+    "name": "empty-32",
+    "source": "---\r\n---\r\n# KEEP HEADER\r\n\r\n---\r\nKEEP AFTER\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+  },
+  {
+    "name": "empty-33",
+    "source": "---\r\n---\r\n# KEEP HEADER\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n"
+  },
+  {
+    "name": "empty-34",
+    "source": "---\r\n---  \r\n# KEEP HEADER\r\n\r\n---\r\nKEEP AFTER\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\n---\nKEEP AFTER\n"
+  },
+  {
+    "name": "empty-35",
+    "source": "---\r\n---  \r\n# KEEP HEADER\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n"
+  },
+  {
+    "name": "line-combination-36",
+    "source": "---\ntitle: Example\n---\n# KEEP HEADER\n\nBODY\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-37",
+    "source": "---\r\ntitle: Example\r\n---\r\n# KEEP HEADER\r\n\r\nBODY\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-38",
+    "source": "---\rtitle: Example\r---\r# KEEP HEADER\r\rBODY\r",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-39",
+    "source": "---\ntitle: Example\n--- \t\n# KEEP HEADER\n\nBODY\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-40",
+    "source": "---\r\ntitle: Example\r\n--- \t\r\n# KEEP HEADER\r\n\r\nBODY\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-41",
+    "source": "---\rtitle: Example\r--- \t\r# KEEP HEADER\r\rBODY\r",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-42",
+    "source": "---\ntitle: Example\n...\n# KEEP HEADER\n\nBODY\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-43",
+    "source": "---\r\ntitle: Example\r\n...\r\n# KEEP HEADER\r\n\r\nBODY\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-44",
+    "source": "---\rtitle: Example\r...\r# KEEP HEADER\r\rBODY\r",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-45",
+    "source": "---\ntitle: Example\n...\t\n# KEEP HEADER\n\nBODY\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-46",
+    "source": "---\r\ntitle: Example\r\n...\t\r\n# KEEP HEADER\r\n\r\nBODY\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-47",
+    "source": "---\rtitle: Example\r...\t\r# KEEP HEADER\r\rBODY\r",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-48",
+    "source": "--- \t\ntitle: Example\n---\n# KEEP HEADER\n\nBODY\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-49",
+    "source": "--- \t\r\ntitle: Example\r\n---\r\n# KEEP HEADER\r\n\r\nBODY\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-50",
+    "source": "--- \t\rtitle: Example\r---\r# KEEP HEADER\r\rBODY\r",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-51",
+    "source": "--- \t\ntitle: Example\n--- \t\n# KEEP HEADER\n\nBODY\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-52",
+    "source": "--- \t\r\ntitle: Example\r\n--- \t\r\n# KEEP HEADER\r\n\r\nBODY\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-53",
+    "source": "--- \t\rtitle: Example\r--- \t\r# KEEP HEADER\r\rBODY\r",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-54",
+    "source": "--- \t\ntitle: Example\n...\n# KEEP HEADER\n\nBODY\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-55",
+    "source": "--- \t\r\ntitle: Example\r\n...\r\n# KEEP HEADER\r\n\r\nBODY\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-56",
+    "source": "--- \t\rtitle: Example\r...\r# KEEP HEADER\r\rBODY\r",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-57",
+    "source": "--- \t\ntitle: Example\n...\t\n# KEEP HEADER\n\nBODY\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-58",
+    "source": "--- \t\r\ntitle: Example\r\n...\t\r\n# KEEP HEADER\r\n\r\nBODY\r\n",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "line-combination-59",
+    "source": "--- \t\rtitle: Example\r...\t\r# KEEP HEADER\r\rBODY\r",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\nBODY\n"
+  },
+  {
+    "name": "bom-empty-later-rule",
+    "source": "﻿---\n---\n# KEEP HEADER\n\n---\nBODY",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\n\n---\nBODY"
+  },
+  {
+    "name": "empty-dot-eof",
+    "source": "---\n...",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "empty-dash-eof",
+    "source": "---\n---",
+    "recognized": true,
+    "expectedBody": ""
+  },
+  {
+    "name": "unclosed-short",
+    "source": "---\ntitle: Example",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example"
+  },
+  {
+    "name": "unclosed-opening",
+    "source": "---\n",
+    "recognized": false,
+    "expectedBody": "---\n"
+  },
+  {
+    "name": "not-opening-eof",
+    "source": "---",
+    "recognized": false,
+    "expectedBody": "---"
+  },
+  {
+    "name": "opening-suffix",
+    "source": "---suffix\ntitle: Example\n---\nBODY",
+    "recognized": false,
+    "expectedBody": "---suffix\ntitle: Example\n---\nBODY"
+  },
+  {
+    "name": "indented-opening",
+    "source": " ---\ntitle: Example\n---\nBODY",
+    "recognized": false,
+    "expectedBody": " ---\ntitle: Example\n---\nBODY"
+  },
+  {
+    "name": "indented-close",
+    "source": "---\ntitle: Example\n ---\nBODY",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n ---\nBODY"
+  },
+  {
+    "name": "dot-suffix",
+    "source": "---\ntitle: Example\n...suffix\nBODY",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n...suffix\nBODY"
+  },
+  {
+    "name": "four-dots",
+    "source": "---\ntitle: Example\n....\nBODY",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n....\nBODY"
+  },
+  {
+    "name": "unicode-line-separator",
+    "source": "---\ntitle: Example ---\nBODY",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example ---\nBODY"
+  },
+  {
+    "name": "unicode-paragraph-separator",
+    "source": "---\ntitle: Example ---\nBODY",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example ---\nBODY"
+  },
+  {
+    "name": "marker-before-unicode-separator",
+    "source": "---\ntitle: Example\n--- BODY",
+    "recognized": false,
+    "expectedBody": "---\ntitle: Example\n--- BODY"
+  },
+  {
+    "name": "indented-scalar-markers",
+    "source": "---\ntitle: Example\nexample: |\n  ---\n  ...\n---\n# KEEP HEADER\nBODY",
+    "recognized": true,
+    "expectedBody": "# KEEP HEADER\nBODY"
+  },
+  {
+    "name": "body-code-fence",
+    "source": "---\ntitle: Example\n---\n```yaml\n---\nKEEP CODE\n...\n```\nBODY",
+    "recognized": true,
+    "expectedBody": "```yaml\n---\nKEEP CODE\n...\n```\nBODY"
+  }
+]

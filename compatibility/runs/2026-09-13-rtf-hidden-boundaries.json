@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T08:12:52.339711+00:00",
+  "status": "validated-awaiting-pr",
+  "version": null,
+  "baseVersion": "1.4.137",
+  "feature": "Hidden RTF formatting no longer removes table cell/row boundaries",
+  "rootCause": "cell/nestcell/row/nestrow used appendText and were suppressed by hidden character state. Visible cells could concatenate and empty cell positions disappear. The nesttableprops path emitted a row separately.",
+  "fix": "Emit table structure independently of character visibility after Unicode fallback and destination decisions, with shared paragraph/hidden-reference state reset for regular and nested row marks. Hidden text, skipped destinations and discarded note streams remain isolated.",
+  "fixtures": {
+    "original": "tests/fixtures/rtf-hidden-boundaries/before.json",
+    "expanded": "tests/fixtures/rtf-hidden-boundaries/expanded-before.json",
+    "uniqueOriginals": 120,
+    "originalMatrix": 72,
+    "expandedMatrix": 48,
+    "isolationControls": 10,
+    "generation": "Deterministic 6 bodies x4 visibility patterns x3 containers plus 8 table shapes x2 nesting levels x3 formatting contexts. No randomness.",
+    "preliminaryInputs": "The first expanded-before local run included extra unused cell definitions. Canonical expanded sources have exactly matching cell definitions; the preliminary run is preserved locally and excluded from counts."
+  },
+  "oracles": {
+    "native": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "path": "Actual RTF import -> unmodified HTML -> Chrome visible cells; original HTML and hashes retained in expanded-before.json.",
+    "spec": "https://officeprotocoldoc.z19.web.core.windows.net/files/Archive_References/%5BMSFT-RTF%5D.pdf",
+    "specPages": [
+      14,
+      15,
+      93,
+      94,
+      95,
+      96,
+      133
+    ],
+    "referenceLimitations": [
+      "24 original Unicode-fallback cases expose native handling differences: fallback control counts and braces follow the specification in the reader, not the conflicting Writer result.",
+      "Two character-style empty cells have an empty p/br placeholder with innerText exactly newline; native raw output is retained and empty cell position remains part of the comparison."
+    ]
+  },
+  "results": {
+    "contentContracts": 130,
+    "beforeWrong": 81,
+    "afterWrong": 0,
+    "originalBeforeWrong": 36,
+    "expandedBeforeWrong": 45,
+    "actualHostConsecutiveOpens": 130,
+    "chromeViews": 130,
+    "nativeCellViews": 48,
+    "nativeCellSequenceBeforeWrong": 42,
+    "nativeCellSequenceAfterWrong": 0,
+    "notes": "Footnote/endnote table content remains in its own stream; actual anchor dispatch reaches target; whole hidden note omitted.",
+    "recovery": "Broken binary length produces error; later normal file opens and stale RTF read cannot overwrite CURRENT.",
+    "screenshots": "Both before/after comparisons inspected: separate visible words and the empty middle-cell interval restored. Not a geometry match."
+  },
+  "validation": {
+    "relatedRtfAndPageStateTests": 245,
+    "newTests": 3,
+    "fullTests": 1262,
+    "fullFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "chromeOracle": "pass",
+    "profileSchema": "pass",
+    "diffCheck": "pass",
+    "diffCheckNote": "Staged new-file check caught an extra blank line at EOF; removed in followup before PR, with no test behavior change."
+  },
+  "fileHashes": {
+    "miniprogram/file-reader/engine/core/rtf-reader.js": "e26b150fdc703922ae404a0af3f606772038623234fdd4fdf3f7341b0a944160",
+    "scripts/probe-rtf-hidden-boundaries.js": "86f374b3ba5fc0459037a31b7eecaccc540a34d09586bb317a1bdde0de4a0f4a",
+    "scripts/verify-rtf-hidden-boundaries.js": "56e085a5987e5319577d26f6155e61ecdf5056badffaca7b0564f3f7e7e83904",
+    "tests/helpers/rtf-hidden-boundaries.js": "25293ee9b59b5754373b7e36209998a4947c9d440a2346d4e26c13e06e50b3ed",
+    "tests/rtf-hidden-boundaries.test.js": "7efd67d5baa7df3b3389492cc17d1da5d6a719b44b46c536fc3595ecfc68aa75",
+    "tests/fixtures/rtf-hidden-boundaries/before.json": "79edde9f17b0fadc74436a0dfcae51bcfff3aac9455eb356b0d4da9e017d2261",
+    "tests/fixtures/rtf-hidden-boundaries/expanded-before.json": "0f101e5dc91bda220503911a79661df1030434945513730a7a8eaef15701ab27"
+  },
+  "localEvidence": [
+    {
+      "path": "outputs/rtf-hidden-tables/before/report.json",
+      "sha256": "38843b6781500dac26534d70b33acd60e2f8061b89a4d2ca65cfa233e8f77712"
+    },
+    {
+      "path": "outputs/rtf-hidden-tables/expanded-canonical-before/report.json",
+      "sha256": "9e9c7c3101642dc4c36e2f33316b4107fca51ef3a4f0178bf870f5ef4a62d43b"
+    },
+    {
+      "path": "outputs/rtf-hidden-tables/browser-before/report.json",
+      "sha256": "95b054e843b8d63fa69b30726fc31db67ff2acf53d42b6efa70d2879b2b63ac5"
+    },
+    {
+      "path": "outputs/rtf-hidden-tables/browser-after/report.json",
+      "sha256": "b0a1d54555b9c1e20eb6baa3574ec69ba7a6c19291b445e3bfad6dd973bc7a9a"
+    },
+    {
+      "path": "outputs/rtf-hidden-tables/browser-before/comparison.png",
+      "sha256": "0123c781656f8d0d42af9a785596aca8742eb45e3c764012e313d4f10de0c94e"
+    },
+    {
+      "path": "outputs/rtf-hidden-tables/browser-after/comparison.png",
+      "sha256": "9350c61bda4b5898d1273555531b64f4e1c1dd8e2b9e96801b7929281866fe65"
+    }
+  ],
+  "limitations": [
+    "Reader remains a text/table-separator view: no full cell geometry, merged-cell layout, borders or original pagination.",
+    "12 original explicit hidden paragraph-mark differences remain pending application-policy review; this change does not silently reinterpret their earlier contract.",
+    "No WeChat WXML, developer tools or physical-device validation in this batch.",
+    "No claim of complete RTF support or hidden-text display UI."
+  ]
+}

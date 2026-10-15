@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 1,
+  "id": "psd-float-grayscale-tone",
+  "testedAt": "2026-09-18T09:14:46.772035+00:00",
+  "rootCause": "The 32-bit RGB linear-to-sRGB transfer was also applied to encoded grayscale. A saved 0.25 gray became 137 instead of 64.",
+  "change": "Apply the float RGB transfer only to RGB color planes; keep grayscale and alpha as encoded samples. Retain existing white-matte removal, precision, limits and unsupported outcomes.",
+  "sampleGeneration": {
+    "producer": "psd-tools 1.18.0",
+    "script": "scripts/probe-psd-gray-tone.py",
+    "dimensions": [
+      65,
+      17
+    ],
+    "gray": "x/64",
+    "alpha": "opaque or y/16",
+    "depths": [
+      16,
+      32
+    ],
+    "versions": [
+      1,
+      2
+    ],
+    "compressions": [
+      "Raw",
+      "RLE",
+      "ZIP",
+      "ZIP Prediction"
+    ],
+    "count": 32,
+    "seed": "none; deterministic ramps"
+  },
+  "references": [
+    {
+      "source": "https://raw.githubusercontent.com/GNOME/gimp/master/plug-ins/file-psd/psd-load.c",
+      "scope": "get_layer_format treats gray32 as Y-prime float, unlike linear alpha; source inspection only, no GIMP runtime claim"
+    },
+    {
+      "source": "psd-tools 1.18.0 / Pillow topil(apply_icc=False)",
+      "scope": "32 independently serialized files reopened with exact planes; decoded colors differ from nearest-byte rounding by at most one"
+    },
+    {
+      "source": "macOS ImageIO/CoreGraphics, scripts/psd-imageio-oracle.swift",
+      "scope": "Eight Raw PSD/PSB files exact after RGB premultiplication. Eight RLE results disagree (max255); sixteen ZIP/prediction files rejected. These are retained, not waived or counted as native agreement."
+    }
+  ],
+  "results": {
+    "beforeWrong": 16,
+    "beforeMaxChannelDelta": 73,
+    "afterSourcePixelsExact": 32,
+    "actualHostJpegsExact": 32,
+    "browserImageViews": 32,
+    "browserMaxChannelDelta": 2,
+    "jpegMaxChannelDelta": 2,
+    "relatedTests": 59,
+    "fullNodeTests": 1262,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run",
+    "physicalDevices": "not-run"
+  },
+  "samples": [
+    {
+      "name": "gray-d16-a0-v1-c0.psd",
+      "sha256": "46f704c79c5b75719835364916c3e150fbb4b3260d62075652528675e6532f87",
+      "depth": 16,
+      "transparent": false,
+      "version": 1,
+      "compression": 0,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "exact",
+        "maxPremultipliedChannelDelta": 0
+      }
+    },
+    {
+      "name": "gray-d16-a0-v1-c1.psd",
+      "sha256": "55a9fcc05e65e91f15965a0e9248a5979edcdd0b4eb1d6093e87910d7bbaf44b",
+      "depth": 16,
+      "transparent": false,
+      "version": 1,
+      "compression": 1,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "disagrees",
+        "maxPremultipliedChannelDelta": 255
+      }
+    },
+    {
+      "name": "gray-d16-a0-v1-c2.psd",
+      "sha256": "bd0833178a7f136f03f35091ed93eabd1fd20d08b764181bd6719f5eaaa9ad15",
+      "depth": 16,
+      "transparent": false,
+      "version": 1,
+      "compression": 2,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d16-a0-v1-c3.psd",
+      "sha256": "8949289e491fc60dcaacd797bc1dfdac890c0741bd7569b8266c8f50d96d5a3d",
+      "depth": 16,
+      "transparent": false,
+      "version": 1,
+      "compression": 3,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d16-a0-v2-c0.psb",
+      "sha256": "b6cdcdf5e08d06e4b49121097024ecfa266358ef7528d9ae8548a17326a04aba",
+      "depth": 16,
+      "transparent": false,
+      "version": 2,
+      "compression": 0,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "exact",
+        "maxPremultipliedChannelDelta": 0
+      }
+    },
+    {
+      "name": "gray-d16-a0-v2-c1.psb",
+      "sha256": "973bc71f0a65f70672620d173f3f20aec8dc9c209e2db6b25766fb5d2c0c20f5",
+      "depth": 16,
+      "transparent": false,
+      "version": 2,
+      "compression": 1,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "disagrees",
+        "maxPremultipliedChannelDelta": 255
+      }
+    },
+    {
+      "name": "gray-d16-a0-v2-c2.psb",
+      "sha256": "670fbfa2868e8b2c268a9e1e1bd4e4ab413c069ef5f1f1bb4d6cbad196057d4d",
+      "depth": 16,
+      "transparent": false,
+      "version": 2,
+      "compression": 2,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d16-a0-v2-c3.psb",
+      "sha256": "81e2508a25f0816ec0d8c90e7355705f6c3ec41f12aa39cc2fcf6302e0e7b584",
+      "depth": 16,
+      "transparent": false,
+      "version": 2,
+      "compression": 3,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d16-a1-v1-c0.psd",
+      "sha256": "dd8a227deedf1a140f0289ca93d7379635578b7760c9c5a9e9ecc8ddf6357fe6",
+      "depth": 16,
+      "transparent": true,
+      "version": 1,
+      "compression": 0,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "exact",
+        "maxPremultipliedChannelDelta": 0
+      }
+    },
+    {
+      "name": "gray-d16-a1-v1-c1.psd",
+      "sha256": "b6e1b62f4114c5f5c6ef6d4f95abf72112a2050ed097e03670458fb03f261fe7",
+      "depth": 16,
+      "transparent": true,
+      "version": 1,
+      "compression": 1,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "disagrees",
+        "maxPremultipliedChannelDelta": 255
+      }
+    },
+    {
+      "name": "gray-d16-a1-v1-c2.psd",
+      "sha256": "0ce45ac2ff2ad86548b4c0090ed13691c059e54c7c371dee32768d6a0909852d",
+      "depth": 16,
+      "transparent": true,
+      "version": 1,
+      "compression": 2,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d16-a1-v1-c3.psd",
+      "sha256": "df931de26317a47c928b01bebd50d40104d59f8ec9dc5d6433ba1efc3926ef8d",
+      "depth": 16,
+      "transparent": true,
+      "version": 1,
+      "compression": 3,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d16-a1-v2-c0.psb",
+      "sha256": "5f631dd05843f952776a93df4d0274b0fc941efc14c7ac278273f980afd52d3b",
+      "depth": 16,
+      "transparent": true,
+      "version": 2,
+      "compression": 0,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "exact",
+        "maxPremultipliedChannelDelta": 0
+      }
+    },
+    {
+      "name": "gray-d16-a1-v2-c1.psb",
+      "sha256": "5c7e75c80d49e2691b5d7f1871da65afea07d8b7d0e938226853d7163c197743",
+      "depth": 16,
+      "transparent": true,
+      "version": 2,
+      "compression": 1,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "disagrees",
+        "maxPremultipliedChannelDelta": 255
+      }
+    },
+    {
+      "name": "gray-d16-a1-v2-c2.psb",
+      "sha256": "1ac2d04e9a1ac7786f5b5f3a0c55c766776d9821df761b57f8dc41d2ff706035",
+      "depth": 16,
+      "transparent": true,
+      "version": 2,
+      "compression": 2,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d16-a1-v2-c3.psb",
+      "sha256": "c3cb53c626bd2fe7d097250210f4e440ec7935140ad9b5a383ffed953af00c92",
+      "depth": 16,
+      "transparent": true,
+      "version": 2,
+      "compression": 3,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 0,
+      "beforeMaxChannelDelta": 0,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d32-a0-v1-c0.psd",
+      "sha256": "f7cacffce8536057492e15caa47b1a6353b0d5f014cdaa81807c2c0709d32300",
+      "depth": 32,
+      "transparent": false,
+      "version": 1,
+      "compression": 0,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "exact",
+        "maxPremultipliedChannelDelta": 0
+      }
+    },
+    {
+      "name": "gray-d32-a0-v1-c1.psd",
+      "sha256": "eba33c9d0ab9553cfb71f61cad67109168c7ab6cc3546b118c42f33a8166a01c",
+      "depth": 32,
+      "transparent": false,
+      "version": 1,
+      "compression": 1,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "disagrees",
+        "maxPremultipliedChannelDelta": 255
+      }
+    },
+    {
+      "name": "gray-d32-a0-v1-c2.psd",
+      "sha256": "dcbba9e5946b397635fc8e8e2f07dc41d182bb36e783c810dfcf39d2f86adb12",
+      "depth": 32,
+      "transparent": false,
+      "version": 1,
+      "compression": 2,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d32-a0-v1-c3.psd",
+      "sha256": "f128833dd6b242d249a9505f3cecfe11b4508b7c5e2b54710b967e9578cc48f6",
+      "depth": 32,
+      "transparent": false,
+      "version": 1,
+      "compression": 3,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d32-a0-v2-c0.psb",
+      "sha256": "714773095e414ca5f27397c00119e37753a4d03339ebc26c0d6a276e6c1a5658",
+      "depth": 32,
+      "transparent": false,
+      "version": 2,
+      "compression": 0,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "exact",
+        "maxPremultipliedChannelDelta": 0
+      }
+    },
+    {
+      "name": "gray-d32-a0-v2-c1.psb",
+      "sha256": "aeeeceedc370998b9671870e27e20c2d0e7a2ce475fe28ae0e97d646c1ddc0f3",
+      "depth": 32,
+      "transparent": false,
+      "version": 2,
+      "compression": 1,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "disagrees",
+        "maxPremultipliedChannelDelta": 255
+      }
+    },
+    {
+      "name": "gray-d32-a0-v2-c2.psb",
+      "sha256": "c46fd8ba1cc7897b6bb52dd00a7e19b33a956df0248cb3b8391847bad61f783c",
+      "depth": 32,
+      "transparent": false,
+      "version": 2,
+      "compression": 2,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d32-a0-v2-c3.psb",
+      "sha256": "17bbe4511e95530615c5ab690ae05f8307dc09eac29fd67c70b2be622346d906",
+      "depth": 32,
+      "transparent": false,
+      "version": 2,
+      "compression": 3,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d32-a1-v1-c0.psd",
+      "sha256": "0bccd2183415a0dffab97d643db84651d9c77ff988c7fa92244677e2a9e569cc",
+      "depth": 32,
+      "transparent": true,
+      "version": 1,
+      "compression": 0,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "exact",
+        "maxPremultipliedChannelDelta": 0
+      }
+    },
+    {
+      "name": "gray-d32-a1-v1-c1.psd",
+      "sha256": "c0bba1304d7923fa0de1febb589169b030ef6a570e5d88b41a8480b82d6e4093",
+      "depth": 32,
+      "transparent": true,
+      "version": 1,
+      "compression": 1,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "disagrees",
+        "maxPremultipliedChannelDelta": 255
+      }
+    },
+    {
+      "name": "gray-d32-a1-v1-c2.psd",
+      "sha256": "f0c5eb0394788ef6fcba99e909e49800915119016f659a302b7a8e326a22b2d7",
+      "depth": 32,
+      "transparent": true,
+      "version": 1,
+      "compression": 2,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d32-a1-v1-c3.psd",
+      "sha256": "92e3166d6d056009e2fd86c7b75a0968f2374562ccebe91ff5c1223929f9bda3",
+      "depth": 32,
+      "transparent": true,
+      "version": 1,
+      "compression": 3,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d32-a1-v2-c0.psb",
+      "sha256": "d430bd12fd734987352f7d54cafc305fc64026057ea3dfb714d1eb5ba797b165",
+      "depth": 32,
+      "transparent": true,
+      "version": 2,
+      "compression": 0,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "exact",
+        "maxPremultipliedChannelDelta": 0
+      }
+    },
+    {
+      "name": "gray-d32-a1-v2-c1.psb",
+      "sha256": "49ce5b944db399c9100cda513fbc3f57f65c12daa275d5ec9098ea09a34f14c9",
+      "depth": 32,
+      "transparent": true,
+      "version": 2,
+      "compression": 1,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "disagrees",
+        "maxPremultipliedChannelDelta": 255
+      }
+    },
+    {
+      "name": "gray-d32-a1-v2-c2.psb",
+      "sha256": "f6c54b1d9eaed951b7a2e4b07f5ccc608797e3c0852114792d9351aa0fefe792",
+      "depth": 32,
+      "transparent": true,
+      "version": 2,
+      "compression": 2,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "rejected"
+      }
+    },
+    {
+      "name": "gray-d32-a1-v2-c3.psb",
+      "sha256": "faa762db4efdbdfbc3b8a136330eff0cf8e6e65b70df4e4a111c4fba19e344e6",
+      "depth": 32,
+      "transparent": true,
+      "version": 2,
+      "compression": 3,
+      "sourcePlanesExact": true,
+      "pillowMaxChannelDelta": 1,
+      "beforeMaxChannelDelta": 73,
+      "imageio": {
+        "status": "rejected"
+      }
+    }
+  ],
+  "evidence": [
+    "tests/psd-gray-tone.test.js",
+    "scripts/probe-psd-gray-tone.py",
+    "scripts/verify-psd-gray-tone.js",
+    "scripts/psd-imageio-oracle.swift"
+  ],
+  "limits": [
+    "Unprofiled merged grayscale only; ICC, HDR tone mapping and layer recomposition remain pending.",
+    "Host file API is mocked; browser uses actual generated JPEGs, not native WeChat WXML.",
+    "RGB native decoder disagreements remain separate; no claim to resolve them.",
+    "JPEG previews are lossy; source-pixel equality and final-image error are tracked separately."
+  ]
+}

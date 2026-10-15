@@ -1,0 +1,12 @@
+@import "../../styles/file-queue.wxss";
+
+.reader-host {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 0;
+  background: #fff9f2;
+}
+
+.reader-host-with-queue {
+  padding-bottom: calc(112rpx + env(safe-area-inset-bottom));
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T08:40:05.844925+00:00",
+  "status": "validated-awaiting-pr",
+  "version": null,
+  "feature": "Ai/EPS PostScript lexical scope and data isolation",
+  "originalDiscovery": "runs/2026-09-13-next-ai-lexical.json",
+  "sourceGroups": {
+    "original": 90,
+    "expanded": 45,
+    "arrayCombinations": 12,
+    "total": 147
+  },
+  "before": {
+    "originalWrongVectorModels": 75,
+    "expandedWrongVectorModels": 24,
+    "arrayWrongVectorModels": 12,
+    "fakeRasterDetectionsOriginal": 15,
+    "actualFallbackCasesShowingWrongBlackPixel": 2
+  },
+  "references": [
+    {
+      "url": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
+      "section": "3.2 Syntax, strings and arrays",
+      "basis": "Literal string escapes/nested parentheses; hexadecimal and ASCII85 delimiters; literal arrays contain objects."
+    }
+  ],
+  "native": {
+    "implementation": "Ghostscript9.56 via isolated @jspawn/ghostscript-wasm0.0.2",
+    "originalByteExecutions": 63,
+    "sourceRewriting": false,
+    "framing": "EPSCrop from original 40x20 BoundingBox",
+    "retained": "tests/fixtures/ai-lexical/native-reference.json",
+    "expected": "62 red/blue artwork images and one blank no-artwork image"
+  },
+  "validation": {
+    "relatedNodeTests": 64,
+    "fullCheck": {
+      "status": "pass",
+      "tests": 1264,
+      "compatibilityProbes": 141,
+      "rendererSmoke": "pass"
+    },
+    "production": "pass",
+    "chromeFinal": {
+      "status": "pass",
+      "hostOpens": 147,
+      "nativeComparisons": 63,
+      "exactArtworkImages": 62,
+      "expectedNoPreview": 1,
+      "screenshotInspected": true
+    },
+    "wechatDevtools": "not run",
+    "physicalDevices": "not run"
+  },
+  "limits": [
+    "Not a complete PostScript interpreter; no execution of arbitrary procedures, fonts or gradients added.",
+    "Hex/ASCII85 skipping recognizes boundaries; it does not decode and validate all encoded string data.",
+    "One opaque raw-data control follows DSC byte-count contracts and is excluded from native execution.",
+    "Original 90-case probe counter typo retained and corrected in discovery evidence; no initial source or native result replaced.",
+    "Array sources were captured after the first DSC patch and before the array patch; this is explicit in their baseline.",
+    "Merge/tag/Release/development upload remain pending direct confirmation after prior automatic approval review rejection."
+  ],
+  "artifacts": [
+    {
+      "path": "tests/fixtures/ai-lexical/before.json",
+      "sha256": "0a2dce2d09c033f32f2612c92a272aa54dc170693b2ef499cfb3ccccf273405e"
+    },
+    {
+      "path": "tests/fixtures/ai-lexical/expanded-before.json",
+      "sha256": "1ae3a6bb65d869d77dc32e455371cabc6c3b84a4fef1cca55c3581e8f0846ebb"
+    },
+    {
+      "path": "tests/fixtures/ai-lexical/array-before.json",
+      "sha256": "5ebdc5bffdf7b7d70945ba32041e51da0857afd7160f09c1c546de62ae8bed2b"
+    },
+    {
+      "path": "tests/fixtures/ai-lexical/fallback-before.json",
+      "sha256": "19681f86f43bdecf5afccafd2d5245eaa7ded6a0aa0a1c911a9eddf510afb979"
+    },
+    {
+      "path": "tests/fixtures/ai-lexical/native-reference.json",
+      "sha256": "ddbf647101cae3913bc78978362cf5618728c6b4db2eaf7e3c958ee037bf6f97"
+    }
+  ],
+  "rootCauses": [
+    "Physical DSC line scanning ignored literal/encoded string boundaries, truncating vectors or selecting fake bounds/preview metadata.",
+    "Vector tokenizer treated any > as ASCII85 end instead of ~>, exposing string data as drawing commands.",
+    "Top-level array parser searched the first ] without string/nesting awareness, exposing string data as a phantom third path."
+  ],
+  "localEvidence": [
+    {
+      "path": "outputs/ai-lexical/verified/report.json",
+      "sha256": "3300499ba62eb9ffbe937dc86bd0783200da570f9881ece59d29e33638294d95"
+    },
+    {
+      "path": "outputs/ai-lexical/verified/comparison.png",
+      "sha256": "90dfd6e01d674e48ab3da3ca630b88718e9096afe9aa3b7f8dbb919fe1894a3b"
+    }
+  ]
+}

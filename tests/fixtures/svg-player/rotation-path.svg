@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><animateTransform attributeName="transform" type="rotate" values="0 50 50;360 50 50" dur="2s" repeatCount="indefinite"/><path d="M20 40L70 40L40 65Z" fill="#283"><animate attributeName="d" values="M20 40L70 40L40 65Z;M20 20L70 40L40 80Z;M20 40L70 40L40 65Z" dur="2s" repeatCount="indefinite"/></path></g></svg>

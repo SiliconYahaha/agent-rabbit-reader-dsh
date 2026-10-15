@@ -1,0 +1,12 @@
+/* Shared product tokens. Match docs/design-system.html when changing brand values. */
+page {
+  --reader-paper: #fff9f2;
+  --reader-surface: #fffdf8;
+  --reader-ink: #171715;
+  --reader-muted: #62605c;
+  --reader-coral: #ff5b43;
+  --reader-coral-dark: #e74431;
+  --reader-lime: #b9e63b;
+  --reader-error: #7f2119;
+  --reader-error-bg: #ffe7df;
+}

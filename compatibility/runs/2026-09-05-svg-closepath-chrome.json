@@ -1,0 +1,465 @@
+{
+  "testedAt": "2026-09-04T20:08:36.536Z",
+  "chrome": "Google Chrome 152.0.7977.76",
+  "cases": 56,
+  "pendingPixelComparisons": [
+    "x-square.svg/0/original",
+    "x-square.svg/0/corrupt",
+    "x-square.svg/1/original",
+    "x-square.svg/1/corrupt",
+    "check-square.svg/0/original",
+    "check-square.svg/0/corrupt",
+    "check-square.svg/1/original",
+    "check-square.svg/1/corrupt"
+  ],
+  "results": [
+    {
+      "name": "Z/\"\"/1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\"/-1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\"/.5",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\"/1e2",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\"/+1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\"/0 0",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\" \"/1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\" \"/-1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\" \"/.5",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\" \"/1e2",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\" \"/+1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\" \"/0 0",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\",\"/1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\",\"/-1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\",\"/.5",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\",\"/1e2",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\",\"/+1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\",\"/0 0",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\\n\"/1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\\n\"/-1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\\n\"/.5",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\\n\"/1e2",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\\n\"/+1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "Z/\"\\n\"/0 0",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\"/1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\"/-1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\"/.5",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\"/1e2",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\"/+1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\"/0 0",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\" \"/1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\" \"/-1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\" \"/.5",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\" \"/1e2",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\" \"/+1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\" \"/0 0",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\",\"/1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\",\"/-1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\",\"/.5",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\",\"/1e2",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\",\"/+1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\",\"/0 0",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\\n\"/1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\\n\"/-1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\\n\"/.5",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\\n\"/1e2",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\\n\"/+1",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "z/\"\\n\"/0 0",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 0,
+      "ink": 10512,
+      "alphaError": 0
+    },
+    {
+      "name": "x-square.svg/0/original",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 74,
+      "ink": 8385,
+      "alphaError": 3272
+    },
+    {
+      "name": "x-square.svg/0/corrupt",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 74,
+      "ink": 8385,
+      "alphaError": 3272
+    },
+    {
+      "name": "x-square.svg/1/original",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 35,
+      "ink": 2804,
+      "alphaError": 1239
+    },
+    {
+      "name": "x-square.svg/1/corrupt",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 35,
+      "ink": 2804,
+      "alphaError": 1239
+    },
+    {
+      "name": "check-square.svg/0/original",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 74,
+      "ink": 8385,
+      "alphaError": 3272
+    },
+    {
+      "name": "check-square.svg/0/corrupt",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 74,
+      "ink": 8385,
+      "alphaError": 3272
+    },
+    {
+      "name": "check-square.svg/1/original",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 30,
+      "ink": 2558,
+      "alphaError": 1364
+    },
+    {
+      "name": "check-square.svg/1/corrupt",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 30,
+      "ink": 2558,
+      "alphaError": 1364
+    }
+  ]
+}

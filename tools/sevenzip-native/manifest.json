@@ -1,0 +1,15 @@
+{
+  "sourceCommit": "e5431fa6f5505e385c6f9367260717e9c47dc2ee",
+  "wasmWrapperCommit": "521d2cf93f5964f4e77b01049e19f1b29305c454",
+  "emscripten": "4.0.10",
+  "listingApi": 3,
+  "wasmSha256": "96ba7cb23787faa20f831cdd751d19ceed1af9bed4c09a133dbbc739c060c432",
+  "files": {
+    "7zz.js": "48fcadeb561d5706932d29b5fe3e7547753ceddba058f5eb4940845c3ae0e544",
+    "7zz.wasm.br": "2906ac829ec1ce0b67060ef115890d73c401ff7dd196b84a0350ded089e5dc92"
+  },
+  "patches": {
+    "7zz-emcc.patch": "02f038c73e04d400bd0a0aa9e530c2912013db9657d77d248295deb1fa373023",
+    "native-listing.patch": "1a6a346b9ac285841c618309aa0d66d2ac6a4a814a3aa9bd370fc6fe1e8d55bd"
+  }
+}

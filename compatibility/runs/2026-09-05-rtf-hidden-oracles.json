@@ -1,0 +1,788 @@
+{
+  "testedAt": "2026-09-05T05:22:40.968Z",
+  "seed": 20260905,
+  "node": "v24.16.0",
+  "libreOffice": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "chrome": "Google Chrome 152.0.7977.76",
+  "results": [
+    {
+      "name": "scoped",
+      "sha256": "0528a07631d9541f20ad3bc4fceb8f87de1fa85cb6c4632fa3f3bb85ea8d6f73",
+      "expected": "AB",
+      "baseline": "AHIDDENB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "scoped",
+        "visibleText": "AB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "AHIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "toggle",
+      "sha256": "bf4f33fd12df9deaa0822a7c3f42caad5d84adf596acdf7735a16c59ded29fb9",
+      "expected": "AB",
+      "baseline": "AHIDDENB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "toggle",
+        "visibleText": "AB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "AHIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "explicit-on",
+      "sha256": "406d387f731d6f08590122997a9e1f6f0159432a2c03766304d32f7d2224ca56",
+      "expected": "AB",
+      "baseline": "AHIDDENB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "explicit-on",
+        "visibleText": "AB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "AHIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "nested-visible",
+      "sha256": "38e8849ed3be81dd9323e4a576146365ac5c4ac25baa2988539fee746045bea8",
+      "expected": "AVISIBLEB",
+      "baseline": "AHIDDENVISIBLEHIDDENB",
+      "reader": "AVISIBLEB",
+      "writerChrome": {
+        "name": "nested-visible",
+        "visibleText": "AVISIBLEB",
+        "hiddenSpans": 2
+      },
+      "cocoaText": "AHIDDENVISIBLEHIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "nested-plain",
+      "sha256": "89e35382ab9a3e1a25086dcc714cf09204c0dbfa52298e3b7b8f1e70c5f1ac94",
+      "expected": "AVISIBLEB",
+      "baseline": "AHIDDENVISIBLEHIDDENB",
+      "reader": "AVISIBLEB",
+      "writerChrome": {
+        "name": "nested-plain",
+        "visibleText": "AVISIBLEB",
+        "hiddenSpans": 2
+      },
+      "cocoaText": "AHIDDENVISIBLEHIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "plain-reset",
+      "sha256": "e6ef41abc825f838d75f3d1ec0a6694d02ac979663700c8b75746c03641be3cc",
+      "expected": "AB",
+      "baseline": "AHIDDENB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "plain-reset",
+        "visibleText": "AB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "AHIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "paragraph-format-keeps-hidden",
+      "sha256": "ef45388e95b1d90f23c8f2013147685285acb1d32f089c2bc09f311a872c060b",
+      "expected": "AB",
+      "baseline": "AHIDDENSTILL HIDDENB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "paragraph-format-keeps-hidden",
+        "visibleText": "AB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "AHIDDENSTILL HIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "formatting-keeps-hidden",
+      "sha256": "98904f842457037fd909d43bb32dcf33164cb185b6c34dbbc76a07233e3503e2",
+      "expected": "AB",
+      "baseline": "AHIDDENSTILL HIDDENB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "formatting-keeps-hidden",
+        "visibleText": "AB",
+        "hiddenSpans": 2
+      },
+      "cocoaText": "AHIDDENSTILL HIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "unicode-fallback",
+      "sha256": "53bf3d8e9ec30dd48fb7319e3b1e80e13ed38fb00e46902b3367531ea1eeb581",
+      "expected": "A中文😀B",
+      "baseline": "A隐藏😀中文😀B",
+      "reader": "A中文😀B",
+      "writerChrome": {
+        "name": "unicode-fallback",
+        "visibleText": "A中文😀B",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "A隐藏😀中文😀B",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "fallback-control-is-not-toggle",
+      "sha256": "cd9021b6a98f867ebc9f687e5b84543a07edff870ac358aba0c28d0b5537eb4a",
+      "expected": "A你B",
+      "baseline": "A你B",
+      "reader": "A你B",
+      "writerChrome": {
+        "name": "fallback-control-is-not-toggle",
+        "visibleText": "A你",
+        "hiddenSpans": 0
+      },
+      "cocoaText": "A你B",
+      "assertWriterMatch": false,
+      "oracleScope": "RTF Unicode fallback/upr specification; independent software differences recorded without changing the expected result"
+    },
+    {
+      "name": "hidden-fallback-control-is-not-toggle",
+      "sha256": "8f55aa51ea44bf0346d340571a1d23a12b98ba150370e7292d19314d73ae0d84",
+      "expected": "AB",
+      "baseline": "A你HIDDENB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "hidden-fallback-control-is-not-toggle",
+        "visibleText": "AIDDENB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "A你HIDDENB",
+      "assertWriterMatch": false,
+      "oracleScope": "RTF Unicode fallback/upr specification; independent software differences recorded without changing the expected result"
+    },
+    {
+      "name": "hidden-symbols",
+      "sha256": "17dc89f340da27b74c20a3b5a310a806661dde5ff82b57a856b343d49401fab6",
+      "expected": "AB",
+      "baseline": "A ‑­—•\tHIDDENB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "hidden-symbols",
+        "visibleText": "AB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "A ‑—•\tHIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "escaped-braces",
+      "sha256": "5ac383df661ca8e896bf7ce82f067e9f77e59d2e503d0e575e38a9c27f634f37",
+      "expected": "AB",
+      "baseline": "A{HIDDEN}\\B",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "escaped-braces",
+        "visibleText": "AB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "A{HIDDEN}\\B",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "field-result",
+      "sha256": "08fe546fa280cadc1c9d5bcfe408ec0bc3dd3e3845793aaa63e7c4c393fc5e65",
+      "expected": "ALinkB",
+      "baseline": "ALinkHIDDENB",
+      "reader": "ALinkB",
+      "writerChrome": {
+        "name": "field-result",
+        "visibleText": "ALinkB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "ALinkHIDDENB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "ignored-destination-not-reopened",
+      "sha256": "9bf21d991866d081d429cd7674c1e35f778655adf63543ff8b02c4917d0bf7ba",
+      "expected": "AB",
+      "baseline": "AB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "ignored-destination-not-reopened",
+        "visibleText": "AB",
+        "hiddenSpans": 0
+      },
+      "cocoaText": "AB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "metadata-not-reopened",
+      "sha256": "1e7bda5517f40c8195a407d9e17eb8e015e2a0a9f1cdc6c209cbc179461d8fa3",
+      "expected": "AB",
+      "baseline": "AB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "metadata-not-reopened",
+        "visibleText": "AB",
+        "hiddenSpans": 0
+      },
+      "cocoaText": "AB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "upr-visible-island",
+      "sha256": "098258f24f677ae23991d461bb38d356b4385c45f8cd97bfc9d3d5f588484608",
+      "expected": "A中文B",
+      "baseline": "AHIDDEN中文HIDDENB",
+      "reader": "A中文B",
+      "writerChrome": {
+        "name": "upr-visible-island",
+        "visibleText": "AOLD中文B",
+        "hiddenSpans": 2
+      },
+      "cocoaText": "AHIDDENOLDHIDDENB",
+      "assertWriterMatch": false,
+      "oracleScope": "RTF Unicode fallback/upr specification; independent software differences recorded without changing the expected result"
+    },
+    {
+      "name": "upr-inherits-hidden",
+      "sha256": "3c292e6a3a99cad99ad50ef15c694bfd9a44d0aa874ecd1ef9189eb9c5b930b4",
+      "expected": "AB",
+      "baseline": "A隐藏B",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "upr-inherits-hidden",
+        "visibleText": "AOLDB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "AOLDB",
+      "assertWriterMatch": false,
+      "oracleScope": "RTF Unicode fallback/upr specification; independent software differences recorded without changing the expected result"
+    },
+    {
+      "name": "upr-discarded-toggle",
+      "sha256": "d1250d8d136610fbefa74220238de407be919e5b7cfbc313f2196d78d8b6d984",
+      "expected": "AVISIBLEB",
+      "baseline": "AVISIBLEB",
+      "reader": "AVISIBLEB",
+      "writerChrome": {
+        "name": "upr-discarded-toggle",
+        "visibleText": "AOLDVISIBLEB",
+        "hiddenSpans": 0
+      },
+      "cocoaText": "AOLDB",
+      "assertWriterMatch": false,
+      "oracleScope": "RTF Unicode fallback/upr specification; independent software differences recorded without changing the expected result"
+    },
+    {
+      "name": "font-restored-by-plain",
+      "sha256": "fa92675b8f2749c3b224faca224a6de334dec3780ddc543501396b131b1dd198",
+      "expected": "ACaféB",
+      "baseline": "A中CaféB",
+      "reader": "ACaféB",
+      "writerChrome": {
+        "name": "font-restored-by-plain",
+        "visibleText": "ACaféB",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "A中CaféB",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "codepage-after-unhide",
+      "sha256": "43518601a4cffacff8d4d0538f56bac83262d0e41b8da36cddcdd690e15da348",
+      "expected": "A文B",
+      "baseline": "A中文B",
+      "reader": "A文B",
+      "writerChrome": {
+        "name": "codepage-after-unhide",
+        "visibleText": "A文B",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "A中文B",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "binary-braces",
+      "sha256": "26777003dc844affdaa73ecf6aea466af1a7420f2477a51c079401fb06c9ef98",
+      "expected": "AB",
+      "baseline": "AHIDDENB",
+      "reader": "AB",
+      "writerChrome": {
+        "name": "binary-braces",
+        "visibleText": "A B",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "AHIDDENSECRET",
+      "assertWriterMatch": false,
+      "oracleScope": "Binary token isolation only; deliberately non-image bytes. Writer inserts an unsupported-image placeholder space."
+    },
+    {
+      "name": "paragraphs-outside-hidden",
+      "sha256": "a2d48195b1c507ec02f08d34af6a437feb5ee124da7b3b6b8f1ecfd8f7e96eb3",
+      "expected": "A\nB\nC",
+      "baseline": "AHIDDEN\nBHIDDEN\nC",
+      "reader": "A\nB\nC",
+      "writerChrome": {
+        "name": "paragraphs-outside-hidden",
+        "visibleText": "A\nB\nC",
+        "hiddenSpans": 2
+      },
+      "cocoaText": "AHIDDEN\nBHIDDEN\nC",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "html-escaped-body",
+      "sha256": "957147354b056335fee15fe0ad368a56035c9f5fd379c863990ef142cb54e3d0",
+      "expected": "<script>visible & safe</script>",
+      "baseline": "<script>visible & safe</script>HIDDEN",
+      "reader": "<script>visible & safe</script>",
+      "writerChrome": {
+        "name": "html-escaped-body",
+        "visibleText": "<script>visible & safe</script>",
+        "hiddenSpans": 1
+      },
+      "cocoaText": "<script>visible & safe</script>HIDDEN",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "all-hidden",
+      "sha256": "1d89f2fa475215b8ae2fb4f1477a90024b7d74b36ca8984d309ba716ae58b96f",
+      "expected": "",
+      "baseline": "HIDDEN",
+      "reader": "",
+      "writerChrome": {
+        "name": "all-hidden",
+        "visibleText": "",
+        "hiddenSpans": 0
+      },
+      "cocoaText": "HIDDEN",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-0",
+      "sha256": "8fdfea3df63445e666d874e44b6cb44d393884391a936591ed95d4b519c238bf",
+      "expected": "<&>0Café1日本語2日本語3Café4<&>5",
+      "baseline": "HIDDEN0<&>0Café1HIDDEN0HIDDEN0HIDDEN0日本語2HIDDEN0日本語3HIDDEN0Café4HIDDEN0HIDDEN0<&>5HIDDEN0HIDDEN0",
+      "reader": "<&>0Café1日本語2日本語3Café4<&>5",
+      "writerChrome": {
+        "name": "generated-0",
+        "visibleText": "<&>0Café1日本語2日本語3Café4<&>5",
+        "hiddenSpans": 10
+      },
+      "cocoaText": "HIDDEN0<&>0Café1HIDDEN0HIDDEN0HIDDEN0日本語2HIDDEN0日本語3HIDDEN0Café4HIDDEN0HIDDEN0<&>5HIDDEN0HIDDEN0",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-1",
+      "sha256": "584f5fe4a44ad9779777a2eb378424603351aaa1522ace94755b3e7cb72d0866",
+      "expected": "日本語0😀1正文2Café3😀4😀5",
+      "baseline": "HIDDEN1日本語0HIDDEN1HIDDEN1😀1HIDDEN1HIDDEN1正文2HIDDEN1Café3HIDDEN1😀4HIDDEN1HIDDEN1😀5HIDDEN1",
+      "reader": "日本語0😀1正文2Café3😀4😀5",
+      "writerChrome": {
+        "name": "generated-1",
+        "visibleText": "日本語0😀1正文2Café3😀4😀5",
+        "hiddenSpans": 7
+      },
+      "cocoaText": "HIDDEN1日本語0HIDDEN1HIDDEN1😀1HIDDEN1HIDDEN1正文2HIDDEN1Café3HIDDEN1😀4HIDDEN1HIDDEN1😀5HIDDEN1",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-2",
+      "sha256": "7917130d39313fd289a32c90229ee3ca739060632aea5b5d1c491f147ce7a600",
+      "expected": "😀0日本語1😀2正文3Café4正文5",
+      "baseline": "HIDDEN2😀0HIDDEN2日本語1😀2HIDDEN2HIDDEN2HIDDEN2正文3HIDDEN2Café4正文5HIDDEN2HIDDEN2",
+      "reader": "😀0日本語1😀2正文3Café4正文5",
+      "writerChrome": {
+        "name": "generated-2",
+        "visibleText": "😀0日本語1😀2正文3Café4正文5",
+        "hiddenSpans": 8
+      },
+      "cocoaText": "HIDDEN2😀0HIDDEN2日本語1😀2HIDDEN2HIDDEN2HIDDEN2正文3HIDDEN2Café4正文5HIDDEN2HIDDEN2",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-3",
+      "sha256": "461c0c0c3ee2d29f6978bf71117bc8e4a98b50e75202613970850ce06678ca2b",
+      "expected": "😀0正文1Ω2😀3😀4😀5",
+      "baseline": "HIDDEN3😀0正文1HIDDEN3HIDDEN3HIDDEN3Ω2HIDDEN3HIDDEN3😀3HIDDEN3😀4HIDDEN3HIDDEN3😀5HIDDEN3",
+      "reader": "😀0正文1Ω2😀3😀4😀5",
+      "writerChrome": {
+        "name": "generated-3",
+        "visibleText": "😀0正文1Ω2😀3😀4😀5",
+        "hiddenSpans": 8
+      },
+      "cocoaText": "HIDDEN3😀0正文1HIDDEN3HIDDEN3HIDDEN3Ω2HIDDEN3HIDDEN3😀3HIDDEN3😀4HIDDEN3HIDDEN3😀5HIDDEN3",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-4",
+      "sha256": "f820f5417a77ea007c4b291e32596a813880632a7695342b5d02c035cee8a49f",
+      "expected": "<&>0Café1Ω2正文3正文4日本語5",
+      "baseline": "HIDDEN4<&>0HIDDEN4HIDDEN4Café1Ω2HIDDEN4HIDDEN4HIDDEN4正文3HIDDEN4正文4HIDDEN4日本語5",
+      "reader": "<&>0Café1Ω2正文3正文4日本語5",
+      "writerChrome": {
+        "name": "generated-4",
+        "visibleText": "<&>0Café1Ω2正文3正文4日本語5",
+        "hiddenSpans": 7
+      },
+      "cocoaText": "HIDDEN4<&>0HIDDEN4HIDDEN4Café1Ω2HIDDEN4HIDDEN4HIDDEN4正文3HIDDEN4正文4HIDDEN4日本語5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-5",
+      "sha256": "5b3705ddf002f5e9627ba532876414b28dfa8aa1073fa463f776e7844c41dd99",
+      "expected": "<&>0正文1😀2正文3<&>4Ω5",
+      "baseline": "HIDDEN5<&>0HIDDEN5正文1HIDDEN5HIDDEN5😀2HIDDEN5HIDDEN5正文3HIDDEN5HIDDEN5<&>4Ω5HIDDEN5HIDDEN5",
+      "reader": "<&>0正文1😀2正文3<&>4Ω5",
+      "writerChrome": {
+        "name": "generated-5",
+        "visibleText": "<&>0正文1😀2正文3<&>4Ω5",
+        "hiddenSpans": 7
+      },
+      "cocoaText": "HIDDEN5<&>0HIDDEN5正文1HIDDEN5HIDDEN5😀2HIDDEN5HIDDEN5正文3HIDDEN5HIDDEN5<&>4Ω5HIDDEN5HIDDEN5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-6",
+      "sha256": "1f7a74690fe16206ef8730788fac297517092b611eb6e22f7a395e4e0d46b7e7",
+      "expected": "日本語0<&>1Café2😀3😀4Ω5",
+      "baseline": "HIDDEN6日本語0HIDDEN6<&>1HIDDEN6Café2HIDDEN6😀3HIDDEN6HIDDEN6😀4HIDDEN6HIDDEN6Ω5",
+      "reader": "日本語0<&>1Café2😀3😀4Ω5",
+      "writerChrome": {
+        "name": "generated-6",
+        "visibleText": "日本語0<&>1Café2😀3😀4Ω5",
+        "hiddenSpans": 6
+      },
+      "cocoaText": "HIDDEN6日本語0HIDDEN6<&>1HIDDEN6Café2HIDDEN6😀3HIDDEN6HIDDEN6😀4HIDDEN6HIDDEN6Ω5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-7",
+      "sha256": "567d74ad28631bcf1ce221ae6b736f4483444fa39b1162f3a2c189093f9746d0",
+      "expected": "正文0正文1日本語2Ω3Café4Café5",
+      "baseline": "HIDDEN7正文0HIDDEN7正文1HIDDEN7日本語2HIDDEN7Ω3HIDDEN7Café4HIDDEN7Café5HIDDEN7",
+      "reader": "正文0正文1日本語2Ω3Café4Café5",
+      "writerChrome": {
+        "name": "generated-7",
+        "visibleText": "正文0正文1日本語2Ω3Café4Café5",
+        "hiddenSpans": 7
+      },
+      "cocoaText": "HIDDEN7正文0HIDDEN7正文1HIDDEN7日本語2HIDDEN7Ω3HIDDEN7Café4HIDDEN7Café5HIDDEN7",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-8",
+      "sha256": "efab64fa3417e5bcf047a6d660ab2040b8d648285b7c2d6e9369607026d41111",
+      "expected": "Café0Ω1日本語2Café3日本語4日本語5",
+      "baseline": "HIDDEN8Café0HIDDEN8Ω1HIDDEN8日本語2HIDDEN8HIDDEN8Café3HIDDEN8日本語4HIDDEN8日本語5",
+      "reader": "Café0Ω1日本語2Café3日本語4日本語5",
+      "writerChrome": {
+        "name": "generated-8",
+        "visibleText": "Café0Ω1日本語2Café3日本語4日本語5",
+        "hiddenSpans": 6
+      },
+      "cocoaText": "HIDDEN8Café0HIDDEN8Ω1HIDDEN8日本語2HIDDEN8HIDDEN8Café3HIDDEN8日本語4HIDDEN8日本語5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-9",
+      "sha256": "a701da272508065d549a7044c90ee866fdab9e236b26f1455a838472d08e3677",
+      "expected": "日本語0正文1日本語2<&>3正文4日本語5",
+      "baseline": "HIDDEN9日本語0HIDDEN9正文1HIDDEN9HIDDEN9日本語2<&>3HIDDEN9HIDDEN9HIDDEN9正文4HIDDEN9日本語5HIDDEN9",
+      "reader": "日本語0正文1日本語2<&>3正文4日本語5",
+      "writerChrome": {
+        "name": "generated-9",
+        "visibleText": "日本語0正文1日本語2<&>3正文4日本語5",
+        "hiddenSpans": 8
+      },
+      "cocoaText": "HIDDEN9日本語0HIDDEN9正文1HIDDEN9HIDDEN9日本語2<&>3HIDDEN9HIDDEN9HIDDEN9正文4HIDDEN9日本語5HIDDEN9",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-10",
+      "sha256": "8cc1b977c809c880973a4c141b627db8ec1af20f378190e87c4e240b0a09194c",
+      "expected": "Ω0Café1Café2<&>3正文4Café5",
+      "baseline": "HIDDEN10Ω0HIDDEN10Café1Café2HIDDEN10HIDDEN10HIDDEN10<&>3正文4HIDDEN10HIDDEN10HIDDEN10Café5",
+      "reader": "Ω0Café1Café2<&>3正文4Café5",
+      "writerChrome": {
+        "name": "generated-10",
+        "visibleText": "Ω0Café1Café2<&>3正文4Café5",
+        "hiddenSpans": 8
+      },
+      "cocoaText": "HIDDEN10Ω0HIDDEN10Café1Café2HIDDEN10HIDDEN10HIDDEN10<&>3正文4HIDDEN10HIDDEN10HIDDEN10Café5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-11",
+      "sha256": "1755985bbb113a7119a9120ac587937adce7461c75b747920c57197f5f65ea51",
+      "expected": "Ω0Café1<&>2Ω3<&>4Café5",
+      "baseline": "HIDDEN11Ω0HIDDEN11Café1<&>2HIDDEN11HIDDEN11Ω3HIDDEN11HIDDEN11HIDDEN11<&>4Café5HIDDEN11HIDDEN11",
+      "reader": "Ω0Café1<&>2Ω3<&>4Café5",
+      "writerChrome": {
+        "name": "generated-11",
+        "visibleText": "Ω0Café1<&>2Ω3<&>4Café5",
+        "hiddenSpans": 9
+      },
+      "cocoaText": "HIDDEN11Ω0HIDDEN11Café1<&>2HIDDEN11HIDDEN11Ω3HIDDEN11HIDDEN11HIDDEN11<&>4Café5HIDDEN11HIDDEN11",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-12",
+      "sha256": "9fa77c199146468d7345424a9d5063c3a2384353fa362646c9797af6305a7be2",
+      "expected": "😀0日本語1正文2Ω3Café4正文5",
+      "baseline": "😀0HIDDEN12HIDDEN12HIDDEN12日本語1正文2HIDDEN12HIDDEN12Ω3HIDDEN12HIDDEN12HIDDEN12Café4正文5HIDDEN12HIDDEN12",
+      "reader": "😀0日本語1正文2Ω3Café4正文5",
+      "writerChrome": {
+        "name": "generated-12",
+        "visibleText": "😀0日本語1正文2Ω3Café4正文5",
+        "hiddenSpans": 10
+      },
+      "cocoaText": "😀0HIDDEN12HIDDEN12HIDDEN12日本語1正文2HIDDEN12HIDDEN12Ω3HIDDEN12HIDDEN12HIDDEN12Café4正文5HIDDEN12HIDDEN12",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-13",
+      "sha256": "8e13fe50be6fa5305eadc29dc3d2d75be22497aba529ce734cdc8abe35d1a558",
+      "expected": "Ω0😀1正文2日本語3Café4日本語5",
+      "baseline": "HIDDEN13Ω0HIDDEN13😀1正文2HIDDEN13HIDDEN13HIDDEN13日本語3HIDDEN13HIDDEN13Café4HIDDEN13日本語5",
+      "reader": "Ω0😀1正文2日本語3Café4日本語5",
+      "writerChrome": {
+        "name": "generated-13",
+        "visibleText": "Ω0😀1正文2日本語3Café4日本語5",
+        "hiddenSpans": 7
+      },
+      "cocoaText": "HIDDEN13Ω0HIDDEN13😀1正文2HIDDEN13HIDDEN13HIDDEN13日本語3HIDDEN13HIDDEN13Café4HIDDEN13日本語5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-14",
+      "sha256": "f4b25b98a79b53f9d96818204c81c05b9d98131a8f7b7f2b84200341d1bcd7d7",
+      "expected": "正文0😀1日本語2😀3正文4<&>5",
+      "baseline": "HIDDEN14正文0😀1HIDDEN14HIDDEN14HIDDEN14日本語2HIDDEN14😀3HIDDEN14正文4<&>5HIDDEN14HIDDEN14",
+      "reader": "正文0😀1日本語2😀3正文4<&>5",
+      "writerChrome": {
+        "name": "generated-14",
+        "visibleText": "正文0😀1日本語2😀3正文4<&>5",
+        "hiddenSpans": 8
+      },
+      "cocoaText": "HIDDEN14正文0😀1HIDDEN14HIDDEN14HIDDEN14日本語2HIDDEN14😀3HIDDEN14正文4<&>5HIDDEN14HIDDEN14",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-15",
+      "sha256": "85d083c4c52f15b29b0cc7d98abf90eee6bb0cd280b1311458267ee88c582448",
+      "expected": "Ω0<&>1日本語2Café3日本語4Ω5",
+      "baseline": "HIDDEN15Ω0HIDDEN15<&>1HIDDEN15HIDDEN15日本語2HIDDEN15Café3HIDDEN15HIDDEN15日本語4HIDDEN15HIDDEN15Ω5HIDDEN15",
+      "reader": "Ω0<&>1日本語2Café3日本語4Ω5",
+      "writerChrome": {
+        "name": "generated-15",
+        "visibleText": "Ω0<&>1日本語2Café3日本語4Ω5",
+        "hiddenSpans": 7
+      },
+      "cocoaText": "HIDDEN15Ω0HIDDEN15<&>1HIDDEN15HIDDEN15日本語2HIDDEN15Café3HIDDEN15HIDDEN15日本語4HIDDEN15HIDDEN15Ω5HIDDEN15",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-16",
+      "sha256": "3807b7108cd3a78d7e16c2d5da397788aa84b8c5c38fdc9b1c880b23b80f7e42",
+      "expected": "😀0Ω1Café2Café3😀4<&>5",
+      "baseline": "HIDDEN16😀0Ω1HIDDEN16HIDDEN16HIDDEN16Café2HIDDEN16Café3HIDDEN16HIDDEN16😀4HIDDEN16<&>5",
+      "reader": "😀0Ω1Café2Café3😀4<&>5",
+      "writerChrome": {
+        "name": "generated-16",
+        "visibleText": "😀0Ω1Café2Café3😀4<&>5",
+        "hiddenSpans": 7
+      },
+      "cocoaText": "HIDDEN16😀0Ω1HIDDEN16HIDDEN16HIDDEN16Café2HIDDEN16Café3HIDDEN16HIDDEN16😀4HIDDEN16<&>5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-17",
+      "sha256": "b5ccd5fb42b941948af21243c8d8546e229fc34e183e159d81409edff7ce0b52",
+      "expected": "日本語0Café1Ω2😀3😀4😀5",
+      "baseline": "HIDDEN17日本語0HIDDEN17Café1HIDDEN17HIDDEN17Ω2HIDDEN17😀3HIDDEN17😀4HIDDEN17😀5HIDDEN17HIDDEN17",
+      "reader": "日本語0Café1Ω2😀3😀4😀5",
+      "writerChrome": {
+        "name": "generated-17",
+        "visibleText": "日本語0Café1Ω2😀3😀4😀5",
+        "hiddenSpans": 8
+      },
+      "cocoaText": "HIDDEN17日本語0HIDDEN17Café1HIDDEN17HIDDEN17Ω2HIDDEN17😀3HIDDEN17😀4HIDDEN17😀5HIDDEN17HIDDEN17",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-18",
+      "sha256": "a0253a413324f134057e651a38412f4bee643648a60adc20864668db6cd17512",
+      "expected": "Café0日本語1😀2<&>3😀4日本語5",
+      "baseline": "HIDDEN18Café0日本語1HIDDEN18HIDDEN18HIDDEN18😀2<&>3HIDDEN18HIDDEN18HIDDEN18😀4日本語5HIDDEN18HIDDEN18",
+      "reader": "Café0日本語1😀2<&>3😀4日本語5",
+      "writerChrome": {
+        "name": "generated-18",
+        "visibleText": "Café0日本語1😀2<&>3😀4日本語5",
+        "hiddenSpans": 9
+      },
+      "cocoaText": "HIDDEN18Café0日本語1HIDDEN18HIDDEN18HIDDEN18😀2<&>3HIDDEN18HIDDEN18HIDDEN18😀4日本語5HIDDEN18HIDDEN18",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-19",
+      "sha256": "02d984dfd4bb300aa7346e9f3e3a4d0d9dc0e45827100f945c37920ad7d23fd3",
+      "expected": "正文0Café1Café2正文3日本語4正文5",
+      "baseline": "HIDDEN19正文0HIDDEN19Café1HIDDEN19Café2HIDDEN19HIDDEN19正文3HIDDEN19HIDDEN19日本語4HIDDEN19HIDDEN19HIDDEN19正文5",
+      "reader": "正文0Café1Café2正文3日本語4正文5",
+      "writerChrome": {
+        "name": "generated-19",
+        "visibleText": "正文0Café1Café2正文3日本語4正文5",
+        "hiddenSpans": 10
+      },
+      "cocoaText": "HIDDEN19正文0HIDDEN19Café1HIDDEN19Café2HIDDEN19HIDDEN19正文3HIDDEN19HIDDEN19日本語4HIDDEN19HIDDEN19HIDDEN19正文5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-20",
+      "sha256": "4ff3e543176a6c53502158820930303ae325f39dd1dc4a2086cb961b6dc58c99",
+      "expected": "😀0Ω1😀2日本語3Café4Ω5",
+      "baseline": "HIDDEN20😀0HIDDEN20HIDDEN20Ω1HIDDEN20😀2日本語3HIDDEN20HIDDEN20HIDDEN20Café4HIDDEN20Ω5",
+      "reader": "😀0Ω1😀2日本語3Café4Ω5",
+      "writerChrome": {
+        "name": "generated-20",
+        "visibleText": "😀0Ω1😀2日本語3Café4Ω5",
+        "hiddenSpans": 7
+      },
+      "cocoaText": "HIDDEN20😀0HIDDEN20HIDDEN20Ω1HIDDEN20😀2日本語3HIDDEN20HIDDEN20HIDDEN20Café4HIDDEN20Ω5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-21",
+      "sha256": "7e9c505a32fb104d5651355a68fb0a81c757ecc7a327244b030cc8cead74fd6d",
+      "expected": "Ω0Café1😀2Ω3Café4正文5",
+      "baseline": "HIDDEN21Ω0HIDDEN21Café1HIDDEN21😀2HIDDEN21Ω3HIDDEN21Café4HIDDEN21HIDDEN21HIDDEN21正文5",
+      "reader": "Ω0Café1😀2Ω3Café4正文5",
+      "writerChrome": {
+        "name": "generated-21",
+        "visibleText": "Ω0Café1😀2Ω3Café4正文5",
+        "hiddenSpans": 8
+      },
+      "cocoaText": "HIDDEN21Ω0HIDDEN21Café1HIDDEN21😀2HIDDEN21Ω3HIDDEN21Café4HIDDEN21HIDDEN21HIDDEN21正文5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-22",
+      "sha256": "1c0c0dd7e96acfad832d5f14b699434d33e1dd233a2366b4ee7f63cebd7b0af4",
+      "expected": "日本語0日本語1Ω2日本語3日本語4日本語5",
+      "baseline": "HIDDEN22日本語0HIDDEN22日本語1HIDDEN22HIDDEN22HIDDEN22Ω2日本語3HIDDEN22HIDDEN22HIDDEN22日本語4HIDDEN22日本語5",
+      "reader": "日本語0日本語1Ω2日本語3日本語4日本語5",
+      "writerChrome": {
+        "name": "generated-22",
+        "visibleText": "日本語0日本語1Ω2日本語3日本語4日本語5",
+        "hiddenSpans": 9
+      },
+      "cocoaText": "HIDDEN22日本語0HIDDEN22日本語1HIDDEN22HIDDEN22HIDDEN22Ω2日本語3HIDDEN22HIDDEN22HIDDEN22日本語4HIDDEN22日本語5",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    },
+    {
+      "name": "generated-23",
+      "sha256": "57827317c8098b69179f8d531e58d41dcaeaf31946e19c08b138141c4f494e7a",
+      "expected": "正文0日本語1Ω2Ω3正文4😀5",
+      "baseline": "HIDDEN23正文0HIDDEN23日本語1HIDDEN23Ω2HIDDEN23HIDDEN23HIDDEN23Ω3HIDDEN23正文4HIDDEN23HIDDEN23😀5HIDDEN23",
+      "reader": "正文0日本語1Ω2Ω3正文4😀5",
+      "writerChrome": {
+        "name": "generated-23",
+        "visibleText": "正文0日本語1Ω2Ω3正文4😀5",
+        "hiddenSpans": 9
+      },
+      "cocoaText": "HIDDEN23正文0HIDDEN23日本語1HIDDEN23Ω2HIDDEN23HIDDEN23HIDDEN23Ω3HIDDEN23正文4HIDDEN23HIDDEN23😀5HIDDEN23",
+      "assertWriterMatch": true,
+      "oracleScope": "Writer actual RTF import -> unmodified HTML -> Chrome visible paragraph text"
+    }
+  ],
+  "baselineFailures": 45,
+  "readerMatches": 49,
+  "writerChromeMatches": 43,
+  "writerChromeCases": 49,
+  "malformed": [
+    "hidden-truncated-bin",
+    "hidden-invalid-bin",
+    "hidden-truncated-group",
+    "hidden-invalid-hex",
+    "hidden-invalid-codepage-bytes",
+    "hidden-invalid-unicode"
+  ],
+  "limitations": [
+    "Not a WeChat or physical-device oracle",
+    "No RTF rich layout, style-table inheritance or show-hidden-text UI claim",
+    "Cocoa text export loses hidden formatting and is not the expected display"
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/win32/controls/about-text-object-model#tom-rtf",
+    "Microsoft RTF 1.9.1 Unicode fallback and upr rules; existing rtf.json oracleDifferences"
+  ],
+  "generator": "tests/helpers/rtf-hidden.js",
+  "rootCause": "Reader ignored hidden character formatting and plain only reset font; bytes and Unicode were appended unconditionally.",
+  "fix": "Group-scoped hidden flag only gates output; codepage decoding and syntax validation continue; v0 and plain restore display after Unicode fallback token handling.",
+  "verification": {
+    "nodeTargetedTests": 99,
+    "chromeProductionViews": 66,
+    "fullCheck": {
+      "status": "pass",
+      "nodeTests": 973,
+      "compatibilityProbes": 141,
+      "rendererSmoke": "pass",
+      "production": "pass",
+      "chromeOracle": "pass",
+      "svgClosepath": "pass"
+    },
+    "wechatDevtools": "blocked: CLI auto code 10 requires login",
+    "ios": "not run",
+    "android": "not run",
+    "resolvedAttempts": [
+      "First full check: source edited between scanner passes; froze tree and reran without assertion changes.",
+      "Second full check: new profile lacked required content axis; added actual content scope; profile gate and final full check passed."
+    ]
+  }
+}

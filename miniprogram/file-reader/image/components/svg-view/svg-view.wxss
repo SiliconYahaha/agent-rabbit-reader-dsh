@@ -1,0 +1,5 @@
+.svg-view-shell { position: relative; width: 100%; }
+.svg-view-canvas { display: block; width: 100%; }
+
+.svg-view-controls { display: flex; align-items: center; justify-content: space-between; padding: 6px 12px; font-size: 12px; color: #42534c; }
+.svg-view-controls button { margin: 0; font-size: 12px; }

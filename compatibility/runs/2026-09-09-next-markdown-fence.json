@@ -1,0 +1,2357 @@
+{
+  "scope": "New authored container/fence terminal-line combinations; no product fix yet",
+  "oracles": "commonmark0.31.2 and markdown-it15.0.1 commonmark mode",
+  "rows": [
+    {
+      "name": "root-0",
+      "source": "```\nX\tCOL",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "root-1",
+      "source": "```\nX\tCOL\n",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-2",
+      "source": "```\nX\tCOL\n\n",
+      "reference": "<pre><code>X\tCOL\n\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X\tCOL\n\n"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-3",
+      "source": "```\nX\tCOL\n\nOUTSIDE\n",
+      "reference": "<pre><code>X\tCOL\n\nOUTSIDE\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n\nOUTSIDE\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n\nOUTSIDE\n"
+      ],
+      "reader": [
+        "X\tCOL\n\nOUTSIDE\n"
+      ],
+      "secondary": [
+        "X\tCOL\n\nOUTSIDE\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-4",
+      "source": "```\nX\tCOL\n```",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-5",
+      "source": "```\nX\tCOL\n```\n",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-6",
+      "source": "```\nX\tCOL\n```\n\n",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-7",
+      "source": "```\nX\tCOL\n```\n\nOUTSIDE\n",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n<p>OUTSIDE</p>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-8",
+      "source": "~~~\nX\tCOL",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "root-9",
+      "source": "~~~\nX\tCOL\n",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-10",
+      "source": "~~~\nX\tCOL\n\n",
+      "reference": "<pre><code>X\tCOL\n\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X\tCOL\n\n"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-11",
+      "source": "~~~\nX\tCOL\n\nOUTSIDE\n",
+      "reference": "<pre><code>X\tCOL\n\nOUTSIDE\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n\nOUTSIDE\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n\nOUTSIDE\n"
+      ],
+      "reader": [
+        "X\tCOL\n\nOUTSIDE\n"
+      ],
+      "secondary": [
+        "X\tCOL\n\nOUTSIDE\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-12",
+      "source": "~~~\nX\tCOL\n~~~",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-13",
+      "source": "~~~\nX\tCOL\n~~~\n",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-14",
+      "source": "~~~\nX\tCOL\n~~~\n\n",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "root-15",
+      "source": "~~~\nX\tCOL\n~~~\n\nOUTSIDE\n",
+      "reference": "<pre><code>X\tCOL\n</code></pre>\n<p>OUTSIDE</p>\n",
+      "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-16",
+      "source": "> ```\n> X\tCOL",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "quote-17",
+      "source": "> ```\n> X\tCOL\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-18",
+      "source": "> ```\n> X\tCOL\n\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-19",
+      "source": "> ```\n> X\tCOL\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-20",
+      "source": "> ```\n> X\tCOL\n> ```",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-21",
+      "source": "> ```\n> X\tCOL\n> ```\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-22",
+      "source": "> ```\n> X\tCOL\n> ```\n\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-23",
+      "source": "> ```\n> X\tCOL\n> ```\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-24",
+      "source": "> ~~~\n> X\tCOL",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "quote-25",
+      "source": "> ~~~\n> X\tCOL\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-26",
+      "source": "> ~~~\n> X\tCOL\n\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-27",
+      "source": "> ~~~\n> X\tCOL\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-28",
+      "source": "> ~~~\n> X\tCOL\n> ~~~",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-29",
+      "source": "> ~~~\n> X\tCOL\n> ~~~\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-30",
+      "source": "> ~~~\n> X\tCOL\n> ~~~\n\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-31",
+      "source": "> ~~~\n> X\tCOL\n> ~~~\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-32",
+      "source": "> > ```\n> > X\tCOL",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "nested-quote-33",
+      "source": "> > ```\n> > X\tCOL\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-34",
+      "source": "> > ```\n> > X\tCOL\n\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-35",
+      "source": "> > ```\n> > X\tCOL\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-36",
+      "source": "> > ```\n> > X\tCOL\n> > ```",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-37",
+      "source": "> > ```\n> > X\tCOL\n> > ```\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-38",
+      "source": "> > ```\n> > X\tCOL\n> > ```\n\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-39",
+      "source": "> > ```\n> > X\tCOL\n> > ```\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-40",
+      "source": "> > ~~~\n> > X\tCOL",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "nested-quote-41",
+      "source": "> > ~~~\n> > X\tCOL\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-42",
+      "source": "> > ~~~\n> > X\tCOL\n\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-43",
+      "source": "> > ~~~\n> > X\tCOL\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL</code></pre>\n</blockquote>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-44",
+      "source": "> > ~~~\n> > X\tCOL\n> > ~~~",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-45",
+      "source": "> > ~~~\n> > X\tCOL\n> > ~~~\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-46",
+      "source": "> > ~~~\n> > X\tCOL\n> > ~~~\n\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "nested-quote-47",
+      "source": "> > ~~~\n> > X\tCOL\n> > ~~~\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X\tCOL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": true,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-48",
+      "source": "- ```\n  X\tCOL",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "list-49",
+      "source": "- ```\n  X\tCOL\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-50",
+      "source": "- ```\n  X\tCOL\n\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-51",
+      "source": "- ```\n  X\tCOL\n\nOUTSIDE\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n\n</code></pre>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-52",
+      "source": "- ```\n  X\tCOL\n  ```",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-53",
+      "source": "- ```\n  X\tCOL\n  ```\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-54",
+      "source": "- ```\n  X\tCOL\n  ```\n\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-55",
+      "source": "- ```\n  X\tCOL\n  ```\n\nOUTSIDE\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-56",
+      "source": "- ~~~\n  X\tCOL",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "list-57",
+      "source": "- ~~~\n  X\tCOL\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-58",
+      "source": "- ~~~\n  X\tCOL\n\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-59",
+      "source": "- ~~~\n  X\tCOL\n\nOUTSIDE\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n\n</code></pre>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-60",
+      "source": "- ~~~\n  X\tCOL\n  ~~~",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-61",
+      "source": "- ~~~\n  X\tCOL\n  ~~~\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-62",
+      "source": "- ~~~\n  X\tCOL\n  ~~~\n\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-63",
+      "source": "- ~~~\n  X\tCOL\n  ~~~\n\nOUTSIDE\n",
+      "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-64",
+      "source": "10. ```\n    X\tCOL",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "ordered-65",
+      "source": "10. ```\n    X\tCOL\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-66",
+      "source": "10. ```\n    X\tCOL\n\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-67",
+      "source": "10. ```\n    X\tCOL\n\nOUTSIDE\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n\n</code></pre>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-68",
+      "source": "10. ```\n    X\tCOL\n    ```",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-69",
+      "source": "10. ```\n    X\tCOL\n    ```\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-70",
+      "source": "10. ```\n    X\tCOL\n    ```\n\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-71",
+      "source": "10. ```\n    X\tCOL\n    ```\n\nOUTSIDE\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-72",
+      "source": "10. ~~~\n    X\tCOL",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "ordered-73",
+      "source": "10. ~~~\n    X\tCOL\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-74",
+      "source": "10. ~~~\n    X\tCOL\n\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-75",
+      "source": "10. ~~~\n    X\tCOL\n\nOUTSIDE\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n\n</code></pre>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-76",
+      "source": "10. ~~~\n    X\tCOL\n    ~~~",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-77",
+      "source": "10. ~~~\n    X\tCOL\n    ~~~\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-78",
+      "source": "10. ~~~\n    X\tCOL\n    ~~~\n\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-79",
+      "source": "10. ~~~\n    X\tCOL\n    ~~~\n\nOUTSIDE\n",
+      "reference": "<ol start=\"10\">\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "actual": "<ol start=\"10\">\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-80",
+      "source": "> - ```\n>   X\tCOL",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "quote-list-81",
+      "source": "> - ```\n>   X\tCOL\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-82",
+      "source": "> - ```\n>   X\tCOL\n\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-83",
+      "source": "> - ```\n>   X\tCOL\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-84",
+      "source": "> - ```\n>   X\tCOL\n>   ```",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-85",
+      "source": "> - ```\n>   X\tCOL\n>   ```\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-86",
+      "source": "> - ```\n>   X\tCOL\n>   ```\n\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-87",
+      "source": "> - ```\n>   X\tCOL\n>   ```\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-88",
+      "source": "> - ~~~\n>   X\tCOL",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "quote-list-89",
+      "source": "> - ~~~\n>   X\tCOL\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-90",
+      "source": "> - ~~~\n>   X\tCOL\n\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-91",
+      "source": "> - ~~~\n>   X\tCOL\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL</code></pre>\n</li>\n</ul>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-92",
+      "source": "> - ~~~\n>   X\tCOL\n>   ~~~",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-93",
+      "source": "> - ~~~\n>   X\tCOL\n>   ~~~\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-94",
+      "source": "> - ~~~\n>   X\tCOL\n>   ~~~\n\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "quote-list-95",
+      "source": "> - ~~~\n>   X\tCOL\n>   ~~~\n\nOUTSIDE\n",
+      "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-96",
+      "source": "- > ```\n  > X\tCOL",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "list-quote-97",
+      "source": "- > ```\n  > X\tCOL\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-98",
+      "source": "- > ```\n  > X\tCOL\n\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-99",
+      "source": "- > ```\n  > X\tCOL\n\nOUTSIDE\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-100",
+      "source": "- > ```\n  > X\tCOL\n  > ```",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-101",
+      "source": "- > ```\n  > X\tCOL\n  > ```\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-102",
+      "source": "- > ```\n  > X\tCOL\n  > ```\n\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-103",
+      "source": "- > ```\n  > X\tCOL\n  > ```\n\nOUTSIDE\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-104",
+      "source": "- > ~~~\n  > X\tCOL",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "list-quote-105",
+      "source": "- > ~~~\n  > X\tCOL\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-106",
+      "source": "- > ~~~\n  > X\tCOL\n\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-107",
+      "source": "- > ~~~\n  > X\tCOL\n\nOUTSIDE\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-108",
+      "source": "- > ~~~\n  > X\tCOL\n  > ~~~",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-109",
+      "source": "- > ~~~\n  > X\tCOL\n  > ~~~\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-110",
+      "source": "- > ~~~\n  > X\tCOL\n  > ~~~\n\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "list-quote-111",
+      "source": "- > ~~~\n  > X\tCOL\n  > ~~~\n\nOUTSIDE\n",
+      "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-112",
+      "source": "1. > ```\n   > X\tCOL",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "ordered-quote-113",
+      "source": "1. > ```\n   > X\tCOL\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-114",
+      "source": "1. > ```\n   > X\tCOL\n\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-115",
+      "source": "1. > ```\n   > X\tCOL\n\nOUTSIDE\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-116",
+      "source": "1. > ```\n   > X\tCOL\n   > ```",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-117",
+      "source": "1. > ```\n   > X\tCOL\n   > ```\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-118",
+      "source": "1. > ```\n   > X\tCOL\n   > ```\n\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-119",
+      "source": "1. > ```\n   > X\tCOL\n   > ```\n\nOUTSIDE\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-120",
+      "source": "1. > ~~~\n   > X\tCOL",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL"
+      ],
+      "exact": false,
+      "oraclesAgree": false
+    },
+    {
+      "name": "ordered-quote-121",
+      "source": "1. > ~~~\n   > X\tCOL\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-122",
+      "source": "1. > ~~~\n   > X\tCOL\n\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-123",
+      "source": "1. > ~~~\n   > X\tCOL\n\nOUTSIDE\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL</code></pre>\n</blockquote>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-124",
+      "source": "1. > ~~~\n   > X\tCOL\n   > ~~~",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-125",
+      "source": "1. > ~~~\n   > X\tCOL\n   > ~~~\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-126",
+      "source": "1. > ~~~\n   > X\tCOL\n   > ~~~\n\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    },
+    {
+      "name": "ordered-quote-127",
+      "source": "1. > ~~~\n   > X\tCOL\n   > ~~~\n\nOUTSIDE\n",
+      "reference": "<ol>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "actual": "<ol>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ol>\n<p>OUTSIDE</p>\n",
+      "expected": [
+        "X\tCOL\n"
+      ],
+      "reader": [
+        "X    COL\n"
+      ],
+      "secondary": [
+        "X\tCOL\n"
+      ],
+      "exact": false,
+      "oraclesAgree": true
+    }
+  ],
+  "summary": {
+    "cases": 128,
+    "wrong": 98,
+    "oracleDisagreements": 16,
+    "agreedWrong": 82
+  },
+  "schemaVersion": 1,
+  "host": {
+    "rows": [
+      {
+        "name": "root-5",
+        "source": "```\nX\tCOL\n```\n",
+        "reference": "<pre><code>X\tCOL\n</code></pre>\n",
+        "actual": "<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n",
+        "expected": [
+          "X\tCOL\n"
+        ],
+        "reader": [
+          "X\tCOL\n"
+        ],
+        "secondary": [
+          "X\tCOL\n"
+        ],
+        "exact": true,
+        "oraclesAgree": true,
+        "hostHtml": "<article class=\"markdown-document\" data-hr-nid=\"6\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><pre class=\"md-code\" data-hr-nid=\"9\" style=\"display:block;font-family:monospace;margin:1em 0;padding:14px;border-radius:10px;background:#111827;color:#e5e7eb;overflow:auto;white-space:pre-wrap;word-break:break-word\"><code data-hr-nid=\"10\" style=\"display:inline\">X\tCOL\n</code></pre></article>",
+        "error": ""
+      },
+      {
+        "name": "quote-21",
+        "source": "> ```\n> X\tCOL\n> ```\n",
+        "reference": "<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+        "actual": "<blockquote>\n<pre class=\"md-code\"><code>X\tCOL\n</code></pre>\n</blockquote>\n",
+        "expected": [
+          "X\tCOL\n"
+        ],
+        "reader": [
+          "X\tCOL\n"
+        ],
+        "secondary": [
+          "X\tCOL\n"
+        ],
+        "exact": true,
+        "oraclesAgree": true,
+        "hostHtml": "<article class=\"markdown-document\" data-hr-nid=\"18\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><blockquote data-hr-nid=\"21\" style=\"display:block;margin:1em 40px\"><pre class=\"md-code\" data-hr-nid=\"23\" style=\"display:block;font-family:monospace;margin:1em 0;padding:14px;border-radius:10px;background:#111827;color:#e5e7eb;overflow:auto;white-space:pre-wrap;word-break:break-word\"><code data-hr-nid=\"24\" style=\"display:inline\">X\tCOL\n</code></pre></blockquote></article>",
+        "error": ""
+      },
+      {
+        "name": "list-53",
+        "source": "- ```\n  X\tCOL\n  ```\n",
+        "reference": "<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n",
+        "actual": "<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n",
+        "expected": [
+          "X\tCOL\n"
+        ],
+        "reader": [
+          "X    COL\n"
+        ],
+        "secondary": [
+          "X\tCOL\n"
+        ],
+        "exact": false,
+        "oraclesAgree": true,
+        "hostHtml": "<article class=\"markdown-document\" data-hr-nid=\"33\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><ul data-hr-nid=\"36\" style=\"display:block;margin:1em 0;padding-left:40px;list-style-type:disc\"><li data-hr-nid=\"38\" style=\"display:list-item\"><pre class=\"md-code\" data-hr-nid=\"39\" style=\"display:block;font-family:monospace;margin:1em 0;padding:14px;border-radius:10px;background:#111827;color:#e5e7eb;overflow:auto;white-space:pre-wrap;word-break:break-word\"><code data-hr-nid=\"40\" style=\"display:inline\">X    COL\n</code></pre></li></ul></article>",
+        "error": ""
+      },
+      {
+        "name": "quote-list-85",
+        "source": "> - ```\n>   X\tCOL\n>   ```\n",
+        "reference": "<blockquote>\n<ul>\n<li>\n<pre><code>X\tCOL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+        "actual": "<blockquote>\n<ul>\n<li><pre class=\"md-code\"><code>X    COL\n</code></pre>\n</li>\n</ul>\n</blockquote>\n",
+        "expected": [
+          "X\tCOL\n"
+        ],
+        "reader": [
+          "X    COL\n"
+        ],
+        "secondary": [
+          "X\tCOL\n"
+        ],
+        "exact": false,
+        "oraclesAgree": true,
+        "hostHtml": "<article class=\"markdown-document\" data-hr-nid=\"50\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><blockquote data-hr-nid=\"53\" style=\"display:block;margin:1em 40px\"><ul data-hr-nid=\"55\" style=\"display:block;margin:1em 0;padding-left:40px;list-style-type:disc\"><li data-hr-nid=\"57\" style=\"display:list-item\"><pre class=\"md-code\" data-hr-nid=\"58\" style=\"display:block;font-family:monospace;margin:1em 0;padding:14px;border-radius:10px;background:#111827;color:#e5e7eb;overflow:auto;white-space:pre-wrap;word-break:break-word\"><code data-hr-nid=\"59\" style=\"display:inline\">X    COL\n</code></pre></li></ul></blockquote></article>",
+        "error": ""
+      },
+      {
+        "name": "list-quote-101",
+        "source": "- > ```\n  > X\tCOL\n  > ```\n",
+        "reference": "<ul>\n<li>\n<blockquote>\n<pre><code>X\tCOL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+        "actual": "<ul>\n<li><blockquote>\n<pre class=\"md-code\"><code>X    COL\n</code></pre>\n</blockquote>\n</li>\n</ul>\n",
+        "expected": [
+          "X\tCOL\n"
+        ],
+        "reader": [
+          "X    COL\n"
+        ],
+        "secondary": [
+          "X\tCOL\n"
+        ],
+        "exact": false,
+        "oraclesAgree": true,
+        "hostHtml": "<article class=\"markdown-document\" data-hr-nid=\"70\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><ul data-hr-nid=\"73\" style=\"display:block;margin:1em 0;padding-left:40px;list-style-type:disc\"><li data-hr-nid=\"75\" style=\"display:list-item\"><blockquote data-hr-nid=\"76\" style=\"display:block;margin:1em 40px\"><pre class=\"md-code\" data-hr-nid=\"78\" style=\"display:block;font-family:monospace;margin:1em 0;padding:14px;border-radius:10px;background:#111827;color:#e5e7eb;overflow:auto;white-space:pre-wrap;word-break:break-word\"><code data-hr-nid=\"79\" style=\"display:inline\">X    COL\n</code></pre></blockquote></li></ul></article>",
+        "error": ""
+      }
+    ]
+  },
+  "chrome": {
+    "chrome": "152.0.7977.83",
+    "results": [
+      {
+        "name": "root-5",
+        "reference": {
+          "text": "X\tCOL\n",
+          "columnOffset": 33.609375
+        },
+        "actual": {
+          "text": "X\tCOL\n",
+          "columnOffset": 33.609375
+        },
+        "delta": 0
+      },
+      {
+        "name": "quote-21",
+        "reference": {
+          "text": "X\tCOL\n",
+          "columnOffset": 33.609375
+        },
+        "actual": {
+          "text": "X\tCOL\n",
+          "columnOffset": 33.609375
+        },
+        "delta": 0
+      },
+      {
+        "name": "list-53",
+        "reference": {
+          "text": "X\tCOL\n",
+          "columnOffset": 33.609375
+        },
+        "actual": {
+          "text": "X    COL\n",
+          "columnOffset": 42
+        },
+        "delta": 8.390625
+      },
+      {
+        "name": "quote-list-85",
+        "reference": {
+          "text": "X\tCOL\n",
+          "columnOffset": 33.609375
+        },
+        "actual": {
+          "text": "X    COL\n",
+          "columnOffset": 42
+        },
+        "delta": 8.390625
+      },
+      {
+        "name": "list-quote-101",
+        "reference": {
+          "text": "X\tCOL\n",
+          "columnOffset": 33.609375
+        },
+        "actual": {
+          "text": "X    COL\n",
+          "columnOffset": 42
+        },
+        "delta": 8.390625
+      }
+    ]
+  },
+  "conclusion": "Lists replace literal code tabs with four spaces:3actualhostexamples show8.390625px column offset while root/quote controls remain exact. Terminal newlines are a separate gap;16reference disagreements retained.",
+  "rootCause": "Marked18.0.11 Tokenizer.list expands all tabs in item lines and trims final item text. Preserve content tabs separately from structural indentation; do not treat every terminal-line disagreement as a product defect.",
+  "source": "https://github.com/markedjs/marked/blob/v18.0.11/src/Tokenizer.ts",
+  "status": "reproduced-no-product-fix"
+}

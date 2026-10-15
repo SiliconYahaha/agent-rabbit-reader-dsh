@@ -1,0 +1,44 @@
+{
+  "rows": [
+    {
+      "name": "nonfinite-extra-knot",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('authored knot domains'),'2;1');FILE_NAME('control.step','',(''),(''),'','','');FILE_SCHEMA(('AP214'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.0,0.0,0.0));#2=CARTESIAN_POINT('',(0.0,5.0,0.0));#3=CARTESIAN_POINT('',(0.0,10.0,0.0));#4=CARTESIAN_POINT('',(5.0,0.0,4.0));#5=CARTESIAN_POINT('',(5.0,5.0,4.0));#6=CARTESIAN_POINT('',(5.0,10.0,4.0));#7=CARTESIAN_POINT('',(10.0,0.0,0.0));#8=CARTESIAN_POINT('',(10.0,5.0,0.0));#9=CARTESIAN_POINT('',(10.0,10.0,0.0));#500=(BOUNDED_SURFACE() B_SPLINE_SURFACE(2,2,((#1,#2,#3),(#4,#5,#6),(#7,#8,#9)),.UNSPECIFIED.,.F.,.F.,.F.) B_SPLINE_SURFACE_WITH_KNOTS((3,3),(3,3),(0,1E309,1),(0,1),.UNSPECIFIED.) GEOMETRIC_REPRESENTATION_ITEM() RATIONAL_B_SPLINE_SURFACE(((1.0,1.0,1.0),(1.0,4.0,1.0),(1.0,1.0,1.0))) REPRESENTATION_ITEM('') SURFACE());#600=ADVANCED_FACE('',(),#500,.T.);ENDSEC;END-ISO-10303-21;",
+      "before": {
+        "faces": 288,
+        "error": ""
+      }
+    },
+    {
+      "name": "nonfinite-extra-multiplicity",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('authored knot domains'),'2;1');FILE_NAME('control.step','',(''),(''),'','','');FILE_SCHEMA(('AP214'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.0,0.0,0.0));#2=CARTESIAN_POINT('',(0.0,5.0,0.0));#3=CARTESIAN_POINT('',(0.0,10.0,0.0));#4=CARTESIAN_POINT('',(5.0,0.0,4.0));#5=CARTESIAN_POINT('',(5.0,5.0,4.0));#6=CARTESIAN_POINT('',(5.0,10.0,4.0));#7=CARTESIAN_POINT('',(10.0,0.0,0.0));#8=CARTESIAN_POINT('',(10.0,5.0,0.0));#9=CARTESIAN_POINT('',(10.0,10.0,0.0));#500=(BOUNDED_SURFACE() B_SPLINE_SURFACE(2,2,((#1,#2,#3),(#4,#5,#6),(#7,#8,#9)),.UNSPECIFIED.,.F.,.F.,.F.) B_SPLINE_SURFACE_WITH_KNOTS((3,1E309,3),(3,3),(0,1),(0,1),.UNSPECIFIED.) GEOMETRIC_REPRESENTATION_ITEM() RATIONAL_B_SPLINE_SURFACE(((1.0,1.0,1.0),(1.0,4.0,1.0),(1.0,1.0,1.0))) REPRESENTATION_ITEM('') SURFACE());#600=ADVANCED_FACE('',(),#500,.T.);ENDSEC;END-ISO-10303-21;",
+      "before": {
+        "faces": 288,
+        "error": ""
+      }
+    },
+    {
+      "name": "descending",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('authored knot domains'),'2;1');FILE_NAME('control.step','',(''),(''),'','','');FILE_SCHEMA(('AP214'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.0,0.0,0.0));#2=CARTESIAN_POINT('',(0.0,5.0,0.0));#3=CARTESIAN_POINT('',(0.0,10.0,0.0));#4=CARTESIAN_POINT('',(5.0,0.0,4.0));#5=CARTESIAN_POINT('',(5.0,5.0,4.0));#6=CARTESIAN_POINT('',(5.0,10.0,4.0));#7=CARTESIAN_POINT('',(10.0,0.0,0.0));#8=CARTESIAN_POINT('',(10.0,5.0,0.0));#9=CARTESIAN_POINT('',(10.0,10.0,0.0));#500=(BOUNDED_SURFACE() B_SPLINE_SURFACE(2,2,((#1,#2,#3),(#4,#5,#6),(#7,#8,#9)),.UNSPECIFIED.,.F.,.F.,.F.) B_SPLINE_SURFACE_WITH_KNOTS((3,3),(3,3),(1,0),(0,1),.UNSPECIFIED.) GEOMETRIC_REPRESENTATION_ITEM() RATIONAL_B_SPLINE_SURFACE(((1.0,1.0,1.0),(1.0,4.0,1.0),(1.0,1.0,1.0))) REPRESENTATION_ITEM('') SURFACE());#600=ADVANCED_FACE('',(),#500,.T.);ENDSEC;END-ISO-10303-21;",
+      "before": {
+        "faces": 0,
+        "error": ""
+      }
+    },
+    {
+      "name": "equal-domain",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('authored knot domains'),'2;1');FILE_NAME('control.step','',(''),(''),'','','');FILE_SCHEMA(('AP214'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.0,0.0,0.0));#2=CARTESIAN_POINT('',(0.0,5.0,0.0));#3=CARTESIAN_POINT('',(0.0,10.0,0.0));#4=CARTESIAN_POINT('',(5.0,0.0,4.0));#5=CARTESIAN_POINT('',(5.0,5.0,4.0));#6=CARTESIAN_POINT('',(5.0,10.0,4.0));#7=CARTESIAN_POINT('',(10.0,0.0,0.0));#8=CARTESIAN_POINT('',(10.0,5.0,0.0));#9=CARTESIAN_POINT('',(10.0,10.0,0.0));#500=(BOUNDED_SURFACE() B_SPLINE_SURFACE(2,2,((#1,#2,#3),(#4,#5,#6),(#7,#8,#9)),.UNSPECIFIED.,.F.,.F.,.F.) B_SPLINE_SURFACE_WITH_KNOTS((3,3),(3,3),(0,0),(0,1),.UNSPECIFIED.) GEOMETRIC_REPRESENTATION_ITEM() RATIONAL_B_SPLINE_SURFACE(((1.0,1.0,1.0),(1.0,4.0,1.0),(1.0,1.0,1.0))) REPRESENTATION_ITEM('') SURFACE());#600=ADVANCED_FACE('',(),#500,.T.);ENDSEC;END-ISO-10303-21;",
+      "before": {
+        "faces": 0,
+        "error": ""
+      }
+    },
+    {
+      "name": "wrong-count",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('authored knot domains'),'2;1');FILE_NAME('control.step','',(''),(''),'','','');FILE_SCHEMA(('AP214'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.0,0.0,0.0));#2=CARTESIAN_POINT('',(0.0,5.0,0.0));#3=CARTESIAN_POINT('',(0.0,10.0,0.0));#4=CARTESIAN_POINT('',(5.0,0.0,4.0));#5=CARTESIAN_POINT('',(5.0,5.0,4.0));#6=CARTESIAN_POINT('',(5.0,10.0,4.0));#7=CARTESIAN_POINT('',(10.0,0.0,0.0));#8=CARTESIAN_POINT('',(10.0,5.0,0.0));#9=CARTESIAN_POINT('',(10.0,10.0,0.0));#500=(BOUNDED_SURFACE() B_SPLINE_SURFACE(2,2,((#1,#2,#3),(#4,#5,#6),(#7,#8,#9)),.UNSPECIFIED.,.F.,.F.,.F.) B_SPLINE_SURFACE_WITH_KNOTS((1,1),(3,3),(0,1),(0,1),.UNSPECIFIED.) GEOMETRIC_REPRESENTATION_ITEM() RATIONAL_B_SPLINE_SURFACE(((1.0,1.0,1.0),(1.0,4.0,1.0),(1.0,1.0,1.0))) REPRESENTATION_ITEM('') SURFACE());#600=ADVANCED_FACE('',(),#500,.T.);ENDSEC;END-ISO-10303-21;",
+      "before": {
+        "faces": 0,
+        "error": ""
+      }
+    }
+  ]
+}

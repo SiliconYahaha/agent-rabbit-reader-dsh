@@ -1,0 +1,3031 @@
+{
+  "schemaVersion": 1,
+  "provenance": "90 repository-authored valid PostScript sources; exact source/initial model/host/native results retained. Five literal-string contexts x six DSC-looking payloads x three line endings.",
+  "counterCorrection": "Initial exploratory counter read nonexistent pathCount instead of paths and reported 90 wrong vectors. Original report.json retained. This report recomputes model values from unchanged sources; native/host captures remain original. Corrected 75 wrong vectors, plus 15 false raster-preview detections.",
+  "cases": [
+    {
+      "name": "eof-literal-lf",
+      "marker": "eof",
+      "context": "literal",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(\n%%EOF\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "7b8fdadb1d04c79a58ea7ecab4ce93c386f9d551ee2f893436307c9ee2c5d6d2",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "eof-literal-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-literal-lf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-literal-lf",
+      "marker": "endDocument",
+      "context": "literal",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(\n%%EndDocument\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "28333f93557c71a5ead31610a48c4fc322d21488ca3ca2d5ab20436af87117f6",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "endDocument-literal-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-literal-lf",
+      "marker": "beginDocument",
+      "context": "literal",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(\n%%BeginDocument: string-data.eps\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "227c40dcabde75667c63f36bad218362d7df30e395e40ba13a8c310216f2682e",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "beginDocument-literal-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-literal-lf",
+      "marker": "binary",
+      "context": "literal",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(\n%%BeginBinary: 999999\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "2c98746c64e51a4e15827e1454b1d06f6073ad9010d54e91fdd7a1e881fcf431",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "binary-literal-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-literal-lf",
+      "marker": "preview",
+      "context": "literal",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(\n%%BeginPreview: 1 1 8 1\n% ff\n%%EndPreview\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "3d6e8ca43903101b6aeb0cf2bafa37d25e49bb1eebd2e1bf5158fc839f18eeff",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "preview-literal-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-literal-lf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-literal-lf",
+      "marker": "hires",
+      "context": "literal",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(\n%%HiResBoundingBox: 0 0 1 1\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "ac9d4419b434d29f41ab0c227c67697a82508be58888732f42f253cf1c63cedf",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "hires-literal-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-literal-lf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-nested-lf",
+      "marker": "eof",
+      "context": "nested",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(outer (\n%%EOF\n)) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "95b7f6c9c9abdba36993921400a8f722896979b04e495c82ca55a2a3341b3426",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "eof-nested-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-nested-lf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-nested-lf",
+      "marker": "endDocument",
+      "context": "nested",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(outer (\n%%EndDocument\n)) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "60f7840330ab9fda33b16476b1753e56fbbfbc2691d16154bfd406c2b0b81e8d",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "endDocument-nested-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-nested-lf",
+      "marker": "beginDocument",
+      "context": "nested",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(outer (\n%%BeginDocument: string-data.eps\n)) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "20afe41b6467e6db2c50c780a31dcd7960791fb4e48b5eb069d509fbb6590dc0",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "beginDocument-nested-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-nested-lf",
+      "marker": "binary",
+      "context": "nested",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(outer (\n%%BeginBinary: 999999\n)) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "4c714353a10d4edab869945633fea86ba2a43b123f6c26fdbc686f3cb7aaf3b7",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "binary-nested-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-nested-lf",
+      "marker": "preview",
+      "context": "nested",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(outer (\n%%BeginPreview: 1 1 8 1\n% ff\n%%EndPreview\n)) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "77f17799c9bb730c92d5b617609d7b1468a0692837a30a0dbf34d0470ff029b6",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "preview-nested-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-nested-lf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-nested-lf",
+      "marker": "hires",
+      "context": "nested",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(outer (\n%%HiResBoundingBox: 0 0 1 1\n)) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "c4a7b684adc86b76cf3db29463336719d512cc9a8f87947ea97aa3eeed3f799a",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "hires-nested-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-nested-lf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-procedure-lf",
+      "marker": "eof",
+      "context": "procedure",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n/unused { (\n%%EOF\n) pop } bind def\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "bfad310e2ff4315a013e1a1609fca06549bca210409892b7bd3706e5315485dc",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "eof-procedure-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-procedure-lf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-procedure-lf",
+      "marker": "endDocument",
+      "context": "procedure",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n/unused { (\n%%EndDocument\n) pop } bind def\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "a52825022e577caa2ba98ad2989e8235db1475268feda762cb2265383f79d6ce",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "endDocument-procedure-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-procedure-lf",
+      "marker": "beginDocument",
+      "context": "procedure",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n/unused { (\n%%BeginDocument: string-data.eps\n) pop } bind def\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "073c649f4e2795047c5663b23084aea4f15b159c9c8cd5d6027e77ec384cd1bb",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "beginDocument-procedure-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-procedure-lf",
+      "marker": "binary",
+      "context": "procedure",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n/unused { (\n%%BeginBinary: 999999\n) pop } bind def\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "6e4c9b1cc437849415084a07469418a78bb6e0ab73eea69147bdba92dd4964b5",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "binary-procedure-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-procedure-lf",
+      "marker": "preview",
+      "context": "procedure",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n/unused { (\n%%BeginPreview: 1 1 8 1\n% ff\n%%EndPreview\n) pop } bind def\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "c93d11f434566965bc065d36193a4ce0dc030cf05ebfc8ad17969ff671aa6cd1",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "preview-procedure-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-procedure-lf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-procedure-lf",
+      "marker": "hires",
+      "context": "procedure",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n/unused { (\n%%HiResBoundingBox: 0 0 1 1\n) pop } bind def\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "dcbe7844518d57c61511a80cd54350d764493c732a91b8bed8fb71b63c658a9d",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "hires-procedure-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-procedure-lf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-dictionary-lf",
+      "marker": "eof",
+      "context": "dictionary",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n<< /text (\n%%EOF\n) >> pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "4c5869e69e04ce6c6eceac7a48f04d01740bffa7e969a80f8f044e4bbf6071f8",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "eof-dictionary-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-dictionary-lf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-dictionary-lf",
+      "marker": "endDocument",
+      "context": "dictionary",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n<< /text (\n%%EndDocument\n) >> pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "c9638382f96ed26c3f4482e6e3395272dbecf5bc8e18834411ab3047f4521bbc",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "endDocument-dictionary-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-dictionary-lf",
+      "marker": "beginDocument",
+      "context": "dictionary",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n<< /text (\n%%BeginDocument: string-data.eps\n) >> pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "25586a957ec014daf59b2b6017467b1a73812f4900fbbd7ae4a9ba82c04edb90",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "beginDocument-dictionary-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-dictionary-lf",
+      "marker": "binary",
+      "context": "dictionary",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n<< /text (\n%%BeginBinary: 999999\n) >> pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "de03f2bb5b8aac217292d834de8a95ad192aa40aa405206f6379bcb17fe887aa",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "binary-dictionary-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-dictionary-lf",
+      "marker": "preview",
+      "context": "dictionary",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n<< /text (\n%%BeginPreview: 1 1 8 1\n% ff\n%%EndPreview\n) >> pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "ad87881eaa524967f080cafc82c988d76f68c489f37ba62faafe1e9ad2ef83a2",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "preview-dictionary-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-dictionary-lf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-dictionary-lf",
+      "marker": "hires",
+      "context": "dictionary",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n<< /text (\n%%HiResBoundingBox: 0 0 1 1\n) >> pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "2c8116a3a817b22ce0de2f6976388bfe51b85694b7bdb16768a5e53fa4890684",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "hires-dictionary-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-dictionary-lf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-resource-lf",
+      "marker": "eof",
+      "context": "resource",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n%%BeginResource: procset Example 1 0\n/text (\n%%EOF\n) def\n%%EndResource\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "ac4f90db02dd7cbdeaca2f8bb54249c17e987dafefaec462c1770f377c77e9bf",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "eof-resource-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-resource-lf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-resource-lf",
+      "marker": "endDocument",
+      "context": "resource",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n%%BeginResource: procset Example 1 0\n/text (\n%%EndDocument\n) def\n%%EndResource\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "34facdb9d1b9fc76f254650b882aff95637525f4b4f61e4159a0c5bba00905f7",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "endDocument-resource-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-resource-lf",
+      "marker": "beginDocument",
+      "context": "resource",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n%%BeginResource: procset Example 1 0\n/text (\n%%BeginDocument: string-data.eps\n) def\n%%EndResource\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "115f74ba25e0b3ab42bd615eeef1c12a238a7ef32b3c33fa0f79e30b0915988d",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "beginDocument-resource-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-resource-lf",
+      "marker": "binary",
+      "context": "resource",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n%%BeginResource: procset Example 1 0\n/text (\n%%BeginBinary: 999999\n) def\n%%EndResource\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "82efdc820330268288028ff26802ec59013cc18b2968189996b97eb3270bbaa7",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "binary-resource-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-resource-lf",
+      "marker": "preview",
+      "context": "resource",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n%%BeginResource: procset Example 1 0\n/text (\n%%BeginPreview: 1 1 8 1\n% ff\n%%EndPreview\n) def\n%%EndResource\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "f3c36569fc7803b7359a5d8c8b0fe4ccda39579d55808ed18849535ef7f92eee",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "preview-resource-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-resource-lf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-resource-lf",
+      "marker": "hires",
+      "context": "resource",
+      "ending": "lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n%%BeginResource: procset Example 1 0\n/text (\n%%HiResBoundingBox: 0 0 1 1\n) def\n%%EndResource\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "sha256": "ffa0337914eb42a14a56d1d2913adf2efa11bdf6fe6885028a6352dfae0bacc1",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "hires-resource-lf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-resource-lf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-literal-cr",
+      "marker": "eof",
+      "context": "literal",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(\r%%EOF\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "bcaec898899bbcb79f24963a0f25edcd87a4e8fd44a77b66695f154123c5b87f",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "eof-literal-cr.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-literal-cr-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-literal-cr",
+      "marker": "endDocument",
+      "context": "literal",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(\r%%EndDocument\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "e159b841fd29377a60277e3709280372bfa1d5a9ceb77c4aff9fc1763ee836c4",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "endDocument-literal-cr.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-literal-cr",
+      "marker": "beginDocument",
+      "context": "literal",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(\r%%BeginDocument: string-data.eps\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "baef0af95f1901e423fc7799659fad144ff6934f379c3bf75ad6780b83f2474a",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "beginDocument-literal-cr.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-literal-cr",
+      "marker": "binary",
+      "context": "literal",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(\r%%BeginBinary: 999999\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "15c072356eb1a279b0ad74f75fa555cee6a2479c7b370b3bb13b2a6890f0ba84",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "binary-literal-cr.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-literal-cr",
+      "marker": "preview",
+      "context": "literal",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(\r%%BeginPreview: 1 1 8 1\r% ff\r%%EndPreview\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "9a06eb2f7b46bce120ef1e21dac680556c789dd89f780f65dc29d458e983c03e",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "preview-literal-cr.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-literal-cr-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-literal-cr",
+      "marker": "hires",
+      "context": "literal",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(\r%%HiResBoundingBox: 0 0 1 1\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "81e593f08233ab5270325ccf02e94a9da72c096cdd1208468e55e86399600fb9",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "hires-literal-cr.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-literal-cr-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-nested-cr",
+      "marker": "eof",
+      "context": "nested",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(outer (\r%%EOF\r)) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "4b8834fcbc961de6c424d8370fda4f4bcf9354e01836ec31b60013bdc511bf68",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-nested-cr-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-nested-cr",
+      "marker": "endDocument",
+      "context": "nested",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(outer (\r%%EndDocument\r)) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "e299bfd3d702a915cadc4cd3dcb90cdb44506c225eff92534ed405c2d052d585",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-nested-cr",
+      "marker": "beginDocument",
+      "context": "nested",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(outer (\r%%BeginDocument: string-data.eps\r)) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "1a933f81da02245d740c7467e6d108fdd613a9ef0ee94698df452f8cf577b53b",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-nested-cr",
+      "marker": "binary",
+      "context": "nested",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(outer (\r%%BeginBinary: 999999\r)) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "40922273d882bd7d2268c35e03b69023bebc1111d7433ce7a58047f59bf3189f",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-nested-cr",
+      "marker": "preview",
+      "context": "nested",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(outer (\r%%BeginPreview: 1 1 8 1\r% ff\r%%EndPreview\r)) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "550caeaa4f969be63ed91e41ce9b644e25e321cecca981717ee92de7857c7bdf",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-nested-cr-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-nested-cr",
+      "marker": "hires",
+      "context": "nested",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(outer (\r%%HiResBoundingBox: 0 0 1 1\r)) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "cab8836691107957dac15f08aab4245dc524667caf82ddc2a7767365210336f0",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-nested-cr-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-procedure-cr",
+      "marker": "eof",
+      "context": "procedure",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r/unused { (\r%%EOF\r) pop } bind def\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "631224bd1301ac8dabc79602d7d69cb33be9fb92007ddddbe73187db85c24351",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-procedure-cr-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-procedure-cr",
+      "marker": "endDocument",
+      "context": "procedure",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r/unused { (\r%%EndDocument\r) pop } bind def\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "a24811368e4d34052b50dd57284a835d589b3e5f0a11d0b45204a7406fbbd288",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-procedure-cr",
+      "marker": "beginDocument",
+      "context": "procedure",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r/unused { (\r%%BeginDocument: string-data.eps\r) pop } bind def\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "9e673c7153e736b0e69f2d98832ae857387a8260bcdacb2b3f41966e6866e55b",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-procedure-cr",
+      "marker": "binary",
+      "context": "procedure",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r/unused { (\r%%BeginBinary: 999999\r) pop } bind def\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "425b79cf86d06e1c34b26782946e75a8a10bcd1898e95148ef2385d243539ba8",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-procedure-cr",
+      "marker": "preview",
+      "context": "procedure",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r/unused { (\r%%BeginPreview: 1 1 8 1\r% ff\r%%EndPreview\r) pop } bind def\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "1a8908b8b651492c62f5d2adc41014df4adc3a3eade9630a405eb3760b75c4cb",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-procedure-cr-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-procedure-cr",
+      "marker": "hires",
+      "context": "procedure",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r/unused { (\r%%HiResBoundingBox: 0 0 1 1\r) pop } bind def\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "5e1da6fdf3b7f5b38f8eecb7863b3769fe19dbf0cad18b87f9984f7b709a8491",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-procedure-cr-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-dictionary-cr",
+      "marker": "eof",
+      "context": "dictionary",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r<< /text (\r%%EOF\r) >> pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "202250afd339ccd47d7fcc5321671233751902fff0e051c4385baa48b76a8ad4",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-dictionary-cr-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-dictionary-cr",
+      "marker": "endDocument",
+      "context": "dictionary",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r<< /text (\r%%EndDocument\r) >> pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "870d673c519b649e245f3b4a538b4e3236830577b9478abb01798d51cbb3d839",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-dictionary-cr",
+      "marker": "beginDocument",
+      "context": "dictionary",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r<< /text (\r%%BeginDocument: string-data.eps\r) >> pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "ed1cbb42843a49637e01d9fa374ebb7a95d3f81df64e1ea442a88a0ab675030d",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-dictionary-cr",
+      "marker": "binary",
+      "context": "dictionary",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r<< /text (\r%%BeginBinary: 999999\r) >> pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "a0f0a0c210e37fcb4551d7391deede3a85390383b389501c5e9e22ca07222cbf",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-dictionary-cr",
+      "marker": "preview",
+      "context": "dictionary",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r<< /text (\r%%BeginPreview: 1 1 8 1\r% ff\r%%EndPreview\r) >> pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "d24a19b2bdcc940bed6f250b673f7d2d645086699f54ed33731379ce2d669c10",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-dictionary-cr-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-dictionary-cr",
+      "marker": "hires",
+      "context": "dictionary",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r<< /text (\r%%HiResBoundingBox: 0 0 1 1\r) >> pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "31c91b98aae5a85b92ae589cb794768eeda3499ca5a055cd18633c98dce85626",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-dictionary-cr-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-resource-cr",
+      "marker": "eof",
+      "context": "resource",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r%%BeginResource: procset Example 1 0\r/text (\r%%EOF\r) def\r%%EndResource\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "69c856403eef5d2380134bbeb1cd1d43e2cacec83d210da283ab32bacce5faad",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-resource-cr-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-resource-cr",
+      "marker": "endDocument",
+      "context": "resource",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r%%BeginResource: procset Example 1 0\r/text (\r%%EndDocument\r) def\r%%EndResource\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "dbe139228d878e755a73a9546ff0b469a10b345a631b793ce8785e13e306aa65",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-resource-cr",
+      "marker": "beginDocument",
+      "context": "resource",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r%%BeginResource: procset Example 1 0\r/text (\r%%BeginDocument: string-data.eps\r) def\r%%EndResource\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "815d6efd4e7c8e9f3ceac5808999a1ba099c02cef2f47cbe4ccd5bf4c77ce64c",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-resource-cr",
+      "marker": "binary",
+      "context": "resource",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r%%BeginResource: procset Example 1 0\r/text (\r%%BeginBinary: 999999\r) def\r%%EndResource\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "f333cbbe692d8149e59047b83a976f52477e798558759567b14d2313c3094c7e",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-resource-cr",
+      "marker": "preview",
+      "context": "resource",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r%%BeginResource: procset Example 1 0\r/text (\r%%BeginPreview: 1 1 8 1\r% ff\r%%EndPreview\r) def\r%%EndResource\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "ba49f091fa6088661917c68e568097d199347b12e60deb0e5d289d940c326bb8",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-resource-cr-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-resource-cr",
+      "marker": "hires",
+      "context": "resource",
+      "ending": "cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r%%BeginResource: procset Example 1 0\r/text (\r%%HiResBoundingBox: 0 0 1 1\r) def\r%%EndResource\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "sha256": "9a81166f8a0624e7c4617273b344f5691876eb3058442405d995142d1eaa8966",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-resource-cr-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-literal-crlf",
+      "marker": "eof",
+      "context": "literal",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(\r\n%%EOF\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "518c8cf2a00dbb59b70068497dad785a1f2277e556065d0e1228da293475c655",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "eof-literal-crlf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-literal-crlf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-literal-crlf",
+      "marker": "endDocument",
+      "context": "literal",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(\r\n%%EndDocument\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "1b4f2f5d8e16487a347575fc9f5672b8af39a2ea8385181717a001873bf6a3c8",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "endDocument-literal-crlf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-literal-crlf",
+      "marker": "beginDocument",
+      "context": "literal",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(\r\n%%BeginDocument: string-data.eps\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "bbca12443f4fa3dbc6b39af88def2c785058f3a3dded290474b94b2791bf022a",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "beginDocument-literal-crlf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-literal-crlf",
+      "marker": "binary",
+      "context": "literal",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(\r\n%%BeginBinary: 999999\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "ff3d193167290a47d48a6343667f1bf7eaae20dd9cca42203428522eded0534b",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "binary-literal-crlf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-literal-crlf",
+      "marker": "preview",
+      "context": "literal",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(\r\n%%BeginPreview: 1 1 8 1\r\n% ff\r\n%%EndPreview\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "e2d8e8d4f0ea54ec8f32958213bfe116f478c12c588525cd749bdca2ef284d99",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "preview-literal-crlf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-literal-crlf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-literal-crlf",
+      "marker": "hires",
+      "context": "literal",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(\r\n%%HiResBoundingBox: 0 0 1 1\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "bd864850bfe802821cf2626917b0f1f3e61628d5285c278055117eaf58e16306",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "native": {
+        "status": 0,
+        "signal": null,
+        "stdout": "GPL Ghostscript 9.56.0 (2022-03-29)\nCopyright (C) 2022 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\n",
+        "stderr": "",
+        "png": {
+          "file": "hires-literal-crlf.png",
+          "width": 40,
+          "height": 20,
+          "sha256": "2d9807423a1e07da45eac38d4e17086ce7a7ad92310a43cacdcd9a14dd974ad6"
+        }
+      },
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-literal-crlf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-nested-crlf",
+      "marker": "eof",
+      "context": "nested",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(outer (\r\n%%EOF\r\n)) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "d326c46e7b3244a7290aec3acf8806f5cb94c50714282fdb6190ba1b532ab400",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-nested-crlf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-nested-crlf",
+      "marker": "endDocument",
+      "context": "nested",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(outer (\r\n%%EndDocument\r\n)) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "6fb7e7d0964da7c18abc6de325e830cd55750a45e67096de641429fda7dc2851",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-nested-crlf",
+      "marker": "beginDocument",
+      "context": "nested",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(outer (\r\n%%BeginDocument: string-data.eps\r\n)) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "b2ebbf129355cabf6fb44fcef3823527834e04d19ef3507bc3f53980a49c25c2",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-nested-crlf",
+      "marker": "binary",
+      "context": "nested",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(outer (\r\n%%BeginBinary: 999999\r\n)) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "c8b90502bc3e065a1e7dd2e7c2b5f3567448b69adc03634371984d4dea06504c",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-nested-crlf",
+      "marker": "preview",
+      "context": "nested",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(outer (\r\n%%BeginPreview: 1 1 8 1\r\n% ff\r\n%%EndPreview\r\n)) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "bcc0686e0aadbdf14f3a54b33278b2e9a34227827d7079f427f026d489631aa4",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-nested-crlf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-nested-crlf",
+      "marker": "hires",
+      "context": "nested",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(outer (\r\n%%HiResBoundingBox: 0 0 1 1\r\n)) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "86d7b2da85196da85a132159e92472feb2aac700248bcfbf5137853e5270461e",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-nested-crlf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-procedure-crlf",
+      "marker": "eof",
+      "context": "procedure",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n/unused { (\r\n%%EOF\r\n) pop } bind def\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "276942061fb4b172da23e4c1a2d664244e3ffd4904e7310760ea8cbcff6e7b90",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-procedure-crlf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-procedure-crlf",
+      "marker": "endDocument",
+      "context": "procedure",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n/unused { (\r\n%%EndDocument\r\n) pop } bind def\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "71e093096ff041b4b0efc1af498c1ea5b4de5b9a6a31d3e5f6a555133ea6e149",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-procedure-crlf",
+      "marker": "beginDocument",
+      "context": "procedure",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n/unused { (\r\n%%BeginDocument: string-data.eps\r\n) pop } bind def\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "768d6d00685f11ce3bd1cbb5a593c8c2cc37bf376c51e8c5b9437d2cb5936324",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-procedure-crlf",
+      "marker": "binary",
+      "context": "procedure",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n/unused { (\r\n%%BeginBinary: 999999\r\n) pop } bind def\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "1f3ae4333d61b216ee362bc4786af2707fcfb09c6f262e997f9eb22c86f9a8ed",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-procedure-crlf",
+      "marker": "preview",
+      "context": "procedure",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n/unused { (\r\n%%BeginPreview: 1 1 8 1\r\n% ff\r\n%%EndPreview\r\n) pop } bind def\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "a79b271302acf630200b1038a5e14c03ec45dfe84ff62145d366981a8839b488",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-procedure-crlf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-procedure-crlf",
+      "marker": "hires",
+      "context": "procedure",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n/unused { (\r\n%%HiResBoundingBox: 0 0 1 1\r\n) pop } bind def\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "fbf7c191b72417e98871c389fdeb02da632b6b176b03ca7d4af973cbc24fbe29",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-procedure-crlf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-dictionary-crlf",
+      "marker": "eof",
+      "context": "dictionary",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n<< /text (\r\n%%EOF\r\n) >> pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "269b589a7e757589769bd2db316f0b15b60dcc83a405c45bc0d122793f3a7c6e",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-dictionary-crlf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-dictionary-crlf",
+      "marker": "endDocument",
+      "context": "dictionary",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n<< /text (\r\n%%EndDocument\r\n) >> pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "d35d96dc715497c88f505568b925a4e16e80e4ce028ab189da4c618b24559f72",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-dictionary-crlf",
+      "marker": "beginDocument",
+      "context": "dictionary",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n<< /text (\r\n%%BeginDocument: string-data.eps\r\n) >> pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "8227d7e847c832391316a8b55f619823b688ee77c86677534ead81dbe03e528d",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-dictionary-crlf",
+      "marker": "binary",
+      "context": "dictionary",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n<< /text (\r\n%%BeginBinary: 999999\r\n) >> pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "89e48704de19813dc4a59c24b6f0596e069d910cc121c207c2e146653f87c550",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-dictionary-crlf",
+      "marker": "preview",
+      "context": "dictionary",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n<< /text (\r\n%%BeginPreview: 1 1 8 1\r\n% ff\r\n%%EndPreview\r\n) >> pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "dcb46713496be10ce6dd104d62a62116db304ff991a2b798c6d99c0ff66000c8",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-dictionary-crlf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-dictionary-crlf",
+      "marker": "hires",
+      "context": "dictionary",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n<< /text (\r\n%%HiResBoundingBox: 0 0 1 1\r\n) >> pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "81c06db8f23c84b516e69bc96206b7dd793d63acf32ca463f11eb4a74ccadd45",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-dictionary-crlf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    },
+    {
+      "name": "eof-resource-crlf",
+      "marker": "eof",
+      "context": "resource",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n%%BeginResource: procset Example 1 0\r\n/text (\r\n%%EOF\r\n) def\r\n%%EndResource\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "e6b6ad3571ec79b5536db666b38fd792f0fd57565b6db6ee811d9fba6812a515",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "eof-resource-crlf-host.svg",
+        "sha256": "862449028761cf9ef9bd5a5ced2066ef1282fdcf87f165e13abf87670da3ad4b"
+      }
+    },
+    {
+      "name": "endDocument-resource-crlf",
+      "marker": "endDocument",
+      "context": "resource",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n%%BeginResource: procset Example 1 0\r\n/text (\r\n%%EndDocument\r\n) def\r\n%%EndResource\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "68ba054b1b20b70ab9a7e2f80c9c1935fa45ecdc043b8c69015998afdb7dad2d",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7ed3\u675f\u6807\u8bb0\u4e0d\u5339\u914d\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "beginDocument-resource-crlf",
+      "marker": "beginDocument",
+      "context": "resource",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n%%BeginResource: procset Example 1 0\r\n/text (\r\n%%BeginDocument: string-data.eps\r\n) def\r\n%%EndResource\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "32f3d1f4e01d0e54a7e53f860d848558163a79a8982b54d7d704a883a718b014",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "rasterError": "Ai \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi \u5d4c\u5957\u6587\u6863\u7f3a\u5c11\u7ed3\u675f\u6807\u8bb0\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "binary-resource-crlf",
+      "marker": "binary",
+      "context": "resource",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n%%BeginResource: procset Example 1 0\r\n/text (\r\n%%BeginBinary: 999999\r\n) def\r\n%%EndResource\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "d413bd2b28e9ed7c994aede1d1a0ebdc9366952033db1d77e412969962a785b3",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vectorError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "rasterError": "Ai DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4",
+      "vectorCorrect": false,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u8fd9\u4e2a Ai \u6ca1\u6709\u5185\u5d4c PDF\uff0c\u4e5f\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u65e7\u5f0f\u57fa\u7840\u77e2\u91cf\u753b\u9762\u6216\u6587\u4ef6\u5185\u5c4f\u5e55\u9884\u89c8\u3002\u77e2\u91cf\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\uff1b\u4f4d\u56fe\u68c0\u67e5\uff1aAi DSC \u6570\u636e\u6bb5\u957f\u5ea6\u8d85\u8fc7\u6587\u4ef6\u8303\u56f4\u3002\u8bf7\u5728 Illustrator \u4e2d\u91cd\u65b0\u4fdd\u5b58\u5e76\u5f00\u542f PDF \u517c\u5bb9\u3002",
+        "preview": false,
+        "writes": 0
+      }
+    },
+    {
+      "name": "preview-resource-crlf",
+      "marker": "preview",
+      "context": "resource",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n%%BeginResource: procset Example 1 0\r\n/text (\r\n%%BeginPreview: 1 1 8 1\r\n% ff\r\n%%EndPreview\r\n) def\r\n%%EndResource\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "ba9bd4f1cfd527517479f82a6b4dec046103c54dbfcc0b774a6fe95b5d673d6a",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -20 40 20\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "raster": {
+        "width": 1,
+        "height": 1
+      },
+      "vectorCorrect": true,
+      "rasterCorrect": false,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "preview-resource-crlf-host.svg",
+        "sha256": "ea9982604dbe1248b5b9bb6a058ee1816cb48feeb02cb75e852637211a4e5768"
+      }
+    },
+    {
+      "name": "hires-resource-crlf",
+      "marker": "hires",
+      "context": "resource",
+      "ending": "crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n%%BeginResource: procset Example 1 0\r\n/text (\r\n%%HiResBoundingBox: 0 0 1 1\r\n) def\r\n%%EndResource\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "sha256": "fcfd8dbb558a170b8f44caffd0a1e563c85418cac584bf9ce62467751523de32",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "vector": {
+        "width": 1,
+        "height": 1,
+        "paths": 2,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L20 0 L20 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/><path d=\"M20 0 L40 0 L40 20 L20 20 Z\" fill=\"rgb(0,0,255)\" stroke=\"none\"/></g></svg>"
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5",
+      "vectorCorrect": false,
+      "rasterCorrect": true,
+      "host": {
+        "loading": false,
+        "message": "\u5df2\u5728\u672c\u673a\u5b89\u5168\u8fd8\u539f\u65e7\u5f0f Ai \u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84\u3001\u989c\u8272\u3001\u63cf\u8fb9\u548c\u5e38\u89c1\u53d8\u6362\u3002\u6e10\u53d8\u3001\u526a\u5207\u8499\u7248\u3001\u6587\u5b57\u5b57\u4f53\u3001\u94fe\u63a5\u56fe\u7247\u548c Illustrator \u4e13\u6709\u6548\u679c\u4ecd\u53ef\u80fd\u7f3a\u5931\u3002",
+        "preview": true,
+        "writes": 1,
+        "file": "hires-resource-crlf-host.svg",
+        "sha256": "831057e7c67d3f3dc08b1588a35ae73fad5ab08424ccea35fc175058984a2cf6"
+      }
+    }
+  ]
+}

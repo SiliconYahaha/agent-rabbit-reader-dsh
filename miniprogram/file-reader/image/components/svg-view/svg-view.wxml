@@ -1,0 +1,7 @@
+<view class="svg-view-shell">
+  <view wx:if="{{ready && animated}}" class="svg-view-controls">
+    <text>{{paused ? '动画已暂停' : '动画播放中'}}</text>
+    <button size="mini" bindtap="onTap">{{paused ? '继续播放' : '暂停'}}</button>
+  </view>
+  <canvas id="svg-view-canvas" type="2d" class="svg-view-canvas" style="height:{{height}}px"></canvas>
+</view>

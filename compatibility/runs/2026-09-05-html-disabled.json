@@ -1,0 +1,2973 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "id": "html-disabled",
+  "format": "HTML forms",
+  "version": "1.4.121",
+  "baseline": "v1.4.120",
+  "status": "development-uploaded",
+  "rootCauses": [
+    "Own disabled attribute was used instead of effective fieldset state",
+    "Option opening tags prematurely closed optgroup and discarded inherited disabled state",
+    "Host picker indexed direct child nodes instead of all rendered options",
+    "Queued host input could change disabled controls",
+    "Value-based selection readback collapsed equal-valued options to the first label and treated an empty value as missing"
+  ],
+  "oracles": [
+    {
+      "url": "https://html.spec.whatwg.org/multipage/semantics-other.html#disabled-elements",
+      "scope": "actually disabled for CSS and per-element distinctions"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/form-elements.html",
+      "scope": "fieldset first-legend exception and option/optgroup ancestry"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html",
+      "scope": "disabled control and form entry filtering"
+    },
+    {
+      "browser": "Google Chrome 152.0.7977.76",
+      "scope": "62 actual parsed HTML documents; 6 dynamic snapshots"
+    }
+  ],
+  "validation": {
+    "staticCases": 62,
+    "baselineExact": 30,
+    "actualExact": 62,
+    "newlyFixed": 32,
+    "dynamicStates": 6,
+    "dynamicExact": true,
+    "relatedTests": 173,
+    "relatedFailures": 0,
+    "componentFileOpens": 50,
+    "componentHostInputs": "pass: disabled checkbox/text and selected options; stale old-file nid ignored",
+    "production": "pass",
+    "chrome": "pass",
+    "node": "pass",
+    "wechatDevtools": "not-run: previous compiler startup block",
+    "ios": "not-run",
+    "android": "not-run",
+    "nodeTests": 1110,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "selectionStates": 5,
+    "selectionExact": true,
+    "productCI": "pass",
+    "mainCI": "pass"
+  },
+  "results": [
+    {
+      "name": "checkbox-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "checkbox-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "checkbox-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "checkbox-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "checkbox-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "checkbox-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "checkbox-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "text-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "text-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "text-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "text-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "text-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "text-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "text-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": false
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": false
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "radio-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "radio-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "radio-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "radio-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "radio-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "radio-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "radio-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": true
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": true
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "textarea-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "textarea-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "textarea-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "textarea-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "textarea-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "textarea-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "textarea-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "select-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "select-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "select-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "select-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "select-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "select-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "select-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "submit-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 1,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 1,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "submit-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "submit-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "submit-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 1,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 1,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "submit-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "submit-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "submit-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 1,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 1,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "reset-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 1,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "reset-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "reset-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "reset-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 1,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "reset-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "reset-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "reset-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 1,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "fieldset-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "fieldset-inherited",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "option-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "option-group",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "option-select",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "option-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "optgroup-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "optgroup-select",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "optgroup-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "div-disabled",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": false,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(0,0,0)"
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": false,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(0,0,0)"
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "output-disabled",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": false,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(0,0,0)"
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": true,
+          "disabled": false,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(0,0,0)"
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "select-disabled-selected-single",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true
+    },
+    {
+      "name": "select-disabled-selected-multiple",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "b"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "b"
+            ]
+          ]
+        }
+      },
+      "actual": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "b"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "b"
+            ]
+          ]
+        }
+      },
+      "errors": [],
+      "exact": true
+    }
+  ],
+  "dynamic": {
+    "expected": [
+      {
+        "name": "enabled",
+        "disabledProperty": false,
+        "disabledSelector": false,
+        "pairs": [
+          [
+            "answer",
+            "yes"
+          ]
+        ]
+      },
+      {
+        "name": "disabled",
+        "disabledProperty": false,
+        "disabledSelector": true,
+        "pairs": []
+      },
+      {
+        "name": "first-legend",
+        "disabledProperty": false,
+        "disabledSelector": false,
+        "pairs": [
+          [
+            "answer",
+            "yes"
+          ]
+        ]
+      },
+      {
+        "name": "second-legend",
+        "disabledProperty": false,
+        "disabledSelector": true,
+        "pairs": []
+      },
+      {
+        "name": "reorder-legends",
+        "disabledProperty": false,
+        "disabledSelector": false,
+        "pairs": [
+          [
+            "answer",
+            "yes"
+          ]
+        ]
+      },
+      {
+        "name": "enabled-again",
+        "disabledProperty": false,
+        "disabledSelector": false,
+        "pairs": [
+          [
+            "answer",
+            "yes"
+          ]
+        ]
+      }
+    ],
+    "actual": [
+      {
+        "name": "enabled",
+        "disabledProperty": false,
+        "disabledSelector": false,
+        "pairs": [
+          [
+            "answer",
+            "yes"
+          ]
+        ]
+      },
+      {
+        "name": "disabled",
+        "disabledProperty": false,
+        "disabledSelector": true,
+        "pairs": []
+      },
+      {
+        "name": "first-legend",
+        "disabledProperty": false,
+        "disabledSelector": false,
+        "pairs": [
+          [
+            "answer",
+            "yes"
+          ]
+        ]
+      },
+      {
+        "name": "second-legend",
+        "disabledProperty": false,
+        "disabledSelector": true,
+        "pairs": []
+      },
+      {
+        "name": "reorder-legends",
+        "disabledProperty": false,
+        "disabledSelector": false,
+        "pairs": [
+          [
+            "answer",
+            "yes"
+          ]
+        ]
+      },
+      {
+        "name": "enabled-again",
+        "disabledProperty": false,
+        "disabledSelector": false,
+        "pairs": [
+          [
+            "answer",
+            "yes"
+          ]
+        ]
+      }
+    ],
+    "exact": true
+  },
+  "limits": [
+    "Native WeChat picker rows retain all labels; disabled choices are rejected on confirmation but per-row disabled appearance not certified",
+    "Implicit select defaults, multiple-selection UI, complete constraint validation and full HTML tree construction not certified",
+    "No physical-device or live WeChat DevTools validation"
+  ],
+  "evidence": [
+    "tests/html-disabled.test.js",
+    "tests/fixtures/html-disabled-reference.json",
+    "scripts/verify-html-disabled.js"
+  ],
+  "selection": {
+    "expected": [
+      {
+        "value": "",
+        "index": 2,
+        "flags": [
+          false,
+          false,
+          true
+        ],
+        "label": "Empty"
+      },
+      {
+        "value": "x",
+        "index": 1,
+        "flags": [
+          false,
+          true,
+          false
+        ],
+        "label": "Second"
+      },
+      {
+        "value": "x",
+        "index": 0,
+        "flags": [
+          true,
+          false,
+          false
+        ],
+        "label": "First"
+      },
+      {
+        "value": "",
+        "index": 2,
+        "flags": [
+          false,
+          false,
+          true
+        ],
+        "label": "Empty"
+      },
+      {
+        "value": "",
+        "index": -1,
+        "flags": [
+          false,
+          false,
+          false
+        ],
+        "label": ""
+      }
+    ],
+    "actual": [
+      {
+        "value": "",
+        "index": 2,
+        "flags": [
+          false,
+          false,
+          true
+        ],
+        "label": "Empty"
+      },
+      {
+        "value": "x",
+        "index": 1,
+        "flags": [
+          false,
+          true,
+          false
+        ],
+        "label": "Second"
+      },
+      {
+        "value": "x",
+        "index": 0,
+        "flags": [
+          true,
+          false,
+          false
+        ],
+        "label": "First"
+      },
+      {
+        "value": "",
+        "index": 2,
+        "flags": [
+          false,
+          false,
+          true
+        ],
+        "label": "Empty"
+      },
+      {
+        "value": "",
+        "index": -1,
+        "flags": [
+          false,
+          false,
+          false
+        ],
+        "label": ""
+      }
+    ],
+    "exact": true,
+    "baseline": [
+      {
+        "value": "Empty",
+        "index": 2,
+        "flags": [
+          false,
+          false,
+          true
+        ],
+        "label": "Empty"
+      },
+      {
+        "value": "x",
+        "index": 0,
+        "flags": [
+          false,
+          true,
+          false
+        ],
+        "label": "First"
+      },
+      {
+        "value": "x",
+        "index": 0,
+        "flags": [
+          false,
+          true,
+          false
+        ],
+        "label": "First"
+      },
+      {
+        "value": "",
+        "index": -1,
+        "flags": [
+          false,
+          false,
+          false
+        ],
+        "label": ""
+      },
+      {
+        "value": "",
+        "index": -1,
+        "flags": [
+          false,
+          false,
+          false
+        ],
+        "label": ""
+      }
+    ],
+    "baselineExactStates": 1
+  }
+}

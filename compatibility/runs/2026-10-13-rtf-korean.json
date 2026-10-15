@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-13T08:35:23.533297+00:00",
+  "iteration": "rtf-korean-cp949",
+  "seed": 94920261013,
+  "rootCause": "RTF allowed-encoding set excluded CP949 despite existing shared CP949 decoder and charset129 mapping. High body bytes were rejected as unsupported.",
+  "fix": "Use existing bounded CP949 decoder; do not increase any resource limit or weaken malformed-run checks.",
+  "scope": [
+    "document ansicpg949",
+    "font charset129",
+    "font cpg949 override",
+    "group font/page switches",
+    "two-byte Unicode fallback",
+    "raw/hex combinations",
+    "Hangul extensions and Hanja",
+    "8192-byte boundary"
+  ],
+  "tests": {
+    "beforeFailures": 15,
+    "generatedCases": 18,
+    "targetedNodePassed": 103,
+    "targetedNodeFailed": 0,
+    "libreOfficeMatches": 16,
+    "cocoaMatches": 12,
+    "nativeDifferences": "2 Writer mixed raw/hex; 6 Cocoa explicit font codepage or long page-based/mixed runs. Exact outputs retained in local report.",
+    "wechatDevTools": "18 actual file opens, whole parsed text and WXML text equal independent source; visible geometry positive",
+    "physicalDevices": "not run",
+    "profileAndTargetedNodePassed": 104,
+    "scopedCi": {
+      "files": 17,
+      "testsPassed": 263,
+      "browserCommands": 3,
+      "result": "pass",
+      "environment": "local macOS, not GitHub timing"
+    }
+  },
+  "evidence": [
+    "tests/fixtures/rtf-korean/README.md",
+    "outputs/rtf-korean/node-tests.log",
+    "outputs/rtf-korean/oracles/report.json",
+    "outputs/rtf-korean/wechat.json",
+    "outputs/rtf-korean/scoped-ci-run.log"
+  ],
+  "nextAction": "Pass existing GitHub gates, merge, tag/release1.4.145 and verify Actions upload. CI optimization write needs GitHub workflow scope; do not bypass existing gates."
+}

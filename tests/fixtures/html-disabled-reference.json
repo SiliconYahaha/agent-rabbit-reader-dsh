@@ -1,0 +1,1409 @@
+{
+  "chrome": "Google Chrome 152.0.7977.76",
+  "results": [
+    {
+      "name": "checkbox-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "sourceSha256": "6c7b33cb7a89a5c91d4057004922081ea633d231c40f58aec26157cd04003827"
+    },
+    {
+      "name": "checkbox-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "sourceSha256": "ccfbd5752b8613e4724154848a9f2a5f821c966d4d832ce50867acfe48f9ac21"
+    },
+    {
+      "name": "checkbox-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "sourceSha256": "63d5663b0062f5485f136a1c74712fc6ff5fcd9978cd30ec14a6a6c673a076a9"
+    },
+    {
+      "name": "checkbox-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "sourceSha256": "9fec5950f73009444101d997873bcfc449ca678a28fc3f50288197eb43ba25b0"
+    },
+    {
+      "name": "checkbox-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "sourceSha256": "d7f5b4621f77f8993654c680ba74551ff52949ecc36a81f631d4bd80b9855a9f"
+    },
+    {
+      "name": "checkbox-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "sourceSha256": "cb87ca001cbd684b8948a328e7a8e8c977cc553a45d0328f0861bbd409cc9680"
+    },
+    {
+      "name": "checkbox-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "sourceSha256": "42abd5b56084fec376c30037c7f57165456311281df06078b3370dab06ff1c84"
+    },
+    {
+      "name": "text-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": false
+        }
+      },
+      "sourceSha256": "c59e196cd32d5d231a0372be81e35dea1abed73f25085e402c3849857c62451d"
+    },
+    {
+      "name": "text-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "sourceSha256": "441244563a1998d62848b3dc126e627061f39c056ddf88093c6be3f284815928"
+    },
+    {
+      "name": "text-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "sourceSha256": "b74e058b7a4303d02638a9f7db100fa05642e5f8ee3bab95058f2679a9decfba"
+    },
+    {
+      "name": "text-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": false
+        }
+      },
+      "sourceSha256": "de096130744d730c2c9300a0ecf5071fc034551d67d1687b1c53b50c9bc3d2da"
+    },
+    {
+      "name": "text-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "sourceSha256": "f93f9e1866183ec916b7506feebf95956a42b9016474bb2aa29cce3149f128bd"
+    },
+    {
+      "name": "text-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": false
+        }
+      },
+      "sourceSha256": "2d4cf61f9725a2bfecb0fb22fbf14fe5db52b72bb9784d571d7c072e938b0af5"
+    },
+    {
+      "name": "text-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": false
+        }
+      },
+      "sourceSha256": "19ad677996d91fd7e33510b3fb0cad630ffde9dfd6a05e574ace3249ea341014"
+    },
+    {
+      "name": "radio-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": true
+        }
+      },
+      "sourceSha256": "b9067ea6e208de9b18c054f9f6805b056912a7560c164f287ccaabf1b8960dc3"
+    },
+    {
+      "name": "radio-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "sourceSha256": "85f1f29080836b85e4e0792bcd7441ea52124fb2aae469d5ca0c7715b90ad9fa"
+    },
+    {
+      "name": "radio-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "sourceSha256": "fe92671c32854ce3f3a1f5b382694ef8f68dee06b3969e356fe2503ec4c0bb65"
+    },
+    {
+      "name": "radio-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": true
+        }
+      },
+      "sourceSha256": "c74ddff5e3ac13c3e22dbe9bde82feeee0ab23b4b759e84a83ac442ee0f4b624"
+    },
+    {
+      "name": "radio-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "sourceSha256": "36c85630963c5c218fbd92dfc5b8140172c9a949913dd35a9db8218b5e40a6b6"
+    },
+    {
+      "name": "radio-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [],
+          "checked": true
+        }
+      },
+      "sourceSha256": "2df76036706255dcc5fefa1115eda77dd27cb16339fb853f6a64f7cebaee8efb"
+    },
+    {
+      "name": "radio-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "checked": true
+        }
+      },
+      "sourceSha256": "67040a7f86795bf796e646d0fb5a179db769274df58a76ff52ec1093f5a12d60"
+    },
+    {
+      "name": "textarea-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "sourceSha256": "63b936487f28b262fe13d5ca2d1dbf44ee1cb211e4985eb00084f1fc8d73980c"
+    },
+    {
+      "name": "textarea-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "64a1140b390020d10be726462b07d30becada877881bb71af9a635e91eb3dbde"
+    },
+    {
+      "name": "textarea-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "c42a4aab86773ec3940f2931d8178be58df8e731ba170469e323650c7f1fdbda"
+    },
+    {
+      "name": "textarea-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "sourceSha256": "8ec83b3963128da32bc3561d52e418a7bda8740f0d21469fe2daa156b1ab5c08"
+    },
+    {
+      "name": "textarea-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "8a8017f879a8288906094890442d0e42b42a958e52e1dc5988a32a2d9721d3b0"
+    },
+    {
+      "name": "textarea-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "e343207345698783bb1de036a6b1d152386e627e0755502347dd6b86669dda56"
+    },
+    {
+      "name": "textarea-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "sourceSha256": "00a986f4672fa96e180bc78b8ee4e24f16e2034be52327edb6e5c502aac2078c"
+    },
+    {
+      "name": "select-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "sourceSha256": "23dd439fced14939af6f69e35273858cb1a6337cb6adcd07100e88a5845f29d7"
+    },
+    {
+      "name": "select-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "847de413fee7c2e353a3f48cef76f04c5a9f4b53d936cd83c94c1877cf06820e"
+    },
+    {
+      "name": "select-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "92452fdd566f3e3dcd074a19e394adeb7fa54ccebc4d2d4d4a971803bffbf6a1"
+    },
+    {
+      "name": "select-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "sourceSha256": "c7da1690b5a141505fbee9ae77bee3073e6736912a1653ee6d2306679c6c114f"
+    },
+    {
+      "name": "select-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "742dd00de3dda0bd0a9fd74ad0daac85f19585f1d0d364cb7c4a40726383eb04"
+    },
+    {
+      "name": "select-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "0d09b8b5f0b64f83bdbcf73b615dc6a5e6b285666d87ab65e55cadb865025e38"
+    },
+    {
+      "name": "select-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        }
+      },
+      "sourceSha256": "b467eda336301aba6e72151ffd1b1499f9898ca860adfd28ed7a65b970a3b15f"
+    },
+    {
+      "name": "submit-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 1,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "8109d4286b2e47e039517f2abce912ee8b79f430c4206e42fba5edd718087669"
+    },
+    {
+      "name": "submit-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "eb7bc7c1d1cb5de626dde418321123e1b2b87ac2157e0b1cc4ca638fdbba58df"
+    },
+    {
+      "name": "submit-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "9bc4e0c1a66484db947df859688153200c3e467534272f17e5f158a154e006da"
+    },
+    {
+      "name": "submit-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 1,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "bef2b6f65bfbebd73395348b63c24866d027c86edc4d424d282c2b66616af6dc"
+    },
+    {
+      "name": "submit-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "23f334102c764cdee8391adb67b12b7385aa6bd255f07fa536f7898ec0d392a4"
+    },
+    {
+      "name": "submit-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "67de5ede76d69f09629d5c8b640232220ae74931f389eb8e03bb302ab5bf0959"
+    },
+    {
+      "name": "submit-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 1,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "a0bafed05a7af4431962e9aefb61a6e4accc7e9924265c0e398c1fdd385fc634"
+    },
+    {
+      "name": "reset-enabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 1,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "010bcf8a1a6e80b7909aa8b48f01c1ba56b1ecc33d8b9a80d5dca807ddf0a085"
+    },
+    {
+      "name": "reset-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "5b2a97150641ed42594176602d9e861fbce53f7f6bc3536469459ea48c0cb07e"
+    },
+    {
+      "name": "reset-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "e4d1d6e12431fee30dd1690a6f1eed6345b6e8abc32185483facc5bde419456c"
+    },
+    {
+      "name": "reset-first-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 1,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "1ea4704248ece4e88fb19810773c63c81672411fc7eac526b3683442bb11617a"
+    },
+    {
+      "name": "reset-second-legend",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "22b4e85c929e74f3a3ff923a254dd26d2266a1b33866d3a0a00fb3ec3bcf9d41"
+    },
+    {
+      "name": "reset-outer-disabled",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "4de1b79b15173837f05690c74e488d790105d4e46939040eccc0b256cbcd8aea"
+    },
+    {
+      "name": "reset-nested-exempt",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 1,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "3c2a50e070a4eabf1bc12669ec54275301d5f201607b5c3251e83ec5105cee87"
+    },
+    {
+      "name": "fieldset-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "8cc89aac8d019017e9a4333483f1c8e734490e1db5f6e427b5d7273cc65df5c1"
+    },
+    {
+      "name": "fieldset-inherited",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "3be790dff0c64dbda4721d4700313ea7576cc1c9028c1ee889221abf9d75d9d7"
+    },
+    {
+      "name": "option-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "78200354d4544d27e0a09d43a6200b89f8547a6822fc9b503127a21187dce940"
+    },
+    {
+      "name": "option-group",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "98b802eb715eb931109e87d9c507d34ea6c04fca8e96fc5c2450800e2534362b"
+    },
+    {
+      "name": "option-select",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "2119fa192c3ff85778e318cf83022a1cf56bfd6ae5728ee708e9222d60acf373"
+    },
+    {
+      "name": "option-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "acf13ef9b283f0c637b38b12a2a278338b0947932593a2689a833bdc2070bd2e"
+    },
+    {
+      "name": "optgroup-own",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": true
+        },
+        "after": {
+          "clicks": 0,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "facf66c75865350362d8f7a12daf203e5bbd0b375eafd5108ab960bf97b340c0"
+    },
+    {
+      "name": "optgroup-select",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "ad035a49b7975fe63dd34a0e001196a1f60295f943eae0626ba7bc0a8661588b"
+    },
+    {
+      "name": "optgroup-fieldset",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": true,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(170,0,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "2903e9be77da16574929dde59a733232adb7aea5fe796aa0862f79ccfa3bd6c9"
+    },
+    {
+      "name": "div-disabled",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": false,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(0,0,0)"
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "5fc62540806059a69ff8490f8d13831f53f9b918e521bb54af3d91e1097b3568"
+    },
+    {
+      "name": "output-disabled",
+      "expected": {
+        "before": {
+          "own": true,
+          "disabled": false,
+          "enabled": false,
+          "pairs": [],
+          "color": "rgb(0,0,0)"
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "55cbbe24e0d860a595c98a0a457826833fa78570947c10e3b948c11b4385f35a"
+    },
+    {
+      "name": "select-disabled-selected-single",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": []
+        }
+      },
+      "sourceSha256": "f38a1c219a2044c2fa8d9092e53df92c3dfd420be97e03cc28b1e108e9a76d4d"
+    },
+    {
+      "name": "select-disabled-selected-multiple",
+      "expected": {
+        "before": {
+          "own": false,
+          "disabled": false,
+          "enabled": true,
+          "pairs": [
+            [
+              "answer",
+              "b"
+            ]
+          ],
+          "color": "rgb(0,100,0)",
+          "reflected": false
+        },
+        "after": {
+          "clicks": 1,
+          "submits": 0,
+          "resets": 0,
+          "pairs": [
+            [
+              "answer",
+              "b"
+            ]
+          ]
+        }
+      },
+      "sourceSha256": "c5267c3f0a4c3de5c921e4f78aa09fedd501d420cfe0b9e62abde8722a930e8d"
+    }
+  ]
+}

@@ -1,0 +1,1383 @@
+{
+  "schemaVersion": 1,
+  "id": "psd-lab-source-precision",
+  "testedAt": "2026-09-10T06:46:23.472Z",
+  "targetVersion": "1.4.135",
+  "status": "development-uploaded",
+  "problem": "16-bit merged Lab channels were rounded to 8 bits before nonlinear Lab-to-sRGB conversion, shifting colors and quantizing gradients.",
+  "scope": {
+    "patterns": [
+      "seeded-gamut",
+      "dark-ramp",
+      "chroma-ramp"
+    ],
+    "seed": 20260909,
+    "depth": [
+      8,
+      16
+    ],
+    "versions": [
+      "PSD1",
+      "PSB2"
+    ],
+    "compression": [
+      "Raw",
+      "RLE",
+      "ZIP",
+      "ZIP Prediction"
+    ],
+    "originalFiles": 48,
+    "pixelsPerPattern": {
+      "seeded-gamut": 1024,
+      "dark-ramp": 2048,
+      "chroma-ramp": 2048
+    }
+  },
+  "oracle": {
+    "producer": "psd-tools 1.18.0 original generation and exact plane readback",
+    "color": "LittleCMS 2.19 Lab4 D50 double to sRGB8 relative colorimetric with NOOPTIMIZE=256",
+    "encoding": "Full-range unsigned Lab16: L 0..100; ab -128..127, confirmed against GIMP and babl source",
+    "sources": [
+      "https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/",
+      "https://github.com/GNOME/gimp/blob/16c3374a27ed50e2839370b972f1db1bad1bfc49/plug-ins/file-psd/psd-load.c#L1936",
+      "https://github.com/GNOME/babl/blob/b12c5e85a69f05637dcda84acfbd43bc832801e3/extensions/CIE.c#L3440",
+      "https://github.com/mm2/Little-CMS/blob/master/include/lcms2.h"
+    ],
+    "tolerance": 1,
+    "toleranceReason": "Independent numerical matrices may round to neighboring 8-bit integers. Existing exact specific regression and 8-bit behavior retained.",
+    "priorLab8Audit": "Earlier default-optimized LCMS results had max delta11; NOOPTIMIZE reduced all512pixels to at most1. Optimized CLUT disagreement was not treated as a product defect."
+  },
+  "baseline": {
+    "filesAbove2": 8,
+    "maximumChannelDelta": 7,
+    "results": [
+      {
+        "name": "seeded-gamut-d8-v1-c0.psd",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v1-c1.psd",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v1-c2.psd",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v1-c3.psd",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v2-c0.psb",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v2-c1.psb",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v2-c2.psb",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v2-c3.psb",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c0.psd",
+        "depth": 16,
+        "max": 7,
+        "above2": 15,
+        "examples": [
+          {
+            "pixel": 48,
+            "actual": [
+              255,
+              21,
+              255
+            ],
+            "expected": [
+              255,
+              18,
+              255
+            ],
+            "delta": 3
+          },
+          {
+            "pixel": 114,
+            "actual": [
+              72,
+              143,
+              255
+            ],
+            "expected": [
+              67,
+              143,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 177,
+            "actual": [
+              5,
+              223,
+              255
+            ],
+            "expected": [
+              0,
+              222,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 180,
+            "actual": [
+              25,
+              217,
+              44
+            ],
+            "expected": [
+              30,
+              217,
+              46
+            ],
+            "delta": 5
+          }
+        ]
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c1.psd",
+        "depth": 16,
+        "max": 7,
+        "above2": 15,
+        "examples": [
+          {
+            "pixel": 48,
+            "actual": [
+              255,
+              21,
+              255
+            ],
+            "expected": [
+              255,
+              18,
+              255
+            ],
+            "delta": 3
+          },
+          {
+            "pixel": 114,
+            "actual": [
+              72,
+              143,
+              255
+            ],
+            "expected": [
+              67,
+              143,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 177,
+            "actual": [
+              5,
+              223,
+              255
+            ],
+            "expected": [
+              0,
+              222,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 180,
+            "actual": [
+              25,
+              217,
+              44
+            ],
+            "expected": [
+              30,
+              217,
+              46
+            ],
+            "delta": 5
+          }
+        ]
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c2.psd",
+        "depth": 16,
+        "max": 7,
+        "above2": 15,
+        "examples": [
+          {
+            "pixel": 48,
+            "actual": [
+              255,
+              21,
+              255
+            ],
+            "expected": [
+              255,
+              18,
+              255
+            ],
+            "delta": 3
+          },
+          {
+            "pixel": 114,
+            "actual": [
+              72,
+              143,
+              255
+            ],
+            "expected": [
+              67,
+              143,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 177,
+            "actual": [
+              5,
+              223,
+              255
+            ],
+            "expected": [
+              0,
+              222,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 180,
+            "actual": [
+              25,
+              217,
+              44
+            ],
+            "expected": [
+              30,
+              217,
+              46
+            ],
+            "delta": 5
+          }
+        ]
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c3.psd",
+        "depth": 16,
+        "max": 7,
+        "above2": 15,
+        "examples": [
+          {
+            "pixel": 48,
+            "actual": [
+              255,
+              21,
+              255
+            ],
+            "expected": [
+              255,
+              18,
+              255
+            ],
+            "delta": 3
+          },
+          {
+            "pixel": 114,
+            "actual": [
+              72,
+              143,
+              255
+            ],
+            "expected": [
+              67,
+              143,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 177,
+            "actual": [
+              5,
+              223,
+              255
+            ],
+            "expected": [
+              0,
+              222,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 180,
+            "actual": [
+              25,
+              217,
+              44
+            ],
+            "expected": [
+              30,
+              217,
+              46
+            ],
+            "delta": 5
+          }
+        ]
+      },
+      {
+        "name": "seeded-gamut-d16-v2-c0.psb",
+        "depth": 16,
+        "max": 7,
+        "above2": 15,
+        "examples": [
+          {
+            "pixel": 48,
+            "actual": [
+              255,
+              21,
+              255
+            ],
+            "expected": [
+              255,
+              18,
+              255
+            ],
+            "delta": 3
+          },
+          {
+            "pixel": 114,
+            "actual": [
+              72,
+              143,
+              255
+            ],
+            "expected": [
+              67,
+              143,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 177,
+            "actual": [
+              5,
+              223,
+              255
+            ],
+            "expected": [
+              0,
+              222,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 180,
+            "actual": [
+              25,
+              217,
+              44
+            ],
+            "expected": [
+              30,
+              217,
+              46
+            ],
+            "delta": 5
+          }
+        ]
+      },
+      {
+        "name": "seeded-gamut-d16-v2-c1.psb",
+        "depth": 16,
+        "max": 7,
+        "above2": 15,
+        "examples": [
+          {
+            "pixel": 48,
+            "actual": [
+              255,
+              21,
+              255
+            ],
+            "expected": [
+              255,
+              18,
+              255
+            ],
+            "delta": 3
+          },
+          {
+            "pixel": 114,
+            "actual": [
+              72,
+              143,
+              255
+            ],
+            "expected": [
+              67,
+              143,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 177,
+            "actual": [
+              5,
+              223,
+              255
+            ],
+            "expected": [
+              0,
+              222,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 180,
+            "actual": [
+              25,
+              217,
+              44
+            ],
+            "expected": [
+              30,
+              217,
+              46
+            ],
+            "delta": 5
+          }
+        ]
+      },
+      {
+        "name": "seeded-gamut-d16-v2-c2.psb",
+        "depth": 16,
+        "max": 7,
+        "above2": 15,
+        "examples": [
+          {
+            "pixel": 48,
+            "actual": [
+              255,
+              21,
+              255
+            ],
+            "expected": [
+              255,
+              18,
+              255
+            ],
+            "delta": 3
+          },
+          {
+            "pixel": 114,
+            "actual": [
+              72,
+              143,
+              255
+            ],
+            "expected": [
+              67,
+              143,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 177,
+            "actual": [
+              5,
+              223,
+              255
+            ],
+            "expected": [
+              0,
+              222,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 180,
+            "actual": [
+              25,
+              217,
+              44
+            ],
+            "expected": [
+              30,
+              217,
+              46
+            ],
+            "delta": 5
+          }
+        ]
+      },
+      {
+        "name": "seeded-gamut-d16-v2-c3.psb",
+        "depth": 16,
+        "max": 7,
+        "above2": 15,
+        "examples": [
+          {
+            "pixel": 48,
+            "actual": [
+              255,
+              21,
+              255
+            ],
+            "expected": [
+              255,
+              18,
+              255
+            ],
+            "delta": 3
+          },
+          {
+            "pixel": 114,
+            "actual": [
+              72,
+              143,
+              255
+            ],
+            "expected": [
+              67,
+              143,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 177,
+            "actual": [
+              5,
+              223,
+              255
+            ],
+            "expected": [
+              0,
+              222,
+              255
+            ],
+            "delta": 5
+          },
+          {
+            "pixel": 180,
+            "actual": [
+              25,
+              217,
+              44
+            ],
+            "expected": [
+              30,
+              217,
+              46
+            ],
+            "delta": 5
+          }
+        ]
+      },
+      {
+        "name": "dark-ramp-d8-v1-c0.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v1-c1.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v1-c2.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v1-c3.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v2-c0.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v2-c1.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v2-c2.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v2-c3.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v1-c0.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v1-c1.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v1-c2.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v1-c3.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v2-c0.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v2-c1.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v2-c2.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v2-c3.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c0.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c1.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c2.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c3.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v2-c0.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v2-c1.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v2-c2.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v2-c3.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c0.psd",
+        "depth": 16,
+        "max": 2,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c1.psd",
+        "depth": 16,
+        "max": 2,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c2.psd",
+        "depth": 16,
+        "max": 2,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c3.psd",
+        "depth": 16,
+        "max": 2,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v2-c0.psb",
+        "depth": 16,
+        "max": 2,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v2-c1.psb",
+        "depth": 16,
+        "max": 2,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v2-c2.psb",
+        "depth": 16,
+        "max": 2,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v2-c3.psb",
+        "depth": 16,
+        "max": 2,
+        "above2": 0,
+        "examples": []
+      }
+    ]
+  },
+  "candidate": {
+    "filesAbove1": 0,
+    "maximumChannelDelta": 1,
+    "results": [
+      {
+        "name": "seeded-gamut-d8-v1-c0.psd",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v1-c1.psd",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v1-c2.psd",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v1-c3.psd",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v2-c0.psb",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v2-c1.psb",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v2-c2.psb",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d8-v2-c3.psb",
+        "depth": 8,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c0.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c1.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c2.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c3.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d16-v2-c0.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d16-v2-c1.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d16-v2-c2.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "seeded-gamut-d16-v2-c3.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v1-c0.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v1-c1.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v1-c2.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v1-c3.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v2-c0.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v2-c1.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v2-c2.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d8-v2-c3.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v1-c0.psd",
+        "depth": 16,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v1-c1.psd",
+        "depth": 16,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v1-c2.psd",
+        "depth": 16,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v1-c3.psd",
+        "depth": 16,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v2-c0.psb",
+        "depth": 16,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v2-c1.psb",
+        "depth": 16,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v2-c2.psb",
+        "depth": 16,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "dark-ramp-d16-v2-c3.psb",
+        "depth": 16,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c0.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c1.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c2.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c3.psd",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v2-c0.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v2-c1.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v2-c2.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d8-v2-c3.psb",
+        "depth": 8,
+        "max": 0,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c0.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c1.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c2.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c3.psd",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v2-c0.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v2-c1.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v2-c2.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      },
+      {
+        "name": "chroma-ramp-d16-v2-c3.psb",
+        "depth": 16,
+        "max": 1,
+        "above2": 0,
+        "examples": []
+      }
+    ]
+  },
+  "host": {
+    "baselineOpens": 48,
+    "candidateOpens": 48,
+    "jpegBytesMatchVerifiedRGBA": true,
+    "additionalRegression": "8 alpha/selection combinations; 15 sequential opens including unsupported Lab32 then valid recovery"
+  },
+  "browser": {
+    "chrome": "152.0.7977.83",
+    "views": 12,
+    "results": [
+      {
+        "name": "seeded-gamut-d8-v1-c0.psd",
+        "viewport": 390,
+        "before": {
+          "max": 9,
+          "mean": 0.2119140625
+        },
+        "candidate": {
+          "max": 9,
+          "mean": 0.2119140625
+        },
+        "candidatePixelSha256": "c9ceacf28f09e06a1ab3e3049756d6ccb7db367408a723fb7acc661b56fecf0c"
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c0.psd",
+        "viewport": 390,
+        "before": {
+          "max": 28,
+          "mean": 2.9580078125
+        },
+        "candidate": {
+          "max": 9,
+          "mean": 0.18717447916666666
+        },
+        "candidatePixelSha256": "596f041b6f85aa19e09de7511323d3a234f2778aa2f17378c9337792e262b3db"
+      },
+      {
+        "name": "dark-ramp-d8-v1-c0.psd",
+        "viewport": 390,
+        "before": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidate": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidatePixelSha256": "0c5f8e10c16214e75d86b11d9a683ec33a2c6e3dac5bf170a3526f948c8077a0"
+      },
+      {
+        "name": "dark-ramp-d16-v1-c0.psd",
+        "viewport": 390,
+        "before": {
+          "max": 2,
+          "mean": 0.171875
+        },
+        "candidate": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidatePixelSha256": "02922ac4c442235416ab81f5c815b003271953a66448b81ffe125df06baa1313"
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c0.psd",
+        "viewport": 390,
+        "before": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidate": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidatePixelSha256": "3502328c0573cc44825949c098bb0996be5dcb3f1138a8f600840cb76a552d23"
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c0.psd",
+        "viewport": 390,
+        "before": {
+          "max": 3,
+          "mean": 0.515625
+        },
+        "candidate": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidatePixelSha256": "d155da09c69579736891caf650d4ebe99af0e489d8b8893dd601cdf7619392e2"
+      },
+      {
+        "name": "seeded-gamut-d8-v1-c0.psd",
+        "viewport": 1280,
+        "before": {
+          "max": 9,
+          "mean": 0.2119140625
+        },
+        "candidate": {
+          "max": 9,
+          "mean": 0.2119140625
+        },
+        "candidatePixelSha256": "c9ceacf28f09e06a1ab3e3049756d6ccb7db367408a723fb7acc661b56fecf0c"
+      },
+      {
+        "name": "seeded-gamut-d16-v1-c0.psd",
+        "viewport": 1280,
+        "before": {
+          "max": 28,
+          "mean": 2.9580078125
+        },
+        "candidate": {
+          "max": 9,
+          "mean": 0.18717447916666666
+        },
+        "candidatePixelSha256": "596f041b6f85aa19e09de7511323d3a234f2778aa2f17378c9337792e262b3db"
+      },
+      {
+        "name": "dark-ramp-d8-v1-c0.psd",
+        "viewport": 1280,
+        "before": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidate": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidatePixelSha256": "0c5f8e10c16214e75d86b11d9a683ec33a2c6e3dac5bf170a3526f948c8077a0"
+      },
+      {
+        "name": "dark-ramp-d16-v1-c0.psd",
+        "viewport": 1280,
+        "before": {
+          "max": 2,
+          "mean": 0.171875
+        },
+        "candidate": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidatePixelSha256": "02922ac4c442235416ab81f5c815b003271953a66448b81ffe125df06baa1313"
+      },
+      {
+        "name": "chroma-ramp-d8-v1-c0.psd",
+        "viewport": 1280,
+        "before": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidate": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidatePixelSha256": "3502328c0573cc44825949c098bb0996be5dcb3f1138a8f600840cb76a552d23"
+      },
+      {
+        "name": "chroma-ramp-d16-v1-c0.psd",
+        "viewport": 1280,
+        "before": {
+          "max": 3,
+          "mean": 0.515625
+        },
+        "candidate": {
+          "max": 0,
+          "mean": 0
+        },
+        "candidatePixelSha256": "d155da09c69579736891caf650d4ebe99af0e489d8b8893dd601cdf7619392e2"
+      }
+    ],
+    "interpretation": "JPEG encoding can amplify one-step RGB differences at DCT quantization thresholds; maximum JPEG pixel difference is reported separately from raw color fidelity."
+  },
+  "reproduction": [
+    "PYTHONPATH=<isolated psd-tools1.18.0> <python> scripts/probe-psd-lab-precision.py outputs/psd-lab-precision/originals",
+    "node scripts/verify-psd-lab-precision.js",
+    "node --test tests/psd-lab-precision.test.js tests/design-file.test.js tests/psd-alpha.test.js tests/psd-cmyk.test.js"
+  ],
+  "fixtures": "tests/fixtures/psd-lab-precision.json",
+  "verification": {
+    "relatedTests": 53,
+    "fullGate": "pass",
+    "fullNodeTests": 1245,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "mainPackageBytes": 412323,
+    "enginePackageBytes": 870772
+  },
+  "limits": [
+    "Full ICC color management and native layer compositing remain pending.",
+    "Alpha structure and preview continuity tested with mock host; new alpha colors not certified by native application.",
+    "Actual JPEG decoded in Chrome at390/1280 widths; no WeChat WXML/iOS/Android proof in this batch.",
+    "Large PSB performance and device memory remain unverified."
+  ],
+  "localBrowserEvidence": "outputs/psd-lab-precision/browser.cjs, browser.json and six screenshots; generated host JPEGs retained under baseline-host and candidate-host"
+}

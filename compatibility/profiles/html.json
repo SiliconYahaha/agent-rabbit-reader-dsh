@@ -1,0 +1,1000 @@
+{
+  "schemaVersion": 1,
+  "format": "HTML",
+  "extensions": [
+    "html",
+    "htm"
+  ],
+  "mime": [
+    "text/html"
+  ],
+  "signatures": [
+    "text document; doctype/html optional"
+  ],
+  "userShouldSee": "\u771f\u5b9e\u6b63\u6587\u3001\u6bb5\u843d\u3001\u7a7a\u884c\u548c\u7a7a\u683c\uff0c\u4fdd\u7559\u58f0\u660e\u652f\u6301\u7684\u9875\u9762\u4ea4\u4e92\uff0c\u4e0d\u7528\u622a\u56fe\u4ee3\u66ff\u53ef\u64cd\u4f5c\u9875\u9762\u3002",
+  "currentVisibleResult": "v1.4.99\u5df2\u901a\u8fc7Actions33922856846\u4e0a\u4f20\u5fae\u4fe1\u5f00\u53d1\u7248\u3002\u8bfb\u53d6\u5c42\u6309\u672c\u5730\u5b9e\u9645\u5927\u5c0f\u8bfb\u53d6\u5e76\u590d\u6838\u957f\u5ea6\uff0c\u4fee\u590d\u5143\u6570\u636e\u504f\u5dee\u9020\u6210\u6b63\u6587\u622a\u65ad\u6216\u8865\u96f6\u3002SDK3.16.2\u4e2d10\u4e07/40\u4e07/60\u4e07\u6c49\u5b57\u53ca\u5927\u5c0f\u51c6\u786e/\u504f\u5c0f/\u504f\u5927\u76849\u7ec4\u5b9e\u9645WXML\u5168\u6587\u5b8c\u5168\u4e00\u81f4\uff1b870\u9879\u6d4b\u8bd5\u3001141\u9879\u517c\u5bb9\u63a2\u9488\u53ca\u4e91\u7aef\u6d4f\u89c8\u5668/\u50cf\u7d20\u56de\u5f52\u901a\u8fc7\u3002\u4fdd\u7559\u5386\u53f2\u6bb5\u843d\u6279\u5904\u7406\u53ca\u65b9\u5411\u7ee7\u627f\u4fee\u590d\u3002v1.4.110\u5df2\u901a\u8fc7Actions33950188674\u4e0a\u4f20\u5fae\u4fe1\u5f00\u53d1\u7248\uff0c\u5e76\u5728Node\u539f\u751f\u6587\u4ef6\u548cChrome\u4fee\u590d\u5165\u53e3\u5143\u6570\u636e\u8bef\u62d2\u7edd\u5e76\u68c0\u67e5\u5185\u8054UTF-8\u4e0a\u9650\uff1b\u76f8\u5173\u5fae\u4fe1\u65b0\u7528\u4f8b\u3001\u7269\u7406\u771f\u673a\u3001\u5b8c\u6574bidi\u548c\u66f4\u5927\u6570\u636e\u9884\u7b97\u4ecd\u5f85\u9a8c\u8bc1\uff1b\u672a\u8bbe\u7f6e\u4f53\u9a8c\u7248\u3001\u672a\u63d0\u5ba1\u3001\u672a\u6b63\u5f0f\u53d1\u5e03\u3002 v1.4.125\uff1a26 \u4e2a\u5d4c\u5957\u5217\u8868\u4e0e\u5b9a\u4e49\u5217\u8868\u4f5c\u7528\u57df\u5728\u6587\u4ef6\u5165\u53e3\u3001innerHTML \u7247\u6bb5\u4e2d\u7b26\u5408 Chrome\uff1b\u5df2\u4e0a\u4f20\u5f00\u53d1\u7248\uff0c\u672c\u8f6e\u5fae\u4fe1\u4e0e\u771f\u673a\u672a\u8fd0\u884c\u3002 \u672a\u53d1\u5e03\u4fee\u590d\uff1a\u5d4c\u5957\u8868\u683c\u7684\u884c\u3001\u5206\u7ec4\u548c\u7ed3\u675f\u6807\u7b7e\u4e0d\u518d\u8d8a\u8fc7\u5185\u5c42\u8868\u683c\u8fb9\u754c\u300256 \u4e2a\u539f\u4ef6\u3001160 \u5f20\u8868\u683c\u5728\u539f\u751f DOM \u5bf9\u7167\u3001\u6587\u4ef6\u5165\u53e3\u53ca\u6d4f\u89c8\u5668\u4e2d\u7684\u751f\u4ea7 WXML \u4fdd\u7559\u6b63\u786e\u5f52\u5c5e\u548c\u5185\u5bb9\uff1b\u5fae\u4fe1\u771f\u673a\u672a\u9a8c\u8bc1\u3002",
+  "oracles": [
+    "Chrome actual innerText and element dimensions",
+    "W3C CSS Text 3 section 4.1 https://www.w3.org/TR/css-text-3/#white-space-rules",
+    "WPT fixed commit 9bd47eefe9095a8464fdcce401747dcd737d1eec"
+  ],
+  "capabilities": [
+    {
+      "id": "nested-table-row-scope",
+      "status": "pass",
+      "axis": {
+        "version": "HTML Living Standard",
+        "feature": "Nested rows and row groups, scoped table end tags",
+        "complexity": "56 deterministic originals, 160 tables, 597 cells, optional tags and three nested levels",
+        "platform": "Node, Chrome native DOM and production WXML through browser glass-easel"
+      },
+      "expectedVisibleResult": "\u5185\u8868\u4fdd\u6301\u5728\u539f\u5355\u5143\u683c\u5185\uff0c\u5185\u5c42\u884c\u4e0d\u4f1a\u79fb\u5230\u5916\u8868\uff0c\u5916\u5c42\u540e\u7eed\u5355\u5143\u683c\u548c\u6b63\u6587\u4e0d\u518d\u4e22\u5931\u3002",
+      "evidence": [
+        "runs/2026-09-18-html-nested-tables.json",
+        "tests/html-nested-tables.test.js",
+        "scripts/verify-html-nested-tables.js"
+      ]
+    },
+    {
+      "id": "nested-list-item-scope",
+      "axis": {
+        "version": "HTML Living Standard / v1.4.125",
+        "feature": "li/dt/dd implicit closing scope",
+        "complexity": "26 native Chrome cases, file entry and innerHTML fragments",
+        "platform": "Node/Chrome; WeChat/physical pending"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5d4c\u5957\u5217\u8868\u4e0e\u5b9a\u4e49\u5217\u8868\u4fdd\u7559\u6240\u5c5e\u5bb9\u5668\uff1b\u7701\u7565\u7684\u7ed3\u675f\u6807\u7b7e\u6309\u5217\u8868\u4f5c\u7528\u57df\u6062\u590d\u3002",
+      "evidence": [
+        "scripts/verify-markdown-footnotes.js",
+        "tests/helpers/markdown-footnotes.js",
+        "runs/2026-09-06-markdown-footnotes.json"
+      ]
+    },
+    {
+      "id": "fieldset-disabled-and-grouped-options",
+      "axis": {
+        "version": "HTML Living Standard / v1.4.121",
+        "feature": "effective disabled state, form entries, clicks, CSS and host flags",
+        "complexity": "62 static cases, 6 dynamic states, 50 component file opens",
+        "platform": "Node/Chrome; physical devices pending"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u7981\u7528 fieldset \u4e2d\u7684\u63a7\u4ef6\u4e0d\u80fd\u7ee7\u7eed\u4fee\u6539\u8868\u5355\uff1b\u9996\u4e2a legend \u4f8b\u5916\u3001\u52a8\u6001\u6062\u590d\u3001\u5206\u7ec4\u9009\u9879\u6b63\u6587\u4e0e\u7d22\u5f15\u4fdd\u7559",
+      "evidence": [
+        "tests/html-disabled.test.js",
+        "scripts/verify-html-disabled.js",
+        "runs/2026-09-05-html-disabled.json"
+      ]
+    },
+    {
+      "id": "actual-size-entry-budget",
+      "axis": {
+        "version": "1.4.110 uploaded",
+        "feature": "actual-file-size-vs-picker-hint-and-inline-UTF8",
+        "combination": "3 encodings x 5 metadata hints; native sparse oversized file and missing file; inline 20MB and 20MB+1 for 4 Unicode classes",
+        "platform": "Node native filesystem and Chrome; WeChat login blocked"
+      },
+      "expectedVisibleResult": "\u5927\u5c0f\u5143\u6570\u636e\u8d85\u8fc720MB\u6216200MB\u7684\u771f\u5b9e\u5c0fHTML\u4ecd\u5b8c\u6574\u663e\u793a\uff1b\u771f\u5b9e\u6587\u4ef6\u6216\u5185\u8054UTF-8\u8d85\u9650\u65f6\u660e\u786e\u5931\u8d25\uff0c\u8fdf\u5230stat\u4e0d\u5f71\u54cd\u4e0b\u4e00\u6587\u4ef6\u3002",
+      "status": "pass",
+      "evidence": [
+        "runs/2026-09-05-html-entry-size.json"
+      ]
+    },
+    {
+      "id": "native-file-size-authority",
+      "axis": {
+        "version": "v1.4.99 uploaded",
+        "feature": "local-file-byte-integrity",
+        "complexity": "stale metadata, short reads, changed files, 100 byte-boundary variants, 9 native WXML long-text comparisons",
+        "platform": "Node+WeChat-DevTools-3.16.2"
+      },
+      "expectedVisibleResult": "\u901a\u8fc7\u5165\u53e3\u5927\u5c0f\u9884\u68c0\u7684\u6587\u4ef6\uff0c\u5728\u8bfb\u53d6\u5c42\u4e0d\u56e0\u5927\u5c0f\u4fe1\u606f\u504f\u5dee\u622a\u65ad\u6b63\u6587\u6216\u6dfb\u52a0\u7a7a\u5b57\u7b26\uff1b\u8bfb\u53d6\u9014\u4e2d\u957f\u5ea6\u53d8\u5316\u660e\u786e\u62a5\u9519\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/read-html-file.test.js",
+        "scripts/verify-html-file-size-wechat.js",
+        "docs/release-v1.4.99-dev.md"
+      ]
+    },
+    {
+      "id": "top-level-paragraph-byte-batching",
+      "axis": {
+        "version": "HTML",
+        "feature": "progressive-setData",
+        "complexity": "2049-top-level-nodes-and-nested-subtrees",
+        "platform": "Node+WeChat-DevTools-3.16.2"
+      },
+      "expectedVisibleResult": "\u5927\u91cf\u72ec\u7acb\u6bb5\u843d\u5b8c\u6574\u663e\u793a\uff0c\u4e0d\u9010\u6bb5\u7b49\u5f85\u8de8\u7ebf\u7a0b\u56de\u8c03\u5bfc\u81f4\u8d85\u65f6\uff1b\u5927\u578b\u5b50\u6811\u4ecd\u5148\u5448\u73b0\u7236\u58f3\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/view-payload.test.js",
+        "scripts/verify-7z-packed-corruption-wechat.js",
+        "docs/release-v1.4.97-dev.md"
+      ]
+    },
+    {
+      "id": "dir-ltr-rtl-computed-inheritance",
+      "axis": {
+        "version": "v1.4.78 uploaded",
+        "feature": "HTML dir=ltr/rtl presentation hint, inherited computed direction, author CSS override and live attribute mutation",
+        "complexity": "four independent direction cases plus actual WXML style/text before and after a real tap",
+        "platform": "Node, independent Chrome, actual WeChat DevTools WXML; no physical hardware"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u7236\u7ea7dir\u58f0\u660e\u63a7\u5236\u540e\u4ee3\u5de6\u53f3\u4e66\u5199\u65b9\u5411\uff1b\u811a\u672c\u8bfb\u5230\u4e0e\u6d4f\u89c8\u5668\u4e00\u81f4\u7684direction\uff0c\u52a8\u6001\u5207\u6362\u540e\u89c6\u56fe\u4e0e\u5df2\u6709\u8ba1\u7b97\u6837\u5f0f\u5bf9\u8c61\u540c\u6b65\u66f4\u65b0",
+      "evidence": [
+        "tests/helpers/computed-style.js",
+        "tests/computed-style.test.js",
+        "scripts/verify-computed-style.js",
+        "scripts/verify-wechat-simulator.js",
+        "docs/release-v1.4.78-dev.md",
+        "Actions 33476494023 receipt verified"
+      ]
+    },
+    {
+      "id": "rawtext-rcdata-structural-boundaries",
+      "axis": {
+        "version": "v1.4.77 uploaded",
+        "feature": "context-aware html/head/body section scan across script/style/textarea/title raw text",
+        "complexity": "three structural pseudo-end contexts, 6.3MB raw script, 16.26MB local original",
+        "platform": "Node, independent Chrome and actual WeChat DevTools WXML/native textarea/tap; no physical hardware"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u811a\u672c\u3001\u6837\u5f0f\u6216\u591a\u884c\u8f93\u5165\u4e2d\u7684</head>\u3001</body>\u7b49\u666e\u901a\u6587\u5b57\u4e0d\u518d\u622a\u65ad\u771f\u5b9e\u6807\u9898\u3001\u6b63\u6587\u548c\u4ea4\u4e92\uff1bCSS\u751f\u6210\u5185\u5bb9\u4ecd\u53ef\u89c1",
+      "evidence": [
+        "tests/html-dom-shim.test.js",
+        "scripts/chrome-oracle.mjs",
+        "scripts/verify-wechat-simulator.js",
+        "docs/release-v1.4.77-dev.md"
+      ]
+    },
+    {
+      "id": "inline-cache-explicit-retry-recovery",
+      "axis": {
+        "version": "v1.4.72 uploaded",
+        "feature": "generation-aware preparation invalidation, fair bounded sweep and failed partial-write cleanup",
+        "complexity": "11 new deterministic regressions; 4 pinned/generated PNGs across six failure modes and 24 full-pixel comparisons",
+        "platform": "Node, independent Chrome bytes/RGBA and actual DevTools SDK3.16.2 native bytes/pixels plus initial/dynamic WXML retry; no hardware"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u9996\u6b21\u4fdd\u5b58\u5931\u8d25\u540e\uff0c\u7528\u6237\u70b9\u51fb\u91cd\u8bd5\u53ef\u7ee7\u7eed\u56de\u6536\u7f13\u5b58\u5e76\u663e\u793a\u539f\u56fe\uff1b\u6682\u65f6\u5220\u4e0d\u6389\u7684\u524d\u4e00\u6279\u6587\u4ef6\u4e0d\u4f1a\u6c38\u4e45\u6321\u4f4f\u540e\u7eed\u53ef\u56de\u6536\u6587\u4ef6\uff1b\u9875\u9762\u4ea4\u4e92\u4ecd\u53ef\u7528",
+      "evidence": [
+        "tests/inline-cache-retry.test.js",
+        "scripts/verify-inline-cache-recovery.js",
+        "scripts/verify-inline-cache-wechat.js",
+        "docs/release-v1.4.72-dev.md"
+      ]
+    },
+    {
+      "id": "inline-cache-cold-runtime-lifecycle",
+      "axis": {
+        "version": "v1.4.71 candidate",
+        "feature": "dedicated cache namespace, orphan recovery before writes, active leases and failed unlink ownership",
+        "complexity": "13 regressions including 50 interrupted boots, concurrent opens, delayed I/O, unknown files and bounded sweep; 3 pinned WPT PNGs plus generated PNG",
+        "platform": "Node, independent Chrome bytes/RGBA, actual DevTools SDK3.16.2 runtime restart and 3 WXML taps; no hardware"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u91cd\u542f\u540e\u65b0\u56fe\u7247\u4e0d\u88ab\u524d\u6b21\u5931\u53bb\u5f52\u5c5e\u7684\u7f13\u5b58\u963b\u585e\uff1b\u5f53\u524d\u9875\u9762\u56fe\u7247\u548c\u7528\u6237\u539f\u4ef6\u4e0d\u4f1a\u88ab\u56de\u6536\uff1b\u56fe\u7247\u5185\u5bb9\u53ca\u6309\u94ae\u4ea4\u4e92\u4ecd\u6b63\u786e",
+      "evidence": [
+        "tests/inline-cache-lifecycle.test.js",
+        "tests/helpers/inline-cache-filesystem.js",
+        "scripts/verify-inline-cache-recovery.js",
+        "scripts/verify-inline-cache-lifecycle-wechat.js",
+        "docs/release-v1.4.71-dev.md"
+      ]
+    },
+    {
+      "id": "canvas-live-backing-budget",
+      "axis": {
+        "version": "v1.4.68 uploaded",
+        "feature": "release resized backing quota and refund native allocation/setter failures",
+        "complexity": "10 deterministic lifecycle/error/resource tests, 640 resize cycles across 16 Chrome states and 3 original WPT assertion bodies",
+        "platform": "Node, independent Chrome and actual DevTools SDK3.16.2 WXML/native visible and export pixels passed; no physical hardware"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u540c\u4e00\u753b\u5e03\u53cd\u590d\u7f29\u653e\u4e0d\u8bef\u8017\u5c3d\u989d\u5ea6\uff1b\u5c3a\u5bf8\u8bbe\u7f6e\u5931\u8d25\u4fdd\u7559\u539f\u5c3a\u5bf8\uff1b32Mi\u6587\u6863\u548c16Mi\u5355\u753b\u5e03\u9650\u5236\u4ecd\u6709\u6548",
+      "evidence": [
+        "tests/canvas-live-budget.test.js",
+        "scripts/verify-canvas-live-budget.js",
+        "scripts/verify-canvas-budget-wechat.js",
+        "tests/fixtures/canvas-live-budget/README.md",
+        "docs/release-v1.4.68-dev.md"
+      ]
+    },
+    {
+      "id": "canvas-reset-state-and-safe-resize",
+      "axis": {
+        "version": "v1.4.65 candidate",
+        "feature": "reset actual bitmap/path/clip/stack/styles; same-width fallback and safe cross-aspect replay resize",
+        "complexity": "12 deterministic regressions; 32 initial/tap states in each of two host paths; three unchanged WPT tests plus clip expected pixels; baseline failed 35 states",
+        "platform": "Node host contracts, actual Page/native Chrome full pixels and state; not WXML/devices"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u6e05\u7a7a\u753b\u5e03\u540e\u65e7\u5185\u5bb9\u3001\u526a\u88c1\u548c\u4fdd\u5b58\u72b6\u6001\u4e0d\u518d\u6b8b\u7559\uff0c\u53ef\u4ee5\u6b63\u5e38\u7ee7\u7eed\u7ed8\u5236\uff1b\u5bbd\u9ad8\u5207\u6362\u8fc7\u7a0b\u4e0d\u8d8a\u8fc7\u5b89\u5168\u50cf\u7d20\u4e0a\u9650\u3002direction getter\u5dee\u5f02\u4e0d\u662f\u901a\u8fc7\u7684\u5b8c\u5168\u4e00\u81f4\u9879",
+      "evidence": [
+        "tests/canvas-reset.test.js",
+        "scripts/verify-canvas-reset.js",
+        "tests/fixtures/canvas-reset/README.md",
+        "docs/release-v1.4.65-dev.md"
+      ]
+    },
+    {
+      "id": "canvas-image-source-snapshots",
+      "axis": {
+        "version": "v1.4.64 candidate",
+        "feature": "immutable drawImage Canvas source, self-overlap, detached and blank sources, source mutation/reset and bounded capture",
+        "complexity": "12 deterministic regressions; 32 generated states plus 3 original WPT bodies in each of two host export modes; prior native-export baseline failed all 35 states",
+        "platform": "Node host contracts and actual Page/native Chrome complete pixel hashes; not WXML/devices"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u753b\u5e03\u590d\u5236\u4fdd\u7559\u5f53\u65f6\u56fe\u50cf\uff0c\u540e\u7eed\u6e90\u53d8\u5316\u4e0d\u4f1a\u6539\u6389\u4e4b\u524d\u7684\u753b\u9762\uff1b\u88c1\u526a\u3001\u663e\u793a\u3001\u8bfb\u56de\u548c\u4f5c\u8005\u5bfc\u51fa\u4e00\u81f4\uff1b\u9519\u8bef\u6765\u6e90\u4e0d\u4f1a\u7559\u4e0b\u574f\u7ed8\u56fe\u6307\u4ee4",
+      "evidence": [
+        "tests/canvas-source.test.js",
+        "scripts/verify-canvas-source.js",
+        "tests/fixtures/canvas-source/README.md",
+        "docs/release-v1.4.64-dev.md"
+      ]
+    },
+    {
+      "id": "visible-canvas-real-pixel-readback",
+      "axis": {
+        "version": "v1.4.63 candidate",
+        "feature": "synchronous attached Canvas backing, getImageData/createImageData, edit/putback/export and release",
+        "complexity": "11 deterministic regressions; 32 generated initial/tap states and 3 original WPT bodies; baseline all 35 browser states failed",
+        "platform": "Node host contract and actual Page script/native Chrome pixels; not WXML/devices"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u53d6\u8272\u548c\u50cf\u7d20\u5904\u7406\u8bfb\u53d6\u771f\u5b9e\u5185\u5bb9\uff0c\u53ef\u56de\u586b\u5230\u53ef\u89c1\u753b\u5e03\u5e76\u5bfc\u51fa\u540c\u6837\u7684\u56fe\u7247\uff1b\u4e0d\u652f\u6301\u6216\u8d44\u6e90\u8d85\u9650\u65f6\u660e\u786e\u5931\u8d25\u800c\u4e0d\u662f\u5047\u7a7a\u56fe",
+      "evidence": [
+        "tests/canvas-readback.test.js",
+        "scripts/verify-canvas-readback.js",
+        "tests/fixtures/canvas-readback/README.md",
+        "docs/release-v1.4.63-dev.md"
+      ]
+    },
+    {
+      "id": "visible-canvas-ordered-replay",
+      "axis": {
+        "version": "v1.4.62 candidate",
+        "feature": "first Page frame, ordered image dependency replay, dimension reset and stale callback cancellation",
+        "complexity": "17 lifecycle/error/budget tests; 32 generated frame pixel pairs, 3 upstream WPT command replays, real decoded-image race",
+        "platform": "Node Page lifecycle and actual Chrome native replay surface; not WXML/devices"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u53ef\u89c1Canvas\u9996\u5e27\u6709\u753b\u9762\uff0c\u56fe\u7247\u53e0\u653e/\u53d8\u6362/\u900f\u660e/\u88c1\u526a\u987a\u5e8f\u6b63\u786e\uff0c\u65e7\u56fe\u7247\u4e0d\u8986\u76d6\u65b0\u753b\u9762\uff0c\u6e05\u7a7a\u5c3a\u5bf8\u540e\u6062\u590d\u9ed8\u8ba4\u72b6\u6001",
+      "evidence": [
+        "tests/visible-canvas.test.js",
+        "scripts/verify-visible-canvas.js",
+        "tests/fixtures/visible-canvas/README.md",
+        "docs/release-v1.4.62-dev.md"
+      ]
+    },
+    {
+      "id": "reader-react-scroll-svg-and-file-queue",
+      "axis": {
+        "version": "v1.4.61 candidate",
+        "feature": "stable React host identity, scaled height, scroll/touch bridge, native SVG encoding and failed-file queue",
+        "complexity": "13 deterministic tests; 2 private React files, 55 data SVG pixel pairs, 52 inline SVG decode checks, 8 approximate queue layouts; large poster rerun",
+        "platform": "Node actual Page and Chrome pixels/layout; WeChat pending"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u4e0d\u518d\u6e05\u7a7a\u6574\u9875\u8282\u70b9\u548c\u7f29\u653e\u9ad8\u5ea6\uff0c\u56fe\u7247\u6709\u771f\u5b9e\u5185\u5bb9\uff1b\u6ed1\u52a8\u4e0d\u8bef\u70b9\uff0c\u574f\u6587\u4ef6\u540e\u4ecd\u53ef\u6362\u4e0b\u4e00\u4efd\uff0c\u8ba1\u6570\u4e0d\u6362\u884c",
+      "evidence": [
+        "tests/reader-stability.test.js",
+        "scripts/verify-reader-stability.js",
+        "scripts/verify-inline-poster.js",
+        "docs/release-v1.4.61-dev.md"
+      ]
+    },
+    {
+      "id": "image-native-load-and-decode-lifecycle",
+      "axis": {
+        "version": "v1.4.60 candidate",
+        "feature": "shared image decode, async events, real dimensions, cancellation and native resource path",
+        "complexity": "5 creation routes, 12 lifecycle/budget tests, 3 public files with 9 passes and one separately retained prototype failure",
+        "platform": "Node mock lifecycle and Chrome real decoded pixels; WeChat pending"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u56fe\u7247\u52a0\u8f7d\u7ed3\u675f\u540e\u811a\u672c\u53ef\u7ee7\u7eed\u7ed8\u5236\u548c\u5bfc\u51fa\uff0c\u574f\u56fe/\u6362\u56fe\u4e0d\u65e0\u9650\u7b49\u5f85\uff1b\u4e0d\u80fd\u4ee5\u6b64\u58f0\u79f0\u5168\u90e8HTMLImageElement\u901a\u8fc7",
+      "evidence": [
+        "tests/image-decode.test.js",
+        "scripts/verify-image-decode.js",
+        "docs/release-v1.4.60-dev.md"
+      ]
+    },
+    {
+      "id": "inline-image-data-identity",
+      "axis": {
+        "version": "v1.4.59 candidate",
+        "feature": "presentation-only resource cache, original JS literal and DOM identity, bounded large scripts",
+        "complexity": "6 generated variants, 80 WPT Base64 cases, 16.3MB original poster retained",
+        "platform": "Node actual Page and independent Chrome; WeChat pending"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u56fe\u7247\u663e\u793a\u4e14\u5b57\u8282\u4e0d\u53d8\uff0c\u9875\u9762\u8bfb\u53d6\u6570\u636e\u3001\u663e\u793a\u6b63\u6587\u3001\u8f93\u5165\u503c\u548c\u70b9\u51fb\u64cd\u4f5c\u5747\u4e0e\u539f\u7248\u4e00\u81f4",
+      "evidence": [
+        "tests/image-data-identity.test.js",
+        "scripts/verify-image-data-identity.js",
+        "scripts/verify-inline-poster.js",
+        "docs/release-v1.4.59-dev.md"
+      ]
+    },
+    {
+      "id": "element-image-decoding-and-constructor-contract",
+      "axis": {
+        "version": "WPT fixed 9bd47eefe / v1.4.59 inspection",
+        "feature": "createElement img native load and HTMLImageElement prototype",
+        "complexity": "2 original upstream tests inspected, not full harness execution",
+        "platform": "shim source inspection; browser and WeChat verification pending"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u901a\u8fc7createElement\u521b\u5efa\u7684\u56fe\u7247\u4e5f\u80fd\u5b8c\u6210\u89e3\u7801\u3001onload\u4e0eCanvas\u7ed8\u5236\uff1b\u6784\u9020\u5668\u539f\u578b\u4e00\u81f4",
+      "evidence": [
+        "tests/fixtures/image-data/data-url.html",
+        "tests/fixtures/image-data/image-constructor.html",
+        "tests/fixtures/image-data/README.md"
+      ]
+    },
+    {
+      "id": "large-inline-poster",
+      "axis": {
+        "version": "v1.4.66 uploaded",
+        "feature": "local deduplicated raster resources, media orientation, hidden fallback, image crop, Canvas export",
+        "complexity": "16.3MB original, 7 unique images, 4 viewport sizes, 5 levels, 1536x1024 export",
+        "platform": "Node / Chrome / actual WeChat DevTools SDK 3.16.2; hardware pending"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u6574\u5f20\u6d77\u62a5\u5b8c\u6574\u663e\u793a\uff0c\u4e94\u6863\u53ef\u5207\u6362\uff0c\u5bfc\u51fa\u5f39\u7a97\u521d\u59cb\u9690\u85cf\u4e14\u53ef\u5173\u95ed\uff1b\u5bfc\u51faPNG\u4e0d\u662f\u7a7a\u56fe",
+      "evidence": [
+        "tests/inline-poster.test.js",
+        "scripts/verify-inline-poster.js",
+        "docs/release-v1.4.58-dev.md",
+        "scripts/verify-interactive-poster-wechat.js",
+        "docs/release-v1.4.66-dev.md"
+      ]
+    },
+    {
+      "id": "emitted-shorthand-cascade-order",
+      "axis": {
+        "version": "v1.4.52 candidate",
+        "feature": "overlapping shorthand/longhand output priority and implicit universal pseudo selectors",
+        "complexity": "238 generated cases, 2 interaction states, 2 public CSS comparisons; initial 137 checks failed 110",
+        "platform": "Node/Chrome; not WeChat"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5361\u7247\u4fdd\u7559\u4f5c\u8005\u5e95\u8272\u3001\u5b57\u53f7\u548c\u95f4\u8ddd\uff0c\u70b9\u51fb\u540e\u771f\u5b9e\u6837\u5f0f\u53d8\u5316\uff1b\u4f2a\u5143\u7d20\u753b\u5728\u6b63\u786e\u540e\u4ee3\u4e0a",
+      "evidence": [
+        "tests/css-cascade-order.test.js: 8 tests and isolated 30000-declaration 5s guard",
+        "scripts/verify-css-cascade-order.js: 242 checks; two original XHTML files now pass through production MIME-aware input without stripping CDATA; see xhtml.json"
+      ]
+    },
+    {
+      "id": "script-computed-style-and-live-sheets",
+      "axis": {
+        "version": "v1.4.52 candidate",
+        "feature": "shared cascade, inherited/custom values, readonly live declarations, style node edits and render invalidation",
+        "complexity": "40 generated cases and 9 extracted public CSSOM assertions; 32-case initial baseline failed 30",
+        "platform": "Node/Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u811a\u672c\u8bfb\u53d6\u6837\u5f0f\u540e\u70b9\u51fb\u66f4\u65b0\uff0c\u8f93\u51fa\u4ecegreen / 200px\u53d8\u4e3ablue / 240px\uff0c\u5b9e\u9645\u6b63\u6587\u989c\u8272\u548c\u5bbd\u5ea6\u540c\u6b65\u53d8\u5316",
+      "evidence": [
+        "tests/computed-style.test.js: 9 tests including real sandbox tap, render key/output, fixed upstream hashes, resource policy, cached 20000 reads in a 10000-node document and 5s isolated depth guard",
+        "scripts/verify-computed-style.js: 49 independent Chrome results; 3 public files partially extracted, no full upstream testharness claim",
+        "Playwright actual source click at 390x844; screenshots inspected, actual colors green/blue, widths 200/240, heights 28.796875"
+      ]
+    },
+    {
+      "id": "css-structure-text-and-selectors",
+      "axis": {
+        "version": "v1.4.52 candidate",
+        "feature": "quoted structural delimiters, at-rule-looking prose, EOF blocks, escaped trailing spaces",
+        "complexity": "68 generated prose cases, 8 actual query/style targets, 3 original XHTML outcomes",
+        "platform": "Node/Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5b57\u7b26\u4e32\u6b63\u6587\u548c\u540e\u7eed\u6b63\u6587\u4fdd\u7559\uff0c\u771f\u5b9e\u89c4\u5219\u4ecd\u751f\u6548\uff1b\u672b\u5c3e\u8f6c\u4e49\u7a7a\u683c\u9009\u62e9\u5668\u6b63\u786e\u52a0\u7c97\u76ee\u6807",
+      "evidence": [
+        "tests/css-structure.test.js: 8 tests including 5s isolated stress guard",
+        "scripts/verify-css-structure.js: 79 independent checks; formerly failing third original now green without changing source bytes"
+      ]
+    },
+    {
+      "id": "css-property-value-identifiers",
+      "axis": {
+        "version": "v1.4.52 candidate",
+        "feature": "escaped properties, keyword/function/unit tokens, custom property case and nested fallback",
+        "complexity": "75 declarations and 8 actual content/color states; original HEAD baseline fails 15 checks",
+        "platform": "Node/Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u989c\u8272\u3001\u4f18\u5148\u7ea7\u548c\u5927\u5c0f\u5199\u53d8\u91cf\u751f\u6548\uff0c\u771f\u5b9e\u6c99\u7bb1\u70b9\u51fb\u540e\u53d8\u91cf\u989c\u8272\u53d8\u84dd\uff1b\u8f6c\u4e49\u6807\u70b9\u4e0d\u5236\u9020\u6307\u4ee4\uff0c\u5916\u94fe\u7ee7\u7eed\u963b\u65ad",
+      "evidence": [
+        "tests/css-identifiers.test.js: 8 tests including canonical emitted styles, CSSOM case, resource policy and independent 5s process",
+        "scripts/verify-css-identifiers.js: 83 independent Chrome comparisons, original source and emitted reader styles; expected values from literal CSS, not reader decoding"
+      ]
+    },
+    {
+      "id": "css-variable-computation",
+      "axis": {
+        "version": "v1.4.52 candidate",
+        "feature": "computed inheritance, active dependency cycles, valid empty values, invalid fragments and substitution token boundaries",
+        "complexity": "28 generated cases, 3 original rendered colors, 60 validity checks from 11 original cycle graphs",
+        "platform": "Node/Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u522b\u540d\u6309\u7236\u7ea7\u8ba1\u7b97\u503c\u7ee7\u627f\uff0c\u5faa\u73af\u5f15\u7528\u4f7f\u7528\u5907\u7528\u989c\u8272\uff1b\u7a7a\u503c\u4e0d\u9519\u8bef\u89e6\u53d1\u5907\u7528\u503c\uff1b\u53d8\u91cf\u4e0d\u80fd\u62fc\u6210\u539f\u672c\u4e0d\u5b58\u5728\u7684\u5c3a\u5bf8\u6216\u989c\u8272",
+      "evidence": [
+        "tests/css-variables.test.js: 8 tests including real sandbox tap, immutable upstream hashes and isolated 5s expansion guard",
+        "scripts/verify-css-variables.js: 91 independent comparisons, initial 28-case baseline failed 22; cycle arrays extracted from original file, not a full upstream testharness run"
+      ]
+    },
+    {
+      "id": "wechat-css-structure",
+      "axis": {
+        "version": "v1.4.52 candidate",
+        "feature": "seven structural text/height assertions, three public green views, six identifier and six variable-dependency color/text/height assertions and real taps",
+        "complexity": "full original regression plus structural prose and variable updates",
+        "platform": "WeChat developer tools"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u6587\u5b57\u3001\u884c\u9ad8\u3001\u989c\u8272\u548c\u6309\u94ae\u66f4\u65b0\u5728\u5b9e\u9645\u89c6\u56fe\u6b63\u786e",
+      "evidence": [
+        "scripts/verify-wechat-simulator.js assertions added; Mac locked, execution pending; no carry-over pass from v1.4.51"
+      ]
+    },
+    {
+      "id": "css-escaped-generated-content",
+      "axis": {
+        "version": "CSS Syntax 3 / v1.4.51 candidate",
+        "feature": "pseudo text, attr literals, escaped selector tokens and specificity",
+        "complexity": "170 content variants, 17 query targets, 10 original WPT type-selector cases",
+        "platform": "Node/Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "CSS\u8d8a\u754c\u8f6c\u4e49\u4e0d\u4f7f\u6574\u9875\u5931\u8d25\uff0c\u524d\u540e\u7f00\u6b63\u6587\u3001NBSP\u548c\u5c5e\u6027\u539f\u6587\u4fdd\u7559\uff0c\u8f6c\u4e49\u9009\u62e9\u5668\u547d\u4e2d\u5e76\u6b63\u786e\u5e94\u7528\u6837\u5f0f",
+      "evidence": [
+        "tests/css-escapes.test.js: 8 tests, independent 5s child budget; default inline and explicit block covered",
+        "scripts/verify-css-escapes.js: 197 exact content/target/style checks plus four 32px paragraphs; three raw-NUL hash differences separately recorded, not counted as pass"
+      ]
+    },
+    {
+      "id": "wechat-css-escapes",
+      "axis": {
+        "version": "v1.4.51 candidate / SDK 3.16.2",
+        "feature": "six actual-view text/height assertions, actual font weight and real button update",
+        "complexity": "CSS replacement, literal attr, NBSP and updates",
+        "platform": "WeChat developer tools; physical devices excluded"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5728\u5b9e\u9645\u5fae\u4fe1\u89c6\u56fe\u663e\u793a\u751f\u6210\u6587\u5b57\uff0c\u524d\u7f00\u9ed8\u8ba4\u884c\u5185\u4e14\u5404\u6bb532px\uff0c\u70b9\u51fb\u66f4\u65b0\u540e\u5c5e\u6027\u6587\u5b57\u548c\u6b63\u6587\u6539\u53d8",
+      "evidence": [
+        "scripts/verify-wechat-simulator.js: six actual texts and 32px heights, AB font-weight 700, real tap; final before/after screenshots inspected after repairing inline layout"
+      ]
+    },
+    {
+      "id": "complete-character-reference-table",
+      "axis": {
+        "version": "WHATWG fixed entities.json + html5lib 224991ec",
+        "feature": "2231 names, numeric invalid codepoints, attribute ambiguity",
+        "complexity": "4626 public cases and 2447 generated contexts",
+        "platform": "Node/Chrome full parser"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u8d27\u5e01\u3001\u7248\u6743\u3001\u591a\u7801\u70b9\u7b26\u53f7\u548c\u8868\u5355\u6b63\u6587\u6b63\u786e\uff1b\u8d8a\u754c\u5f15\u7528\u4e0d\u4f7f\u6574\u9875\u5931\u8d25\uff1b\u5355\u6b21\u89e3\u7801\u548c\u539f\u59cb\u6587\u672c\u8fb9\u754c\u4fdd\u7559",
+      "evidence": [
+        "tests/html-character-references.test.js: 19 targeted tests",
+        "scripts/verify-html-entities.js: 7072 exact values and 1 recorded Chrome innerHTML fast-path deviation independently checked with Range/full parser"
+      ]
+    },
+    {
+      "id": "wechat-character-references",
+      "axis": {
+        "version": "v1.4.50 candidate / SDK 3.16.2",
+        "feature": "actual WXML text, input, textarea and button update",
+        "complexity": "seven actual-view assertions plus full original-file regression",
+        "platform": "WeChat developer tools; physical devices excluded"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u9875\u9762\u7b26\u53f7\u548c\u8f93\u5165\u6846\u663e\u793a\u6b63\u786e\uff0c\u771f\u5b9e\u6309\u94ae\u80fd\u66f4\u65b0\u6587\u5b57\u548ctextarea\uff0c\u4e0d\u8fdb\u5165\u9759\u6001\u5931\u6548\u6a21\u5f0f",
+      "evidence": [
+        "scripts/verify-wechat-simulator.js: seven actual-view values, native input/textarea read through data-nid selector, real button tap and before/after screenshots; full rerun passed after fixing test locator"
+      ]
+    },
+    {
+      "id": "unicode-spacing-content",
+      "axis": {
+        "version": "HTML/CSS Text 3",
+        "feature": "16 Unicode separators across six white-space modes",
+        "complexity": "literal and character references",
+        "platform": "Node/Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "NBSP\u3001\u5168\u89d2\u7a7a\u683c\u548c\u6392\u7248\u7a7a\u683c\u7684\u5b57\u7b26\u4e0e\u6570\u91cf\u4e0d\u88abASCII\u6298\u53e0\u89c4\u5219\u6539\u5199",
+      "evidence": [
+        "tests/html-whitespace-content.test.js",
+        "scripts/verify-html-whitespace.js"
+      ]
+    },
+    {
+      "id": "preserved-empty-lines",
+      "axis": {
+        "version": "CSS Text 3",
+        "feature": "pre-line/pre/pre-wrap/break-spaces",
+        "complexity": "1\u201320 line feeds, CRLF, pure newline nodes",
+        "platform": "Node/Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5e94\u4fdd\u7559\u7684\u7a7a\u884c\u4e0d\u5220\u9664\uff0c\u666e\u901a\u6e90\u7801\u7f29\u8fdb\u4ecd\u6298\u53e0\uff1bHTML\u6e90CRLF\u4e0e\u5b57\u7b26\u5f15\u7528CR\u5206\u5f00\u5904\u7406",
+      "evidence": [
+        "tests/html-whitespace-content.test.js",
+        "scripts/verify-html-whitespace.js"
+      ]
+    },
+    {
+      "id": "public-inline-spacing",
+      "axis": {
+        "version": "WPT fixed revision",
+        "feature": "inline boundary newline and dynamic append",
+        "complexity": "3 public files, Ahem font supplied only for independent comparison",
+        "platform": "Chrome / rendered-node HTML reconstruction"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "6\u4e2a\u76ee\u6807\u5143\u7d20\u7684\u5b9e\u9645\u6b63\u6587\u3001\u5bbd\u9ad8\u4e0e\u539f\u4ef6\u4e00\u81f4\uff1b\u4e0d\u4ee3\u8868\u6574\u4e2a\u6d4f\u89c8\u5668\u6d4b\u8bd5\u96c6\u901a\u8fc7",
+      "evidence": [
+        "scripts/verify-html-whitespace.js; 149 checks with public files, 143 without"
+      ]
+    },
+    {
+      "id": "wechat-content-and-update",
+      "axis": {
+        "version": "SDK 3.16.2",
+        "feature": "actual text/view height and button tap",
+        "complexity": "six content cases plus eight original-file regressions",
+        "platform": "WeChat developer tools"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5b9e\u9645WXML\u4fdd\u7559\u7a7a\u884c\u3001NBSP\u3001\u5168\u89d2\u7f29\u8fdb\uff0c\u70b9\u51fb\u66f4\u65b0\u540e\u6b63\u6587\u548c\u9ad8\u5ea6\u6b63\u786e",
+      "evidence": [
+        "scripts/verify-wechat-simulator.js; htmlWhitespace: six actual views, heights 84/28/28/84/28/84; actual update tap"
+      ]
+    },
+    {
+      "id": "all-device-whitespace-layout",
+      "axis": {
+        "version": "WeChat",
+        "feature": "nested text, soft-wrap, bidi, tab stops",
+        "complexity": "large multilingual documents",
+        "platform": "iOS/Android"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u771f\u5b9e\u8bbe\u5907\u4e2d\u7a7a\u884c\u3001\u7f29\u8fdb\u3001\u81ea\u52a8\u6362\u884c\u53ca\u4ea4\u4e92\u4e0e\u6d4f\u89c8\u5668\u4e00\u81f4",
+      "evidence": []
+    }
+  ],
+  "publicSamples": [
+    {
+      "name": "image-data/image-decode.html",
+      "source": "https://github.com/web-platform-tests/wpt/blob/9bd47eefe9095a8464fdcce401747dcd737d1eec/html/semantics/embedded-content/the-img-element/decode/image-decode.html",
+      "license": "BSD-3-Clause; retained LICENSE",
+      "sha256": "104a4187ec29e0ddda96ca7bd9d1cae08d1050b9c024f2998c41ffefdb8f6ac4",
+      "redistributed": true,
+      "expectedVisibleResult": "PNG data URL\u6210\u529f\u89e3\u7801\uff0c\u574f\u56fe\u4e0e\u4e24\u79cd\u7a7asrc\u62d2\u7edd\uff1a4\u4e2a\u539f\u59cbbody\u5728Chrome/shim\u901a\u8fc7\uff1b\u5176\u4f59\u672a\u6267\u884c"
+    },
+    {
+      "name": "image-data/base64.json",
+      "source": "https://github.com/web-platform-tests/wpt/blob/9bd47eefe9095a8464fdcce401747dcd737d1eec/fetch/data-urls/resources/base64.json",
+      "license": "BSD-3-Clause; retained LICENSE",
+      "sha256": "60128004c18a0dea03e6e02d7d571f8e83433581fbc8fcc5b5edfb7a26c55a5a",
+      "redistributed": true,
+      "expectedVisibleResult": "80\u4e2a\u516c\u5f00\u5b57\u8282/\u62d2\u7edd\u9884\u671f\u7528\u4e8e\u6d3e\u751f\u7f13\u5b58\u6d4b\u8bd5\uff1b\u4e0d\u4ee3\u8868\u5b8c\u6574fetch WPT\u901a\u8fc7"
+    },
+    {
+      "name": "image-data/data-url.html",
+      "source": "https://github.com/web-platform-tests/wpt/blob/9bd47eefe9095a8464fdcce401747dcd737d1eec/html/semantics/embedded-content/the-img-element/data-url.html",
+      "license": "BSD-3-Clause; retained LICENSE",
+      "sha256": "e20dfb99b7294141ed93aaf59b2b2cc2e58fbf12d53f880adb45e5323b256e55",
+      "redistributed": true,
+      "expectedVisibleResult": "createElement\u56fe\u7247onload\u540e\u53efdrawImage\u548c\u8bfb\u53d6\u50cf\u7d20\uff1bv1.4.60\u539fbody\u53ca400\u5b57\u8282RGBA\u65ad\u8a00\u5728Chrome/shim\u901a\u8fc7\uff0c\u5fae\u4fe1\u5f85\u6d4b"
+    },
+    {
+      "name": "image-data/image-constructor.html",
+      "source": "https://github.com/web-platform-tests/wpt/blob/9bd47eefe9095a8464fdcce401747dcd737d1eec/html/semantics/embedded-content/the-img-element/Image-constructor.html",
+      "license": "BSD-3-Clause; retained LICENSE",
+      "sha256": "8aa029a1db00e2fd636665adce73d359fdcf6d3381bd645203da309b34f444b5",
+      "redistributed": true,
+      "expectedVisibleResult": "Image\u4e0eHTMLImageElement\u6784\u9020\u539f\u578b\u4e00\u81f4\uff1bv1.4.60\u5168\u90e85\u9879\u539f\u65ad\u8a00\u6267\u884c\uff0c\u6c99\u7bb14\u901a\u8fc7\uff0cFunction\u539f\u578b\u4e00\u9879\u672a\u901a\u8fc7"
+    },
+    {
+      "name": "sort-by-order-001.xht",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/CSS2/cascade/sort-by-order-001.xht",
+      "license": "WPT BSD-3-Clause; original notice included",
+      "redistributed": true,
+      "sha256": "325edd8c159b87559c554b2e029fb7ddf47a43a221a7037b549055bca3c73fd1",
+      "expectedVisibleResult": "100x100 green square. Extracted XML style character data passes CSS comparison; direct original file still fails CDATA parsing and remains a recorded gap"
+    },
+    {
+      "name": "specificity-011.xht",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/CSS2/cascade/specificity-011.xht",
+      "license": "WPT BSD-3-Clause; original notice included",
+      "redistributed": true,
+      "sha256": "2168917e23baa7351e076305ec0fc352f2a7eeffb0789c798becd3f76b0e5937",
+      "expectedVisibleResult": "PASSED generated after paragraph with teal solid top and blue solid bottom borders; source Chrome XHTML and reader synthetic span agree"
+    },
+    {
+      "name": "computed-style-001.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/cssom/computed-style-001.html",
+      "license": "WPT BSD-3-Clause; original notice included",
+      "redistributed": true,
+      "sha256": "6462a55380ecb5bfa2a727f98b1ae8bdf1e684e5678e863f3abcfeabd4089605",
+      "expectedVisibleResult": "Original CSS, divs and three expected property values extracted: height/font-size/percentage width all 100px; original readonly group excluded from this count"
+    },
+    {
+      "name": "computed-style-set-property.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/cssom/computed-style-set-property.html",
+      "license": "WPT BSD-3-Clause; original notice included",
+      "redistributed": true,
+      "sha256": "510a1df70e7f51d7563853c277710de7aa63f2073f31b3313ffd5e6fc9ba46ea",
+      "expectedVisibleResult": "Four original write expressions throw NoModificationAllowedError and computed parentRule is null; five extracted comparisons, not full upstream harness"
+    },
+    {
+      "name": "getComputedStyle-detached-subtree.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/cssom/getComputedStyle-detached-subtree.html",
+      "license": "WPT BSD-3-Clause; original notice included",
+      "redistributed": true,
+      "sha256": "84dfc9e089cf67bf6652c78b475628daea128d09ac94ae7fcbcdf8e6381b6a88",
+      "expectedVisibleResult": "Ordinary detached div returns length 0 and empty color; iframe/Shadow DOM/flat-tree cases remain unsupported and are not counted"
+    },
+    {
+      "name": "variable-cycles.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/css-variables/variable-cycles.html",
+      "license": "WPT BSD-3-Clause, original notice included",
+      "redistributed": true,
+      "sha256": "a787dbc45d029c765d144309e0c003e731986595ced4555dae217e531dae39f7",
+      "expectedVisibleResult": "11 original cycle graphs supply 60 valid/invalid properties; independently checked using Chrome computed custom properties, not the original testharness execution"
+    },
+    {
+      "name": "css-vars-custom-property-inheritance.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/css-variables/css-vars-custom-property-inheritance.html",
+      "license": "WPT BSD-3-Clause, original notice included",
+      "redistributed": true,
+      "sha256": "3cded4005de38ed5dfaae355963029c4e97069fd13d37550aba030d2940bf07d",
+      "expectedVisibleResult": "Two original target rectangles have green backgrounds in Chrome and reader reconstruction; geometry not asserted by this oracle"
+    },
+    {
+      "name": "variable-declaration-48.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/css-variables/variable-declaration-48.html",
+      "license": "CC0 original file notice; WPT BSD notice also retained",
+      "redistributed": true,
+      "sha256": "9a6af27fd79faa94a8ae566150ce3cfbfb28c5a90a9024f296111535524dc8d7",
+      "expectedVisibleResult": "Original paragraph reads This text must be green. and inherits green, not a partial red fragment from an invalid variable"
+    },
+    {
+      "name": "blocks-and-strings-001.xht",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/CSS2/syntax/blocks-and-strings-001.xht",
+      "license": "WPT BSD-3-Clause, original notice included",
+      "redistributed": true,
+      "sha256": "867baaab1cb6f7b4714c897f76fdaa5b71745bc163fb4c29cfd63a2c79fe062a",
+      "expectedVisibleResult": "Filler Text green after nested malformed declarations; Chrome original XHTML MIME and reader agree"
+    },
+    {
+      "name": "comments-001.xht",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/CSS2/syntax/comments-001.xht",
+      "license": "WPT BSD-3-Clause, original notice included",
+      "redistributed": true,
+      "sha256": "269730632673ce7e140a61eae054300bdf7df6735feccfc227de0892626c2d82",
+      "expectedVisibleResult": "Comments do not interrupt color:green; actual green Filler Text"
+    },
+    {
+      "name": "escaped-ident-spaces-001.xht",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/CSS2/syntax/escaped-ident-spaces-001.xht",
+      "license": "WPT BSD-3-Clause, original notice included",
+      "redistributed": true,
+      "sha256": "662c74109172cd233a2f3b146c23fd6cfb8d6b89818e4e2a177b6a88ddc8bbec",
+      "expectedVisibleResult": "Chrome original XHTML and v1.4.52 candidate reader both show green Filler Text after property/value escape repair; WeChat actual color pending"
+    },
+    {
+      "name": "escaped-eof.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/css-syntax/escaped-eof.html",
+      "license": "BSD-3-Clause WPT; original license included",
+      "redistributed": true,
+      "sha256": "dec0d40911d7247999dbb2866c5a58b7a884198285dd766bf55d5ce468c8cff2",
+      "expectedVisibleResult": "Chrome original harness 5/5; reader covers identifier/string EOF only, not all CSSOM serialization"
+    },
+    {
+      "name": "input-preprocessing.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/css-syntax/input-preprocessing.html",
+      "license": "BSD-3-Clause WPT; original license included",
+      "redistributed": true,
+      "sha256": "8792806053c83b90517e2c4b64fec98ba8b6146e15f19e1fa1078694aace6aa0",
+      "expectedVisibleResult": "10 original type-selector replacements, actual applied styles; no hash-token prefix substitution"
+    },
+    {
+      "name": "pre-line-051.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/css-text/white-space/pre-line-051.html",
+      "license": "BSD-3-Clause WPT contributors; local validation only",
+      "redistributed": false,
+      "sha256": "a315c16e8806b683048cb96e09591b4aab3624c361e0f85caec0bee6b2e099a0",
+      "expectedVisibleResult": "Ahem\u4e0b100px\u7eff\u8272\u6b63\u65b9\u5f62\uff0c\u8de8span\u4fdd\u7559\u6362\u884c\uff0c\u4e0d\u51fa\u73b0\u7ea2\u8272\u7a7a\u767d"
+    },
+    {
+      "name": "pre-line-052.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/css-text/white-space/pre-line-052.html",
+      "license": "BSD-3-Clause WPT contributors; local validation only",
+      "redistributed": false,
+      "sha256": "de990872c427fde94708ce3851b678b0f14c3b5d1f480ab7024d420aa91b881e",
+      "expectedVisibleResult": "inline-block\u573a\u666f\u4e2d\u540c\u6837\u663e\u793a100px\u7eff\u8272\u6b63\u65b9\u5f62\uff0c\u6362\u884c\u540e\u7684\u524d\u5bfc\u7a7a\u683c\u4e0d\u5360\u5bbd"
+    },
+    {
+      "name": "pre-line-with-space-and-newline.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/css-text/white-space/pre-line-with-space-and-newline.html",
+      "license": "BSD-3-Clause WPT contributors; local validation only",
+      "redistributed": false,
+      "sha256": "95e243fee4bf8570d6ef09406e63788db9bf5a193ad2ceacac77a3003566d965",
+      "expectedVisibleResult": "\u9759\u6001\u4e0e\u52a8\u6001\u56db\u4e2a\u6587\u672c\u884c\u7ec4\u7684\u6362\u884c\u3001\u5b9e\u9645\u5bbd\u9ad8\u4e00\u81f4\uff0cAhem\u4e0b\u5408\u6210\u7eff\u8272\u533a\u57df"
+    },
+    {
+      "name": "entities.json",
+      "source": "https://html.spec.whatwg.org/entities.json",
+      "license": "WHATWG BSD-3-Clause code/data notice included",
+      "redistributed": true,
+      "sha256": "d741d877ac77c4194c4ad526b5b4a19aef8dfe411ab840a466891cdbb9f362e6",
+      "expectedVisibleResult": "2231 named references, case and multi-codepoint values preserved"
+    },
+    {
+      "name": "entities.test",
+      "source": "https://raw.githubusercontent.com/html5lib/html5lib-tests/224991ec10db04f056a89eed8b0bd8695fd2950e/tokenizer/entities.test",
+      "license": "MIT; license included",
+      "redistributed": true,
+      "sha256": "fe17483810a00247579f5f129ca9c007fbab6755ba839523e29aa9f8875f4085",
+      "expectedVisibleResult": "80 original expected tokenizer values; no test byte edits"
+    },
+    {
+      "name": "namedEntities.test",
+      "source": "https://raw.githubusercontent.com/html5lib/html5lib-tests/224991ec10db04f056a89eed8b0bd8695fd2950e/tokenizer/namedEntities.test",
+      "license": "MIT; license included",
+      "redistributed": true,
+      "sha256": "a7f0e59ff7653820330548776cb3031c18e45f5fd1481a9813d9c7acee89bd6e",
+      "expectedVisibleResult": "4210 original named-reference expectations"
+    },
+    {
+      "name": "numericEntities.test",
+      "source": "https://raw.githubusercontent.com/html5lib/html5lib-tests/224991ec10db04f056a89eed8b0bd8695fd2950e/tokenizer/numericEntities.test",
+      "license": "MIT; license included",
+      "redistributed": true,
+      "sha256": "679296c976252322ece27e2b113a5358a0aa3b0b8ecd2d6d9b365f9d1b0f9632",
+      "expectedVisibleResult": "336 original numeric-reference expectations"
+    }
+  ],
+  "platformResults": {
+    "node": {
+      "status": "pass",
+      "testedAt": "2026-09-01",
+      "evidence": "v1.4.78 uploaded: 748 tests and 141 compatibility probes pass, including inherited rtl/ltr, author-CSS override and a live computed-style object after parent dir mutation."
+    },
+    "chrome": {
+      "status": "pass",
+      "testedAt": "2026-09-01",
+      "evidence": "v1.4.78 uploaded: 11 direct browser/reader semantics plus 143 whitespace, 7073 entity, 197 escape, 79 structure, 83 identifier, 91 variable, 53 computed-style, 242 cascade, 53 XHTML and 18 RTF view checks pass. The four direction cases cover inherited rtl/ltr, author override and live mutation; dir=auto and complete bidi layout are not claimed."
+    },
+    "wechat-devtools": {
+      "status": "partial",
+      "testedAt": "2026-09-01",
+      "evidence": "v1.4.78 full simulator pass: actual WXML scope starts with direction:rtl, script output is rtl, a real button tap changes the parent dir attribute, WXML style and the existing computed-style object both become ltr. Existing calculator, eight local originals, CSS/XHTML, archives, PSD/PSB, CDR, Ai and engineering regressions continue to pass with runtimeErrors=0. GitHub Actions33476494023 official upload receipt matches main/tag/commit/version/description. Physical iOS/Android remain pending."
+    },
+    "ios": {
+      "status": "pending",
+      "reason": "physical device evidence required; devicectl unavailable"
+    },
+    "android": {
+      "status": "pending",
+      "reason": "physical device evidence required; adb unavailable"
+    }
+  },
+  "limits": {
+    "deterministicWhitespaceRunBytes": 524288,
+    "workerTimeoutMs": 5000,
+    "customPropertyExpandedUtf16Units": 1048576,
+    "customPropertyLocalTotalUtf16Units": 4194304,
+    "customPropertyDepth": 256,
+    "computedStyleAncestorDepth": 256,
+    "note": "whitespace/time are test guards; custom-property budgets invalidate over-budget values so fallback can apply; excessive computed-style ancestor depth throws. These are not HTML file-size limits"
+  },
+  "testedVersion": "1.4.121",
+  "lastTestedAt": "2026-09-18",
+  "mutationQueue": [
+    {
+      "id": "top-level-paragraph-render-timeout",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.97",
+      "note": "2049 serialized bridge round-trips exceeded the 30-second watchdog. Byte batching reduces this to two patches without dropping nodes; independent tree replay, SDK3.16.2 whole/volume HTML and upload receipt verified."
+    },
+    {
+      "id": "initial-root-shell-payload-and-large-leaves",
+      "priority": "high",
+      "status": "pending",
+      "note": "Initial top-level shells and an individual large text leaf can exceed the nominal chunk budget. A 15002-root HTML passes SDK3.16.2 with its last marker visible; no product failure confirmed yet. Test exact bridge limits, large UTF-8 leaves, deep parent dependencies and physical-device behavior without weakening the total memory guard."
+    },
+    {
+      "id": "wechat-computed-style-js-module",
+      "priority": "high",
+      "status": "pending",
+      "candidate": "1.4.69"
+    },
+    {
+      "id": "aborted-runtime-inline-cache-and-screenshot-storage",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.71 adds dedicated-directory cold-runtime recovery and active lease protection; 13 Node regressions, 8 Chrome pixel cases and actual DevTools restart/4 orphan/5 active/3 WXML tap checks pass on4596dcb. Residual: legacy root files without ownership boundary, screenshot saveFile quota, global multi-store byte budget, directory removal while a live lease exists, and >256 orphan capacity recovery within explicit retry. Historical1666files/89042886bytes and backed-up6files/19535668bytes not conflated with screenshot fix. Hardware remains pending."
+    },
+    {
+      "id": "canvas-reset-device-and-direction",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.65 adds full reset and avoids transient oversized replay resize; native and same-width paths each pass 32 complete pixel states and three public files. Chrome direction getter ltr differs from the spec/reader inherit, explicitly preserved in style-differences.json. Need inherited/RTL text and host getter semantics, actual WXML/offscreen device reset/allocation behavior, native context loss and long replay compaction. Do not infer full Canvas conformance."
+    },
+    {
+      "id": "canvas-source-device-and-deeper-lifecycle",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.64 native Canvas sources and self-copy pass Page readback/visible/export pixels in native and fallback PNG modes. Still pending: WXML/native device decoding and memory, pre-encoding PNG byte limits, per-frame/live budgets instead of cumulative capture limits, no-op/non-finite argument semantics, WebGL and transferred OffscreenCanvas sources, createPattern, source readiness, long command history and context.reset."
+    },
+    {
+      "id": "canvas-readback-device-and-advanced-pixels",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.63 fixes attached readback using bounded synchronous native backing. Real WXML/offscreen/device allocations and export need renewed unlock verification. Remaining: complete ImageData/DOMException identity, float16/display-p3 settings, premultiplied round-trip tolerance, canvas drawImage sources/patterns, live vs cumulative budgets, transient full replay resize area, large putImageData serialization and command history compaction."
+    },
+    {
+      "id": "visible-canvas-device-and-deeper-operations",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.62 first-frame/order/cancellation/reset fixed on actual Page/native Chrome pixels. WeChat WXML/native image decoding and physical devices remain untested pending renewed unlock. Independently test drawImage source readiness/broken images, canvas sources, visible getImageData, createPattern, context.reset, command log compaction preserving gradients, predecode allocation limits and partial-paint errors."
+    },
+    {
+      "id": "reader-stability-wechat",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.61 keeps original React node IDs through overlay and simulated native scroll; SVG data pixels and compact CSS queue tests pass. Renewed unlock permission and actual WXML/Android/iOS gestures, SVG, poster and failed-middle-file navigation required before merge/upload. Full offsetParent/transform and React class/portal semantics not implemented."
+    },
+    {
+      "id": "image-visible-canvas-and-predecode-limits",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.60 five detached-Canvas PNG outputs match Chrome; now test visible WXML Canvas drawImage replay, predecode dimensions/memory for all raster types, SVG native decoding, srcset/current-request timing, DOMException shape and adoption across documents. NamedConstructor Function.prototype assertion remains failing, explicitly captured."
+    },
+    {
+      "id": "image-created-element-native-load",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.60 repairs registration: 12 Node tests, 5 generated real pixel comparisons, original data-url body and selected decode bodies pass. Full NamedConstructor remains one known failure; actual WeChat/device decode, visible Canvas and source-change timing need further validation. Do not generalize to all upstream tests."
+    },
+    {
+      "id": "image-source-identity-device-and-large-text-fallback",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.59 six Page/Chrome identity cases and 80 derived Base64 cache cases pass; WeChat/device pending. Test larger literal text vs view budget and bounded static fallback, SVG-contained raster data, srcset, escaped CSS URL functions and image-created-element variants next."
+    },
+    {
+      "id": "large-inline-poster-wechat",
+      "priority": "high",
+      "status": "partial",
+      "note": "v1.4.66 actual DevTools original picker, full board, five levels, drag and native export passed. v1.4.67 adds inline-image failure recovery; v1.4.68 fixes live Canvas backing resize quota and allocation rollback. Original revalidated in SDK3.16.2. Landscape, iOS/Android hardware, ImageData/snapshot/image cumulative limits and detached Canvas GC remain pending."
+    },
+    {
+      "id": "xhtml-mime-cdata-input",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.52 candidate MIME/file-entry, XML CDATA and encoding repair passes Node and 53 Chrome checks; original green 100x100 square now passes directly with unchanged bytes/expectations. Real WeChat view/tap and upload remain pending. See xhtml.json for XML limits and deeper mutations."
+    },
+    {
+      "id": "emitted-shorthand-cascade-device",
+      "priority": "high",
+      "status": "pending",
+      "note": "Candidate output order repaired with 242 Chrome CSS checks and 8 Node tests; actual WeChat card background/font/padding and tap assertions added but not run. Full CSSOM shorthand resolution, CSS-wide keywords/layers and UA-important origin order remain separate gaps."
+    },
+    {
+      "id": "soft-wrap-bidi-tab-stops",
+      "priority": "high",
+      "status": "partial",
+      "note": "v1.4.78 repairs inherited dir=ltr/rtl computed direction, author-CSS override and live parent-attribute mutation in Node, independent Chrome and actual WeChat WXML/tap; Actions33476494023 upload receipt verified. Still pending: dir=auto first-strong resolution, unicode-bidi modes and isolation, mixed-script line layout, soft-wrap opportunities, tab-size/tab-stop geometry and physical devices."
+    },
+    {
+      "id": "glass-easel-migration-ab",
+      "priority": "high",
+      "status": "pending",
+      "note": "Official migration guide says WebView supports glass-easel from base library 3.8.12, recommends componentFramework=glass-easel and glassEaselWebview=true together, and requires all dependent components to be adapted. Before enabling: scan XML escaping, deprecated wx-if/wx-for spellings, include inside let/wx:for, numeric-leading selectors and global wx.createSelectorQuery; then A/B large HTML, frequent setData, Canvas, native inputs, subpackages and file-queue interactions under old/new compiler and runtime. Do not globally enable without semantic and performance evidence. Source: https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/glass-easel/migration.html"
+    },
+    {
+      "id": "all-html-entities-and-invalid-codepoints",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.50 Node/Chrome/WeChat devtools repair verified and development-upload receipt checked (33346806874); physical-device evidence and broader parser contexts remain pending"
+    },
+    {
+      "id": "rawtext-rcdata-pseudo-tags-and-css-invalid-escapes",
+      "priority": "high",
+      "status": "completed",
+      "note": "v1.4.51 CSS invalid-escape rendering was already verified. v1.4.77 adds context-aware section scanning so script/style/textarea/title pseudo head/body endings preserve the real document. Node748, Chrome11 direct comparisons, actual WeChat WXML/native textarea/tap and cloud upload pass; Actions33474590624 receipt verified."
+    },
+    {
+      "id": "css-raw-nul-hash-and-cssom-recovery",
+      "priority": "medium",
+      "status": "pending",
+      "note": "Chrome rejects raw NUL at start of hash names while reader normalizes it. Preserve three diagnostic cases; do not confuse with WPT type-selector input-preprocessing passes."
+    },
+    {
+      "id": "css-trailing-escaped-space-and-quoted-braces",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.52 Node/Chrome fixes verified with 79 independent checks. WeChat actual views and development upload pending because Mac is locked."
+    },
+    {
+      "id": "css-property-value-ident-escapes",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.52 Node/Chrome repair and 83 checks pass, including original WPT green text, CSSOM case and resource boundaries. WeChat actual view and development upload pending."
+    },
+    {
+      "id": "css-variable-dependency-and-token-boundaries",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.52 computed inheritance, active cycles, valid empty values and basic token boundaries pass 91 independent Chrome checks and 8 Node tests. WeChat views/upload pending; full tokenization, property grammar, registered properties and revert/layers remain unsupported."
+    },
+    {
+      "id": "script-get-computed-style-custom-properties",
+      "priority": "high",
+      "status": "pending",
+      "note": "v1.4.52 shared cascade, inherited/variable values, live readonly declarations and style-node updates pass 49 Chrome checks plus real sandbox/source clicks; WeChat actual view and development upload still pending."
+    },
+    {
+      "id": "computed-style-full-layout-cssom-and-contexts",
+      "priority": "high",
+      "status": "pending",
+      "note": "Automatic heights, complex flex/grid and min/max/calc sizes, complete longhand defaults/shorthand serialization, CSSStyleSheet.cssRules/insertRule, registered variables, foreign documents, iframe/Shadow DOM remain unimplemented or incomplete; do not generalize the 49 passing assertions."
+    },
+    {
+      "id": "input-url-email-and-unknown-type-sanitization",
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "form-feed-zero-width-controls",
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "physical-device-spacing-and-copy",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "cross-inline-style-changes-and-hidden-elements",
+      "priority": "high",
+      "status": "pending"
+    }
+  ],
+  "nestedTablesValidation": {
+    "status": "locally-verified-unreleased",
+    "evidence": "runs/2026-09-18-html-nested-tables.json",
+    "baselineParserFailures": 55,
+    "baselineHostFailures": 55,
+    "baselineWxmlFailures": 55,
+    "parserExact": 56,
+    "actualHostExact": 56,
+    "productionWxmlExact": 56,
+    "relatedTests": 49,
+    "fullNodeTests": 1263,
+    "fullNodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "fragmentReplacement": "pass",
+    "htmlMarkdownReopenAndTap": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  }
+}

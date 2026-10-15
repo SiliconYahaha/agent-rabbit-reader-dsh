@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "format": "STEP",
+  "extensions": [
+    "step",
+    "stp"
+  ],
+  "mime": [
+    "application/step"
+  ],
+  "signatures": [
+    "49534f2d31303330332d32313b"
+  ],
+  "userShouldSee": "\u652f\u6301\u7684\u771f\u5b9e\u51e0\u4f55\u56fe\u5143\u4ee5\u53ca\u53ef\u4ee5\u65cb\u8f6c\u7684\u6a21\u578b\uff1b\u6ce8\u91ca\u548c\u5b57\u7b26\u4e32\u4e0d\u751f\u6210\u4f2a\u70b9\uff0c\u4e5f\u4e0d\u6539\u53d8\u771f\u5b9e\u5b9e\u4f53\u5f15\u7528\u3002",
+  "currentVisibleResult": "v1.4.134 \u5f00\u53d1\u7248\u5df2\u4e0a\u4f20\uff1a\u53ea\u8bfb\u53d6\u5b9e\u9645 DATA \u6bb5\u4e2d\u7684\u5b8c\u6574\u5b9e\u4f53\uff1b\u6ce8\u91ca\u4e0e\u5b57\u7b26\u4e32\u4fdd\u7559\u8bcd\u6cd5\u8fb9\u754c\uff0c\u540d\u79f0\u4e2d\u7684\u7f16\u53f7\u4e0d\u4f5c\u4e3a\u51e0\u4f55\u5f15\u7528\u3002\u57fa\u7840\u7ebf\u6846\u548c\u5df2\u6709\u9762\u7247\u8fd1\u4f3c\u80fd\u529b\u4e0d\u53d8\uff1b\u5e76\u975e\u5b8c\u6574 CAD \u6216 EXPRESS \u6a21\u5f0f\u9a8c\u8bc1\u5668\u3002 \u672a\u53d1\u5e03\u4fee\u590d\uff1a\u6709\u7406\u66f2\u9762\u6781\u5c0f\u6743\u91cd\u4e0d\u518d\u4f7f\u9762\u7247\u6d88\u5931\uff0c\u66f2\u9762\u8fb9\u754c\u4e0d\u518d\u989d\u5916\u751f\u6210\u5e73\u9762\uff1b\u72ec\u7acb\u5750\u6807\u3001\u5b9e\u9645\u5bbf\u4e3b\u91cd\u590d\u6253\u5f00\u53ca21\u4e2a\u6d4f\u89c8\u5668\u65cb\u8f6c\u89c6\u56fe\u5bf9\u7167\u901a\u8fc7\uff1b\u672a\u5728\u5fae\u4fe1\u5f00\u53d1\u8005\u5de5\u5177\u6216\u771f\u673a\u6267\u884c\u3002 \u4f9d\u8d56\u7684\u540e\u7eed\u672a\u53d1\u5e03\u4fee\u590d\uff1a\u6781\u5927/\u6781\u5c0f/\u5e73\u79fb\u8282\u70b9\u57df\u5f52\u4e00\u5316\uff0c8\u4efd\u66f2\u9762\u539f\u4ef6\u53ca24\u4e2a\u6d4f\u89c8\u5668\u89c6\u56fe\u901a\u8fc7\u72ec\u7acb\u51e0\u4f55\u5bf9\u7167\uff1b\u65e0\u6548\u8282\u70b9\u53c2\u6570\u660e\u786e\u62a5\u9519\u3002",
+  "oracles": [
+    "ISO10303-21 final draft clauses5.6/13/A.2: https://www.steptools.com/stds/step/IS_final_p21e3.html",
+    "steputils 0.1 original source record parsing; no CAD raster oracle",
+    "Actual reader-host Canvas commands replayed in Chrome and compared with equivalent source graph"
+  ],
+  "capabilities": [
+    {
+      "id": "data-comment-string-scope",
+      "status": "pass",
+      "axis": {
+        "version": "Part21 header/data simple and complex records",
+        "structure": "comments/header strings/data sections",
+        "feature": "real points/edges and fake record text",
+        "anomaly": "unclosed comment/string/record, duplicates, stale reads"
+      },
+      "expectedVisibleResult": "12 \u4e2a\u72ec\u7acb\u89e3\u6790\u5668\u53ef\u8bfb\u53d6\u6837\u672c\u4e2d\u7684 8 \u4e2a\u65e7\u7248\u9519\u8bef\u6a21\u578b\u5f97\u5230\u4fee\u590d\uff1b\u6ce8\u91ca\u4e0d\u65b0\u589e\u6216\u8986\u76d6\u70b9\uff0c\u540d\u79f0\u7f16\u53f7\u4e0d\u4e22\u5931\u8fb9\u3002",
+      "evidence": [
+        "tests/step-scope.test.js",
+        "tests/fixtures/step-scope/originals.json",
+        "runs/2026-09-08-step-scope.json"
+      ]
+    },
+    {
+      "id": "print-and-physical-delimiters",
+      "status": "pass",
+      "axis": {
+        "encoding": "ASCII physical line controls and explicit N/F directives",
+        "structure": "tokens and escaped string backslashes",
+        "feature": "multiline keyword and source print layout",
+        "oracle": "normative rules; steputils rejects two legal edge cases"
+      },
+      "expectedVisibleResult": "\u7269\u7406\u6362\u884c\u4e0d\u5207\u65ad\u5173\u952e\u5b57\uff0c\u6253\u5370\u63a7\u5236\u4e0d\u6210\u4e3a\u6a21\u578b\u5185\u5bb9\uff1b\u53cd\u659c\u6760\u5b57\u9762\u5185\u5bb9\u4fdd\u7559\u3002",
+      "evidence": [
+        "tests/step-scope.test.js",
+        "runs/2026-09-08-step-scope.json"
+      ]
+    },
+    {
+      "id": "actual-host-rotation",
+      "status": "pass",
+      "axis": {
+        "platform": "Node host and Chrome Canvas replay",
+        "interaction": "isometric/drag/top",
+        "geometry": "equivalent two-point line graphs",
+        "rendering": "42 complete Canvas PNG comparisons"
+      },
+      "expectedVisibleResult": "14 \u4e2a\u6587\u4ef6\u7684 42 \u4e2a\u89c6\u56fe\u4e0e\u57fa\u51c6\u56fe\u5f62\u4e00\u81f4\uff1b\u4e0d\u4ee5\u5b9e\u4f53\u7edf\u8ba1\u6216\u65e0\u5f02\u5e38\u66ff\u4ee3\u753b\u9762\u68c0\u67e5\u3002",
+      "evidence": [
+        "scripts/verify-step-scope.js",
+        "runs/2026-09-08-step-scope.json"
+      ]
+    },
+    {
+      "id": "rational-surface-weight-scale",
+      "status": "pass",
+      "axis": {
+        "weights": "common scales1e-300 through1e307; mixedendpoint1e-300/1e300",
+        "geometry": "quadratic3x3 poles,13x13 evaluation, polygon faceboundary",
+        "anomaly": "invalid weights,mismatched dimensions,invalidknots,explicitplanar sibling",
+        "reference": "geomdl5.3.1 +80digit Decimal independentcoordinates"
+      },
+      "expectedVisibleResult": "\u6743\u91cd\u7b49\u6bd4\u7f29\u653e\u4e0d\u6539\u53d8\u66f2\u9762\uff1b\u6df7\u5408\u5c3a\u5ea6\u7aef\u70b9\u4fdd\u7559\uff0c\u66f2\u9762\u8fb9\u754c\u4e0d\u4f1a\u518d\u989d\u5916\u586b\u6210\u5e73\u9762\u3002\u635f\u574f\u6743\u91cd\u660e\u786e\u62a5\u9519\u3002",
+      "evidence": [
+        "tests/step-rational-weights.test.js",
+        "tests/fixtures/step-rational-weights/before.json",
+        "scripts/probe-step-rational-weights.py",
+        "scripts/verify-step-rational-weights.js",
+        "runs/2026-09-13-step-rational-weights.json"
+      ]
+    },
+    {
+      "id": "affine-knot-domains",
+      "status": "pass",
+      "axis": {
+        "parameters": "translated1e15,subnormal1e-320,opposite-1e308/+1e308",
+        "structure": "nonclamped,repeatedknots,unequalu/vdegrees,rationalweights",
+        "anomaly": "nonfiniteextra knots/multiplicities,descending/equaldomain,wrongcount",
+        "platform": "Nodeactualhost16opens;24ChromeCanvasviews;noWeChat/devices"
+      },
+      "expectedVisibleResult": "\u7b49\u4ef7\u8282\u70b9\u57df\u4e0d\u518d\u4f7f\u66f2\u9762\u53d8\u5f62\u6216\u6d88\u5931\uff1b\u65e0\u6548\u8282\u70b9\u660e\u786e\u5931\u8d25\u5e76\u53ef\u7ee7\u7eed\u6253\u5f00\u540e\u7eed\u6587\u4ef6\u3002",
+      "evidence": [
+        "tests/step-knot-domains.test.js",
+        "tests/fixtures/step-knot-domains/before.json",
+        "tests/fixtures/step-knot-domains/malformed-before.json",
+        "scripts/probe-step-knot-domains.py",
+        "scripts/verify-step-knot-domains.js",
+        "runs/2026-09-13-step-knot-domains.json"
+      ]
+    }
+  ],
+  "platformResults": {
+    "node": "pass-scoped",
+    "chrome": "pass-scoped",
+    "wechatDevtools": "not-run: previous compiler startup blocker",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "mutationQueue": [
+    {
+      "id": "step-native-cad-complex-geometry",
+      "priority": "high",
+      "status": "pending",
+      "action": "Independent CAD renderer/exporter originals for geometry and complex surfaces; steputils is only a lexical record oracle."
+    },
+    {
+      "id": "step-string-international-encoding",
+      "priority": "medium",
+      "status": "pending",
+      "action": "X/X2/X4/S/P string encodings and version-specific UTF8 remain undercovered."
+    },
+    {
+      "id": "step-external-sections",
+      "priority": "high",
+      "status": "pending",
+      "action": "ANCHOR/REFERENCE/value instances and signatures explicitly unsupported by this scoped reader; no external resource loading."
+    },
+    {
+      "id": "step-large-input",
+      "priority": "high",
+      "status": "pending",
+      "action": "Large geometry/memory/device performance; current record/depth bounds fail explicitly."
+    }
+  ],
+  "testedVersion": "1.4.134",
+  "lastTestedAt": "2026-09-13T10:55:50.963410+00:00"
+}

@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "format": "Ai / legacy PostScript EPSI",
+  "extensions": [
+    "ai"
+  ],
+  "mime": [
+    "application/postscript"
+  ],
+  "signatures": [
+    "%!PS-Adobe-",
+    "%PDF-"
+  ],
+  "userShouldSee": "\u6587\u4ef6\u4fdd\u5b58\u7684\u6b63\u786e\u9884\u89c8\u6216\u5df2\u652f\u6301\u7684\u77e2\u91cf\u5185\u5bb9\uff1b\u4e0d\u80fd\u628a\u672a\u77e5\u6807\u8bb0\u5185\u7684\u6570\u636e\u5f53\u9884\u89c8\uff0c\u5feb\u901f\u6362\u6587\u4ef6\u4e0d\u80fd\u88ab\u65e7\u5f02\u6b65\u5199\u5165\u8986\u76d6\u3002",
+  "currentVisibleResult": "Unreleased lexical repair:147 source contracts,1264 full Node tests and141 probes pass. 62 actual component artwork outputs match retained original-byte Ghostscript pixels in Chrome; a native-blank source no longer invents a raster preview. Arrays and ASCII85 data no longer become extra drawings. Development upload pending.",
+  "oracles": [
+    "Adobe EPSF 3.0 / DSC 3.0 primary specifications",
+    "Pillow 12.3.0 raw decoders and JPEG readback",
+    "Ghostscript9.56.0 via isolated @jspawn/ghostscript-wasm0.0.2, original byte streams and actual rendered PNG",
+    "Poppler26.05.0 native PDF parsing with six short prefixes"
+  ],
+  "capabilities": [
+    {
+      "id": "epsi-physical-lines",
+      "axis": {
+        "version": "EPSF3/DSC3",
+        "depth": "1/2/4/8",
+        "syntax": "CR/LF/CRLF/LFCR, complete markers, case",
+        "anomaly": "unknown comments, inline markers, nonhex-only lines"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5408\u6cd5\u9884\u89c8\u4e0d\u4e2d\u65ad\u3001\u4e0d\u4e32\u5165\u672a\u77e5\u6ce8\u91ca\u91cc\u7684\u5176\u4ed6\u56fe\u50cf\u3002",
+      "evidence": [
+        "tests/epsi-lines.test.js",
+        "tests/file-preview-page.test.js",
+        "scripts/verify-epsi-lines.js",
+        "tests/fixtures/epsi-lines-reference.json"
+      ]
+    },
+    {
+      "id": "epsi-packed-pixels",
+      "axis": {
+        "version": "EPSI",
+        "depth": "1/2/4/8",
+        "content": "odd-width grayscale rows",
+        "reference": "Pillow raw decoder"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u9ed1\u767d\u6781\u6027\u3001\u7070\u9636\u3001\u5b57\u8282\u884c\u8fb9\u754c\u4e0e\u72ec\u7acb\u89e3\u7801\u4e00\u81f4\u3002",
+      "evidence": [
+        "tests/fixtures/epsi-lines-reference.json",
+        "scripts/verify-epsi-lines.js"
+      ]
+    },
+    {
+      "id": "design-output-identity",
+      "axis": {
+        "format": "Ai/PSD",
+        "content": "JPEG/SVG/PDF",
+        "operation": "same-millisecond next-file load",
+        "anomaly": "late previous write/copy"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u65e7\u5f02\u6b65\u6587\u4ef6\u5199\u5165\u4e0d\u80fd\u8986\u76d6\u6b63\u5728\u770b\u7684\u4e0b\u4e00\u6587\u4ef6\u3002",
+      "evidence": [
+        "tests/file-preview-page.test.js"
+      ]
+    },
+    {
+      "id": "full-dsc-and-artwork",
+      "axis": {
+        "version": "legacy Ai",
+        "content": "nested documents/data, gradients/fonts",
+        "reference": "independent renderer",
+        "platform": "WeChat and physical devices"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u590d\u6742\u6587\u4ef6\u5185\u5bb9\u4e0d\u7f3a\u5931\uff0c\u5143\u6570\u636e\u6765\u81ea\u6b63\u786e\u6587\u6863\u4f5c\u7528\u57df\u3002",
+      "evidence": []
+    },
+    {
+      "id": "dsc-parent-scope-and-pdf-prose",
+      "axis": {
+        "version": "DSC3/EPSF3 and basic Illustrator paths",
+        "structure": "imported documents, physical bytes/lines and parent trailer",
+        "content": "EPSI, imported red/blue artwork and data consumer procedure",
+        "platform": "Node actual component, Chrome actual output, independent Ghostscript/Poppler"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u7236\u753b\u5e03\u548c\u6587\u4ef6\u9884\u89c8\u6765\u81ea\u6b63\u786e\u6587\u6863\uff1b\u5bfc\u5165\u56fe\u5f62\u4ecd\u7136\u53ef\u89c1\uff1bPDF\u6587\u5b57\u4e0d\u8bef\u8c03\u67e5\u770b\u5668\u3002",
+      "evidence": [
+        "runs/2026-09-08-ai-dsc.json",
+        "tests/ai-dsc.test.js",
+        "scripts/verify-ai-dsc.js",
+        "scripts/probe-ai-dsc-ghostscript.js"
+      ]
+    },
+    {
+      "id": "postscript-string-and-array-boundaries",
+      "axis": {
+        "syntax": "literal nested/escaped strings, hex, ASCII85 and arrays",
+        "structure": "procedure/dictionary/resource, embedded documents, genuine opaque bytes",
+        "lineEndings": "LF/CR/CRLF and escaped continuation",
+        "operation": "repeated opens, malformed recovery, delayed/detached reads",
+        "reference": "Adobe PLRM3.2; original-byte Ghostscript PNGs; actual host outputs in Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5b57\u7b26\u4e32\u4e0d\u622a\u65ad\u6b63\u6587\u3001\u88c1\u9519\u753b\u5e03\u6216\u4f2a\u9020\u9884\u89c8\uff1b\u6570\u7ec4\u5185\u6587\u5b57\u4e0d\u88ab\u753b\u6210\u591a\u4f59\u56fe\u5f62\u3002",
+      "evidence": [
+        "runs/2026-09-13-ai-lexical.json",
+        "tests/ai-lexical.test.js",
+        "tests/fixtures/ai-lexical/native-reference.json",
+        "scripts/verify-ai-lexical.js"
+      ]
+    }
+  ],
+  "platformResults": {
+    "node": {
+      "status": "pass",
+      "evidence": "1264 full tests,141 probes,renderer smoke,production gate;147 source contracts plus malformed recovery and asynchronous isolation"
+    },
+    "wechat-devtools": {
+      "status": "blocked",
+      "reason": "Existing compiler startup undefined-path failure; not rerun this iteration"
+    },
+    "ios": {
+      "status": "pending"
+    },
+    "android": {
+      "status": "pending"
+    },
+    "chrome": {
+      "status": "pass",
+      "evidence": "Full existing Chrome gate;147 actual component opens;63 native references:62 exact artwork pixels/aspect and one blank no-false-preview"
+    }
+  },
+  "lastTestedAt": "2026-09-13T08:40:05.844925+00:00",
+  "mutationQueue": [
+    {
+      "id": "dsc-document-and-data-scope",
+      "status": "fixed-scoped",
+      "priority": "high",
+      "evidence": "runs/2026-09-08-ai-dsc.json",
+      "remaining": "General resource/procedure/string intersections and fullPostScript execution remain pending."
+    },
+    {
+      "id": "physical-preview-recovery",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "dsc-resources-and-postscript-lexical-context",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "postscript-literal-ascii85-array-delimiters",
+      "status": "fixed-scoped",
+      "priority": "high",
+      "evidence": "runs/2026-09-13-ai-lexical.json",
+      "remaining": "Full PostScript execution, string decoding/validation and nonlexical resource semantics remain outside this supported vector subset."
+    }
+  ],
+  "testedVersion": "unreleased branch from v1.4.137"
+}

@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-13T13:41:04.602742+00:00",
+  "version": "1.4.147",
+  "status": "content-verified-delivery-pending",
+  "charset": {
+    "file": {
+      "type": "text/csv; name=\"report;charset=gbk\""
+    },
+    "before": {
+      "text": "姹夊瓧",
+      "errors": 0,
+      "encoding": "gb18030",
+      "source": "explicit"
+    },
+    "after": {
+      "text": "汉字",
+      "errors": 0,
+      "encoding": "utf-8",
+      "source": "valid-utf8"
+    }
+  },
+  "beforeNativeDeepJson": [
+    {
+      "depth": 20,
+      "items": 1000,
+      "inputBytes": 3931,
+      "loading": false,
+      "error": "",
+      "expectedChars": 47812,
+      "actualChars": 47812,
+      "wxmlExact": true,
+      "metrics": {
+        "startedAt": 1791892968708,
+        "sourceName": "deep.json",
+        "transformedAt": 1791892971654,
+        "runtimeStartedAt": 1791892971659,
+        "domReadyAt": 1791892971724,
+        "readyAt": 1791892971724
+      }
+    },
+    {
+      "depth": 60,
+      "items": 4000,
+      "inputBytes": 19011,
+      "loading": false,
+      "error": "",
+      "expectedChars": 518452,
+      "actualChars": 518452,
+      "wxmlExact": true,
+      "metrics": {
+        "startedAt": 1791892972210,
+        "sourceName": "deep.json",
+        "transformedAt": 1791892972397,
+        "runtimeStartedAt": 1791892972408,
+        "domBytes": 542691,
+        "domChunks": 4,
+        "domReadyAt": 1791892972558,
+        "readyAt": 1791892972558
+      }
+    },
+    {
+      "depth": 60,
+      "items": 10000,
+      "inputBytes": 49011,
+      "loading": false,
+      "error": "",
+      "expectedChars": 1286452,
+      "actualChars": 1286452,
+      "wxmlExact": true,
+      "metrics": {
+        "startedAt": 1791892972906,
+        "sourceName": "deep.json",
+        "transformedAt": 1791892973312,
+        "runtimeStartedAt": 1791892973325,
+        "domBytes": 1346691,
+        "domChunks": 4,
+        "domReadyAt": 1791892973726,
+        "readyAt": 1791892973726
+      }
+    }
+  ],
+  "browser": {
+    "at": "2026-10-13T13:35:11.365Z",
+    "environment": "production WXML compiled in native Chrome, independent contiguous text geometry",
+    "rows": [
+      {
+        "id": "unicode-wrap",
+        "textExact": true,
+        "width": 390,
+        "height": 48000,
+        "referenceWidth": 390,
+        "referenceHeight": 48000,
+        "geometryExact": true,
+        "childPieces": 17,
+        "maxPatch": 127094
+      },
+      {
+        "id": "unicode-rtl",
+        "textExact": true,
+        "width": 390,
+        "height": 48000,
+        "referenceWidth": 390,
+        "referenceHeight": 48000,
+        "geometryExact": true,
+        "childPieces": 12,
+        "maxPatch": 88998
+      },
+      {
+        "id": "unbroken",
+        "textExact": true,
+        "width": 390,
+        "height": 54864,
+        "referenceWidth": 390,
+        "referenceHeight": 54864,
+        "geometryExact": true,
+        "childPieces": 17,
+        "maxPatch": 129120
+      },
+      {
+        "id": "nowrap",
+        "textExact": true,
+        "width": 390,
+        "height": 24,
+        "referenceWidth": 390,
+        "referenceHeight": 24,
+        "geometryExact": true,
+        "childPieces": 17,
+        "maxPatch": 130097
+      },
+      {
+        "id": "escaped",
+        "textExact": true,
+        "width": 390,
+        "height": 72000,
+        "referenceWidth": 390,
+        "referenceHeight": 72000,
+        "geometryExact": true,
+        "childPieces": 17,
+        "maxPatch": 124099
+      }
+    ]
+  },
+  "wechat": {
+    "at": "2026-10-13T13:41:46.538Z",
+    "environment": "WeChat DevTools actual WXML/taps/native setData interception, not physical phones",
+    "rows": [
+      {
+        "kind": "charset",
+        "id": 0,
+        "actualText": true,
+        "maxPatch": 2601
+      },
+      {
+        "kind": "charset",
+        "id": 1,
+        "actualText": true,
+        "maxPatch": 2601
+      },
+      {
+        "kind": "charset",
+        "id": 2,
+        "actualText": true,
+        "maxPatch": 2601
+      },
+      {
+        "kind": "charset",
+        "id": 3,
+        "actualText": true,
+        "maxPatch": 2601
+      },
+      {
+        "kind": "charset",
+        "id": 4,
+        "actualText": true,
+        "maxPatch": 2601
+      },
+      {
+        "kind": "charset",
+        "id": 5,
+        "actualText": true,
+        "maxPatch": 2601
+      },
+      {
+        "kind": "charset",
+        "id": 6,
+        "actualText": true,
+        "maxPatch": 2601
+      },
+      {
+        "kind": "charset",
+        "id": 7,
+        "actualText": true,
+        "maxPatch": 2607
+      },
+      {
+        "kind": "charset",
+        "id": 8,
+        "actualText": true,
+        "maxPatch": 2607
+      },
+      {
+        "kind": "charset",
+        "id": 9,
+        "actualText": true,
+        "maxPatch": 2613
+      },
+      {
+        "kind": "family",
+        "format": "zip",
+        "memberTap": true,
+        "actualText": true
+      },
+      {
+        "kind": "family",
+        "format": "rar",
+        "memberTap": true,
+        "actualText": true
+      },
+      {
+        "kind": "family",
+        "format": "7z",
+        "memberTap": true,
+        "actualText": true
+      },
+      {
+        "kind": "family",
+        "format": "step",
+        "actualModel": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "viewTap": "top",
+        "canvasReady": true
+      },
+      {
+        "kind": "family",
+        "format": "cdr",
+        "actualImage": true
+      },
+      {
+        "kind": "family",
+        "format": "psd",
+        "actualImage": true
+      },
+      {
+        "kind": "deep-json",
+        "depth": 20,
+        "items": 1000,
+        "wholeTextSha256": "789d6f37308b22c01be0f734b6db9e14eb94696e0c13246b7f7d39af7c70cd1c",
+        "maxPatch": 54251
+      },
+      {
+        "kind": "deep-json",
+        "depth": 60,
+        "items": 4000,
+        "wholeTextSha256": "1e75f160fd475fdacfedc744e1c8386383cc8204ab73ec814c6b5f9091c0a4eb",
+        "maxPatch": 157093,
+        "chunks": 7
+      },
+      {
+        "kind": "deep-json",
+        "depth": 60,
+        "items": 10000,
+        "wholeTextSha256": "2a7c6e0ed3b70459ded85ea5d32889e3605bf99389eb57f6402489baf74ddcc4",
+        "maxPatch": 157131,
+        "chunks": 12
+      },
+      {
+        "kind": "updated-text",
+        "oldSha256": "c015fef07aad1cf8829e4a09e41e1638a65d0a8a79a6b2bbe2d349f86ce6f16d",
+        "newSha256": "a57feb8c10010026d9f81b0eafb2a3d267e4c9b4402a4c27df94b557d07ca152",
+        "sameButtonHandle": true,
+        "maxPatch": 156861
+      },
+      {
+        "kind": "large-csv",
+        "cells": 4096,
+        "actualWholeText": true,
+        "horizontalScroll": true,
+        "maxPatch": 162034
+      }
+    ]
+  },
+  "discoveredStyleTransport": {
+    "bytes": 683596,
+    "domStylesBytes": 683320,
+    "result": "All native table content was present, but transport budget assertion failed; style array now delivered before nodes in bounded updates"
+  },
+  "localValidation": {
+    "scopedTests": 168,
+    "finalAffectedTests": 39,
+    "initialFull": {
+      "passed": 1557,
+      "failed": 6,
+      "reason": "Original exact text expected in one view field; new fragments require full reconstructed text, original expectation unchanged"
+    },
+    "secondFull": {
+      "passed": 1562,
+      "failed": 2,
+      "reason": "Version147 release document had not been written yet; no runtime failure"
+    },
+    "fullGate": {
+      "tests": 1564,
+      "failed": 0,
+      "compatibilityProbes": 141,
+      "rendererSmoke": "pass",
+      "production": "pass"
+    },
+    "chromeOracleChain": "passed",
+    "imageDataBrowser": "passed"
+  },
+  "notExecuted": [
+    "physical iOS",
+    "physical Android",
+    "real WeChat chat menu",
+    "experience",
+    "review",
+    "production"
+  ],
+  "limits": [
+    "No universal bridge bound for giant scalar controls",
+    "No new browser APIs or ZIP website resource mount"
+  ],
+  "next": [
+    "Large scalar native control input transport",
+    "SMIL fallback currently resends full domTree",
+    "HTML/XHTML charset vs BOM/meta declarations",
+    "ZIP site resource mounting"
+  ],
+  "fixtures": {
+    "tests/fixtures/mime-parameters/families.json": "52c3a9d6b26c6b1eebdfac77847045db0663647821c458592ebb62a53a0a85cd",
+    "tests/fixtures/mime-parameters/headers.json": "0897a81a689836feec5212a8a6149244e4b62e9181a85899a45b02469cc2fd66"
+  },
+  "nextSmilInvestigation": {
+    "at": "2026-10-13T13:42:30.527Z",
+    "stage": "147 candidate",
+    "smilNodes": 1,
+    "initialMax": 156865,
+    "fallbackMax": 722621,
+    "wholeTreeReplacement": true,
+    "native": "not run, content pixel and unsupported-platform controls pending"
+  }
+}

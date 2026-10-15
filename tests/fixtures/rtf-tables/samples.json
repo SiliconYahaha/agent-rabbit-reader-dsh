@@ -1,0 +1,34 @@
+[
+  {
+    "name": "testRTFTableCellSeparation.rtf",
+    "sha256": "87eeb5be0d8fa43514279e83a31cf80df3077e5f725747f151b4469e53813047",
+    "expected": "a\tb\t\nc\td\t\nä\të\t\nö\tü",
+    "libreOffice": "a\tb\nc\td\nä\të\nö\tü",
+    "cocoa": "a\nb\nc\nd\nä\në\nö\nü",
+    "scope": "普通表格正文回归；列使用tab分隔，行尾cell的tab保留，不与LO全文相同"
+  },
+  {
+    "name": "testRTFTableCellSeparation2.rtf",
+    "sha256": "a318ec4e22d0ec73e5c4a339db587f404033c56f50668360a4c055cc13adb7b1",
+    "expected": "Fax / Phone Station\tFax / Phone #",
+    "libreOffice": "Fax / Phone StationFax / Phone #",
+    "cocoa": "Fax / Phone StationFax / Phone #",
+    "scope": "缺少完整表格定义的cell正文；保留cell分隔，而两工具TXT导出拼接；不宣称布局一致"
+  },
+  {
+    "name": "testRTFListMicrosoftWord.rtf",
+    "sha256": "e57b9bfba4d11d1b8b15dd347ed514beab04ccb54146a882e9398ca843afb43d",
+    "expected": "A short ordered list:\n1.\tone\n2.\ttwo\n3.\tthree\n\nA short unordered list:\n–\tfirst\n–\tsecond\n–\tthird\n\nA nested list:\n1.\ta\n-\taa\n-\tab\n2.\tb\n3.\tc",
+    "libreOffice": "A short ordered list:\n    1. one\n    2. two\n    3. three\n\nA short unordered list:\n    • first\n    • second\n    • third\n\nA nested list:\n        1. a\n    • aa\n    • ab\n        2. b\n        3. c",
+    "cocoa": "A short ordered list:\none\ntwo\nthree\n\nA short unordered list:\nfirst\nsecond\nthird\n\nA nested list:\na\naa\nab\nb\nc",
+    "scope": "保留pntext/listtext的文件自带编号文本；不自动重算编号、样式或缩进；此项是已知差异而非完整列表支持"
+  },
+  {
+    "name": "libreoffice-nested.rtf",
+    "sha256": "99dcde021441391ff4174d1a04ccc52d50286c20304d6c7708482da42f95ff8c",
+    "expected": "Before table\nOuter left\nInner A\tInner B\t\nInner C\tInner D\t\nAfter inner\tOuter right\t\nBottom left\tBottom right\t\nAfter table",
+    "libreOffice": "Before table\nOuter left\nInner A\tInner B\nInner C\tInner D\nAfter inner\tOuter right\nBottom left\tBottom right\nAfter table",
+    "cocoa": "Before table\nOuter left\nInner A\nInner B\n\nInner C\nInner D\n\nAfter inner\nOuter right\nBottom left\nBottom right\nAfter table",
+    "scope": "真实LO导出原件，有4个nestcell与2个nestrow；内层行列分隔和正文顺序与LO一致，行末终止tab差异明确保留"
+  }
+]

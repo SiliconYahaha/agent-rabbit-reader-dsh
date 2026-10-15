@@ -1,0 +1,38 @@
+[
+  {
+    "name": "clip-path-clip-rule-001.svg",
+    "reference": "clip-path-square-hole-001-ref.svg",
+    "source": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-001.svg",
+    "referenceSource": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-hole-001-ref.svg",
+    "license": "BSD-3-Clause; LICENSE retained",
+    "redistributed": true,
+    "sha256": "7d711fdda3baf7a9da6a842b0ef7576abe6855301372c9fb843f1f754d86e827",
+    "referenceSha256": "f4daabc01c383ee4375f18f627ae470cdf2f706e35804be44eca48a4ab86e2f5",
+    "expectedVisibleResult": "Green square with a rectangular hole",
+    "normalization": "Only test viewport is fixed to 200x200 user units in a 256px canvas; original files remain unchanged"
+  },
+  {
+    "name": "clip-path-clip-rule-002.svg",
+    "reference": "clip-path-square-001-ref.svg",
+    "source": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-002.svg",
+    "referenceSource": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-001-ref.svg",
+    "license": "BSD-3-Clause; LICENSE retained",
+    "redistributed": true,
+    "sha256": "4fb9c430f6c1f137d64d2f27e2a5d48fee3255b95bda1feea9399a777fb652c8",
+    "referenceSha256": "5ee9ddcc68baf5894560714c69b93fd3a62e6e476b243c74aa7c300f8a3c20cc",
+    "expectedVisibleResult": "Solid green square",
+    "normalization": "Only test viewport is fixed to 200x200 user units in a 256px canvas; original files remain unchanged"
+  },
+  {
+    "name": "clip-path-content-use-001.svg",
+    "reference": "clip-path-square-002-ref.svg",
+    "source": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-content-use-001.svg",
+    "referenceSource": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-002-ref.svg",
+    "license": "BSD-3-Clause; LICENSE retained",
+    "redistributed": true,
+    "sha256": "bb1900e5cbac0b365f221e61210af414846fede1211c9631e3469383830ebc83",
+    "referenceSha256": "d65c04b638f46e201059a6fcdbd37b9fbe8f1909047a8752fac6639df2fe3b54",
+    "expectedVisibleResult": "Green square selected through a direct use",
+    "normalization": "Only test viewport is fixed to 200x200 user units in a 256px canvas; original files remain unchanged"
+  }
+]

@@ -1,0 +1,270 @@
+/* file-reader 皮肤（文件检查与压缩包目录）—— 宿主自有：颜色、间距、文案排布都在这里改，模块同步不会覆盖本目录。 */
+
+.inspector-preview {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 420rpx;
+  margin: 0 0 24rpx;
+  border: 2rpx solid #171715;
+  border-radius: 20rpx;
+  background: #fff;
+}
+
+.archive-password-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+  box-sizing: border-box;
+  margin: 0 0 24rpx;
+  padding: 22rpx;
+  border: 3rpx solid #171715;
+  border-radius: 20rpx;
+  background: #f3f5e7;
+}
+
+.archive-name-encoding-card {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 0 24rpx;
+  padding: 18rpx 20rpx;
+  border: 2rpx solid #171715;
+  border-radius: 18rpx;
+  background: #f3f5e7;
+}
+
+.archive-name-encoding-copy,
+.archive-name-encoding-title,
+.archive-name-encoding-current {
+  display: block;
+}
+
+.archive-name-encoding-copy {
+  min-width: 0;
+}
+
+.archive-name-encoding-title {
+  color: #171715;
+  font-size: 23rpx;
+  font-weight: 800;
+}
+
+.archive-name-encoding-current {
+  margin-top: 4rpx;
+  color: #625e55;
+  font-size: 20rpx;
+}
+
+.archive-name-encoding-button {
+  flex: 1 1 210rpx;
+  margin: 0;
+  padding: 0 14rpx;
+  border: 2rpx solid #171715;
+  border-radius: 14rpx;
+  color: #171715;
+  background: #fffdf6;
+  font-size: 21rpx;
+  font-weight: 800;
+}
+
+.archive-name-encoding-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-top: 14rpx;
+}
+
+.archive-name-encoding-button-active {
+  background: #b9e63b;
+}
+
+.archive-name-encoding-button::after {
+  border: 0;
+}
+
+.archive-password-title {
+  color: #171715;
+  font-size: 27rpx;
+  font-weight: 800;
+}
+
+.archive-password-copy,
+.archive-password-status {
+  color: #625e55;
+  font-size: 22rpx;
+  line-height: 1.55;
+}
+
+.archive-password-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 78rpx;
+  padding: 0 20rpx;
+  border: 2rpx solid #171715;
+  border-radius: 16rpx;
+  color: #171715;
+  background: #fffdf8;
+  font-size: 25rpx;
+}
+
+.archive-password-button {
+  width: 100%;
+  margin: 0;
+  border: 2rpx solid #171715;
+  border-radius: 16rpx;
+  color: #171715;
+  background: #b9e63b;
+  font-size: 25rpx;
+  font-weight: 800;
+}
+
+.archive-password-button::after {
+  border: 0;
+}
+
+.archive-password-status {
+  color: #8a2a20;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14rpx;
+}
+
+.metadata-card {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 18rpx;
+  border: 2rpx solid #171715;
+  border-radius: 18rpx;
+  background: #f8f6ef;
+}
+
+.metadata-label,
+.metadata-value {
+  display: block;
+}
+
+.entry-row-directory .entry-name {
+  color: #5f701a;
+  font-weight: 900;
+}
+
+.metadata-label {
+  margin-bottom: 8rpx;
+  color: #827d73;
+  font-size: 20rpx;
+}
+
+.metadata-value {
+  color: #24231f;
+  font-size: 24rpx;
+  font-weight: 800;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+.entry-list {
+  margin-top: 24rpx;
+  border-top: 3rpx solid #171715;
+}
+
+.entry-list-heading {
+  padding: 24rpx 0 14rpx;
+  color: #171715;
+  font-size: 26rpx;
+  font-weight: 900;
+}
+
+.entry-page-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  padding: 0 0 16rpx;
+}
+
+.entry-page-controls-bottom {
+  padding: 18rpx 0 0;
+  border-top: 1rpx solid #dedbd2;
+}
+
+.entry-page-button {
+  width: 150rpx;
+  min-height: 60rpx;
+  margin: 0;
+  padding: 0 18rpx;
+  border: 2rpx solid #171715;
+  border-radius: 999rpx;
+  background: #f7f4ec;
+  color: #171715;
+  font-size: 22rpx;
+  font-weight: 800;
+  line-height: 56rpx;
+}
+
+.entry-page-button[disabled] {
+  border-color: #c8c4ba;
+  color: #aaa59b;
+  background: #efede7;
+}
+
+.entry-page-count {
+  min-width: 94rpx;
+  color: #3c3933;
+  font-size: 22rpx;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.entry-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18rpx;
+  padding: 16rpx 0;
+  border-top: 1rpx solid #dedbd2;
+}
+
+.entry-row-actionable {
+  cursor: pointer;
+}
+
+.entry-row-actionable:active {
+  opacity: .65;
+}
+
+.entry-name {
+  min-width: 0;
+  flex: 1;
+  color: #24231f;
+  font-size: 23rpx;
+  line-height: 1.45;
+  word-break: break-all;
+}
+
+.entry-detail {
+  flex: 0 0 auto;
+  max-width: 42%;
+  color: #827d73;
+  font-size: 20rpx;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.entry-open-hint {
+  flex: 0 0 auto;
+  color: #c9432b;
+  font-size: 21rpx;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.local-only-note {
+  margin-top: 24rpx;
+  color: #68645c;
+  font-size: 22rpx;
+  text-align: center;
+}

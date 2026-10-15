@@ -1,0 +1,71 @@
+{
+  "ownership": "Own synthetic container/design files, reused own independently checked STEP source",
+  "containerOracle": "macOS BSD tar exact extracted body for ZIP/RAR/7z",
+  "rows": [
+    {
+      "name": "zip",
+      "mime": "application/zip",
+      "body": "独立容器正文：汉字 😀\n",
+      "base64": "UEsDBBQAAAAIAACAn1tC4Rx9JgAAACEAAAAKAAAAaW5zaWRlLnR4dHveveb56u6n63Y+nbni2drFz6a1v98z69nGzqdrpyt8mD+jgQsAUEsBAhQAFAAAAAgAAICfW0LhHH0mAAAAIQAAAAoAAAAAAAAAAAAAAAAAAAAAAGluc2lkZS50eHRQSwUGAAAAAAEAAQA4AAAATgAAAAAA"
+    },
+    {
+      "name": "rar",
+      "mime": "application/vnd.rar",
+      "body": "独立容器正文：汉字 😀\n",
+      "base64": "UmFyIRoHAM+QcwAADQAAAAAAAADH7HQAgCoAIQAAACEAAAADQuEcfQAAAAAUMAoApIEAAGluc2lkZS50eHTni6znq4vlrrnlmajmraPmlofvvJrmsYnlrZcg8J+YgArEPXsAQAcA"
+    },
+    {
+      "name": "7z",
+      "mime": "application/x-7z-compressed",
+      "body": "独立容器正文：汉字 😀\n",
+      "base64": "N3q8ryccAAQotvSoIQAAAAAAAABCAAAAAAAAAJgSuTXni6znq4vlrrnlmajmraPmlofvvJrmsYnlrZcg8J+YgAoBBAYAAQkhAAcLAQABAQAMIQAICgFC4Rx9AAAFAREXAGkAbgBzAGkAZABlAC4AdAB4AHQAAAAZABUGAQAggLaBAAA="
+    },
+    {
+      "name": "step",
+      "mime": "application/step",
+      "model": {
+        "kind": "step-wireframe",
+        "points": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            0
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "faces": []
+      },
+      "base64": "SVNPLTEwMzAzLTIxO0hFQURFUjtGSUxFX0RFU0NSSVBUSU9OKCgnT3JpZ2luYWwgbGV4aWNhbCBzY29wZSBwcm9iZScpLCcyOzEnKTtGSUxFX05BTUUoJ3Njb3BlLnN0ZXAnLCcnLCgnYXV0aG9yJyksKCdsb2NhbCcpLCdwcm9iZScsJycsJycpO0ZJTEVfU0NIRU1BKCgnQVVUT01PVElWRV9ERVNJR04nKSk7RU5EU0VDO0RBVEE7IzE9Q0FSVEVTSUFOX1BPSU5UKCcnLCgwLiwwLiwwLikpOyMyPUNBUlRFU0lBTl9QT0lOVCgnJywoMTAuLDAuLDAuKSk7IzM9VkVSVEVYX1BPSU5UKCcnLCMxKTsjND1WRVJURVhfUE9JTlQoJycsIzIpOyM1PUVER0VfQ1VSVkUoJycsIzMsIzQsIzksLlQuKTsjNz1ESVJFQ1RJT04oJycsKDEuLDAuLDAuKSk7Izg9VkVDVE9SKCcnLCM3LDEuKTsjOT1MSU5FKCcnLCMxLCM4KTtFTkRTRUM7RU5ELUlTTy0xMDMwMy0yMTs="
+    },
+    {
+      "name": "cdr",
+      "mime": "application/x-cdr",
+      "base64": "UklGRvYAAABDRFJBTElTVOoAAABjbXByqQAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJxtjrEKwkAQRF+MURELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wT9QViJEcJp9s7OwE4Vx0gW0Par8bLQH3PbLkQN4iIPN4UUUxkkHuKbFSbgN2OyihF3AFDYzVqdyHwOyGwOq5jmwBXZAv84mdfbV4uH+8jqQKh8vf1pAVeamKnMt/QJA5gAYAj2aeq6a7u5Mff7kyp/5b+LXH2dDUG5nAQAEAHicDccxAQAgCACwhTAUP8Q1AAGI4yHflggU7rpx9oOHD0DwBFg="
+    },
+    {
+      "name": "psd",
+      "mime": "application/x-photoshop",
+      "rgba": [
+        255,
+        0,
+        0,
+        255,
+        0,
+        255,
+        0,
+        255
+      ],
+      "base64": "OEJQUwABAAAAAAAAAAMAAAABAAAAAgAIAAMAAAAAAAAAAAAAAFYAAABOAAEAAAAAAAAAAAAAAAEAAAACAAMAAAAAAAQAAQAAAAQAAgAAAAQ4QklNbm9ybf8AAAAAAAAMAAAAAAAAAAAAAAAAAAD/AAAAAP8AAAAAAAAAAAAA/wAA/wAA"
+    }
+  ]
+}

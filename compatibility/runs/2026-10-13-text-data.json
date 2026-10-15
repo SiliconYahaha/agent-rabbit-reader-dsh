@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-13T11:23:06.063811+00:00",
+  "id": "text-data-entry",
+  "status": "development-uploaded",
+  "version": "1.4.146",
+  "before": [
+    {
+      "name": "data.json",
+      "type": "application/json",
+      "error": "",
+      "kind": "binary-inspector"
+    },
+    {
+      "name": "table.csv",
+      "type": "text/csv",
+      "error": "\u65e0\u6cd5\u8bc6\u522b\u683c\u5f0f\uff0c\u8bf7\u68c0\u67e5\u6587\u4ef6\u540e\u7f00\u3002",
+      "kind": "other"
+    },
+    {
+      "name": "settings.yaml",
+      "type": "",
+      "error": "\u65e0\u6cd5\u8bc6\u522b\u683c\u5f0f\uff0c\u8bf7\u68c0\u67e5\u6587\u4ef6\u540e\u7f00\u3002",
+      "kind": "other"
+    },
+    {
+      "name": "source.js",
+      "type": "text/html",
+      "error": "",
+      "kind": "dom",
+      "poison": 1
+    }
+  ],
+  "changes": [
+    "Known text/data suffixes override conflicting MIME and render literal source instead of markup or binary metadata.",
+    "JSON lexical formatting preserves number lexemes, duplicate keys and escapes; CSV cells remain literal strings with original toggles.",
+    "Native text reads stat real size, join 256 KiB chunks and enforce 5 MiB before allocation.",
+    "ZIP tail/central reads stat real size, validate exact range lengths and check size again before display."
+  ],
+  "corpus": {
+    "seed": 8259418020261013,
+    "json": 18,
+    "csv": 12,
+    "independentlyEncoded": 7,
+    "deflateZipMembers": 3,
+    "ownership": "Own generated samples; no user private originals",
+    "generator": "scripts/generate-text-data-fixtures.py",
+    "sha256": "94ee52f272aaec062aa04bff59193c666bac8fad08ec7a2dda0abdd06430b0b6"
+  },
+  "oracles": [
+    "https://www.rfc-editor.org/rfc/rfc8259",
+    "https://www.rfc-editor.org/rfc/rfc4180",
+    "Python json Decimal/object_pairs_hook, csv strict, encoders and zipfile",
+    "Isolated native Chrome content and visible toggle controls"
+  ],
+  "localTests": {
+    "relatedEntryTests": 134,
+    "contracts": 15,
+    "initialStageCheck": {
+      "passed": 1534,
+      "failed": 1,
+      "failure": "A draft manifest added unverified text MIME declarations. Restored original official-material declarations; unchanged original chat/production assertions now pass.",
+      "finalFullCheck": "passed after restoring existing material declarations"
+    },
+    "production": "passed",
+    "finalStageCheck": {
+      "nodeTests": 1535,
+      "failed": 0,
+      "compatibilityProbes": 141,
+      "rendererSmoke": "passed",
+      "production": "passed"
+    }
+  },
+  "browser": {
+    "at": "2026-10-13T11:17:16.844Z",
+    "environment": "isolated native Chrome frames, own files",
+    "rows": [
+      {
+        "id": "json-0",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-1",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-2",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-3",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-4",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-5",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-6",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-7",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-8",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-9",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-10",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-11",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-12",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-13",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-14",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-15",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-16",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "json-17",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-0",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-1",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-2",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-3",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-4",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-5",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-6",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-7",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-8",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-9",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-10",
+        "content": true,
+        "originalToggle": true
+      },
+      {
+        "id": "csv-11",
+        "content": true,
+        "originalToggle": true
+      }
+    ]
+  },
+  "wechat": {
+    "toolVersion": "2.02.2608070",
+    "sdk": "3.17.3",
+    "successfulCorpus": {
+      "at": "2026-10-13T11:14:41.807Z",
+      "environment": "WeChat DevTools, real filesystem/read-only component/WXML taps; not physical phones or actual chat menu handoff",
+      "rows": [
+        {
+          "name": "json-0.json",
+          "elapsedMs": 1019,
+          "actualWxml": true,
+          "parserPreSha256": "98acac4444f42deffcc3cc1e8857c3cedcfaba07e02dab38c05f08df227f1029",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-1.json",
+          "elapsedMs": 350,
+          "actualWxml": true,
+          "parserPreSha256": "f0ab312dc26920951b33f7c1f9d2497ce84ad1d548918d57e7cdb4ce6d436f07",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-2.json",
+          "elapsedMs": 346,
+          "actualWxml": true,
+          "parserPreSha256": "a23bbc0d61c2f78e0ea5087b34c5a2da9385705aeb72f0d5682d670f6ca10320",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-3.json",
+          "elapsedMs": 354,
+          "actualWxml": true,
+          "parserPreSha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-4.json",
+          "elapsedMs": 343,
+          "actualWxml": true,
+          "parserPreSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-5.json",
+          "elapsedMs": 365,
+          "actualWxml": true,
+          "parserPreSha256": "7799c95d3c90da4dced41c7d68478d8061cb6d0934e070189b55eeb274a3546b",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-6.json",
+          "elapsedMs": 368,
+          "actualWxml": true,
+          "parserPreSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-7.json",
+          "elapsedMs": 388,
+          "actualWxml": true,
+          "parserPreSha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-8.json",
+          "elapsedMs": 371,
+          "actualWxml": true,
+          "parserPreSha256": "f8dd4205642f0e905bc5c814acb009014a476343b30b33f4d313ec2ea1ae9dd8",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-9.json",
+          "elapsedMs": 366,
+          "actualWxml": true,
+          "parserPreSha256": "7a7426ed05292bd8eecacd43cd47395a314415bcac28f2bec813d90e124b5c00",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-10.json",
+          "elapsedMs": 375,
+          "actualWxml": true,
+          "parserPreSha256": "5f3c62c9c2d81de4a2c45730a258aead7aac1fb02c538b259dfb80ba3a48c7d4",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-11.json",
+          "elapsedMs": 369,
+          "actualWxml": true,
+          "parserPreSha256": "f5c0e0528bfcf05c2edd50c79426dd5e597e01df852c03a6fe190e69700013d2",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-12.json",
+          "elapsedMs": 366,
+          "actualWxml": true,
+          "parserPreSha256": "ba199653b71add673743e93221e4f50cdafea31e94283f277e7a057d35e3c760",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-13.json",
+          "elapsedMs": 367,
+          "actualWxml": true,
+          "parserPreSha256": "a7999ff7a8c92852fa34e5a22d42d76d5d8c27bcfdd76fa5332d773adbc7e08c",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-14.json",
+          "elapsedMs": 361,
+          "actualWxml": true,
+          "parserPreSha256": "01b8333c4987419104d6c42dfebedad8dd5ed1b6012b055603bd9733800aa0b3",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-15.json",
+          "elapsedMs": 371,
+          "actualWxml": true,
+          "parserPreSha256": "8ce5703b54639480cb52923d5234e048a5125eb87689c4e7e698cb00d75e508f",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-16.json",
+          "elapsedMs": 366,
+          "actualWxml": true,
+          "parserPreSha256": "c95eab2e270322c568e21f9f41ab5aaa3c88e8259f126959c672e23478356252",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "json-17.json",
+          "elapsedMs": 366,
+          "actualWxml": true,
+          "parserPreSha256": "95b587d445ce1789bd3f16e3bc860bb8016d066294251390873ba7622752a3e6",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "csv-0.csv",
+          "elapsedMs": 385,
+          "actualWxml": true,
+          "parserPreSha256": "bf80c9c2ed9e861b340b0ccc3d48f0138c18feb7edd7781e54c9ebff8b4aa902",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-1.csv",
+          "elapsedMs": 390,
+          "actualWxml": true,
+          "parserPreSha256": "3c0c91216a23ca16c94033fc7472963e3477d2f3f2903a1f5b0363cf5e53e291",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-2.csv",
+          "elapsedMs": 376,
+          "actualWxml": true,
+          "parserPreSha256": "e428b87be24bf6654e37cad372d53eabc42318651e834cce8d30aa742c68b903",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-3.csv",
+          "elapsedMs": 403,
+          "actualWxml": true,
+          "parserPreSha256": "0719527589fd32654fcc60ba2436104cd52849f192c6b00c125be58b23638c7b",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-4.csv",
+          "elapsedMs": 367,
+          "actualWxml": true,
+          "parserPreSha256": "a09e94a6d61b26fa884537dc031929b103ffccc4361dadf5341872c8316ea420",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-5.csv",
+          "elapsedMs": 423,
+          "actualWxml": true,
+          "parserPreSha256": "4269a43bf78833f4dde08158037b122859f123e9394d258942d0efd11f0c3e5e",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-6.csv",
+          "elapsedMs": 388,
+          "actualWxml": true,
+          "parserPreSha256": "c586b4f653ed5e098beee755b8ef2ba89ab594bbe83dfd8be0cbfdc0167db82f",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-7.csv",
+          "elapsedMs": 384,
+          "actualWxml": true,
+          "parserPreSha256": "da90764545a0ef8e7c0f2215d6ad68c27c6069db5f043d17f6ac3b47c1e8ab05",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-8.csv",
+          "elapsedMs": 383,
+          "actualWxml": true,
+          "parserPreSha256": "b983d7496186d64d12624712003eee601780e2ee74f539e1d301aab0cfc3dd95",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-9.csv",
+          "elapsedMs": 384,
+          "actualWxml": true,
+          "parserPreSha256": "5e36bb143dff26fb618415a773997b3cd32b4b9be2473c538ce77a4de6fc0536",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-10.csv",
+          "elapsedMs": 398,
+          "actualWxml": true,
+          "parserPreSha256": "953d216e2da911a9941efd4caffbe7d5359eb49fecaaed884cfc93b52eca1e77",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "csv-11.csv",
+          "elapsedMs": 385,
+          "actualWxml": true,
+          "parserPreSha256": "7f152f9a0bb3992edceae2374023267d6bd9df67d742514b1fd9f0f2f99d4718",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "utf-8-sig.json",
+          "elapsedMs": 368,
+          "actualWxml": true,
+          "parserPreSha256": "4d2c973eac208fb0af92a52e62abe4779b6c09a40598cb97d8b45861efc35a93",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "utf-16.json",
+          "elapsedMs": 370,
+          "actualWxml": true,
+          "parserPreSha256": "4d2c973eac208fb0af92a52e62abe4779b6c09a40598cb97d8b45861efc35a93",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "utf-16-be.csv",
+          "elapsedMs": 384,
+          "actualWxml": true,
+          "parserPreSha256": "fcff2c24c62075ffaf9192c53c14734767882fb52150c3d0a69908c607ee6c7e",
+          "cells": 4,
+          "toggle": true
+        },
+        {
+          "name": "gb18030.csv",
+          "elapsedMs": 374,
+          "actualWxml": true,
+          "parserPreSha256": "7fa56f6da7f37d8a4c2391c4cb6f7bff681f9d7487bbec4784fc41b235d1fd03",
+          "cells": 4,
+          "toggle": true
+        },
+        {
+          "name": "shift_jis.csv",
+          "elapsedMs": 378,
+          "actualWxml": true,
+          "parserPreSha256": "667009768699d764fc61f15af383c50b4ae4f12a992b012998b6026f8e3b71e1",
+          "cells": 4,
+          "toggle": true
+        },
+        {
+          "name": "big5.csv",
+          "elapsedMs": 373,
+          "actualWxml": true,
+          "parserPreSha256": "7a7a1643a649c90ddc0d38ba98f4f91f6d65c7a312e391b380e2237d0554c577",
+          "cells": 4,
+          "toggle": true
+        },
+        {
+          "name": "cp949.csv",
+          "elapsedMs": 366,
+          "actualWxml": true,
+          "parserPreSha256": "a44a9e9fa9c52b26fa8b373fc44a064f644cddb15660e5df2eedd64fa9033c35",
+          "cells": 4,
+          "toggle": true
+        },
+        {
+          "name": "literal.js",
+          "elapsedMs": 131,
+          "actualWxml": true,
+          "parserPreSha256": "7c09243f31873c4dc9bf79e73c8db596f594efc7d59a496b97257320baf25deb",
+          "cells": 0,
+          "toggle": false
+        },
+        {
+          "name": "literal.xml",
+          "elapsedMs": 130,
+          "actualWxml": true,
+          "parserPreSha256": "7c09243f31873c4dc9bf79e73c8db596f594efc7d59a496b97257320baf25deb",
+          "cells": 0,
+          "toggle": false
+        },
+        {
+          "name": "literal.yaml",
+          "elapsedMs": 132,
+          "actualWxml": true,
+          "parserPreSha256": "7c09243f31873c4dc9bf79e73c8db596f594efc7d59a496b97257320baf25deb",
+          "cells": 0,
+          "toggle": false
+        },
+        {
+          "name": "literal.txt",
+          "elapsedMs": 126,
+          "actualWxml": true,
+          "parserPreSha256": "7c09243f31873c4dc9bf79e73c8db596f594efc7d59a496b97257320baf25deb",
+          "cells": 0,
+          "toggle": false
+        },
+        {
+          "name": "wide.csv",
+          "elapsedMs": 1494,
+          "actualWxml": true,
+          "parserPreSha256": "15f8f1f2e3898f3005ef71c7b573ed61c3d249d831814c5403fae9691a470ab9",
+          "cells": 14,
+          "toggle": true
+        },
+        {
+          "name": "large.txt",
+          "elapsedMs": 563,
+          "actualWxml": true,
+          "parserPreSha256": "c7c9a2f53d588212ada34d919602e373cc069cbb8fabc5d93d4d1ed8fb1c8f63",
+          "cells": 0,
+          "toggle": false
+        },
+        {
+          "name": "data.json",
+          "elapsedMs": 682,
+          "actualWxml": true,
+          "parserPreSha256": "98acac4444f42deffcc3cc1e8857c3cedcfaba07e02dab38c05f08df227f1029",
+          "cells": 0,
+          "toggle": true
+        },
+        {
+          "name": "table.csv",
+          "elapsedMs": 505,
+          "actualWxml": true,
+          "parserPreSha256": "0719527589fd32654fcc60ba2436104cd52849f192c6b00c125be58b23638c7b",
+          "cells": 6,
+          "toggle": true
+        },
+        {
+          "name": "literal.xml",
+          "elapsedMs": 257,
+          "actualWxml": true,
+          "parserPreSha256": "08fabf85af18450f1db7dc8b794aeb1804c6206562d097cb6206612f8d2608e1",
+          "cells": 0,
+          "toggle": false
+        }
+      ]
+    },
+    "failureAndRecovery": {
+      "at": "2026-10-13T11:17:18.171Z",
+      "environment": "WeChat DevTools, real filesystem/read-only component/WXML taps; not physical phones or actual chat menu handoff",
+      "rows": [],
+      "recovery": [
+        {
+          "name": "invalid-encoding.csv",
+          "clearErrorOrOriginalFallback": true,
+          "actualContentVerified": false
+        },
+        {
+          "name": "invalid.json",
+          "clearErrorOrOriginalFallback": true,
+          "actualContentVerified": true
+        },
+        {
+          "name": "recovered.json",
+          "clearErrorOrOriginalFallback": true,
+          "actualContentVerified": true
+        }
+      ]
+    },
+    "wideCsvNativeScroll": true,
+    "largeText": {
+      "rows": 16000,
+      "tail": "END-MARKER",
+      "actualWholeWxmlCompared": true
+    },
+    "startupObservation": "Project automation occasionally connected with zero page metadata after recompilation; project-only compile cache cleanup and reopen enabled the successful 46-file run. Later final shell recompilation still has no page metadata. Runtime implementation in successful corpus matches candidate; removed unverified manifest declarations have no reader runtime changes. No claim of cold-start reliability or phone coverage."
+  },
+  "limits": {
+    "textBytes": 5242880,
+    "presentationChars": 200000,
+    "jsonDepth": 64,
+    "formattedOutputChars": 2097152,
+    "csvRows": 512,
+    "csvCells": 4096,
+    "overLimitPresentation": "explicit full original source fallback",
+    "invalidEncoding": "explicit rejection, then next-file recovery",
+    "noExecution": "No author code, XML entities, variables, CSV formulas or React rendering"
+  },
+  "notExecuted": [
+    "physical iOS",
+    "physical Android",
+    "real WeChat picker/share-menu file handoff",
+    "React JSX/TSX rendering",
+    "multi-file ZIP website resource mounting"
+  ]
+}

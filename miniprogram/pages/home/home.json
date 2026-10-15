@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "兔子阅读器",
+  "componentFramework": "glass-easel",
+  "glassEaselWebview": true
+}

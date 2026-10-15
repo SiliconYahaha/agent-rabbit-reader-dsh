@@ -1,0 +1,672 @@
+{
+  "schemaVersion": 1,
+  "testedAt": "2026-09-08T04:55:25.305Z",
+  "generator": "outputs/tar-entry/next-ai-dsc/probe.cjs; six original forms x four line endings",
+  "scope": "DSC structural isolation and PDF misclassification; real Node design component events/writes, not rendered WeChat proof. A nested/data-only preview belongs to another scope, not the containing artwork.",
+  "reference": {
+    "url": "https://web.mit.edu/PostScript/Adobe/Documents/5001.DSC_Spec.pdf",
+    "sections": "pp45-46 bytes/line data counts; p68 BeginDocument isolates imported conforming documents"
+  },
+  "cases": 24,
+  "failures": [
+    "nested-only-lf",
+    "data-lines-only-lf",
+    "data-bytes-only-lf",
+    "binary-only-lf",
+    "pdf-title-lf",
+    "nested-only-cr",
+    "data-lines-only-cr",
+    "data-bytes-only-cr",
+    "binary-only-cr",
+    "pdf-title-cr",
+    "nested-only-crlf",
+    "data-lines-only-crlf",
+    "data-bytes-only-crlf",
+    "binary-only-crlf",
+    "pdf-title-crlf",
+    "nested-only-lfcr",
+    "data-lines-only-lfcr",
+    "data-bytes-only-lfcr",
+    "binary-only-lfcr",
+    "pdf-title-lfcr"
+  ],
+  "rows": [
+    {
+      "name": "nested-only-lf",
+      "sha256": "2897e78a6830db0a702ca266e47fbc3c6d17a306f53d556cadad020f53a7767d",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKJSVCb3VuZGluZ0JveDogMCAwIDEgMQolJUVuZENvbW1lbnRzCiUlQmVnaW5Eb2N1bWVudDogY2hpbGQuZXBzCiUhUFMtQWRvYmUtMy4wIEVQU0YtMy4wCiUlQm91bmRpbmdCb3g6IDAgMCAxIDEKJSVFbmRDb21tZW50cwolJUJlZ2luUHJldmlldzogMSAxIDggMQolIGZmCiUlRW5kUHJldmlldwolJUVPRgolJUVuZERvY3VtZW50CiUlRU9GCg==",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325144-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "data-lines-only-lf",
+      "sha256": "ec9fdee1e084b9dfa0b0bc73caffbe43dd599b3cc638208bc6febed496f8e7f8",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKJSVCb3VuZGluZ0JveDogMCAwIDEgMQolJUVuZENvbW1lbnRzCiUlQmVnaW5EYXRhOiAzIEFTQ0lJIExpbmVzCiUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxCiUgZmYKJSVFbmRQcmV2aWV3CiUlRW5kRGF0YQolJUVPRgo=",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325156-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "data-bytes-only-lf",
+      "sha256": "da5f251aadffc21e25884b69eee7174e895d45e979e198498a43af07b0c5d535",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKJSVCb3VuZGluZ0JveDogMCAwIDEgMQolJUVuZENvbW1lbnRzCiUlQmVnaW5EYXRhOiA0MiBBU0NJSSBCeXRlcwolJUJlZ2luUHJldmlldzogMSAxIDggMQolIGZmCiUlRW5kUHJldmlldwolJUVuZERhdGEKJSVFT0YK",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325162-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "binary-only-lf",
+      "sha256": "e5e09ba6b1a1577ff7ade791dbce69abde6a81c492ee45c3789c8fdbb12d42ae",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKJSVCb3VuZGluZ0JveDogMCAwIDEgMQolJUVuZENvbW1lbnRzCiUlQmVnaW5CaW5hcnk6IDQyCiUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxCiUgZmYKJSVFbmRQcmV2aWV3CiUlRW5kQmluYXJ5CiUlRU9GCg==",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325172-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "pdf-title-lf",
+      "sha256": "a570592dd666623f2bcc86137987d970307fa22623943ec005245e126045d63d",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKJSVUaXRsZTogQSBndWlkZSB0byAlUERGLTEuNwolJUJvdW5kaW5nQm94OiAwIDAgMSAxCiUlRW5kQ29tbWVudHMKJSVCZWdpblByZXZpZXc6IDEgMSA4IDEKJSBmZgolJUVuZFByZXZpZXcKJSVFT0YK",
+      "shouldPreview": true,
+      "pdfExpected": false,
+      "pdfDetected": true,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "",
+        "canOpenPdf": true,
+        "copied": 1,
+        "opened": 1,
+        "written": 0,
+        "message": "检测到 Illustrator 内嵌 PDF，可以使用微信文档查看器显示画板。正在直接打开……",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "valid-control-lf",
+      "sha256": "f0d6ca92af927ea7d4264ae48fe1ea5f5d1ae3faeff07f73987bcda3ae036dfa",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKJSVCb3VuZGluZ0JveDogMCAwIDEgMQolJUVuZENvbW1lbnRzCiUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxCiUgZmYKJSVFbmRQcmV2aWV3CiUlRU9GCg==",
+      "shouldPreview": true,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325186-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": true
+    },
+    {
+      "name": "nested-only-cr",
+      "sha256": "a55b5532a86fbcfd8df9d73c1a256e0c8c1aa4dafd3df23e95744c007140c665",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANJSVCb3VuZGluZ0JveDogMCAwIDEgMQ0lJUVuZENvbW1lbnRzDSUlQmVnaW5Eb2N1bWVudDogY2hpbGQuZXBzDSUhUFMtQWRvYmUtMy4wIEVQU0YtMy4wDSUlQm91bmRpbmdCb3g6IDAgMCAxIDENJSVFbmRDb21tZW50cw0lJUJlZ2luUHJldmlldzogMSAxIDggMQ0lIGZmDSUlRW5kUHJldmlldw0lJUVPRg0lJUVuZERvY3VtZW50DSUlRU9GDQ==",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325196-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "data-lines-only-cr",
+      "sha256": "34aa7f73ada3d75861ce18ae0eeda72ec18868abe9dec2861e6509590332397c",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANJSVCb3VuZGluZ0JveDogMCAwIDEgMQ0lJUVuZENvbW1lbnRzDSUlQmVnaW5EYXRhOiAzIEFTQ0lJIExpbmVzDSUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxDSUgZmYNJSVFbmRQcmV2aWV3DSUlRW5kRGF0YQ0lJUVPRg0=",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325204-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "data-bytes-only-cr",
+      "sha256": "c4264dbcbbb6c4f64453da265e2459ab74847f0aaad45ffc6211aa2093f48f80",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANJSVCb3VuZGluZ0JveDogMCAwIDEgMQ0lJUVuZENvbW1lbnRzDSUlQmVnaW5EYXRhOiA0MiBBU0NJSSBCeXRlcw0lJUJlZ2luUHJldmlldzogMSAxIDggMQ0lIGZmDSUlRW5kUHJldmlldw0lJUVuZERhdGENJSVFT0YN",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325217-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "binary-only-cr",
+      "sha256": "63312d09e5f38914d3da788749be444d0f6de0e73818da966c3a8e9468067437",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANJSVCb3VuZGluZ0JveDogMCAwIDEgMQ0lJUVuZENvbW1lbnRzDSUlQmVnaW5CaW5hcnk6IDQyDSUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxDSUgZmYNJSVFbmRQcmV2aWV3DSUlRW5kQmluYXJ5DSUlRU9GDQ==",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325224-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "pdf-title-cr",
+      "sha256": "32a343e9dd70d5903b2021d1c7c38094109a528be6daad2576d161ea8f6b29b4",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANJSVUaXRsZTogQSBndWlkZSB0byAlUERGLTEuNw0lJUJvdW5kaW5nQm94OiAwIDAgMSAxDSUlRW5kQ29tbWVudHMNJSVCZWdpblByZXZpZXc6IDEgMSA4IDENJSBmZg0lJUVuZFByZXZpZXcNJSVFT0YN",
+      "shouldPreview": true,
+      "pdfExpected": false,
+      "pdfDetected": true,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "",
+        "canOpenPdf": true,
+        "copied": 1,
+        "opened": 1,
+        "written": 0,
+        "message": "检测到 Illustrator 内嵌 PDF，可以使用微信文档查看器显示画板。正在直接打开……",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "valid-control-cr",
+      "sha256": "a4c356cbfad446eda349b7d030e251218034d9cdd517ef47847d700059b71f55",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANJSVCb3VuZGluZ0JveDogMCAwIDEgMQ0lJUVuZENvbW1lbnRzDSUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxDSUgZmYNJSVFbmRQcmV2aWV3DSUlRU9GDQ==",
+      "shouldPreview": true,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325229-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": true
+    },
+    {
+      "name": "nested-only-crlf",
+      "sha256": "8557ed553fccda9fe6f67b80809a9c55d758f2681506a1cf374c6f1c7a0a3d20",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANCiUlQm91bmRpbmdCb3g6IDAgMCAxIDENCiUlRW5kQ29tbWVudHMNCiUlQmVnaW5Eb2N1bWVudDogY2hpbGQuZXBzDQolIVBTLUFkb2JlLTMuMCBFUFNGLTMuMA0KJSVCb3VuZGluZ0JveDogMCAwIDEgMQ0KJSVFbmRDb21tZW50cw0KJSVCZWdpblByZXZpZXc6IDEgMSA4IDENCiUgZmYNCiUlRW5kUHJldmlldw0KJSVFT0YNCiUlRW5kRG9jdW1lbnQNCiUlRU9GDQo=",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325244-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "data-lines-only-crlf",
+      "sha256": "d120421ff5c2067d0563a26d3d455ab711243c8f78243a3da7dd8b127cc0a896",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANCiUlQm91bmRpbmdCb3g6IDAgMCAxIDENCiUlRW5kQ29tbWVudHMNCiUlQmVnaW5EYXRhOiAzIEFTQ0lJIExpbmVzDQolJUJlZ2luUHJldmlldzogMSAxIDggMQ0KJSBmZg0KJSVFbmRQcmV2aWV3DQolJUVuZERhdGENCiUlRU9GDQo=",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325246-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "data-bytes-only-crlf",
+      "sha256": "5165666bac07162cd416b87b4cef4a0cad93d6f54d3e216a1a1f0818fae942b9",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANCiUlQm91bmRpbmdCb3g6IDAgMCAxIDENCiUlRW5kQ29tbWVudHMNCiUlQmVnaW5EYXRhOiA0NSBBU0NJSSBCeXRlcw0KJSVCZWdpblByZXZpZXc6IDEgMSA4IDENCiUgZmYNCiUlRW5kUHJldmlldw0KJSVFbmREYXRhDQolJUVPRg0K",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325260-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "binary-only-crlf",
+      "sha256": "392bf574702411e36c58b4ccec2551446052440afb403e256e12fa1510930dd8",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANCiUlQm91bmRpbmdCb3g6IDAgMCAxIDENCiUlRW5kQ29tbWVudHMNCiUlQmVnaW5CaW5hcnk6IDQ1DQolJUJlZ2luUHJldmlldzogMSAxIDggMQ0KJSBmZg0KJSVFbmRQcmV2aWV3DQolJUVuZEJpbmFyeQ0KJSVFT0YNCg==",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325263-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "pdf-title-crlf",
+      "sha256": "8caccfd47979170a9fdd287c6b7efa08afed09ad63761dea9d934aeb3dfcf31f",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANCiUlVGl0bGU6IEEgZ3VpZGUgdG8gJVBERi0xLjcNCiUlQm91bmRpbmdCb3g6IDAgMCAxIDENCiUlRW5kQ29tbWVudHMNCiUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxDQolIGZmDQolJUVuZFByZXZpZXcNCiUlRU9GDQo=",
+      "shouldPreview": true,
+      "pdfExpected": false,
+      "pdfDetected": true,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "",
+        "canOpenPdf": true,
+        "copied": 1,
+        "opened": 1,
+        "written": 0,
+        "message": "检测到 Illustrator 内嵌 PDF，可以使用微信文档查看器显示画板。正在直接打开……",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "valid-control-crlf",
+      "sha256": "f2936450aa4c66aa99172e2d9cb6b59d2428036693f7a984322e06fa08669311",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANCiUlQm91bmRpbmdCb3g6IDAgMCAxIDENCiUlRW5kQ29tbWVudHMNCiUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxDQolIGZmDQolJUVuZFByZXZpZXcNCiUlRU9GDQo=",
+      "shouldPreview": true,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325267-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": true
+    },
+    {
+      "name": "nested-only-lfcr",
+      "sha256": "9b503cc2ca72db645b6bc5a4a1180ec19c279bca6169bbf3c8eb705bc664ffd1",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKDSUlQm91bmRpbmdCb3g6IDAgMCAxIDEKDSUlRW5kQ29tbWVudHMKDSUlQmVnaW5Eb2N1bWVudDogY2hpbGQuZXBzCg0lIVBTLUFkb2JlLTMuMCBFUFNGLTMuMAoNJSVCb3VuZGluZ0JveDogMCAwIDEgMQoNJSVFbmRDb21tZW50cwoNJSVCZWdpblByZXZpZXc6IDEgMSA4IDEKDSUgZmYKDSUlRW5kUHJldmlldwoNJSVFT0YKDSUlRW5kRG9jdW1lbnQKDSUlRU9GCg0=",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325280-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "data-lines-only-lfcr",
+      "sha256": "ae57a181de6d4cc29849b18f3c4b7d5ed450270eabf4acbd4ac6a327e9e40566",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKDSUlQm91bmRpbmdCb3g6IDAgMCAxIDEKDSUlRW5kQ29tbWVudHMKDSUlQmVnaW5EYXRhOiAzIEFTQ0lJIExpbmVzCg0lJUJlZ2luUHJldmlldzogMSAxIDggMQoNJSBmZgoNJSVFbmRQcmV2aWV3Cg0lJUVuZERhdGEKDSUlRU9GCg0=",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325286-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "data-bytes-only-lfcr",
+      "sha256": "3621a6cddd50f0d6f30ba68ce86226877dc0789b6fb75eb51ea51d7a87e1d4c9",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKDSUlQm91bmRpbmdCb3g6IDAgMCAxIDEKDSUlRW5kQ29tbWVudHMKDSUlQmVnaW5EYXRhOiA0NSBBU0NJSSBCeXRlcwoNJSVCZWdpblByZXZpZXc6IDEgMSA4IDEKDSUgZmYKDSUlRW5kUHJldmlldwoNJSVFbmREYXRhCg0lJUVPRgoN",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325288-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "binary-only-lfcr",
+      "sha256": "90a6072b9bff9e8524f7a19f3e06ecd1a8f00e6a52f7c1522b5071205339f306",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKDSUlQm91bmRpbmdCb3g6IDAgMCAxIDEKDSUlRW5kQ29tbWVudHMKDSUlQmVnaW5CaW5hcnk6IDQ1Cg0lJUJlZ2luUHJldmlldzogMSAxIDggMQoNJSBmZgoNJSVFbmRQcmV2aWV3Cg0lJUVuZEJpbmFyeQoNJSVFT0YKDQ==",
+      "shouldPreview": false,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325295-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "pdf-title-lfcr",
+      "sha256": "966c811294a7dc1a3157fc469d785a201f6fa890d86611eaf8a4773891780e60",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKDSUlVGl0bGU6IEEgZ3VpZGUgdG8gJVBERi0xLjcKDSUlQm91bmRpbmdCb3g6IDAgMCAxIDEKDSUlRW5kQ29tbWVudHMKDSUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxCg0lIGZmCg0lJUVuZFByZXZpZXcKDSUlRU9GCg0=",
+      "shouldPreview": true,
+      "pdfExpected": false,
+      "pdfDetected": true,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "",
+        "canOpenPdf": true,
+        "copied": 1,
+        "opened": 1,
+        "written": 0,
+        "message": "检测到 Illustrator 内嵌 PDF，可以使用微信文档查看器显示画板。正在直接打开……",
+        "error": ""
+      },
+      "correct": false
+    },
+    {
+      "name": "valid-control-lfcr",
+      "sha256": "8b64635be122ea09e25d57b0d0698a1507c0ee0eb379d1cf23654f7181a0ee8f",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKDSUlQm91bmRpbmdCb3g6IDAgMCAxIDEKDSUlRW5kQ29tbWVudHMKDSUlQmVnaW5QcmV2aWV3OiAxIDEgOCAxCg0lIGZmCg0lJUVuZFByZXZpZXcKDSUlRU9GCg0=",
+      "shouldPreview": true,
+      "pdfExpected": false,
+      "pdfDetected": false,
+      "raster": {
+        "width": 1,
+        "height": 1,
+        "source": "DSC/EPSI %%BeginPreview"
+      },
+      "actualHost": {
+        "previewPath": "/fixture/illustrator-epsi-preview-1788843325305-1.jpg",
+        "canOpenPdf": false,
+        "copied": 0,
+        "opened": 0,
+        "written": 1,
+        "message": "基础矢量解释器没有找到可安全还原的路径，但文件内含用于屏幕显示的 EPSI 位图预览，已原样解码为可见画面。它可能是低分辨率预览，不代表完整可编辑内容。",
+        "error": ""
+      },
+      "correct": true
+    }
+  ],
+  "pdfOracle": {
+    "tool": "Poppler pdftoppm",
+    "version": "pdftoppm version 26.05.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+    "scope": "Actual native PDF parsing, independent of reader header detection.",
+    "rows": [
+      {
+        "name": "pdf-title-lf",
+        "status": 1,
+        "signal": null,
+        "error": "Syntax Error: Couldn't find trailer dictionary\nSyntax Error: Couldn't find trailer dictionary\nSyntax Error: Couldn't read xref table",
+        "rendered": false
+      },
+      {
+        "name": "valid-pdf",
+        "status": 0,
+        "signal": null,
+        "error": "",
+        "rendered": true
+      }
+    ]
+  },
+  "boundingBoxRows": [
+    {
+      "eol": "\n",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKJSVCb3VuZGluZ0JveDogKGF0ZW5kKQolJUVuZENvbW1lbnRzCiUlQmVnaW5Eb2N1bWVudDogY2hpbGQuZXBzCiUhUFMtQWRvYmUtMy4wIEVQU0YtMy4wCiUlQm91bmRpbmdCb3g6IDAgMCAxIDEKJSVFbmRDb21tZW50cwolJUVPRgolJUVuZERvY3VtZW50CjEgMCAwIHNldHJnYmNvbG9yCjAgMCBtb3ZldG8KNDAgMCBsaW5ldG8KNDAgMjAgbGluZXRvCjAgMjAgbGluZXRvCmNsb3NlcGF0aCBmaWxsCiUlVHJhaWxlcgolJUJvdW5kaW5nQm94OiAwIDAgNDAgMjAKJSVFT0YK",
+      "sha256": "3ec83050a0a72ec4eb5923b34426b7d99de2262946a02d1781e183065a349d8f",
+      "expected": {
+        "width": 40,
+        "height": 20
+      },
+      "actual": {
+        "width": 1,
+        "height": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L40 0 L40 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "exact": false
+    },
+    {
+      "eol": "\r",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANJSVCb3VuZGluZ0JveDogKGF0ZW5kKQ0lJUVuZENvbW1lbnRzDSUlQmVnaW5Eb2N1bWVudDogY2hpbGQuZXBzDSUhUFMtQWRvYmUtMy4wIEVQU0YtMy4wDSUlQm91bmRpbmdCb3g6IDAgMCAxIDENJSVFbmRDb21tZW50cw0lJUVPRg0lJUVuZERvY3VtZW50DTEgMCAwIHNldHJnYmNvbG9yDTAgMCBtb3ZldG8NNDAgMCBsaW5ldG8NNDAgMjAgbGluZXRvDTAgMjAgbGluZXRvDWNsb3NlcGF0aCBmaWxsDSUlVHJhaWxlcg0lJUJvdW5kaW5nQm94OiAwIDAgNDAgMjANJSVFT0YN",
+      "sha256": "5cfbd2d0b50ede1ce55a6e16357c06e4157ce54e9a48a1d1fd77d101b7c03f95",
+      "expected": {
+        "width": 40,
+        "height": 20
+      },
+      "actual": {
+        "width": 1,
+        "height": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L40 0 L40 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "exact": false
+    },
+    {
+      "eol": "\r\n",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjANCiUlQm91bmRpbmdCb3g6IChhdGVuZCkNCiUlRW5kQ29tbWVudHMNCiUlQmVnaW5Eb2N1bWVudDogY2hpbGQuZXBzDQolIVBTLUFkb2JlLTMuMCBFUFNGLTMuMA0KJSVCb3VuZGluZ0JveDogMCAwIDEgMQ0KJSVFbmRDb21tZW50cw0KJSVFT0YNCiUlRW5kRG9jdW1lbnQNCjEgMCAwIHNldHJnYmNvbG9yDQowIDAgbW92ZXRvDQo0MCAwIGxpbmV0bw0KNDAgMjAgbGluZXRvDQowIDIwIGxpbmV0bw0KY2xvc2VwYXRoIGZpbGwNCiUlVHJhaWxlcg0KJSVCb3VuZGluZ0JveDogMCAwIDQwIDIwDQolJUVPRg0K",
+      "sha256": "7fd48f71dc79bb987b452ed73ad0064295f90a34d846af4ddd9911678e1b7036",
+      "expected": {
+        "width": 40,
+        "height": 20
+      },
+      "actual": {
+        "width": 1,
+        "height": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L40 0 L40 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "exact": false
+    },
+    {
+      "eol": "\n\r",
+      "base64": "JSFQUy1BZG9iZS0zLjAgRVBTRi0zLjAKDSUlQm91bmRpbmdCb3g6IChhdGVuZCkKDSUlRW5kQ29tbWVudHMKDSUlQmVnaW5Eb2N1bWVudDogY2hpbGQuZXBzCg0lIVBTLUFkb2JlLTMuMCBFUFNGLTMuMAoNJSVCb3VuZGluZ0JveDogMCAwIDEgMQoNJSVFbmRDb21tZW50cwoNJSVFT0YKDSUlRW5kRG9jdW1lbnQKDTEgMCAwIHNldHJnYmNvbG9yCg0wIDAgbW92ZXRvCg00MCAwIGxpbmV0bwoNNDAgMjAgbGluZXRvCg0wIDIwIGxpbmV0bwoNY2xvc2VwYXRoIGZpbGwKDSUlVHJhaWxlcgoNJSVCb3VuZGluZ0JveDogMCAwIDQwIDIwCg0lJUVPRgoN",
+      "sha256": "7710a1940fa5dae6b1a842b8912df97cc0b0a4d165dafbce57c14b3bdba9d773",
+      "expected": {
+        "width": 40,
+        "height": 20
+      },
+      "actual": {
+        "width": 1,
+        "height": 1,
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -1 1 1\" preserveAspectRatio=\"xMidYMid meet\"><g transform=\"scale(1,-1)\"><path d=\"M0 0 L40 0 L40 20 L0 20 Z\" fill=\"rgb(255,0,0)\" stroke=\"none\"/></g></svg>"
+      },
+      "exact": false
+    }
+  ],
+  "boundingBoxScope": "DSC (atend) parent BoundingBox must ignore nested document values. Four EOL variants currently choose child 1x1, crop parent40x20 artwork; spec pp28/33-34/68 provides structural reference, no independent raster/software result yet.",
+  "action": "Fix DSC scope and PDF identity in isolated worktree; do not discard imported vector artwork while isolating metadata. Prototype uncommitted, additional oracle/rendering/size/syntax/lifecycle validation and normal release required."
+}

@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "format": "RAR",
+  "extensions": [
+    "rar"
+  ],
+  "mime": [
+    "application/vnd.rar"
+  ],
+  "signatures": [
+    "526172211a0700",
+    "526172211a070100"
+  ],
+  "userShouldSee": "\u771f\u5b9e\u76ee\u5f55\uff0c\u70b9\u5f00\u6587\u4ef6\u6216\u5305\u5185\u94fe\u63a5\u540e\u663e\u793a\u5bf9\u5e94\u76ee\u6807\u6b63\u6587\uff1b\u6587\u4ef6\u5939\u94fe\u63a5\u5c55\u793a\u5b50\u76ee\u5f55\u6216\u660e\u786e\u7684\u7a7a\u76ee\u5f55\u3002",
+  "currentVisibleResult": "RAR4/5 \u5e38\u89c1\u6587\u4ef6\u3001\u5bc6\u7801\u4e0e\u5305\u5185\u94fe\u63a5\u5185\u5bb9\uff1b\u76ee\u5f55\u94fe\u63a5\u53ef\u4f5c\u4e3a\u8def\u5f84\u7684\u4e2d\u95f4\u90e8\u5206\u7ee7\u7eed\u6253\u5f00\u771f\u5b9e\u5b50\u6587\u4ef6\u3002RAR4 \u65e7\u5f0f\u975e UTF-8 \u6587\u4ef6\u540d\u4e0e\u94fe\u63a5\u76ee\u6807\u53ef\u7edf\u4e00\u5207\u6362 CP437\u3001GB18030\u3001Shift_JIS\u3001CP949 \u6216 Big5 \u663e\u793a\uff0c\u70b9\u5f00\u540e\u4ecd\u4ee5\u539f\u751f\u6210\u5458\u8eab\u4efd\u8bfb\u53d6\u771f\u5b9e\u6b63\u6587\u3002\u94fe\u63a5\u4e0d\u4f1a\u4ea4\u7ed9\u5bbf\u4e3b\u6587\u4ef6\u7cfb\u7edf\uff0c\u4e5f\u4e0d\u4ee5\u76ee\u6807\u8def\u5f84\u6587\u5b57\u5192\u5145\u6b63\u6587\u3002 v1.4.123\uff1a\u666e\u901a\u5b58\u50a8\u6587\u4ef6\u5907\u7528\u8def\u5f84\u6821\u9a8c\u5934\u90e8 CRC\u3001\u5b57\u6bb5\u8fb9\u754c\u53ca\u5b58\u5728\u7684\u96f6\u503c\u6570\u636e CRC\uff1b\u4ec5\u5185\u6838\u521d\u59cb\u5316\u5931\u8d25\u624d\u964d\u7ea7\uff0c\u6587\u4ef6\u635f\u574f\u76f4\u63a5\u62a5\u9519\u3002\u5206\u5377\u3001\u94fe\u63a5\u3001\u672a\u77e5\u5927\u5c0f\u6587\u4ef6\u9700\u539f\u751f\u5185\u6838\u5904\u7406\u3002",
+  "oracles": [
+    "RARLAB RAR5 format and redirection specification https://www.rarlab.com/technote.htm",
+    "macOS bsdtar/libarchive listing and target payload bytes",
+    "locked 7-Zip WASM technical listing and extracted link payload",
+    "Direct bundled UnRAR getFileList and extract separately; bsdtar extraction does not certify data CRC validation (2026-09-05 audit)"
+  ],
+  "capabilities": [
+    {
+      "id": "rar4-symbolic-link",
+      "axis": {
+        "version": "RAR4",
+        "feature": "Unix symlink payload",
+        "content": "HTML target",
+        "anomaly": "none"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u65e0\u540e\u7f00\u94fe\u63a5\u6253\u5f00\u76ee\u6807 HTML \u6b63\u6587\uff0c\u4e0d\u8fd4\u56de\u8def\u5f84\u5b57\u7b26\u4e32",
+      "evidence": [
+        "tests/rar-links.test.js",
+        "public compress_normal target 20111 bytes identical to bsdtar"
+      ]
+    },
+    {
+      "id": "rar5-symbolic-link",
+      "axis": {
+        "version": "RAR5",
+        "feature": "redirection record",
+        "content": "text target",
+        "anomaly": "none"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u7b26\u53f7\u94fe\u63a5\u6253\u5f00\u5305\u5185\u771f\u5b9e\u6587\u4ef6",
+      "evidence": [
+        "tests/rar-links.test.js",
+        "public symlink target 5 bytes identical to bsdtar"
+      ]
+    },
+    {
+      "id": "rar5-hard-and-copy-link",
+      "axis": {
+        "version": "RAR5",
+        "feature": "hard link and file copy",
+        "content": "text target",
+        "anomaly": "none"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u6309\u5305\u6839\u76f8\u5bf9\u8def\u5f84\u5b9a\u4f4d\u5b9e\u9645\u6210\u5458",
+      "evidence": [
+        "tests/rar-links.test.js",
+        "public hardlink target 5 bytes identical to bsdtar"
+      ]
+    },
+    {
+      "id": "directory-link",
+      "axis": {
+        "version": "RAR4/RAR5",
+        "feature": "directory links",
+        "content": "empty and populated folders",
+        "anomaly": "none"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u8fd4\u56de\u76ee\u5f55\u6761\u76ee\uff1b\u7a7a\u6587\u4ef6\u5939\u660e\u786e\u8bf4\u660e\uff0c\u4e0d\u663e\u793a\u7a7a\u767d\u6587\u4ef6",
+      "evidence": [
+        "tests/rar-links.test.js"
+      ]
+    },
+    {
+      "id": "link-safety",
+      "axis": {
+        "version": "RAR4/RAR5",
+        "feature": "internal resolution",
+        "content": "target bytes",
+        "anomaly": "traversal/cycle/ambiguous/CRC/truncated/oversize"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u62d2\u7edd\u4e0d\u5b89\u5168\u6216\u4e0d\u786e\u5b9a\u76ee\u6807\uff0c\u4fdd\u62a4\u5b9e\u9645\u76ee\u6807\u5927\u5c0f\u4e0a\u9650",
+      "evidence": [
+        "tests/rar-links.test.js"
+      ]
+    },
+    {
+      "id": "intermediate-directory-link",
+      "axis": {
+        "version": "RAR4/RAR5",
+        "feature": "link used as path component",
+        "content": "nested file",
+        "anomaly": "cycles, duplicates and unsafe siblings"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u76ee\u5f55\u94fe\u63a5\u4f5c\u4e3a\u8def\u5f84\u4e2d\u95f4\u90e8\u5206\u65f6\uff0c\u7ee7\u7eed\u89e3\u6790\u5230\u771f\u5b9e\u76ee\u5f55\u7684\u5b50\u6587\u4ef6",
+      "evidence": [
+        "tests/rar-links.test.js: RAR4/RAR5 direct, chained, cyclic, duplicate and unsafe-sibling cases",
+        "scripts/verify-rar-intermediate-links.js: macOS bsdtar/libarchive listing and target bytes",
+        "scripts/verify-wechat-simulator.js: actual WXML entry tap and visible target body"
+      ]
+    },
+    {
+      "id": "rar4-legacy-link-encoding",
+      "axis": {
+        "version": "RAR4",
+        "feature": "legacy raw member and symlink target encoding",
+        "content": "real linked HTML body",
+        "anomaly": "invalid UTF-8, malformed selected encoding and record-local length"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u6587\u4ef6\u540d\u4e0e\u94fe\u63a5\u76ee\u6807\u4f7f\u7528\u540c\u4e00\u663e\u793a\u7f16\u7801\uff0c\u624b\u52a8\u9009\u62e9\u540e\u663e\u793a\u6b63\u786e\u8def\u5f84\u5e76\u6253\u5f00\u771f\u5b9e\u76ee\u6807\u6b63\u6587",
+      "evidence": [
+        "tests/rar-links.test.js: Shift_JIS, GB18030, CP949, Big5, malformed length and decoder rejection",
+        "tests/page-state.test.js: page encoding switch, native identity isolation and real body",
+        "scripts/verify-wechat-simulator.js: actual WXML Shift_JIS button, decoded path and target HTML body"
+      ]
+    },
+    {
+      "id": "stored-integrity",
+      "axis": {
+        "version": "RAR4/RAR5",
+        "feature": "stored fallback and native failure routing",
+        "anomaly": "zero CRC, header CRC, truncated fields, extra records, high sizes",
+        "content": "byte-exact stored regular files"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u635f\u574f\u6587\u4ef6\u4e0d\u5199\u51fa\u6b63\u6587\uff0c\u5408\u6cd5\u96f6 CRC \u4e0e RAR5 \u672a\u58f0\u660e CRC \u4fdd\u6301\u539f\u59cb\u5b57\u8282\uff1b\u9519\u8bef\u540e\u80fd\u7ee7\u7eed\u6253\u5f00\u6b63\u5e38\u6587\u4ef6",
+      "evidence": [
+        "runs/2026-09-05-rar-crc.json",
+        "tests/rar-crc.test.js",
+        "scripts/verify-rar-checksums.js"
+      ]
+    }
+  ],
+  "publicSamples": [
+    {
+      "name": "test_read_format_rar_compress_normal.rar",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_rar_compress_normal.rar.uu",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "7d32e2ef511d0ade372345440838165df828197eff4d7816880dafde690cce03",
+      "expectedVisibleResult": "testlink resolves to LibarchiveAddingTest.html: 20111 target bytes identical to bsdtar"
+    },
+    {
+      "name": "test_read_format_rar5_symlink.rar",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_rar5_symlink.rar.uu",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "a7336968564786ea5ff106fff2f6ef8dfd8ad5ecca86fbd1db3d63ba42bcd29a",
+      "expectedVisibleResult": "symlink.txt -> file.txt, 5 bytes match bsdtar; dirlink -> empty dir"
+    },
+    {
+      "name": "test_read_format_rar5_hardlink.rar",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_rar5_hardlink.rar.uu",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "2a0494afad63dcf7a5522afd593bde0cb42f53744888397febf112c00853f3d0",
+      "expectedVisibleResult": "hardlink.txt -> file.txt, 5 bytes match bsdtar"
+    }
+  ],
+  "platformResults": {
+    "node": {
+      "status": "pass",
+      "testedAt": "2026-09-01",
+      "evidence": "756/756 tests pass; RAR4 Shift_JIS, GB18030, CP949 and Big5 raw member/link paths keep byte-exact target bodies, malformed lengths and mismatched decoders are rejected, while RAR5 remains strict UTF-8"
+    },
+    "wechat-devtools": {
+      "status": "pass",
+      "testedAt": "2026-09-01",
+      "evidence": "v1.4.80 full simulator: actual WXML Shift_JIS selector changes the visible RAR4 member/link path and tapping the link opens the real target HTML body; direct RAR4/RAR5, intermediate links, hard links, empty directory return and traversal refusal also pass with runtimeErrors=0"
+    },
+    "ios": {
+      "status": "pending",
+      "reason": "independent device run required"
+    },
+    "android": {
+      "status": "pending",
+      "reason": "independent device run required"
+    }
+  },
+  "limits": {
+    "linkTargetBytes": 4096,
+    "linkHops": 16,
+    "targetFileBytes": 20971520
+  },
+  "lastTestedAt": "2026-09-01",
+  "mutationQueue": [
+    {
+      "id": "stored-fallback-checksums",
+      "priority": "high",
+      "status": "fixed",
+      "evidence": "runs/2026-09-05-rar-crc.json",
+      "expectedVisibleResult": "\u635f\u574f\u7684\u5934\u90e8\u548c\u660e\u786e\u5b58\u5728\u4f46\u4e0d\u5339\u914d\u7684 CRC \u4e0d\u5f97\u6253\u5f00\uff1b\u6709\u6548\u96f6\u503c CRC \u4e0e RAR5 \u65e0 CRC \u5b57\u6bb5\u4ecd\u53ef\u8bfb\u53d6",
+      "release": "1.4.123"
+    },
+    {
+      "id": "intermediate-directory-link",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.79"
+    },
+    {
+      "id": "legacy-non-utf8-link-target",
+      "priority": "medium",
+      "status": "fixed",
+      "release": "1.4.80"
+    },
+    {
+      "id": "encrypted-header-redirection",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "split-volume-links",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "device-memory-and-paths",
+      "priority": "high",
+      "status": "pending"
+    }
+  ],
+  "checksumResults": {
+    "candidate": "1.4.123",
+    "status": "development-uploaded",
+    "evidence": "runs/2026-09-05-rar-crc.json",
+    "samples": 38,
+    "fullEntry": 66,
+    "relatedTests": 208,
+    "relatedFailures": 0,
+    "recovery": "pass: invalid then valid, late old-file failure ignored",
+    "node": "pass",
+    "production": "pass",
+    "chromeOracle": "pass",
+    "wechatDevtools": "not-run: prior compiler startup block",
+    "ios": "not-run",
+    "android": "not-run",
+    "nodeTests": 1164,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "failedWrites": 0,
+    "staleErrorBodies": 0,
+    "productPR": 241,
+    "productCI": "33996305513",
+    "mainCI": "33996636082",
+    "runAttempt": "1",
+    "receipt": "runs/2026-09-05-v1.4.123-wechat-upload.json",
+    "receiptBytes": 488,
+    "remotePeeledTagExact": true
+  }
+}

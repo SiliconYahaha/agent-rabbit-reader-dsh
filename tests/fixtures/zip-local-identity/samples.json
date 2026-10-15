@@ -1,0 +1,12 @@
+[
+  {"name":"archive_with_bytes_after_data.zip","sha256":"eef19843aac2e535a8c83596087fc48a3f29c5aecd2717db38b682e59c223d6c","entries":[
+    {"name":"test1.xml","size":610,"sha256":"506c377ae6116a19e020954828e03175d91a67c49e83e2fdd14b7ba65f64b19d"},
+    {"name":"test2.xml","size":82,"sha256":"6b335a8bb246771e6ad0e9eac1aea6e541eb74ac0ce8e465d9bad0425078756a"}]},
+  {"name":"archive_with_trailer.zip","sha256":"1aa26f92999ece92cb721a1ea0aad8abbcc446dce3c144ecd02f26fb04d38bf6","entries":[
+    {"name":"test1.xml","size":610,"sha256":"506c377ae6116a19e020954828e03175d91a67c49e83e2fdd14b7ba65f64b19d"},
+    {"name":"test2.xml","size":82,"sha256":"6b335a8bb246771e6ad0e9eac1aea6e541eb74ac0ce8e465d9bad0425078756a"}]},
+  {"name":"utf8-winzip-test.zip","sha256":"fd5aeb74f430739a93b21f107237f74f31de5a59c66729dab68281f47ed1ec61","entries":[
+    {"name":"ascii.txt","size":5,"sha256":"c543ece81605c7d202121c62080a0db4020fc2c75bfac35d101d7f3e93c93949"},
+    {"name":"Ölfässer.txt","size":13,"sha256":"315f5bdb76d078c43b8ac0064e4a0164612b1fce77c869345bfc94c75894edd3"},
+    {"name":"€_for_Dollar.txt","size":19,"sha256":"61c1bc32dcf7d0ce5d40cc250d0ee35453ffe9727f42f41a42fddc69b324f7f6"}]}
+]

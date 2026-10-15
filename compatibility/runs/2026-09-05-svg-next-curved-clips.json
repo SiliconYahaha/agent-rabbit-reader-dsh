@@ -1,0 +1,2476 @@
+{
+  "mode": "discovery",
+  "inputs": [
+    {
+      "name": "curved-clip-1",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A20 10 0 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-2",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A21 10.5 11 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-3",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A22 11 22 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-4",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A23 11.5 33 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-5",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A24 12 44 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-6",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A25 12.5 55 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-7",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A26 13 66 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-8",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A27 13.5 77 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-9",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A28 14 88 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-10",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A29 14.5 99 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-11",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A30 15 110 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-12",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A31 15.5 121 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-13",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A32 16 132 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-14",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A33 16.5 143 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-15",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A34 17 154 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-16",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A35 17.5 165 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-17",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A36 18 176 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-18",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A37 18.5 187 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-19",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A38 19 198 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-20",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A39 19.5 209 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-21",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A40 20 220 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-22",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A41 20.5 231 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-23",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A42 21 242 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-24",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A43 21.5 253 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-25",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A44 22 264 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-26",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A45 22.5 275 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-27",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A46 23 286 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-28",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A47 23.5 297 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-29",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A48 24 308 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-30",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A49 24.5 319 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-31",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A50 25 330 0 0 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    },
+    {
+      "name": "curved-clip-32",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"c\"><path d=\"M10 50A51 25.5 341 0 1 90 50L50 90Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>"
+    }
+  ],
+  "testedAt": "2026-09-04T23:25:31.798Z",
+  "cases": 32,
+  "exactNativeCases": 0,
+  "failures": [
+    "curved-clip-1",
+    "curved-clip-2",
+    "curved-clip-3",
+    "curved-clip-4",
+    "curved-clip-5",
+    "curved-clip-6",
+    "curved-clip-7",
+    "curved-clip-8",
+    "curved-clip-9",
+    "curved-clip-10",
+    "curved-clip-11",
+    "curved-clip-12",
+    "curved-clip-13",
+    "curved-clip-14",
+    "curved-clip-15",
+    "curved-clip-16",
+    "curved-clip-17",
+    "curved-clip-18",
+    "curved-clip-19",
+    "curved-clip-20",
+    "curved-clip-21",
+    "curved-clip-22",
+    "curved-clip-23",
+    "curved-clip-24",
+    "curved-clip-25",
+    "curved-clip-26",
+    "curved-clip-27",
+    "curved-clip-28",
+    "curved-clip-29",
+    "curved-clip-30",
+    "curved-clip-31",
+    "curved-clip-32"
+  ],
+  "results": [
+    {
+      "name": "curved-clip-1",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 4887,
+          "rgbaError": 10497,
+          "maxChannelError": 255,
+          "changedChannels": 318,
+          "fallbackError": 0,
+          "ink": 3896
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 4887,
+          "rgbaError": 10497,
+          "maxChannelError": 255,
+          "changedChannels": 318,
+          "fallbackError": 0,
+          "ink": 3896
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 4887,
+          "rgbaError": 10497,
+          "maxChannelError": 255,
+          "changedChannels": 318,
+          "fallbackError": 0,
+          "ink": 3896
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 4887,
+          "rgbaError": 10497,
+          "maxChannelError": 255,
+          "changedChannels": 318,
+          "fallbackError": 0,
+          "ink": 3896
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 4887,
+          "rgbaError": 10497,
+          "maxChannelError": 255,
+          "changedChannels": 318,
+          "fallbackError": 0,
+          "ink": 3896
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 4887,
+          "rgbaError": 10497,
+          "maxChannelError": 255,
+          "changedChannels": 318,
+          "fallbackError": 0,
+          "ink": 3896
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-2",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8397,
+          "rgbaError": 14007,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 19964
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 8397,
+          "rgbaError": 14007,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 19964
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 8397,
+          "rgbaError": 14007,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 19964
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 8397,
+          "rgbaError": 14007,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 19964
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 8397,
+          "rgbaError": 14007,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 19964
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 8397,
+          "rgbaError": 14007,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 19964
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-3",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6747,
+          "rgbaError": 13632,
+          "maxChannelError": 255,
+          "changedChannels": 427,
+          "fallbackError": 0,
+          "ink": 5135
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6747,
+          "rgbaError": 13632,
+          "maxChannelError": 255,
+          "changedChannels": 427,
+          "fallbackError": 0,
+          "ink": 5135
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6747,
+          "rgbaError": 13632,
+          "maxChannelError": 255,
+          "changedChannels": 427,
+          "fallbackError": 0,
+          "ink": 5135
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6747,
+          "rgbaError": 13632,
+          "maxChannelError": 255,
+          "changedChannels": 427,
+          "fallbackError": 0,
+          "ink": 5135
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6747,
+          "rgbaError": 13632,
+          "maxChannelError": 255,
+          "changedChannels": 427,
+          "fallbackError": 0,
+          "ink": 5135
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6747,
+          "rgbaError": 13632,
+          "maxChannelError": 255,
+          "changedChannels": 427,
+          "fallbackError": 0,
+          "ink": 5135
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-4",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8976,
+          "rgbaError": 19431,
+          "maxChannelError": 255,
+          "changedChannels": 660,
+          "fallbackError": 0,
+          "ink": 26447
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 8976,
+          "rgbaError": 19431,
+          "maxChannelError": 255,
+          "changedChannels": 660,
+          "fallbackError": 0,
+          "ink": 26447
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 8976,
+          "rgbaError": 19431,
+          "maxChannelError": 255,
+          "changedChannels": 660,
+          "fallbackError": 0,
+          "ink": 26447
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 8976,
+          "rgbaError": 19431,
+          "maxChannelError": 255,
+          "changedChannels": 660,
+          "fallbackError": 0,
+          "ink": 26447
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 8976,
+          "rgbaError": 19431,
+          "maxChannelError": 255,
+          "changedChannels": 660,
+          "fallbackError": 0,
+          "ink": 26447
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 8976,
+          "rgbaError": 19431,
+          "maxChannelError": 255,
+          "changedChannels": 660,
+          "fallbackError": 0,
+          "ink": 26447
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-5",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 9247,
+          "rgbaError": 19447,
+          "maxChannelError": 255,
+          "changedChannels": 514,
+          "fallbackError": 0,
+          "ink": 10022
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 9247,
+          "rgbaError": 19447,
+          "maxChannelError": 255,
+          "changedChannels": 514,
+          "fallbackError": 0,
+          "ink": 10022
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 9247,
+          "rgbaError": 19447,
+          "maxChannelError": 255,
+          "changedChannels": 514,
+          "fallbackError": 0,
+          "ink": 10022
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 9247,
+          "rgbaError": 19447,
+          "maxChannelError": 255,
+          "changedChannels": 514,
+          "fallbackError": 0,
+          "ink": 10022
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 9247,
+          "rgbaError": 19447,
+          "maxChannelError": 255,
+          "changedChannels": 514,
+          "fallbackError": 0,
+          "ink": 10022
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 9247,
+          "rgbaError": 19447,
+          "maxChannelError": 255,
+          "changedChannels": 514,
+          "fallbackError": 0,
+          "ink": 10022
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-6",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6470,
+          "rgbaError": 13100,
+          "maxChannelError": 255,
+          "changedChannels": 380,
+          "fallbackError": 0,
+          "ink": 33623
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6470,
+          "rgbaError": 13100,
+          "maxChannelError": 255,
+          "changedChannels": 380,
+          "fallbackError": 0,
+          "ink": 33623
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6470,
+          "rgbaError": 13100,
+          "maxChannelError": 255,
+          "changedChannels": 380,
+          "fallbackError": 0,
+          "ink": 33623
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6470,
+          "rgbaError": 13100,
+          "maxChannelError": 255,
+          "changedChannels": 380,
+          "fallbackError": 0,
+          "ink": 33623
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6470,
+          "rgbaError": 13100,
+          "maxChannelError": 255,
+          "changedChannels": 380,
+          "fallbackError": 0,
+          "ink": 33623
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6470,
+          "rgbaError": 13100,
+          "maxChannelError": 255,
+          "changedChannels": 380,
+          "fallbackError": 0,
+          "ink": 33623
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-7",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 5900,
+          "rgbaError": 13805,
+          "maxChannelError": 255,
+          "changedChannels": 372,
+          "fallbackError": 0,
+          "ink": 13577
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5900,
+          "rgbaError": 13805,
+          "maxChannelError": 255,
+          "changedChannels": 372,
+          "fallbackError": 0,
+          "ink": 13577
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 5900,
+          "rgbaError": 13805,
+          "maxChannelError": 255,
+          "changedChannels": 372,
+          "fallbackError": 0,
+          "ink": 13577
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 5900,
+          "rgbaError": 13805,
+          "maxChannelError": 255,
+          "changedChannels": 372,
+          "fallbackError": 0,
+          "ink": 13577
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5900,
+          "rgbaError": 13805,
+          "maxChannelError": 255,
+          "changedChannels": 372,
+          "fallbackError": 0,
+          "ink": 13577
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5900,
+          "rgbaError": 13805,
+          "maxChannelError": 255,
+          "changedChannels": 372,
+          "fallbackError": 0,
+          "ink": 13577
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-8",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 5764,
+          "rgbaError": 11629,
+          "maxChannelError": 255,
+          "changedChannels": 525,
+          "fallbackError": 0,
+          "ink": 35059
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5764,
+          "rgbaError": 11629,
+          "maxChannelError": 255,
+          "changedChannels": 525,
+          "fallbackError": 0,
+          "ink": 35059
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 5764,
+          "rgbaError": 11629,
+          "maxChannelError": 255,
+          "changedChannels": 525,
+          "fallbackError": 0,
+          "ink": 35059
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 5764,
+          "rgbaError": 11629,
+          "maxChannelError": 255,
+          "changedChannels": 525,
+          "fallbackError": 0,
+          "ink": 35059
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5764,
+          "rgbaError": 11629,
+          "maxChannelError": 255,
+          "changedChannels": 525,
+          "fallbackError": 0,
+          "ink": 35059
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5764,
+          "rgbaError": 11629,
+          "maxChannelError": 255,
+          "changedChannels": 525,
+          "fallbackError": 0,
+          "ink": 35059
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-9",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 5616,
+          "rgbaError": 11991,
+          "maxChannelError": 255,
+          "changedChannels": 315,
+          "fallbackError": 0,
+          "ink": 14191
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5616,
+          "rgbaError": 11991,
+          "maxChannelError": 255,
+          "changedChannels": 315,
+          "fallbackError": 0,
+          "ink": 14191
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 5616,
+          "rgbaError": 11991,
+          "maxChannelError": 255,
+          "changedChannels": 315,
+          "fallbackError": 0,
+          "ink": 14191
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 5616,
+          "rgbaError": 11991,
+          "maxChannelError": 255,
+          "changedChannels": 315,
+          "fallbackError": 0,
+          "ink": 14191
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5616,
+          "rgbaError": 11991,
+          "maxChannelError": 255,
+          "changedChannels": 315,
+          "fallbackError": 0,
+          "ink": 14191
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5616,
+          "rgbaError": 11991,
+          "maxChannelError": 255,
+          "changedChannels": 315,
+          "fallbackError": 0,
+          "ink": 14191
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-10",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6704,
+          "rgbaError": 11294,
+          "maxChannelError": 255,
+          "changedChannels": 502,
+          "fallbackError": 0,
+          "ink": 35139
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6704,
+          "rgbaError": 11294,
+          "maxChannelError": 255,
+          "changedChannels": 502,
+          "fallbackError": 0,
+          "ink": 35139
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6704,
+          "rgbaError": 11294,
+          "maxChannelError": 255,
+          "changedChannels": 502,
+          "fallbackError": 0,
+          "ink": 35139
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6704,
+          "rgbaError": 11294,
+          "maxChannelError": 255,
+          "changedChannels": 502,
+          "fallbackError": 0,
+          "ink": 35139
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6704,
+          "rgbaError": 11294,
+          "maxChannelError": 255,
+          "changedChannels": 502,
+          "fallbackError": 0,
+          "ink": 35139
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6704,
+          "rgbaError": 11294,
+          "maxChannelError": 255,
+          "changedChannels": 502,
+          "fallbackError": 0,
+          "ink": 35139
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-11",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6062,
+          "rgbaError": 11672,
+          "maxChannelError": 255,
+          "changedChannels": 355,
+          "fallbackError": 0,
+          "ink": 13784
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6062,
+          "rgbaError": 11672,
+          "maxChannelError": 255,
+          "changedChannels": 355,
+          "fallbackError": 0,
+          "ink": 13784
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6062,
+          "rgbaError": 11672,
+          "maxChannelError": 255,
+          "changedChannels": 355,
+          "fallbackError": 0,
+          "ink": 13784
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6062,
+          "rgbaError": 11672,
+          "maxChannelError": 255,
+          "changedChannels": 355,
+          "fallbackError": 0,
+          "ink": 13784
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6062,
+          "rgbaError": 11672,
+          "maxChannelError": 255,
+          "changedChannels": 355,
+          "fallbackError": 0,
+          "ink": 13784
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6062,
+          "rgbaError": 11672,
+          "maxChannelError": 255,
+          "changedChannels": 355,
+          "fallbackError": 0,
+          "ink": 13784
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-12",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 5262,
+          "rgbaError": 10617,
+          "maxChannelError": 255,
+          "changedChannels": 343,
+          "fallbackError": 0,
+          "ink": 34082
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5262,
+          "rgbaError": 10617,
+          "maxChannelError": 255,
+          "changedChannels": 343,
+          "fallbackError": 0,
+          "ink": 34082
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 5262,
+          "rgbaError": 10617,
+          "maxChannelError": 255,
+          "changedChannels": 343,
+          "fallbackError": 0,
+          "ink": 34082
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 5262,
+          "rgbaError": 10617,
+          "maxChannelError": 255,
+          "changedChannels": 343,
+          "fallbackError": 0,
+          "ink": 34082
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5262,
+          "rgbaError": 10617,
+          "maxChannelError": 255,
+          "changedChannels": 343,
+          "fallbackError": 0,
+          "ink": 34082
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5262,
+          "rgbaError": 10617,
+          "maxChannelError": 255,
+          "changedChannels": 343,
+          "fallbackError": 0,
+          "ink": 34082
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-13",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 9175,
+          "rgbaError": 19375,
+          "maxChannelError": 255,
+          "changedChannels": 441,
+          "fallbackError": 0,
+          "ink": 11312
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 9175,
+          "rgbaError": 19375,
+          "maxChannelError": 255,
+          "changedChannels": 441,
+          "fallbackError": 0,
+          "ink": 11312
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 9175,
+          "rgbaError": 19375,
+          "maxChannelError": 255,
+          "changedChannels": 441,
+          "fallbackError": 0,
+          "ink": 11312
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 9175,
+          "rgbaError": 19375,
+          "maxChannelError": 255,
+          "changedChannels": 441,
+          "fallbackError": 0,
+          "ink": 11312
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 9175,
+          "rgbaError": 19375,
+          "maxChannelError": 255,
+          "changedChannels": 441,
+          "fallbackError": 0,
+          "ink": 11312
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 9175,
+          "rgbaError": 19375,
+          "maxChannelError": 255,
+          "changedChannels": 441,
+          "fallbackError": 0,
+          "ink": 11312
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-14",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 7962,
+          "rgbaError": 18162,
+          "maxChannelError": 255,
+          "changedChannels": 484,
+          "fallbackError": 0,
+          "ink": 28046
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 7962,
+          "rgbaError": 18162,
+          "maxChannelError": 255,
+          "changedChannels": 484,
+          "fallbackError": 0,
+          "ink": 28046
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 7962,
+          "rgbaError": 18162,
+          "maxChannelError": 255,
+          "changedChannels": 484,
+          "fallbackError": 0,
+          "ink": 28046
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 7962,
+          "rgbaError": 18162,
+          "maxChannelError": 255,
+          "changedChannels": 484,
+          "fallbackError": 0,
+          "ink": 28046
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 7962,
+          "rgbaError": 18162,
+          "maxChannelError": 255,
+          "changedChannels": 484,
+          "fallbackError": 0,
+          "ink": 28046
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 7962,
+          "rgbaError": 18162,
+          "maxChannelError": 255,
+          "changedChannels": 484,
+          "fallbackError": 0,
+          "ink": 28046
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-15",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6813,
+          "rgbaError": 12933,
+          "maxChannelError": 255,
+          "changedChannels": 428,
+          "fallbackError": 0,
+          "ink": 5678
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6813,
+          "rgbaError": 12933,
+          "maxChannelError": 255,
+          "changedChannels": 428,
+          "fallbackError": 0,
+          "ink": 5678
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6813,
+          "rgbaError": 12933,
+          "maxChannelError": 255,
+          "changedChannels": 428,
+          "fallbackError": 0,
+          "ink": 5678
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6813,
+          "rgbaError": 12933,
+          "maxChannelError": 255,
+          "changedChannels": 428,
+          "fallbackError": 0,
+          "ink": 5678
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6813,
+          "rgbaError": 12933,
+          "maxChannelError": 255,
+          "changedChannels": 428,
+          "fallbackError": 0,
+          "ink": 5678
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6813,
+          "rgbaError": 12933,
+          "maxChannelError": 255,
+          "changedChannels": 428,
+          "fallbackError": 0,
+          "ink": 5678
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-16",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6345,
+          "rgbaError": 11445,
+          "maxChannelError": 255,
+          "changedChannels": 543,
+          "fallbackError": 0,
+          "ink": 20746
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6345,
+          "rgbaError": 11445,
+          "maxChannelError": 255,
+          "changedChannels": 543,
+          "fallbackError": 0,
+          "ink": 20746
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6345,
+          "rgbaError": 11445,
+          "maxChannelError": 255,
+          "changedChannels": 543,
+          "fallbackError": 0,
+          "ink": 20746
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6345,
+          "rgbaError": 11445,
+          "maxChannelError": 255,
+          "changedChannels": 543,
+          "fallbackError": 0,
+          "ink": 20746
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6345,
+          "rgbaError": 11445,
+          "maxChannelError": 255,
+          "changedChannels": 543,
+          "fallbackError": 0,
+          "ink": 20746
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6345,
+          "rgbaError": 11445,
+          "maxChannelError": 255,
+          "changedChannels": 543,
+          "fallbackError": 0,
+          "ink": 20746
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-17",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 4582,
+          "rgbaError": 10957,
+          "maxChannelError": 255,
+          "changedChannels": 331,
+          "fallbackError": 0,
+          "ink": 3944
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 4582,
+          "rgbaError": 10957,
+          "maxChannelError": 255,
+          "changedChannels": 331,
+          "fallbackError": 0,
+          "ink": 3944
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 4582,
+          "rgbaError": 10957,
+          "maxChannelError": 255,
+          "changedChannels": 331,
+          "fallbackError": 0,
+          "ink": 3944
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 4582,
+          "rgbaError": 10957,
+          "maxChannelError": 255,
+          "changedChannels": 331,
+          "fallbackError": 0,
+          "ink": 3944
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 4582,
+          "rgbaError": 10957,
+          "maxChannelError": 255,
+          "changedChannels": 331,
+          "fallbackError": 0,
+          "ink": 3944
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 4582,
+          "rgbaError": 10957,
+          "maxChannelError": 255,
+          "changedChannels": 331,
+          "fallbackError": 0,
+          "ink": 3944
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-18",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 5516,
+          "rgbaError": 12146,
+          "maxChannelError": 255,
+          "changedChannels": 326,
+          "fallbackError": 0,
+          "ink": 19444
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5516,
+          "rgbaError": 12146,
+          "maxChannelError": 255,
+          "changedChannels": 326,
+          "fallbackError": 0,
+          "ink": 19444
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 5516,
+          "rgbaError": 12146,
+          "maxChannelError": 255,
+          "changedChannels": 326,
+          "fallbackError": 0,
+          "ink": 19444
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 5516,
+          "rgbaError": 12146,
+          "maxChannelError": 255,
+          "changedChannels": 326,
+          "fallbackError": 0,
+          "ink": 19444
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5516,
+          "rgbaError": 12146,
+          "maxChannelError": 255,
+          "changedChannels": 326,
+          "fallbackError": 0,
+          "ink": 19444
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5516,
+          "rgbaError": 12146,
+          "maxChannelError": 255,
+          "changedChannels": 326,
+          "fallbackError": 0,
+          "ink": 19444
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-19",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6103,
+          "rgbaError": 11713,
+          "maxChannelError": 255,
+          "changedChannels": 377,
+          "fallbackError": 0,
+          "ink": 4707
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6103,
+          "rgbaError": 11713,
+          "maxChannelError": 255,
+          "changedChannels": 377,
+          "fallbackError": 0,
+          "ink": 4707
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6103,
+          "rgbaError": 11713,
+          "maxChannelError": 255,
+          "changedChannels": 377,
+          "fallbackError": 0,
+          "ink": 4707
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6103,
+          "rgbaError": 11713,
+          "maxChannelError": 255,
+          "changedChannels": 377,
+          "fallbackError": 0,
+          "ink": 4707
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6103,
+          "rgbaError": 11713,
+          "maxChannelError": 255,
+          "changedChannels": 377,
+          "fallbackError": 0,
+          "ink": 4707
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6103,
+          "rgbaError": 11713,
+          "maxChannelError": 255,
+          "changedChannels": 377,
+          "fallbackError": 0,
+          "ink": 4707
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-20",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 10270,
+          "rgbaError": 17920,
+          "maxChannelError": 255,
+          "changedChannels": 628,
+          "fallbackError": 0,
+          "ink": 24904
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 10270,
+          "rgbaError": 17920,
+          "maxChannelError": 255,
+          "changedChannels": 628,
+          "fallbackError": 0,
+          "ink": 24904
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 10270,
+          "rgbaError": 17920,
+          "maxChannelError": 255,
+          "changedChannels": 628,
+          "fallbackError": 0,
+          "ink": 24904
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 10270,
+          "rgbaError": 17920,
+          "maxChannelError": 255,
+          "changedChannels": 628,
+          "fallbackError": 0,
+          "ink": 24904
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 10270,
+          "rgbaError": 17920,
+          "maxChannelError": 255,
+          "changedChannels": 628,
+          "fallbackError": 0,
+          "ink": 24904
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 10270,
+          "rgbaError": 17920,
+          "maxChannelError": 255,
+          "changedChannels": 628,
+          "fallbackError": 0,
+          "ink": 24904
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-21",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8524,
+          "rgbaError": 19234,
+          "maxChannelError": 255,
+          "changedChannels": 515,
+          "fallbackError": 0,
+          "ink": 8613
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 8524,
+          "rgbaError": 19234,
+          "maxChannelError": 255,
+          "changedChannels": 515,
+          "fallbackError": 0,
+          "ink": 8613
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 8524,
+          "rgbaError": 19234,
+          "maxChannelError": 255,
+          "changedChannels": 515,
+          "fallbackError": 0,
+          "ink": 8613
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 8524,
+          "rgbaError": 19234,
+          "maxChannelError": 255,
+          "changedChannels": 515,
+          "fallbackError": 0,
+          "ink": 8613
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 8524,
+          "rgbaError": 19234,
+          "maxChannelError": 255,
+          "changedChannels": 515,
+          "fallbackError": 0,
+          "ink": 8613
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 8524,
+          "rgbaError": 19234,
+          "maxChannelError": 255,
+          "changedChannels": 515,
+          "fallbackError": 0,
+          "ink": 8613
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-22",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 9329,
+          "rgbaError": 19019,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 32990
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 9329,
+          "rgbaError": 19019,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 32990
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 9329,
+          "rgbaError": 19019,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 32990
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 9329,
+          "rgbaError": 19019,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 32990
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 9329,
+          "rgbaError": 19019,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 32990
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 9329,
+          "rgbaError": 19019,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 32990
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-23",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 7716,
+          "rgbaError": 16131,
+          "maxChannelError": 255,
+          "changedChannels": 381,
+          "fallbackError": 0,
+          "ink": 13302
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 7716,
+          "rgbaError": 16131,
+          "maxChannelError": 255,
+          "changedChannels": 381,
+          "fallbackError": 0,
+          "ink": 13302
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 7716,
+          "rgbaError": 16131,
+          "maxChannelError": 255,
+          "changedChannels": 381,
+          "fallbackError": 0,
+          "ink": 13302
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 7716,
+          "rgbaError": 16131,
+          "maxChannelError": 255,
+          "changedChannels": 381,
+          "fallbackError": 0,
+          "ink": 13302
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 7716,
+          "rgbaError": 16131,
+          "maxChannelError": 255,
+          "changedChannels": 381,
+          "fallbackError": 0,
+          "ink": 13302
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 7716,
+          "rgbaError": 16131,
+          "maxChannelError": 255,
+          "changedChannels": 381,
+          "fallbackError": 0,
+          "ink": 13302
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-24",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6379,
+          "rgbaError": 12499,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 34936
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6379,
+          "rgbaError": 12499,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 34936
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6379,
+          "rgbaError": 12499,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 34936
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6379,
+          "rgbaError": 12499,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 34936
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6379,
+          "rgbaError": 12499,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 34936
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6379,
+          "rgbaError": 12499,
+          "maxChannelError": 255,
+          "changedChannels": 531,
+          "fallbackError": 0,
+          "ink": 34936
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-25",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 4547,
+          "rgbaError": 8372,
+          "maxChannelError": 255,
+          "changedChannels": 292,
+          "fallbackError": 0,
+          "ink": 14153
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 4547,
+          "rgbaError": 8372,
+          "maxChannelError": 255,
+          "changedChannels": 292,
+          "fallbackError": 0,
+          "ink": 14153
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 4547,
+          "rgbaError": 8372,
+          "maxChannelError": 255,
+          "changedChannels": 292,
+          "fallbackError": 0,
+          "ink": 14153
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 4547,
+          "rgbaError": 8372,
+          "maxChannelError": 255,
+          "changedChannels": 292,
+          "fallbackError": 0,
+          "ink": 14153
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 4547,
+          "rgbaError": 8372,
+          "maxChannelError": 255,
+          "changedChannels": 292,
+          "fallbackError": 0,
+          "ink": 14153
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 4547,
+          "rgbaError": 8372,
+          "maxChannelError": 255,
+          "changedChannels": 292,
+          "fallbackError": 0,
+          "ink": 14153
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-26",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6373,
+          "rgbaError": 10198,
+          "maxChannelError": 255,
+          "changedChannels": 509,
+          "fallbackError": 0,
+          "ink": 35202
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6373,
+          "rgbaError": 10198,
+          "maxChannelError": 255,
+          "changedChannels": 509,
+          "fallbackError": 0,
+          "ink": 35202
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6373,
+          "rgbaError": 10198,
+          "maxChannelError": 255,
+          "changedChannels": 509,
+          "fallbackError": 0,
+          "ink": 35202
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6373,
+          "rgbaError": 10198,
+          "maxChannelError": 255,
+          "changedChannels": 509,
+          "fallbackError": 0,
+          "ink": 35202
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6373,
+          "rgbaError": 10198,
+          "maxChannelError": 255,
+          "changedChannels": 509,
+          "fallbackError": 0,
+          "ink": 35202
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6373,
+          "rgbaError": 10198,
+          "maxChannelError": 255,
+          "changedChannels": 509,
+          "fallbackError": 0,
+          "ink": 35202
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-27",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6251,
+          "rgbaError": 12116,
+          "maxChannelError": 255,
+          "changedChannels": 352,
+          "fallbackError": 0,
+          "ink": 13945
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6251,
+          "rgbaError": 12116,
+          "maxChannelError": 255,
+          "changedChannels": 352,
+          "fallbackError": 0,
+          "ink": 13945
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6251,
+          "rgbaError": 12116,
+          "maxChannelError": 255,
+          "changedChannels": 352,
+          "fallbackError": 0,
+          "ink": 13945
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6251,
+          "rgbaError": 12116,
+          "maxChannelError": 255,
+          "changedChannels": 352,
+          "fallbackError": 0,
+          "ink": 13945
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6251,
+          "rgbaError": 12116,
+          "maxChannelError": 255,
+          "changedChannels": 352,
+          "fallbackError": 0,
+          "ink": 13945
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6251,
+          "rgbaError": 12116,
+          "maxChannelError": 255,
+          "changedChannels": 352,
+          "fallbackError": 0,
+          "ink": 13945
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-28",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6840,
+          "rgbaError": 12195,
+          "maxChannelError": 255,
+          "changedChannels": 346,
+          "fallbackError": 0,
+          "ink": 34429
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6840,
+          "rgbaError": 12195,
+          "maxChannelError": 255,
+          "changedChannels": 346,
+          "fallbackError": 0,
+          "ink": 34429
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6840,
+          "rgbaError": 12195,
+          "maxChannelError": 255,
+          "changedChannels": 346,
+          "fallbackError": 0,
+          "ink": 34429
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6840,
+          "rgbaError": 12195,
+          "maxChannelError": 255,
+          "changedChannels": 346,
+          "fallbackError": 0,
+          "ink": 34429
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6840,
+          "rgbaError": 12195,
+          "maxChannelError": 255,
+          "changedChannels": 346,
+          "fallbackError": 0,
+          "ink": 34429
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6840,
+          "rgbaError": 12195,
+          "maxChannelError": 255,
+          "changedChannels": 346,
+          "fallbackError": 0,
+          "ink": 34429
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-29",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 10572,
+          "rgbaError": 20517,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 12127
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 10572,
+          "rgbaError": 20517,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 12127
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 10572,
+          "rgbaError": 20517,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 12127
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 10572,
+          "rgbaError": 20517,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 12127
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 10572,
+          "rgbaError": 20517,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 12127
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 10572,
+          "rgbaError": 20517,
+          "maxChannelError": 255,
+          "changedChannels": 424,
+          "fallbackError": 0,
+          "ink": 12127
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-30",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 12863,
+          "rgbaError": 21788,
+          "maxChannelError": 255,
+          "changedChannels": 701,
+          "fallbackError": 0,
+          "ink": 29754
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 12863,
+          "rgbaError": 21788,
+          "maxChannelError": 255,
+          "changedChannels": 701,
+          "fallbackError": 0,
+          "ink": 29754
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 12863,
+          "rgbaError": 21788,
+          "maxChannelError": 255,
+          "changedChannels": 701,
+          "fallbackError": 0,
+          "ink": 29754
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 12863,
+          "rgbaError": 21788,
+          "maxChannelError": 255,
+          "changedChannels": 701,
+          "fallbackError": 0,
+          "ink": 29754
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 12863,
+          "rgbaError": 21788,
+          "maxChannelError": 255,
+          "changedChannels": 701,
+          "fallbackError": 0,
+          "ink": 29754
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 12863,
+          "rgbaError": 21788,
+          "maxChannelError": 255,
+          "changedChannels": 701,
+          "fallbackError": 0,
+          "ink": 29754
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-31",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 6437,
+          "rgbaError": 13322,
+          "maxChannelError": 255,
+          "changedChannels": 449,
+          "fallbackError": 0,
+          "ink": 6321
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6437,
+          "rgbaError": 13322,
+          "maxChannelError": 255,
+          "changedChannels": 449,
+          "fallbackError": 0,
+          "ink": 6321
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 6437,
+          "rgbaError": 13322,
+          "maxChannelError": 255,
+          "changedChannels": 449,
+          "fallbackError": 0,
+          "ink": 6321
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 6437,
+          "rgbaError": 13322,
+          "maxChannelError": 255,
+          "changedChannels": 449,
+          "fallbackError": 0,
+          "ink": 6321
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6437,
+          "rgbaError": 13322,
+          "maxChannelError": 255,
+          "changedChannels": 449,
+          "fallbackError": 0,
+          "ink": 6321
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 6437,
+          "rgbaError": 13322,
+          "maxChannelError": 255,
+          "changedChannels": 449,
+          "fallbackError": 0,
+          "ink": 6321
+        }
+      ]
+    },
+    {
+      "name": "curved-clip-32",
+      "reference": "native SVG image",
+      "variants": [
+        {
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 5461,
+          "rgbaError": 10561,
+          "maxChannelError": 255,
+          "changedChannels": 306,
+          "fallbackError": 0,
+          "ink": 17046
+        },
+        {
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5461,
+          "rgbaError": 10561,
+          "maxChannelError": 255,
+          "changedChannels": 306,
+          "fallbackError": 0,
+          "ink": 17046
+        },
+        {
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 1,
+          "alphaError": 5461,
+          "rgbaError": 10561,
+          "maxChannelError": 255,
+          "changedChannels": 306,
+          "fallbackError": 0,
+          "ink": 17046
+        },
+        {
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 2,
+          "alphaError": 5461,
+          "rgbaError": 10561,
+          "maxChannelError": 255,
+          "changedChannels": 306,
+          "fallbackError": 0,
+          "ink": 17046
+        },
+        {
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5461,
+          "rgbaError": 10561,
+          "maxChannelError": 255,
+          "changedChannels": 306,
+          "fallbackError": 0,
+          "ink": 17046
+        },
+        {
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 3,
+          "alphaError": 5461,
+          "rgbaError": 10561,
+          "maxChannelError": 255,
+          "changedChannels": 306,
+          "fallbackError": 0,
+          "ink": 17046
+        }
+      ]
+    }
+  ]
+}

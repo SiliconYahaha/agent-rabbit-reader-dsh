@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "format": "Markdown",
+  "extensions": [
+    "md",
+    "markdown"
+  ],
+  "mime": [
+    "text/markdown"
+  ],
+  "signatures": [
+    "Plain text; extension/MIME identifies Markdown"
+  ],
+  "userShouldSee": "\u5143\u6570\u636e\u4ee5\u5916\u7684\u5b9e\u9645\u6b63\u6587\u3001\u6807\u9898\u3001\u5206\u9694\u7ebf\u4e0e\u4ee3\u7801\u5b8c\u6574\u5448\u73b0\uff1b\u65e0\u5408\u6cd5\u95ed\u5408\u5757\u65f6\u4fdd\u7559\u5168\u6587\u3002",
+  "currentVisibleResult": "v1.4.139 \u5fae\u4fe1\u5f00\u53d1\u7248\u5df2\u4e0a\u4f20\uff0c\u4fdd\u7559\u5bbd\u8868\u683c\u6a2a\u5411\u6eda\u52a8\uff0c\u5e76\u4fee\u590d\u5d4c\u5957\u5217\u8868\u3001\u5f15\u7528\u4e2d\u7684\u4ee3\u7801\u5757\u540e\u6b63\u6587\u5f52\u5c5e\u53ca Setext \u6807\u9898\u8fb9\u754c\uff1a768 \u4e2a\u53cc\u53c2\u8003\u4e00\u81f4\u6837\u672c\u3001768 \u6b21\u9605\u8bfb\u5165\u53e3\u3001166 \u4e2a Chrome \u89c6\u56fe\u548c 9 \u4e2a\u5fae\u4fe1\u6a21\u62df\u5668\u5b9e\u9645\u89c6\u56fe\u901a\u8fc7\uff1b\u5b8c\u6574\u53d1\u5e03\u68c0\u67e5\u901a\u8fc7\u3002\u771f\u673a\u672a\u9a8c\u8bc1\u3002",
+  "oracles": [
+    "Pinned Jekyll Document regexp 74d751339d3e534aa51d5d7b0640e9bd743509e4 executed in Ruby; scripts/markdown-frontmatter-oracle.rb",
+    "Native Chrome innerText, headings, rules and preformatted code compared with independent delimiter output rendered by Marked",
+    "markdown-it 15.0.1 + markdown-it-footnote 4.0.0; Python-Markdown 3.10.3; explicit retained oracle errors and dialect differences",
+    "CommonMark 0.31.2 official examples: 62 code cases, 60 exact, 2 retained container failures",
+    "commonmark.js0.31.2 primary; markdown-it15.0.1 secondary; original batch42 differences corrected to36 reader defects and6 oracle disagreements.",
+    "v1.4.136: commonmark.js 0.31.2; markdown-it 15.0.1; cmarkgfm 2025.10.22; 1572 original cases with 33 retained differences; Chrome original and same-whitespace geometry separately recorded."
+  ],
+  "capabilities": [
+    {
+      "id": "whole-line-delimiters",
+      "axis": {
+        "version": "Jekyll-style front matter; simple key/value metadata",
+        "feature": "closing and opening boundary recognition",
+        "complexity": "76 deterministic newline/BOM/EOF/Unicode/near-marker cases",
+        "platform": "Node and Chrome; WeChat and physical devices not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u4f2a\u7ed3\u675f\u6807\u8bb0\u4e0d\u80fd\u541e\u6389\u6b63\u6587\uff1b\u5408\u6cd5\u65e0\u7f29\u8fdb\u72ec\u5360\u884c\u7ed3\u675f\u5757\u3002",
+      "evidence": [
+        "tests/markdown-frontmatter.test.js",
+        "runs/2026-09-05-markdown-frontmatter.json"
+      ]
+    },
+    {
+      "id": "empty-and-dot-delimiters",
+      "axis": {
+        "version": "Jekyll-style front matter; simple key/value metadata",
+        "feature": "empty metadata and YAML document-end marker",
+        "complexity": "empty blocks followed by body separators, EOF, CR/LF combinations",
+        "platform": "Node and Chrome; WeChat and physical devices not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u7a7a\u5757\u540e\u6b63\u6587\u4e0d\u4f1a\u88ab\u5403\u5230\u4e0b\u4e00\u5206\u9694\u7ebf\uff0c... \u6b63\u786e\u7ed3\u675f\u5143\u6570\u636e\u3002",
+      "evidence": [
+        "tests/markdown-frontmatter.test.js"
+      ]
+    },
+    {
+      "id": "file-open-recovery",
+      "axis": {
+        "version": "Jekyll-style front matter; simple key/value metadata",
+        "feature": "async metadata/content ownership and read recovery",
+        "complexity": "old Markdown promise, new file, failed read and recovery on one host",
+        "platform": "Node and Chrome; WeChat and physical devices not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u65e7\u6587\u4ef6\u4e0d\u5f97\u66f4\u65b0\u65b0\u6587\u4ef6\u7684\u6b63\u6587\u6216\u5143\u6570\u636e\uff1b\u5931\u8d25\u540e\u4e0b\u4e00\u6587\u4ef6\u53ef\u6b63\u5e38\u9605\u8bfb\u3002",
+      "evidence": [
+        "tests/markdown-frontmatter.test.js"
+      ]
+    },
+    {
+      "id": "footnote-blocks-and-reachable-anchors",
+      "axis": {
+        "version": "Pandoc-style footnotes / 1.4.125",
+        "feature": "block boundaries, nested content and per-reference return targets",
+        "complexity": "114 deterministic Markdown cases, 196 actual host taps, cycles and limits",
+        "platform": "Node and Chrome; WeChat/physical not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u6b63\u6587\u4e0d\u4f1a\u79fb\u5165\u811a\u6ce8\uff1b\u811a\u6ce8\u4fdd\u7559\u5757\u7ed3\u6784\uff0c\u53ef\u8df3\u81f3\u6bcf\u4e2a\u53ef\u8fbe\u6ce8\u91ca\u5e76\u8fd4\u56de\u5404\u6b21\u5f15\u7528\u3002",
+      "evidence": [
+        "tests/markdown-footnotes.test.js",
+        "scripts/verify-markdown-footnotes.js",
+        "runs/2026-09-06-markdown-footnotes.json"
+      ]
+    },
+    {
+      "id": "quote-physical-tab-columns",
+      "axis": {
+        "version": "CommonMark0.31.2 / v1.4.129",
+        "feature": "quote marker columns, fenced code indentation and literal HTML blocks",
+        "complexity": "526 deterministic contracts; nested quote markers, tabs across boundaries, 508 host opens and recovery",
+        "platform": "Node and native Chrome; WeChat/devices not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5f15\u7528\u5c42\u7ea7\u3001\u4ee3\u7801\u7f29\u8fdb\u548c\u6b63\u6587\u5236\u8868\u7b26\u4fdd\u6301\u6b63\u786e\uff1b\u4e0d\u80fd\u5c06\u4ee3\u7801\u6216HTML\u539f\u6837\u5757\u5185\u7684\u7a7a\u767d\u5168\u5c40\u5c55\u5f00\u3002",
+      "evidence": [
+        "tests/markdown-quote-tabs.test.js",
+        "scripts/verify-markdown-quote-tabs.js",
+        "runs/2026-09-08-markdown-quote-tabs.json"
+      ]
+    },
+    {
+      "id": "list-physical-columns-and-code-tabs",
+      "axis": {
+        "version": "CommonMark 0.31.2 / v1.4.136",
+        "feature": "list indentation, literal tabs, code endings and nested containers",
+        "complexity": "320 content, 640 structural, 320 native footnote, 100 mixed and 192 quote-prefix cases",
+        "platform": "Node and Chrome; WeChat WXML and physical devices not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u4ee3\u7801\u91cc\u7684 Tab \u4e0d\u4f1a\u88ab\u4efb\u610f\u7a7a\u683c\u66ff\u4ee3\uff1b\u4fdd\u7559\u5d4c\u5957\u7ed3\u6784\u3001\u56f4\u680f\u8fb9\u754c\u4e0e\u884c\u672b\u3002",
+      "evidence": [
+        "tests/markdown-list-tabs.test.js",
+        "scripts/verify-markdown-list-tabs.js",
+        "runs/2026-09-10-markdown-list-tabs.json"
+      ]
+    },
+    {
+      "id": "nested-html-paragraph-boundaries",
+      "axis": {
+        "version": "CommonMark 0.31.2 / v1.4.138 development upload",
+        "feature": "HTML types, deepest paragraph state, quote marker changes and Setext headings",
+        "complexity": "1056 unique sources, 1038 agreed host opens, 1000 marker transitions, bounded depth recovery",
+        "platform": "Node reader host and Chrome rendered tree; WeChat and physical devices not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u95ed\u5408\u5f15\u7528\u548c\u5217\u8868\u540e\u7684\u6b63\u6587\u4e0d\u4f1a\u4e22\u5931\u6216\u79fb\u5165\u65e7\u5bb9\u5668\uff0c\u5ef6\u7eed\u6bb5\u843d\u4e0e Setext \u6807\u9898\u5b8c\u6574\uff0c\u5931\u8d25\u540e\u53ef\u7ee7\u7eed\u9605\u8bfb\u3002",
+      "evidence": [
+        "tests/markdown-html-boundaries.test.js",
+        "scripts/verify-markdown-html-boundaries.js",
+        "runs/2026-09-13-markdown-html-boundaries.json"
+      ]
+    },
+    {
+      "id": "native-horizontal-table-scroll",
+      "axis": {
+        "feature": "GFM tables through reader DOM route",
+        "complexity": "40 tables, 4/5/6 columns in a 28 KB original",
+        "layout": "320/390/430 px plus fixed width and merged cells",
+        "platform": "Node, compiled WXML browser adapter and WeChat DevTools native scrollTo; physical gestures not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5bbd\u8868\u683c\u5728\u5404\u81ea\u533a\u57df\u6a2a\u5411\u6eda\u52a8\uff0c\u6700\u53f3\u5217\u53ef\u8fbe\uff1b\u6b63\u6587\u4fdd\u7559\u6b63\u5e38\u5b57\u53f7\uff0c\u6240\u6709\u5355\u5143\u683c\u6309\u539f\u987a\u5e8f\u663e\u793a\u3002",
+      "evidence": [
+        "runs/2026-09-18-markdown-table-scroll.json",
+        "tests/markdown-table-scroll.test.js",
+        "scripts/verify-markdown-table-scroll.js"
+      ]
+    },
+    {
+      "id": "nested-code-lazy-paragraph-headings",
+      "axis": {
+        "version": "CommonMark 0.31.2 / v1.4.139",
+        "feature": "indented code, lazy continuation and Setext headings across nested containers",
+        "complexity": "768 authored sources, 158 corrected structures, 166 Chrome views, 9 native WXML views",
+        "platform": "Node, Chrome and WeChat DevTools; physical devices not run"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u4ee3\u7801\u5757\u540e\u6b63\u6587\u56de\u5230\u6b63\u786e\u5c42\u7ea7\uff1b\u7f3a\u5c11\u7236\u5bb9\u5668\u6807\u8bb0\u7684\u5ef6\u7eed\u884c\u4e0d\u8bef\u53d8\u4e3a\u6807\u9898\uff1b\u5408\u6cd5\u591a\u884c\u6807\u9898\u5b8c\u6574\u5448\u73b0\u3002",
+      "evidence": [
+        "runs/2026-09-18-markdown-code-containers.json",
+        "tests/markdown-code-containers.test.js",
+        "scripts/verify-markdown-code-containers.js",
+        "scripts/verify-markdown-code-containers-wechat.js"
+      ]
+    }
+  ],
+  "mutationQueue": [
+    {
+      "id": "code-terminal-newlines",
+      "status": "fixed-scoped",
+      "action": "114 scoped contracts and actual taps pass; retained CommonMark container cases remain separate.",
+      "version": "1.4.125",
+      "evidence": "runs/2026-09-06-markdown-footnotes.json"
+    },
+    {
+      "id": "footnote-block-boundaries",
+      "status": "fixed-scoped",
+      "action": "114 scoped contracts and actual taps pass; retained CommonMark container cases remain separate.",
+      "evidence": "runs/2026-09-06-markdown-footnotes.json",
+      "generatedVariants": 28,
+      "version": "1.4.125"
+    },
+    {
+      "id": "commonmark-container-indentation",
+      "status": "fixed-scoped",
+      "examples": [
+        6,
+        128
+      ],
+      "evidence": "runs/2026-09-10-markdown-list-tabs.json",
+      "action": "Previously recorded examples 6 and 128 now pass. Do not generalize to complete CommonMark compatibility.",
+      "version": "1.4.136"
+    },
+    {
+      "id": "nested-html-quote-continuation",
+      "status": "fixed-scoped",
+      "generatedVariants": 24,
+      "evidence": "runs/2026-09-13-markdown-html-boundaries.json",
+      "action": "All 24 historical sources match primary CommonMark; 18 secondary-parser disagreements remain explicit. Included in v1.4.138 development upload."
+    },
+    {
+      "id": "remaining-dialect-and-html-tab-interactions",
+      "status": "pending",
+      "action": "Retain remaining task-list/footnote dialect and full-spec differences; rotate to other formats before another batch of Markdown combinations."
+    },
+    {
+      "id": "nested-code-lazy-paragraph-headings",
+      "status": "fixed-scoped",
+      "version": "1.4.139",
+      "evidence": "runs/2026-09-18-markdown-code-containers.json",
+      "action": "768 agreed structures now pass; retain 17 official-spec structural differences and separate raw-pre/dialect gaps."
+    }
+  ],
+  "limitations": [
+    "Simple metadata extraction remains a subset of YAML.",
+    "Footnote labels remain case-sensitive and cannot contain whitespace; unused definitions are omitted and later duplicate definitions win.",
+    "The 24 historical nested HTML cases match primary CommonMark in the candidate; 18 primary/secondary parser disagreements remain and must not be described as dual-reference agreement.",
+    "Current nested-code batch verified in 9 WeChat DevTools actual views; physical devices not run.",
+    "Current 652 official-example structural screen retains the same 17 differences; no new structural regressions, not a full conformance claim."
+  ],
+  "lastTestedAt": "2026-09-18T15:42:12.103602+00:00",
+  "candidateVersion": null,
+  "codeIndentResults": {
+    "status": "development-uploaded",
+    "evidence": "runs/2026-09-06-markdown-code-indent.json",
+    "contracts": 27,
+    "baselineWrong": 16,
+    "actualExact": 27,
+    "markdownChromeCases": 141,
+    "htmlChromeCases": 26,
+    "anchorActions": 212,
+    "browserFailures": [],
+    "actionFailures": [],
+    "relatedNodeTests": 14,
+    "commonMarkCases": 62,
+    "commonMarkExact": 60,
+    "nodeTests": 1178,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "chromeOracle": "pass"
+  },
+  "boundaryCandidate": {
+    "status": "development-uploaded",
+    "evidence": "runs/2026-09-13-markdown-html-boundaries.json",
+    "version": "1.4.138"
+  }
+}

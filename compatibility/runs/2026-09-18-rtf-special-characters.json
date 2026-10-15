@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 1,
+  "id": "rtf-special-characters",
+  "testedAt": "2026-09-18T16:07:47.324079+00:00",
+  "version": "1.4.140",
+  "status": "development-uploaded",
+  "rootCause": "Special body characters were missing from the control-word mapping, silently joining text across spaces, required breaks and Unicode joining/directional marks.",
+  "change": "Map 9 Unicode special characters and required page/column breaks through the existing body-character path; preserve skipped destinations, hidden formatting, Unicode fallback and scoped notes.",
+  "specification": {
+    "url": "https://officeprotocoldoc.z19.web.core.windows.net/files/Archive_References/%5BMSFT-RTF%5D.pdf",
+    "printedPages": [
+      143,
+      144
+    ],
+    "normalization": "Continuous text view maps required page/column breaks to newline; zero-width nonbreak opportunity maps to Unicode WORD JOINER U+2060. Optional galley break hints remain ignored."
+  },
+  "construction": {
+    "generator": "tests/helpers/rtf-special-characters.js",
+    "cases": 138,
+    "dimensions": "11 controls x12 scopes plus emoji ligature, Arabic nonjoiner, bidi and 3 optional-layout controls",
+    "independentOutputs": "tests/fixtures/rtf-special-characters-oracles.json",
+    "oracleRefresh": "scripts/probe-rtf-special-characters-oracles.js"
+  },
+  "validation": {
+    "beforeWrongText": 80,
+    "afterWrongText": 0,
+    "actualHostOpens": 138,
+    "compiledWxmlChromeViews": 138,
+    "wechatNativeViews": 16,
+    "newNodeTests": 4,
+    "relatedRtfTests": 173,
+    "relatedFailures": 0,
+    "physicalDevices": "not run",
+    "fullNodeTests": 1371,
+    "fullNodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "independentExportRefresh": "fresh Writer/Cocoa exports exactly equal pinned fixture",
+    "originalFiles": "pass",
+    "reportedFiles": "pass",
+    "chromeOracle": "pass",
+    "wechatFullSimulator": "pass"
+  },
+  "independentApplications": {
+    "writerVersion": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "writerExact": 33,
+    "writerDifferences": 105,
+    "cocoaExact": 59,
+    "cocoaDifferences": 79,
+    "canonicalSupportedControls": {
+      "cocoa": [
+        "emspace",
+        "enspace",
+        "zwj",
+        "zwnj"
+      ],
+      "writer": [
+        "page",
+        "column"
+      ]
+    },
+    "interpretation": "These are unmodified text-export outputs, not Writer/Cocoa visible-page screenshots. Unsupported controls may be omitted, and TXT export may retain hidden content. All outputs are pinned with source hashes. No claim of 138 dual-reference agreements or hidden-text visibility certification."
+  },
+  "limits": [
+    "RTF remains a continuous plain-text presentation, not paginated multi-column rich layout.",
+    "Unicode space codepoints preserve text and relative spacing; exact original font metrics and nonbreaking rich-layout properties are not newly certified.",
+    "Optional softline/softpage/softcol layout hints remain unchanged.",
+    "Actual WXML text and positive dimensions were checked; no pixel-identical native glyph or physical-device claim."
+  ],
+  "cases": [
+    {
+      "id": "emspace-plain",
+      "before": "AB",
+      "expected": "A B"
+    },
+    {
+      "id": "emspace-nested",
+      "before": "AB",
+      "expected": "A B"
+    },
+    {
+      "id": "emspace-extra-space",
+      "before": "A B",
+      "expected": "A  B"
+    },
+    {
+      "id": "emspace-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "emspace-visible-child",
+      "before": "AXYB",
+      "expected": "AX YB"
+    },
+    {
+      "id": "emspace-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "emspace-instruction",
+      "before": "AXYB",
+      "expected": "AX YB"
+    },
+    {
+      "id": "emspace-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "emspace-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "emspace-after-fallback",
+      "before": "AXB",
+      "expected": "AX B"
+    },
+    {
+      "id": "emspace-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX YB"
+    },
+    {
+      "id": "emspace-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "enspace-plain",
+      "before": "AB",
+      "expected": "A B"
+    },
+    {
+      "id": "enspace-nested",
+      "before": "AB",
+      "expected": "A B"
+    },
+    {
+      "id": "enspace-extra-space",
+      "before": "A B",
+      "expected": "A  B"
+    },
+    {
+      "id": "enspace-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "enspace-visible-child",
+      "before": "AXYB",
+      "expected": "AX YB"
+    },
+    {
+      "id": "enspace-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "enspace-instruction",
+      "before": "AXYB",
+      "expected": "AX YB"
+    },
+    {
+      "id": "enspace-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "enspace-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "enspace-after-fallback",
+      "before": "AXB",
+      "expected": "AX B"
+    },
+    {
+      "id": "enspace-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX YB"
+    },
+    {
+      "id": "enspace-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "qmspace-plain",
+      "before": "AB",
+      "expected": "A B"
+    },
+    {
+      "id": "qmspace-nested",
+      "before": "AB",
+      "expected": "A B"
+    },
+    {
+      "id": "qmspace-extra-space",
+      "before": "A B",
+      "expected": "A  B"
+    },
+    {
+      "id": "qmspace-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "qmspace-visible-child",
+      "before": "AXYB",
+      "expected": "AX YB"
+    },
+    {
+      "id": "qmspace-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "qmspace-instruction",
+      "before": "AXYB",
+      "expected": "AX YB"
+    },
+    {
+      "id": "qmspace-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "qmspace-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "qmspace-after-fallback",
+      "before": "AXB",
+      "expected": "AX B"
+    },
+    {
+      "id": "qmspace-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX YB"
+    },
+    {
+      "id": "qmspace-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwj-plain",
+      "before": "AB",
+      "expected": "A‍B"
+    },
+    {
+      "id": "zwj-nested",
+      "before": "AB",
+      "expected": "A‍B"
+    },
+    {
+      "id": "zwj-extra-space",
+      "before": "A B",
+      "expected": "A‍ B"
+    },
+    {
+      "id": "zwj-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwj-visible-child",
+      "before": "AXYB",
+      "expected": "AX‍YB"
+    },
+    {
+      "id": "zwj-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwj-instruction",
+      "before": "AXYB",
+      "expected": "AX‍YB"
+    },
+    {
+      "id": "zwj-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "zwj-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "zwj-after-fallback",
+      "before": "AXB",
+      "expected": "AX‍B"
+    },
+    {
+      "id": "zwj-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX‍YB"
+    },
+    {
+      "id": "zwj-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwnj-plain",
+      "before": "AB",
+      "expected": "A‌B"
+    },
+    {
+      "id": "zwnj-nested",
+      "before": "AB",
+      "expected": "A‌B"
+    },
+    {
+      "id": "zwnj-extra-space",
+      "before": "A B",
+      "expected": "A‌ B"
+    },
+    {
+      "id": "zwnj-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwnj-visible-child",
+      "before": "AXYB",
+      "expected": "AX‌YB"
+    },
+    {
+      "id": "zwnj-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwnj-instruction",
+      "before": "AXYB",
+      "expected": "AX‌YB"
+    },
+    {
+      "id": "zwnj-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "zwnj-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "zwnj-after-fallback",
+      "before": "AXB",
+      "expected": "AX‌B"
+    },
+    {
+      "id": "zwnj-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX‌YB"
+    },
+    {
+      "id": "zwnj-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwbo-plain",
+      "before": "AB",
+      "expected": "A​B"
+    },
+    {
+      "id": "zwbo-nested",
+      "before": "AB",
+      "expected": "A​B"
+    },
+    {
+      "id": "zwbo-extra-space",
+      "before": "A B",
+      "expected": "A​ B"
+    },
+    {
+      "id": "zwbo-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwbo-visible-child",
+      "before": "AXYB",
+      "expected": "AX​YB"
+    },
+    {
+      "id": "zwbo-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwbo-instruction",
+      "before": "AXYB",
+      "expected": "AX​YB"
+    },
+    {
+      "id": "zwbo-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "zwbo-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "zwbo-after-fallback",
+      "before": "AXB",
+      "expected": "AX​B"
+    },
+    {
+      "id": "zwbo-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX​YB"
+    },
+    {
+      "id": "zwbo-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwnbo-plain",
+      "before": "AB",
+      "expected": "A⁠B"
+    },
+    {
+      "id": "zwnbo-nested",
+      "before": "AB",
+      "expected": "A⁠B"
+    },
+    {
+      "id": "zwnbo-extra-space",
+      "before": "A B",
+      "expected": "A⁠ B"
+    },
+    {
+      "id": "zwnbo-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwnbo-visible-child",
+      "before": "AXYB",
+      "expected": "AX⁠YB"
+    },
+    {
+      "id": "zwnbo-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "zwnbo-instruction",
+      "before": "AXYB",
+      "expected": "AX⁠YB"
+    },
+    {
+      "id": "zwnbo-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "zwnbo-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "zwnbo-after-fallback",
+      "before": "AXB",
+      "expected": "AX⁠B"
+    },
+    {
+      "id": "zwnbo-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX⁠YB"
+    },
+    {
+      "id": "zwnbo-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "ltrmark-plain",
+      "before": "AB",
+      "expected": "A‎B"
+    },
+    {
+      "id": "ltrmark-nested",
+      "before": "AB",
+      "expected": "A‎B"
+    },
+    {
+      "id": "ltrmark-extra-space",
+      "before": "A B",
+      "expected": "A‎ B"
+    },
+    {
+      "id": "ltrmark-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "ltrmark-visible-child",
+      "before": "AXYB",
+      "expected": "AX‎YB"
+    },
+    {
+      "id": "ltrmark-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "ltrmark-instruction",
+      "before": "AXYB",
+      "expected": "AX‎YB"
+    },
+    {
+      "id": "ltrmark-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "ltrmark-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "ltrmark-after-fallback",
+      "before": "AXB",
+      "expected": "AX‎B"
+    },
+    {
+      "id": "ltrmark-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX‎YB"
+    },
+    {
+      "id": "ltrmark-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "rtlmark-plain",
+      "before": "AB",
+      "expected": "A‏B"
+    },
+    {
+      "id": "rtlmark-nested",
+      "before": "AB",
+      "expected": "A‏B"
+    },
+    {
+      "id": "rtlmark-extra-space",
+      "before": "A B",
+      "expected": "A‏ B"
+    },
+    {
+      "id": "rtlmark-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "rtlmark-visible-child",
+      "before": "AXYB",
+      "expected": "AX‏YB"
+    },
+    {
+      "id": "rtlmark-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "rtlmark-instruction",
+      "before": "AXYB",
+      "expected": "AX‏YB"
+    },
+    {
+      "id": "rtlmark-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "rtlmark-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "rtlmark-after-fallback",
+      "before": "AXB",
+      "expected": "AX‏B"
+    },
+    {
+      "id": "rtlmark-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX‏YB"
+    },
+    {
+      "id": "rtlmark-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "page-plain",
+      "before": "AB",
+      "expected": "A\nB"
+    },
+    {
+      "id": "page-nested",
+      "before": "AB",
+      "expected": "A\nB"
+    },
+    {
+      "id": "page-extra-space",
+      "before": "A B",
+      "expected": "A\n B"
+    },
+    {
+      "id": "page-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "page-visible-child",
+      "before": "AXYB",
+      "expected": "AX\nYB"
+    },
+    {
+      "id": "page-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "page-instruction",
+      "before": "AXYB",
+      "expected": "AX\nYB"
+    },
+    {
+      "id": "page-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "page-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "page-after-fallback",
+      "before": "AXB",
+      "expected": "AX\nB"
+    },
+    {
+      "id": "page-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX\nYB"
+    },
+    {
+      "id": "page-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "column-plain",
+      "before": "AB",
+      "expected": "A\nB"
+    },
+    {
+      "id": "column-nested",
+      "before": "AB",
+      "expected": "A\nB"
+    },
+    {
+      "id": "column-extra-space",
+      "before": "A B",
+      "expected": "A\n B"
+    },
+    {
+      "id": "column-hidden",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "column-visible-child",
+      "before": "AXYB",
+      "expected": "AX\nYB"
+    },
+    {
+      "id": "column-unknown-destination",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "column-instruction",
+      "before": "AXYB",
+      "expected": "AX\nYB"
+    },
+    {
+      "id": "column-fallback-one",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "column-fallback-two",
+      "before": "AXB",
+      "expected": "AXB"
+    },
+    {
+      "id": "column-after-fallback",
+      "before": "AXB",
+      "expected": "AX\nB"
+    },
+    {
+      "id": "column-unselected-branch",
+      "before": "AXYB",
+      "expected": "AX\nYB"
+    },
+    {
+      "id": "column-case-sensitive",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "emoji-joiner",
+      "before": "👩🚀",
+      "expected": "👩‍🚀"
+    },
+    {
+      "id": "arabic-nonjoiner",
+      "before": "بب",
+      "expected": "ب‌ب"
+    },
+    {
+      "id": "mixed-direction",
+      "before": "אב: גד",
+      "expected": "אב‏: גד"
+    },
+    {
+      "id": "softline-optional",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "softpage-optional",
+      "before": "AB",
+      "expected": "AB"
+    },
+    {
+      "id": "softcol-optional",
+      "before": "AB",
+      "expected": "AB"
+    }
+  ],
+  "evidence": [
+    "tests/rtf-special-characters.test.js",
+    "scripts/verify-rtf-special-characters.js",
+    "scripts/verify-rtf-special-characters-wechat.js",
+    "outputs/rtf-special-characters/verified/report.json",
+    "outputs/rtf-special-characters/wechat.json"
+  ],
+  "remoteChecks": {
+    "status": "unavailable",
+    "checkId": 105668798386,
+    "action": "Required check did not start; retain open PR and do not bypass merge gates."
+  },
+  "nextAction": "Rotate to TAR compressed-wrapper/sparse/link combinations. Keep SVG cross-engine ruler evidence pending and do not repeat this development upload."
+}

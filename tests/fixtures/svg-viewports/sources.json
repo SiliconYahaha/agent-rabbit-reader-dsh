@@ -1,0 +1,29 @@
+[
+  {
+    "name": "viewBox-zero-disables-rendering-001.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-001.svg",
+    "sha256": "d301da559211ad64a65662897f78060246215c96255f978440574aeaa07b6f09",
+    "reference": "viewBox-zero-disables-rendering-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-ref.svg",
+    "referenceSha256": "ae91693cfd5f15f907b20e8a9b2970a0388b2d1c6e3518e1c247544d16ccff15",
+    "license": "BSD-3-Clause; WPT repository license"
+  },
+  {
+    "name": "viewBox-zero-disables-rendering-002.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-002.svg",
+    "sha256": "6c366df92086c1ac9fc4530b6623e8fd44dd4f6ecc5a24ad463dcebb70ced622",
+    "reference": "viewBox-zero-disables-rendering-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-ref.svg",
+    "referenceSha256": "ae91693cfd5f15f907b20e8a9b2970a0388b2d1c6e3518e1c247544d16ccff15",
+    "license": "BSD-3-Clause; WPT repository license"
+  },
+  {
+    "name": "viewBox-zero-disables-rendering-003.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-003.svg",
+    "sha256": "9677ae2831ca3c4a65c50427d40c8e55a3f10843e5e4131d06edad499e4959ee",
+    "reference": "viewBox-zero-disables-rendering-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-ref.svg",
+    "referenceSha256": "ae91693cfd5f15f907b20e8a9b2970a0388b2d1c6e3518e1c247544d16ccff15",
+    "license": "BSD-3-Clause; WPT repository license"
+  }
+]

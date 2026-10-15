@@ -1,0 +1,5631 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "version": "1.4.113",
+  "baseline": "v1.4.112",
+  "environment": "macOS Chrome 152; actual shared SVG scene rendered through native Path2D, fallback and throwing factory",
+  "scope": "70 static 1170x1170 source files; original 32 slice mutations, 20 four-edge controls and 18 geometry/transform/overflow combinations",
+  "reference": "Chrome native SVG image rasterization; first 32 also compare separately constructed root-clip reference SVG. No animated Chrome oracle included.",
+  "samples": "tests/fixtures/svg-viewport-culling.json",
+  "metrics": {
+    "cases": 70,
+    "baselineExact": 25,
+    "exact": 65,
+    "newlyFixed": 40,
+    "pendingUnchanged": 5
+  },
+  "pending": [
+    "edge-left-stroke",
+    "edge-right-stroke",
+    "edge-top-stroke",
+    "edge-bottom-stroke",
+    "group-rotated-inside"
+  ],
+  "results": [
+    {
+      "name": "slice-boundary-0",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-1",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 37902,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 37902,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 37902,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 37902,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 37902,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 37902,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-2",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-3",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 44894,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 44894,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 44894,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 44894,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 44894,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 44894,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-4",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 42450,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 42450,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 42450,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 42450,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 42450,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 42450,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-5",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-6",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 49885,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 49885,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 49885,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 49885,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 49885,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 49885,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-7",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 47022,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 47022,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 47022,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 47022,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 47022,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 47022,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-8",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-9",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 54879,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 54879,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 54879,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 54879,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 54879,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 54879,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-10",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 51568,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 51568,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 51568,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 51568,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 51568,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 51568,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-11",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-12",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 59849,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 59849,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 59849,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 59849,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 59849,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 59849,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-13",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 56117,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 56117,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 56117,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 56117,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 56117,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 56117,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-14",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-15",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 64852,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 64852,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 64852,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 64852,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 64852,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 64852,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-16",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 60658,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 60658,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 60658,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 60658,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 60658,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 60658,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-17",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-18",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 69855,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 69855,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 69855,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 69855,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 69855,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 69855,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-19",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 65215,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 65215,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 65215,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 65215,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 65215,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 65215,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-20",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-21",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 74826,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 74826,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 74826,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 74826,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 74826,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 74826,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-22",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 69789,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 69789,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 69789,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 69789,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 69789,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 69789,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-23",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-24",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 79827,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 79827,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 79827,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 79827,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 79827,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 79827,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-25",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 74315,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 74315,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 74315,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 74315,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 74315,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 74315,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-26",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-27",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 84811,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 84811,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 84811,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 84811,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 84811,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 84811,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-28",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 78880,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 78880,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 78880,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 78880,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 78880,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 78880,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-29",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-30",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 89820,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 89820,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 89820,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 89820,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 89820,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 89820,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "slice-boundary-31",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 83426,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 83426,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 83426,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 83426,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 83426,
+          "maxChannelError": 44,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 44,
+          "svgRGBAError": 83426,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-left--0.1",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-left-0",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 24519,
+          "maxChannelError": 61,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 61,
+          "svgRGBAError": 24519,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 24519,
+          "maxChannelError": 61,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 61,
+          "svgRGBAError": 24519,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 24519,
+          "maxChannelError": 61,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 61,
+          "svgRGBAError": 24519,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-left-0.1",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-left-stroke",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 438,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 438,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 438,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 438,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 438,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 438,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 438,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 438,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 438,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 438,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 438,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 438,
+          "fallbackError": 0
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "name": "edge-left-transformed",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-right--0.1",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 2848,
+          "maxChannelError": 6,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 6,
+          "svgRGBAError": 2848,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 2848,
+          "maxChannelError": 6,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 6,
+          "svgRGBAError": 2848,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 2848,
+          "maxChannelError": 6,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 6,
+          "svgRGBAError": 2848,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-right-0",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 15104,
+          "maxChannelError": 34,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 34,
+          "svgRGBAError": 15104,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 15104,
+          "maxChannelError": 34,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 34,
+          "svgRGBAError": 15104,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 15104,
+          "maxChannelError": 34,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 34,
+          "svgRGBAError": 15104,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-right-0.1",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-right-stroke",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 439,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 439,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 439,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 439,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 439,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 439,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 439,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 439,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 439,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 439,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 439,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 439,
+          "fallbackError": 0
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "name": "edge-right-transformed",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-top--0.1",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-top-0",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-top-0.1",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-top-stroke",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 2196,
+          "maxChannelError": 3,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 3,
+          "svgRGBAError": 2196,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 2196,
+          "maxChannelError": 3,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 3,
+          "svgRGBAError": 2196,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 2196,
+          "maxChannelError": 3,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 3,
+          "svgRGBAError": 2196,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 2196,
+          "maxChannelError": 3,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 3,
+          "svgRGBAError": 2196,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 2196,
+          "maxChannelError": 3,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 3,
+          "svgRGBAError": 2196,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 2196,
+          "maxChannelError": 3,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 3,
+          "svgRGBAError": 2196,
+          "fallbackError": 0
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "name": "edge-top-transformed",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-bottom--0.1",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-bottom-0",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29814,
+          "maxChannelError": 41,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 41,
+          "svgRGBAError": 29814,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29814,
+          "maxChannelError": 41,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 41,
+          "svgRGBAError": 29814,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29814,
+          "maxChannelError": 41,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 41,
+          "svgRGBAError": 29814,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-bottom-0.1",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "edge-bottom-stroke",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 12730,
+          "maxChannelError": 19,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 19,
+          "svgRGBAError": 12730,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 12730,
+          "maxChannelError": 19,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 19,
+          "svgRGBAError": 12730,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 12730,
+          "maxChannelError": 19,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 19,
+          "svgRGBAError": 12730,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 12730,
+          "maxChannelError": 19,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 19,
+          "svgRGBAError": 12730,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 12730,
+          "maxChannelError": 19,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 19,
+          "svgRGBAError": 12730,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 12730,
+          "maxChannelError": 19,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 19,
+          "svgRGBAError": 12730,
+          "fallbackError": 0
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "name": "edge-bottom-transformed",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "path-outside",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 49106,
+          "maxChannelError": 64,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 64,
+          "svgRGBAError": 49106,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 49106,
+          "maxChannelError": 64,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 64,
+          "svgRGBAError": 49106,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 49106,
+          "maxChannelError": 64,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 64,
+          "svgRGBAError": 49106,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "quadratic-touch",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 1526,
+          "maxChannelError": 63,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 63,
+          "svgRGBAError": 1526,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 1526,
+          "maxChannelError": 63,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 63,
+          "svgRGBAError": 1526,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 1526,
+          "maxChannelError": 63,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 63,
+          "svgRGBAError": 1526,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "circle-touch",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 764,
+          "maxChannelError": 62,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 62,
+          "svgRGBAError": 764,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 764,
+          "maxChannelError": 62,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 62,
+          "svgRGBAError": 764,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 764,
+          "maxChannelError": 62,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 62,
+          "svgRGBAError": 764,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "ellipse-touch",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 1925,
+          "maxChannelError": 63,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 63,
+          "svgRGBAError": 1925,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 1925,
+          "maxChannelError": 63,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 63,
+          "svgRGBAError": 1925,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 1925,
+          "maxChannelError": 63,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 63,
+          "svgRGBAError": 1925,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "polygon-touch",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 93,
+          "maxChannelError": 37,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 37,
+          "svgRGBAError": 93,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 93,
+          "maxChannelError": 37,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 37,
+          "svgRGBAError": 93,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 93,
+          "maxChannelError": 37,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 37,
+          "svgRGBAError": 93,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "group-translated-inside",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "group-reflected-outside",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29814,
+          "maxChannelError": 41,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 41,
+          "svgRGBAError": 29814,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29814,
+          "maxChannelError": 41,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 41,
+          "svgRGBAError": 29814,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29814,
+          "maxChannelError": 41,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 41,
+          "svgRGBAError": 29814,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "group-rotated-inside",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 220,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 220,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 220,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 220,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 220,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 220,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 220,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 220,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 220,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 220,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 220,
+          "maxChannelError": 1,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 1,
+          "svgRGBAError": 220,
+          "fallbackError": 0
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "name": "group-skew-outside",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 24570,
+          "maxChannelError": 64,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 64,
+          "svgRGBAError": 24570,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 24570,
+          "maxChannelError": 64,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 64,
+          "svgRGBAError": 24570,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 24570,
+          "maxChannelError": 64,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 64,
+          "svgRGBAError": 24570,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "use-outside",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "use-inside",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "use-reflected-outside",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29814,
+          "maxChannelError": 41,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 41,
+          "svgRGBAError": 29814,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29814,
+          "maxChannelError": 41,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 41,
+          "svgRGBAError": 29814,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29814,
+          "maxChannelError": 41,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 41,
+          "svgRGBAError": 29814,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "parent-clip-inner-overflow",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "gradient-touch",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29788,
+          "maxChannelError": 64,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 64,
+          "svgRGBAError": 29788,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29788,
+          "maxChannelError": 64,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 64,
+          "svgRGBAError": 29788,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 29788,
+          "maxChannelError": 64,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 64,
+          "svgRGBAError": 29788,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "overflow-visible",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "overflow-auto",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "overflow-hidden",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    },
+    {
+      "name": "sibling-restoration",
+      "baseline": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 39896,
+          "maxChannelError": 52,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 52,
+          "svgRGBAError": 39896,
+          "fallbackError": 0
+        }
+      ],
+      "actual": [
+        {
+          "mode": "native",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "fallback",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "factory-throws",
+          "error": null,
+          "actualBox": null,
+          "boundsError": null,
+          "rgbaError": 0,
+          "maxChannelError": 0,
+          "maxAlphaError": 0,
+          "maxPremultipliedError": 0,
+          "svgRGBAError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "status": "exact"
+    }
+  ],
+  "limits": [
+    "Five stroke/rotation boundary pixel discrepancies retained unchanged; strict gate covers 65 exact cases, discovery runs all 70.",
+    "Node timeline and failure-recovery tests do not certify native SMIL oracle readiness.",
+    "Local WeChat DevTools logged out; no new DevTools or physical device run."
+  ]
+}

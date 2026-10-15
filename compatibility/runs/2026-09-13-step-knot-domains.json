@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T10:58:06.601658+00:00",
+  "status": "local-gates-passed-awaiting-draft-pr-ci",
+  "feature": "STEP affine knot domains and malformed numeric list preservation",
+  "originals": {
+    "fixture": "tests/fixtures/step-knot-domains/before.json",
+    "count": 8,
+    "nativeSurfacePoints": 1444,
+    "baselineCorrect": 4,
+    "baselineWrong": 4,
+    "baselineMaxWorldError": 0.8543689320388357,
+    "baselineMissingMesh": "opposite-extremes:all169surfacepoints/288faces absent",
+    "afterCorrect": 8,
+    "afterMaxWorldError": 4.440892098500626e-15
+  },
+  "reference": {
+    "geomdl": "5.3.1",
+    "steputils": "0.1",
+    "method": "Normalize original Decimal knots using80digit arithmetic, then independently evaluate geomdl surface on active knotdomain. Common affine changes of knot coordinates preserve geometry.",
+    "scope": "STEPsyntax parse and independent mathematical surface evaluation, not native CAD import/tessellation or complete schema validation.",
+    "source": "https://nurbs-python.readthedocs.io/en/5.x/module_knotvector.html"
+  },
+  "rootCause": [
+    "Sampling translated domain1e15+[0,1] loses parameterresolution before basis evaluation.",
+    "Subnormal intervals1e-320 amplify rounding in raw basis arithmetic.",
+    "Opposite finite endpoints-1e308/+1e308 overflow subtraction.",
+    "stepNumberList filtered nonfinite values, silently healing damaged knots/multiplicities."
+  ],
+  "fix": [
+    "Normalize knots affinely before sampling/basis calculations. Subtract first for finite spans; scale signed endpoints before subtraction if raw span overflows.",
+    "Preserve valid multiplicities, repeated knots, nonclamped active domain and unequalu/vdegrees. Decline numeric collapse of distinct knots.",
+    "Preserve nonfinite list elements for validation and explicitly fail invalid/unsupported knot parameters."
+  ],
+  "malformed": {
+    "fixture": "tests/fixtures/step-knot-domains/malformed-before.json",
+    "count": 5,
+    "baselineHealedAndRendered": 2,
+    "baselineSilentlyNoMesh": 3,
+    "afterExplicitErrors": 5,
+    "historicalRegressionChange": "Prior invalid-knot tests expected zero faces; now require explicit error. This intentionally strengthens failure behavior, not relaxed geometry expectations."
+  },
+  "host": {
+    "originalOpens": 16,
+    "invalidKnotRecoveries": 5,
+    "staleErrorIgnored": true,
+    "detachedIgnored": true
+  },
+  "chrome": {
+    "views": 24,
+    "states": [
+      "isometric",
+      "drag",
+      "top"
+    ],
+    "exactIndependentReferencePixels": 24,
+    "baselineWrongViews": 12,
+    "physicalCanvas": [
+      720,
+      520
+    ],
+    "scope": "Actual host Canvas command snapshots; independent geometry with shared viewer projection/style."
+  },
+  "relatedTests": 65,
+  "gates": {
+    "check": "passed",
+    "tests": 1266,
+    "compatibilityProbes": 141,
+    "renderer": "passed",
+    "production": "passed",
+    "chromeOracle": "passed"
+  },
+  "limits": [
+    "Authored rational parameter-domain patches; no complextrim/nativeCADschema claim.",
+    "Unrepresentable normalized knot separations explicitly fail. Original decimal values already collapsed by double parsing remain separate exploration.",
+    "WeChat developer tools and devices not run."
+  ],
+  "release": {
+    "status": "unreleased",
+    "wechatDevelopmentDescription": "修复 STEP 曲面在极大、极小或大偏移节点参数下变形、消失的问题，并明确提示损坏的节点列表。"
+  },
+  "next": [
+    "Complete requiredgates,scoped stacked draftPR and exact-head CI readback.",
+    "Switch to another format exploration; retain STEP nativeCAD,complextrim,internationalstrings and numericparse gaps.",
+    "Prior publication approval block remains; account details stay local."
+  ]
+}

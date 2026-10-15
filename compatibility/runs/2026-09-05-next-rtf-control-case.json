@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "status": "reproduced-runtime-candidate",
+  "productionRtfModified": false,
+  "cases": 14,
+  "targetCases": 9,
+  "candidateTargetExact": 9,
+  "standard": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/AttributedStrings/Tasks/RTFAndAttrStrings.html",
+  "standardFinding": "RTF commands are case-sensitive; unknown controls must not gain the meaning of a different lowercase control.",
+  "oracles": {
+    "cocoa": "macOS textutil; unsuitable for hidden visible-text controls",
+    "writer": "LibreOfficeDev 26.8 alpha TXT and XHTML export; XHTML read by native Chrome",
+    "hiddenControl": "case-0 TXT includes HIDDEN but XHTML hides it; only visible result is accepted"
+  },
+  "next": "Remove case folding throughout keyword and destination lookahead handling; expand mixed-case binary, Unicode fallback, styles and starred destinations, validate real reader recovery and positive mixed-case Apple extensions before product change.",
+  "limitations": [
+    "Lowercase par XHTML innerText adds a paragraph break; logical TXT matches current parser.",
+    "Lowercase info inside body is a malformed/placement-sensitive control, separate from nine confirmed uppercase keyword collisions.",
+    "No physical devices or WeChat DevTools run."
+  ],
+  "targets": [
+    "case-1",
+    "case-3",
+    "case-4",
+    "case-5",
+    "case-7",
+    "case-8",
+    "case-10",
+    "case-11",
+    "case-12"
+  ],
+  "results": [
+    {
+      "name": "case-0",
+      "source": "{\\rtf1\\ansi A\\v HIDDEN\\v0 Z}",
+      "actual": "AZ",
+      "cocoa": "AHIDDENZ",
+      "writer": "AHIDDENZ",
+      "writerVisible": "AZ",
+      "candidate": "AZ"
+    },
+    {
+      "name": "case-1",
+      "source": "{\\rtf1\\ansi A\\V VISIBLE\\v0 Z}",
+      "actual": "AZ",
+      "cocoa": "AVISIBLEZ",
+      "writer": "AVISIBLEZ",
+      "writerVisible": "AVISIBLEZ",
+      "candidate": "AVISIBLEZ"
+    },
+    {
+      "name": "case-2",
+      "source": "{\\rtf1\\ansi A\\V0 VISIBLE Z}",
+      "actual": "AVISIBLE Z",
+      "cocoa": "AVISIBLE Z",
+      "writer": "AVISIBLE Z",
+      "writerVisible": "AVISIBLE Z",
+      "candidate": "AVISIBLE Z"
+    },
+    {
+      "name": "case-3",
+      "source": "{\\rtf1\\ansi A{\\FONTtbl VISIBLE}Z}",
+      "actual": "AZ",
+      "cocoa": "AVISIBLEZ",
+      "writer": "AVISIBLEZ",
+      "writerVisible": "AVISIBLEZ",
+      "candidate": "AVISIBLEZ"
+    },
+    {
+      "name": "case-4",
+      "source": "{\\rtf1\\ansi A{\\Fonttbl VISIBLE}Z}",
+      "actual": "AZ",
+      "cocoa": "AVISIBLEZ",
+      "writer": "AVISIBLEZ",
+      "writerVisible": "AVISIBLEZ",
+      "candidate": "AVISIBLEZ"
+    },
+    {
+      "name": "case-5",
+      "source": "{\\rtf1\\ansi A\\U65? Z}",
+      "actual": "AA Z",
+      "cocoa": "A? Z",
+      "writer": "A? Z",
+      "writerVisible": "A? Z",
+      "candidate": "A? Z"
+    },
+    {
+      "name": "case-6",
+      "source": "{\\rtf1\\ansi A\\u65? Z}",
+      "actual": "AA Z",
+      "cocoa": "AA Z",
+      "writer": "AA Z",
+      "writerVisible": "AA Z",
+      "candidate": "AA Z"
+    },
+    {
+      "name": "case-7",
+      "source": "{\\rtf1\\ansi A\\PAR Z}",
+      "actual": "A\nZ",
+      "cocoa": "AZ",
+      "writer": "AZ",
+      "writerVisible": "AZ",
+      "candidate": "AZ"
+    },
+    {
+      "name": "case-8",
+      "source": "{\\rtf1\\ansi A\\Par Z}",
+      "actual": "A\nZ",
+      "cocoa": "AZ",
+      "writer": "AZ",
+      "writerVisible": "AZ",
+      "candidate": "AZ"
+    },
+    {
+      "name": "case-9",
+      "source": "{\\rtf1\\ansi A\\par Z}",
+      "actual": "A\nZ",
+      "cocoa": "A\nZ",
+      "writer": "A\nZ",
+      "writerVisible": "A\n\nZ",
+      "candidate": "A\nZ"
+    },
+    {
+      "name": "case-10",
+      "source": "{\\rtf1\\ansi A\\LINE Z}",
+      "actual": "A\nZ",
+      "cocoa": "AZ",
+      "writer": "AZ",
+      "writerVisible": "AZ",
+      "candidate": "AZ"
+    },
+    {
+      "name": "case-11",
+      "source": "{\\rtf1\\ansi A\\TAB Z}",
+      "actual": "A\tZ",
+      "cocoa": "AZ",
+      "writer": "AZ",
+      "writerVisible": "AZ",
+      "candidate": "AZ"
+    },
+    {
+      "name": "case-12",
+      "source": "{\\rtf1\\ansi A{\\Info VISIBLE}Z}",
+      "actual": "AZ",
+      "cocoa": "AVISIBLEZ",
+      "writer": "AVISIBLEZ",
+      "writerVisible": "AVISIBLEZ",
+      "candidate": "AVISIBLEZ"
+    },
+    {
+      "name": "case-13",
+      "source": "{\\rtf1\\ansi A{\\info HIDDEN}Z}",
+      "actual": "AZ",
+      "cocoa": "AHIDDENZ",
+      "writer": "AHIDDENZ",
+      "writerVisible": "AHIDDENZ",
+      "candidate": "AZ"
+    }
+  ],
+  "associatedFontControlBatch": {
+    "cases": 18,
+    "readerCocoaWriterExact": 18,
+    "results": [
+      {
+        "name": "case-0",
+        "charset": 204,
+        "byte": "c0",
+        "controls": "\\f0",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset204 Arial;}}START \\f0\\'c0 END}",
+        "actual": "START À END",
+        "cocoa": "START À END",
+        "writer": "START À END"
+      },
+      {
+        "name": "case-1",
+        "charset": 204,
+        "byte": "c0",
+        "controls": "\\f1",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset204 Arial;}}START \\f1\\'c0 END}",
+        "actual": "START А END",
+        "cocoa": "START А END",
+        "writer": "START А END"
+      },
+      {
+        "name": "case-2",
+        "charset": 204,
+        "byte": "c0",
+        "controls": "\\f0\\af1\\rtlch",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset204 Arial;}}START \\f0\\af1\\rtlch\\'c0 END}",
+        "actual": "START À END",
+        "cocoa": "START À END",
+        "writer": "START À END"
+      },
+      {
+        "name": "case-3",
+        "charset": 204,
+        "byte": "c0",
+        "controls": "\\f0\\af1\\hich",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset204 Arial;}}START \\f0\\af1\\hich\\'c0 END}",
+        "actual": "START À END",
+        "cocoa": "START À END",
+        "writer": "START À END"
+      },
+      {
+        "name": "case-4",
+        "charset": 204,
+        "byte": "c0",
+        "controls": "\\f0\\af1\\dbch",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset204 Arial;}}START \\f0\\af1\\dbch\\'c0 END}",
+        "actual": "START À END",
+        "cocoa": "START À END",
+        "writer": "START À END"
+      },
+      {
+        "name": "case-5",
+        "charset": 204,
+        "byte": "c0",
+        "controls": "\\rtlch\\af1\\ltrch\\f0",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset204 Arial;}}START \\rtlch\\af1\\ltrch\\f0\\'c0 END}",
+        "actual": "START À END",
+        "cocoa": "START À END",
+        "writer": "START À END"
+      },
+      {
+        "name": "case-6",
+        "charset": 178,
+        "byte": "c7",
+        "controls": "\\f0",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset178 Arial;}}START \\f0\\'c7 END}",
+        "actual": "START Ç END",
+        "cocoa": "START Ç END",
+        "writer": "START Ç END"
+      },
+      {
+        "name": "case-7",
+        "charset": 178,
+        "byte": "c7",
+        "controls": "\\f1",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset178 Arial;}}START \\f1\\'c7 END}",
+        "actual": "START ا END",
+        "cocoa": "START ا END",
+        "writer": "START ا END"
+      },
+      {
+        "name": "case-8",
+        "charset": 178,
+        "byte": "c7",
+        "controls": "\\f0\\af1\\rtlch",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset178 Arial;}}START \\f0\\af1\\rtlch\\'c7 END}",
+        "actual": "START Ç END",
+        "cocoa": "START Ç END",
+        "writer": "START Ç END"
+      },
+      {
+        "name": "case-9",
+        "charset": 178,
+        "byte": "c7",
+        "controls": "\\f0\\af1\\hich",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset178 Arial;}}START \\f0\\af1\\hich\\'c7 END}",
+        "actual": "START Ç END",
+        "cocoa": "START Ç END",
+        "writer": "START Ç END"
+      },
+      {
+        "name": "case-10",
+        "charset": 178,
+        "byte": "c7",
+        "controls": "\\f0\\af1\\dbch",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset178 Arial;}}START \\f0\\af1\\dbch\\'c7 END}",
+        "actual": "START Ç END",
+        "cocoa": "START Ç END",
+        "writer": "START Ç END"
+      },
+      {
+        "name": "case-11",
+        "charset": 178,
+        "byte": "c7",
+        "controls": "\\rtlch\\af1\\ltrch\\f0",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset178 Arial;}}START \\rtlch\\af1\\ltrch\\f0\\'c7 END}",
+        "actual": "START Ç END",
+        "cocoa": "START Ç END",
+        "writer": "START Ç END"
+      },
+      {
+        "name": "case-12",
+        "charset": 161,
+        "byte": "c1",
+        "controls": "\\f0",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset161 Arial;}}START \\f0\\'c1 END}",
+        "actual": "START Á END",
+        "cocoa": "START Á END",
+        "writer": "START Á END"
+      },
+      {
+        "name": "case-13",
+        "charset": 161,
+        "byte": "c1",
+        "controls": "\\f1",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset161 Arial;}}START \\f1\\'c1 END}",
+        "actual": "START Α END",
+        "cocoa": "START Α END",
+        "writer": "START Α END"
+      },
+      {
+        "name": "case-14",
+        "charset": 161,
+        "byte": "c1",
+        "controls": "\\f0\\af1\\rtlch",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset161 Arial;}}START \\f0\\af1\\rtlch\\'c1 END}",
+        "actual": "START Á END",
+        "cocoa": "START Á END",
+        "writer": "START Á END"
+      },
+      {
+        "name": "case-15",
+        "charset": 161,
+        "byte": "c1",
+        "controls": "\\f0\\af1\\hich",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset161 Arial;}}START \\f0\\af1\\hich\\'c1 END}",
+        "actual": "START Á END",
+        "cocoa": "START Á END",
+        "writer": "START Á END"
+      },
+      {
+        "name": "case-16",
+        "charset": 161,
+        "byte": "c1",
+        "controls": "\\f0\\af1\\dbch",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset161 Arial;}}START \\f0\\af1\\dbch\\'c1 END}",
+        "actual": "START Á END",
+        "cocoa": "START Á END",
+        "writer": "START Á END"
+      },
+      {
+        "name": "case-17",
+        "charset": 161,
+        "byte": "c1",
+        "controls": "\\rtlch\\af1\\ltrch\\f0",
+        "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset161 Arial;}}START \\rtlch\\af1\\ltrch\\f0\\'c1 END}",
+        "actual": "START Á END",
+        "cocoa": "START Á END",
+        "writer": "START Á END"
+      }
+    ]
+  },
+  "readerRoute": {
+    "platform": "Node production reader component, 9 files on one host; Writer XHTML visible reference from Chrome",
+    "cases": 9,
+    "results": [
+      {
+        "name": "case-1",
+        "error": "",
+        "hasContent": true,
+        "preText": "AZ",
+        "writerVisible": "AVISIBLEZ"
+      },
+      {
+        "name": "case-3",
+        "error": "",
+        "hasContent": true,
+        "preText": "AZ",
+        "writerVisible": "AVISIBLEZ"
+      },
+      {
+        "name": "case-4",
+        "error": "",
+        "hasContent": true,
+        "preText": "AZ",
+        "writerVisible": "AVISIBLEZ"
+      },
+      {
+        "name": "case-5",
+        "error": "",
+        "hasContent": true,
+        "preText": "AA Z",
+        "writerVisible": "A? Z"
+      },
+      {
+        "name": "case-7",
+        "error": "",
+        "hasContent": true,
+        "preText": "A\nZ",
+        "writerVisible": "AZ"
+      },
+      {
+        "name": "case-8",
+        "error": "",
+        "hasContent": true,
+        "preText": "A\nZ",
+        "writerVisible": "AZ"
+      },
+      {
+        "name": "case-10",
+        "error": "",
+        "hasContent": true,
+        "preText": "A\nZ",
+        "writerVisible": "AZ"
+      },
+      {
+        "name": "case-11",
+        "error": "",
+        "hasContent": true,
+        "preText": "A\tZ",
+        "writerVisible": "AZ"
+      },
+      {
+        "name": "case-12",
+        "error": "",
+        "hasContent": true,
+        "preText": "AZ",
+        "writerVisible": "AVISIBLEZ"
+      }
+    ]
+  }
+}

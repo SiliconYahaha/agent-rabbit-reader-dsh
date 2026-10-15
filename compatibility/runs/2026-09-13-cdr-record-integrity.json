@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T09:07:44.461939+00:00",
+  "status": "validated-awaiting-pr",
+  "version": null,
+  "feature": "CDR direct record lengths, zero padding and structural integrity",
+  "discovery": "runs/2026-09-13-next-cdr-record-integrity.json",
+  "sources": {
+    "original": 24,
+    "expanded": 26,
+    "total": 50,
+    "valid": 35,
+    "structuralAnomalies": 15
+  },
+  "before": {
+    "validArtworkMissing": 25,
+    "anomaliesWithoutClearFailure": 15,
+    "actualHostOpens": 50,
+    "chromeFailedContracts": 40
+  },
+  "after": {
+    "actualHostOpens": 50,
+    "nativeArtworkPixelMatches": 35,
+    "structuralErrorContracts": 15,
+    "chromeFailedContracts": 0
+  },
+  "native": {
+    "implementation": "libcdr0.1.9 native Homebrew cdr2raw and cdr2xhtml",
+    "originalByteInputs": 50,
+    "sourceRewriting": false,
+    "acceptedValid": 35,
+    "rejectedAnomalies": 8,
+    "toleratedOutOfBoundsAnomalies": 7,
+    "framing": "Native default Letter-page points mapped by declared page center and 1/72 scale to source-declared content-fit inch view. Original native path coordinates and colors independently asserted before mapping. Not whole-page layout fidelity.",
+    "evidence": "tests/fixtures/cdr-record-integrity/native-reference.json"
+  },
+  "rootCause": "parseCdrCompressedRecords treated every field as a table index, stopped at zero padding, and silently broke on malformed records or resource limits. Valid direct lengths and padded structures disappeared; corrupt tails produced unqualified partial success.",
+  "repair": "Resolve in-range table indexes or literal byte lengths, skip permitted zeros, validate every record and list boundary, explicitly fail record/depth limits; retain real independent-thumbnail fallback and host lifecycle guards.",
+  "independentSource": "https://github.com/LibreOffice/libcdr/blob/77f52f694362ba0f01b3fdac6ebcc91e5debe400/src/lib/CDRParser.cpp#L565",
+  "validation": {
+    "relatedTests": 72,
+    "fullCheck": {
+      "status": "pass",
+      "tests": 1264,
+      "compatibilityProbes": 141,
+      "rendererSmoke": "pass"
+    },
+    "production": "pass",
+    "chromeGate": "pass",
+    "wechatDevtools": "not run",
+    "physicalDevices": "not run",
+    "screenshotsInspected": true
+  },
+  "publicRegression": [
+    {
+      "name": "CoffeeShop.cdr",
+      "source": "https://product.corel.com/en/draw/10/Tutorials/Rave/html_docs/htmlpics/CoffeeShop.cdr",
+      "sourceSha256": "fee56e451bb7b1030a70ea9f18088478435c0f1d61c7bb2d4cd5b96d9e428c8a",
+      "svgUnchanged": true,
+      "svgSha256": "3b12a92910885936acfa3399fd90c9b7d23ce1ec131dd2d8024bf88da71889bc",
+      "paths": 11,
+      "scope": "Byte-identical supported artwork before/after; known incomplete text/bitmap/native visual fidelity stays pending. Public originals and native derivative outputs remain local only."
+    },
+    {
+      "name": "final_logo.cdr",
+      "source": "https://product.corel.com/en/draw/10/Tutorials/Draw/html_docs/htmlpics/final_logo.cdr",
+      "sourceSha256": "c1a5cb96ad4c6923b8fdc6af587ad5b874306d9a3683de4e0e9b3bf02701da6d",
+      "svgUnchanged": true,
+      "svgSha256": "d781c3b7c423349b390c6b92476ecc86a97c7ff23d791f8cd4256982663cfd2b",
+      "paths": 31,
+      "scope": "Byte-identical supported artwork before/after; known incomplete text/bitmap/native visual fidelity stays pending. Public originals and native derivative outputs remain local only."
+    }
+  ],
+  "counterCorrection": "An interim oral count said23 valid missing sources; exact row count is25 (9 original+16 expanded). Original inputs and baseline outputs were unchanged.",
+  "testHarnessCorrection": "Thumbnail fallback initially checked vector source instead of the distinct raster path and lacked the filesystem writer. Corrected to check the actual path and exact written PNG bytes; no product behavior or expected picture weakened.",
+  "limits": [
+    "Full CDR text, bitmap, transparency, inherited transforms and multiple-list/page composition remain pending.",
+    "Seven native-tolerated out-of-bounds files deliberately use explicit structural failure; this is not a claim that native libcdr rejected them.",
+    "Two Corel tutorial originals retain byte-identical supported SVG outputs, not complete native fidelity; private/public licensed originals and native derivatives remain local.",
+    "Existing per-compressed-stream2500-record/12-level bounds now fail explicitly rather than truncate; aggregate multi-list composition remains separate.",
+    "Merge/tag/Release/WeChat development upload pending direct confirmation after earlier automatic approval rejection."
+  ],
+  "artifacts": [
+    {
+      "path": "tests/fixtures/cdr-record-integrity/before.json",
+      "sha256": "fda6fd10c573459a16fad139fba1a588f29e3be8ab4f70534251500e7f42e31e"
+    },
+    {
+      "path": "tests/fixtures/cdr-record-integrity/expanded-before.json",
+      "sha256": "99c99d6cacc8da39a12a4fa4a7d79789d9bb1d8a204aa371ab911689cb384917"
+    },
+    {
+      "path": "tests/fixtures/cdr-record-integrity/host-before.json",
+      "sha256": "557211fe7ea58dd2b8d4c73a66447ba6205bc8c8782ff01dc6914d9f69084fa3"
+    },
+    {
+      "path": "tests/fixtures/cdr-record-integrity/native-reference.json",
+      "sha256": "6bd1a4878f3180bff2b175f0acc9b63193eca440f668b6e3fb3d03e01f7e3f39"
+    }
+  ],
+  "localEvidence": [
+    {
+      "path": "outputs/cdr-record-integrity/browser-before/report.json",
+      "sha256": "572e34ad7e56680a1f49aee42c3949a09bffa769dcff3cae29bde5b054a4a8e3"
+    },
+    {
+      "path": "outputs/cdr-record-integrity/browser-before/comparison.png",
+      "sha256": "1566c01db8a364e522946635672800f02259fc6a49044f1071657922b68e31ca"
+    },
+    {
+      "path": "outputs/cdr-record-integrity/verified/report.json",
+      "sha256": "9616ec0be55024d8b597063a0ecf09edc797d0c580336e7739e6b38b805e4878"
+    },
+    {
+      "path": "outputs/cdr-record-integrity/verified/comparison.png",
+      "sha256": "a57f9ceb8b04d311c88b6d878a4fc3d6c1ae079df5c321976f0bf87965d5946f"
+    },
+    {
+      "path": "outputs/cdr-record-integrity/public-regression.json",
+      "sha256": "12fc8b4737e2e894dba6501d2fca114e59f2bdebd64327507a894fe531254e8b"
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "ownership": "Own synthetic headers and text, no user files",
+  "oracles": [
+    "Python email.message policy.default headerregistry and RFC9110 quoted-pair",
+    "Python standard encoders and csv strict reader"
+  ],
+  "rows": [
+    {
+      "id": 0,
+      "type": "text/csv; name=\"report;charset=gbk\"",
+      "mediaType": "text/csv",
+      "charset": null,
+      "legacyCharset": null,
+      "source": "编号,内容\r\n01,汉字\r\n",
+      "base64": "57yW5Y+3LOWGheWuuQ0KMDEs5rGJ5a2XDQo=",
+      "rows": [
+        [
+          "编号",
+          "内容"
+        ],
+        [
+          "01",
+          "汉字"
+        ]
+      ]
+    },
+    {
+      "id": 1,
+      "type": "text/csv; name=\"a;charset=gbk\"; charset=utf-8",
+      "mediaType": "text/csv",
+      "charset": "utf-8",
+      "legacyCharset": "utf-8",
+      "source": "编号,内容\r\n01,汉字\r\n",
+      "base64": "57yW5Y+3LOWGheWuuQ0KMDEs5rGJ5a2XDQo=",
+      "rows": [
+        [
+          "编号",
+          "内容"
+        ],
+        [
+          "01",
+          "汉字"
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "type": "TEXT/CSV; NAME=\"x;Charset=big5\"; CHARSET=\"UTF-8\"",
+      "mediaType": "text/csv",
+      "charset": "UTF-8",
+      "legacyCharset": "UTF-8",
+      "source": "编号,内容\r\n01,汉字\r\n",
+      "base64": "57yW5Y+3LOWGheWuuQ0KMDEs5rGJ5a2XDQo=",
+      "rows": [
+        [
+          "编号",
+          "内容"
+        ],
+        [
+          "01",
+          "汉字"
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "type": "text/csv; name=\"escaped\\\";charset=gbk\"; charset=utf-8",
+      "mediaType": "text/csv",
+      "charset": "utf-8",
+      "legacyCharset": "utf-8",
+      "source": "编号,内容\r\n01,汉字\r\n",
+      "base64": "57yW5Y+3LOWGheWuuQ0KMDEs5rGJ5a2XDQo=",
+      "rows": [
+        [
+          "编号",
+          "内容"
+        ],
+        [
+          "01",
+          "汉字"
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "type": "text/csv; name=\"quoted; semicolon\"; charset=\"utf\\-8\"",
+      "mediaType": "text/csv",
+      "charset": "utf-8",
+      "legacyCharset": "utf\\-8",
+      "source": "编号,内容\r\n01,汉字\r\n",
+      "base64": "57yW5Y+3LOWGheWuuQ0KMDEs5rGJ5a2XDQo=",
+      "rows": [
+        [
+          "编号",
+          "内容"
+        ],
+        [
+          "01",
+          "汉字"
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "type": "text/csv; other=\"\\\\;charset=big5\"; charset=UTF8",
+      "mediaType": "text/csv",
+      "charset": "UTF8",
+      "legacyCharset": "UTF8",
+      "source": "编号,内容\r\n01,汉字\r\n",
+      "base64": "57yW5Y+3LOWGheWuuQ0KMDEs5rGJ5a2XDQo=",
+      "rows": [
+        [
+          "编号",
+          "内容"
+        ],
+        [
+          "01",
+          "汉字"
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "type": "text/csv; charset=\"GB18030\"; name=\"wrong;charset=utf-8\"",
+      "mediaType": "text/csv",
+      "charset": "GB18030",
+      "legacyCharset": "GB18030",
+      "source": "编号,内容\r\n01,汉字\r\n",
+      "base64": "seC6xSzE2sjdDQowMSy6utfWDQo=",
+      "rows": [
+        [
+          "编号",
+          "内容"
+        ],
+        [
+          "01",
+          "汉字"
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "type": "text/csv; charset=Shift_JIS; name=\"unused;charset=gbk\"",
+      "mediaType": "text/csv",
+      "charset": "Shift_JIS",
+      "legacyCharset": "Shift_JIS",
+      "source": "番号,内容\r\n01,日本語\r\n",
+      "base64": "lNSNhiyT4JdlDQowMSyT+pZ7jOoNCg==",
+      "rows": [
+        [
+          "番号",
+          "内容"
+        ],
+        [
+          "01",
+          "日本語"
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "type": "text/csv; charset=cp949; name=\"unused;charset=big5\"",
+      "mediaType": "text/csv",
+      "charset": "cp949",
+      "legacyCharset": "cp949",
+      "source": "번호,내용\r\n01,한국어\r\n",
+      "base64": "ufjIoyyzu7/rDQowMSzH0bG5vu4NCg==",
+      "rows": [
+        [
+          "번호",
+          "내용"
+        ],
+        [
+          "01",
+          "한국어"
+        ]
+      ]
+    },
+    {
+      "id": 9,
+      "type": "text/csv; name=\"unused;charset=cp949\"; charset=big5",
+      "mediaType": "text/csv",
+      "charset": "big5",
+      "legacyCharset": "big5",
+      "source": "編號,內容\r\n01,繁體中文\r\n",
+      "base64": "vXO4uSykuq5lDQowMSzBY8XppKSk5Q0K",
+      "rows": [
+        [
+          "編號",
+          "內容"
+        ],
+        [
+          "01",
+          "繁體中文"
+        ]
+      ]
+    }
+  ]
+}

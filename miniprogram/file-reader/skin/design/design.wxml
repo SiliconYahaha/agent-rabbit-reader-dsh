@@ -1,0 +1,21 @@
+<view class="preview-page">
+  <view class="file-heading">
+    <view class="file-mark">{{mark}}</view>
+    <view class="file-copy">
+      <view class="file-name">{{name}}</view>
+      <view class="file-size">{{size}}</view>
+    </view>
+  </view>
+  <view wx:if="{{loading}}" class="status-card">{{loadingText}}</view>
+  <slot name="preview"/>
+  <view wx:if="{{metadata.length}}" class="metadata-card">
+    <view class="card-title">{{metadataTitle}}</view>
+    <view wx:for="{{metadata}}" wx:key="label" class="metadata-row">
+      <text class="metadata-label">{{item.label}}</text>
+      <text class="metadata-value">{{item.value}}</text>
+    </view>
+  </view>
+  <view wx:if="{{message}}" class="message-card">{{message}}</view>
+  <view wx:if="{{error}}" class="error-card">{{error}}</view>
+  <button wx:if="{{canOpenPdf}}" class="primary-button" bindtap="onOpenPdf">{{openPdfText}}</button>
+</view>

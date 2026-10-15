@@ -1,0 +1,1659 @@
+{
+  "schemaVersion": 1,
+  "id": "psd-integer-rgb-matte-precision",
+  "testedAt": "2026-09-18T10:10:24.463980+00:00",
+  "rootCause": "8/16-bit RGB and alpha were independently normalized before white-matte subtraction, introducing cancellation error that moved exact half-byte results below the rounding boundary.",
+  "change": "Subtract integer color/alpha samples and scale the integer numerator before division. Preserve float32 linear-light conversion, alpha, opaque color and existing bounds.",
+  "construction": {
+    "generator": "scripts/probe-psd-rgb-precision.py",
+    "producer": "psd-tools 1.18.0",
+    "seed": 9182026,
+    "files": 72,
+    "width": 65,
+    "height": 17,
+    "axes": [
+      "PSD1/PSB2",
+      "8/16/32-bit RGB",
+      "Raw/RLE/ZIP/ZIP prediction",
+      "opaque, stratified alpha, exact half-byte boundaries"
+    ],
+    "sourceVerification": "Every saved channel plane round-trips byte-exact through independent psd-tools. Integer reference uses Python Fraction over actual saved samples; float controls use actual saved IEEE values before sRGB conversion.",
+    "secondaryOracle": "psd-tools NumPy decode has at most one channel level of rounding difference on visible pixels; retain this as lower-precision evidence, not an exact oracle.",
+    "witness": "16-bit color=383 alpha=65280: ((383+65280-65535)*255)/65280 = 0.5, rounding to byte1. Old normalized subtraction computes0.4999999999999982, rounding to0."
+  },
+  "before": {
+    "wrongSourceFiles": 24,
+    "maximumSourceError": 1,
+    "wrongActualHostJpegs": 8,
+    "wrongBrowserExpectedPreviews": 8,
+    "maximumBrowserPreviewError": 8
+  },
+  "after": {
+    "format": "PSD/PSB integer RGB matte precision",
+    "originalFiles": 72,
+    "rawPixelsExact": 72,
+    "actualHostJpegsExact": 72,
+    "browserExpectedPreviewExact": 72,
+    "maximumSourceError": 0,
+    "recovery": {
+      "rejected": true,
+      "ready": true,
+      "jpegExact": true
+    },
+    "relatedNodeTests": 42,
+    "fullNodeTests": 1265,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "results": [
+    {
+      "name": "rgb-d8-opaque-v1-c0.psd",
+      "sha256": "3e967fd74a32839a8063c60c9632334fb6905cfe1e10e9fb83ecd36d683cdb6d",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v1-c1.psd",
+      "sha256": "fd5fe0492f01ddea69ee8ba29f3668b7c66d263b28dd006438e270fbd30a9c75",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v1-c2.psd",
+      "sha256": "161e869ec7087347ae74d18dcdb1f709cc7673cc1e527a6b8b279e14f12352e9",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v1-c3.psd",
+      "sha256": "4d96569c8e4e636694b4e4d12cee34aea69aa4d26dd385b52359d396f32dbf33",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v2-c0.psb",
+      "sha256": "7e80b5f1c9d9b6dafa79ee245f93deab49c4e7e7ffe58a2837173c6613242e75",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v2-c1.psb",
+      "sha256": "b54d9871ef7daee91d790cfc8be73df7f5fa5db697fe04e9ac2fd294deaecdb5",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v2-c2.psb",
+      "sha256": "1602013d06eeb166addf00f0e41f738d265e6806dd0081c66a5c983f39879611",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v2-c3.psb",
+      "sha256": "d1e67a2e44df1816eef5cfd215b2cd43bd9c9328ca8981c5717aed1e711d1eb7",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d8-alpha-v1-c0.psd",
+      "sha256": "a447e6c0d09303c0a6b3fb21fa6a3ac18ddfa0ca4e03ae78b578d0d08d49075a",
+      "beforeSource": {
+        "count": 69,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-alpha-v1-c1.psd",
+      "sha256": "6e8d75f3025ca5a47b788ac78caa74de46d306f330850f0d2318266bc86e2464",
+      "beforeSource": {
+        "count": 69,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-alpha-v1-c2.psd",
+      "sha256": "a3140ca11085081abd0e610487ba8a5af1b4e92d5ddb1f1e4471ed1d5c0be1b7",
+      "beforeSource": {
+        "count": 69,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-alpha-v1-c3.psd",
+      "sha256": "2d8b9dc0de14f110dc957a2e1472277376bf559f8c11366621408b993dc58e5a",
+      "beforeSource": {
+        "count": 69,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-alpha-v2-c0.psb",
+      "sha256": "9dfc1ebf1ab69768b2e102b55e02bfd0ced1575607f9bb64beda13f407ca9389",
+      "beforeSource": {
+        "count": 69,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-alpha-v2-c1.psb",
+      "sha256": "796ee1cea22c83a107fb578afab68d98a38aae9a021f40e8902c1d7ef15f2a45",
+      "beforeSource": {
+        "count": 69,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-alpha-v2-c2.psb",
+      "sha256": "20631ffd4d7b01fbc52d020284832bad2e42ec56f703ac4f11b0aeb6367923ea",
+      "beforeSource": {
+        "count": 69,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-alpha-v2-c3.psb",
+      "sha256": "49884661dd7342300ab9e7b648a6147111aa2068cc5f1db7ba67950d03afb1a2",
+      "beforeSource": {
+        "count": 69,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-half-step-v1-c0.psd",
+      "sha256": "6c38d58b34fa4ed9987d5fb5bacaeb358c0b3176e221c5be6aa0ddda3353812a",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-half-step-v1-c1.psd",
+      "sha256": "398079ecdcaa44ff7cd8376111af81d478056c5f839286ff1c5e24b7f6dc7aae",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-half-step-v1-c2.psd",
+      "sha256": "9c8dc466e3ce665c26e9e5778b74698554d6a6c936d445109cef0f170c085ab8",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-half-step-v1-c3.psd",
+      "sha256": "5ee128f5e289eb691a4830854e5f00448e3c680d235844b77b452d027b98ad30",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-half-step-v2-c0.psb",
+      "sha256": "62a47288ac7252d3782b874a645337c17971f808921260c72ee640212bfcc5ff",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-half-step-v2-c1.psb",
+      "sha256": "dba3c9b26fb37957a18dffa22a7f8305da0675894b6691e63dd8b0742d976905",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-half-step-v2-c2.psb",
+      "sha256": "a94700bd60f052946d6f64eb05dd9fcaea6ff2f41540f60de25d6b7a1d74f721",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d8-half-step-v2-c3.psb",
+      "sha256": "8316f8a3816612b419f4e197dee3ad53cd60b456443e6445466e318e2064ebbe",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d16-opaque-v1-c0.psd",
+      "sha256": "dbaae6a47083173db5a81bd171d7698d91693541166fed9a1fb714f2103fe9f9",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v1-c1.psd",
+      "sha256": "9d69c251dd3cda82b52089ed92747f47dfaa34825aac9a3fd8fcc330bf1ac834",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v1-c2.psd",
+      "sha256": "b21d15e0520025151b220de5f247315858a9db6e991c64bc02138f4bd5690430",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v1-c3.psd",
+      "sha256": "512b652b031f7a9fa1eea3e895904c5191a71a7d003ea0faac0d0717e69a0ec7",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v2-c0.psb",
+      "sha256": "1635684abe023333e62a5b76a7aaec9f08ad7e5315622efbbb3e4f850438b185",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v2-c1.psb",
+      "sha256": "635dc34a6cfee1892fb0ae824814d239f0a072b0624a0451d52508ec987fb6ba",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v2-c2.psb",
+      "sha256": "9396ff9388c25b719d8e134e168a07754ae3489be2f368c65a3f8edcc7c3b8f3",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v2-c3.psb",
+      "sha256": "0c7dc568f45081901402d359da53d1a61591283a23937852009c699926667c79",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v1-c0.psd",
+      "sha256": "ec568ebc99ce02d4f3b707dfee7808b5dbd66e03573db886a279cf122a9a22a4",
+      "beforeSource": {
+        "count": 4,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v1-c1.psd",
+      "sha256": "b4f1cac6676d318e4556717077e74fdd2f5a9baacec81ee59d74cdd79e62bc37",
+      "beforeSource": {
+        "count": 4,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v1-c2.psd",
+      "sha256": "c98f4f31fe1ce607c2f55b438e72194a321e9f108c5108427ff9ce857cde00f3",
+      "beforeSource": {
+        "count": 4,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v1-c3.psd",
+      "sha256": "3ef5dc2192b553c7781dafba0e8b1d05d0a1916c33a629627d4517f830d1b658",
+      "beforeSource": {
+        "count": 4,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v2-c0.psb",
+      "sha256": "bcdc23c3ef538487e0c5b7be8b9dbb13469113c54faefec2d5cd7c2d730884b0",
+      "beforeSource": {
+        "count": 4,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v2-c1.psb",
+      "sha256": "41fc89f9dcd445c871dd8258645f8eee4ab8a445e77e7572b609aac0f3522cb7",
+      "beforeSource": {
+        "count": 4,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v2-c2.psb",
+      "sha256": "849d15e8bce52a3952296caf579878a455b4fca9171948dc75778959218801fd",
+      "beforeSource": {
+        "count": 4,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v2-c3.psb",
+      "sha256": "5e93609ffb89f88f046775f5905540d8ca761d6479102df1755fda03e83fa1bf",
+      "beforeSource": {
+        "count": 4,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d16-half-step-v1-c0.psd",
+      "sha256": "f409c48ca4e92a065a935ab733a525c41141429db515a6df87f8b2b0c64e878b",
+      "beforeSource": {
+        "count": 1001,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": false,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d16-half-step-v1-c1.psd",
+      "sha256": "e2ef0d13d54075e04618aef8834e3b058e8085d45fa5e5cc4d2820f093af943b",
+      "beforeSource": {
+        "count": 1001,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": false,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d16-half-step-v1-c2.psd",
+      "sha256": "d4ed093b26216cf8dd356ae1280d3865e870ad9256718bf72c212413ddee163f",
+      "beforeSource": {
+        "count": 1001,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": false,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d16-half-step-v1-c3.psd",
+      "sha256": "66de81c49637089b5ad500fd7f21f74bdc54ad8fcdea3e91dc1b30fc12071270",
+      "beforeSource": {
+        "count": 1001,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": false,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d16-half-step-v2-c0.psb",
+      "sha256": "bb49c1d1378603ed4cc25489064ad6bb408e7b4e82783b8a19f8d2dae8bcc053",
+      "beforeSource": {
+        "count": 1001,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": false,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d16-half-step-v2-c1.psb",
+      "sha256": "941a888b5816f7884cb8668dd44556b686dc9a0dc050e1581f5f735153bcbfcd",
+      "beforeSource": {
+        "count": 1001,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": false,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d16-half-step-v2-c2.psb",
+      "sha256": "ab935e0b078dd1a3840a02125f9a2b2305042d0efb257806939bdaa09594ed6b",
+      "beforeSource": {
+        "count": 1001,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": false,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d16-half-step-v2-c3.psb",
+      "sha256": "f5d1d73905988d7526a45ba16fcac7ad002ed7fd25bffd0dbdfa6c384a02b19d",
+      "beforeSource": {
+        "count": 1001,
+        "max": 1
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": false,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 1
+    },
+    {
+      "name": "rgb-d32-opaque-v1-c0.psd",
+      "sha256": "0a194bd56a0a95b19e7ec1e179c39c9d55cc832f72c4f513718bcb4d734474d8",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v1-c1.psd",
+      "sha256": "e777fc7688e854399dca6799ad44278691ada8e0263538685d4486e4c48a688a",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v1-c2.psd",
+      "sha256": "25cfe683047c14c4c596524e52ad620f25be6ad5480f669fba8912a76025f5a4",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v1-c3.psd",
+      "sha256": "1e4b52b801902c0cc8eaf597bafa244565e6ee759bf0b36f001f352c45980a18",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v2-c0.psb",
+      "sha256": "c3a446275d677381b96ff1e83d8e267ebee28eb84205963bc985621650c20fcb",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v2-c1.psb",
+      "sha256": "3892fcc83b47d1d8bfbe45d91645c149e70656859b2b48a24221a288db2a8062",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v2-c2.psb",
+      "sha256": "057e9edd0168b528d6c0b3a2b2abe5e96cbe1e7497ac8579311b2901c435f9b5",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v2-c3.psb",
+      "sha256": "431f32258a7ef210188f6c74ab7e06a98cef05e850853f543b10a442848f78bb",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v1-c0.psd",
+      "sha256": "e00873d3006218de5cee49c415a92ffc84a6e85398e061e9ae72e5d879f1f65c",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v1-c1.psd",
+      "sha256": "bf46294e9aa91cf19cd243dbe056ab04068c9fcbf5b43d2022aaffff6729ceaf",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v1-c2.psd",
+      "sha256": "b4ccdcdbf6939658aae3adf9426beccc48f5b602ad3263fb169c0c1ed1e93002",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v1-c3.psd",
+      "sha256": "987d2f1990f993f62e306cd32a10ace486d7a0bd00fe4740a485cdddb8ea7145",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v2-c0.psb",
+      "sha256": "2a2a4af4d23d67a26fac1b46c2e251891c200dd23f0d8fd23d96465066ee7009",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v2-c1.psb",
+      "sha256": "1933cfaa19b4f6d649c2e3a9c7ff7c801e91bcda595802f3069dc4dcb49d83d6",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v2-c2.psb",
+      "sha256": "3cd7064b6aa683cad496d97c49c721d5c381679cd1ce236f711929937f8fc4d2",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v2-c3.psb",
+      "sha256": "1609f94963083907c5684a3ef4d3ac15ed52086b58c707303f1de1fbfdd7cd7b",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v1-c0.psd",
+      "sha256": "b0f7b229bc3623d04bbf6aa7fb579267fe8e1c5bf9862e9f3c1449867a2a68f5",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v1-c1.psd",
+      "sha256": "5a1b18feb1d58a3b2df92a6ddd87223172e54dc2f10e51ec088c690657b0fbe0",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v1-c2.psd",
+      "sha256": "8884d2515de899f1dc604f3c560a9d9495eb91467d63cd1735315c7bdef31eef",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v1-c3.psd",
+      "sha256": "98f34f26d781a4c5320d9e10e12c4ae1046b343c4570b2747136611762895122",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v2-c0.psb",
+      "sha256": "7298f47c6563cffc0802227eb9a9d8ec9da70f65b5f6437faf4f74b8d4badb42",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v2-c1.psb",
+      "sha256": "1d0933ebab0a6ca40c1a4a23db7806d2ba6a6fd0cb991c8609d22cceb38d41b9",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v2-c2.psb",
+      "sha256": "abb03aff8a2b6a1a37bd17358b1f4ebc19ecbe2f8ecc7909a53cb529c51bc0b2",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v2-c3.psb",
+      "sha256": "7ad7baa2b6b4eeaf6291e87e0990cc90b71813f1f1814e05e103add1a017ef8c",
+      "beforeSource": {
+        "count": 0,
+        "max": 0
+      },
+      "afterSource": {
+        "count": 0,
+        "max": 0
+      },
+      "beforeHostJpegExact": true,
+      "afterHostJpegExact": true,
+      "numpyVisibleMaxDelta": 0
+    }
+  ],
+  "browser": [
+    {
+      "name": "rgb-d8-opaque-v1-c0.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v1-c1.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v1-c2.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v1-c3.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v2-c0.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v2-c1.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v2-c2.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-opaque-v2-c3.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-alpha-v1-c0.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-alpha-v1-c1.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-alpha-v1-c2.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-alpha-v1-c3.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-alpha-v2-c0.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-alpha-v2-c1.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-alpha-v2-c2.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-alpha-v2-c3.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-half-step-v1-c0.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-half-step-v1-c1.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-half-step-v1-c2.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-half-step-v1-c3.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-half-step-v2-c0.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-half-step-v2-c1.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-half-step-v2-c2.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d8-half-step-v2-c3.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v1-c0.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v1-c1.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v1-c2.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v1-c3.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v2-c0.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v2-c1.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v2-c2.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-opaque-v2-c3.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v1-c0.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v1-c1.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v1-c2.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v1-c3.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v2-c0.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v2-c1.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v2-c2.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-alpha-v2-c3.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-half-step-v1-c0.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-half-step-v1-c1.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-half-step-v1-c2.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-half-step-v1-c3.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-half-step-v2-c0.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-half-step-v2-c1.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-half-step-v2-c2.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d16-half-step-v2-c3.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v1-c0.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v1-c1.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v1-c2.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v1-c3.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v2-c0.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v2-c1.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v2-c2.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-opaque-v2-c3.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v1-c0.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v1-c1.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v1-c2.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v1-c3.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v2-c0.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v2-c1.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v2-c2.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-alpha-v2-c3.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v1-c0.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v1-c1.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v1-c2.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v1-c3.psd",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v2-c0.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v2-c1.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v2-c2.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    },
+    {
+      "name": "rgb-d32-half-step-v2-c3.psb",
+      "width": 65,
+      "height": 17,
+      "count": 0,
+      "max": 0
+    }
+  ],
+  "commands": [
+    "python scripts/probe-psd-rgb-precision.py outputs/psd-rgb-precision/originals",
+    "node scripts/verify-psd-rgb-precision.js outputs/psd-rgb-precision/originals outputs/psd-rgb-precision/verified",
+    "node --test tests/psd-*.test.js",
+    "npm run check",
+    "npm run check:production"
+  ],
+  "evidence": [
+    "scripts/probe-psd-rgb-precision.py",
+    "scripts/verify-psd-rgb-precision.js",
+    "tests/psd-rgb-precision.test.js"
+  ],
+  "limits": [
+    "JPEG is lossy. Host and browser assertions compare against the same JPEG encoder fed independent correct source pixels, not lossless JPEG-vs-source claims.",
+    "Browser uses native JPEG decode to Canvas. Actual designPreview file API is simulated; no WeChat or physical-device result.",
+    "Unprofiled saved merged RGB only, without embedded thumbnail. No ICC, arbitrary layer recomposition or HDR tone mapping certification.",
+    "The visible correction is small: maximum source change1, amplified in eight lossy previews to maximum channel change8."
+  ]
+}

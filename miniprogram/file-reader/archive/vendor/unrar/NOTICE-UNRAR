@@ -1,0 +1,3 @@
+RAR 解压内核由 node-unrar-js 2.0.2 提供，项目采用 MIT License。
+上游：https://github.com/YuJianrong/node-unrar.js
+WASM 源码：https://github.com/YuJianrong/node-unrar.js/tree/master/wasm

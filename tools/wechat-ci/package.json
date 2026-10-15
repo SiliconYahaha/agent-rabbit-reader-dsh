@@ -1,0 +1,11 @@
+{
+  "name": "@html-reader/wechat-ci",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Isolated official WeChat Mini Program CI runtime",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "dependencies": {
+    "miniprogram-ci": "2.1.31"
+  }
+}

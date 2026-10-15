@@ -1,0 +1,30 @@
+node_modules/
+miniprogram_npm/
+.DS_Store
+project.private.config.json
+*.log
+.env
+.env.*
+!.env.example
+server/.data/
+
+# 本项目生成的预览、二维码、审核视频和验收截图保存在项目内，
+# 但不随代码提交；目录说明单独纳入版本管理。
+/outputs/*
+!/outputs/README.md
+
+# 用户原始测试资料仅本机保存，禁止进入公开仓库或发布包。
+/test-materials/
+
+# Local-only material and tool state
+/tmp/
+/archive/
+/output/
+/renders/
+/.claude/
+/.codex/
+/.npm-cache/
+*.pem
+*.key
+*.p12
+*.pfx

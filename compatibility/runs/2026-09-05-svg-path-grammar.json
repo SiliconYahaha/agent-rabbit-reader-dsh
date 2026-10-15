@@ -1,0 +1,1732 @@
+{
+  "schemaVersion": 1,
+  "iteration": "svg-path-grammar",
+  "targetVersion": "1.4.101",
+  "baselineFailingCases": 81,
+  "baselineFailures": [
+    "compact-arc-1",
+    "invalid-prefix-1",
+    "compact-arc-2",
+    "invalid-prefix-2",
+    "compact-arc-3",
+    "invalid-prefix-3",
+    "compact-arc-4",
+    "invalid-prefix-4",
+    "compact-arc-5",
+    "invalid-prefix-5",
+    "compact-arc-6",
+    "invalid-prefix-6",
+    "compact-arc-7",
+    "invalid-prefix-7",
+    "compact-arc-8",
+    "invalid-prefix-8",
+    "compact-arc-9",
+    "invalid-prefix-9",
+    "compact-arc-10",
+    "invalid-prefix-10",
+    "compact-arc-11",
+    "invalid-prefix-11",
+    "compact-arc-12",
+    "invalid-prefix-12",
+    "compact-arc-13",
+    "invalid-prefix-13",
+    "compact-arc-14",
+    "invalid-prefix-14",
+    "compact-arc-15",
+    "invalid-prefix-15",
+    "compact-arc-16",
+    "invalid-prefix-16",
+    "compact-arc-17",
+    "invalid-prefix-17",
+    "compact-arc-18",
+    "invalid-prefix-18",
+    "compact-arc-19",
+    "invalid-prefix-19",
+    "compact-arc-20",
+    "invalid-prefix-20",
+    "compact-arc-21",
+    "invalid-prefix-21",
+    "compact-arc-22",
+    "invalid-prefix-22",
+    "compact-arc-23",
+    "invalid-prefix-23",
+    "compact-arc-24",
+    "invalid-prefix-24",
+    "compact-arc-25",
+    "invalid-prefix-25",
+    "compact-arc-26",
+    "invalid-prefix-26",
+    "compact-arc-27",
+    "invalid-prefix-27",
+    "compact-arc-28",
+    "invalid-prefix-28",
+    "compact-arc-29",
+    "invalid-prefix-29",
+    "compact-arc-30",
+    "invalid-prefix-30",
+    "compact-arc-31",
+    "invalid-prefix-31",
+    "compact-arc-32",
+    "invalid-prefix-32",
+    "relative-compact-arc",
+    "compact-fractional-endpoint",
+    "invalid-comma",
+    "comma-after-command",
+    "comma-after-close",
+    "double-comma-before-command",
+    "invalid-arc-flag",
+    "fractional-arc-flag",
+    "nonfinite-tail",
+    "unicode-space",
+    "invalid-exponent",
+    "non-moveto-start",
+    "invalid-moveto",
+    "bicycle.svg/0/compact",
+    "flower1.svg/0/compact",
+    "flower1.svg/0/invalid-tail",
+    "globe.svg/0/compact"
+  ],
+  "chrome": {
+    "testedAt": "2026-09-04T22:34:52.529Z",
+    "chrome": "Google Chrome 152.0.7977.76",
+    "cases": 95,
+    "grammarFailures": [],
+    "pendingPixelComparisons": [
+      "compact-arc-1",
+      "compact-arc-2",
+      "compact-arc-3",
+      "compact-arc-4",
+      "compact-arc-5",
+      "compact-arc-6",
+      "compact-arc-7",
+      "compact-arc-8",
+      "compact-arc-9",
+      "compact-arc-10",
+      "compact-arc-11",
+      "compact-arc-12",
+      "compact-arc-13",
+      "compact-arc-14",
+      "compact-arc-15",
+      "compact-arc-16",
+      "compact-arc-17",
+      "compact-arc-18",
+      "compact-arc-19",
+      "compact-arc-20",
+      "compact-arc-21",
+      "compact-arc-22",
+      "compact-arc-23",
+      "compact-arc-24",
+      "compact-arc-25",
+      "compact-arc-26",
+      "compact-arc-27",
+      "compact-arc-28",
+      "compact-arc-29",
+      "compact-arc-30",
+      "compact-arc-31",
+      "compact-arc-32",
+      "relative-compact-arc",
+      "compact-fractional-endpoint",
+      "bicycle.svg/0/original",
+      "bicycle.svg/0/compact",
+      "bicycle.svg/0/invalid-tail",
+      "flower1.svg/0/original",
+      "flower1.svg/0/compact",
+      "flower1.svg/0/invalid-tail",
+      "globe.svg/0/original",
+      "globe.svg/0/compact",
+      "globe.svg/0/invalid-tail"
+    ],
+    "results": [
+      {
+        "name": "compact-arc-1",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 4,
+        "ink": 44,
+        "readerInk": 46,
+        "alphaError": 217
+      },
+      {
+        "name": "invalid-prefix-1",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 10,
+        "readerInk": 10,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-2",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 12,
+        "ink": 224,
+        "readerInk": 224,
+        "alphaError": 501
+      },
+      {
+        "name": "invalid-prefix-2",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 22,
+        "readerInk": 22,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-3",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 11,
+        "ink": 64,
+        "readerInk": 63,
+        "alphaError": 499
+      },
+      {
+        "name": "invalid-prefix-3",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 24,
+        "readerInk": 24,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-4",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 14,
+        "ink": 326,
+        "readerInk": 327,
+        "alphaError": 701
+      },
+      {
+        "name": "invalid-prefix-4",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 26,
+        "readerInk": 26,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-5",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 15,
+        "ink": 81,
+        "readerInk": 81,
+        "alphaError": 628
+      },
+      {
+        "name": "invalid-prefix-5",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 28,
+        "readerInk": 28,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-6",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 21,
+        "ink": 608,
+        "readerInk": 612,
+        "alphaError": 1105
+      },
+      {
+        "name": "invalid-prefix-6",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 30,
+        "readerInk": 30,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-7",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 15,
+        "ink": 102,
+        "readerInk": 106,
+        "alphaError": 704
+      },
+      {
+        "name": "invalid-prefix-7",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 32,
+        "readerInk": 32,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-8",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 649,
+        "readerInk": 649,
+        "alphaError": 213
+      },
+      {
+        "name": "invalid-prefix-8",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 34,
+        "readerInk": 34,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-9",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 128,
+        "readerInk": 128,
+        "alphaError": 260
+      },
+      {
+        "name": "invalid-prefix-9",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 36,
+        "readerInk": 36,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-10",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 3,
+        "ink": 1092,
+        "readerInk": 1092,
+        "alphaError": 648
+      },
+      {
+        "name": "invalid-prefix-10",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 38,
+        "readerInk": 38,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-11",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 6,
+        "ink": 152,
+        "readerInk": 151,
+        "alphaError": 330
+      },
+      {
+        "name": "invalid-prefix-11",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-12",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 3,
+        "ink": 1074,
+        "readerInk": 1074,
+        "alphaError": 485
+      },
+      {
+        "name": "invalid-prefix-12",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 42,
+        "readerInk": 42,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-13",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 181,
+        "readerInk": 181,
+        "alphaError": 272
+      },
+      {
+        "name": "invalid-prefix-13",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 44,
+        "readerInk": 44,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-14",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 2,
+        "ink": 1623,
+        "readerInk": 1619,
+        "alphaError": 960
+      },
+      {
+        "name": "invalid-prefix-14",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 46,
+        "readerInk": 46,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-15",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 9,
+        "ink": 207,
+        "readerInk": 209,
+        "alphaError": 491
+      },
+      {
+        "name": "invalid-prefix-15",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 48,
+        "readerInk": 48,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-16",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 16,
+        "ink": 1583,
+        "readerInk": 1585,
+        "alphaError": 925
+      },
+      {
+        "name": "invalid-prefix-16",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 50,
+        "readerInk": 50,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-17",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 14,
+        "ink": 242,
+        "readerInk": 244,
+        "alphaError": 603
+      },
+      {
+        "name": "invalid-prefix-17",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 52,
+        "readerInk": 52,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-18",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 47,
+        "ink": 2205,
+        "readerInk": 2210,
+        "alphaError": 1783
+      },
+      {
+        "name": "invalid-prefix-18",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 54,
+        "readerInk": 54,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-19",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 20,
+        "ink": 276,
+        "readerInk": 276,
+        "alphaError": 766
+      },
+      {
+        "name": "invalid-prefix-19",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 56,
+        "readerInk": 56,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-20",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 43,
+        "ink": 2186,
+        "readerInk": 2188,
+        "alphaError": 1617
+      },
+      {
+        "name": "invalid-prefix-20",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 58,
+        "readerInk": 58,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-21",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 20,
+        "ink": 315,
+        "readerInk": 315,
+        "alphaError": 821
+      },
+      {
+        "name": "invalid-prefix-21",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 60,
+        "readerInk": 60,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-22",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 58,
+        "ink": 2884,
+        "readerInk": 2887,
+        "alphaError": 2267
+      },
+      {
+        "name": "invalid-prefix-22",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 62,
+        "readerInk": 62,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-23",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 25,
+        "ink": 349,
+        "readerInk": 351,
+        "alphaError": 899
+      },
+      {
+        "name": "invalid-prefix-23",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 64,
+        "readerInk": 64,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-24",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 44,
+        "ink": 2882,
+        "readerInk": 2890,
+        "alphaError": 1746
+      },
+      {
+        "name": "invalid-prefix-24",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 66,
+        "readerInk": 66,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-25",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 23,
+        "ink": 392,
+        "readerInk": 392,
+        "alphaError": 906
+      },
+      {
+        "name": "invalid-prefix-25",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 68,
+        "readerInk": 68,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-26",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 80,
+        "ink": 3657,
+        "readerInk": 3665,
+        "alphaError": 3085
+      },
+      {
+        "name": "invalid-prefix-26",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 70,
+        "readerInk": 70,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-27",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 20,
+        "ink": 434,
+        "readerInk": 435,
+        "alphaError": 979
+      },
+      {
+        "name": "invalid-prefix-27",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 72,
+        "readerInk": 72,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-28",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 51,
+        "ink": 3674,
+        "readerInk": 3684,
+        "alphaError": 2124
+      },
+      {
+        "name": "invalid-prefix-28",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 74,
+        "readerInk": 74,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-29",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 33,
+        "ink": 478,
+        "readerInk": 481,
+        "alphaError": 1264
+      },
+      {
+        "name": "invalid-prefix-29",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 76,
+        "readerInk": 76,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-30",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 78,
+        "ink": 4512,
+        "readerInk": 4517,
+        "alphaError": 3149
+      },
+      {
+        "name": "invalid-prefix-30",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 78,
+        "readerInk": 78,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-31",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 32,
+        "ink": 527,
+        "readerInk": 531,
+        "alphaError": 1295
+      },
+      {
+        "name": "invalid-prefix-31",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 80,
+        "readerInk": 80,
+        "alphaError": 0
+      },
+      {
+        "name": "compact-arc-32",
+        "kind": "compact-arc-flags",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 62,
+        "ink": 4552,
+        "readerInk": 4559,
+        "alphaError": 2519
+      },
+      {
+        "name": "invalid-prefix-32",
+        "kind": "invalid-token-prefix-recovery",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 82,
+        "readerInk": 82,
+        "alphaError": 0
+      },
+      {
+        "name": "relative-compact-arc",
+        "kind": "grammar-boundary",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 32,
+        "ink": 527,
+        "readerInk": 531,
+        "alphaError": 1295
+      },
+      {
+        "name": "compact-fractional-endpoint",
+        "kind": "grammar-boundary",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 35,
+        "ink": 452,
+        "readerInk": 450,
+        "alphaError": 1209
+      },
+      {
+        "name": "signed-exponent",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "implicit-lineto",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 3400,
+        "readerInk": 3400,
+        "alphaError": 0
+      },
+      {
+        "name": "post-close-relative",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 200,
+        "readerInk": 200,
+        "alphaError": 0
+      },
+      {
+        "name": "invalid-comma",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 80,
+        "readerInk": 80,
+        "alphaError": 0
+      },
+      {
+        "name": "comma-after-command",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 0,
+        "readerInk": 0,
+        "alphaError": 0
+      },
+      {
+        "name": "comma-before-command",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 80,
+        "readerInk": 80,
+        "alphaError": 0
+      },
+      {
+        "name": "comma-before-close",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "comma-after-close",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "double-comma-before-command",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "trailing-comma",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "truncated-line",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "truncated-cubic",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "invalid-arc-flag",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "fractional-arc-flag",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "nonfinite-tail",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "unicode-space",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "invalid-exponent",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 40,
+        "readerInk": 40,
+        "alphaError": 0
+      },
+      {
+        "name": "non-moveto-start",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 0,
+        "readerInk": 0,
+        "alphaError": 0
+      },
+      {
+        "name": "invalid-moveto",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 0,
+        "readerInk": 0,
+        "alphaError": 0
+      },
+      {
+        "name": "empty",
+        "kind": "grammar-boundary",
+        "hasArc": false,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 0,
+        "ink": 0,
+        "readerInk": 0,
+        "alphaError": 0
+      },
+      {
+        "name": "bicycle.svg/0/original",
+        "kind": "public-path",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 304,
+        "ink": 9898,
+        "readerInk": 9888,
+        "alphaError": 14521
+      },
+      {
+        "name": "bicycle.svg/0/compact",
+        "kind": "public-path",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 304,
+        "ink": 9898,
+        "readerInk": 9888,
+        "alphaError": 14521
+      },
+      {
+        "name": "bicycle.svg/0/invalid-tail",
+        "kind": "public-path",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 304,
+        "ink": 9898,
+        "readerInk": 9888,
+        "alphaError": 14521
+      },
+      {
+        "name": "flower1.svg/0/original",
+        "kind": "public-path",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 670,
+        "ink": 18068,
+        "readerInk": 18101,
+        "alphaError": 32749
+      },
+      {
+        "name": "flower1.svg/0/compact",
+        "kind": "public-path",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 670,
+        "ink": 18068,
+        "readerInk": 18101,
+        "alphaError": 32749
+      },
+      {
+        "name": "flower1.svg/0/invalid-tail",
+        "kind": "public-path",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 670,
+        "ink": 18068,
+        "readerInk": 18101,
+        "alphaError": 32749
+      },
+      {
+        "name": "globe.svg/0/original",
+        "kind": "public-path",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 559,
+        "ink": 19417,
+        "readerInk": 19360,
+        "alphaError": 25527
+      },
+      {
+        "name": "globe.svg/0/compact",
+        "kind": "public-path",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 559,
+        "ink": 19417,
+        "readerInk": 19360,
+        "alphaError": 25527
+      },
+      {
+        "name": "globe.svg/0/invalid-tail",
+        "kind": "public-path",
+        "hasArc": true,
+        "nativeDiff": 0,
+        "readerPrefixDiff": 0,
+        "readerDiff": 559,
+        "ink": 19417,
+        "readerInk": 19360,
+        "alphaError": 25527
+      }
+    ]
+  },
+  "wechat": {
+    "testedAt": "2026-09-04T22:31:29.486Z",
+    "scope": "Actual WX file read; static paths inside an animated SVG exercise reader Canvas. Paired pixels compare syntax variants with explicit expected paths, not physical devices or complete native pixel fidelity.",
+    "system": {
+      "platform": "devtools",
+      "SDKVersion": "3.16.2"
+    },
+    "results": [
+      {
+        "name": "compact-arc-1",
+        "frames": [
+          {
+            "variant": "expected",
+            "hash": 2517768309,
+            "ink": 2308,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "input",
+            "hash": 2517768309,
+            "ink": 2308,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "compact-arc-8",
+        "frames": [
+          {
+            "variant": "expected",
+            "hash": 2116977736,
+            "ink": 7785,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "input",
+            "hash": 2116977736,
+            "ink": 7785,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "compact-arc-16",
+        "frames": [
+          {
+            "variant": "expected",
+            "hash": 512819848,
+            "ink": 12500,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "input",
+            "hash": 512819848,
+            "ink": 12500,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "compact-arc-32",
+        "frames": [
+          {
+            "variant": "expected",
+            "hash": 3906702408,
+            "ink": 14177,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "input",
+            "hash": 3906702408,
+            "ink": 14177,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "invalid-prefix-1",
+        "frames": [
+          {
+            "variant": "expected",
+            "hash": 4028571402,
+            "ink": 1530,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "input",
+            "hash": 4028571402,
+            "ink": 1530,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "invalid-prefix-8",
+        "frames": [
+          {
+            "variant": "expected",
+            "hash": 396249440,
+            "ink": 2573,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "input",
+            "hash": 396249440,
+            "ink": 2573,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "invalid-prefix-16",
+        "frames": [
+          {
+            "variant": "expected",
+            "hash": 755889459,
+            "ink": 3780,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "input",
+            "hash": 755889459,
+            "ink": 3780,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "invalid-prefix-32",
+        "frames": [
+          {
+            "variant": "expected",
+            "hash": 2926721510,
+            "ink": 6191,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "input",
+            "hash": 2926721510,
+            "ink": 6191,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "bicycle.svg",
+        "frames": [
+          {
+            "variant": "original",
+            "hash": 3443929605,
+            "ink": 327008,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "compact",
+            "hash": 3443929605,
+            "ink": 327008,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "invalid-tail",
+            "hash": 3443929605,
+            "ink": 327008,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "flower1.svg",
+        "frames": [
+          {
+            "variant": "original",
+            "hash": 2074135957,
+            "ink": 602663,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "compact",
+            "hash": 2074135957,
+            "ink": 602663,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "invalid-tail",
+            "hash": 2074135957,
+            "ink": 602663,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      },
+      {
+        "name": "globe.svg",
+        "frames": [
+          {
+            "variant": "original",
+            "hash": 2678062933,
+            "ink": 643449,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "compact",
+            "hash": 2678062933,
+            "ink": 643449,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          },
+          {
+            "variant": "invalid-tail",
+            "hash": 2678062933,
+            "ink": 643449,
+            "width": 1170,
+            "height": 1170,
+            "error": "",
+            "animated": true
+          }
+        ]
+      }
+    ]
+  },
+  "userOriginalsLive": {
+    "testedAt": "2026-09-04T22:32:30.680Z",
+    "scope": "Actual WX file read and visible Canvas temporal pixels; simulator only, not physical devices",
+    "system": {
+      "SDKVersion": "3.16.2",
+      "platform": "devtools",
+      "version": "8.0.5"
+    },
+    "results": [
+      {
+        "name": "partridge-bicycle.svg",
+        "bytes": 17410,
+        "sha256": "35842356271fc01cc1e21396fe57ec17956afe212081ba0d0712ccb3a1e771f0",
+        "state": {
+          "name": "partridge-bicycle.svg",
+          "ready": true,
+          "loading": false,
+          "error": "",
+          "notice": ""
+        },
+        "frames": [
+          {
+            "hash": 3145687712,
+            "ink": 1215376,
+            "timeMs": 83.80000000000291,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1040
+          },
+          {
+            "hash": 568328668,
+            "ink": 1215376,
+            "timeMs": 2100.399999999994,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1040
+          },
+          {
+            "hash": 3236598263,
+            "ink": 1215453,
+            "timeMs": 4098.5,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1040
+          }
+        ],
+        "paused": [
+          {
+            "hash": 2792313420,
+            "ink": 1215453,
+            "timeMs": 6050.399999999994,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1040
+          },
+          {
+            "hash": 2792313420,
+            "ink": 1215453,
+            "timeMs": 6050.399999999994,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1040
+          }
+        ],
+        "replaced": {
+          "hash": 54474224,
+          "ink": 1215453,
+          "timeMs": 383.3999999999942,
+          "playing": true,
+          "paused": false,
+          "width": 1170,
+          "height": 1040
+        }
+      },
+      {
+        "name": "peacock.svg",
+        "bytes": 354942,
+        "sha256": "bd8e994e06d9bb19544915fe376465d96ad9bbb5d649c26cca53799e26768c8d",
+        "state": {
+          "name": "peacock.svg",
+          "ready": true,
+          "loading": false,
+          "error": "",
+          "notice": ""
+        },
+        "frames": [
+          {
+            "hash": 1054065277,
+            "ink": 1230550,
+            "timeMs": 66.60000000000582,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1053
+          },
+          {
+            "hash": 3178683778,
+            "ink": 1230550,
+            "timeMs": 2199.9000000000087,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1053
+          },
+          {
+            "hash": 3577739610,
+            "ink": 1230630,
+            "timeMs": 4233.199999999997,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1053
+          }
+        ],
+        "paused": [
+          {
+            "hash": 3410983520,
+            "ink": 1230630,
+            "timeMs": 6283.100000000006,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1053
+          },
+          {
+            "hash": 3410983520,
+            "ink": 1230630,
+            "timeMs": 6283.100000000006,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1053
+          }
+        ],
+        "replaced": {
+          "hash": 3879625269,
+          "ink": 1230630,
+          "timeMs": 366.6999999999971,
+          "playing": true,
+          "paused": false,
+          "width": 1170,
+          "height": 1053
+        }
+      },
+      {
+        "name": "qin-shi-huang-bicycle.svg",
+        "bytes": 35291,
+        "sha256": "15c86af1181af6c7b46209d7b271c028fba2aa225a1b8436da976d0245494c25",
+        "state": {
+          "name": "qin-shi-huang-bicycle.svg",
+          "ready": true,
+          "loading": false,
+          "error": "",
+          "notice": ""
+        },
+        "frames": [
+          {
+            "hash": 421403787,
+            "ink": 1245796,
+            "timeMs": 50.90000000000873,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1066
+          },
+          {
+            "hash": 537450431,
+            "ink": 1245796,
+            "timeMs": 2167.5999999999913,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1066
+          },
+          {
+            "hash": 3172053011,
+            "ink": 1245873,
+            "timeMs": 4166.699999999997,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1066
+          }
+        ],
+        "paused": [
+          {
+            "hash": 981285349,
+            "ink": 1245873,
+            "timeMs": 6332.400000000009,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1066
+          },
+          {
+            "hash": 981285349,
+            "ink": 1245873,
+            "timeMs": 6332.400000000009,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1066
+          }
+        ],
+        "replaced": {
+          "hash": 3260480333,
+          "ink": 1245873,
+          "timeMs": 382.6000000000058,
+          "playing": true,
+          "paused": false,
+          "width": 1170,
+          "height": 1066
+        }
+      }
+    ],
+    "controlledFallback": {
+      "sourceEmpty": true,
+      "notice": "动画暂时无法播放，当前显示静态预览。",
+      "canRetry": true
+    },
+    "recovered": {
+      "ready": true,
+      "notice": ""
+    }
+  },
+  "validation": {
+    "nodeTestsPassed": 881,
+    "compatibilityProbesPassed": 141,
+    "productionConfig": "pass",
+    "chromeGeneralOracle": "pass",
+    "priorClosepathCases": 56,
+    "priorMorphCases": 68,
+    "priorAnimationFixtures": 3
+  },
+  "physicalDevices": {
+    "ios": "pending",
+    "android": "pending"
+  },
+  "testHarnessIncident": {
+    "firstRun": "25-frame pair checks interrupted during automator screenshot after bicycle; saveFile storage quota exceeded",
+    "recovery": "Export actual Canvas PNG via toDataURL directly to host, without wx.saveFile; final complete run passes",
+    "navigationRetry": "First rerun after edited project recompilation timed out before cases; terminal process confirmed before rerun"
+  },
+  "limits": "95 scoped path cases; pixel differences retained separately. Native image route unchanged. Full SVG fidelity and global memory budget not certified.",
+  "ci": {
+    "runId": "33926214926",
+    "attempt": 2,
+    "result": "success",
+    "firstAttempt": "Chrome process exceeded 30-second exit timeout after all 56 closepath cases serialized zero native/reader prefix failures and zero blanks; unchanged job rerun passed"
+  }
+}

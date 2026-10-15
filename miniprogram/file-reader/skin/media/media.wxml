@@ -1,0 +1,21 @@
+<view class="media-reader">
+  <view class="media-heading">
+    <text class="media-kicker">{{kicker}}</text>
+    <text class="media-name">{{name}}</text>
+    <text class="media-meta">{{type || '按后缀识别'}} · {{sizeLabel}}</text>
+    <text class="media-meta">{{formatLabel}}{{codecLabel ? ' · ' + codecLabel : ''}}</text>
+    <text wx:if="{{compatibility}}" class="media-compatibility">{{compatibility}}</text>
+    <text class="media-diagnostic">{{diagnostic}}</text>
+    <view wx:if="{{details.length}}" class="media-detail-list">
+      <text wx:for="{{details}}" wx:key="index" class="media-detail" selectable>{{item}}</text>
+    </view>
+  </view>
+  <video wx:if="{{mode === 'video' && canPlay}}" class="video-player" src="{{path}}" controls show-center-play-btn enable-progress-gesture bindloadedmetadata="onVideoLoadedMetadata" bindplay="onVideoPlay" bindpause="onVideoPause" bindwaiting="onVideoWaiting" bindended="onVideoEnded" binderror="onVideoError"/>
+  <view wx:elif="{{mode === 'audio' && canPlay}}" class="audio-player">
+    <button class="audio-play-button" bindtap="onToggle">{{playing ? '暂停' : '播放'}}</button>
+    <slider class="audio-slider" min="0" max="{{duration || 1}}" value="{{current}}" activeColor="#ff5b43" backgroundColor="#dedbd2" block-color="#b9e63b" bindchange="onSeek"/>
+    <view class="audio-time"><text>{{currentLabel}}</text><text>{{durationLabel}}</text></view>
+  </view>
+  <view wx:else class="media-unavailable">{{unavailable}}</view>
+  <view wx:if="{{note}}" class="local-only-note">{{note}}</view>
+</view>

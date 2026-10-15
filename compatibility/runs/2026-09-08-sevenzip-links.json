@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "id": "sevenzip-symbolic-links",
+  "at": "2026-09-08T02:28:31.051527+00:00",
+  "version": "1.4.128",
+  "seed": "2026-09-06-next-sevenzip-links.json",
+  "generator": "tests/helpers/sevenzip-links.js",
+  "tests": "tests/sevenzip-links.test.js",
+  "oracle": {
+    "at": "2026-09-08T02:43:25.673Z",
+    "oracle": "bsdtar 3.5.3 - libarchive 3.7.4 zlib/1.2.12 liblzma/5.4.3 bz2lib/1.0.8",
+    "cases": [
+      {
+        "codec": "copy",
+        "name": "direct",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "copy",
+        "name": "aliases/relative",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "copy",
+        "name": "intermediate",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "copy",
+        "name": "chained",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "copy",
+        "name": "backslash",
+        "target": "literal\\file.html",
+        "bytes": 26,
+        "sha256": "549a0f44976342ed2318da069d6622dea3cd6591402faf99e89883ebdf9c914b",
+        "exact": true
+      },
+      {
+        "codec": "copy",
+        "name": "unicode",
+        "target": "中文/🐇.html",
+        "bytes": 21,
+        "sha256": "7657f54215418b84a6ad379974857c634e6cc83543a8ef069824bbac93eab278",
+        "exact": true
+      },
+      {
+        "codec": "copy",
+        "name": "empty",
+        "target": "real/docs/empty.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exact": true
+      },
+      {
+        "codec": "copy",
+        "name": "binary",
+        "target": "real/docs/data.bin",
+        "bytes": 6,
+        "sha256": "486611a654b4ff12fc79f5aef10611737fe1553f36753152ab83d4a79bd05cc7",
+        "exact": true
+      },
+      {
+        "codec": "lzma2",
+        "name": "direct",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "lzma2",
+        "name": "aliases/relative",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "lzma2",
+        "name": "intermediate",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "lzma2",
+        "name": "chained",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "lzma2",
+        "name": "backslash",
+        "target": "literal\\file.html",
+        "bytes": 26,
+        "sha256": "549a0f44976342ed2318da069d6622dea3cd6591402faf99e89883ebdf9c914b",
+        "exact": true
+      },
+      {
+        "codec": "lzma2",
+        "name": "unicode",
+        "target": "中文/🐇.html",
+        "bytes": 21,
+        "sha256": "7657f54215418b84a6ad379974857c634e6cc83543a8ef069824bbac93eab278",
+        "exact": true
+      },
+      {
+        "codec": "lzma2",
+        "name": "empty",
+        "target": "real/docs/empty.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exact": true
+      },
+      {
+        "codec": "lzma2",
+        "name": "binary",
+        "target": "real/docs/data.bin",
+        "bytes": 6,
+        "sha256": "486611a654b4ff12fc79f5aef10611737fe1553f36753152ab83d4a79bd05cc7",
+        "exact": true
+      },
+      {
+        "codec": "lzma",
+        "name": "direct",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "lzma",
+        "name": "aliases/relative",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "lzma",
+        "name": "intermediate",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "lzma",
+        "name": "chained",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "lzma",
+        "name": "backslash",
+        "target": "literal\\file.html",
+        "bytes": 26,
+        "sha256": "549a0f44976342ed2318da069d6622dea3cd6591402faf99e89883ebdf9c914b",
+        "exact": true
+      },
+      {
+        "codec": "lzma",
+        "name": "unicode",
+        "target": "中文/🐇.html",
+        "bytes": 21,
+        "sha256": "7657f54215418b84a6ad379974857c634e6cc83543a8ef069824bbac93eab278",
+        "exact": true
+      },
+      {
+        "codec": "lzma",
+        "name": "empty",
+        "target": "real/docs/empty.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exact": true
+      },
+      {
+        "codec": "lzma",
+        "name": "binary",
+        "target": "real/docs/data.bin",
+        "bytes": 6,
+        "sha256": "486611a654b4ff12fc79f5aef10611737fe1553f36753152ab83d4a79bd05cc7",
+        "exact": true
+      },
+      {
+        "codec": "ppmd",
+        "name": "direct",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "ppmd",
+        "name": "aliases/relative",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "ppmd",
+        "name": "intermediate",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "ppmd",
+        "name": "chained",
+        "target": "real/docs/page.html",
+        "bytes": 58,
+        "sha256": "51d5f91fe9494e33556e54988742768857cf3d96b0ba4c3d5449b7b193586f01",
+        "exact": true
+      },
+      {
+        "codec": "ppmd",
+        "name": "backslash",
+        "target": "literal\\file.html",
+        "bytes": 26,
+        "sha256": "549a0f44976342ed2318da069d6622dea3cd6591402faf99e89883ebdf9c914b",
+        "exact": true
+      },
+      {
+        "codec": "ppmd",
+        "name": "unicode",
+        "target": "中文/🐇.html",
+        "bytes": 21,
+        "sha256": "7657f54215418b84a6ad379974857c634e6cc83543a8ef069824bbac93eab278",
+        "exact": true
+      },
+      {
+        "codec": "ppmd",
+        "name": "empty",
+        "target": "real/docs/empty.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exact": true
+      },
+      {
+        "codec": "ppmd",
+        "name": "binary",
+        "target": "real/docs/data.bin",
+        "bytes": 6,
+        "sha256": "486611a654b4ff12fc79f5aef10611737fe1553f36753152ab83d4a79bd05cc7",
+        "exact": true
+      }
+    ]
+  },
+  "validation": {
+    "scopedTests": 19,
+    "bodyCases": 96,
+    "directoryCases": 24,
+    "codecVariants": [
+      "Copy non-solid",
+      "LZMA2 non-solid",
+      "LZMA2 solid",
+      "LZMA1 solid",
+      "PPMd solid",
+      "header-encrypted LZMA2"
+    ],
+    "inputModes": [
+      "single",
+      "reversed two numeric volumes"
+    ],
+    "boundaries": [
+      "native duplicate selection",
+      "ambiguous target rejected",
+      "absolute/parent escape/control paths rejected",
+      "missing target",
+      "cycle",
+      "16 accepted and 17 rejected",
+      "exact body size and low-by-one",
+      "solid prefix budget",
+      "4096 accepted and 4097 rejected",
+      "before-copy actual output limit",
+      "CRC rejection and recovery",
+      "invalid UTF-8 and NUL",
+      "actual HTML entry domTree",
+      "directory return",
+      "600 repeated commands and failed-command stack restoration",
+      "pre-decode index filtering: seven damaged later duplicate tails ignored, selected prefix CRC preserved"
+    ],
+    "fullNodeTests": 1199,
+    "fullNodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "cleanPinnedRebuild": "pass",
+    "asanProbe": "128 body reads passed after enabling noExitRuntime for diagnostic build",
+    "wechatDevtools": "not run; prior compiler-startup undefined path block",
+    "ios": "not run",
+    "android": "not run"
+  },
+  "nativeManifest": {
+    "sourceCommit": "e5431fa6f5505e385c6f9367260717e9c47dc2ee",
+    "wasmWrapperCommit": "521d2cf93f5964f4e77b01049e19f1b29305c454",
+    "emscripten": "4.0.10",
+    "listingApi": 2,
+    "wasmSha256": "f7a97005e8eafdb545b629f903c43a6a59cbb834c3b86d627238a93f0e1f563b",
+    "files": {
+      "7zz.js": "09cc9a2fe9d7a4b4088a8c00990d5376ec7125077a534996877ccbf79ff9a5bb",
+      "7zz.wasm.br": "de004204a80d59e47015c6fe7f931a0cc2b5f74ca93ac90027924a66d1772c81"
+    },
+    "patches": {
+      "7zz-emcc.patch": "02f038c73e04d400bd0a0aa9e530c2912013db9657d77d248295deb1fa373023",
+      "native-listing.patch": "7207bfedc4c8c096c1f51bd1065c53ed525fdf0c20f716351a37ff8ed09c5866"
+    }
+  },
+  "initialFailures": {
+    "diagnosis": "Emscripten 4.0.10 callMain allocates argv using stackAlloc/stringToUTF8OnStack without restoring the stack; local synchronous wrapper restores saved pointer in finally.",
+    "oracleCorrections": [
+      "Filesystem symlink source at 4096 bytes was rejected by native fixture generation; replaced with original Copy-only 7z headers.",
+      "Handwritten Copy fixture initially omitted SubStreamsInfo, so per-file CRC was undeclared; added valid empty SubStreamsInfo to inherit folder CRC.",
+      "Actual HTML host exposes domTree, not nodes. Fixed test assertion.",
+      "ASAN build initially omitted compile-only -c; corrected isolated diagnostic build. ASAN runtime also needs noExitRuntime:true for repeated calls."
+    ]
+  },
+  "artifacts": [
+    {
+      "name": "copy.7z",
+      "bytes": 668,
+      "sha256": "4045d773524ed3080dee9c631da1369d44ad06d97de9ab9235dfb9c1386acad4",
+      "base64": "N3q8ryccAASG0OR2WQIAAAAAAAAjAAAAAAAAAKapIjU8aDE+N3og6ZO+5o6l55yf5a6e5q2j5paHIPCfkIc8L2gxPjxwPnNlY29uZCBwYXJhZ3JhcGg8L3A+AP+ACg0BPGgxPmxpdGVyYWwgYmFja3NsYXNoPC9oMT48aDE+bmVzdGVkIGRlY295PC9oMT48aDE+VW5pY29kZSBib2R5PC9oMT5yZWFsL2RvY3MvcGFnZS5odG1sLi4vcmVhbC9kb2NzL3BhZ2UuaHRtbC4uL3JlYWwvZG9jc2FsaWFzZXMvZm9sZGVyL3BhZ2UuaHRtbGRpcmVjdGxpdGVyYWxcZmlsZS5odG1s5Lit5paHL/CfkIcuaHRtbHJlYWwvZG9jcy9lbXB0eS50eHRyZWFsL2RvY3MvZGF0YS5iaW4uAACBMwevnUKQet5W2gir7re31m/RPOOG8ioM9zVYrx03zYMP8kmf2olA3nuH3qfnZWZ3MRMHhcOeaR3Ll9ygmS3tqBL8m/cFHe3mxTXWg23zZEMcW54+eSOFaxARjW2yQpV1vrPICGGkjt2juOhOUONCQL3aaq0v8Ey9HPHyZkXb7ELN9FkicPklAc4Ssns/0eWAnYyhpIaA93fayaYwVe+acn1E8Tps5cknrZBL3SarMlTKmDJ9hZCWSWkV/PT1YY1OnE54pJI3p/50AS41a0BQJ8jg5VrTUz3KMzTAL/74wxzoIJ+Xqn5VVQNPvWrZxQABHkO6ixARhGD6vt1EhFM9625scGy+8F85ThAjRP1V+Dd3YcbZZyvaRKmE8O1pPwQmLeFLIgiRbzTBaRYK8PylYyvKFD4GAAAAFwaBHgEJgTsABwsBAAEjAwEBBV0AEAAADIKKCgHe7E4XAAA="
+    },
+    {
+      "name": "lzma.7z",
+      "bytes": 584,
+      "sha256": "55d1226e41174ed819968a18f42d577c8a44a3be552695b76e9583cf1e92ad3d",
+      "base64": "N3q8ryccAARX9yO2BQIAAAAAAAAjAAAAAAAAAFB5MDoAHhoCI+DlB5k5DUUiLjedkNA6Rd10srdZ6HvHrS0CWv0yPgjKRiVydspgkZxpwpSTjWpS6KLZwO4W1qkan0+sEsnhGMOZPK6kSbozcgIphQGauFlAVRnSXNleUaxdc+9TKezJsE8dYWEtj2Rsnku7doSZfba4RdRj6j/R9k5mHF63/gqbZszKBDzZLXcSl6Euf1lpzI/wfllHizZv9YILkLO+iAL6b6TzeG7O0b+Aj7u8cwyN59UVDLB0vy2GG54AAIEzB64P1TESgRck0/6zfi+Jkr6+OYe1emmqGDVAy928ZMmfS90KbLcRyTvVTUzy8IZsWnbzv9HwCvjJDTdeQUk7YGQdYT4VR+EkR0yfhOpOfyQ9e6FgprOEn7nNWFGzsJ9qO6XWcpBOySJbbnzB6XqBWVMChEe5XnhojdZmhey+hdIXXKzfJXgdV4QmBtbjAkJLizzuYXSotbuqMKxQtTJsm7Y1LIO6g3DGSsZhgr+240j/nP91rUBEOfs34ganofsF7v4EsTvD6O8kn+VPOKsnc3b1Gk7GkTCIWUBLE6j8LuiBLHNy3AzjZ3RUJc2YNREXZyPYPlf4w4Z3/+LBDJgxiYT6kkYT9wc5TQhlMqEk+4IPo9L75Jo65UZoZ2+yGXg3nyiJ1zDcVQb5hDKf6gM3UWDmcpopMfAucW+4c1IR0gAAFwaAwAEJgUUABwsBAAEjAwEBBV0AEAAADIJaCgGOsLFPAAA="
+    },
+    {
+      "name": "lzma2.7z",
+      "bytes": 587,
+      "sha256": "88bc31c3afec89f2766cab7d6e90239428193931273e6d29c428e4ee6368da84",
+      "base64": "N3q8ryccAARTApoeCAIAAAAAAAAjAAAAAAAAACYsPebgAR0Av10AHhoCI+DlB5k5DUUiLjedkNA6Rd10srdZ6HvHrS0CWv0yPgjKRiVydspgkZxpwpSTjWpS6KLZwO4W1qkan0+sEsnhGMOZPK6kSbozcgIphQGauFlAVRnSXNleUaxdc+9TKezJsE8dYWEtj2Rsnku7doSZfba4RdRj6j/R9k5mHF63/gqbZszKBDzZLXcSl6Euf1lpzI/wfllHizZv9YILkLO+iAL6b6TzeG7O0b+Aj7u8cwyN59UVDLB0vy2GG54AAACBMweuD9UxOjbXJNP+s3AYgUAeRFUCy5nnmbi5UB2c95nbsgNN4//f0HVc2oc+mHVptMRJISDJ4cs/1J0bIvnR47swRvw6NlfQ+zFnl8Nuj0mRLn2x0s0pmskCk67eLmAsIl4KLlrDVbVovV4h+dNAJnX91kz5nH0NxUU4vU77U5SICTAVdmpwhhFNy+GvpQTzbvI9GjNqg4KbunSJBd2uBgIWdasv8GqNK/+0QXB22GIqhKYZ63pS2RE3ic8ErdZUiO/77WAYfA1hDFq484Kyx4z/sRyC87YGJp7zUrshaDChoQFp1VAjfCHsZR3gqi9trxwli7Hr+tRo3QGa+69t+4qI5PzBk5/e3MQtB/LYyHcoWoCD43vpvFEotPS6WR0KfPF7B6I55Y5Wxw5lDukZFWU68AnKUMIC29OVAAAAFwaAxwEJgUEABwsBAAEjAwEBBV0AEAAADIJaCgF7cO0rAAA="
+    },
+    {
+      "name": "ppmd.7z",
+      "bytes": 561,
+      "sha256": "05b64d9ca88fcf0177a65497d0af37fa7d2add0041f30af8641de5559df1ab49",
+      "base64": "N3q8ryccAARD1r8b7gEAAAAAAAAjAAAAAAAAAHGm8ukAPC3vFa+D80+lqv2grRu7OhKdiwTPQeLjp7gyazxeUqAmrCY8WMbwmNZHvwCCW3eOGnF4vjTUq5CbWUv7ZFNESFampD6MmWoEIaDGms6v8PNNiqM2cXA3AgsqzxrqosbgYU9q6A/dSvs2aHlh9cKHLf7dQ5dpC7gtZR3svY9RMe6KX36YhMIxOCfyQUyNo6rvm7bN8xcfC0QtnCNTcuxDHsxxmV8pAgMDigAAgTMHrg/VMJWzlyTT/rN+L5gyeCe1WdCkzV+q6IIzlF+XxJ2yrztyOU76vQieF7iWbgrvPU5Bs/dhQF3ZXgN6oIIEcmWtNg3+yd/SbPaIJu9DAA3Jx/Ly1yE2sa3aZMvwwVJlHk8angLQKikZbEwbRLNThNKVdrcNNBduyWi3WKcrSz7EU+lt4E4f31vGdAdB4MPHpljnS3NeZOnDtdFBHLn4u3ne9yfOt+9jqQPPlLknRm615fpCkDo82ay8iGL/Jam924CX8QqhPC0gkAlOcJONYyboJcgwhAAybzIn8hC3pNLIcRSekftK6h+GXdii8NbeJQcxPEDMbMLAJOhV8uHev8Mngy+7qgECwqZgWqMEiuQxtUOgeFjd4SBwy8jDqgIdodTJU59CTpQ+BI5RaanLowsw513lBWmmaJEMKycAABcGgKoBCYFEAAcLAQABIwMBAQVdABAAAAyCWgoBilVRwQAA"
+    }
+  ],
+  "nativeSelection": {
+    "diagnosis": "Filtering only at GetStream still asks the decoder to process later same-name members. Filter realIndices in Extract.cpp before archive->Extract, preserving the selected solid-prefix budget.",
+    "comparison": {
+      "base64": "N3q8ryccAASVbD71FwAAAAAAAABSAAAAAAAAAHIvqDPgAM8AD10AOhhKqxirktVJ2AjkQIAAAAEEBgABCRcABwsBAAEhIQEADIDQAAgNAgkICgFZzJ5IpmvLfgAABQIZAwAAABEVAHMAYQBtAGUAAABzAGEAbQBlAAAAFQoBACCA/6EggP+hAAA=",
+      "headerStart": 55,
+      "entry": {
+        "isLink": true,
+        "linkType": 1,
+        "linkTargetInData": true,
+        "id": 0,
+        "memberIndex": 0,
+        "archiveType": "7z-engine",
+        "pathSeparator": "slash",
+        "name": "same",
+        "detail": "8 B · 链接 · LZMA2:12",
+        "isDirectory": false,
+        "canOpen": true,
+        "encrypted": false,
+        "compressedSize": 23,
+        "uncompressedSize": 8,
+        "method": "LZMA2:12",
+        "crc": "489ECC59",
+        "duplicateIndex": 0,
+        "duplicateCount": 2,
+        "displayName": "same（同名 1/2）"
+      },
+      "rows": [
+        {
+          "at": 54,
+          "old": {
+            "error": "ERROR: Data Error : #0"
+          },
+          "current": {
+            "text": "target-a"
+          }
+        },
+        {
+          "at": 53,
+          "old": {
+            "error": "ERROR: Data Error : #0"
+          },
+          "current": {
+            "text": "target-a"
+          }
+        },
+        {
+          "at": 52,
+          "old": {
+            "error": "ERROR: Data Error : same"
+          },
+          "current": {
+            "text": "target-a"
+          }
+        },
+        {
+          "at": 51,
+          "old": {
+            "error": "ERROR: Data Error : #0"
+          },
+          "current": {
+            "text": "target-a"
+          }
+        },
+        {
+          "at": 50,
+          "old": {
+            "error": "ERROR: Data Error : same"
+          },
+          "current": {
+            "text": "target-a"
+          }
+        },
+        {
+          "at": 49,
+          "old": {
+            "error": "ERROR: Data Error : same"
+          },
+          "current": {
+            "text": "target-a"
+          }
+        },
+        {
+          "at": 48,
+          "old": {
+            "error": "ERROR: Data Error : same"
+          },
+          "current": {
+            "text": "target-a"
+          }
+        },
+        {
+          "at": 47,
+          "old": {
+            "error": "ERROR: CRC Failed : same；ERROR: Data Error : same"
+          },
+          "current": {
+            "error": "ERROR: CRC Failed : same"
+          }
+        },
+        {
+          "at": 46,
+          "old": {
+            "error": "ERROR: CRC Failed : same；ERROR: Data Error : same"
+          },
+          "current": {
+            "error": "ERROR: CRC Failed : same"
+          }
+        },
+        {
+          "at": 45,
+          "old": {
+            "error": "ERROR: Data Error : same；ERROR: Data Error : same"
+          },
+          "current": {
+            "error": "ERROR: Data Error : same"
+          }
+        },
+        {
+          "at": 44,
+          "old": {
+            "error": "ERROR: CRC Failed : same；ERROR: Data Error : same"
+          },
+          "current": {
+            "error": "ERROR: CRC Failed : same"
+          }
+        },
+        {
+          "at": 43,
+          "old": {
+            "error": "ERROR: Data Error : same；ERROR: Data Error : same"
+          },
+          "current": {
+            "error": "ERROR: Data Error : same"
+          }
+        }
+      ]
+    },
+    "generatorSource": "const fs=require('fs'),z=require('zlib'),path=require('path'),vm=require('vm'),{createRequire,Module}=require('module'),{execFileSync}=require('child_process'),h=require('../../tests/helpers/sevenzip-links');\nconst filename=path.resolve('miniprogram/file-reader/archive/sevenzip-runtime.js'),realRequire=createRequire(filename),oldFilename=path.resolve('miniprogram/file-reader/sevenzip/runtime/7zz.js'),oldModule=new Module(oldFilename,module);oldModule.filename=oldFilename;oldModule.paths=module.paths;oldModule._compile(execFileSync('git',['show','HEAD:miniprogram/file-reader/sevenzip/runtime/7zz.js'],{encoding:'utf8'}),oldFilename);\nfunction runtime(factory){const m={exports:{}};vm.runInNewContext(fs.readFileSync(filename,'utf8'),{module:m,Uint8Array,ArrayBuffer,setTimeout,clearTimeout,process,require:id=>{if(id!=='./kernel')return realRequire(id);const k=realRequire(id);return{...k,subpackageLoader:{load:async p=>p.endsWith('/7zz.js')?factory:k.subpackageLoader.load(p)}}}},{filename});return m.exports;}\n(async()=>{const oldBinary=z.brotliDecompressSync(execFileSync('git',['show','HEAD:miniprogram/file-reader/sevenzip/runtime/7zz.wasm.br'],{maxBuffer:5e6})),newBinary=z.brotliDecompressSync(fs.readFileSync('miniprogram/file-reader/sevenzip/runtime/7zz.wasm.br')),old=runtime(oldModule.exports),next=runtime(require('../../miniprogram/file-reader/sevenzip/runtime/7zz'));const bytes=await h.sevenZipLinks([{name:'same',target:'target-a'},{name:'same',target:'x'.repeat(200)}],newBinary,{plainHeader:true});const original=Buffer.from(bytes),start=32+Number(bytes.readBigUInt64LE(12));const e=(await next.inspect7zArchive(bytes,{wasmBinary:newBinary})).entries[0];const rows=[];for(let at=start-1;at>=Math.max(32,start-12);at--){const b=Buffer.from(bytes);b[at]^=0xff;let a,c;try{a={text:Buffer.from(await old.extract7zLinkTarget(b,e,{wasmBinary:oldBinary})).toString()}}catch(x){a={error:x.message}}try{c={text:Buffer.from(await next.extract7zLinkTarget(b,e,{wasmBinary:newBinary})).toString()}}catch(x){c={error:x.message}}rows.push({at,old:a,current:c})}fs.writeFileSync('outputs/sevenzip-links/duplicate-decode.json',JSON.stringify({base64:original.toString('base64'),headerStart:start,entry:e,rows},null,2));await next.extract7zLinkTarget(original,e,{wasmBinary:newBinary});console.log(rows)})().catch(e=>{console.error(e);process.exitCode=1})\n",
+    "lateDamageCasesExact": 7,
+    "earlyDamageRejected": true
+  },
+  "status": "development-uploaded"
+}

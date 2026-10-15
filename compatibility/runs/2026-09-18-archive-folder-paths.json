@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "id": "archive-folder-paths",
+  "testedAt": "2026-09-18T09:27:00.209385+00:00",
+  "rootCauses": [
+    "Implicit folders lost the source pathSeparator, so Unix literal backslashes became separators during display and sorting.",
+    "Sorting whole lowercased paths interleaved case-distinct directories and placed a same-name file between a directory header and its descendants.",
+    "The default inspector skin did not consume the existing indentRpx field."
+  ],
+  "changes": [
+    "Inherit separator semantics for synthesized folders.",
+    "Sort path segments, retaining case-distinct subtrees; a same-name file precedes the entire directory subtree.",
+    "Bind existing bounded indentation in the default skin; custom host skins remain outside module sync."
+  ],
+  "sampleGeneration": {
+    "producer": "Python stdlib tarfile/zipfile",
+    "script": "scripts/probe-archive-folder-paths.py",
+    "formats": [
+      "USTAR",
+      "GNU",
+      "PAX",
+      "ZIP Store",
+      "ZIP Deflate"
+    ],
+    "axes": [
+      "explicit vs omitted directory records",
+      "forward vs reversed source order",
+      "literal backslashes in TAR",
+      "case-distinct directories",
+      "same-name file and folder",
+      "Chinese names and nested literal backslashes"
+    ],
+    "archives": 20,
+    "members": 176,
+    "seed": "none; deterministic names, bodies and archive metadata",
+    "originalNamesAndBodiesIndependentlyReadBack": true
+  },
+  "before": {
+    "failedTrees": 20,
+    "labelOrDepthErrors": 24,
+    "wrongVisibleParents": 112,
+    "missingWxmlIndentation": 252,
+    "actualHostBodiesExact": 176
+  },
+  "after": {
+    "failedTrees": 0,
+    "labelOrDepthErrors": 0,
+    "wrongVisibleParents": 0,
+    "missingWxmlIndentation": 0,
+    "actualHostBodiesExact": 176,
+    "productionWxmlViews": 20,
+    "allRowsWithin390pxViewport": true
+  },
+  "validation": {
+    "relatedNodeTests": 33,
+    "fullNodeTests": 1262,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run",
+    "physicalDevices": "not-run"
+  },
+  "evidence": [
+    "tests/archive-folder-paths.test.js",
+    "scripts/probe-archive-folder-paths.py",
+    "scripts/verify-archive-folder-paths.js"
+  ],
+  "samples": [
+    {
+      "name": "ustar-dirs0-reverse0.tar",
+      "kind": "ustar",
+      "explicit": false,
+      "reverse": false,
+      "sha256": "e0a2ace854f05d45b9f09be29982bff742867f4e3392de4b16ede932fea507b0",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "ustar-dirs0-reverse1.tar",
+      "kind": "ustar",
+      "explicit": false,
+      "reverse": true,
+      "sha256": "1fb0ea6156638a94edd0d21e951e2bce7a52f74b81313af10ebb7676234169f6",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "ustar-dirs1-reverse0.tar",
+      "kind": "ustar",
+      "explicit": true,
+      "reverse": false,
+      "sha256": "3abe45600231d33e2ed468ddeb72937c38d8d848b654b770c412f63e50e2d907",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "ustar-dirs1-reverse1.tar",
+      "kind": "ustar",
+      "explicit": true,
+      "reverse": true,
+      "sha256": "91a789b9d393e02d261382d06522c62bbdc057ed3dd2117bc2c28683ed7021bf",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "gnu-dirs0-reverse0.tar",
+      "kind": "gnu",
+      "explicit": false,
+      "reverse": false,
+      "sha256": "05e0da25eddc76481259a6bd193920ac74d384e2100d9139c497d3322ebab273",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "gnu-dirs0-reverse1.tar",
+      "kind": "gnu",
+      "explicit": false,
+      "reverse": true,
+      "sha256": "240eda23152a1e258b16ad3cbc17fe14598848a1b6adea45e43b56ab979c8bbf",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "gnu-dirs1-reverse0.tar",
+      "kind": "gnu",
+      "explicit": true,
+      "reverse": false,
+      "sha256": "33285f14028d4d23767fc0f8d46da40327bdb2cd48645692e49ccf9343ba0444",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "gnu-dirs1-reverse1.tar",
+      "kind": "gnu",
+      "explicit": true,
+      "reverse": true,
+      "sha256": "9dd69fdf0dbaebe19ff6e729febf5c89e26afc64baf90c98006a4de6dba74b11",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "pax-dirs0-reverse0.tar",
+      "kind": "pax",
+      "explicit": false,
+      "reverse": false,
+      "sha256": "89d65df10ea91a1959f00cd3bfadd95a6862102d582b184d96d5a8a7946baa1a",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "pax-dirs0-reverse1.tar",
+      "kind": "pax",
+      "explicit": false,
+      "reverse": true,
+      "sha256": "df70d70a9982419af94c36e4385fd8493fa97d9a07f5bd789e22125b686aeb60",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "pax-dirs1-reverse0.tar",
+      "kind": "pax",
+      "explicit": true,
+      "reverse": false,
+      "sha256": "debceb8d6d3175153dc1861855d373578207b90315a50411791946c616e68ad6",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "pax-dirs1-reverse1.tar",
+      "kind": "pax",
+      "explicit": true,
+      "reverse": true,
+      "sha256": "7336cc7ae2372712c4cd3e5bf26803b8f8c7a7583be17082b2965a22a53aa726",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "zip-store-dirs0-reverse0.zip",
+      "kind": "zip-store",
+      "explicit": false,
+      "reverse": false,
+      "sha256": "d08b39d2b296c990124ef38920d84a13e74d1d0c3dd6a6c87765503c9f8b115f",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "zip-store-dirs0-reverse1.zip",
+      "kind": "zip-store",
+      "explicit": false,
+      "reverse": true,
+      "sha256": "d088017bf5d5287334d99ba9d4623dbd42fcdccc2c9669a5037ca06f60b2d122",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "zip-store-dirs1-reverse0.zip",
+      "kind": "zip-store",
+      "explicit": true,
+      "reverse": false,
+      "sha256": "05acfc523a8913faeac395860c7b9c596234cca28f33260ac36e158d3c49b8be",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "zip-store-dirs1-reverse1.zip",
+      "kind": "zip-store",
+      "explicit": true,
+      "reverse": true,
+      "sha256": "30064e7be2ac5ec0af7c0495ed346acca3ed052a02c691fbdda95d57a6c935f7",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "zip-deflate-dirs0-reverse0.zip",
+      "kind": "zip-deflate",
+      "explicit": false,
+      "reverse": false,
+      "sha256": "0396b1b07303a96e443717a0c9381f55996ba7d52f022dc7126d3aac08d11def",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "zip-deflate-dirs0-reverse1.zip",
+      "kind": "zip-deflate",
+      "explicit": false,
+      "reverse": true,
+      "sha256": "cd30f934ad02ecbe286175429d9371ceeb30edeb10926c4c68a5e20c2e82abdb",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "zip-deflate-dirs1-reverse0.zip",
+      "kind": "zip-deflate",
+      "explicit": true,
+      "reverse": false,
+      "sha256": "b6211527660565c9c4a0270fe50eadebc020d23d333ede10e25866e82096e7de",
+      "independentNamesAndBodiesExact": true
+    },
+    {
+      "name": "zip-deflate-dirs1-reverse1.zip",
+      "kind": "zip-deflate",
+      "explicit": true,
+      "reverse": true,
+      "sha256": "bd7e0c177d7b144a3aa05a7c8aaf6c9b22e3da4385d1779142bb3f4504653b64",
+      "independentNamesAndBodiesExact": true
+    }
+  ],
+  "limits": [
+    "Actual file-open and entry handlers use a mocked file API; native archive WASM executes unchanged.",
+    "Production inspector WXML compiled with glass-easel in Chrome; browser rpx conversion is an explicit adapter, not native WeChat verification.",
+    "Body extraction was already correct in this batch; the fixes address visible hierarchy and grouping.",
+    "Existing ZIP dual-separator and unsafe-path behavior is retained.",
+    "Custom host skins are preserved by sync and must opt into their own indentation rendering."
+  ]
+}

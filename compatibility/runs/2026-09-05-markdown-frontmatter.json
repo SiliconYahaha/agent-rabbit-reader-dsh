@@ -1,0 +1,2253 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "version": "1.4.116",
+  "status": "development-uploaded",
+  "baseline": "v1.4.115",
+  "oracle": {
+    "implementation": "Jekyll Document delimiter regex executed independently with Ruby 2.6.10",
+    "commit": "74d751339d3e534aa51d5d7b0640e9bd743509e4",
+    "source": "https://github.com/jekyll/jekyll/blob/74d751339d3e534aa51d5d7b0640e9bd743509e4/lib/jekyll/document.rb#L13",
+    "documentation": "https://jekyllrb.com/docs/front-matter/",
+    "sourceSha256": "f26fb22bdec25dcd97e05d5cab212b9ab3463d5e01b46052863a0e42a1c8fa4a"
+  },
+  "generator": "tests/helpers/markdown-frontmatter.js",
+  "reference": "tests/fixtures/markdown-frontmatter-reference.json",
+  "regenerate": "node -e \"process.stdout.write(JSON.stringify(require('./tests/helpers/markdown-frontmatter').cases))\" > inputs.json; ruby scripts/markdown-frontmatter-oracle.rb inputs.json reference.json",
+  "cases": 76,
+  "bodyExact": 76,
+  "baselineBodyExact": 19,
+  "visibleExact": 75,
+  "baselineVisibleExact": 29,
+  "newlyVisibleExact": 46,
+  "knownVisibleGaps": [
+    "body-code-fence"
+  ],
+  "validation": {
+    "nodeTests": 1066,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "chromeOracle": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "results": [
+    {
+      "name": "case-0",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-1",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-2",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-3",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-4",
+      "baseline": {
+        "text": "suffix KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example ---suffix KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example ---suffix KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-5",
+      "baseline": {
+        "text": "suffix",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example ---suffix",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example ---suffix",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-6",
+      "baseline": {
+        "text": "suffix KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example ---suffix KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example ---suffix KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-7",
+      "baseline": {
+        "text": "suffix",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example ---suffix",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example ---suffix",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-8",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-9",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-10",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-11",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-12",
+      "baseline": {
+        "text": "comment\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "comment"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example --- # comment KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example --- # comment KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-13",
+      "baseline": {
+        "text": "comment",
+        "headings": [
+          [
+            "H1",
+            "comment"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example --- # comment",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example --- # comment",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-14",
+      "baseline": {
+        "text": "comment\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "comment"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example --- # comment KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example --- # comment KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-15",
+      "baseline": {
+        "text": "comment",
+        "headings": [
+          [
+            "H1",
+            "comment"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example --- # comment",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example --- # comment",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "case-16",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-17",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-18",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-19",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-20",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-21",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-22",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-23",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-24",
+      "baseline": {
+        "text": "title: Example ... KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-25",
+      "baseline": {
+        "text": "title: Example ...",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-26",
+      "baseline": {
+        "text": "title: Example ... KEEP AFTER",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "case-27",
+      "baseline": {
+        "text": "title: Example ...",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-28",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-29",
+      "baseline": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 2,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-30",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-31",
+      "baseline": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 2,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-32",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-33",
+      "baseline": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 2,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-34",
+      "baseline": {
+        "text": "KEEP AFTER",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nKEEP AFTER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-35",
+      "baseline": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 2,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-36",
+      "baseline": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-37",
+      "baseline": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-38",
+      "baseline": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-39",
+      "baseline": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-40",
+      "baseline": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-41",
+      "baseline": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-42",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-43",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-44",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-45",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-46",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-47",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-48",
+      "baseline": {
+        "text": "title: Example\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ],
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-49",
+      "baseline": {
+        "text": "title: Example\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ],
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-50",
+      "baseline": {
+        "text": "title: Example\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ],
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-51",
+      "baseline": {
+        "text": "title: Example\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 2,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-52",
+      "baseline": {
+        "text": "title: Example\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 2,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-53",
+      "baseline": {
+        "text": "title: Example\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 2,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-54",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-55",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-56",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-57",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-58",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "line-combination-59",
+      "baseline": {
+        "text": "title: Example ...\n\nKEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "bom-empty-later-rule",
+      "baseline": {
+        "text": "BODY",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-dot-eof",
+      "baseline": {
+        "text": "...",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "empty-dash-eof",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 2,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "unclosed-short",
+      "baseline": {
+        "text": "title: Example",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "unclosed-opening",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "not-opening-eof",
+      "baseline": {
+        "text": "",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "opening-suffix",
+      "baseline": {
+        "text": "---suffix title: Example\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "---suffix title: Example"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "---suffix title: Example\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "---suffix title: Example"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "---suffix title: Example\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "---suffix title: Example"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "indented-opening",
+      "baseline": {
+        "text": "title: Example\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "indented-close",
+      "baseline": {
+        "text": "title: Example\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example\n\nBODY",
+        "headings": [
+          [
+            "H2",
+            "title: Example"
+          ]
+        ],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "dot-suffix",
+      "baseline": {
+        "text": "title: Example ...suffix BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example ...suffix BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example ...suffix BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "four-dots",
+      "baseline": {
+        "text": "title: Example .... BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example .... BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example .... BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "unicode-line-separator",
+      "baseline": {
+        "text": "title: Example --- BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example --- BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example --- BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "unicode-paragraph-separator",
+      "baseline": {
+        "text": "title: Example --- BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example --- BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example --- BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "marker-before-unicode-separator",
+      "baseline": {
+        "text": " BODY",
+        "headings": [],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "title: Example --- BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      },
+      "reference": {
+        "text": "title: Example --- BODY",
+        "headings": [],
+        "rules": 1,
+        "code": []
+      }
+    },
+    {
+      "name": "indented-scalar-markers",
+      "baseline": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "actual": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      },
+      "reference": {
+        "text": "KEEP HEADER\n\nBODY",
+        "headings": [
+          [
+            "H1",
+            "KEEP HEADER"
+          ]
+        ],
+        "rules": 0,
+        "code": []
+      }
+    },
+    {
+      "name": "body-code-fence",
+      "baseline": {
+        "text": "---\nKEEP CODE\n...\n\nBODY",
+        "headings": [],
+        "rules": 0,
+        "code": [
+          "---\nKEEP CODE\n..."
+        ]
+      },
+      "actual": {
+        "text": "---\nKEEP CODE\n...\n\nBODY",
+        "headings": [],
+        "rules": 0,
+        "code": [
+          "---\nKEEP CODE\n..."
+        ]
+      },
+      "reference": {
+        "text": "---\nKEEP CODE\n...\n\n\nBODY",
+        "headings": [],
+        "rules": 0,
+        "code": [
+          "---\nKEEP CODE\n...\n"
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Simple metadata keys only; this is not a full YAML parser.",
+    "Code block terminal newline omission is unchanged, retains full reference and is excluded only from the newly certified visible subset; all 76 body contracts remain strict."
+  ],
+  "oracleMaintenance": {
+    "change": "Preserve leading newlines when no front-matter opening is recognized, instead of applying body-only normalization to ordinary Markdown.",
+    "pinnedReferencesChanged": false,
+    "additionalControls": 2,
+    "result": "pass"
+  }
+}

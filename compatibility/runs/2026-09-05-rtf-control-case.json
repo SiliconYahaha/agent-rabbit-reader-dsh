@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "version": "1.4.117",
+  "status": "development-uploaded",
+  "baseline": "v1.4.116",
+  "generator": "tests/helpers/rtf-control-case.js",
+  "reference": "tests/fixtures/rtf-control-case-reference.json",
+  "oracle": {
+    "specification": "https://officeprotocoldoc.z19.web.core.windows.net/files/Archive_References/%5BMSFT-RTF%5D.pdf",
+    "pages": [
+      8,
+      14,
+      15
+    ],
+    "pdfSha256": "ddb1aa7edfd8e17ed2c49696f9ab19f8d20027cbd7d31753c9a0c8d0a68d02f7",
+    "review": "Extracted text and rendered pages reviewed; keywords are case-sensitive, fallback control/bin tokens count once, Unicode-aware upr selects ud. Known standalone ud retains content.",
+    "writer": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5; RTF import to XHTML, Chrome innerText; six diagnostic PDF exports checked with pdfplumber",
+    "cocoa": "macOS textutil -convert txt; secondary comparison, not authoritative for hidden text or Unicode alternatives",
+    "audit": "Initial files whose names differed only by case collided on macOS. Superseded by oracle-v2: 42 unique case-insensitive names, written bytes verified against source, Writer and Cocoa rerun. References preserve converter disagreements."
+  },
+  "cases": 42,
+  "baselineExact": 14,
+  "exact": 40,
+  "newlyExact": 26,
+  "knownGaps": [
+    "lower-style-hidden",
+    "upper-style-id"
+  ],
+  "oracleDisagreements": [
+    {
+      "name": "binary-upper-fallback",
+      "source": "{\\rtf1\\ansi A\\uc1\\u66\\BIN3 XYZ Z}",
+      "expected": "ABXYZ Z",
+      "writerVisible": "ABYZ Z",
+      "cocoa": "ABXYZ Z"
+    },
+    {
+      "name": "binary-title-fallback",
+      "source": "{\\rtf1\\ansi A\\uc1\\u66\\Bin3 XYZ Z}",
+      "expected": "ABXYZ Z",
+      "writerVisible": "ABYZ Z",
+      "cocoa": "ABXYZ Z"
+    },
+    {
+      "name": "binary-mixed-fallback",
+      "source": "{\\rtf1\\ansi A\\uc1\\u66\\bIn3 XYZ Z}",
+      "expected": "ABXYZ Z",
+      "writerVisible": "ABYZ Z",
+      "cocoa": "ABXYZ Z"
+    },
+    {
+      "name": "lower-bin",
+      "source": "{\\rtf1\\ansi A\\bin3 XYZ Z}",
+      "expected": "A Z",
+      "writerVisible": "A Z",
+      "cocoa": "AXYZ Z"
+    },
+    {
+      "name": "lower-bin-fallback",
+      "source": "{\\rtf1\\ansi A\\uc1\\u66\\bin3 XYZ Z}",
+      "expected": "AB Z",
+      "writerVisible": "ABZ",
+      "cocoa": "ABXYZ Z"
+    },
+    {
+      "name": "unknown-upr",
+      "source": "{\\rtf1\\ansi A{\\UPR{one}{\\*\\ud two}}Z}",
+      "expected": "AonetwoZ",
+      "writerVisible": "AonetwoZ",
+      "cocoa": "AoneZ"
+    },
+    {
+      "name": "exact-upr",
+      "source": "{\\rtf1\\ansi A{\\upr{one}{\\*\\ud two}}Z}",
+      "expected": "AtwoZ",
+      "writerVisible": "AonetwoZ",
+      "cocoa": "AoneZ"
+    },
+    {
+      "name": "upper-hidden-reset",
+      "source": "{\\rtf1\\ansi A\\v HIDDEN\\PLAIN ALSO HIDDEN\\v0 Z}",
+      "expected": "AZ",
+      "writerVisible": "AZ",
+      "cocoa": "AHIDDENALSO HIDDENZ"
+    },
+    {
+      "name": "lower-hidden-reset",
+      "source": "{\\rtf1\\ansi A\\v HIDDEN\\plain VISIBLE Z}",
+      "expected": "AVISIBLE Z",
+      "writerVisible": "AVISIBLE Z",
+      "cocoa": "AHIDDENVISIBLE Z"
+    },
+    {
+      "name": "standalone-ud",
+      "source": "{\\rtf1\\ansi A{\\*\\ud B}Z}",
+      "expected": "ABZ",
+      "writerVisible": "ABZ",
+      "cocoa": "AZ"
+    },
+    {
+      "name": "ud-unselected-branch",
+      "source": "{\\rtf1\\ansi A{\\upr{{\\*\\ud OLD}}{\\*\\ud NEW}}Z}",
+      "expected": "ANEWZ",
+      "writerVisible": "AOLDNEWZ",
+      "cocoa": "AZ"
+    }
+  ],
+  "validation": {
+    "nodeTests": 1069,
+    "nodeFailures": 0,
+    "relatedTests": 68,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "readerChromeCertifiedCases": 40,
+    "readerChrome": "pass",
+    "production": "pass",
+    "chromeOracle": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run",
+    "productCI": "pass",
+    "mainCI": "pass"
+  },
+  "results": [
+    {
+      "name": "case-1",
+      "source": "{\\rtf1\\ansi A\\V VISIBLE\\v0 Z}",
+      "expected": "AVISIBLEZ",
+      "actual": "AVISIBLEZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "case-3",
+      "source": "{\\rtf1\\ansi A{\\FONTtbl VISIBLE}Z}",
+      "expected": "AVISIBLEZ",
+      "actual": "AVISIBLEZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "case-4",
+      "source": "{\\rtf1\\ansi A{\\Fonttbl VISIBLE}Z}",
+      "expected": "AVISIBLEZ",
+      "actual": "AVISIBLEZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "case-5",
+      "source": "{\\rtf1\\ansi A\\U65? Z}",
+      "expected": "A? Z",
+      "actual": "A? Z",
+      "baseline": "AA Z"
+    },
+    {
+      "name": "case-7",
+      "source": "{\\rtf1\\ansi A\\PAR Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "A\nZ"
+    },
+    {
+      "name": "case-8",
+      "source": "{\\rtf1\\ansi A\\Par Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "A\nZ"
+    },
+    {
+      "name": "case-10",
+      "source": "{\\rtf1\\ansi A\\LINE Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "A\nZ"
+    },
+    {
+      "name": "case-11",
+      "source": "{\\rtf1\\ansi A\\TAB Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "A\tZ"
+    },
+    {
+      "name": "case-12",
+      "source": "{\\rtf1\\ansi A{\\Info VISIBLE}Z}",
+      "expected": "AVISIBLEZ",
+      "actual": "AVISIBLEZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "binary-upper-text",
+      "source": "{\\rtf1\\ansi A\\BIN3 XYZ Z}",
+      "expected": "AXYZ Z",
+      "actual": "AXYZ Z",
+      "baseline": "A Z"
+    },
+    {
+      "name": "binary-upper-braces",
+      "source": "{\\rtf1\\ansi A\\BIN9 {X}Z}",
+      "expected": "AXZ",
+      "actual": "AXZ",
+      "baselineError": "RTF 二进制长度无效或文件已截断"
+    },
+    {
+      "name": "binary-upper-fallback",
+      "source": "{\\rtf1\\ansi A\\uc1\\u66\\BIN3 XYZ Z}",
+      "expected": "ABXYZ Z",
+      "actual": "ABXYZ Z",
+      "baseline": "AB Z"
+    },
+    {
+      "name": "binary-title-text",
+      "source": "{\\rtf1\\ansi A\\Bin3 XYZ Z}",
+      "expected": "AXYZ Z",
+      "actual": "AXYZ Z",
+      "baseline": "A Z"
+    },
+    {
+      "name": "binary-title-braces",
+      "source": "{\\rtf1\\ansi A\\Bin9 {X}Z}",
+      "expected": "AXZ",
+      "actual": "AXZ",
+      "baselineError": "RTF 二进制长度无效或文件已截断"
+    },
+    {
+      "name": "binary-title-fallback",
+      "source": "{\\rtf1\\ansi A\\uc1\\u66\\Bin3 XYZ Z}",
+      "expected": "ABXYZ Z",
+      "actual": "ABXYZ Z",
+      "baseline": "AB Z"
+    },
+    {
+      "name": "binary-mixed-text",
+      "source": "{\\rtf1\\ansi A\\bIn3 XYZ Z}",
+      "expected": "AXYZ Z",
+      "actual": "AXYZ Z",
+      "baseline": "A Z"
+    },
+    {
+      "name": "binary-mixed-braces",
+      "source": "{\\rtf1\\ansi A\\bIn9 {X}Z}",
+      "expected": "AXZ",
+      "actual": "AXZ",
+      "baselineError": "RTF 二进制长度无效或文件已截断"
+    },
+    {
+      "name": "binary-mixed-fallback",
+      "source": "{\\rtf1\\ansi A\\uc1\\u66\\bIn3 XYZ Z}",
+      "expected": "ABXYZ Z",
+      "actual": "ABXYZ Z",
+      "baseline": "AB Z"
+    },
+    {
+      "name": "lower-bin",
+      "source": "{\\rtf1\\ansi A\\bin3 XYZ Z}",
+      "expected": "A Z",
+      "actual": "A Z",
+      "baseline": "A Z"
+    },
+    {
+      "name": "lower-bin-fallback",
+      "source": "{\\rtf1\\ansi A\\uc1\\u66\\bin3 XYZ Z}",
+      "expected": "AB Z",
+      "actual": "AB Z",
+      "baseline": "AB Z"
+    },
+    {
+      "name": "star-0-FONTtbl",
+      "source": "{\\rtf1\\ansi A{\\*\\FONTtbl VISIBLE\\nestrow}Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "star-1-Fonttbl",
+      "source": "{\\rtf1\\ansi A{\\*\\Fonttbl VISIBLE\\nestrow}Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "star-2-Info",
+      "source": "{\\rtf1\\ansi A{\\*\\Info VISIBLE\\nestrow}Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "star-3-STYLESHEET",
+      "source": "{\\rtf1\\ansi A{\\*\\STYLESHEET VISIBLE\\nestrow}Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "star-4-NESTTABLEPROPS",
+      "source": "{\\rtf1\\ansi A{\\*\\NESTTABLEPROPS VISIBLE\\nestrow}Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "A\nZ"
+    },
+    {
+      "name": "star-5-Nesttableprops",
+      "source": "{\\rtf1\\ansi A{\\*\\Nesttableprops VISIBLE\\nestrow}Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "A\nZ"
+    },
+    {
+      "name": "star-nestrow-case",
+      "source": "{\\rtf1\\ansi A{\\*\\nesttableprops\\NESTROW}Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "A\nZ"
+    },
+    {
+      "name": "unknown-upr",
+      "source": "{\\rtf1\\ansi A{\\UPR{one}{\\*\\ud two}}Z}",
+      "expected": "AonetwoZ",
+      "actual": "AonetwoZ",
+      "baseline": "AtwoZ"
+    },
+    {
+      "name": "exact-upr",
+      "source": "{\\rtf1\\ansi A{\\upr{one}{\\*\\ud two}}Z}",
+      "expected": "AtwoZ",
+      "actual": "AtwoZ",
+      "baseline": "AtwoZ"
+    },
+    {
+      "name": "unknown-uc",
+      "source": "{\\rtf1\\ansi A\\Uc0\\u66?Z}",
+      "expected": "ABZ",
+      "actual": "ABZ",
+      "baseline": "AB?Z"
+    },
+    {
+      "name": "exact-uc",
+      "source": "{\\rtf1\\ansi A\\uc0\\u66?Z}",
+      "expected": "AB?Z",
+      "actual": "AB?Z",
+      "baseline": "AB?Z"
+    },
+    {
+      "name": "upper-style-hidden",
+      "source": "{\\rtf1\\ansi {\\stylesheet{\\s1\\V Upper;}}\\s1 VISIBLE}",
+      "expected": "VISIBLE",
+      "actual": "VISIBLE",
+      "baseline": ""
+    },
+    {
+      "name": "lower-style-hidden",
+      "source": "{\\rtf1\\ansi {\\stylesheet{\\s1\\v Hidden;}}A{\\s1 HIDDEN}Z}",
+      "expected": "AHIDDENZ",
+      "knownGap": "Existing paragraph/default-style binding differs from Writer visible output; separate from control-case handling.",
+      "actual": "AZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "upper-style-id",
+      "source": "{\\rtf1\\ansi {\\stylesheet{\\S1\\v Hidden;}}\\s1 VISIBLE}",
+      "expected": "VISIBLE",
+      "knownGap": "Existing paragraph/default-style binding differs from Writer visible output; separate from control-case handling.",
+      "actual": "",
+      "baseline": ""
+    },
+    {
+      "name": "upper-hidden-reset",
+      "source": "{\\rtf1\\ansi A\\v HIDDEN\\PLAIN ALSO HIDDEN\\v0 Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "AALSO HIDDENZ"
+    },
+    {
+      "name": "lower-hidden-reset",
+      "source": "{\\rtf1\\ansi A\\v HIDDEN\\plain VISIBLE Z}",
+      "expected": "AVISIBLE Z",
+      "actual": "AVISIBLE Z",
+      "baseline": "AVISIBLE Z"
+    },
+    {
+      "name": "apple-mixed-case",
+      "source": "{\\rtf1\\ansi A\\CocoaLigature0 B\\AppleTypeServicesU1 C}",
+      "expected": "ABC",
+      "actual": "ABC",
+      "baseline": "ABC"
+    },
+    {
+      "name": "unknown-extension",
+      "source": "{\\rtf1\\ansi A\\CustomCommand42 B}",
+      "expected": "AB",
+      "actual": "AB",
+      "baseline": "AB"
+    },
+    {
+      "name": "standalone-ud",
+      "source": "{\\rtf1\\ansi A{\\*\\ud B}Z}",
+      "expected": "ABZ",
+      "actual": "ABZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "ud-discarded-parent",
+      "source": "{\\rtf1\\ansi A{\\*\\unknown{\\*\\ud SECRET}}Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "ud-hidden-parent",
+      "source": "{\\rtf1\\ansi A{\\v{\\*\\ud SECRET}}Z}",
+      "expected": "AZ",
+      "actual": "AZ",
+      "baseline": "AZ"
+    },
+    {
+      "name": "ud-unselected-branch",
+      "source": "{\\rtf1\\ansi A{\\upr{{\\*\\ud OLD}}{\\*\\ud NEW}}Z}",
+      "expected": "ANEWZ",
+      "actual": "ANEWZ",
+      "baseline": "ANEWZ"
+    }
+  ]
+}

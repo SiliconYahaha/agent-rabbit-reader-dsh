@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "id": "svg-css-keyframe-timing",
+  "testedAt": "2026-09-18T08:40:48.268Z",
+  "status": "locally-verified-unreleased",
+  "scope": "Standalone SVG CSS animation timing and Canvas center alpha; not full geometry or format fidelity.",
+  "rootCause": [
+    "Global easing incorrectly moved keyframe boundaries instead of applying within each property interval.",
+    "Keyframe-local timing metadata was painted and ignored as easing.",
+    "CSS steps chose incorrect discontinuity sides and lacked jump-none/jump-both.",
+    "Fractional iterations ran beyond the actual end."
+  ],
+  "change": "Select intervals from directed linear progress; apply keyframe-local or element easing per interval; use direction/phase before flag and correct fractional end.",
+  "sources": [
+    "https://www.w3.org/TR/css-animations-1/#timing-functions",
+    "https://www.w3.org/TR/css-easing-1/#step-easing-functions",
+    "https://www.w3.org/TR/web-animations-1/#calculating-the-transformed-progress"
+  ],
+  "fixtures": {
+    "generator": "tests/helpers/svg-css-timing.js",
+    "kind": "Deterministic authored originals; no random seed",
+    "cases": 47,
+    "samples": 799,
+    "sha256": "17539bb4487c28202b3cbf04319129c89980d008bff9d8a17c88cdf1f020e6c1",
+    "features": [
+      "nine easings x four directions",
+      "delay onset and reverse after-fill step boundaries",
+      "per-keyframe and property-specific timing",
+      "negative delay and fractional iterations",
+      "implicit endpoints",
+      "duplicate keyframe controls",
+      "invalid easing fallback and signed step counts"
+    ]
+  },
+  "validation": {
+    "baselineFirefox": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0",
+      "failures": 288
+    },
+    "repairedFirefox": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0",
+      "failures": 0
+    },
+    "repairedChrome": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "failures": 36
+    },
+    "actualHostOpens": 47,
+    "actualComponent": {
+      "mounts": 47,
+      "activeFramesAfterDetach": 0
+    },
+    "numericTolerance": 0.0006,
+    "canvasAlphaTolerance": 1,
+    "toleranceReason": "Existing animation serialization rounds to 0.001; Canvas alpha is quantized to 8 bits. Thresholds established before observing comparisons.",
+    "fullNodeTests": 1265,
+    "fullNodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "retainedChromeDifferences": [
+    {
+      "id": "steps(4,start)-normal",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 0,
+      "native": 0,
+      "actual": 0.25
+    },
+    {
+      "id": "steps(4,start)-reverse",
+      "time": 4.5,
+      "nativeTime": 4500,
+      "nativeProgress": 0,
+      "native": 0.25,
+      "actual": 0
+    },
+    {
+      "id": "steps(4,start)-reverse",
+      "time": 5,
+      "nativeTime": 5000,
+      "nativeProgress": 0,
+      "native": 0.25,
+      "actual": 0
+    },
+    {
+      "id": "steps(4,start)-alternate",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 0,
+      "native": 0,
+      "actual": 0.25
+    },
+    {
+      "id": "steps(4,start)-alternate",
+      "time": 4.5,
+      "nativeTime": 4500,
+      "nativeProgress": 0,
+      "native": 0.25,
+      "actual": 0
+    },
+    {
+      "id": "steps(4,start)-alternate",
+      "time": 5,
+      "nativeTime": 5000,
+      "nativeProgress": 0,
+      "native": 0.25,
+      "actual": 0
+    },
+    {
+      "id": "steps(4,end)-reverse",
+      "time": 0,
+      "nativeTime": 0,
+      "nativeProgress": 1,
+      "native": 0.65,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,end)-reverse",
+      "time": 0.499,
+      "nativeTime": 499,
+      "nativeProgress": 1,
+      "native": 0.65,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,end)-reverse",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 1,
+      "native": 0.65,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,end)-alternate-reverse",
+      "time": 0,
+      "nativeTime": 0,
+      "nativeProgress": 1,
+      "native": 0.65,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,end)-alternate-reverse",
+      "time": 0.499,
+      "nativeTime": 499,
+      "nativeProgress": 1,
+      "native": 0.65,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,end)-alternate-reverse",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 1,
+      "native": 0.65,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,jump-both)-normal",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 0,
+      "native": 0,
+      "actual": 0.2
+    },
+    {
+      "id": "steps(4,jump-both)-reverse",
+      "time": 0,
+      "nativeTime": 0,
+      "nativeProgress": 1,
+      "native": 0.68,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,jump-both)-reverse",
+      "time": 0.499,
+      "nativeTime": 499,
+      "nativeProgress": 1,
+      "native": 0.68,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,jump-both)-reverse",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 1,
+      "native": 0.68,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,jump-both)-reverse",
+      "time": 4.5,
+      "nativeTime": 4500,
+      "nativeProgress": 0,
+      "native": 0.2,
+      "actual": 0
+    },
+    {
+      "id": "steps(4,jump-both)-reverse",
+      "time": 5,
+      "nativeTime": 5000,
+      "nativeProgress": 0,
+      "native": 0.2,
+      "actual": 0
+    },
+    {
+      "id": "steps(4,jump-both)-alternate",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 0,
+      "native": 0,
+      "actual": 0.2
+    },
+    {
+      "id": "steps(4,jump-both)-alternate",
+      "time": 4.5,
+      "nativeTime": 4500,
+      "nativeProgress": 0,
+      "native": 0.2,
+      "actual": 0
+    },
+    {
+      "id": "steps(4,jump-both)-alternate",
+      "time": 5,
+      "nativeTime": 5000,
+      "nativeProgress": 0,
+      "native": 0.2,
+      "actual": 0
+    },
+    {
+      "id": "steps(4,jump-both)-alternate-reverse",
+      "time": 0,
+      "nativeTime": 0,
+      "nativeProgress": 1,
+      "native": 0.68,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,jump-both)-alternate-reverse",
+      "time": 0.499,
+      "nativeTime": 499,
+      "nativeProgress": 1,
+      "native": 0.68,
+      "actual": 0.8
+    },
+    {
+      "id": "steps(4,jump-both)-alternate-reverse",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 1,
+      "native": 0.68,
+      "actual": 0.8
+    },
+    {
+      "id": "step-start-normal",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 0,
+      "native": 0,
+      "actual": 1
+    },
+    {
+      "id": "step-start-reverse",
+      "time": 4.5,
+      "nativeTime": 4500,
+      "nativeProgress": 0,
+      "native": 1,
+      "actual": 0
+    },
+    {
+      "id": "step-start-reverse",
+      "time": 5,
+      "nativeTime": 5000,
+      "nativeProgress": 0,
+      "native": 1,
+      "actual": 0
+    },
+    {
+      "id": "step-start-alternate",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 0,
+      "native": 0,
+      "actual": 1
+    },
+    {
+      "id": "step-start-alternate",
+      "time": 4.5,
+      "nativeTime": 4500,
+      "nativeProgress": 0,
+      "native": 1,
+      "actual": 0
+    },
+    {
+      "id": "step-start-alternate",
+      "time": 5,
+      "nativeTime": 5000,
+      "nativeProgress": 0,
+      "native": 1,
+      "actual": 0
+    },
+    {
+      "id": "step-end-reverse",
+      "time": 0,
+      "nativeTime": 0,
+      "nativeProgress": 1,
+      "native": 0.2,
+      "actual": 0.8
+    },
+    {
+      "id": "step-end-reverse",
+      "time": 0.499,
+      "nativeTime": 499,
+      "nativeProgress": 1,
+      "native": 0.2,
+      "actual": 0.8
+    },
+    {
+      "id": "step-end-reverse",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 1,
+      "native": 0.2,
+      "actual": 0.8
+    },
+    {
+      "id": "step-end-alternate-reverse",
+      "time": 0,
+      "nativeTime": 0,
+      "nativeProgress": 1,
+      "native": 0.2,
+      "actual": 0.8
+    },
+    {
+      "id": "step-end-alternate-reverse",
+      "time": 0.499,
+      "nativeTime": 499,
+      "nativeProgress": 1,
+      "native": 0.2,
+      "actual": 0.8
+    },
+    {
+      "id": "step-end-alternate-reverse",
+      "time": 0.5,
+      "nativeTime": 500,
+      "nativeProgress": 1,
+      "native": 0.2,
+      "actual": 0.8
+    }
+  ],
+  "oracleReview": "Firefox matches CSS Easing before-flag algorithm and Web Animations phase/direction rule at all sampled points. Chrome retains 36 step discontinuity differences at positive-delay start or reverse before/after phases; pause readiness and native currentTime/progress were recorded. These are retained, not counted as passes.",
+  "limitations": [
+    "Original qin-bear HTML/SVG unavailable; this does not establish that the reported blank phone file is fixed.",
+    "Inline HTML SVG animation, CSS play-state, overshooting transform easing and complete CSS animation parsing are not newly certified.",
+    "Browser adapter executes shipped component with native node-query and frame scheduling substituted; this is not a native WeChat or physical-device test.",
+    "Canvas comparison covers center opacity, not full-image geometry or RGB equivalence."
+  ],
+  "reproduce": {
+    "firefox": "HTML_READER_FIREFOX=/path/to/firefox node scripts/verify-svg-css-timing.js outputs/svg-css-timing/firefox",
+    "chrome": "node scripts/verify-svg-css-timing.js outputs/svg-css-timing/chrome --record",
+    "baseline": "HTML_READER_SVG_ROOT=/path/to/base/miniprogram/file-reader/image HTML_READER_FIREFOX=/path/to/firefox node scripts/verify-svg-css-timing.js outputs/svg-css-timing/baseline --record"
+  }
+}

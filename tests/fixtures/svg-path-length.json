@@ -1,0 +1,60 @@
+{
+  "oracle": "NumPy composite32-node Gauss-Legendre over128 panels; explicit analytic parabola/cusp/line/circle controls",
+  "cases": [
+    {
+      "name": "arch",
+      "path": "M20 180C40 0 180 0 220 180",
+      "length": 363.1127194243261
+    },
+    {
+      "name": "loop",
+      "path": "M0 0C180 240 -180 240 0 0",
+      "length": 443.4485648866495
+    },
+    {
+      "name": "asymmetric",
+      "path": "M20 30C40 190 240 -50 210 200",
+      "length": 329.4988242251145
+    },
+    {
+      "name": "parabola",
+      "path": "M0 0Q.5 0 1 1",
+      "length": 1.4789428575445975
+    },
+    {
+      "name": "cusp",
+      "path": "M30 128C230 128 -30 128 210 128",
+      "length": 203.81944444444446
+    },
+    {
+      "name": "ellipse-90-55",
+      "path": "M90 0A90 55 0 0 1 0 55",
+      "length": 115.54767939986723
+    },
+    {
+      "name": "ellipse-300-0.2",
+      "path": "M300 0A300 0.2 0 0 1 0 0.2",
+      "length": 300.0005466344012
+    },
+    {
+      "name": "ellipse-7-120",
+      "path": "M7 0A7 120 0 0 1 0 120",
+      "length": 120.76192892171339
+    },
+    {
+      "name": "close-subpaths",
+      "path": "M0 0L3 4ZM10 10L13 14",
+      "length": 15
+    },
+    {
+      "name": "circle-half",
+      "path": "M10 0A10 10 0 0 1 -10 0",
+      "length": 31.41592653589793
+    },
+    {
+      "name": "arc-zero-radius",
+      "path": "M0 0A0 20 0 0 1 3 4",
+      "length": 5
+    }
+  ]
+}

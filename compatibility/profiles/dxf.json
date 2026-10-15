@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "format": "DXF",
+  "extensions": [
+    "dxf"
+  ],
+  "mime": [
+    "application/dxf"
+  ],
+  "signatures": [
+    "300a53454354494f4e"
+  ],
+  "userShouldSee": "\u56fe\u7eb8\u4e2d\u5b9e\u9645\u5b58\u5728\u7684\u6587\u5b57\u4e0e\u652f\u6301\u7684\u51e0\u4f55\u56fe\u5143\uff1b\u6587\u5b57\u4e0d\u56e0\u4ee3\u7801\u9875\u8bef\u5224\u53d8\u6210\u4e71\u7801\uff0c\u6587\u5b57\u81ea\u8eab\u5360\u7528\u8303\u56f4\u4e0d\u88ab\u9884\u89c8\u753b\u5e03\u88c1\u5207\u3002",
+  "currentVisibleResult": "v1.4.133 \u5f00\u53d1\u7248\u5df2\u4e0a\u4f20\uff1a\u65e7\u7248 DXF \u4f9d\u58f0\u660e\u4ee3\u7801\u9875\u8bfb\u53d6\uff0c2007 \u53ca\u4ee5\u540e\u4f7f\u7528 UTF-8\uff1bCIF Unicode \u8f6c\u4e49\u5728\u7269\u7406\u5b57\u6bb5\u5206\u79bb\u540e\u5904\u7406\uff0cMTEXT \u5206\u6bb5\u5148\u62fc\u63a5\u3002\u666e\u901a Unicode \u6587\u5b57\u91c7\u7528\u4fdd\u5b88\u8fb9\u754c\uff0c\u907f\u514d\u53ea\u6709\u6587\u5b57\u6216\u957f\u6587\u5b57\u56fe\u7eb8\u88ab\u88c1\u5207\u3002\u4ecd\u662f\u57fa\u7840\u9884\u89c8\uff0cMTEXT \u90e8\u5206\u683c\u5f0f/\u5b57\u9762\u8f6c\u4e49\u3001\u539f\u59cb\u5b57\u4f53\u3001\u65cb\u8f6c\u4e0e\u5bf9\u9f50\u4e0d\u5b8c\u6574\u3002 \u672c\u5730 MTEXT \u4fee\u590d\u5df2\u901a\u8fc7 49 \u4e2a Chrome \u89c6\u56fe\uff1a\u8f6c\u4e49\u4e0e\u5b57\u9762\u7b26\u53f7\u5206\u79bb\uff0c\u6bb5\u843d\u3001\u5d4c\u5957\u57fa\u7840\u683c\u5f0f\u548c\u4e0a\u4e0b\u5206\u6570\u53ef\u663e\u793a\uff1b\u672a\u53d1\u5e03\uff0c\u5b57\u4f53\u3001\u7cbe\u786e\u5b57\u8ddd\u3001\u81ea\u52a8\u6362\u884c\u53ca\u5bf9\u9f50\u9650\u5236\u4fdd\u7559\u3002 \u672c\u6b21\u6574\u5408\u53e6\u542b MINSERT \u9635\u5217\u95f4\u8ddd\u548c\u6709\u754c\u7f51\u683c\u904d\u5386\uff1b\u5c1a\u672a\u4e0a\u4f20\u3002",
+  "oracles": [
+    "Autodesk Group Code Value Types / Storage of String Values: https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2553CF98-44F6-4828-82DD-FE3BC7448113.htm",
+    "Autodesk MTEXT chunks: https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-5E5DB93B-F8D3-4433-ADF7-E92E250D2BAB.htm",
+    "ezdxf 1.4.4 original drawing generation/re-read; regular, recover, slow and explicit CIF helper differences retained",
+    "Chrome actual returned SVG text, complete glyph bounds and image decoding"
+  ],
+  "capabilities": [
+    {
+      "id": "versioned-text-encoding",
+      "status": "pass",
+      "axis": {
+        "version": "R12/R2000/R2007 originals",
+        "encoding": "Windows-1252/1251, GBK, Shift_JIS; Big5 additional source contracts",
+        "structure": "HEADER version/codepage and TEXT/MTEXT followed by geometry",
+        "anomaly": "invalid bytes, unknown high-byte codepage and stale callbacks"
+      },
+      "expectedVisibleResult": "12 \u4e2a\u72ec\u7acb\u539f\u4ef6\u7684 32 \u6761\u6587\u5b57\u5728\u5b9e\u9645\u9605\u8bfb\u5165\u53e3\u548c Chrome \u4e2d\u6b63\u786e\uff1b\u65e7\u7248\u5b57\u8282\u4e0d\u518d\u541e\u6389\u6362\u884c\u5bfc\u81f4\u540e\u7eed\u5b9e\u4f53\u4e22\u5931\u3002",
+      "evidence": [
+        "tests/dxf-text.test.js",
+        "tests/fixtures/dxf-text/samples.json",
+        "scripts/probe-dxf-text.py",
+        "runs/2026-09-08-dxf-text.json"
+      ]
+    },
+    {
+      "id": "scoped-cif-unicode",
+      "status": "pass",
+      "axis": {
+        "version": "ASCII/CIF and UTF8 DXF",
+        "feature": "Unicode values, MTEXT chunks, surrogate pairs and literal produced backslash",
+        "structure": "physical group boundaries before decoding",
+        "anomaly": "escaped newline/markup, NUL/unpaired surrogate and trailing data after EOF"
+      },
+      "expectedVisibleResult": "Unicode \u5185\u5bb9\u4fdd\u7559\uff0c\u8f6c\u4e49\u6362\u884c\u4e0d\u751f\u6210\u4f2a\u5b9e\u4f53\uff0c\u751f\u6210\u7684\u53cd\u659c\u6760\u4e0d\u88ab\u9012\u5f52\u89e3\u7801\uff1b\u65e0\u6cd5\u663e\u793a\u7684\u63a7\u5236\u5b57\u7b26\u548c\u4e0d\u5b8c\u6574 Unicode \u660e\u786e\u5931\u8d25\u3002",
+      "evidence": [
+        "tests/dxf-text.test.js",
+        "tests/fixtures/dxf-text/combinations.json",
+        "scripts/probe-dxf-combinations.py",
+        "runs/2026-09-08-dxf-text.json"
+      ]
+    },
+    {
+      "id": "text-preview-bounds",
+      "status": "pass",
+      "axis": {
+        "feature": "text-only and long text plus geometry",
+        "layout": "conservative Unicode fallback-font bounds",
+        "scale": "freeze display font size before growing viewBox",
+        "platform": "Node SVG and Chrome glyph bounding boxes/data images"
+      },
+      "expectedVisibleResult": "\u6587\u5b57\u81ea\u8eab\u5360\u7528\u8303\u56f4\u8fdb\u5165\u753b\u5e03\uff0c\u4e0d\u518d\u53ea\u8ba1\u7b97\u63d2\u5165\u70b9\uff1b44 \u4e2a Chrome \u89c6\u56fe\u7684\u5b57\u5f62\u8fb9\u754c\u4e0e\u56fe\u7247\u89e3\u7801\u901a\u8fc7\uff0c\u5176\u4e2d 8 \u4e2a\u89c6\u56fe\u7684 MTEXT \u5185\u5bb9\u4ecd\u6709\u5df2\u8bb0\u5f55\u7f3a\u53e3\u3002",
+      "evidence": [
+        "tests/dxf-text.test.js",
+        "scripts/verify-dxf-text.js",
+        "runs/2026-09-08-dxf-text.json"
+      ]
+    },
+    {
+      "id": "mtext-content-and-basic-layout",
+      "status": "pass",
+      "expectedVisibleResult": "TEXT \u5b57\u9762\u6bb5\u843d\u4ee3\u7801\u4fdd\u6301\u4e0d\u53d8\uff1bMTEXT \u771f\u6b63\u5206\u6bb5\uff0c\u8f6c\u4e49\u7b26\u53f7\u3001Unicode\u3001\u57fa\u7840\u6837\u5f0f\u548c\u5206\u6570\u4e0a\u4e0b\u4f4d\u7f6e\u4fdd\u6301\uff1b\u4e0d\u660e\u6307\u4ee4\u4fdd\u7559\u5e76\u63d0\u793a\u3002",
+      "evidence": [
+        "runs/2026-09-13-dxf-mtext.json",
+        "tests/dxf-mtext.test.js",
+        "scripts/verify-dxf-mtext.js"
+      ],
+      "axis": {
+        "version": "R2000/R2007 originals",
+        "feature": "literal/CIF, paragraphs, scoped basic styles and stacks",
+        "structure": "physical group3/group1 splits and nested groups",
+        "anomaly": "unknown/truncated controls, numeric/depth/source limits and stale recovery",
+        "platform": "actual Node reader host and Chrome SVG; no new WeChat/device validation"
+      }
+    },
+    {
+      "id": "insert-grid-spacing",
+      "status": "pass",
+      "axis": {
+        "version": "R12/R2007",
+        "feature": "2D LINE blocks; scale, mirror, rotation, negative spacing and enclosing uniform scale",
+        "structure": "16 retained originals, 258 native line segments",
+        "platform": "Node actual host definitions and Chrome; WeChat and devices not run"
+      },
+      "expectedVisibleResult": "\u9635\u5217\u884c\u5217\u95f4\u8ddd\u4e0d\u53d7\u540c\u4e00\u5757\u7684\u7f29\u653e\u5f71\u54cd\uff1b\u7236\u5757\u53d8\u6362\u4ecd\u6b63\u786e\u4f5c\u7528\u4e8e\u5b50\u9635\u5217\u3002",
+      "evidence": [
+        "tests/dxf-insert-grid.test.js",
+        "tests/fixtures/dxf-insert-grid/before.json",
+        "tests/fixtures/dxf-insert-grid/reference-review.json",
+        "scripts/verify-dxf-insert-grid.js",
+        "runs/2026-09-13-next-dxf-insert-grid.json"
+      ]
+    },
+    {
+      "id": "insert-grid-traversal",
+      "status": "pass",
+      "axis": {
+        "structure": "rows/columns21,grid21x21,1200/1201,zero spacing,depth7/64/65",
+        "anomaly": "cycles,exponential empty/unsupported blocks,32767x32767",
+        "lifecycle": "repeat,error/budget recovery,stale/detached reads",
+        "platform": "Node actual host and20 Chrome pixel views;no WeChat/devices"
+      },
+      "expectedVisibleResult": "\u5408\u6cd5\u9635\u5217\u4e0d\u518d\u622a\u4e3a20\u884c/\u5217\uff0c64\u5c42\u5185\u5d4c\u5957\u6b63\u786e\u663e\u793a\uff1b\u8d85\u9884\u7b97\u660e\u786e\u6807\u6ce8\u622a\u65ad\uff0c\u5faa\u73af/\u8d85\u6df1\u5f15\u7528\u660e\u786e\u5931\u8d25\u5e76\u53ef\u7ee7\u7eed\u6253\u5f00\u5176\u4ed6\u6587\u4ef6\u3002",
+      "evidence": [
+        "tests/dxf-grid-traversal.test.js",
+        "tests/fixtures/dxf-grid-traversal/before.json",
+        "tests/fixtures/dxf-grid-traversal/adversarial-before.json",
+        "scripts/verify-dxf-grid-traversal.js",
+        "runs/2026-09-13-dxf-grid-traversal.json"
+      ]
+    }
+  ],
+  "platformResults": {
+    "node": "pass-scoped",
+    "chrome": "pass-scoped",
+    "wechatDevtools": "not-run: previous compiler startup blocker",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "mutationQueue": [
+    {
+      "id": "mtext-literal-and-inline-content",
+      "priority": "high",
+      "status": "local-fixed-scoped-pending-delivery",
+      "evidence": "runs/2026-09-13-dxf-mtext.json",
+      "action": "Local repair gates passed. Complete review/CI, sequence version after pending TAR release, then delivery and WeChat/device validation. Keep typography/alignment and uncertain-control limits."
+    },
+    {
+      "id": "cad-text-font-rotation-anchor-and-zoom",
+      "priority": "high",
+      "status": "pending",
+      "action": "Independent font metrics, text rotation/anchor/width factor and device zoom readability; current bounds are conservative fallback-font bounds."
+    },
+    {
+      "id": "ocs-and-layer-visibility",
+      "priority": "high",
+      "status": "pending",
+      "action": "Probe extrusion coordinates, block transforms and hidden layers with independently rendered originals."
+    },
+    {
+      "id": "additional-codepages-and-mif",
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "large-drawing-memory-and-numeric-limits",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "insert-grid-cap-and-traversal",
+      "priority": "high",
+      "status": "fixed-scoped-unreleased",
+      "evidence": "tests/fixtures/dxf-insert-grid/next-boundaries.json",
+      "action": "Retained native and adversarial originals cover array counts,zero spacing,depth/cycles and work budget. OCS/layer behavior remains separate."
+    }
+  ],
+  "testedVersion": "1.4.133",
+  "lastTestedAt": "2026-09-18T11:11:26.209970+00:00",
+  "mtextExploration": {
+    "status": "confirmed-bug-not-fixed",
+    "evidence": "runs/2026-09-13-next-dxf-mtext.json",
+    "originals": 46,
+    "actualHostOpens": 46,
+    "certifiedMainContentCases": 30,
+    "certifiedMainContentFailures": 28,
+    "uncertainMainCases": 10,
+    "supplementalRoleCases": 6,
+    "scope": "Node host plus independent ezdxf drawings and Chrome visual inspection; no native CAD app, WXML or device claim."
+  },
+  "latestLocalRepair": {
+    "at": "2026-09-13T07:00:18.092646+00:00",
+    "evidence": "runs/2026-09-13-dxf-mtext.json",
+    "status": "verified-pending-delivery",
+    "nodeTests": 1267,
+    "chromeViews": 49,
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  }
+}

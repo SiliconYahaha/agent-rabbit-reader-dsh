@@ -1,0 +1,29 @@
+[
+  {
+    "name": "clip-path-clip-rule-006.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-006.svg",
+    "sha256": "aa9b285c000f2d883868d83de02b8ba2246b1530399e2866b711f92f6a55f070",
+    "reference": "clip-path-clip-rule-002-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-clip-rule-002-ref.svg",
+    "referenceSha256": "5269f6c770ac74d8f0b0148cdb3d397548e26c5e17788ea360fd5c76c4929abd",
+    "license": "BSD-3-Clause"
+  },
+  {
+    "name": "clip-path-clip-rule-007.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-007.svg",
+    "sha256": "7def719cae1608a107c907d3ff6adc90bf4274c671b468df88c4cf27d29720d3",
+    "reference": "clip-path-clip-rule-003-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-clip-rule-003-ref.svg",
+    "referenceSha256": "84737a2de868677ecdf736b3dbb5112fe789039593282192b37eb9cfbc456f01",
+    "license": "BSD-3-Clause"
+  },
+  {
+    "name": "clip-path-clip-rule-008.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-008.svg",
+    "sha256": "f6fe21cdd64f0de4c9709dc04ce587f8535006f55e3c1970a94e35ad52e127c7",
+    "reference": "clip-path-clip-rule-004-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-clip-rule-004-ref.svg",
+    "referenceSha256": "e820576a88168874a96990ba72786fb26f8874ada8d8859b3a8e756fd1af69b1",
+    "license": "BSD-3-Clause"
+  }
+]

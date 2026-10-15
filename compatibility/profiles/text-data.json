@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "format": "Read-only source/config/data text",
+  "extensions": [
+    "json",
+    "jsonl",
+    "ndjson",
+    "yaml",
+    "yml",
+    "xml",
+    "csv",
+    "tsv",
+    "log",
+    "js",
+    "mjs",
+    "cjs",
+    "ts",
+    "css",
+    "py",
+    "sh",
+    "sql",
+    "ini",
+    "toml",
+    "conf"
+  ],
+  "userShouldSee": "Actual original source text; JSON indentation must preserve every lexical token, CSV string cells preserve quoting/newlines/leading zeros; source and formulas cannot execute.",
+  "currentVisibleResult": "v1.4.146 development uploaded: JSON/CSV readable views and original toggles, other declared suffixes literal source, bounded actual-size reads; 30 Chrome views and46 WeChat content opens verified,49 including3 recovery checks. PR328 merged; main run38391171050 and matching developer receipt verified. Real chat menu, phones and cold-start reliability remain pending.",
+  "oracles": [
+    "https://www.rfc-editor.org/rfc/rfc8259",
+    "https://www.rfc-editor.org/rfc/rfc4180",
+    "Python json Decimal/object_pairs_hook, csv strict, encoders and zipfile",
+    "Isolated native Chrome content and visible toggle controls"
+  ],
+  "capabilities": [
+    {
+      "id": "json-lexical-content",
+      "axis": {
+        "version": "read-only text data",
+        "feature": "indent without numeric/object roundtrip",
+        "encoding": "UTF-8/BOM",
+        "anomaly": "large numbers, duplicate keys, negative zero, huge exponents and embedded markup"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "Original JSON tokens preserved in native Chrome and real WeChat WXML; original/format taps switch visible content.",
+      "evidence": [
+        "runs/2026-10-13-text-data.json",
+        "tests/text-data.test.js"
+      ]
+    },
+    {
+      "id": "csv-literal-cells",
+      "axis": {
+        "version": "read-only text data",
+        "feature": "quoted fields, record and embedded newlines",
+        "encoding": "UTF-8 and7 independent byte cases",
+        "anomaly": "leading zeros, big integers, formula and HTML literals"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "Exact independent cell strings, native horizontal scroll and original-source switching; formulas never execute.",
+      "evidence": [
+        "runs/2026-10-13-text-data.json",
+        "tests/text-data.test.js"
+      ]
+    },
+    {
+      "id": "readonly-suffix-entry",
+      "axis": {
+        "version": "read-only text data",
+        "feature": "20 source suffixes and MIME conflicts",
+        "encoding": "UTF-8 plus declared supported codecs",
+        "anomaly": "HTML/Markdown/image MIME conflicts and inline data URI strings"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "Literal complete source, no author script execution or presentation cache rewrite; TXT typography retained.",
+      "evidence": [
+        "runs/2026-10-13-text-data.json",
+        "tests/text-data.test.js"
+      ]
+    },
+    {
+      "id": "bounded-native-input",
+      "axis": {
+        "version": "read-only text data",
+        "feature": "stat/chunk/range size and old callbacks",
+        "encoding": "binary/native bytes",
+        "anomaly": "stale picker size, changed size, short read and late success/failure"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "Reject over-limit/changed input clearly; stale callbacks cannot replace the next file; 16000-row text whole WXML tail compared.",
+      "evidence": [
+        "runs/2026-10-13-text-data.json",
+        "tests/text-data.test.js"
+      ]
+    },
+    {
+      "id": "zip-data-members",
+      "axis": {
+        "version": "read-only text data",
+        "feature": "actual WXML directory/member taps",
+        "encoding": "Python UTF-8 Deflate archive",
+        "anomaly": "size hint1 vs actual archive size"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "Member bytes and JSON/CSV/XML real content preserved through native extraction and normal entry path.",
+      "evidence": [
+        "runs/2026-10-13-text-data.json",
+        "tests/text-data.test.js"
+      ]
+    },
+    {
+      "id": "phone-and-handoff",
+      "axis": {
+        "version": "read-only text data",
+        "feature": "real picker and share menu",
+        "encoding": "provider MIME variations",
+        "anomaly": "SDK versions and memory pressure"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "Real physical devices open each file and recover after invalid input; no template acceptance used as proof.",
+      "evidence": []
+    }
+  ],
+  "publicSamples": [],
+  "mutationQueue": [
+    {
+      "id": "deep-json-bridge-payload",
+      "status": "pending",
+      "action": "Own depth60/10000-number input is49kB but emits1.35MB bridge patch in Node. Confirm actual WXML/display limits and preserve full lexemes/layout; do not claim phone success from host binding."
+    },
+    {
+      "id": "zip-website-resources",
+      "status": "pending",
+      "action": "Build legitimate nested-site packages with sibling CSS/JS/images/pages and independent browser originals; evaluate missing local mounts separately."
+    },
+    {
+      "id": "text-device-and-encoding-combinations",
+      "status": "pending",
+      "action": "Combine decoder declarations, chunk-boundary byte runs, presentation-limit fallback and physical phone/WXML payload limits; preserve exact source and no-execution controls."
+    }
+  ]
+}

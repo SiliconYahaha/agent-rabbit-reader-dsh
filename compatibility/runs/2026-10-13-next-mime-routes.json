@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-13T11:49:15.414629+00:00",
+  "status": "route-reproduced-content-fidelity-pending",
+  "rows": [
+    {
+      "format": "zip",
+      "name": "control.zip",
+      "type": "application/zip",
+      "error": "",
+      "title": "ZIP \u538b\u7f29\u5305",
+      "metadata": [
+        "\u76ee\u5f55\u9879",
+        "\u539f\u59cb\u5927\u5c0f",
+        "\u538b\u7f29\u5927\u5c0f",
+        "\u4e2d\u592e\u76ee\u5f55"
+      ],
+      "entries": 3,
+      "sourceSvg": false
+    },
+    {
+      "format": "zip",
+      "name": "\u804a\u5929\u9644\u4ef6",
+      "type": "application/zip",
+      "error": "",
+      "title": "ZIP \u538b\u7f29\u5305",
+      "metadata": [
+        "\u76ee\u5f55\u9879",
+        "\u539f\u59cb\u5927\u5c0f",
+        "\u538b\u7f29\u5927\u5c0f",
+        "\u4e2d\u592e\u76ee\u5f55"
+      ],
+      "entries": 3,
+      "sourceSvg": false
+    },
+    {
+      "format": "zip",
+      "name": "\u804a\u5929\u9644\u4ef6",
+      "type": "application/zip; name=\"sample.zip\"",
+      "error": "",
+      "title": "\u4e8c\u8fdb\u5236\u6587\u4ef6\u4fe1\u606f",
+      "metadata": [
+        "\u6587\u4ef6",
+        "\u5b9e\u9645\u8bfb\u53d6",
+        "MIME \u7c7b\u578b",
+        "\u6587\u4ef6\u5927\u5c0f",
+        "\u6587\u4ef6\u5934",
+        "FNV-1a"
+      ],
+      "entries": 0,
+      "sourceSvg": false
+    },
+    {
+      "format": "dxf",
+      "name": "control.dxf",
+      "type": "application/dxf",
+      "error": "",
+      "title": "DXF \u5de5\u7a0b\u56fe",
+      "metadata": [
+        "\u6587\u4ef6",
+        "\u5b9e\u9645\u8bfb\u53d6",
+        "AutoCAD \u7248\u672c",
+        "\u63d2\u5165\u5355\u4f4d\u4ee3\u7801",
+        "\u5b9e\u4f53\u7c7b\u578b",
+        "\u5757\u5b9a\u4e49/\u5c55\u5f00\u5f15\u7528",
+        "\u586b\u5145\u8fb9\u754c/\u5c3a\u5bf8",
+        "\u6837\u6761/\u591a\u6bb5\u7ebf\u5f27",
+        "HATCH \u66f2\u7ebf\u8fb9",
+        "\u9884\u89c8\u56fe\u5143"
+      ],
+      "entries": 1,
+      "sourceSvg": false
+    },
+    {
+      "format": "dxf",
+      "name": "\u804a\u5929\u9644\u4ef6",
+      "type": "application/dxf",
+      "error": "",
+      "title": "DXF \u5de5\u7a0b\u56fe",
+      "metadata": [
+        "\u6587\u4ef6",
+        "\u5b9e\u9645\u8bfb\u53d6",
+        "AutoCAD \u7248\u672c",
+        "\u63d2\u5165\u5355\u4f4d\u4ee3\u7801",
+        "\u5b9e\u4f53\u7c7b\u578b",
+        "\u5757\u5b9a\u4e49/\u5c55\u5f00\u5f15\u7528",
+        "\u586b\u5145\u8fb9\u754c/\u5c3a\u5bf8",
+        "\u6837\u6761/\u591a\u6bb5\u7ebf\u5f27",
+        "HATCH \u66f2\u7ebf\u8fb9",
+        "\u9884\u89c8\u56fe\u5143"
+      ],
+      "entries": 1,
+      "sourceSvg": false
+    },
+    {
+      "format": "dxf",
+      "name": "\u804a\u5929\u9644\u4ef6",
+      "type": "application/dxf; name=\"sample.dxf\"",
+      "error": "",
+      "title": "\u4e8c\u8fdb\u5236\u6587\u4ef6\u4fe1\u606f",
+      "metadata": [
+        "\u6587\u4ef6",
+        "\u5b9e\u9645\u8bfb\u53d6",
+        "MIME \u7c7b\u578b",
+        "\u6587\u4ef6\u5927\u5c0f",
+        "\u6587\u4ef6\u5934",
+        "FNV-1a"
+      ],
+      "entries": 0,
+      "sourceSvg": false
+    }
+  ],
+  "rootCause": "fileKind normalizes base MIME but inspectLocalFile and inspectFileBytes compare raw MIME. Missing suffix plus parameters routes supported input to binary metadata.",
+  "next": "Construct all-family case/parameter/filename matrices, independently compare visible content, repair full routing without stripping encoding declarations or changing raw source metadata."
+}

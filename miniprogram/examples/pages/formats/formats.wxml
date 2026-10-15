@@ -1,0 +1,21 @@
+<view class="formats-page">
+  <view class="formats-heading">全部格式</view>
+  <view class="formats-note">这些格式都能从微信聊天中选择打开。文件版本和设备会影响预览效果。</view>
+  <view wx:for="{{formats}}" wx:key="title" class="format-info-row">
+    <view class="format-info-icon tone-{{item.tone}}">{{item.icon}}</view>
+    <view class="format-info-copy">
+      <view class="format-extensions">{{item.extensionText}}</view>
+      <view class="format-info-title">{{item.title}}</view>
+      <view class="format-usage">{{item.usage}}</view>
+    </view>
+  </view>
+  <view class="format-info-row identity-only">
+    <view class="format-info-icon tone-design">⌖</view>
+    <view class="format-info-copy">
+      <view class="format-extensions">dwg</view>
+      <view class="format-info-title">只识别信息，不显示图纸正文</view>
+      <view class="format-usage">可看版本或内嵌缩略图。想看图纸，请先另存为 DXF。</view>
+    </view>
+  </view>
+  <view class="formats-note">返回上一页，可以直接体验七份示例文件。</view>
+</view>

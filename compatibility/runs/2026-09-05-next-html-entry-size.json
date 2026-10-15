@@ -1,0 +1,56 @@
+{
+  "issue": 195,
+  "source": "<p>BEGIN 中文 😀 END</p>",
+  "scope": "real reader entry with controlled stat/read, not WeChat native FS",
+  "expected": "BEGIN 中文 😀 END",
+  "results": [
+    {
+      "metadataSize": 0,
+      "actualBytes": 28,
+      "stats": 2,
+      "reads": 1,
+      "text": "BEGIN 中文 😀 END",
+      "error": ""
+    },
+    {
+      "metadataSize": 1,
+      "actualBytes": 28,
+      "stats": 2,
+      "reads": 1,
+      "text": "BEGIN 中文 😀 END",
+      "error": ""
+    },
+    {
+      "metadataSize": 28,
+      "actualBytes": 28,
+      "stats": 2,
+      "reads": 1,
+      "text": "BEGIN 中文 😀 END",
+      "error": ""
+    },
+    {
+      "metadataSize": 20971520,
+      "actualBytes": 28,
+      "stats": 2,
+      "reads": 1,
+      "text": "BEGIN 中文 😀 END",
+      "error": ""
+    },
+    {
+      "metadataSize": 20971521,
+      "actualBytes": 28,
+      "stats": 0,
+      "reads": 0,
+      "text": "",
+      "error": "HTML 文件超过 20 MB。建议先移除无关数据，或分成多个文件后打开。"
+    },
+    {
+      "metadataSize": 209715201,
+      "actualBytes": 28,
+      "stats": 0,
+      "reads": 0,
+      "text": "",
+      "error": "文件超过 200 MB，暂时无法在小程序内预览。"
+    }
+  ]
+}

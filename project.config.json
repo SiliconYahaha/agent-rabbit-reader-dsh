@@ -1,0 +1,26 @@
+{
+  "description": "HTML 阅读器微信小程序",
+  "compileType": "miniprogram",
+  "miniprogramRoot": "miniprogram/",
+  "appid": "wx3a426835ea59403a",
+  "projectname": "html-reader",
+  "setting": {
+    "es6": true,
+    "ignoreDevUnusedFiles": false,
+    "postcss": true,
+    "minified": true,
+    "urlCheck": false
+  },
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "file",
+        "value": "file-reader/README.md"
+      },
+      {
+        "type": "file",
+        "value": "file-reader/SOURCE.json"
+      }
+    ]
+  }
+}

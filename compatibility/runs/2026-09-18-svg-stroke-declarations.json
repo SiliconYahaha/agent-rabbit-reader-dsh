@@ -1,0 +1,616 @@
+{
+  "schemaVersion": 1,
+  "id": "svg-literal-dash-declarations",
+  "testedAt": "2026-09-18T09:48:10.419559+00:00",
+  "rootCause": "Invalid declarations overwrote lower-priority or earlier valid declarations before the renderer filtered their tokens; whitespace/comma splitting also lost valid adjacent signed/decimal CSS numbers.",
+  "change": "Validate literal dash lists before each cascade source is collected and share their tokenization with Canvas paint. Accept positive signs in shared length parsing.",
+  "primarySources": [
+    "https://www.w3.org/TR/SVG2/painting.html#StrokeDashing",
+    "https://www.w3.org/TR/css-syntax-3/#consume-number"
+  ],
+  "construction": {
+    "generator": "tests/helpers/svg-stroke-declarations.js",
+    "seed": "none; deterministic token/cascade combinations",
+    "cases": 62,
+    "axes": [
+      "negative and malformed lists",
+      "presentation inheritance",
+      "inline vs presentation",
+      "repeated declarations",
+      "stylesheet specificity",
+      "positive/exponent/adjacent numeric tokens",
+      "odd lists, units, all-zero and case-insensitive none"
+    ],
+    "reference": "Separately specified numeric SVG checked against original native Chrome SVG, both reader path implementations, and actual svg-view component methods.",
+    "referenceCorrection": "Initial hypothesis treated 12+6 as invalid; native SVG showed it is legal CSS token adjacency. Reclassified with positive controls and separately checked 12.6.3. Final 62 originals all agree exactly with their references."
+  },
+  "before": {
+    "wrongReaderScenes": 51,
+    "wrongComponentFrames": 51,
+    "nativeReferenceDisagreements": 0
+  },
+  "after": {
+    "format": "SVG literal dash declarations",
+    "nativeReferenceExact": 62,
+    "readerNativePathExact": 62,
+    "readerFallbackPathExact": 62,
+    "actualHostImports": 62,
+    "actualComponentFramesExact": 62,
+    "maximumRgbaError": 0,
+    "malformedThenValidRecovery": {
+      "rejected": true,
+      "ready": true,
+      "errors": [],
+      "sum": 0,
+      "max": 0
+    },
+    "percentageStrokeRegressionExact": 64,
+    "relatedNodeTests": 31,
+    "fullNodeTests": 1265,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "remainingExploration": {
+    "cases": 6,
+    "failed": 2,
+    "nativeReferenceExact": 6,
+    "strictComparison": "failed; exit 1 retained",
+    "results": [
+      {
+        "name": "font-relative",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 220320,
+            "max": 255
+          },
+          {
+            "nativePaths": false,
+            "sum": 220320,
+            "max": 255
+          }
+        ],
+        "component": {
+          "sum": 220320,
+          "max": 255,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "negative-list-inherits",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "positive-sign",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "double-comma-inherits",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "path-length-calibration",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 66300,
+            "max": 255
+          },
+          {
+            "nativePaths": false,
+            "sum": 66300,
+            "max": 255
+          }
+        ],
+        "component": {
+          "sum": 66300,
+          "max": 255,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "zero-list-control",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "ready": true,
+          "errors": []
+        }
+      }
+    ],
+    "recovery": {
+      "rejected": true,
+      "ready": true,
+      "errors": [],
+      "sum": 220320,
+      "max": 255
+    }
+  },
+  "results": [
+    {
+      "name": "negative-attribute-inherits",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "negative-inline-keeps-attribute",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "negative-repeated-inline",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "negative-css-specificity",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "negative-repeated-rule",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "double-comma-attribute-inherits",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "double-comma-inline-keeps-attribute",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "double-comma-repeated-inline",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "double-comma-css-specificity",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "double-comma-repeated-rule",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "leading-comma-attribute-inherits",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "leading-comma-inline-keeps-attribute",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "leading-comma-repeated-inline",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "leading-comma-css-specificity",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "leading-comma-repeated-rule",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-comma-attribute-inherits",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-comma-inline-keeps-attribute",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-comma-repeated-inline",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-comma-css-specificity",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-comma-repeated-rule",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "unknown-token-attribute-inherits",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "unknown-token-inline-keeps-attribute",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "unknown-token-repeated-inline",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "unknown-token-css-specificity",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "unknown-token-repeated-rule",
+      "beforeRgbaError": 330480,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-dot-attribute-inherits",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-dot-inline-keeps-attribute",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-dot-repeated-inline",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-dot-css-specificity",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "trailing-dot-repeated-rule",
+      "beforeRgbaError": 293760,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "empty-attribute-inherits",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "empty-inline-keeps-attribute",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "empty-repeated-inline",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "empty-css-specificity",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "empty-repeated-rule",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "mixed-keyword-attribute-inherits",
+      "beforeRgbaError": 440640,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "mixed-keyword-inline-keeps-attribute",
+      "beforeRgbaError": 440640,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "mixed-keyword-repeated-inline",
+      "beforeRgbaError": 440640,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "mixed-keyword-css-specificity",
+      "beforeRgbaError": 440640,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "mixed-keyword-repeated-rule",
+      "beforeRgbaError": 440640,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "plus-attribute",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "plus-css",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "joined-signs-attribute",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "joined-signs-css",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "joined-decimals-attribute",
+      "beforeRgbaError": 14892,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "joined-decimals-css",
+      "beforeRgbaError": 14892,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "exponent-attribute",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "exponent-css",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "mixed-separators-attribute",
+      "beforeRgbaError": 660960,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "mixed-separators-css",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "odd-attribute",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "odd-css",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "units-attribute",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "units-css",
+      "beforeRgbaError": 220320,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "negative-zero-attribute",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "negative-zero-css",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "zero-attribute",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "zero-css",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "none-attribute",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "none-css",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "upper-none-attribute",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    },
+    {
+      "name": "upper-none-css",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0
+    }
+  ],
+  "evidence": [
+    "tests/svg-stroke-declarations.test.js",
+    "tests/helpers/svg-stroke-declarations.js",
+    "scripts/verify-svg-stroke-percent.js"
+  ],
+  "commands": [
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-stroke-declarations/verified --declarations",
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-stroke-declarations/percent-regression",
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-stroke-declarations/remaining-strict --explore",
+    "npm run check",
+    "npm run check:production"
+  ],
+  "limits": [
+    "Browser Canvas and native SVG plus real component methods; wx file/query plumbing is simulated, not WeChat or device verification.",
+    "Neutral opacity animation forces the real standalone animated-SVG import path for these otherwise static samples.",
+    "Font-relative stroke units and pathLength scaling remain independently confirmed failures; recovery of the font-relative exploration input also retains its pixel error.",
+    "Function-valued CSS, CSS-wide keyword resolution beyond existing inherit support, and additional relative units are not certified by this literal-list fix.",
+    "Original qin-bear SVG remains unavailable; no claim that the screenshot report is resolved."
+  ]
+}

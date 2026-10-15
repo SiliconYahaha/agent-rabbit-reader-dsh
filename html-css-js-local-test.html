@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="本地 HTML / CSS / JavaScript 综合测试页面" />
+  <title>HTML / CSS / JS 本地综合测试页</title>
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef2f7;
+      --text: #1c2430;
+      --muted: #667085;
+      --primary: #4f46e5;
+      --primary-2: #7c3aed;
+      --border: #d9e0ea;
+      --success: #15803d;
+      --warning: #b45309;
+      --danger: #b91c1c;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+      --max-width: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+        Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(79,70,229,.10), transparent 28rem),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary);
+      text-underline-offset: 3px;
+    }
+
+    img, video, canvas {
+      max-width: 100%;
+      display: block;
+    }
+
+    code, pre, kbd, samp {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    header.hero {
+      padding: 72px 20px 48px;
+      background: linear-gradient(135deg, #111827 0%, #312e81 55%, #581c87 100%);
+      color: white;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      font-size: 13px;
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      font-size: clamp(34px, 6vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: rgba(255,255,255,.78);
+      font-size: 18px;
+    }
+
+    .hero-card {
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 24px;
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(12px);
+    }
+
+    nav.sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(12px);
+    }
+
+    nav.sticky-nav .container {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      scrollbar-width: thin;
+    }
+
+    nav.sticky-nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav.sticky-nav a:hover {
+      background: var(--surface-2);
+    }
+
+    main {
+      padding: 34px 0 80px;
+    }
+
+    section {
+      scroll-margin-top: 78px;
+      margin-bottom: 28px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    section > h2 {
+      margin-top: 0;
+      margin-bottom: 4px;
+      font-size: 26px;
+      letter-spacing: -.02em;
+    }
+
+    .section-desc {
+      margin-top: 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .muted { color: var(--muted); }
+    .success { color: var(--success); }
+    .warning { color: var(--warning); }
+    .danger { color: var(--danger); }
+
+    blockquote {
+      margin: 20px 0;
+      padding: 12px 18px;
+      border-left: 4px solid var(--primary);
+      background: #f5f3ff;
+      border-radius: 0 10px 10px 0;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+
+    mark {
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+
+    kbd {
+      display: inline-block;
+      padding: 2px 7px;
+      border: 1px solid #b8c0cc;
+      border-bottom-width: 2px;
+      border-radius: 6px;
+      background: #fff;
+      font-size: .9em;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 16px;
+      border-radius: 12px;
+      background: #111827;
+      color: #e5e7eb;
+    }
+
+    .badge {
+      display: inline-block;
+      margin: 2px 4px 2px 0;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #ede9fe;
+      color: #5b21b6;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 11px 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    thead th {
+      background: #f8fafc;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fbfcfe;
+    }
+
+    fieldset {
+      margin: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    legend {
+      padding: 0 6px;
+      font-weight: 700;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    input, select, textarea, button {
+      font: inherit;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    input[type="time"],
+    input[type="range"],
+    select,
+    textarea {
+      width: 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 9px;
+      background: white;
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79,70,229,.12);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .inline-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .inline-options label {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    button, .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .15s ease, filter .15s ease;
+    }
+
+    button:hover, .button:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    button.secondary {
+      background: #334155;
+    }
+
+    button.ghost {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .flex-demo {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .flex-demo > div {
+      flex: 1 1 130px;
+      min-height: 90px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #e0e7ff;
+      font-weight: 800;
+    }
+
+    .css-grid-demo {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+    }
+
+    .css-grid-demo > div {
+      min-height: 70px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: #f3e8ff;
+      font-weight: 700;
+    }
+
+    .css-grid-demo .wide {
+      grid-column: span 3;
+    }
+
+    .css-grid-demo .tall {
+      grid-row: span 2;
+      min-height: 148px;
+    }
+
+    .position-demo {
+      position: relative;
+      height: 190px;
+      overflow: hidden;
+      border: 1px dashed #94a3b8;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    }
+
+    .position-demo .absolute-box {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      padding: 14px 18px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: white;
+    }
+
+    .gradient-box {
+      height: 140px;
+      border-radius: 16px;
+      background:
+        linear-gradient(120deg, rgba(79,70,229,.95), rgba(236,72,153,.8)),
+        radial-gradient(circle at center, white, transparent);
+    }
+
+    .animated-dot {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--primary-2);
+      animation: bounce 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes bounce {
+      from { transform: translateX(0) rotate(0deg); border-radius: 50%; }
+      to { transform: translateX(240px) rotate(180deg); border-radius: 12px; }
+    }
+
+    .pseudo-demo::before {
+      content: "before → ";
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .pseudo-demo::after {
+      content: " ← after";
+      color: var(--primary-2);
+      font-weight: 800;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      background: #fff;
+    }
+
+    details + details { margin-top: 10px; }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button[aria-selected="true"] {
+      background: var(--primary);
+      color: white;
+    }
+
+    .tab-button[aria-selected="false"] {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text);
+    }
+
+    .tab-panel {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    dialog {
+      width: min(520px, calc(100% - 32px));
+      border: 0;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+    }
+
+    dialog::backdrop {
+      background: rgba(15, 23, 42, .55);
+      backdrop-filter: blur(3px);
+    }
+
+    progress, meter {
+      width: 100%;
+      height: 24px;
+    }
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 100;
+      max-width: 340px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: #111827;
+      color: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+      transform: translateY(24px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all .25s ease;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .theme-dark {
+      --bg: #0f172a;
+      --surface: #111827;
+      --surface-2: #1e293b;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #334155;
+      --shadow: none;
+    }
+
+    .theme-dark body {
+      background: var(--bg);
+    }
+
+    .theme-dark section,
+    .theme-dark .card,
+    .theme-dark input,
+    .theme-dark select,
+    .theme-dark textarea,
+    .theme-dark details,
+    .theme-dark .tab-button[aria-selected="false"] {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .theme-dark nav.sticky-nav {
+      background: rgba(15,23,42,.88);
+    }
+
+    .theme-dark thead th,
+    .theme-dark tbody tr:nth-child(even),
+    .theme-dark .tab-panel {
+      background: #172033;
+    }
+
+    footer {
+      padding: 28px 16px 50px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .grid.two,
+      .grid.three,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .css-grid-demo {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .css-grid-demo .wide {
+        grid-column: span 2;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+
+    @media print {
+      nav.sticky-nav,
+      .button-row,
+      button {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+      }
+
+      section {
+        break-inside: avoid;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">● Local HTML Test Page</span>
+        <h1>HTML + CSS + JS<br />综合测试页</h1>
+        <p>
+          这是一个完全自包含的单文件测试页面，不依赖 CDN、字体、图片或网络请求。
+          可以直接双击文件，用 Chrome、Safari、Edge、Firefox 等浏览器本地打开。
+        </p>
+        <div class="button-row">
+          <a class="button" href="#typography">开始测试</a>
+          <button class="secondary" type="button" id="themeToggle">切换深色模式</button>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <strong>当前环境</strong>
+        <p id="envInfo">正在读取浏览器信息…</p>
+        <small>JS 启用后会自动更新这里。</small>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="sticky-nav" aria-label="测试页目录">
+    <div class="container">
+      <a href="#typography">文本</a>
+      <a href="#lists">列表</a>
+      <a href="#table">表格</a>
+      <a href="#forms">表单</a>
+      <a href="#semantic">语义标签</a>
+      <a href="#css">CSS</a>
+      <a href="#interactive">JS 交互</a>
+      <a href="#storage">Storage</a>
+      <a href="#canvas">Canvas</a>
+      <a href="#native">原生组件</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section id="typography">
+      <h2>1. 文本与排版</h2>
+      <p class="section-desc">测试常见标题、段落、强调、链接、代码、引用等。</p>
+
+      <div class="grid two">
+        <div class="card">
+          <h1 style="font-size: 36px; color: var(--text); margin: 0 0 8px;">H1 一级标题</h1>
+          <h2>H2 二级标题</h2>
+          <h3>H3 三级标题</h3>
+          <h4>H4 四级标题</h4>
+          <h5>H5 五级标题</h5>
+          <h6>H6 六级标题</h6>
+        </div>
+
+        <div class="card">
+          <p>
+            普通文本、<strong>粗体 strong</strong>、<b>粗体 b</b>、
+            <em>斜体 em</em>、<i>斜体 i</i>、<u>下划线</u>、
+            <s>删除线</s>、<mark>高亮 mark</mark>。
+          </p>
+          <p>
+            上标：E = mc<sup>2</sup>；下标：H<sub>2</sub>O。
+          </p>
+          <p>
+            缩写：<abbr title="HyperText Markup Language">HTML</abbr>；
+            时间：<time datetime="2026-08-12">2026-08-12</time>。
+          </p>
+          <p>
+            键盘：<kbd>⌘</kbd> + <kbd>S</kbd>；
+            内联代码：<code>console.log("Hello")</code>。
+          </p>
+          <p>
+            <a href="#top">站内链接：返回顶部</a> ·
+            <a href="https://example.com" target="_blank" rel="noopener">外部链接示例</a>
+          </p>
+        </div>
+      </div>
+
+      <blockquote>
+        这是一个 blockquote 引用块。它用来测试边框、背景色、字体以及长文本换行效果。
+      </blockquote>
+
+      <pre><code>&lt;div class="hello"&gt;
+  Hello HTML
+&lt;/div&gt;
+
+const test = () =&gt; {
+  console.log("JavaScript 正常运行");
+};</code></pre>
+
+      <p class="pseudo-demo">这是伪元素 ::before / ::after 测试文本。</p>
+      <hr />
+      <p>
+        Badge：
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">JavaScript</span>
+      </p>
+    </section>
+
+    <section id="lists">
+      <h2>2. 列表</h2>
+      <p class="section-desc">无序列表、有序列表、嵌套列表和描述列表。</p>
+
+      <div class="grid three">
+        <div class="card">
+          <h3>无序列表</h3>
+          <ul>
+            <li>苹果</li>
+            <li>香蕉</li>
+            <li>橙子</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>有序列表</h3>
+          <ol>
+            <li>第一步</li>
+            <li>第二步
+              <ol>
+                <li>子步骤 A</li>
+                <li>子步骤 B</li>
+              </ol>
+            </li>
+            <li>第三步</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>描述列表</h3>
+          <dl>
+            <dt><strong>HTML</strong></dt>
+            <dd>负责页面结构。</dd>
+            <dt><strong>CSS</strong></dt>
+            <dd>负责页面样式。</dd>
+            <dt><strong>JS</strong></dt>
+            <dd>负责交互逻辑。</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="table">
+      <h2>3. 表格</h2>
+      <p class="section-desc">测试表头、合并单元格、斑马纹和溢出。</p>
+
+      <div style="overflow-x:auto;">
+        <table>
+          <caption style="caption-side: top; text-align:left; padding: 8px 0;">
+            示例数据表
+          </caption>
+          <thead>
+            <tr>
+              <th>项目</th>
+              <th>类型</th>
+              <th>状态</th>
+              <th>数值</th>
+              <th>备注</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML 渲染</td>
+              <td>结构</td>
+              <td class="success">正常</td>
+              <td>100%</td>
+              <td rowspan="2">rowspan 合并两行</td>
+            </tr>
+            <tr>
+              <td>CSS 样式</td>
+              <td>视觉</td>
+              <td class="success">正常</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td colspan="2">colspan 合并两列</td>
+              <td class="warning">测试中</td>
+              <td>75%</td>
+              <td>支持横向滚动</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="3">合计</th>
+              <th>275%</th>
+              <th>tfoot</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section id="forms">
+      <h2>4. 表单元素</h2>
+      <p class="section-desc">输入框、选择框、checkbox、radio、range、日期时间等。</p>
+
+      <form id="demoForm">
+        <fieldset>
+          <legend>基础表单</legend>
+
+          <div class="form-row">
+            <div>
+              <label for="name">文本输入</label>
+              <input id="name" name="name" type="text" placeholder="请输入姓名" required />
+            </div>
+            <div>
+              <label for="email">邮箱</label>
+              <input id="email" name="email" type="email" placeholder="name@example.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="number">数字</label>
+              <input id="number" name="number" type="number" min="0" max="100" value="42" />
+            </div>
+            <div>
+              <label for="select">下拉选择</label>
+              <select id="select" name="select">
+                <option>选项 A</option>
+                <option>选项 B</option>
+                <option>选项 C</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="date">日期</label>
+              <input id="date" name="date" type="date" />
+            </div>
+            <div>
+              <label for="time">时间</label>
+              <input id="time" name="time" type="time" />
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <label for="range">Range：<span id="rangeValue">50</span></label>
+            <input id="range" name="range" type="range" min="0" max="100" value="50" />
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <label>Checkbox</label>
+            <div class="inline-options">
+              <label><input type="checkbox" name="skill" value="html" checked /> HTML</label>
+              <label><input type="checkbox" name="skill" value="css" /> CSS</label>
+              <label><input type="checkbox" name="skill" value="js" /> JavaScript</label>
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <label>Radio</label>
+            <div class="inline-options">
+              <label><input type="radio" name="level" value="1" checked /> 初级</label>
+              <label><input type="radio" name="level" value="2" /> 中级</label>
+              <label><input type="radio" name="level" value="3" /> 高级</label>
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <label for="message">Textarea</label>
+            <textarea id="message" name="message" placeholder="输入多行文本…"></textarea>
+          </div>
+
+          <div class="button-row">
+            <button type="submit">提交表单</button>
+            <button type="reset" class="ghost">重置</button>
+          </div>
+        </fieldset>
+      </form>
+
+      <p id="formResult" class="muted">表单提交结果会显示在这里。</p>
+    </section>
+
+    <section id="semantic">
+      <h2>5. HTML5 语义标签</h2>
+      <p class="section-desc">article、aside、figure、details、address 等。</p>
+
+      <div class="grid two">
+        <article class="card">
+          <header>
+            <h3>Article 示例</h3>
+            <p class="muted">独立可分发内容单元</p>
+          </header>
+          <p>这里是 article 正文。</p>
+          <footer><small>Article Footer</small></footer>
+        </article>
+
+        <aside class="card">
+          <h3>Aside 示例</h3>
+          <p>适合放补充信息、侧栏、相关链接等内容。</p>
+        </aside>
+      </div>
+
+      <figure class="card" style="margin:16px 0 0;">
+        <div class="gradient-box" role="img" aria-label="CSS 渐变示例"></div>
+        <figcaption class="muted" style="margin-top:8px;">
+          Figure + Figcaption：这里没有使用网络图片，而是用 CSS 渐变代替。
+        </figcaption>
+      </figure>
+
+      <details open>
+        <summary>Details / Summary：默认展开</summary>
+        <p>这是浏览器原生的可折叠内容。</p>
+      </details>
+      <details>
+        <summary>再点开一个折叠项</summary>
+        <p>无需 JavaScript 也能实现。</p>
+      </details>
+
+      <address style="margin-top:16px;">
+        Address 标签：example@example.com · Shanghai / Beijing
+      </address>
+    </section>
+
+    <section id="css">
+      <h2>6. CSS 布局与效果</h2>
+      <p class="section-desc">Flex、Grid、Position、渐变、动画、Media Query。</p>
+
+      <h3>Flexbox</h3>
+      <div class="flex-demo">
+        <div>Flex 1</div>
+        <div>Flex 2</div>
+        <div>Flex 3</div>
+        <div>Flex 4</div>
+      </div>
+
+      <h3>CSS Grid</h3>
+      <div class="css-grid-demo">
+        <div class="wide">Span 3</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="tall">Tall</div>
+        <div>5</div>
+        <div>6</div>
+        <div class="wide">Span 3</div>
+      </div>
+
+      <h3>Position</h3>
+      <div class="position-demo">
+        <div style="padding:16px;">父元素：position: relative</div>
+        <div class="absolute-box">position: absolute</div>
+      </div>
+
+      <h3>CSS Animation</h3>
+      <div style="height:70px; overflow:hidden; padding-top:10px;">
+        <div class="animated-dot"></div>
+      </div>
+
+      <p class="muted">
+        把浏览器窗口缩窄到 860px 以下，可以测试响应式 media query。
+      </p>
+    </section>
+
+    <section id="interactive">
+      <h2>7. JavaScript 交互</h2>
+      <p class="section-desc">事件监听、DOM 更新、Tab、Dialog、Toast、计数器。</p>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>计数器</h3>
+          <p style="font-size:42px; margin:10px 0;" id="counter">0</p>
+          <div class="button-row">
+            <button type="button" id="minusBtn" class="secondary">-1</button>
+            <button type="button" id="plusBtn">+1</button>
+            <button type="button" id="resetCounter" class="ghost">清零</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Dialog + Toast</h3>
+          <div class="button-row">
+            <button type="button" id="openDialog">打开原生 Dialog</button>
+            <button type="button" id="showToast" class="secondary">显示 Toast</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Tabs</h3>
+      <div class="tabs" role="tablist" aria-label="示例 Tab">
+        <button class="tab-button" role="tab" aria-selected="true" data-tab="tab1">Tab 1</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="tab2">Tab 2</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="tab3">Tab 3</button>
+      </div>
+
+      <div id="tab1" class="tab-panel">Tab 1 内容：测试 DOM 显示隐藏。</div>
+      <div id="tab2" class="tab-panel" hidden>Tab 2 内容：JavaScript 正在控制这里。</div>
+      <div id="tab3" class="tab-panel" hidden>Tab 3 内容：没有使用任何第三方库。</div>
+
+      <dialog id="demoDialog">
+        <h3 style="margin-top:0;">原生 &lt;dialog&gt;</h3>
+        <p>如果你看到这个弹窗，说明浏览器支持 HTML Dialog API，JS 事件也运行正常。</p>
+        <form method="dialog">
+          <button>关闭</button>
+        </form>
+      </dialog>
+    </section>
+
+    <section id="storage">
+      <h2>8. LocalStorage / JSON</h2>
+      <p class="section-desc">测试本地文件模式下的浏览器存储能力。</p>
+
+      <div class="grid two">
+        <div class="card">
+          <label for="storageInput">要保存的数据</label>
+          <input id="storageInput" type="text" value="Hello LocalStorage" />
+          <div class="button-row" style="margin-top:12px;">
+            <button type="button" id="saveStorage">保存</button>
+            <button type="button" id="loadStorage" class="secondary">读取</button>
+            <button type="button" id="clearStorage" class="ghost">清除</button>
+          </div>
+        </div>
+        <div class="card">
+          <strong>读取结果</strong>
+          <pre id="storageOutput">尚未读取</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="canvas">
+      <h2>9. Canvas</h2>
+      <p class="section-desc">测试 Canvas 2D 绘图与像素渲染。</p>
+
+      <canvas id="demoCanvas" width="900" height="260"
+        style="width:100%; border:1px solid var(--border); border-radius:12px; background:#fff;">
+        当前浏览器不支持 Canvas。
+      </canvas>
+      <div class="button-row" style="margin-top:12px;">
+        <button type="button" id="redrawCanvas">重新随机绘制</button>
+      </div>
+    </section>
+
+    <section id="native">
+      <h2>10. 浏览器原生组件</h2>
+      <p class="section-desc">Progress、Meter、Datalist、Color、File 等。</p>
+
+      <div class="grid two">
+        <div class="card">
+          <label>Progress</label>
+          <progress value="68" max="100">68%</progress>
+
+          <label style="margin-top:14px;">Meter</label>
+          <meter min="0" max="100" low="30" high="80" optimum="90" value="72">72</meter>
+        </div>
+
+        <div class="card">
+          <label for="browserList">Datalist</label>
+          <input id="browserList" list="browsers" type="text" placeholder="输入浏览器名称" />
+          <datalist id="browsers">
+            <option value="Chrome"></option>
+            <option value="Safari"></option>
+            <option value="Firefox"></option>
+            <option value="Edge"></option>
+          </datalist>
+
+          <label for="colorInput" style="margin-top:14px;">Color Picker</label>
+          <input id="colorInput" type="color" value="#4f46e5" />
+
+          <label for="fileInput" style="margin-top:14px;">File Input</label>
+          <input id="fileInput" type="file" />
+          <p id="fileInfo" class="muted">尚未选择文件。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>11. JS 运行状态</h2>
+      <p id="jsStatus" class="danger">
+        如果你一直看到这句话，说明 JavaScript 没有正常执行。
+      </p>
+
+      <noscript>
+        <p class="danger"><strong>Noscript：</strong>当前浏览器禁用了 JavaScript。</p>
+      </noscript>
+    </section>
+  </main>
+
+  <footer>
+    <p>本地 HTML 综合测试页 · 单文件 · 无外部依赖</p>
+    <p><small id="footerTime"></small></p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    Toast：JavaScript 事件触发成功。
+  </div>
+
+  <script>
+    "use strict";
+
+    // 环境信息
+    const envInfo = document.getElementById("envInfo");
+    envInfo.textContent =
+      `${navigator.userAgent}\n` +
+      `Viewport: ${window.innerWidth} × ${window.innerHeight} · DPR: ${window.devicePixelRatio}`;
+
+    // JS 状态
+    const jsStatus = document.getElementById("jsStatus");
+    jsStatus.textContent = "✓ JavaScript 已正常执行";
+    jsStatus.className = "success";
+
+    // 时间
+    document.getElementById("footerTime").textContent =
+      `页面加载时间：${new Date().toLocaleString()}`;
+
+    // 深色模式
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("theme-dark");
+    });
+
+    // Range
+    const range = document.getElementById("range");
+    const rangeValue = document.getElementById("rangeValue");
+    range.addEventListener("input", () => {
+      rangeValue.textContent = range.value;
+    });
+
+    // Form
+    const demoForm = document.getElementById("demoForm");
+    const formResult = document.getElementById("formResult");
+
+    demoForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(demoForm).entries());
+      formResult.textContent = "提交成功：" + JSON.stringify(data, null, 2);
+    });
+
+    demoForm.addEventListener("reset", () => {
+      setTimeout(() => {
+        rangeValue.textContent = range.value;
+        formResult.textContent = "表单已重置。";
+      }, 0);
+    });
+
+    // Counter
+    let count = 0;
+    const counter = document.getElementById("counter");
+    const updateCounter = () => counter.textContent = count;
+
+    document.getElementById("plusBtn").addEventListener("click", () => {
+      count++;
+      updateCounter();
+    });
+
+    document.getElementById("minusBtn").addEventListener("click", () => {
+      count--;
+      updateCounter();
+    });
+
+    document.getElementById("resetCounter").addEventListener("click", () => {
+      count = 0;
+      updateCounter();
+    });
+
+    // Dialog
+    const dialog = document.getElementById("demoDialog");
+    document.getElementById("openDialog").addEventListener("click", () => {
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        alert("当前浏览器不支持 Dialog API。");
+      }
+    });
+
+    // Toast
+    const toast = document.getElementById("toast");
+    let toastTimer;
+    document.getElementById("showToast").addEventListener("click", () => {
+      clearTimeout(toastTimer);
+      toast.classList.add("show");
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+    });
+
+    // Tabs
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const tabPanels = document.querySelectorAll(".tab-panel");
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        tabButtons.forEach(btn => btn.setAttribute("aria-selected", "false"));
+        tabPanels.forEach(panel => panel.hidden = true);
+
+        button.setAttribute("aria-selected", "true");
+        document.getElementById(button.dataset.tab).hidden = false;
+      });
+    });
+
+    // LocalStorage
+    const storageKey = "local-html-test-demo";
+    const storageInput = document.getElementById("storageInput");
+    const storageOutput = document.getElementById("storageOutput");
+
+    document.getElementById("saveStorage").addEventListener("click", () => {
+      try {
+        const payload = {
+          value: storageInput.value,
+          savedAt: new Date().toISOString()
+        };
+        localStorage.setItem(storageKey, JSON.stringify(payload));
+        storageOutput.textContent = "保存成功：\n" + JSON.stringify(payload, null, 2);
+      } catch (error) {
+        storageOutput.textContent = "保存失败：\n" + error;
+      }
+    });
+
+    document.getElementById("loadStorage").addEventListener("click", () => {
+      try {
+        const raw = localStorage.getItem(storageKey);
+        storageOutput.textContent = raw
+          ? "读取成功：\n" + JSON.stringify(JSON.parse(raw), null, 2)
+          : "没有找到已保存的数据。";
+      } catch (error) {
+        storageOutput.textContent = "读取失败：\n" + error;
+      }
+    });
+
+    document.getElementById("clearStorage").addEventListener("click", () => {
+      localStorage.removeItem(storageKey);
+      storageOutput.textContent = "已清除。";
+    });
+
+    // File input
+    document.getElementById("fileInput").addEventListener("change", (event) => {
+      const file = event.target.files[0];
+      document.getElementById("fileInfo").textContent = file
+        ? `文件名：${file.name} · 大小：${file.size} bytes · 类型：${file.type || "未知"}`
+        : "尚未选择文件。";
+    });
+
+    // Canvas
+    const canvas = document.getElementById("demoCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function drawCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+      gradient.addColorStop(0, "#4f46e5");
+      gradient.addColorStop(0.5, "#7c3aed");
+      gradient.addColorStop(1, "#ec4899");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "rgba(255,255,255,.95)";
+      ctx.font = "bold 44px sans-serif";
+      ctx.fillText("Canvas 2D Rendering", 42, 76);
+
+      ctx.font = "24px sans-serif";
+      ctx.fillText("如果你看到文字、圆形和随机方块，Canvas 工作正常。", 42, 122);
+
+      for (let i = 0; i < 18; i++) {
+        const x = Math.random() * canvas.width;
+        const y = 150 + Math.random() * 90;
+        const size = 8 + Math.random() * 28;
+        ctx.fillStyle = `rgba(255,255,255,${0.2 + Math.random() * 0.6})`;
+        ctx.fillRect(x, y, size, size);
+      }
+
+      ctx.beginPath();
+      ctx.arc(815, 70, 42, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(255,255,255,.85)";
+      ctx.fill();
+    }
+
+    drawCanvas();
+    document.getElementById("redrawCanvas").addEventListener("click", drawCanvas);
+
+    // Resize info
+    window.addEventListener("resize", () => {
+      envInfo.textContent =
+        `${navigator.userAgent}\n` +
+        `Viewport: ${window.innerWidth} × ${window.innerHeight} · DPR: ${window.devicePixelRatio}`;
+    });
+
+    console.log("Local HTML test page loaded successfully.");
+  </script>
+</body>
+</html>

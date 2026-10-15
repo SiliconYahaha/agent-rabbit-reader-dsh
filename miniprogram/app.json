@@ -1,0 +1,133 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/file-preview/file-preview"
+  ],
+  "subPackages": [
+    {
+      "root": "file-reader/engine",
+      "name": "file-reader-engine",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "file-reader/document",
+      "name": "file-reader-document",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "file-reader/archive",
+      "name": "file-reader-archive",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "file-reader/image",
+      "name": "file-reader-image",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "file-reader/sevenzip",
+      "name": "file-reader-sevenzip",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "file-reader/markdown",
+      "name": "file-reader-markdown",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "examples",
+      "name": "reader-examples",
+      "pages": [
+        "pages/gallery/gallery",
+        "pages/formats/formats"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTitleText": "兔子阅读器",
+    "navigationBarBackgroundColor": "#fff9f2",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff9f2",
+    "backgroundTextStyle": "dark"
+  },
+  "supportedMaterials": [
+    {
+      "materialType": "video/*",
+      "name": "用${nickname}打开",
+      "desc": "播放并查看聊天中的视频信息",
+      "path": "pages/index/index"
+    },
+    {
+      "materialType": "audio/*",
+      "name": "用${nickname}打开",
+      "desc": "播放并查看聊天中的音频信息",
+      "path": "pages/index/index"
+    },
+    {
+      "materialType": "image/*",
+      "name": "用${nickname}打开",
+      "desc": "预览聊天中的图片和 SVG",
+      "path": "pages/index/index"
+    },
+    {
+      "materialType": "text/html",
+      "name": "用${nickname}打开",
+      "desc": "直接阅读聊天中的 HTML 网页文件",
+      "path": "pages/index/index"
+    },
+    {
+      "materialType": "text/plain",
+      "name": "用${nickname}阅读",
+      "desc": "阅读聊天中的纯文本文件",
+      "path": "pages/index/index"
+    },
+    {
+      "materialType": "text/markdown",
+      "name": "用${nickname}阅读",
+      "desc": "阅读聊天中的 Markdown 文件",
+      "path": "pages/index/index"
+    },
+    {
+      "materialType": "application/postscript",
+      "name": "用${nickname}预览",
+      "desc": "预览 Ai 文件中的 PDF 画板",
+      "path": "pages/index/index"
+    },
+    {
+      "materialType": "application/x-photoshop",
+      "name": "用${nickname}预览",
+      "desc": "查看 PSD 画布信息和合成缩略图",
+      "path": "pages/index/index"
+    },
+    {
+      "materialType": "application/*",
+      "name": "用${nickname}打开",
+      "desc": "打开 SVG、Ai、PSD 等设计文件",
+      "path": "pages/index/index"
+    }
+  ],
+  "lazyCodeLoading": "requiredComponents",
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "preloadRule": {
+    "pages/home/home": {
+      "network": "wifi",
+      "packages": [
+        "file-reader-document"
+      ]
+    }
+  }
+}

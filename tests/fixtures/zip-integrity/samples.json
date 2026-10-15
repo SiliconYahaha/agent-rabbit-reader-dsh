@@ -1,0 +1,19 @@
+[
+  {"name":"bla.zip","sha256":"16dff1b8998a6a95f2d2decf9c287a740fda29188b9d90b37ffc4aea1359d6ef","entries":[
+    {"name":"test1.xml","size":610,"sha256":"506c377ae6116a19e020954828e03175d91a67c49e83e2fdd14b7ba65f64b19d"},
+    {"name":"test2.xml","size":82,"sha256":"6b335a8bb246771e6ad0e9eac1aea6e541eb74ac0ce8e465d9bad0425078756a"}]},
+  {"name":"bla-stored.zip","sha256":"3f77665ab0b248ea3cfa241bc07f544a92f4726f0071f56edb773e134af96003","entries":[
+    {"name":"test1.xml","size":610,"sha256":"506c377ae6116a19e020954828e03175d91a67c49e83e2fdd14b7ba65f64b19d"},
+    {"name":"test2.xml","size":82,"sha256":"6b335a8bb246771e6ad0e9eac1aea6e541eb74ac0ce8e465d9bad0425078756a"}]},
+  {"name":"mixed.zip","sha256":"977cf7e3e83af822542b6cc817eb6e5ac11b7b6c6492d02c516ecc968242f2b1","entries":[
+    {"name":"inflated.txt","size":48891,"sha256":"f283b70fa20d6863df7827b0297362b3287ccab53007ea069522f4b2836d85b8"},
+    {"name":"stored.txt","size":48891,"sha256":"f283b70fa20d6863df7827b0297362b3287ccab53007ea069522f4b2836d85b8"}]},
+  {"name":"bla-stored-dd.zip","sha256":"984dc4732901ee9f38d4ab5be8d356866f5b69494a9175a0cf860f43dc37ba24","recovered":true,"pythonError":"test1.xml: Bad magic number for file header","entries":[
+    {"name":"test1.xml","size":610,"sha256":"506c377ae6116a19e020954828e03175d91a67c49e83e2fdd14b7ba65f64b19d"},
+    {"name":"test2.xml","size":82,"sha256":"6b335a8bb246771e6ad0e9eac1aea6e541eb74ac0ce8e465d9bad0425078756a"}]},
+  {"name":"bla-stored-dd-nosig.zip","sha256":"7adcf56c2eb0e95558a0f8ae038158b4502db096b8ed1511bd8246a98e0e7058","recovered":true,"pythonError":"test1.xml: Bad magic number for file header","entries":[
+    {"name":"test1.xml","size":610,"sha256":"506c377ae6116a19e020954828e03175d91a67c49e83e2fdd14b7ba65f64b19d"},
+    {"name":"test2.xml","size":82,"sha256":"6b335a8bb246771e6ad0e9eac1aea6e541eb74ac0ce8e465d9bad0425078756a"}]},
+  {"name":"bla-stored-dd-sizes-differ.zip","sha256":"f39c7f7987ad60de6c6756795ac36201a1ef298b723badf6a2c0b103ee426e29","readerError":"数据描述符尺寸不一致，不能安全恢复","entries":[]},
+  {"name":"bla-stored-dd-contradicts-actualsize.zip","sha256":"1fe52bd3515c7d18734429e5501aa4f9cd3173f7512370791e9625fcbde1860c","readerError":"数据描述符与实际正文长度矛盾，不能安全恢复","entries":[]}
+]

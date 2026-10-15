@@ -1,0 +1,3728 @@
+{
+  "schemaVersion": 1,
+  "scope": "Next iteration: symbol/use viewport alignment; all 32 generated cases currently differ from independent references.",
+  "inputs": [
+    {
+      "name": "symbol-viewport-0",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"96\" height=\"48\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"96\" height=\"48\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"96\" height=\"48\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"24\" height=\"12\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-1",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"100\" height=\"52\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"100\" height=\"52\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"68\" y=\"12\" width=\"52\" height=\"52\" fill=\"green\"/><rect x=\"68\" y=\"12\" width=\"13\" height=\"13\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-2",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"104\" height=\"56\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"104\" height=\"56\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"104\" height=\"56\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"26\" height=\"14\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-3",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"108\" height=\"60\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"108\" height=\"60\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"68\" y=\"12\" width=\"60\" height=\"60\" fill=\"green\"/><rect x=\"68\" y=\"12\" width=\"15\" height=\"15\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-4",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"112\" height=\"48\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"112\" height=\"48\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"112\" height=\"48\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"28\" height=\"12\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-5",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"116\" height=\"52\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"116\" height=\"52\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"84\" y=\"12\" width=\"52\" height=\"52\" fill=\"green\"/><rect x=\"84\" y=\"12\" width=\"13\" height=\"13\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-6",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"120\" height=\"56\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"120\" height=\"56\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"120\" height=\"56\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"30\" height=\"14\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-7",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"124\" height=\"60\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"124\" height=\"60\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"84\" y=\"12\" width=\"60\" height=\"60\" fill=\"green\"/><rect x=\"84\" y=\"12\" width=\"15\" height=\"15\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-8",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"128\" height=\"48\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"128\" height=\"48\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"128\" height=\"48\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"32\" height=\"12\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-9",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"132\" height=\"52\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"132\" height=\"52\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"100\" y=\"12\" width=\"52\" height=\"52\" fill=\"green\"/><rect x=\"100\" y=\"12\" width=\"13\" height=\"13\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-10",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"136\" height=\"56\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"136\" height=\"56\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"136\" height=\"56\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"34\" height=\"14\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-11",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"140\" height=\"60\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"140\" height=\"60\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"100\" y=\"12\" width=\"60\" height=\"60\" fill=\"green\"/><rect x=\"100\" y=\"12\" width=\"15\" height=\"15\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-12",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"144\" height=\"48\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"144\" height=\"48\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"144\" height=\"48\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"36\" height=\"12\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-13",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"148\" height=\"52\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"148\" height=\"52\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"116\" y=\"12\" width=\"52\" height=\"52\" fill=\"green\"/><rect x=\"116\" y=\"12\" width=\"13\" height=\"13\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-14",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"152\" height=\"56\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"152\" height=\"56\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"152\" height=\"56\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"38\" height=\"14\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-15",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"156\" height=\"60\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"156\" height=\"60\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"116\" y=\"12\" width=\"60\" height=\"60\" fill=\"green\"/><rect x=\"116\" y=\"12\" width=\"15\" height=\"15\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-16",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"160\" height=\"48\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"160\" height=\"48\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"160\" height=\"48\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"40\" height=\"12\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-17",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"164\" height=\"52\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"164\" height=\"52\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"132\" y=\"12\" width=\"52\" height=\"52\" fill=\"green\"/><rect x=\"132\" y=\"12\" width=\"13\" height=\"13\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-18",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"168\" height=\"56\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"168\" height=\"56\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"168\" height=\"56\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"42\" height=\"14\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-19",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"172\" height=\"60\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"172\" height=\"60\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"132\" y=\"12\" width=\"60\" height=\"60\" fill=\"green\"/><rect x=\"132\" y=\"12\" width=\"15\" height=\"15\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-20",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"176\" height=\"48\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"176\" height=\"48\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"176\" height=\"48\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"44\" height=\"12\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-21",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"180\" height=\"52\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"180\" height=\"52\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"148\" y=\"12\" width=\"52\" height=\"52\" fill=\"green\"/><rect x=\"148\" y=\"12\" width=\"13\" height=\"13\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-22",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"184\" height=\"56\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"184\" height=\"56\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"184\" height=\"56\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"46\" height=\"14\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-23",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"188\" height=\"60\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"188\" height=\"60\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"148\" y=\"12\" width=\"60\" height=\"60\" fill=\"green\"/><rect x=\"148\" y=\"12\" width=\"15\" height=\"15\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-24",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"192\" height=\"48\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"192\" height=\"48\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"192\" height=\"48\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"48\" height=\"12\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-25",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"196\" height=\"52\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"196\" height=\"52\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"164\" y=\"12\" width=\"52\" height=\"52\" fill=\"green\"/><rect x=\"164\" y=\"12\" width=\"13\" height=\"13\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-26",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"200\" height=\"56\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"200\" height=\"56\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"200\" height=\"56\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"50\" height=\"14\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-27",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"204\" height=\"60\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"204\" height=\"60\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"164\" y=\"12\" width=\"60\" height=\"60\" fill=\"green\"/><rect x=\"164\" y=\"12\" width=\"15\" height=\"15\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-28",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"208\" height=\"48\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"208\" height=\"48\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"208\" height=\"48\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"52\" height=\"12\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-29",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"212\" height=\"52\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"212\" height=\"52\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"180\" y=\"12\" width=\"52\" height=\"52\" fill=\"green\"/><rect x=\"180\" y=\"12\" width=\"13\" height=\"13\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-30",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"216\" height=\"56\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"216\" height=\"56\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"20\" y=\"12\" width=\"216\" height=\"56\" fill=\"green\"/><rect x=\"20\" y=\"12\" width=\"54\" height=\"14\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    },
+    {
+      "name": "symbol-viewport-31",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><defs><symbol id=\"part\" viewBox=\"0 0 64 64\" preserveAspectRatio=\"xMaxYMax meet\"><rect x=\"0\" y=\"0\" width=\"64\" height=\"64\" fill=\"green\"/><rect x=\"0\" y=\"0\" width=\"16\" height=\"16\" fill=\"blue\"/></symbol></defs><use href=\"#part\" x=\"20\" y=\"12\" width=\"220\" height=\"60\"/></svg>",
+      "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><rect x=\"0\" y=\"0\" width=\"256\" height=\"256\" fill=\"red\"/><clipPath id=\"viewport\"><rect x=\"20\" y=\"12\" width=\"220\" height=\"60\" fill=\"green\"/></clipPath><g clip-path=\"url(#viewport)\"><rect x=\"180\" y=\"12\" width=\"60\" height=\"60\" fill=\"green\"/><rect x=\"180\" y=\"12\" width=\"15\" height=\"15\" fill=\"blue\"/></g></svg>",
+      "rectReference": true
+    }
+  ],
+  "chrome": {
+    "testedAt": "2026-09-05T03:19:18.604Z",
+    "reference": "Native Chrome DOM getBBox plus independent Canvas Path2D paints; pinned WPT reference SVGs",
+    "cases": 32,
+    "exactPixels": 0,
+    "failures": [
+      "symbol-viewport-0",
+      "symbol-viewport-1",
+      "symbol-viewport-2",
+      "symbol-viewport-3",
+      "symbol-viewport-4",
+      "symbol-viewport-5",
+      "symbol-viewport-6",
+      "symbol-viewport-7",
+      "symbol-viewport-8",
+      "symbol-viewport-9",
+      "symbol-viewport-10",
+      "symbol-viewport-11",
+      "symbol-viewport-12",
+      "symbol-viewport-13",
+      "symbol-viewport-14",
+      "symbol-viewport-15",
+      "symbol-viewport-16",
+      "symbol-viewport-17",
+      "symbol-viewport-18",
+      "symbol-viewport-19",
+      "symbol-viewport-20",
+      "symbol-viewport-21",
+      "symbol-viewport-22",
+      "symbol-viewport-23",
+      "symbol-viewport-24",
+      "symbol-viewport-25",
+      "symbol-viewport-26",
+      "symbol-viewport-27",
+      "symbol-viewport-28",
+      "symbol-viewport-29",
+      "symbol-viewport-30",
+      "symbol-viewport-31"
+    ],
+    "results": [
+      {
+        "name": "symbol-viewport-0",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 937584,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 937584,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 937584,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 937584,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 937584,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 937584,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 96,
+              "height": 48,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 96,
+                  "height": 48
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 24,
+              "height": 12,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 96,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-1",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1968174,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1968174,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1968174,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1968174,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1968174,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1968174,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 68,
+              "y": 12,
+              "width": 52,
+              "height": 52,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 100,
+                  "height": 52
+                }
+              ]
+            },
+            {
+              "x": 68,
+              "y": 12,
+              "width": 13,
+              "height": 13,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 100,
+                  "height": 52
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-2",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1093848,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1093848,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1093848,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1093848,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1093848,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1093848,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 104,
+              "height": 56,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 104,
+                  "height": 56
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 26,
+              "height": 14,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 104,
+                  "height": 56
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-3",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2309310,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2309310,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2309310,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2309310,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2309310,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2309310,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 68,
+              "y": 12,
+              "width": 60,
+              "height": 60,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 108,
+                  "height": 60
+                }
+              ]
+            },
+            {
+              "x": 68,
+              "y": 12,
+              "width": 15,
+              "height": 15,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 108,
+                  "height": 60
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-4",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1250112,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1250112,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1250112,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1250112,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1250112,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1250112,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 112,
+              "height": 48,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 112,
+                  "height": 48
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 28,
+              "height": 12,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 112,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-5",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 84,
+              "y": 12,
+              "width": 52,
+              "height": 52,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 116,
+                  "height": 52
+                }
+              ]
+            },
+            {
+              "x": 84,
+              "y": 12,
+              "width": 13,
+              "height": 13,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 116,
+                  "height": 52
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-6",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1458464,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1458464,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1458464,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1458464,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1458464,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1458464,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 120,
+              "height": 56,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 120,
+                  "height": 56
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 30,
+              "height": 14,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 120,
+                  "height": 56
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-7",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 84,
+              "y": 12,
+              "width": 60,
+              "height": 60,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 124,
+                  "height": 60
+                }
+              ]
+            },
+            {
+              "x": 84,
+              "y": 12,
+              "width": 15,
+              "height": 15,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 124,
+                  "height": 60
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-8",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1562640,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1562640,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1562640,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1562640,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1562640,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1562640,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 48,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 128,
+                  "height": 48
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 32,
+              "height": 12,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 128,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-9",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 100,
+              "y": 12,
+              "width": 52,
+              "height": 52,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 132,
+                  "height": 52
+                }
+              ]
+            },
+            {
+              "x": 100,
+              "y": 12,
+              "width": 13,
+              "height": 13,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 132,
+                  "height": 52
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-10",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1823080,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1823080,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1823080,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1823080,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1823080,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1823080,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 136,
+              "height": 56,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 136,
+                  "height": 56
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 34,
+              "height": 14,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 136,
+                  "height": 56
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-11",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 100,
+              "y": 12,
+              "width": 60,
+              "height": 60,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 140,
+                  "height": 60
+                }
+              ]
+            },
+            {
+              "x": 100,
+              "y": 12,
+              "width": 15,
+              "height": 15,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 140,
+                  "height": 60
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-12",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1875168,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1875168,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1875168,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1875168,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1875168,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 1875168,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 144,
+              "height": 48,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 144,
+                  "height": 48
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 36,
+              "height": 12,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 144,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-13",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 116,
+              "y": 12,
+              "width": 52,
+              "height": 52,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 148,
+                  "height": 52
+                }
+              ]
+            },
+            {
+              "x": 116,
+              "y": 12,
+              "width": 13,
+              "height": 13,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 148,
+                  "height": 52
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-14",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2187696,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2187696,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2187696,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2187696,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2187696,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2187696,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 152,
+              "height": 56,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 152,
+                  "height": 56
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 38,
+              "height": 14,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 152,
+                  "height": 56
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-15",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 116,
+              "y": 12,
+              "width": 60,
+              "height": 60,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 156,
+                  "height": 60
+                }
+              ]
+            },
+            {
+              "x": 116,
+              "y": 12,
+              "width": 15,
+              "height": 15,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 156,
+                  "height": 60
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-16",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2187696,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2187696,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2187696,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2187696,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2187696,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2187696,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 160,
+              "height": 48,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 160,
+                  "height": 48
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 40,
+              "height": 12,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 160,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-17",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 132,
+              "y": 12,
+              "width": 52,
+              "height": 52,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 164,
+                  "height": 52
+                }
+              ]
+            },
+            {
+              "x": 132,
+              "y": 12,
+              "width": 13,
+              "height": 13,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 164,
+                  "height": 52
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-18",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2552312,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2552312,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2552312,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2552312,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2552312,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2552312,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 168,
+              "height": 56,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 168,
+                  "height": 56
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 42,
+              "height": 14,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 168,
+                  "height": 56
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-19",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 132,
+              "y": 12,
+              "width": 60,
+              "height": 60,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 172,
+                  "height": 60
+                }
+              ]
+            },
+            {
+              "x": 132,
+              "y": 12,
+              "width": 15,
+              "height": 15,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 172,
+                  "height": 60
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-20",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2500224,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2500224,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2500224,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2500224,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2500224,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2500224,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 176,
+              "height": 48,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 176,
+                  "height": 48
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 44,
+              "height": 12,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 176,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-21",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 148,
+              "y": 12,
+              "width": 52,
+              "height": 52,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 180,
+                  "height": 52
+                }
+              ]
+            },
+            {
+              "x": 148,
+              "y": 12,
+              "width": 13,
+              "height": 13,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 180,
+                  "height": 52
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-22",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2916928,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2916928,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2916928,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2916928,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2916928,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2916928,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 184,
+              "height": 56,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 184,
+                  "height": 56
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 46,
+              "height": 14,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 184,
+                  "height": 56
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-23",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 148,
+              "y": 12,
+              "width": 60,
+              "height": 60,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 188,
+                  "height": 60
+                }
+              ]
+            },
+            {
+              "x": 148,
+              "y": 12,
+              "width": 15,
+              "height": 15,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 188,
+                  "height": 60
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-24",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2812752,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2812752,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2812752,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2812752,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2812752,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2812752,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 192,
+              "height": 48,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 192,
+                  "height": 48
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 48,
+              "height": 12,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 192,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-25",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 164,
+              "y": 12,
+              "width": 52,
+              "height": 52,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 196,
+                  "height": 52
+                }
+              ]
+            },
+            {
+              "x": 164,
+              "y": 12,
+              "width": 13,
+              "height": 13,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 196,
+                  "height": 52
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-26",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3281544,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 3281544,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3281544,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 3281544,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3281544,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 3281544,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 200,
+              "height": 56,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 200,
+                  "height": 56
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 50,
+              "height": 14,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 200,
+                  "height": 56
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-27",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 164,
+              "y": 12,
+              "width": 60,
+              "height": 60,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 204,
+                  "height": 60
+                }
+              ]
+            },
+            {
+              "x": 164,
+              "y": 12,
+              "width": 15,
+              "height": 15,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 204,
+                  "height": 60
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-28",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3112992,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 3112992,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3112992,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 3112992,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3112992,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 3112992,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 208,
+              "height": 48,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 208,
+                  "height": 48
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 52,
+              "height": 12,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 208,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-29",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2114190,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2114190,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 180,
+              "y": 12,
+              "width": 52,
+              "height": 52,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 212,
+                  "height": 52
+                }
+              ]
+            },
+            {
+              "x": 180,
+              "y": 12,
+              "width": 13,
+              "height": 13,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 212,
+                  "height": 52
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-30",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3646160,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 3646160,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3646160,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 3646160,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3646160,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 3646160,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 216,
+              "height": 56,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 216,
+                  "height": 56
+                }
+              ]
+            },
+            {
+              "x": 20,
+              "y": 12,
+              "width": 54,
+              "height": 14,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 216,
+                  "height": 56
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "symbol-viewport-31",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2814750,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 2814750,
+            "fallbackError": 0
+          }
+        ],
+        "referenceCanvas": {
+          "width": 256,
+          "height": 256,
+          "operations": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "fill": "rgb(255, 0, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": []
+            },
+            {
+              "x": 180,
+              "y": 12,
+              "width": 60,
+              "height": 60,
+              "fill": "rgb(0, 128, 0)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 220,
+                  "height": 60
+                }
+              ]
+            },
+            {
+              "x": 180,
+              "y": 12,
+              "width": 15,
+              "height": 15,
+              "fill": "rgb(0, 0, 255)",
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "clips": [
+                {
+                  "x": 20,
+                  "y": 12,
+                  "width": 220,
+                  "height": 60
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

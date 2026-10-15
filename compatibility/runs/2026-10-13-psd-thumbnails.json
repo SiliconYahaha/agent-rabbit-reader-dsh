@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-13T09:52:42.536188+00:00",
+  "scope": "PSD/PSB embedded raw thumbnail and modern resource preference",
+  "seed": 103320261013,
+  "references": {
+    "spec": "https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/",
+    "psdTools": "1.18.0",
+    "pillow": "12.3.0",
+    "producer": "own struct/zlib full PSD/PSB writer"
+  },
+  "before": {
+    "originals": 20,
+    "missingThumbnails": 14,
+    "wrongResourceSelection": 2
+  },
+  "after": {
+    "originals": 20,
+    "sourcePixelsOrJpegBytesExact": 20,
+    "actualComponentPreviews": 20,
+    "chromePillowPixelsExact": 20,
+    "relatedNodeTests": 137,
+    "malformedHeaderCases": 10,
+    "wechatVisibleImages": 20,
+    "wechatPillowPixelsExact": 15,
+    "wechatIndependentOriginalJpegControlsExact": 5,
+    "wechatPillowJpegMaxDelta": 3,
+    "queueTaps": 2,
+    "invalidImageCleared": true,
+    "nextFileRecovered": true
+  },
+  "evidence": [
+    "tests/fixtures/psd-thumbnails/references.json",
+    "scripts/generate-psd-thumbnail-fixtures.py",
+    "scripts/verify-psd-thumbnails.js",
+    "scripts/verify-psd-thumbnails-wechat.js",
+    "outputs/psd-thumbnails/before.json",
+    "outputs/psd-thumbnails/verified/report.json",
+    "outputs/psd-thumbnails/verified/pillow.json",
+    "outputs/psd-thumbnails/wechat/report.json"
+  ],
+  "limitations": [
+    "No physical iOS or Android device run.",
+    "Thumbnails remain reduced resolution and JPEG previews may be lossy; full composite stays preferred.",
+    "No unsupported JPEG BGR swap added.",
+    "Native JPEG decoder differences remain documented, not erased.",
+    "Existing 2M pixel and resource byte ceilings retained."
+  ]
+}

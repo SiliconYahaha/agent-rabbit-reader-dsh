@@ -1,0 +1,47 @@
+{
+  "basis": "Actual unchanged design component loaded with original base design-file and DSC exports, original source bytes, JPEG decoded by jpeg-js.",
+  "cases": [
+    {
+      "name": "fake-preview-only",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n(\n%%BeginPreview: 1 1 8 1\n% ff\n%%EndPreview\n) pop\n%%EOF\n",
+      "expected": {
+        "noPreview": true
+      },
+      "native": true,
+      "beforeHost": {
+        "preview": true,
+        "loading": false,
+        "pixel": [
+          0,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "real-preview-after-string",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n(\n%%BeginPreview: 1 1 8 1\n% ff\n%%EndPreview\n) pop\n%%BeginPreview: 1 1 8 1\n% 00\n%%EndPreview\n%%EOF\n",
+      "expected": {
+        "rasterPreview": true,
+        "pixel": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      "native": false,
+      "beforeHost": {
+        "preview": true,
+        "loading": false,
+        "pixel": [
+          0,
+          0,
+          0,
+          255
+        ]
+      }
+    }
+  ]
+}

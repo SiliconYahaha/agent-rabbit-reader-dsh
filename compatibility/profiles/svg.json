@@ -1,0 +1,1200 @@
+{
+  "schemaVersion": 1,
+  "format": "SVG",
+  "extensions": [
+    "svg"
+  ],
+  "mime": [
+    "image/svg+xml"
+  ],
+  "signatures": [
+    "XML root element svg in http://www.w3.org/2000/svg (not a fixed byte signature)"
+  ],
+  "userShouldSee": "\u5b9e\u9645\u77e2\u91cf\u753b\u9762\u548c\u52a8\u753b\uff1b\u635f\u574f\u8def\u5f84\u4fdd\u7559\u9996\u4e2a\u9519\u8bef\u4e4b\u524d\u7684\u6709\u6548\u56fe\u5f62\uff0c\u540e\u7eed\u6587\u4ef6\u4ecd\u53ef\u6253\u5f00\u3002",
+  "currentVisibleResult": "v1.4.138 \u6574\u5408\u5f00\u53d1\u7248\u53ca\u540e\u7eed v1.4.139 \u5df2\u4e0a\u4f20\uff1b\u5305\u542b\u6b64\u524d SVG \u88c1\u5207\u3001\u52a8\u753b\u3001\u63cf\u8fb9\u5355\u4f4d\u3001pathLength \u548c\u5706/\u692d\u5706\u6539\u8fdb\u3002\u65b0\u4e00\u8f6e 60 \u4e2a\u8def\u5f84\u957f\u5ea6\u7ec4\u5408\u8de8\u6d4f\u89c8\u5668\u9a8c\u8bc1\u53d1\u73b0\uff1aChrome \u5b9e\u9645\u7ec4\u4ef6\u5bf9\u539f\u751f SVG \u6709 16 \u9879\u5dee\u5f02\uff0cFirefox \u6709 11 \u9879\uff1b\u5176\u4e2d 3 \u4e2a\u975e\u6cd5\u5c5e\u6027\u5dee\u5f02\u4ec5\u5728 Chrome \u51fa\u73b0\u3002\u5706/\u692d\u5706\u7684 Skia \u957f\u5ea6\u7b97\u6cd5\u4e0d\u80fd\u6982\u62ec\u6240\u6709\u5e73\u53f0\uff0c\u672c\u8f6e\u672a\u66f4\u6539\u4ea7\u54c1\u3002qin-bear \u539f\u4ef6\u548c\u771f\u673a\u4ecd\u672a\u9a8c\u8bc1\u3002",
+  "oracles": [
+    "SVG 2 path error handling https://www.w3.org/TR/SVG2/paths.html#PathDataErrorHandling",
+    "Chrome native Path2D and Canvas pixel readback; scripts/verify-svg-closepath.js",
+    "SVG2 d animation https://www.w3.org/TR/SVG2/paths.html#DProperty",
+    "Chrome native SMIL computed d, geometry and pixel metrics; scripts/verify-svg-path-morph.js",
+    "SVG2 bounding boxes https://www.w3.org/TR/SVG2/coords.html#BoundingBoxes",
+    "CSS Masking clip coordinates https://www.w3.org/TR/css-masking-1/#ClipPathElement",
+    "SVG2 viewport transforms https://www.w3.org/TR/SVG2/coords.html#ComputingAViewportsTransform",
+    "SVGWG open interoperability issue https://github.com/w3c/svgwg/issues/1072",
+    "Complete WPT overflow HTML screenshots; tests/fixtures/svg-overflow/sources.json",
+    "SVG2 rect elliptical corners https://www.w3.org/TR/SVG2/shapes.html#RectElement",
+    "Canvas roundRect DOMPoint radii https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-roundrect",
+    "CSS Masking 6.1 child intersection before sibling OR https://www.w3.org/TR/css-masking-1/#clipping-paths",
+    "SVG2 use supplementary transformation applies to effects https://www.w3.org/TR/SVG2/struct.html#UseLayout"
+  ],
+  "capabilities": [
+    {
+      "id": "closepath-malformed-tail",
+      "axis": {
+        "version": "SVG 1.1/2 path grammar",
+        "feature": "Z/z followed by bare numbers",
+        "complexity": "minimal, 48 variants, two public icons",
+        "anomaly": "invalid implicit closepath arguments"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u4fdd\u7559\u95ed\u5408\u56fe\u5f62\uff0c\u4e0d\u753b\u9519\u8bef\u540e\u7eed\u8def\u5f84\uff0c\u4e0d\u9501\u6b7b\u89e3\u6790\u7ebf\u7a0b\u3002",
+      "evidence": [
+        "tests/svg-closepath.test.js",
+        "scripts/verify-svg-closepath.js"
+      ]
+    },
+    {
+      "id": "closepath-explicit-continuation",
+      "axis": {
+        "version": "SVG 1.1/2",
+        "feature": "moveto/lineto/repeated Z after closepath",
+        "complexity": "multiple subpaths",
+        "anomaly": "valid continuation"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u663e\u5f0f\u540e\u7eed\u6307\u4ee4\u548c\u76f8\u5bf9\u5750\u6807\u4ece\u95ed\u5408\u8d77\u70b9\u7ee7\u7eed\u3002",
+      "evidence": [
+        "tests/svg-closepath.test.js"
+      ]
+    },
+    {
+      "id": "closepath-resource-regression",
+      "axis": {
+        "version": "SVG 1.1/2",
+        "feature": "parser termination",
+        "size": "100000 trailing numeric tokens; 10000 valid repeated subpaths",
+        "platform": "Node child process, 5-second watchdog"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u635f\u574f\u8f93\u5165\u7ec8\u6b62\uff0c\u957f\u5408\u6cd5\u8f93\u5165\u4e0d\u56e0\u672c\u8f6e\u4fee\u590d\u4e22\u5931\u5b50\u8def\u5f84\uff1b\u4e0d\u662f\u5168\u5c40\u5185\u5b58\u4e0a\u9650\u627f\u8bfa\u3002",
+      "evidence": [
+        "tests/svg-closepath.test.js"
+      ]
+    },
+    {
+      "id": "arc-pixel-fidelity",
+      "axis": {
+        "version": "SVG 1.1/2",
+        "feature": "runtime-verified native Path2D path fill/stroke",
+        "complexity": "139 path and complete SVG cases; failure fallbacks",
+        "platform": "Chrome and WeChat DevTools SDK 3.16.2; physical devices pending"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u5706\u5f27\u8fb9\u7f18\u4e0e\u539f\u751f\u56fe\u5f62\u4e00\u81f4\u6216\u6709\u53ef\u91cf\u5316\u3001\u5ba1\u9605\u8fc7\u7684\u8bef\u5dee\u754c\u9650\u3002",
+      "evidence": [
+        "runs/2026-09-05-svg-native-path.json",
+        "scripts/verify-svg-native-path.js",
+        "tests/svg-native-path.test.js"
+      ],
+      "remaining": "Curved clips, non-path primitives, fallback hosts and physical devices remain unverified or divergent"
+    },
+    {
+      "id": "animated-player-lifecycle",
+      "axis": {
+        "version": "SVG SMIL",
+        "feature": "Canvas mount, pause/resume, source replacement, stale callbacks, fallback/retry",
+        "complexity": "three local original files, three independent minimal fixtures, 20 dimension/timing mutations",
+        "size": "17410 / 354942 / 35291 bytes",
+        "platform": "Node, Chrome, WeChat DevTools SDK 3.16.2",
+        "anomaly": "Canvas missing, draw failure, callbacks after replacement/detach"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u52a8\u753b\u81ea\u52a8\u64ad\u653e\uff1b\u6682\u505c\u540e\u6362\u6587\u4ef6\u6062\u590d\u64ad\u653e\uff1b\u5f02\u5e38\u9759\u6001\u56de\u9000\u6709\u63d0\u793a\u4e14\u53ef\u91cd\u8bd5\u3002",
+      "evidence": [
+        "tests/svg-player.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-svg-animation.js",
+        "scripts/verify-svg-animation-wechat.js",
+        "compatibility/runs/2026-09-05-svg-user-animation.json"
+      ]
+    },
+    {
+      "id": "smil-path-interpolation",
+      "axis": {
+        "version": "SVG SMIL",
+        "feature": "from/to, to-only, values, relative coordinates, compatible command topology",
+        "complexity": "33 base/boundary cases + 32 mutations + 3 public fixtures + 9 local path tracks",
+        "platform": "Node, Chrome, WeChat DevTools SDK 3.16.2"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u517c\u5bb9\u8def\u5f84\u8fde\u7eed\u5f62\u53d8\uff0c\u547d\u4ee4\u7ed3\u6784\u4e0d\u540c\u5219\u79bb\u6563\u5207\u6362\u3002",
+      "evidence": [
+        "tests/svg-path-morph.test.js",
+        "scripts/verify-svg-path-morph.js",
+        "compatibility/runs/2026-09-05-svg-path-morph.json"
+      ]
+    },
+    {
+      "id": "smil-path-invalid-values",
+      "axis": {
+        "version": "SVG SMIL",
+        "feature": "invalid tokens, truncated commands, empty values entries",
+        "complexity": "33 base/boundary cases + 32 mutations + 3 public fixtures + 9 local path tracks",
+        "platform": "Node, Chrome, WeChat DevTools SDK 3.16.2"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5ffd\u7565\u975e\u6cd5\u52a8\u753b\u5e76\u4fdd\u7559\u6709\u6548\u57fa\u7ebf\uff1b\u5408\u6cd5\u7a7a\u8def\u5f84\u6309\u539f\u751f\u7ed3\u679c\u6d88\u5931\u3002",
+      "evidence": [
+        "tests/svg-path-morph.test.js",
+        "scripts/verify-svg-path-morph.js",
+        "compatibility/runs/2026-09-05-svg-path-morph.json"
+      ]
+    },
+    {
+      "id": "smil-discrete-timing",
+      "axis": {
+        "version": "SVG SMIL",
+        "feature": "default keyTimes with calcMode discrete",
+        "complexity": "33 base/boundary cases + 32 mutations + 3 public fixtures + 9 local path tracks",
+        "platform": "Node, Chrome, WeChat DevTools SDK 3.16.2"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u79bb\u6563\u52a8\u753b\u6309\u503c\u6570\u91cf\u5e73\u5747\u5212\u5206\u9ed8\u8ba4\u65f6\u95f4\u7247\u3002",
+      "evidence": [
+        "tests/svg-path-morph.test.js",
+        "scripts/verify-svg-path-morph.js",
+        "compatibility/runs/2026-09-05-svg-path-morph.json"
+      ]
+    },
+    {
+      "id": "smil-path-resource-regression",
+      "axis": {
+        "version": "SVG SMIL",
+        "feature": "4000 segments, 100000 malformed trailing numeric tokens",
+        "complexity": "33 base/boundary cases + 32 mutations + 3 public fixtures + 9 local path tracks",
+        "platform": "Node, Chrome, WeChat DevTools SDK 3.16.2"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u957f\u8def\u5f84\u4e0d\u4e22\u6bb5\uff1b\u635f\u574f\u5c3e\u90e8\u5728\u72ec\u7acb\u8fdb\u7a0b5\u79d2\u9884\u7b97\u5185\u7ec8\u6b62\uff0c\u5c1a\u975e\u5168\u5c40\u5185\u5b58\u4fdd\u8bc1\u3002",
+      "evidence": [
+        "tests/svg-path-morph.test.js",
+        "scripts/verify-svg-path-morph.js",
+        "compatibility/runs/2026-09-05-svg-path-morph.json"
+      ]
+    },
+    {
+      "id": "canvas-compact-arc-flags",
+      "axis": {
+        "version": "SVG path syntax",
+        "feature": "single-character arc flags and compact signed endpoints",
+        "complexity": "64 generated failures + 22 boundaries + 9 public path cases",
+        "platform": "Node, Chrome and WeChat DevTools SDK 3.16.2"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u8fde\u5199\u6807\u5fd7\u4e0d\u518d\u88ab\u8bfb\u6210\u4e00\u4e2a\u6570\u5b57\uff0c\u4fdd\u7559\u5b8c\u6574\u66f2\u7ebf\u3002",
+      "evidence": [
+        "tests/svg-path-grammar.test.js",
+        "scripts/verify-svg-path-grammar.js",
+        "compatibility/runs/2026-09-05-svg-path-grammar.json"
+      ]
+    },
+    {
+      "id": "canvas-invalid-token-prefix",
+      "axis": {
+        "version": "SVG path syntax",
+        "feature": "illegal tokens, comma boundaries, truncation, nonfinite numbers",
+        "complexity": "64 generated failures + 22 boundaries + 9 public path cases",
+        "platform": "Node, Chrome and WeChat DevTools SDK 3.16.2"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u9996\u4e2a\u9519\u8bef\u524d\u5b8c\u6574\u7ebf\u6bb5\u4fdd\u7559\uff0c\u540e\u7eed\u9519\u8bef\u5185\u5bb9\u4e0d\u518d\u591a\u753b\u3002",
+      "evidence": [
+        "tests/svg-path-grammar.test.js",
+        "scripts/verify-svg-path-grammar.js",
+        "compatibility/runs/2026-09-05-svg-path-grammar.json"
+      ]
+    },
+    {
+      "id": "canvas-path-grammar-resource",
+      "axis": {
+        "version": "SVG path syntax",
+        "feature": "10000 arcs; 500000 invalid trailing numeric tokens",
+        "complexity": "64 generated failures + 22 boundaries + 9 public path cases",
+        "platform": "Node, Chrome and WeChat DevTools SDK 3.16.2"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u957f\u5408\u6cd5\u5706\u5f27\u4e0d\u4e22\u5931\uff1b\u9519\u8bef\u5c3e\u90e8\u57285\u79d2\u5b50\u8fdb\u7a0b\u9884\u7b97\u5185\u7ed3\u675f\u3002",
+      "evidence": [
+        "tests/svg-path-grammar.test.js",
+        "scripts/verify-svg-path-grammar.js",
+        "compatibility/runs/2026-09-05-svg-path-grammar.json"
+      ]
+    },
+    {
+      "id": "native-path-fill-stroke",
+      "status": "pass",
+      "axis": {
+        "version": "SVG 1.1/2",
+        "feature": "runtime-verified native path fill, stroke and gradient transform",
+        "complexity": "139 full RGBA cases plus host failure variants",
+        "platform": "Chrome 152 and WeChat DevTools SDK 3.16.2; not physical devices"
+      },
+      "expectedVisibleResult": "138 \u4f8b\u50cf\u7d20\u5b8c\u5168\u4e00\u81f4\uff1b\u5f84\u5411\u6e10\u53d8\u4e00\u5904 alpha \u5dee\u4e0d\u8d85\u8fc7 4/255\u3002\u5bbf\u4e3b\u62d2\u7edd\u63a5\u53e3\u65f6\u4fdd\u6301\u65e7\u56de\u9000\u753b\u9762\u3002",
+      "evidence": [
+        "runs/2026-09-05-svg-native-path.json",
+        "scripts/verify-svg-native-path.js",
+        "tests/svg-native-path.test.js"
+      ]
+    },
+    {
+      "id": "clip-path-geometry-and-reference-recovery",
+      "status": "pass",
+      "axis": {
+        "version": "SVG 1.1/2 and CSS Masking",
+        "feature": "single path clipping, child rule, direct use, simple objectBoundingBox, invalid reference termination",
+        "complexity": "32 arc mutations, 18 semantic cases, 3 pinned WPT files with published references",
+        "platform": "Node and Chrome; WeChat/physical results in run record"
+      },
+      "expectedVisibleResult": "\u5355\u8def\u5f84\u88c1\u5207\u4e0e\u72ec\u7acb Canvas \u88c1\u5207\u51e0\u4f55\u4e00\u81f4\uff0cWPT \u7684\u7eff\u8272\u5b9e\u5fc3/\u7a7a\u5fc3\u65b9\u5757\u6b63\u786e\uff1b\u975e\u6cd5 use \u7a7a\u88c1\u5207\u4e14\u4e0d\u6ea2\u51fa\u8c03\u7528\u6808\u3002\u591a\u5b50\u56fe\u5f62\u5e76\u96c6\u4e0d\u5c5e\u4e8e\u901a\u8fc7\u8303\u56f4\u3002",
+      "evidence": [
+        "tests/svg-curved-clips.test.js",
+        "scripts/verify-svg-curved-clips.js",
+        "runs/2026-09-05-svg-curved-clips.json"
+      ]
+    },
+    {
+      "id": "clip-child-silhouette-union",
+      "status": "pass",
+      "axis": {
+        "version": "SVG 1.1/2 and CSS Masking",
+        "feature": "Multiple direct shape children, opposite winding, mixed evenodd/nonzero and transforms",
+        "complexity": "32 reported mutations, 12 transform variants, 3 pinned WPT originals and published references",
+        "platform": "Node, Chrome, WeChat DevTools 3.16.2; no physical devices"
+      },
+      "expectedVisibleResult": "\u91cd\u53e0\u533a\u57df\u4fdd\u7559\uff0c\u5355\u4e2a\u5b50\u8f6e\u5ed3\u4e2d\u7684\u5b54\u6d1e\u7531\u8be5\u5b50\u5143\u7d20\u89c4\u5219\u51b3\u5b9a\u300247 \u9879\u72ec\u7acb\u53c2\u8003\u7cbe\u786e\u5339\u914d\uff1b20 \u9879\u5fae\u4fe1 Canvas \u50cf\u7d20\u5bf9\u7167\u4e00\u81f4\u3002",
+      "evidence": [
+        "runs/2026-09-05-svg-clip-unions.json",
+        "tests/svg-clip-unions.test.js",
+        "scripts/verify-svg-clip-unions-wechat.js"
+      ]
+    },
+    {
+      "id": "container-object-bounds-and-single-nested-clip",
+      "status": "pass",
+      "axis": {
+        "version": "SVG 1.1/2 and CSS Masking",
+        "feature": "Container local rectangles, analytic path extrema, use inheritance, nested clip coordinate mapping",
+        "complexity": "51 generated inputs and 4 pinned WPT originals; 10001-node/70-level rejection tests",
+        "platform": "Chrome exact; WeChat scoped with two edge differences; physical devices pending"
+      },
+      "expectedVisibleResult": "\u5bb9\u5668\u5e94\u663e\u793a\u6b63\u786e\u7684\u7eff\u8272\u533a\u57df\uff1b\u4e0d\u628a\u66f2\u7ebf\u63a7\u5236\u70b9\u6216\u63cf\u8fb9\u9519\u8bef\u8ba1\u5165\u5305\u56f4\u76d2\uff0c\u5f15\u7528\u56fe\u5f62\u4fdd\u6301\u5b9e\u4f8b\u7ee7\u627f\u989c\u8272\u300255 \u9879 Chrome \u5b8c\u6574 RGBA \u5339\u914d\u3002",
+      "evidence": [
+        "runs/2026-09-05-svg-container-bounds.json",
+        "tests/svg-container-bounds.test.js",
+        "scripts/verify-svg-container-bounds.js"
+      ]
+    },
+    {
+      "id": "svg-viewport-alignment-and-limits",
+      "axis": {
+        "version": "SVG 1.1/2",
+        "feature": "root/nested SVG none, nine alignments, meet/slice, overflow, nearest-viewport percentages, animated viewBox and width",
+        "complexity": "81 generated plus 3 unmodified WPT originals",
+        "platform": "Node, Chrome, WeChat DevTools SDK 3.16.2"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u4fdd\u6301\u6e90\u6587\u4ef6\u5bbd\u9ad8\u6bd4\u4f8b\uff1b\u5185\u5bb9\u6309\u6307\u5b9a\u89c6\u53e3\u7f29\u653e\u3001\u5bf9\u9f50\u3001\u88c1\u5207\uff0c\u96f6 viewBox \u4e0d\u7ed8\u5236\uff1b\u8d85\u9650\u65f6\u6709\u9759\u6001\u56de\u9000\u63d0\u793a\u4e14\u540e\u7eed\u6587\u4ef6\u53ef\u64ad\u653e\u3002",
+      "evidence": [
+        "runs/2026-09-05-svg-viewports.json",
+        "tests/svg-viewports.test.js",
+        "tests/svg-player.test.js"
+      ],
+      "remaining": "overflow:auto; strict oracle omitted native SVG metric. 28 DevTools reference differences; high-resolution reference audit pending. Symbol/use viewports and physical clients remain pending."
+    },
+    {
+      "id": "inner-svg-auto-and-native-oracle",
+      "axis": {
+        "version": "SVG2; open SVGWG issue 1072",
+        "feature": "nested overflow:auto plus native and independent pixel verdicts",
+        "complexity": "116 viewport cases including 32 new auto variations; three complete public HTML originals",
+        "platform": "Chrome 152 and WeChat DevTools SDK 3.16.2"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u5185\u5c42 auto \u5728\u5f53\u524d Chrome \u5bf9\u7167\u4e0b\u4fdd\u7559\u6ea2\u51fa\u5185\u5bb9\uff1b\u539f\u751f\u753b\u9762\u4e0e\u53c2\u8003\u4e0d\u4e00\u81f4\u65f6\u5fc5\u987b\u62a5\u544a\u5931\u8d25\u3002\u8de8\u6d4f\u89c8\u5668\u5dee\u5f02\u5355\u72ec\u8bb0\u5f55\uff0c\u4e0d\u5192\u5145\u7edf\u4e00\u6807\u51c6\u5df2\u5b8c\u6210\u3002",
+      "evidence": [
+        "runs/2026-09-05-svg-overflow-oracles.json",
+        "tests/svg-pixel-verdict.test.js",
+        "scripts/verify-svg-overflow-wpt.js"
+      ],
+      "remaining": "Firefox-oriented WPT auto reference differs; physical clients and 13 DevTools pixel cases pending."
+    },
+    {
+      "id": "fully-clipped-viewport-fills",
+      "axis": {
+        "feature": "nested slice viewport culling",
+        "complexity": "70 static 1170px cases including paths, curves, use, transforms and overflow",
+        "version": "SVG 1.1/2",
+        "anomaly": "zero-area fill/viewport intersection"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u89c6\u53e3\u5916\u65e0\u63cf\u8fb9\u56fe\u5f62\u4e0d\u5411\u88c1\u5207\u8fb9\u7f18\u6cc4\u6f0f\u989c\u8272\uff0c\u63cf\u8fb9\u4e0e\u76f8\u90bb\u53ef\u89c1\u56fe\u5f62\u4ecd\u6b63\u5e38\u7ed8\u5236\u3002",
+      "evidence": [
+        "runs/2026-09-05-svg-viewport-culling.json",
+        "tests/svg-viewport-culling.test.js"
+      ],
+      "exactCases": 65
+    },
+    {
+      "id": "stroke-rotation-boundary-pixels",
+      "axis": {
+        "version": "SVG 1.1/2",
+        "feature": "stroke and rotated edge compositing",
+        "complexity": "five retained 1170px controls",
+        "anomaly": "native SVG and Canvas antialias mismatch"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u5e26\u63cf\u8fb9\u6216\u65cb\u8f6c\u7684\u88c1\u5207\u8fb9\u7f18\u5e94\u4e0e\u539f\u751f\u4e00\u81f4\uff1b\u76ee\u524d\u4e94\u9879\u4ecd\u6709\u5dee\u5f02\u3002",
+      "evidence": [
+        "runs/2026-09-05-svg-viewport-culling.json"
+      ]
+    },
+    {
+      "id": "rect-stroke-coverage",
+      "status": "pass",
+      "axis": {
+        "feature": "straight rectangle stroke, fractional clipping, joins, dashes, gradients, transforms",
+        "platform": "Chrome; Node lifecycle",
+        "version": "SVG 1.1/2",
+        "complexity": "114 static cases at 1170x1170, 107 exact and 7 known gaps",
+        "anomaly": "fractional rectangle stroke edge coverage"
+      },
+      "expectedVisibleResult": "\u76f4\u89d2\u77e9\u5f62\u63cf\u8fb9\u4e0e\u672c\u6279\u539f\u751f SVG \u50cf\u7d20\u4e00\u81f4\uff1b\u4e0d\u6269\u5c55\u4e3a\u5168\u90e8 SVG \u517c\u5bb9\u3002",
+      "evidence": [
+        "tests/svg-rect-stroke.test.js",
+        "runs/2026-09-05-svg-rect-stroke.json"
+      ]
+    },
+    {
+      "id": "rounded-rect-native-paint",
+      "axis": {
+        "version": "SVG 1.1/2 and Canvas 2D",
+        "feature": "elliptical rounded rect fill/stroke/dash/gradient and radius animation; single rounded clip with objectBoundingBox/use/transforms",
+        "complexity": "fractional coordinates, independent radius clamping, transforms, repeated file loads",
+        "anomaly": "missing/no-op/throwing/partial host primitive"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "66 \u4e2a\u65b0\u7ec4\u5408\u4e2d 65 \u4e2a\u30016 \u4e2a\u5386\u53f2\u5706\u89d2\u4e0e\u539f\u751f SVG \u50cf\u7d20\u4e00\u81f4\uff1b\u7ed8\u5236\u548c\u5355\u5c42\u88c1\u5207\u4f7f\u7528\u76f8\u540c\u539f\u8bed\u3002\u5d4c\u5957\u88c1\u5207 RGB \u5dee\u5f02\u4fdd\u7559\u3002\u7a7a\u5b9e\u73b0\u4e0e\u5c40\u90e8\u5931\u8d25\u6062\u590d\u539f\u8def\u5f84\uff0c\u65e0\u6bcf\u5e27\u5f02\u5e38\u91cd\u8bd5\u6216\u6b8b\u7559\u8def\u5f84\uff1b\u4e0d\u58f0\u79f0\u964d\u7ea7\u8def\u5f84\u50cf\u7d20\u7cbe\u786e\u3002",
+      "evidence": [
+        "tests/svg-rounded-rect.test.js",
+        "tests/svg-player.test.js",
+        "scripts/verify-svg-rounded-rect.js",
+        "runs/2026-09-05-svg-rounded-rect.json"
+      ]
+    },
+    {
+      "id": "symbol-instance-viewports",
+      "axis": {
+        "version": "SVG2 with documented Chrome/Firefox interoperability differences",
+        "feature": "use/symbol/svg dimensions, viewBox, alignment, clipping and animation",
+        "complexity": "Nested references, percentages, transforms, inherited paint, repeated opens",
+        "anomaly": "Cycles stop; nesting limit explicit; stale mount/frame callbacks isolated"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "134 named cases match independent reference pixels in three Canvas paths and actual component; 129 also match Chrome native SVG. Five native differences are audited separately; no WeChat/device claim.",
+      "evidence": [
+        "tests/svg-symbols.test.js",
+        "scripts/verify-svg-symbols.js",
+        "runs/2026-09-05-svg-symbols.json"
+      ]
+    },
+    {
+      "id": "clip-path-resource-chain",
+      "status": "pass",
+      "axis": {
+        "feature": "Own clipPath reference chains, target coordinates and object box, transforms, unions, animated clips and file replacement",
+        "platform": "Node and Chrome actual component; Firefox independent source audit; not WeChat/physical",
+        "version": "SVG 1.1/2 and CSS Masking",
+        "complexity": "44 deterministic files, three Canvas host variants, 64/65 reference boundaries and async lifecycle"
+      },
+      "expectedVisibleResult": "\u53ea\u663e\u793a\u5b8c\u6574\u88c1\u526a\u94fe\u5171\u540c\u4fdd\u7559\u7684\u533a\u57df\uff0c\u4e0d\u518d\u6f0f\u88c1\u526a\u3002",
+      "evidence": [
+        "runs/2026-09-06-svg-clip-chains.json",
+        "tests/helpers/svg-clip-chains.js",
+        "scripts/verify-svg-clip-chains.js",
+        "tests/svg-clip-chains.test.js"
+      ]
+    },
+    {
+      "id": "child-clip-intersection-before-union",
+      "axis": {
+        "version": "SVG 1.1/2 and CSS Masking 1",
+        "feature": "Nested clips on sibling shapes and direct use instances",
+        "complexity": "75 authored cases, 44 actual component opens, nested booleans and animation",
+        "platform": "Node and Chrome Canvas; seven controls audited in Firefox",
+        "anomaly": "Empty/cyclic references, bounded expansion, native operation failure"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u591a\u4e2a\u5b50\u56fe\u5f62\u5404\u81ea\u6309\u5f15\u7528\u88c1\u526a\u540e\u518d\u5408\u5e76\uff1b\u7a7a\u5b50\u533a\u57df\u4e0d\u62b9\u53bb\u5144\u5f1f\u56fe\u5f62\uff0c\u52a8\u753b\u548c\u8fde\u7eed\u6362\u6587\u4ef6\u4fdd\u6301\u6b63\u786e\u753b\u9762\u3002",
+      "evidence": [
+        "runs/2026-09-12-svg-child-clips.json",
+        "tests/svg-child-clips.test.js",
+        "scripts/verify-svg-child-clips.js"
+      ]
+    },
+    {
+      "id": "css-keyframe-interval-timing",
+      "status": "pass",
+      "axis": {
+        "version": "CSS Animations 1 / CSS Easing 1 / Web Animations",
+        "feature": "Property-specific keyframe easing, CSS steps and fractional iteration termination",
+        "complexity": "47 authored originals, 799 sampled times, four directions and invalid timing controls",
+        "platform": "Node and browser-adapted actual component; Firefox timing oracle, Chrome differences retained"
+      },
+      "expectedVisibleResult": "SVG \u6309\u4f5c\u8005\u6307\u5b9a\u7684\u5173\u952e\u5e27\u65f6\u523b\u6e10\u53d8\u6216\u9636\u68af\u663e\u9690\uff0c\u975e\u6574\u6570\u5faa\u73af\u5728\u5b9e\u9645\u7ec8\u70b9\u505c\u4f4f\u3002",
+      "evidence": [
+        "runs/2026-09-18-svg-css-timing.json",
+        "tests/svg-css-timing.test.js",
+        "scripts/verify-svg-css-timing.js"
+      ]
+    },
+    {
+      "id": "native-ellipse-paint",
+      "axis": {
+        "shape": "circle/wide/tall/thin ellipse",
+        "paint": "fill/stroke/dashes/caps/gradient/opacity",
+        "composition": "transform/nested viewport/use/clip",
+        "lifecycle": "radius seek and missing/no-op/partial primitive"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "57\u9879\u6d4f\u89c8\u5668\u539f\u751f\u753b\u9762\u4e0e\u5b9e\u9645\u7ec4\u4ef6\u4e00\u81f4\uff1b\u80fd\u529b\u5f02\u5e38\u65f6\u5b8c\u6574\u56de\u9000\u4e14\u65e0\u6b8b\u7559\u8def\u5f84\uff0c\u5176\u4ed6\u5e73\u53f0\u548cpathLength\u6b8b\u4f59\u5dee\u5f02\u53e6\u884c\u9a8c\u8bc1\u3002",
+      "evidence": [
+        "tests/svg-ellipse-paint.test.js",
+        "runs/2026-09-18-svg-ellipse-paint.json"
+      ]
+    },
+    {
+      "id": "path-length-stroke-calibration",
+      "axis": {
+        "geometry": "local paths, closure, subpaths and basic shapes",
+        "property": "dasharray/dashoffset only",
+        "composition": "use, nested viewport and transform",
+        "animation": "author length and endpoint seeks"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5df2\u786e\u8ba4\u768441\u9879\u539f\u751f/\u5b9e\u9645\u7ec4\u4ef6\u753b\u9762\u4e00\u81f4\uff1b\u8def\u5f84\u957f\u5ea6\u6539\u53d8\u865a\u7ebf\u5c3a\u5bf8\u548c\u504f\u79fb\uff0c\u7ebf\u5bbd\u4e0d\u53d7\u5f71\u54cd\u300260\u9879\u5b8c\u6574\u6279\u6b21\u4ecd\u670919\u9879\u672a\u901a\u8fc7\uff0c\u8be6\u89c1\u5f85\u4fee\u961f\u5217\u3002",
+      "evidence": [
+        "tests/svg-path-length.test.js",
+        "runs/2026-09-18-svg-path-length.json"
+      ]
+    },
+    {
+      "id": "font-relative-stroke-lengths",
+      "axis": {
+        "version": "SVG2 / CSS font-relative lengths",
+        "feature": "em/rem strokes and computed font inheritance",
+        "complexity": "Parent/child font changes, shared use instances, SMIL, rewind and interpolation precision",
+        "platform": "Node and Chrome native SVG/Canvas plus real component"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u76f8\u5bf9\u63cf\u8fb9\u957f\u5ea6\u6309\u58f0\u660e\u5904\u5b57\u53f7\u4e0e\u6839\u5b57\u53f7\u8ba1\u7b97\uff0c\u52a8\u753b\u548c\u5b9e\u4f8b\u4e4b\u95f4\u4e0d\u4e32\u6270\uff1b55\u9879\u76f8\u5bf9/\u56fa\u5b9a\u503c\u4e00\u81f4\uff0c53\u9879\u539f\u751f\u50cf\u7d20\u4e00\u81f4\uff0c2\u9879\u72ec\u7acb\u6587\u5b57\u7ed8\u5236\u5dee\u5f02\u672a\u8c41\u514d\u3002",
+      "evidence": [
+        "tests/svg-font-strokes.test.js",
+        "runs/2026-09-18-svg-font-strokes.json"
+      ]
+    },
+    {
+      "id": "literal-dash-declarations",
+      "axis": {
+        "version": "SVG2 / CSS numeric tokens",
+        "feature": "Dash-list grammar and cascade fallback",
+        "complexity": "Attributes, inheritance, repeated inline and stylesheet declarations, specificity and adjacent numbers",
+        "platform": "Node and Chrome SVG/Canvas plus real component"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5408\u6cd5\u6b63\u53f7\u548c\u7d27\u90bb\u6570\u5b57\u865a\u7ebf\u6b63\u786e\u663e\u793a\uff0c\u65e0\u6548\u58f0\u660e\u4fdd\u7559\u5df2\u6709\u6709\u6548\u6837\u5f0f\u3002",
+      "evidence": [
+        "tests/svg-stroke-declarations.test.js",
+        "runs/2026-09-18-svg-stroke-declarations.json"
+      ]
+    },
+    {
+      "id": "percentage-stroke-lengths",
+      "axis": {
+        "version": "SVG2",
+        "feature": "Percentage stroke width, dash-array and dash offset",
+        "complexity": "Nested SVG/symbol viewBoxes, CSS/inheritance, transforms and sampled SMIL",
+        "platform": "Node and Chrome native SVG/Canvas plus real component"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u975e\u6b63\u65b9\u5f62\u4e0e\u5d4c\u5957\u89c6\u53e3\u6309\u89c4\u8303\u7684\u5f52\u4e00\u5316\u5bf9\u89d2\u7ebf\u8ba1\u7b97\u767e\u5206\u6bd4\u63cf\u8fb9\uff0c\u52a8\u753b\u4e0e\u6062\u590d\u753b\u9762\u4fdd\u6301\u4e00\u81f4\u3002",
+      "evidence": [
+        "tests/svg-stroke-percent.test.js",
+        "runs/2026-09-18-svg-stroke-percent.json"
+      ]
+    }
+  ],
+  "publicSamples": [
+    {
+      "name": "x-square.svg",
+      "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/x-square.svg",
+      "license": "MIT; see tests/fixtures/svg-closepath/LICENSE",
+      "redistributed": true,
+      "sha256": "bf84d0ed08336026556de4dcfc0d87f9b0f4d524a99c12631b966791e3ff652e",
+      "expectedVisibleResult": "\u5e26\u5706\u89d2\u65b9\u6846\u7684\u53c9\u53f7\uff1b\u635f\u574f\u6d3e\u751f\u4fdd\u7559\u5404\u8def\u5f84\u9519\u8bef\u524d\u7684\u6709\u6548\u56fe\u5f62\u3002"
+    },
+    {
+      "name": "check-square.svg",
+      "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/check-square.svg",
+      "license": "MIT; see tests/fixtures/svg-closepath/LICENSE",
+      "redistributed": true,
+      "sha256": "c72249ed872002fa7415c1a6ea802dc003f24136394e431f989b75e7196b4d39",
+      "expectedVisibleResult": "\u5e26\u65b9\u6846\u7684\u5bf9\u52fe\uff1b\u635f\u574f\u6d3e\u751f\u4fdd\u7559\u5404\u8def\u5f84\u9519\u8bef\u524d\u7684\u6709\u6548\u56fe\u5f62\u3002"
+    },
+    {
+      "name": "animate-path-animation-Cc-Ss.tentative.html",
+      "source": "https://github.com/web-platform-tests/wpt/blob/c29bd2aeeb937753c3b946a3670b24e5dfb62f88/svg/animations/animate-path-animation-Cc-Ss.tentative.html",
+      "license": "BSD-3-Clause; LICENSE.md retained alongside originals",
+      "redistributed": true,
+      "sha256": "9a3ac443e9a4c0fe4267cf16a25d5d023386df1d83c39d4a4310bc3b135f64bc",
+      "expectedVisibleResult": "\u8def\u5f84\u6309\u539f\u751f SMIL \u5728\u7edd\u5bf9\u548c\u76f8\u5bf9\u5750\u6807\u4e4b\u95f4\u8fde\u7eed\u5f62\u53d8\uff1b\u5230\u671f\u6062\u590d\u539f\u8def\u5f84\u3002",
+      "upstreamStatus": "tentative",
+      "oracleScope": "Extract literal path/animate attributes and compare native Chrome geometry at original sample times; upstream harness itself is not run."
+    },
+    {
+      "name": "animate-path-animation-Mm-Aa-Z.tentative.html",
+      "source": "https://github.com/web-platform-tests/wpt/blob/c29bd2aeeb937753c3b946a3670b24e5dfb62f88/svg/animations/animate-path-animation-Mm-Aa-Z.tentative.html",
+      "license": "BSD-3-Clause; LICENSE.md retained alongside originals",
+      "redistributed": true,
+      "sha256": "21efeb8795c377ecba9ed8485002e5c3d778c975ba091b3fde43eb761c44626a",
+      "expectedVisibleResult": "\u8def\u5f84\u6309\u539f\u751f SMIL \u5728\u7edd\u5bf9\u548c\u76f8\u5bf9\u5750\u6807\u4e4b\u95f4\u8fde\u7eed\u5f62\u53d8\uff1b\u5230\u671f\u6062\u590d\u539f\u8def\u5f84\u3002",
+      "upstreamStatus": "tentative",
+      "oracleScope": "Extract literal path/animate attributes and compare native Chrome geometry at original sample times; upstream harness itself is not run."
+    },
+    {
+      "name": "animate-path-animation-Qq-Tt.tentative.html",
+      "source": "https://github.com/web-platform-tests/wpt/blob/c29bd2aeeb937753c3b946a3670b24e5dfb62f88/svg/animations/animate-path-animation-Qq-Tt.tentative.html",
+      "license": "BSD-3-Clause; LICENSE.md retained alongside originals",
+      "redistributed": true,
+      "sha256": "1337abf35b729df9aa52b03a997fa9fb250f4b78620f7f55c89ec909ee713fce",
+      "expectedVisibleResult": "\u8def\u5f84\u6309\u539f\u751f SMIL \u5728\u7edd\u5bf9\u548c\u76f8\u5bf9\u5750\u6807\u4e4b\u95f4\u8fde\u7eed\u5f62\u53d8\uff1b\u5230\u671f\u6062\u590d\u539f\u8def\u5f84\u3002",
+      "upstreamStatus": "tentative",
+      "oracleScope": "Extract literal path/animate attributes and compare native Chrome geometry at original sample times; upstream harness itself is not run."
+    },
+    {
+      "name": "bicycle.svg",
+      "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/bicycle.svg",
+      "license": "MIT; LICENSE retained alongside samples",
+      "redistributed": true,
+      "sha256": "e588fccb4995e2fbbe37dd1962785832dc1aa144cd4c84ea9547f38f187eb6bf",
+      "expectedVisibleResult": "\u5b8c\u6574\u56fe\u6807\u8def\u5f84\uff1b\u7d27\u51d1\u6807\u5fd7\u6d3e\u751f\u4e0e\u539f\u56fe\u4e00\u81f4\uff0c\u975e\u6cd5\u5c3e\u90e8\u6d3e\u751f\u4fdd\u7559\u539f\u56fe\u6709\u6548\u524d\u7f00\u3002"
+    },
+    {
+      "name": "flower1.svg",
+      "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/flower1.svg",
+      "license": "MIT; LICENSE retained alongside samples",
+      "redistributed": true,
+      "sha256": "945ae70b3e57ad27dfc6eb088f9bc86745d917d3168406101992b7817ae66f5d",
+      "expectedVisibleResult": "\u5b8c\u6574\u56fe\u6807\u8def\u5f84\uff1b\u7d27\u51d1\u6807\u5fd7\u6d3e\u751f\u4e0e\u539f\u56fe\u4e00\u81f4\uff0c\u975e\u6cd5\u5c3e\u90e8\u6d3e\u751f\u4fdd\u7559\u539f\u56fe\u6709\u6548\u524d\u7f00\u3002"
+    },
+    {
+      "name": "globe.svg",
+      "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/globe.svg",
+      "license": "MIT; LICENSE retained alongside samples",
+      "redistributed": true,
+      "sha256": "ec69cc7c1a11c12c2a5165508eb0ed54d8089d8b6b3921fab35153d2a4df4e8f",
+      "expectedVisibleResult": "\u5b8c\u6574\u56fe\u6807\u8def\u5f84\uff1b\u7d27\u51d1\u6807\u5fd7\u6d3e\u751f\u4e0e\u539f\u56fe\u4e00\u81f4\uff0c\u975e\u6cd5\u5c3e\u90e8\u6d3e\u751f\u4fdd\u7559\u539f\u56fe\u6709\u6548\u524d\u7f00\u3002"
+    },
+    {
+      "name": "pie-chart.svg",
+      "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/pie-chart.svg",
+      "license": "MIT; LICENSE retained alongside samples",
+      "redistributed": true,
+      "sha256": "0703cbce66122b0406d8a4e67ad483b8964359567c1975000f398f7662f86aff",
+      "expectedVisibleResult": "\u5b8c\u6574\u997c\u56fe\u8f6e\u5ed3\u53ca\u6247\u533a"
+    },
+    {
+      "name": "life-preserver.svg",
+      "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/life-preserver.svg",
+      "license": "MIT; LICENSE retained alongside samples",
+      "redistributed": true,
+      "sha256": "38c4797970dc91ab86ab2c542c106e64092600e2abe9d38e11730d93fa86df09",
+      "expectedVisibleResult": "\u5b8c\u6574\u6551\u751f\u5708\u53ca\u56db\u6bb5\u8fde\u63a5\u533a"
+    },
+    {
+      "name": "record-circle.svg",
+      "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/record-circle.svg",
+      "license": "MIT; LICENSE retained alongside samples",
+      "redistributed": true,
+      "sha256": "a17ad669a4a8028d1f660639804dfd4b2fac94df7ed8b5352bc50494a6997e2a",
+      "expectedVisibleResult": "\u540c\u5fc3\u5706\u5f62\u5f55\u5236\u56fe\u6807"
+    },
+    {
+      "name": "clip-path-clip-rule-001.svg",
+      "reference": "clip-path-square-hole-001-ref.svg",
+      "source": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-001.svg",
+      "referenceSource": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-hole-001-ref.svg",
+      "license": "BSD-3-Clause; LICENSE retained",
+      "redistributed": true,
+      "sha256": "7d711fdda3baf7a9da6a842b0ef7576abe6855301372c9fb843f1f754d86e827",
+      "referenceSha256": "f4daabc01c383ee4375f18f627ae470cdf2f706e35804be44eca48a4ab86e2f5",
+      "expectedVisibleResult": "Green square with a rectangular hole",
+      "normalization": "Only test viewport is fixed to 200x200 user units in a 256px canvas; original files remain unchanged"
+    },
+    {
+      "name": "clip-path-clip-rule-002.svg",
+      "reference": "clip-path-square-001-ref.svg",
+      "source": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-002.svg",
+      "referenceSource": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-001-ref.svg",
+      "license": "BSD-3-Clause; LICENSE retained",
+      "redistributed": true,
+      "sha256": "4fb9c430f6c1f137d64d2f27e2a5d48fee3255b95bda1feea9399a777fb652c8",
+      "referenceSha256": "5ee9ddcc68baf5894560714c69b93fd3a62e6e476b243c74aa7c300f8a3c20cc",
+      "expectedVisibleResult": "Solid green square",
+      "normalization": "Only test viewport is fixed to 200x200 user units in a 256px canvas; original files remain unchanged"
+    },
+    {
+      "name": "clip-path-content-use-001.svg",
+      "reference": "clip-path-square-002-ref.svg",
+      "source": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-content-use-001.svg",
+      "referenceSource": "https://github.com/web-platform-tests/wpt/blob/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-002-ref.svg",
+      "license": "BSD-3-Clause; LICENSE retained",
+      "redistributed": true,
+      "sha256": "bb1900e5cbac0b365f221e61210af414846fede1211c9631e3469383830ebc83",
+      "referenceSha256": "d65c04b638f46e201059a6fcdbd37b9fbe8f1909047a8752fac6639df2fe3b54",
+      "expectedVisibleResult": "Green square selected through a direct use",
+      "normalization": "Only test viewport is fixed to 200x200 user units in a 256px canvas; original files remain unchanged"
+    },
+    {
+      "name": "clip-path-clip-rule-006.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-006.svg",
+      "sha256": "aa9b285c000f2d883868d83de02b8ba2246b1530399e2866b711f92f6a55f070",
+      "reference": "clip-path-clip-rule-002-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-clip-rule-002-ref.svg",
+      "referenceSha256": "5269f6c770ac74d8f0b0148cdb3d397548e26c5e17788ea360fd5c76c4929abd",
+      "license": "BSD-3-Clause",
+      "redistributed": true,
+      "expectedVisibleResult": "\u7eff\u8272\u91cd\u53e0\u65b9\u5757\u548c\u5b54\u6d1e\u4e0e\u5b98\u65b9\u53c2\u8003 clip-path-clip-rule-002-ref.svg \u4e00\u81f4\uff1b\u5206\u522b\u9a8c\u8bc1 nonzero/nonzero\u3001nonzero/evenodd \u6216 evenodd/evenodd\u3002"
+    },
+    {
+      "name": "clip-path-clip-rule-007.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-007.svg",
+      "sha256": "7def719cae1608a107c907d3ff6adc90bf4274c671b468df88c4cf27d29720d3",
+      "reference": "clip-path-clip-rule-003-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-clip-rule-003-ref.svg",
+      "referenceSha256": "84737a2de868677ecdf736b3dbb5112fe789039593282192b37eb9cfbc456f01",
+      "license": "BSD-3-Clause",
+      "redistributed": true,
+      "expectedVisibleResult": "\u7eff\u8272\u91cd\u53e0\u65b9\u5757\u548c\u5b54\u6d1e\u4e0e\u5b98\u65b9\u53c2\u8003 clip-path-clip-rule-003-ref.svg \u4e00\u81f4\uff1b\u5206\u522b\u9a8c\u8bc1 nonzero/nonzero\u3001nonzero/evenodd \u6216 evenodd/evenodd\u3002"
+    },
+    {
+      "name": "clip-path-clip-rule-008.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-clip-rule-008.svg",
+      "sha256": "f6fe21cdd64f0de4c9709dc04ce587f8535006f55e3c1970a94e35ad52e127c7",
+      "reference": "clip-path-clip-rule-004-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-clip-rule-004-ref.svg",
+      "referenceSha256": "e820576a88168874a96990ba72786fb26f8874ada8d8859b3a8e756fd1af69b1",
+      "license": "BSD-3-Clause",
+      "redistributed": true,
+      "expectedVisibleResult": "\u7eff\u8272\u91cd\u53e0\u65b9\u5757\u548c\u5b54\u6d1e\u4e0e\u5b98\u65b9\u53c2\u8003 clip-path-clip-rule-004-ref.svg \u4e00\u81f4\uff1b\u5206\u522b\u9a8c\u8bc1 nonzero/nonzero\u3001nonzero/evenodd \u6216 evenodd/evenodd\u3002"
+    },
+    {
+      "name": "clip-path-content-clip-004.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-content-clip-004.svg",
+      "sha256": "646c0042f18ab4eb8259651ef74e15a2ee8ba5582359ac0e9f92e04470c2cc45",
+      "reference": "clip-path-content-clip-004-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-content-clip-004-ref.svg",
+      "referenceSha256": "56cba3ed585cdb555c6831a8abb6f9342b3beac77b577c16ce9c64a1eaca6967",
+      "license": "BSD-3-Clause",
+      "redistributed": true,
+      "expectedVisibleResult": "\u7eff\u8272\u65b9\u5757\u6216\u5706\u5f62\u4e0e\u5bf9\u5e94\u5b98\u65b9 reference \u4e00\u81f4\uff1b\u539f\u4ef6\u672a\u4fee\u6539\uff0c\u6d4b\u8bd5\u5668\u7edf\u4e00\u89c6\u53e3\u3002"
+    },
+    {
+      "name": "clip-path-objectboundingbox-001.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-objectboundingbox-001.svg",
+      "sha256": "f2de89c9d7c99442bc63f35512fada17ee76533e853cb09affb3e9dff6cb413e",
+      "reference": "clip-path-square-002-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-002-ref.svg",
+      "referenceSha256": "d65c04b638f46e201059a6fcdbd37b9fbe8f1909047a8752fac6639df2fe3b54",
+      "license": "BSD-3-Clause",
+      "redistributed": true,
+      "expectedVisibleResult": "\u7eff\u8272\u65b9\u5757\u6216\u5706\u5f62\u4e0e\u5bf9\u5e94\u5b98\u65b9 reference \u4e00\u81f4\uff1b\u539f\u4ef6\u672a\u4fee\u6539\uff0c\u6d4b\u8bd5\u5668\u7edf\u4e00\u89c6\u53e3\u3002"
+    },
+    {
+      "name": "clip-path-objectboundingbox-002.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-objectboundingbox-002.svg",
+      "sha256": "5eafdb3bc61cf292f0e073eb67b5aa9338ba780f2c0656bd751991d753ff75ea",
+      "reference": "clip-path-square-002-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-002-ref.svg",
+      "referenceSha256": "d65c04b638f46e201059a6fcdbd37b9fbe8f1909047a8752fac6639df2fe3b54",
+      "license": "BSD-3-Clause",
+      "redistributed": true,
+      "expectedVisibleResult": "\u7eff\u8272\u65b9\u5757\u6216\u5706\u5f62\u4e0e\u5bf9\u5e94\u5b98\u65b9 reference \u4e00\u81f4\uff1b\u539f\u4ef6\u672a\u4fee\u6539\uff0c\u6d4b\u8bd5\u5668\u7edf\u4e00\u89c6\u53e3\u3002"
+    },
+    {
+      "name": "clip-path-objectboundingbox-003.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-objectboundingbox-003.svg",
+      "sha256": "5423f75b4ca08b8bcf58ffb8d683db78aecf971a427e776a8892c05bc24c9780",
+      "reference": "clip-path-circle-001-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-circle-001-ref.svg",
+      "referenceSha256": "edff87c34425134240b387423f7266e7134b2bfaef30a9b619ecb67a4bf124e4",
+      "license": "BSD-3-Clause",
+      "redistributed": true,
+      "expectedVisibleResult": "\u7eff\u8272\u65b9\u5757\u6216\u5706\u5f62\u4e0e\u5bf9\u5e94\u5b98\u65b9 reference \u4e00\u81f4\uff1b\u539f\u4ef6\u672a\u4fee\u6539\uff0c\u6d4b\u8bd5\u5668\u7edf\u4e00\u89c6\u53e3\u3002"
+    },
+    {
+      "name": "viewBox-zero-disables-rendering-001.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-001.svg",
+      "sha256": "d301da559211ad64a65662897f78060246215c96255f978440574aeaa07b6f09",
+      "reference": "viewBox-zero-disables-rendering-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-ref.svg",
+      "referenceSha256": "ae91693cfd5f15f907b20e8a9b2970a0388b2d1c6e3518e1c247544d16ccff15",
+      "license": "BSD-3-Clause; WPT repository license",
+      "expectedVisibleResult": "\u7a7a\u767d\uff1a\u96f6\u5bbd\u6216\u96f6\u9ad8 viewBox \u7981\u6b62\u7ed8\u5236\u3002",
+      "redistributed": true
+    },
+    {
+      "name": "viewBox-zero-disables-rendering-002.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-002.svg",
+      "sha256": "6c366df92086c1ac9fc4530b6623e8fd44dd4f6ecc5a24ad463dcebb70ced622",
+      "reference": "viewBox-zero-disables-rendering-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-ref.svg",
+      "referenceSha256": "ae91693cfd5f15f907b20e8a9b2970a0388b2d1c6e3518e1c247544d16ccff15",
+      "license": "BSD-3-Clause; WPT repository license",
+      "expectedVisibleResult": "\u7a7a\u767d\uff1a\u96f6\u5bbd\u6216\u96f6\u9ad8 viewBox \u7981\u6b62\u7ed8\u5236\u3002",
+      "redistributed": true
+    },
+    {
+      "name": "viewBox-zero-disables-rendering-003.svg",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-003.svg",
+      "sha256": "9677ae2831ca3c4a65c50427d40c8e55a3f10843e5e4131d06edad499e4959ee",
+      "reference": "viewBox-zero-disables-rendering-ref.svg",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/svg/coordinate-systems/viewBox-zero-disables-rendering-ref.svg",
+      "referenceSha256": "ae91693cfd5f15f907b20e8a9b2970a0388b2d1c6e3518e1c247544d16ccff15",
+      "license": "BSD-3-Clause; WPT repository license",
+      "expectedVisibleResult": "\u7a7a\u767d\uff1a\u96f6\u5bbd\u6216\u96f6\u9ad8 viewBox \u7981\u6b62\u7ed8\u5236\u3002",
+      "redistributed": true
+    },
+    {
+      "name": "inner-outer-svg-overflow-auto.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/painting/inner-outer-svg-overflow-auto.html",
+      "sha256": "94f5527dc0b9a12ec437804929b8a50434ebe9b0177fc23aa618ecefab754bd1",
+      "reference": "inner-outer-svg-overflow-auto-ref.html",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/painting/inner-outer-svg-overflow-auto-ref.html",
+      "referenceSha256": "084efc93c0f65ee4d643453036c9f46b80345bd542583763daef1a77f07a0805",
+      "license": "BSD-3-Clause; WPT repository license retained",
+      "expectedVisibleResult": "Only green squares; no red overflow for the auto case, no oversized green region for clip cases.",
+      "scope": "Unmodified complete HTML reference test in Chrome; not imported as standalone SVG in WeChat.",
+      "redistributed": true
+    },
+    {
+      "name": "nested-svg-overflow-clip.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/render/reftests/nested-svg-overflow-clip.html",
+      "sha256": "3896a729ba5cf91f0504e97380a485e46dddd84f7abb273009c98fa3ae9f63e4",
+      "reference": "rect-ref.html",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/render/reftests/rect-ref.html",
+      "referenceSha256": "16d60bfe02488eba6ffc619923e8798f8f32c5fed15184bc86c94dcad07a8f4b",
+      "license": "BSD-3-Clause; WPT repository license retained",
+      "expectedVisibleResult": "Only green squares; no red overflow for the auto case, no oversized green region for clip cases.",
+      "scope": "Unmodified complete HTML reference test in Chrome; not imported as standalone SVG in WeChat.",
+      "redistributed": true
+    },
+    {
+      "name": "overflow-clip.html",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/render/reftests/overflow-clip.html",
+      "sha256": "5c71b427f76846b20dacefa3c877e46c3517cd26138d7436f93e7c1ec4a3877a",
+      "reference": "rect-ref.html",
+      "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/b09f5cdca2bec4e3095a0dedc2e5d62102252de3/svg/render/reftests/rect-ref.html",
+      "referenceSha256": "16d60bfe02488eba6ffc619923e8798f8f32c5fed15184bc86c94dcad07a8f4b",
+      "license": "BSD-3-Clause; WPT repository license retained",
+      "expectedVisibleResult": "Only green squares; no red overflow for the auto case, no oversized green region for clip cases.",
+      "scope": "Unmodified complete HTML reference test in Chrome; not imported as standalone SVG in WeChat.",
+      "redistributed": true
+    }
+  ],
+  "platformResults": {
+    "node": {
+      "status": "pass-scoped",
+      "testedAt": "2026-09-05",
+      "evidence": "runs/2026-09-05-svg-overflow-oracles.json"
+    },
+    "chrome": {
+      "status": "pass-scoped",
+      "testedAt": "2026-09-05",
+      "scope": "116 generated/pinned SVGs match both native SVG and independent references; 44 high-resolution cases retain 3 native mismatches. Full WPT HTML auto fails its official reference in Chrome; 2 clip originals pass.",
+      "evidence": "runs/2026-09-05-svg-overflow-oracles.json"
+    },
+    "wechat-devtools": {
+      "status": "pending",
+      "testedAt": "2026-09-05",
+      "SDKVersion": "3.16.2",
+      "scope": "116 actual standalone SVG imports: 103 exact, 13 pending maximum channel delta 1; resource rejection/recovery and three private originals playback/pause/retry pass. Not physical-device or full WPT HTML validation.",
+      "evidence": "runs/2026-09-05-svg-overflow-oracles.json"
+    },
+    "ios": {
+      "status": "pending",
+      "reason": "no physical device connected for this iteration"
+    },
+    "android": {
+      "status": "pending",
+      "reason": "no physical device connected for this iteration"
+    }
+  },
+  "limits": {
+    "regressionChildTimeoutMs": 5000,
+    "testedTrailingNumericTokens": 100000,
+    "testedValidSubpaths": 10000,
+    "globalMemoryBudget": "not established by this iteration",
+    "animatedSourceBytes": 524288,
+    "clipUnion": {
+      "children": 64,
+      "inputSegments": 2048,
+      "inputCharacters": 65536,
+      "outputCharacters": 262144,
+      "outputSegments": 8192,
+      "changedClipsPerFrame": 32,
+      "cachedClips": 16,
+      "initialWasmHeapBytes": 33554432,
+      "maximumWasmHeapBytes": 67108864,
+      "note": "Per kernel heap only; not whole-process peak. Nested clip children in a union produce explicit fallback. Retired instances await garbage collection."
+    },
+    "containerBounds": {
+      "nodesPerFrame": 10000,
+      "depth": 64,
+      "textBounds": "explicit unsupported error"
+    },
+    "canvasAllocation": {
+      "maximumPixels": 16777216,
+      "maximumSide": 16384,
+      "validation": "finite positive DPR and dimensions before allocation",
+      "scope": "color buffer dimensions only; not whole-process memory or physical-device guarantee"
+    },
+    "symbolInstances": {
+      "maximumReferenceChain": 32,
+      "maximumRenderDepth": 64,
+      "cycleBehavior": "Self/ancestor and active recursive references do not render; valid siblings remain",
+      "expandedInstanceBudget": "Not established by this batch; no global work/memory guarantee"
+    }
+  },
+  "lastTestedAt": "2026-09-18T15:50:15.107988+00:00",
+  "mutationQueue": [
+    {
+      "id": "clip-path-resource-chain",
+      "priority": "high",
+      "status": "fixed-scoped",
+      "release": "1.4.127",
+      "evidence": "runs/2026-09-06-svg-clip-chains.json",
+      "generatedVariants": 44,
+      "baselineWrong": 37
+    },
+    {
+      "id": "rect-stroke-primitive",
+      "priority": "high",
+      "status": "pending",
+      "evidence": "runs/2026-09-05-next-svg-stroke-rect.json",
+      "reason": "Runtime-only strokeRect substitution changes 89/102 exact to 101/102. Implement separately with host fallback and rounded-rect controls; rotated fill boundary remains."
+    },
+    {
+      "id": "svg-overflow-auto-and-oracle-audit",
+      "priority": "critical",
+      "status": "fixed-chrome-pending-interop",
+      "evidence": "runs/2026-09-05-svg-overflow-oracles.json",
+      "reason": "Native metric is mandatory; reference clips restored. SVGWG issue 1072 remains open.",
+      "release": "1.4.107"
+    },
+    {
+      "id": "svg-slice-boundary-pixels",
+      "priority": "high",
+      "status": "fixed-fill-pending-stroke",
+      "generatedVariants": 32,
+      "failingVariants": 22,
+      "evidence": "runs/2026-09-05-svg-viewport-culling.json",
+      "minimizedCases": 6,
+      "edgeControls": 20,
+      "edgeControlNativeDifferences": 9,
+      "reason": "All 32 original slice variations now exact; the expanded 70-case batch retains five unchanged stroke/rotation differences.",
+      "release": "1.4.113"
+    },
+    {
+      "id": "user-svg-phone-first-open-static",
+      "priority": "high",
+      "status": "pending-physical-device",
+      "evidence": "User reports static in WeChat reader; client platform and installed version unknown; DevTools animates. Actual client evidence pending."
+    },
+    {
+      "id": "closepath-bare-numbers",
+      "priority": "critical",
+      "status": "fixed",
+      "release": "1.4.95",
+      "evidence": "M0 0L10 10Z1 previously ETIMEDOUT after 1000ms"
+    },
+    {
+      "id": "arc-pixel-fidelity",
+      "priority": "high",
+      "status": "partial",
+      "evidence": "runs/2026-09-05-svg-native-path.json",
+      "generatedVariants": 32,
+      "release": "1.4.102",
+      "remaining": "Unsupported native hosts, curved clips, primitives and physical devices"
+    },
+    {
+      "id": "compact-arc-flags",
+      "priority": "high",
+      "status": "fixed",
+      "evidence": "runs/2026-09-05-svg-path-grammar.json",
+      "generatedFailingVariants": 32,
+      "release": "1.4.101"
+    },
+    {
+      "id": "invalid-token-prefix-recovery",
+      "priority": "high",
+      "status": "fixed",
+      "evidence": "runs/2026-09-05-svg-path-grammar.json",
+      "generatedFailingVariants": 32,
+      "release": "1.4.101"
+    },
+    {
+      "id": "physical-devices-animation-recovery",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "svg-parser-global-memory-budget",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "smil-path-morph-interpolation",
+      "priority": "high",
+      "status": "fixed",
+      "evidence": "runs/2026-09-05-svg-path-morph.json",
+      "release": "1.4.100"
+    },
+    {
+      "id": "smil-path-by-additive-accumulate-css-d",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "smil-invalid-keyTimes",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "smil-arc-flag-standard-divergence",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "curved-clip-pixel-fidelity",
+      "priority": "high",
+      "status": "pending",
+      "generatedVariants": 32,
+      "evidence": "runs/2026-09-05-svg-next-curved-clips.json"
+    },
+    {
+      "id": "clip-multiple-child-union",
+      "priority": "high",
+      "status": "fixed-direct-shapes",
+      "generatedVariants": 32,
+      "evidence": "runs/2026-09-05-svg-next-clip-unions.json",
+      "release": "1.4.104"
+    },
+    {
+      "id": "nested-clip-child-union",
+      "priority": "high",
+      "status": "fixed-scoped",
+      "generatedVariants": 32,
+      "evidence": "runs/2026-09-12-svg-child-clips.json",
+      "release": "1.4.137"
+    },
+    {
+      "id": "nested-svg-viewport-alignment",
+      "priority": "high",
+      "status": "fixed-chrome-pending-device-pixels",
+      "generatedVariants": 32,
+      "evidence": "runs/2026-09-05-svg-viewports.json",
+      "release": "1.4.106"
+    },
+    {
+      "id": "wechat-rectangle-corner-antialias",
+      "priority": "high",
+      "status": "pending",
+      "cases": 2,
+      "evidence": "runs/2026-09-05-svg-container-bounds.json",
+      "reason": "WPT 001/002 at 1170 device pixels differ at four corner pixels; later redraw diagnostic differs from fresh import."
+    },
+    {
+      "id": "symbol-use-viewport-alignment",
+      "priority": "high",
+      "status": "fixed-scoped",
+      "generatedVariants": 134,
+      "evidence": "runs/2026-09-05-svg-symbols.json",
+      "release": "1.4.124"
+    },
+    {
+      "id": "wechat-viewport-pixels",
+      "priority": "high",
+      "status": "pending",
+      "cases": 13,
+      "evidence": "runs/2026-09-05-svg-overflow-oracles.json",
+      "reason": "Maximum channel difference 1; strict check remains failing."
+    },
+    {
+      "id": "svg-first-animation-oracle-readiness",
+      "priority": "high",
+      "status": "pending",
+      "evidence": "runs/2026-09-05-next-svg-slice-minimized.json",
+      "reason": "The first native SMIL sample sometimes freezes y=0 after setCurrentTime(0.5), versus y=8 when later. Reader matches analytic linear y=8; stabilize native readiness before using this as a product verdict."
+    },
+    {
+      "id": "css-step-browser-interoperability",
+      "priority": "medium",
+      "status": "pending",
+      "evidence": "runs/2026-09-18-svg-css-timing.json",
+      "reason": "36 Chrome discontinuity differences retained; native WeChat and physical clients not measured."
+    },
+    {
+      "id": "curved-dash-length-native-approximation",
+      "priority": "high",
+      "status": "pending",
+      "reason": "Chrome13 curved and3 malformed differences retained; Firefox11 curved differences. Scope malformed controls as interoperability; do not replace all platform rulers with one engine approximation.",
+      "evidence": "runs/2026-09-18-svg-curve-ruler-oracles.json"
+    },
+    {
+      "id": "svg-path-length-calibration",
+      "status": "improved-scoped",
+      "priority": "high",
+      "evidence": "runs/2026-09-18-svg-path-length.json",
+      "reason": "Original calibration shipped in v1.4.138; cross-engine curve and malformed-attribute differences now separately tracked."
+    },
+    {
+      "id": "svg-text-paint-native-difference",
+      "status": "reproduced",
+      "priority": "medium",
+      "evidence": "runs/2026-09-18-svg-font-strokes.json",
+      "reason": "Relative and absolute text stroke controls match each other but differ from native SVG; strict pixel check retains both failures."
+    },
+    {
+      "id": "ellipse-stroke-ruler-platform-differences",
+      "priority": "high",
+      "status": "reproduced",
+      "evidence": "runs/2026-09-18-svg-curve-ruler-oracles.json",
+      "reason": "Skia-based native ellipse ruler improves Chrome but differs in Firefox; trial cubic ruler remains non-exact. Require multi-shape independent platform validation before shipping selection logic."
+    }
+  ],
+  "symbolViewportsValidation": {
+    "relatedTests": 86,
+    "relatedFailures": 0,
+    "node": "pass",
+    "production": "pass",
+    "chromeOracle": "pass",
+    "svgGates": "pass",
+    "wechatDevtools": "not-run: previous compiler-startup block",
+    "ios": "not-run",
+    "android": "not-run",
+    "nodeTests": 1170,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "evidence": "runs/2026-09-05-svg-symbols.json",
+    "productCI": "33999201310",
+    "mainCI": "33999535690",
+    "status": "development-uploaded",
+    "productPR": 243,
+    "runAttempt": "1",
+    "receipt": "runs/2026-09-05-v1.4.124-wechat-upload.json",
+    "receiptBytes": 492,
+    "remotePeeledTagExact": true
+  },
+  "clipChainsValidation": {
+    "cases": 44,
+    "baselineWrong": 37,
+    "independentExact": 44,
+    "nativeExact": 44,
+    "hostVariants": 3,
+    "componentExact": 44,
+    "lifecycle": {
+      "pause": true,
+      "resume": true,
+      "hideShow": true,
+      "staleFrame": true,
+      "staleQuery": true,
+      "staleUnion": true,
+      "overDepthError": true,
+      "errorRecovery": true,
+      "animatedUnionCache": true,
+      "detach": true
+    },
+    "nodeGuardTests": 2,
+    "fullNode": "pass",
+    "production": "pass",
+    "relatedSvg": "pass",
+    "chromeOracle": "pass",
+    "wechatDevtools": "not-run: prior compiler startup block",
+    "ios": "not-run",
+    "android": "not-run",
+    "nodeTests": 1180,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "initialCheckFailure": "New profile capability initially used unsupported status and too few axis keys; corrected metadata, full check rerun passed.",
+    "productPR": 251,
+    "productCI": "34007514706",
+    "mainCI": "34007786862",
+    "runAttempt": "1",
+    "receipt": "runs/2026-09-06-v1.4.127-wechat-upload.json",
+    "receiptBytes": 496,
+    "remotePeeledTagExact": true,
+    "status": "development-uploaded",
+    "productCIStatus": "pass",
+    "mainCIStatus": "pass"
+  },
+  "candidateVersion": null,
+  "childClipsValidation": {
+    "status": "development-uploaded",
+    "evidence": "runs/2026-09-12-svg-child-clips.json",
+    "cases": 75,
+    "independentExact": 75,
+    "nativeChromeExact": 74,
+    "actualHostOpens": 44,
+    "componentExact": 44,
+    "relatedClipChainsExact": 44,
+    "fullNodeTests": 1259,
+    "compatibilityProbes": 141,
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run",
+    "receipt": "runs/2026-09-12-v1.4.137-wechat-upload.json"
+  },
+  "cssTimingValidation": {
+    "status": "locally-verified-unreleased",
+    "evidence": "runs/2026-09-18-svg-css-timing.json",
+    "baselineFirefox": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0",
+      "failures": 288
+    },
+    "repairedFirefox": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0",
+      "failures": 0
+    },
+    "repairedChrome": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "failures": 36
+    },
+    "actualHostOpens": 47,
+    "actualComponent": {
+      "mounts": 47,
+      "activeFramesAfterDetach": 0
+    },
+    "numericTolerance": 0.0006,
+    "canvasAlphaTolerance": 1,
+    "toleranceReason": "Existing animation serialization rounds to 0.001; Canvas alpha is quantized to 8 bits. Thresholds established before observing comparisons.",
+    "fullNodeTests": 1265,
+    "fullNodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "curveRulerOracles": {
+    "status": "retained-cross-engine-differences",
+    "evidence": "runs/2026-09-18-svg-curve-ruler-oracles.json",
+    "chromeOriginalExact": 44,
+    "firefoxOriginalExact": 49,
+    "casesPerEngine": 60,
+    "newProductChange": false,
+    "wechatOffscreenCapability": "24 hit tests match Chrome; not actual WXML pixels or physical-device validation"
+  }
+}

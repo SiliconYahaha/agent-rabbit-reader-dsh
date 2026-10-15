@@ -1,0 +1,77 @@
+<import src="./dom-tree.wxml"/>
+<!-- 引擎只负责内容：状态卡、音视频抬头、文件检查卡、Ai/PSD 抬头都由宿主的 /file-reader/skin 皮肤组件渲染。 -->
+<view class="reader-page" bindtouchstart="onReaderTouchStart" bindtouchmove="onReaderTouchMove" bindtouchend="onReaderTouchEnd" bindtouchcancel="onReaderTouchCancel">
+  <skin-status id="reader-status" loading="{{isLoading}}" label="{{loadingLabel}}" detail="{{loadingDetail}}" error="{{error}}" retryable="{{htmlPresentationRetry || fileLoadRetry}}" native="{{nativeStatus}}" bind:retry="retryReading"/>
+
+  <!-- A fresh keyed host instance keeps late native/custom events bound to the
+       old immutable session, including reopening the same path. Skin contracts
+       stay unchanged: identity belongs to this engine-owned event target. -->
+  <skin-media wx:for="{{mediaSessions}}" wx:key="id" wx:if="{{mediaMode}}" data-media-session="{{item.id}}"
+    mode="{{mediaMode}}" kicker="{{mediaKicker}}" name="{{mediaName}}" type="{{mediaType}}" size-label="{{mediaSizeLabel}}"
+    format-label="{{mediaFormatLabel}}" codec-label="{{mediaCodecLabel}}" compatibility="{{mediaCompatibility}}" diagnostic="{{mediaDiagnostic}}" details="{{mediaDetails}}"
+    can-play="{{mediaCanPlay}}" path="{{mediaPath}}" playing="{{mediaPlaying}}" current="{{mediaCurrent}}" duration="{{mediaDuration}}"
+    current-label="{{mediaCurrentLabel}}" duration-label="{{mediaDurationLabel}}" note="{{mediaNote}}" unavailable="{{mediaUnavailable}}"
+    bind:toggle="toggleAudio" bind:seek="seekAudio"
+    bind:videoplay="onVideoPlay" bind:videopause="onVideoPause" bind:videoloadedmetadata="onVideoLoadedMetadata" bind:videowaiting="onVideoWaiting" bind:videoended="onVideoEnded" bind:videoerror="onVideoError"/>
+
+  <skin-inspector id="reader-inspector" wx:if="{{inspectorMode}}"
+    kicker="{{inspectorKicker}}" title="{{inspectorTitle}}" summary="{{inspectorSummary}}" note="{{inspectorNote}}" metadata="{{inspectorMetadata}}"
+    has-preview="{{inspectorModelMode || inspectorPreviewSource || inspectorPreviewPath ? true : false}}"
+    needs-password="{{inspectorNeedsPassword}}" password-status="{{inspectorPasswordStatus}}"
+    name-encoding="{{inspectorNameEncoding}}" name-encoding-options="{{inspectorNameEncodingOptions}}" link-folder="{{inspectorLinkFolder}}"
+    entries="{{inspectorEntries}}" entry-count="{{inspectorEntryCount}}" page="{{inspectorEntryPage}}" pages="{{inspectorEntryPages}}"
+    has-previous-page="{{inspectorHasPreviousPage}}" has-next-page="{{inspectorHasNextPage}}"
+    bind:passwordinput="onArchivePasswordInput" bind:unlock="unlockArchive" bind:encoding="selectArchiveNameEncoding" bind:back="returnToArchiveRoot"
+    bind:open="openInspectorEntry" bind:prev="previousInspectorEntryPage" bind:next="nextInspectorEntryPage">
+    <view slot="preview">
+      <view wx:if="{{inspectorModelMode === 'step-wireframe' || inspectorModelMode === 'engineering-wireframe'}}" class="step-model-shell">
+        <image wx:if="{{!inspectorModelReady && (inspectorPreviewSource || inspectorPreviewPath)}}" class="step-model-fallback" src="{{inspectorPreviewSource || inspectorPreviewPath}}" mode="aspectFit" aria-label="模型静态预览"/>
+        <canvas id="step-model-canvas" canvas-id="step-model-canvas" type="2d" class="step-model-canvas {{inspectorModelReady ? 'step-model-canvas-ready' : ''}}" bindtouchstart="onStepModelTouchStart" bindtouchmove="onStepModelTouchMove"/>
+        <view class="step-model-toolbar">
+          <button class="step-view-button step-view-isometric {{inspectorModelView === 'isometric' ? 'step-view-active' : ''}}" data-view="isometric" bindtap="setStepModelView">等轴</button>
+          <button class="step-view-button step-view-front {{inspectorModelView === 'front' ? 'step-view-active' : ''}}" data-view="front" bindtap="setStepModelView">正视</button>
+          <button class="step-view-button step-view-top {{inspectorModelView === 'top' ? 'step-view-active' : ''}}" data-view="top" bindtap="setStepModelView">俯视</button>
+        </view>
+        <text class="step-model-status">{{inspectorModelStatus}}</text>
+      </view>
+      <image wx:elif="{{inspectorPreviewSource || inspectorPreviewPath}}" class="inspector-preview" src="{{inspectorPreviewSource || inspectorPreviewPath}}" mode="aspectFit" aria-label="文件内嵌预览"/>
+    </view>
+  </skin-inspector>
+
+  <view wx:if="{{designMode && designFile}}" class="design-reader">
+    <design-preview id="design-preview" file="{{designFile}}"/>
+  </view>
+
+  <view wx:if="{{hasContent && !mediaMode && !inspectorMode && !designMode}}" class="reader-canvas">
+    <view wx:if="{{standaloneSvgAnimationNotice}}" class="svg-animation-notice">
+      <text>{{standaloneSvgAnimationNotice}}</text>
+      <button wx:if="{{standaloneSvgAnimationCanRetry}}" size="mini" bindtap="retryStandaloneSvgAnimation">重试动画</button>
+    </view>
+    <svg-view id="standalone-svg-player" wx:if="{{standaloneSvgAnimatedSource}}" class="standalone-svg standalone-svg-animated" source="{{standaloneSvgAnimatedSource}}" bind:ready="onStandaloneSvgAnimatedReady" bind:error="onStandaloneSvgAnimatedError"/>
+    <image wx:elif="{{standaloneSvgSource || standaloneSvgPath}}" class="standalone-svg" src="{{standaloneSvgSource || standaloneSvgPath}}" mode="widthFix" bindload="onStandaloneSvgLoad" binderror="onStandaloneSvgError"/>
+    <view wx:elif="{{domMode}}" class="dom-render-clip" style="{{domClipStyle}}">
+      <view class="dom-render-frame" style="{{domFrameStyle}}">
+        <view class="dom-render-root" style="{{domWrapperStyle}}">
+          <template is="dn0" data="{{nodes:domTree,styles:domStyles}}"/>
+        </view>
+      </view>
+    </view>
+    <mp-html wx:else
+      class="html-view"
+      content="{{renderedHtml}}"
+      container-style="font-size:16px;color:#243041;overflow-wrap:anywhere;max-width:100%;overflow:hidden"
+      lazy-load
+      scroll-table
+      selectable
+      use-anchor
+      copy-link="{{false}}"
+      set-title="{{false}}"
+      tag-style="{{tagStyle}}"
+      bindload="onRenderLoad"
+      binderror="onRenderError"
+      bindlinktap="onLinkTap"
+    >
+      <view class="loading">正在排版网页……</view>
+    </mp-html>
+  </view>
+</view>

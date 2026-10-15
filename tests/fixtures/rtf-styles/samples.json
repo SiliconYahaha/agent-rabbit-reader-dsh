@@ -1,0 +1,315 @@
+{
+  "seed": null,
+  "rules": "Named paragraph/character style inheritance, direct overrides before/after styles, plain/pard resets, missing definitions, base styles and font controls. Mid-paragraph paragraph-style changes are separately recorded exploration differences.",
+  "evidence": "compatibility/runs/2026-09-05-rtf-styles.json",
+  "cases": [
+    {
+      "name": "paragraph-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}}\\pard\\s0 BEFORE\\par\\pard\\s1 SECRET\\par\\pard\\s0 AFTER}",
+      "sha256": "fee766e4e3aeef893a465722dc63cc83bfb0d0c7ec89f5418c211d8892365e8e",
+      "expected": "BEFORE\nAFTER",
+      "writerHtml": "BEFORE\nAFTER",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "writerHtmlMatchesExpected": true,
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "character-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\additive\\v Hidden;}}\\pard BEFORE{\\cs1 SECRET}AFTER}",
+      "sha256": "d4f075981511aafa821c64f5ed14538b6116de5d8464c1bd83a68519911c4aa5",
+      "expected": "BEFOREAFTER",
+      "writerHtml": "BEFOREAFTER",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "writerHtmlMatchesExpected": true,
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "character-visible-override",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\additive\\v Hidden;}}BEFORE{\\cs1 SECRET\\v0 VISIBLE}AFTER}",
+      "sha256": "1b936552f6abcbe5d755f62ad55d42004c856f2f5e8da92bab9fbb7e0f1b5ca6",
+      "expected": "BEFOREVISIBLEAFTER",
+      "writerHtml": "BEFOREAFTER",
+      "expectedBasis": "Writer actual RTF import and PDF rendered page, explicit v0 retained",
+      "writerHtmlMatchesExpected": false,
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "paragraph-based-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherit;}}\\pard\\s0 BEFORE\\par\\pard\\s2 SECRET\\par\\pard\\s0 AFTER}",
+      "sha256": "2855dfa61a4b59118418cccca8cf09684a1bc11fa3b2802e330ee2ffd1221b99",
+      "expected": "BEFORE\nAFTER",
+      "writerHtml": "BEFORE\nAFTER",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "writerHtmlMatchesExpected": true,
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "character-plain-reset",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\additive\\v Hidden;}}BEFORE{\\cs1 SECRET\\plain VISIBLE}AFTER}",
+      "sha256": "a0bb503536bab487a92c9d6297c3878da47ce1f8a0e990c30d1a67217785bd7b",
+      "expected": "BEFOREVISIBLEAFTER",
+      "writerHtml": "BEFOREVISIBLEAFTER",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "writerHtmlMatchesExpected": true,
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "paragraph-reset",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}}\\pard\\s1 SECRET\\par\\pard VISIBLE}",
+      "sha256": "3a9fdf5232a0094fa1b01f11dede8e6f226223a2efdf1d5394443ffae680bbaa",
+      "expected": "VISIBLE",
+      "writerHtml": "VISIBLE",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "writerHtmlMatchesExpected": true,
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "direct-font-control",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fnil\\fcharset134 SimSun;}}BEFORE{\\f1 \\'c4\\'e3\\'ba\\'c3}AFTER}",
+      "sha256": "779d8dafc354dd7b3b346287a12273e7ffb00a9934667b02b74ab71c4635b910",
+      "expected": "BEFORE你好AFTER",
+      "writerHtml": "BEFORE你好AFTER",
+      "expectedBasis": "Actual Writer HTML -> Chrome, explicit CP936 control. Writer PDF lacks CJK glyphs in this local font environment: blank glyphs visually inspected, pdfplumber wrongly extracts 你你. Preserve 你好; do not use the broken PDF font export as an oracle.",
+      "writerHtmlMatchesExpected": true,
+      "oracle": "writer-html"
+    },
+    {
+      "name": "character-hidden-font-codepage",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fnil\\fcharset134 SimSun;}}{\\stylesheet{\\s0\\f0 Normal;}{\\*\\cs1\\additive\\f1\\v HiddenChinese;}}BEFORE{\\cs1 \\'c4\\'e3\\'ba\\'c3}AFTER}",
+      "sha256": "b7aae072307de1d0280d35d86b21f2bfba019a8f816f56a19d5acc1674b201f6",
+      "expected": "BEFOREAFTER",
+      "writerHtml": "BEFOREAFTER",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "writerHtmlMatchesExpected": true,
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "plain-paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1 SECRET\\plain PLAIN\\par\\pard AFTER}",
+      "expected": "AFTER",
+      "sha256": "66873b1c3afc915511ee183bf1d38be8e1e58c53ec943251ab4967d410bcc4ab",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "pard-direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\v SECRET\\pard RESET\\v0 AFTER}",
+      "expected": "AFTER",
+      "sha256": "33c8b4e06d3219f5e6ab3b0bdf0a99c533838eaf28c0d516628eab4337e897da",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "style-direct-before",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\v0\\s1 TOKEN\\par\\pard AFTER}",
+      "expected": "TOKEN\nAFTER",
+      "sha256": "92795a6666c2c9f7677c90b30dbf342bccb414acf06fa849190f3c6a7d095f3f",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "style-direct-after",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1\\v0 TOKEN\\par\\pard AFTER}",
+      "expected": "TOKEN\nAFTER",
+      "sha256": "49132781aef940787c01e52530a90d4ce188dd24ada11f9db06f4d42ee69fa4c",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "char-direct-before",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}BEFORE\\v0\\cs10 TOKEN\\plain AFTER}",
+      "expected": "BEFORETOKENAFTER",
+      "sha256": "054c466a21ffb8be0512e178bb69f2677743851ad248cc275e2a89ed73a10256",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "char-direct-after",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}BEFORE\\cs10\\v0 TOKEN\\plain AFTER}",
+      "expected": "BEFORETOKENAFTER",
+      "sha256": "bcbe73cb0e1cc0d50bb48e27c7d29bafa403a94d3e356808b0bc7d8f77c7a534",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "char-neutral-after-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}BEFORE\\cs10 SECRET\\cs12 TOKEN\\plain AFTER}",
+      "expected": "BEFORETOKENAFTER",
+      "sha256": "50020e70f554072db9931540362453b5bcad8077662a6bf8170463c98f208f3a",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "char-nonadd-after-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}BEFORE\\cs10 SECRET\\cs13 TOKEN\\plain AFTER}",
+      "expected": "BEFORETOKENAFTER",
+      "sha256": "b0eae7833436aab71a9eb7fceccdf81b233e175810c6f4375056eaf4e2e14238",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "char-neutral-on-par",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1 SECRET\\cs12 TOKEN\\plain PLAIN\\par\\pard AFTER}",
+      "expected": "AFTER",
+      "sha256": "0ab2402055556f0d11122692e31cd3043536007c12ac2703f5629c504d6d42d1",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "char-nonadd-on-par",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1 SECRET\\cs13 TOKEN\\plain PLAIN\\par\\pard AFTER}",
+      "expected": "AFTER",
+      "sha256": "96a30df60563249c01747bbe86e4d6f184e3ed1c53acec602af88fafeeb6b34e",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "char-visible-on-par",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1 SECRET\\cs11 TOKEN\\plain PLAIN\\par\\pard AFTER}",
+      "expected": "TOKEN\nAFTER",
+      "sha256": "a1a6d7a88cf4dfdc3e2f12aaf0be5acd889c3b7d8df3fe9110a8082e6afea478",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "switch-paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1 SECRET\\par\\s3 TOKEN\\par\\s0 AFTER}",
+      "expected": "TOKEN\nAFTER",
+      "sha256": "bbbc86059fac1d5522ccbdaa8832cc4203813aed93bf798cfabf9bea90368420",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "switch-par-direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1\\v0 VISIBLE\\par\\s1 TOKEN\\par\\pard AFTER}",
+      "expected": "VISIBLE\nTOKEN\nAFTER",
+      "sha256": "fae7ee79ac1a26d1a6d833bef5b62d9508c9a00f052d0267505f717338012017",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "switch-par-direct-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s0\\v SECRET\\par\\s3 TOKEN\\par\\pard RESET\\v0 AFTER}",
+      "expected": "AFTER",
+      "sha256": "574f4f00a0874464310b68732b348b900ade5ed545e5df9430e1adbf59c10c3f",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "pard-character",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\cs10 SECRET\\pard TOKEN\\plain AFTER}",
+      "expected": "AFTER",
+      "sha256": "1179a7e52af723e3b6a0c50965d7e4bee8adae7fdb95bd9b769e406092d6b1fd",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "missing-character",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}BEFORE\\cs10 SECRET\\cs99 TOKEN\\plain AFTER}",
+      "expected": "BEFOREAFTER",
+      "sha256": "b5abf5e4c3824e69e3471790dd4ddf6ff8cdf374f9f660eeb9556101ff01e52b",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "missing-paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1 SECRET\\par\\s99 TOKEN\\par\\pard AFTER}",
+      "expected": "AFTER",
+      "sha256": "aa85cb6363da05ac6d9f84fb0dad6215225207283b442b6d50e74935f92e7c58",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "default-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0\\v Normal;}}TOKEN\\par\\pard AFTER}",
+      "expected": "",
+      "sha256": "36c6a760c4d4c38e3459180ef1e5146ccfbdee6daf7e81f395c4405772ec4365",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "plain-direct-par",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1\\v0 VISIBLE\\plain TOKEN\\par\\pard AFTER}",
+      "expected": "VISIBLE\nAFTER",
+      "sha256": "5bc4440c171ed1b0a68dc8912d7e0b30e1bdd3d919a445f02a37cebb6573ffb3",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "char-hidden-par-switch",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\cs10 SECRET\\par\\s2 TOKEN\\plain AFTER}",
+      "expected": "AFTER",
+      "sha256": "6048893630e3926e9492b209dc78bfafae9106d3a89235a49df4791ae5e6cf44",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "char-visible-par-switch",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}\\s1\\cs11 VISIBLE\\par\\s1 TOKEN\\plain AFTER}",
+      "expected": "VISIBLE\nTOKEN",
+      "sha256": "03a3d349be9cda1fdf0368275acc5729d1119366dbfb9ddeb6d7468a0a15b8fc",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "late-style-direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}\\v0 BEFORE\\s1 SECRET\\par\\pard AFTER}",
+      "expected": "BEFORESECRET\nAFTER",
+      "sha256": "013ff8a4fed427ee459939d6f5570ef6b8c6b759ab90a2023689c25b284c02dd",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "paragraph-based-visible",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}\\s3 VISIBLE\\par\\pard AFTER}",
+      "expected": "VISIBLE\nAFTER",
+      "sha256": "9213f158a952e53507ae0a55fa1db51a1fbbebeca1b3641866ed3916d20417a0",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "character-based-hidden",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}BEFORE{\\cs11 SECRET}AFTER}",
+      "expected": "BEFOREAFTER",
+      "sha256": "06479691978cba5e2b4501496444eee73892e213a3e5316a6b1ac737bd655a3a",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "character-cross-kind",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}BEFORE{\\cs12 TOKEN}AFTER}",
+      "expected": "BEFORETOKENAFTER",
+      "sha256": "f5c738e39cb52db1f8f170a15f1852034d9b8c023958d8ac2cd8b1e2d362abd3",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "style0-inheritance",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}\\s0 VISIBLE\\par\\s99 AFTER}",
+      "expected": "VISIBLE\nAFTER",
+      "sha256": "edadea45801831b3c311a19722b80945a26c650127a4fb87af7d0e7908b4fac0",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "body-star-cs",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}BEFORE{\\*\\cs10 SECRET}AFTER}",
+      "expected": "BEFOREAFTER",
+      "sha256": "033b9954b422b02c7307ff404b34597db29a38cb9c9c797736f751d6ca12823f",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    },
+    {
+      "name": "plain-paragraph-in-group",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}\\s1 SECRET{\\plain INNER}AFTER\\par\\pard END}",
+      "expected": "END",
+      "sha256": "e7590ccd1342c31b56f38b5261e491acf2d38932d6d0555a00e35f6ffbd838af",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "oracle": "writer-pdf"
+    }
+  ],
+  "unassertedExploration": [
+    "character-font-codepage",
+    "paragraph-font-codepage"
+  ]
+}

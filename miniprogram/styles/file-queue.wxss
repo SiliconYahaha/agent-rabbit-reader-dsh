@@ -1,0 +1,52 @@
+.file-queue {
+  position: fixed;
+  z-index: 30;
+  right: 24rpx;
+  bottom: calc(18rpx + env(safe-area-inset-bottom));
+  left: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 84rpx;
+  padding: 8rpx;
+  border: 3rpx solid #171715;
+  border-radius: 999rpx;
+  background: rgba(255, 253, 248, 0.96);
+  box-shadow: 0 6rpx 0 rgba(23, 23, 21, 0.2);
+}
+
+.file-queue .queue-button {
+  flex: 0 0 152rpx;
+  width: 152rpx;
+  min-width: 0;
+  box-sizing: border-box;
+  white-space: nowrap;
+  min-height: 64rpx;
+  margin: 0;
+  padding: 0 20rpx;
+  border: 0;
+  border-radius: 999rpx;
+  color: #171715;
+  background: #b9e63b;
+  font-size: 24rpx;
+  font-weight: 800;
+  line-height: 64rpx;
+}
+
+.queue-button[disabled] {
+  color: #969188;
+  background: #ece9e2;
+}
+
+.queue-position {
+  flex: 1 0 auto;
+  min-width: 100rpx;
+  padding: 0 12rpx;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1;
+  color: #3d3a35;
+  font-size: 24rpx;
+  font-weight: 800;
+}

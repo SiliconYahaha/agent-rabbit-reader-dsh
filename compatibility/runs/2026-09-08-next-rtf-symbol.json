@@ -1,0 +1,266 @@
+{
+  "writer": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "rows": [
+    {
+      "name": "Symbol-ascii",
+      "font": "Symbol",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Symbol;}}\\f1 ABC abc}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgU3ltYm9sO319XGYxIEFCQyBhYmN9",
+      "sha256": "900e85ac9c6640e2bd1022f45705e4d56da995424656629f5d6c762eedef146b",
+      "readerText": "ABC abc",
+      "cocoaText": "ΑΒΧ αβχ",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\"></span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "",
+      "fileEntry": {
+        "error": "",
+        "text": "ABC abc",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Symbol-hex",
+      "font": "Symbol",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Symbol;}}\\f1 \\'41\\'42\\'43 \\'61\\'62\\'63}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgU3ltYm9sO319XGYxIFwnNDFcJzQyXCc0MyBcJzYxXCc2MlwnNjN9",
+      "sha256": "44a29ced2aafeb174a4366b133cee01e350fbb7d44de614076d5ad4b6688b1b5",
+      "readerText": "ABC abc",
+      "cocoaText": "ΑΒΧ αβχ",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\"></span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "",
+      "fileEntry": {
+        "error": "",
+        "text": "ABC abc",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Symbol-unicode",
+      "font": "Symbol",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Symbol;}}\\f1 \\u913?\\u914?\\u935? \\u945?\\u946?\\u967?}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgU3ltYm9sO319XGYxIFx1OTEzP1x1OTE0P1x1OTM1PyBcdTk0NT9cdTk0Nj9cdTk2Nz99",
+      "sha256": "eb6be98b118b6ec6dfcda12f6059eef56f6e2ef02511139c2e68e4485ea02f39",
+      "readerText": "ΑΒΧ αβχ",
+      "cocoaText": "ΑΒΧ αβχ",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\">ΑΒΧαβχ</span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "ΑΒΧαβχ",
+      "fileEntry": {
+        "error": "",
+        "text": "ΑΒΧ αβχ",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Symbol-switch",
+      "font": "Symbol",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Symbol;}}\\f1 \\f0 START {\\f1 ABC abc} END}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgU3ltYm9sO319XGYxIFxmMCBTVEFSVCB7XGYxIEFCQyBhYmN9IEVORH0=",
+      "sha256": "f3504287c37fb3101a1fa1256407a07e1b130f4829a7357c4546cc4b9f91c267",
+      "readerText": "START ABC abc END",
+      "cocoaText": "START ΑΒΧ αβχ END",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1 .T2  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\">START </span><span class=\"text-T2\"></span><span class=\"text-T1\"> END</span></p>\n</body>\n\n</html>\n",
+      "writerVisible": "START  END",
+      "fileEntry": {
+        "error": "",
+        "text": "START ABC abc END",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Symbol-high",
+      "font": "Symbol",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Symbol;}}\\f1 \\'a3\\'a5\\'b1\\'b4\\'b6}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgU3ltYm9sO319XGYxIFwnYTNcJ2E1XCdiMVwnYjRcJ2I2fQ==",
+      "sha256": "a9295c8bd7bd458d143579ff981d941dc74f556c03730fc71205f7feae560ba4",
+      "readerError": "RTF 暂不支持代码页 42 的正文解码",
+      "cocoaText": "≤∞±×∂",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\"></span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "",
+      "fileEntry": {
+        "error": "RTF 解析失败：RTF 暂不支持代码页 42 的正文解码",
+        "text": "",
+        "hasContent": false
+      }
+    },
+    {
+      "name": "Arial-ascii",
+      "font": "Arial",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Arial;}}\\f1 ABC abc}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgQXJpYWw7fX1cZjEgQUJDIGFiY30=",
+      "sha256": "3ebfa4b670b869fe481f3b518965b780b4b12f1afbf08f9ad682c0156b8b3aaa",
+      "readerText": "ABC abc",
+      "cocoaText": "ΑΒΧ αβχ",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\"></span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "",
+      "fileEntry": {
+        "error": "",
+        "text": "ABC abc",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Arial-hex",
+      "font": "Arial",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Arial;}}\\f1 \\'41\\'42\\'43 \\'61\\'62\\'63}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgQXJpYWw7fX1cZjEgXCc0MVwnNDJcJzQzIFwnNjFcJzYyXCc2M30=",
+      "sha256": "0dcfad26c9508b1406c49bb2ebf947b95b3fa2466f430050683137db4cdcd2e3",
+      "readerText": "ABC abc",
+      "cocoaText": "ΑΒΧ αβχ",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\"></span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "",
+      "fileEntry": {
+        "error": "",
+        "text": "ABC abc",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Arial-unicode",
+      "font": "Arial",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Arial;}}\\f1 \\u913?\\u914?\\u935? \\u945?\\u946?\\u967?}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgQXJpYWw7fX1cZjEgXHU5MTM/XHU5MTQ/XHU5MzU/IFx1OTQ1P1x1OTQ2P1x1OTY3P30=",
+      "sha256": "4ed8537cdde28558c351c463a6019edf83ce3485a5692534f935f59ce73485ea",
+      "readerText": "ΑΒΧ αβχ",
+      "cocoaText": "ΑΒΧ αβχ",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\">ΑΒΧαβχ</span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "ΑΒΧαβχ",
+      "fileEntry": {
+        "error": "",
+        "text": "ΑΒΧ αβχ",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Arial-switch",
+      "font": "Arial",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Arial;}}\\f1 \\f0 START {\\f1 ABC abc} END}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgQXJpYWw7fX1cZjEgXGYwIFNUQVJUIHtcZjEgQUJDIGFiY30gRU5EfQ==",
+      "sha256": "06a36270ae49a170f3737172deefda8ce30bd51a6641455a82ebcb1faa110c3f",
+      "readerText": "START ABC abc END",
+      "cocoaText": "START ΑΒΧ αβχ END",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\">START  END</span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "START  END",
+      "fileEntry": {
+        "error": "",
+        "text": "START ABC abc END",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Arial-high",
+      "font": "Arial",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Arial;}}\\f1 \\'a3\\'a5\\'b1\\'b4\\'b6}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgQXJpYWw7fX1cZjEgXCdhM1wnYTVcJ2IxXCdiNFwnYjZ9",
+      "sha256": "8fbb5a12df4fe10c0592f0b8ffda2fa9c70bc68d0ac410e4a682efc34f205740",
+      "readerError": "RTF 暂不支持代码页 42 的正文解码",
+      "cocoaText": "≤∞±×∂",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\"></span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "",
+      "fileEntry": {
+        "error": "RTF 解析失败：RTF 暂不支持代码页 42 的正文解码",
+        "text": "",
+        "hasContent": false
+      }
+    },
+    {
+      "name": "Wingdings-ascii",
+      "font": "Wingdings",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Wingdings;}}\\f1 ABC abc}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgV2luZ2RpbmdzO319XGYxIEFCQyBhYmN9",
+      "sha256": "c28026e5b3feeb431fa811561282c2f4e94449babed38926161d9eac951e0103",
+      "readerText": "ABC abc",
+      "cocoaText": "ΑΒΧ αβχ",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\"></span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "",
+      "fileEntry": {
+        "error": "",
+        "text": "ABC abc",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Wingdings-hex",
+      "font": "Wingdings",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Wingdings;}}\\f1 \\'41\\'42\\'43 \\'61\\'62\\'63}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgV2luZ2RpbmdzO319XGYxIFwnNDFcJzQyXCc0MyBcJzYxXCc2MlwnNjN9",
+      "sha256": "4d8ac157d7fee29bd36f2d32142547ad5bcb5918339d8c123a284c40bf818260",
+      "readerText": "ABC abc",
+      "cocoaText": "ΑΒΧ αβχ",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\"></span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "",
+      "fileEntry": {
+        "error": "",
+        "text": "ABC abc",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Wingdings-unicode",
+      "font": "Wingdings",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Wingdings;}}\\f1 \\u913?\\u914?\\u935? \\u945?\\u946?\\u967?}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgV2luZ2RpbmdzO319XGYxIFx1OTEzP1x1OTE0P1x1OTM1PyBcdTk0NT9cdTk0Nj9cdTk2Nz99",
+      "sha256": "bf9069e46cb174292f9f615dce7ceb115188a529236df1867016352f70ede5f5",
+      "readerText": "ΑΒΧ αβχ",
+      "cocoaText": "ΑΒΧ αβχ",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\">ΑΒΧαβχ</span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "ΑΒΧαβχ",
+      "fileEntry": {
+        "error": "",
+        "text": "ΑΒΧ αβχ",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Wingdings-switch",
+      "font": "Wingdings",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Wingdings;}}\\f1 \\f0 START {\\f1 ABC abc} END}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgV2luZ2RpbmdzO319XGYxIFxmMCBTVEFSVCB7XGYxIEFCQyBhYmN9IEVORH0=",
+      "sha256": "c8b4310a2c8dfa14feb3f5bb0f4133a4956fda600721dd3dc9f2bd125e441334",
+      "readerText": "START ABC abc END",
+      "cocoaText": "START ΑΒΧ αβχ END",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1 .T2  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\">START </span><span class=\"text-T2\"></span><span class=\"text-T1\"> END</span></p>\n</body>\n\n</html>\n",
+      "writerVisible": "START  END",
+      "fileEntry": {
+        "error": "",
+        "text": "START ABC abc END",
+        "hasContent": true
+      }
+    },
+    {
+      "name": "Wingdings-high",
+      "font": "Wingdings",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}{\\f1\\fcharset2 Wingdings;}}\\f1 \\'a3\\'a5\\'b1\\'b4\\'b6}",
+      "sourceBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjB7XGZvbnR0Ymx7XGYwXGZjaGFyc2V0MCBBcmlhbDt9e1xmMVxmY2hhcnNldDIgV2luZ2RpbmdzO319XGYxIFwnYTNcJ2E1XCdiMVwnYjRcJ2I2fQ==",
+      "sha256": "6ce07a8d8dd6bab5906588e92757763395d15ac5b69e2c611866c2e6b847ac18",
+      "readerError": "RTF 暂不支持代码页 42 的正文解码",
+      "cocoaText": "≤∞±×∂",
+      "writerHtml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN\" \"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->\n\n<head profile=\"http://dublincore.org/documents/dcmi-terms/\">\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\"/>\n<title xml:lang=\"en-US\">- no title specified</title>\n<meta name=\"DCTERMS.title\" content=\"\" xml:lang=\"en-US\"/>\n\n<meta name=\"DCTERMS.language\" content=\"en-US\" scheme=\"DCTERMS.RFC4646\"/>\n<meta name=\"DCTERMS.source\" content=\"http://xml.openoffice.org/odf2xhtml\"/>\n\n\n\n\n\n\n<meta name=\"xsl:vendor\" content=\"libxslt\"/>\n<link rel=\"schema.DC\" href=\"http://purl.org/dc/elements/1.1/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTERMS\" href=\"http://purl.org/dc/terms/\" hreflang=\"en\"/>\n<link rel=\"schema.DCTYPE\" href=\"http://purl.org/dc/dcmitype/\" hreflang=\"en\"/>\n<link rel=\"schema.DCAM\" href=\"http://purl.org/dc/dcam/\" hreflang=\"en\"/>\n\n<style>\n    table { border-collapse:collapse; border-spacing:0; empty-cells:show }\n    td, th { vertical-align:top; font-size:12pt;}\n    h1, h2, h3, h4, h5, h6 { clear:both;}\n    ol, ul { margin:0; padding:0;}\n    li { list-style: none; margin:0; padding:0;}\n    span.footnodeNumber { padding-right:1em; }\n    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }\n    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}\n    .paragraph-Standard{ font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}\n    /* ODF styles with no properties representable as CSS:\n    .dp1 .T1  { } */\n</style>\n</head>\n\n<body dir=\"ltr\" style=\"max-width:21.59cm;margin-top:2.54cm; margin-bottom:2.54cm; margin-left:2.54cm; margin-right:2.54cm; \">\n\n<p class=\"paragraph-Standard\"><span class=\"text-T1\"></span><span class=\"text-T1\"/></p>\n</body>\n\n</html>\n",
+      "writerVisible": "",
+      "fileEntry": {
+        "error": "RTF 解析失败：RTF 暂不支持代码页 42 的正文解码",
+        "text": "",
+        "hasContent": false
+      }
+    }
+  ],
+  "chrome": "152.0.7977.76",
+  "schemaVersion": 1,
+  "testedAt": "2026-09-08T05:44:36.253Z",
+  "status": "reproduced-symbol-font-content-gap",
+  "summary": {
+    "originals": 15,
+    "actualHostOpens": 15,
+    "certifiedSymbolCases": 5,
+    "silentLatinSubstitutions": 3,
+    "unsupportedHighByte": 1,
+    "unicodeControlPass": 1,
+    "otherFontCasesAwaitingFontSpecificOracle": 10
+  },
+  "audit": [
+    "Only the named Symbol font is currently certified against Adobe mapping and Cocoa. Cocoa maps all three charset2 font names identically; this is not evidence that Wingdings or Arial should use Symbol glyphs.",
+    "Writer XHTML preserves F000-offset private-use code points, including space. Raw innerText is not a Unicode text or visual glyph oracle; no pixel match claimed.",
+    "No product patch made yet. Font name parsing, font-specific mappings, explicit codepage override, fallback/escape runs and lifecycle require investigation."
+  ],
+  "references": [
+    "https://www.unicode.org/Public/MAPPINGS/VENDORS/ADOBE/symbol.txt"
+  ]
+}

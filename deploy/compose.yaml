@@ -1,0 +1,32 @@
+services:
+  app:
+    build:
+      context: ..
+    restart: unless-stopped
+    environment:
+      HTML_READER_PUBLIC_URL: https://${HTML_READER_DOMAIN}
+      HTML_READER_STORE: /data
+      HTML_READER_TRUST_PROXY: "1"
+      PORT: "8787"
+    volumes:
+      - html_reader_data:/data
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - app
+    environment:
+      HTML_READER_DOMAIN: ${HTML_READER_DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  html_reader_data:
+  caddy_data:
+  caddy_config:

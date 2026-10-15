@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "testedAt": "2026-09-04T21:14:17.168Z",
+  "release": "1.4.98",
+  "scope": "SMIL animation playback, pause, source replacement and controlled fallback recovery; not full visual fidelity",
+  "originalsRedistributed": false,
+  "source": "User-supplied local SVG files; distribution license unverified; CI uses independent minimal fixtures",
+  "wechat": {
+    "testedAt": "2026-09-04T21:14:17.168Z",
+    "scope": "Actual WX file read and visible Canvas temporal pixels; simulator only, not physical devices",
+    "system": {
+      "SDKVersion": "3.16.2",
+      "platform": "devtools",
+      "version": "8.0.5"
+    },
+    "results": [
+      {
+        "name": "partridge-bicycle.svg",
+        "bytes": 17410,
+        "sha256": "35842356271fc01cc1e21396fe57ec17956afe212081ba0d0712ccb3a1e771f0",
+        "state": {
+          "name": "partridge-bicycle.svg",
+          "ready": true,
+          "loading": false,
+          "error": "",
+          "notice": ""
+        },
+        "frames": [
+          {
+            "hash": 3366251625,
+            "ink": 1215376,
+            "timeMs": 83.29999999999927,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1040
+          },
+          {
+            "hash": 2850665701,
+            "ink": 1215376,
+            "timeMs": 1316.5999999999985,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1040
+          },
+          {
+            "hash": 2157318385,
+            "ink": 1215453,
+            "timeMs": 2599.9000000000015,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1040
+          }
+        ],
+        "paused": [
+          {
+            "hash": 1348844651,
+            "ink": 1215453,
+            "timeMs": 3849.9000000000015,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1040
+          },
+          {
+            "hash": 1348844651,
+            "ink": 1215453,
+            "timeMs": 3849.9000000000015,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1040
+          }
+        ],
+        "replaced": {
+          "hash": 3997225254,
+          "ink": 1215453,
+          "timeMs": 383.2999999999993,
+          "playing": true,
+          "paused": false,
+          "width": 1170,
+          "height": 1040
+        }
+      },
+      {
+        "name": "peacock.svg",
+        "bytes": 354942,
+        "sha256": "bd8e994e06d9bb19544915fe376465d96ad9bbb5d649c26cca53799e26768c8d",
+        "state": {
+          "name": "peacock.svg",
+          "ready": true,
+          "loading": false,
+          "error": "",
+          "notice": ""
+        },
+        "frames": [
+          {
+            "hash": 1310197287,
+            "ink": 1230550,
+            "timeMs": 83.29999999999927,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1053
+          },
+          {
+            "hash": 397871650,
+            "ink": 1230550,
+            "timeMs": 1333.4000000000015,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1053
+          },
+          {
+            "hash": 3239714076,
+            "ink": 1230630,
+            "timeMs": 2583.2999999999993,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1053
+          }
+        ],
+        "paused": [
+          {
+            "hash": 292699875,
+            "ink": 1230630,
+            "timeMs": 3833.2000000000007,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1053
+          },
+          {
+            "hash": 292699875,
+            "ink": 1230630,
+            "timeMs": 3833.2000000000007,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1053
+          }
+        ],
+        "replaced": {
+          "hash": 3879625269,
+          "ink": 1230630,
+          "timeMs": 366.6999999999971,
+          "playing": true,
+          "paused": false,
+          "width": 1170,
+          "height": 1053
+        }
+      },
+      {
+        "name": "qin-shi-huang-bicycle.svg",
+        "bytes": 35291,
+        "sha256": "15c86af1181af6c7b46209d7b271c028fba2aa225a1b8436da976d0245494c25",
+        "state": {
+          "name": "qin-shi-huang-bicycle.svg",
+          "ready": true,
+          "loading": false,
+          "error": "",
+          "notice": ""
+        },
+        "frames": [
+          {
+            "hash": 3044337281,
+            "ink": 1245796,
+            "timeMs": 100.10000000000582,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1066
+          },
+          {
+            "hash": 2067895317,
+            "ink": 1245796,
+            "timeMs": 1367.6000000000058,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1066
+          },
+          {
+            "hash": 2018223043,
+            "ink": 1245873,
+            "timeMs": 2650.9000000000015,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1066
+          }
+        ],
+        "paused": [
+          {
+            "hash": 1413252288,
+            "ink": 1245873,
+            "timeMs": 3934.2000000000044,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1066
+          },
+          {
+            "hash": 1413252288,
+            "ink": 1245873,
+            "timeMs": 3934.2000000000044,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1066
+          }
+        ],
+        "replaced": {
+          "hash": 222161423,
+          "ink": 1245873,
+          "timeMs": 383.3999999999942,
+          "playing": true,
+          "paused": false,
+          "width": 1170,
+          "height": 1066
+        }
+      }
+    ],
+    "controlledFallback": {
+      "sourceEmpty": true,
+      "notice": "动画暂时无法播放，当前显示静态预览。",
+      "canRetry": true
+    },
+    "recovered": {
+      "ready": true,
+      "notice": ""
+    }
+  },
+  "chrome": {
+    "version": "Google Chrome 152.0.7977.76",
+    "samples": [
+      {
+        "name": "partridge-bicycle.svg",
+        "sha256": "35842356271fc01cc1e21396fe57ec17956afe212081ba0d0712ccb3a1e771f0",
+        "bytes": 17410,
+        "tracks": 8,
+        "readerHashes": [
+          636481704,
+          450306652,
+          318678919
+        ],
+        "nativeTransformsChange": true
+      },
+      {
+        "name": "peacock.svg",
+        "sha256": "bd8e994e06d9bb19544915fe376465d96ad9bbb5d649c26cca53799e26768c8d",
+        "bytes": 354942,
+        "tracks": 70,
+        "readerHashes": [
+          2973046677,
+          3113440932,
+          869846921
+        ],
+        "nativeTransformsChange": true
+      },
+      {
+        "name": "qin-shi-huang-bicycle.svg",
+        "sha256": "15c86af1181af6c7b46209d7b271c028fba2aa225a1b8436da976d0245494c25",
+        "bytes": 35291,
+        "tracks": 17,
+        "readerHashes": [
+          1708206058,
+          393390597,
+          2686207306
+        ],
+        "nativeTransformsChange": true
+      }
+    ]
+  },
+  "baseline": {
+    "firstOpen": "All three originals already animated in baseline DevTools; user phone first-open static not reproduced here",
+    "confirmedBug": "After pausing, replacing source left _playing=false while playing property=true",
+    "physicalDevices": {
+      "ios": "pending",
+      "android": "pending"
+    }
+  }
+}

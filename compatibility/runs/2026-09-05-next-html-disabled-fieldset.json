@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "id": "next-html-disabled-fieldset",
+  "status": "reproduced-unfixed",
+  "format": "HTML forms",
+  "oracle": "Google Chrome 152.0.7977.76",
+  "specification": "https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element",
+  "staticCases": 8,
+  "staticFailures": 4,
+  "dynamicStates": 6,
+  "dynamicFailures": 2,
+  "rootCause": "Effective disabled state is reduced to the control own disabled attribute, ignoring ancestor fieldsets and their first legend exceptions.",
+  "impact": [
+    "disabled checkbox click changes content",
+    "FormData includes disabled controls",
+    "disabled/enabled CSS selectors disagree with native",
+    "rendered WeChat host control lacks disabled attribute"
+  ],
+  "results": [
+    {
+      "name": "direct",
+      "source": "<!doctype html><form id=\"form\"><input id=\"target\" disabled name=\"answer\" value=\"yes\" type=\"checkbox\" checked></form><output id=\"out\"></output><script>const target=document.getElementById('target'), form=document.getElementById('form'); let clicks=0;target.addEventListener('click',()=>clicks++);const before={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled'),pairs:Array.from(new FormData(form))};target.click();document.getElementById('out').textContent=JSON.stringify({before,after:{checked:target.checked,clicks,pairs:Array.from(new FormData(form))}});</script>",
+      "native": {
+        "before": {
+          "disabledProperty": true,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "pairs": []
+        },
+        "after": {
+          "checked": true,
+          "clicks": 0,
+          "pairs": []
+        }
+      },
+      "reader": {
+        "before": {
+          "disabledProperty": true,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "pairs": []
+        },
+        "after": {
+          "checked": true,
+          "clicks": 0,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true,
+      "readerHost": {
+        "name": "checkbox",
+        "disabledAttributePresent": true
+      },
+      "sourceSha256": "ecb7d52ed8eee84d686a805b58cd2967c09ae298d7b5756ddb940d4e1839b632"
+    },
+    {
+      "name": "fieldset",
+      "source": "<!doctype html><form id=\"form\"><fieldset disabled><input id=\"target\" name=\"answer\" value=\"yes\" type=\"checkbox\" checked></fieldset></form><output id=\"out\"></output><script>const target=document.getElementById('target'), form=document.getElementById('form'); let clicks=0;target.addEventListener('click',()=>clicks++);const before={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled'),pairs:Array.from(new FormData(form))};target.click();document.getElementById('out').textContent=JSON.stringify({before,after:{checked:target.checked,clicks,pairs:Array.from(new FormData(form))}});</script>",
+      "native": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "pairs": []
+        },
+        "after": {
+          "checked": true,
+          "clicks": 0,
+          "pairs": []
+        }
+      },
+      "reader": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": false,
+      "readerHost": {
+        "name": "checkbox",
+        "disabledAttributePresent": false
+      },
+      "sourceSha256": "db7f1155c33099e82b87c4d272ff4b7e7ca24507609e1aa72ac81b17d21fe261"
+    },
+    {
+      "name": "first-legend",
+      "source": "<!doctype html><form id=\"form\"><fieldset disabled><legend><input id=\"target\" name=\"answer\" value=\"yes\" type=\"checkbox\" checked></legend></fieldset></form><output id=\"out\"></output><script>const target=document.getElementById('target'), form=document.getElementById('form'); let clicks=0;target.addEventListener('click',()=>clicks++);const before={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled'),pairs:Array.from(new FormData(form))};target.click();document.getElementById('out').textContent=JSON.stringify({before,after:{checked:target.checked,clicks,pairs:Array.from(new FormData(form))}});</script>",
+      "native": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "reader": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true,
+      "readerHost": {
+        "name": "checkbox",
+        "disabledAttributePresent": false
+      },
+      "sourceSha256": "cc29768731dcfd5e7b816e765a3bfcaf6aab5f40dc693bd6960aef76a9354a1f"
+    },
+    {
+      "name": "second-legend",
+      "source": "<!doctype html><form id=\"form\"><fieldset disabled><legend>first</legend><legend><input id=\"target\" name=\"answer\" value=\"yes\" type=\"checkbox\" checked></legend></fieldset></form><output id=\"out\"></output><script>const target=document.getElementById('target'), form=document.getElementById('form'); let clicks=0;target.addEventListener('click',()=>clicks++);const before={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled'),pairs:Array.from(new FormData(form))};target.click();document.getElementById('out').textContent=JSON.stringify({before,after:{checked:target.checked,clicks,pairs:Array.from(new FormData(form))}});</script>",
+      "native": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "pairs": []
+        },
+        "after": {
+          "checked": true,
+          "clicks": 0,
+          "pairs": []
+        }
+      },
+      "reader": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": false,
+      "readerHost": {
+        "name": "checkbox",
+        "disabledAttributePresent": false
+      },
+      "sourceSha256": "b3feed8a80824922b5815df56a4b996d875b25c0a25728a739477134d56c5b57"
+    },
+    {
+      "name": "nested-disabled",
+      "source": "<!doctype html><form id=\"form\"><fieldset disabled><legend><fieldset disabled><input id=\"target\" name=\"answer\" value=\"yes\" type=\"checkbox\" checked></fieldset></legend></fieldset></form><output id=\"out\"></output><script>const target=document.getElementById('target'), form=document.getElementById('form'); let clicks=0;target.addEventListener('click',()=>clicks++);const before={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled'),pairs:Array.from(new FormData(form))};target.click();document.getElementById('out').textContent=JSON.stringify({before,after:{checked:target.checked,clicks,pairs:Array.from(new FormData(form))}});</script>",
+      "native": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "pairs": []
+        },
+        "after": {
+          "checked": true,
+          "clicks": 0,
+          "pairs": []
+        }
+      },
+      "reader": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": false,
+      "readerHost": {
+        "name": "checkbox",
+        "disabledAttributePresent": false
+      },
+      "sourceSha256": "5aebf149ba8c2bc0246ef6b9d0fb190de2df4de9801b6909bc5c0e6fb12a45cd"
+    },
+    {
+      "name": "outer-disabled",
+      "source": "<!doctype html><form id=\"form\"><fieldset disabled><fieldset><legend><input id=\"target\" name=\"answer\" value=\"yes\" type=\"checkbox\" checked></legend></fieldset></fieldset></form><output id=\"out\"></output><script>const target=document.getElementById('target'), form=document.getElementById('form'); let clicks=0;target.addEventListener('click',()=>clicks++);const before={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled'),pairs:Array.from(new FormData(form))};target.click();document.getElementById('out').textContent=JSON.stringify({before,after:{checked:target.checked,clicks,pairs:Array.from(new FormData(form))}});</script>",
+      "native": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "pairs": []
+        },
+        "after": {
+          "checked": true,
+          "clicks": 0,
+          "pairs": []
+        }
+      },
+      "reader": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": false,
+      "readerHost": {
+        "name": "checkbox",
+        "disabledAttributePresent": false
+      },
+      "sourceSha256": "4f2e30e30f542b70ef5a67f7f5103d6760f7e83d4103599d10e374b389f0a2fa"
+    },
+    {
+      "name": "fieldset-enabled",
+      "source": "<!doctype html><form id=\"form\"><fieldset><input id=\"target\" name=\"answer\" value=\"yes\" type=\"checkbox\" checked></fieldset></form><output id=\"out\"></output><script>const target=document.getElementById('target'), form=document.getElementById('form'); let clicks=0;target.addEventListener('click',()=>clicks++);const before={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled'),pairs:Array.from(new FormData(form))};target.click();document.getElementById('out').textContent=JSON.stringify({before,after:{checked:target.checked,clicks,pairs:Array.from(new FormData(form))}});</script>",
+      "native": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "reader": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true,
+      "readerHost": {
+        "name": "checkbox",
+        "disabledAttributePresent": false
+      },
+      "sourceSha256": "664381ca6de9931efa9455cbb8f551595d5d2f97e30bca30a542cc77016eec02"
+    },
+    {
+      "name": "unrelated-disabled",
+      "source": "<!doctype html><form id=\"form\"><div disabled><input id=\"target\" name=\"answer\" value=\"yes\" type=\"checkbox\" checked></div></form><output id=\"out\"></output><script>const target=document.getElementById('target'), form=document.getElementById('form'); let clicks=0;target.addEventListener('click',()=>clicks++);const before={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled'),pairs:Array.from(new FormData(form))};target.click();document.getElementById('out').textContent=JSON.stringify({before,after:{checked:target.checked,clicks,pairs:Array.from(new FormData(form))}});</script>",
+      "native": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "reader": {
+        "before": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "after": {
+          "checked": false,
+          "clicks": 1,
+          "pairs": []
+        }
+      },
+      "errors": [],
+      "exact": true,
+      "readerHost": {
+        "name": "checkbox",
+        "disabledAttributePresent": false
+      },
+      "sourceSha256": "cfa6c3d35c43c1a61a6e5f304af3ee3adcfd19858c7fb61af789780a8be66a1a"
+    }
+  ],
+  "dynamic": {
+    "source": "<!doctype html><form id=\"form\"><fieldset id=\"fs\"><legend id=\"first\">First</legend><legend id=\"second\">Second</legend><input id=\"target\" name=\"answer\" value=\"yes\"></fieldset></form><output id=\"out\"></output><script>const target=document.getElementById('target'), fs=document.getElementById('fs'), first=document.getElementById('first'), second=document.getElementById('second');const states=[];function snapshot(name){states.push({name,disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),pairs:Array.from(new FormData(document.getElementById('form')))});}snapshot('enabled');fs.disabled=true;snapshot('disabled');first.appendChild(target);snapshot('first-legend');second.appendChild(target);snapshot('second-legend');fs.insertBefore(second,first);snapshot('reorder-legends');fs.disabled=false;snapshot('enabled-again');document.getElementById('out').textContent=JSON.stringify(states);</script>",
+    "results": [
+      {
+        "name": "enabled",
+        "native": {
+          "name": "enabled",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "reader": {
+          "name": "enabled",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "exact": true
+      },
+      {
+        "name": "disabled",
+        "native": {
+          "name": "disabled",
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "pairs": []
+        },
+        "reader": {
+          "name": "disabled",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "exact": false
+      },
+      {
+        "name": "first-legend",
+        "native": {
+          "name": "first-legend",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "reader": {
+          "name": "first-legend",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "exact": true
+      },
+      {
+        "name": "second-legend",
+        "native": {
+          "name": "second-legend",
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "pairs": []
+        },
+        "reader": {
+          "name": "second-legend",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "exact": false
+      },
+      {
+        "name": "reorder-legends",
+        "native": {
+          "name": "reorder-legends",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "reader": {
+          "name": "reorder-legends",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "exact": true
+      },
+      {
+        "name": "enabled-again",
+        "native": {
+          "name": "enabled-again",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "reader": {
+          "name": "enabled-again",
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "pairs": [
+            [
+              "answer",
+              "yes"
+            ]
+          ]
+        },
+        "exact": true
+      }
+    ]
+  },
+  "scope": "Native Chrome script click and FormData compared with actual reader runtime; actual DOM render output inspected. No WeChat DevTools or physical-device execution.",
+  "next": "Model effective disabled state with explicit per-operation rules. Preserve reflected .disabled property; handle ancestor/legend changes, form entry filtering, script click behavior, CSS matching and native-control render attrs. Keep unrelated FormData and generic IDL limitations separate.",
+  "typeProbe": {
+    "results": [
+      {
+        "name": "input",
+        "source": "<!doctype html><form><fieldset disabled><input id=\"target\" name=\"x\" value=\"yes\"></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "clicks": 0
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "clicks": 1
+        },
+        "exact": false
+      },
+      {
+        "name": "button",
+        "source": "<!doctype html><form><fieldset disabled><button id=\"target\" type=\"button\">yes</button></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "clicks": 0
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "clicks": 1
+        },
+        "exact": false
+      },
+      {
+        "name": "select",
+        "source": "<!doctype html><form><fieldset disabled><select id=\"target\" name=\"x\"><option>yes</option></select></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "clicks": 0
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "clicks": 1
+        },
+        "exact": false
+      },
+      {
+        "name": "textarea",
+        "source": "<!doctype html><form><fieldset disabled><textarea id=\"target\" name=\"x\">yes</textarea></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "clicks": 0
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "clicks": 1
+        },
+        "exact": false
+      },
+      {
+        "name": "fieldset",
+        "source": "<!doctype html><form><fieldset disabled><fieldset id=\"target\"></fieldset></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "clicks": 1
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "clicks": 1
+        },
+        "exact": false
+      },
+      {
+        "name": "option",
+        "source": "<!doctype html><form><fieldset disabled><select><option id=\"target\">yes</option></select></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "clicks": 1
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "clicks": 1
+        },
+        "exact": false
+      },
+      {
+        "name": "optgroup",
+        "source": "<!doctype html><form><fieldset disabled><select><optgroup id=\"target\"><option>yes</option></optgroup></select></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "clicks": 1
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "clicks": 1
+        },
+        "exact": false
+      },
+      {
+        "name": "output",
+        "source": "<!doctype html><form><fieldset disabled><output id=\"target\" name=\"x\">yes</output></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledSelector": false,
+          "enabledSelector": false,
+          "clicks": 1
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": false,
+          "clicks": 1
+        },
+        "exact": false
+      },
+      {
+        "name": "span",
+        "source": "<!doctype html><form><fieldset disabled><span id=\"target\">yes</span></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledSelector": false,
+          "enabledSelector": false,
+          "clicks": 1
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": false,
+          "clicks": 1
+        },
+        "exact": false
+      },
+      {
+        "name": "option-disabled-group",
+        "source": "<!doctype html><form><fieldset disabled><select><optgroup disabled><option id=\"target\">yes</option></optgroup></select></fieldset></form><pre id=\"out\"></pre><script>const target=document.getElementById('target');let clicks=0;target.addEventListener('click',()=>clicks++);const state={disabledProperty:target.disabled,disabledSelector:target.matches(':disabled'),enabledSelector:target.matches(':enabled')};target.click();state.clicks=clicks;document.getElementById('out').textContent=JSON.stringify(state);</script>",
+        "native": {
+          "disabledProperty": false,
+          "disabledSelector": true,
+          "enabledSelector": false,
+          "clicks": 0
+        },
+        "reader": {
+          "disabledProperty": false,
+          "disabledSelector": false,
+          "enabledSelector": true,
+          "clicks": 1
+        },
+        "exact": false
+      }
+    ],
+    "interpretation": "8 element-type semantic differences; 2 output/span differences only expose existing generic disabled IDL property and are not counted as fieldset failures. Chrome fieldset/option/optgroup selectors and synthetic click suppression have distinct rules. Do not blindly reuse one broad selector predicate as a click guard."
+  }
+}

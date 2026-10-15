@@ -1,0 +1,2098 @@
+{
+  "at": "2026-09-08T02:31:17.393Z",
+  "id": "markdown-quote-tab-columns",
+  "oracle": "markdown-it15.0.1 commonmark preset",
+  "generator": "original prefix/indentation/tail cross product",
+  "rows": [
+    {
+      "name": "quote-1",
+      "source": ">\talpha\tbeta\n",
+      "sha256": "e0a6d8f67cc05ef8fc7512f1ff34d26102c4eaddeafb4e8b974371548a9f6b59",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [],
+      "host": [],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-2",
+      "source": ">\talpha\tbeta\n>\n> after\n",
+      "sha256": "8ecfcc2da09dbd4c645c9a512a662ceaa203c76b58e9141f9e6a2d412d3f79c0",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<p>alpha\tbeta</p>\n<p>after</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [],
+      "host": [],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-3",
+      "source": ">\t\talpha\tbeta\n",
+      "sha256": "94d3caf098bc017683738bbd116bcb14daf62fc0b9c34c1f0f528a2d11d9c1fe",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-4",
+      "source": ">\t\talpha\tbeta\n>\n> after\n",
+      "sha256": "f764e6b24f26229ec543f6d51d1e41cc4314e17c32d78bfbf3bf8514da10b89b",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-5",
+      "source": "> \talpha\tbeta\n",
+      "sha256": "c566900ad944cb6d4394947a04644f809438b94d97422a6f801a72f859a05c94",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-6",
+      "source": "> \talpha\tbeta\n>\n> after\n",
+      "sha256": "d52f6682623d11ffa3c82b8171490378a2e6f4c401fc5c2746a275869ad2e3a2",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-7",
+      "source": ">  \talpha\tbeta\n",
+      "sha256": "6a844a9a421a5ab9084cbdc4749defe0e59c7b83bc57817f81708dc4c8ec5efa",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-8",
+      "source": ">  \talpha\tbeta\n>\n> after\n",
+      "sha256": "fa59b6ab772c8ff75eedf14b7c49b45d0c1699e52c3d52a90467c3a96e2644a9",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-9",
+      "source": ">   \talpha\tbeta\n",
+      "sha256": "b82aeaa842094db3201955b560c8b26dec901c24cd0aae3986a270a2bf712601",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-10",
+      "source": ">   \talpha\tbeta\n>\n> after\n",
+      "sha256": "61ec3c511c4f3a2c1aa1b195b86449105df76e135702caf02519018cb355650f",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-11",
+      "source": ">    \talpha\tbeta\n",
+      "sha256": "c47f51c08d9abec3211c0d6e32b5cd3b2b3c1e23787c5df0fdb00d84fe45c8c8",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-12",
+      "source": ">    \talpha\tbeta\n>\n> after\n",
+      "sha256": "ba618928655beb042d42d9387c65a4eaf663c2732ca9c9646694e50dfbc376ac",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-13",
+      "source": "> \t\talpha\tbeta\n",
+      "sha256": "2d20a4380c2c62a697d8b0cd1a179454bf4067de8f74796e6fce01371d446ad9",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-14",
+      "source": "> \t\talpha\tbeta\n>\n> after\n",
+      "sha256": "0e2da380d8ff84f9bc9181c107a16c8dfac99b5b605cb1110f292bd5b3d42e8e",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-15",
+      "source": ">    alpha\tbeta\n",
+      "sha256": "b4c402ccf4442ba22a503059008503879f669e1f963f3ac5116f3a266c034e31",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<p>   alpha\tbeta</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [],
+      "host": [],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-16",
+      "source": ">    alpha\tbeta\n>\n> after\n",
+      "sha256": "7c5df0e8f75d3c06e8d55450b80f8f2dd79f0a7a7b1249ef8b1d3bf5f149707b",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<p>   alpha\tbeta</p>\n<p>after</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [],
+      "host": [],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-17",
+      "source": "> \talpha\tbeta\n",
+      "sha256": "c566900ad944cb6d4394947a04644f809438b94d97422a6f801a72f859a05c94",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-18",
+      "source": "> \talpha\tbeta\n>\n> after\n",
+      "sha256": "d52f6682623d11ffa3c82b8171490378a2e6f4c401fc5c2746a275869ad2e3a2",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-19",
+      "source": "> \t\talpha\tbeta\n",
+      "sha256": "2d20a4380c2c62a697d8b0cd1a179454bf4067de8f74796e6fce01371d446ad9",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-20",
+      "source": "> \t\talpha\tbeta\n>\n> after\n",
+      "sha256": "0e2da380d8ff84f9bc9181c107a16c8dfac99b5b605cb1110f292bd5b3d42e8e",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-21",
+      "source": ">  \talpha\tbeta\n",
+      "sha256": "6a844a9a421a5ab9084cbdc4749defe0e59c7b83bc57817f81708dc4c8ec5efa",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-22",
+      "source": ">  \talpha\tbeta\n>\n> after\n",
+      "sha256": "fa59b6ab772c8ff75eedf14b7c49b45d0c1699e52c3d52a90467c3a96e2644a9",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-23",
+      "source": ">   \talpha\tbeta\n",
+      "sha256": "b82aeaa842094db3201955b560c8b26dec901c24cd0aae3986a270a2bf712601",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-24",
+      "source": ">   \talpha\tbeta\n>\n> after\n",
+      "sha256": "61ec3c511c4f3a2c1aa1b195b86449105df76e135702caf02519018cb355650f",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-25",
+      "source": ">    \talpha\tbeta\n",
+      "sha256": "c47f51c08d9abec3211c0d6e32b5cd3b2b3c1e23787c5df0fdb00d84fe45c8c8",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-26",
+      "source": ">    \talpha\tbeta\n>\n> after\n",
+      "sha256": "ba618928655beb042d42d9387c65a4eaf663c2732ca9c9646694e50dfbc376ac",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-27",
+      "source": ">     \talpha\tbeta\n",
+      "sha256": "0c80008d8c36dac2ad1bfff90245056e180f08635dc2af9c167d9043c1b54ba4",
+      "expectedHtml": "<blockquote>\n<pre><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "\talpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-28",
+      "source": ">     \talpha\tbeta\n>\n> after\n",
+      "sha256": "08c6bb6706348c1e518a75585782c050d383c20fb9cdd79c018d7be917ee8c9c",
+      "expectedHtml": "<blockquote>\n<pre><code>\talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "\talpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-29",
+      "source": ">  \t\talpha\tbeta\n",
+      "sha256": "58de0e55857e4fbd2437419669dca1346e1243240c1e99de2c863d504a25ef49",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-30",
+      "source": ">  \t\talpha\tbeta\n>\n> after\n",
+      "sha256": "c32f661009b49fc71c535c73bea635dc762c6032bf0bd74f21c599f26231c35b",
+      "expectedHtml": "<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-31",
+      "source": ">     alpha\tbeta\n",
+      "sha256": "9def70999190954513248bb14702ef47c06662f4a6f9e55d2b725ca4db021297",
+      "expectedHtml": "<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-32",
+      "source": ">     alpha\tbeta\n>\n> after\n",
+      "sha256": "d07bca0e7e341fd54b7add10129e5e5f88462398849fe447f25b7b970ed6afc3",
+      "expectedHtml": "<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-33",
+      "source": "> >\talpha\tbeta\n",
+      "sha256": "bafec6f9b0f1d49a8095867cf164023e03d8be9620ac701f80cc7673472fda1a",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n</blockquote>\n",
+      "expected": [],
+      "actual": [],
+      "host": [],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-34",
+      "source": "> >\talpha\tbeta\n>\n> after\n",
+      "sha256": "a15c812b007e302c731dd5826507ac69414dbf579ed3b2f6dcf5f6aef4c23d4a",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [],
+      "host": [],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-35",
+      "source": "> >\t\talpha\tbeta\n",
+      "sha256": "50aa12437915ca1036a95e06e1e6ff00c2f9b0a892b5fc26fe7f2b5704585a71",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-36",
+      "source": "> >\t\talpha\tbeta\n>\n> after\n",
+      "sha256": "bd71d51f3edbae622d1f6e16e47168152ac684b41b42d009deb4c05e0fa2d18a",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-37",
+      "source": "> > \talpha\tbeta\n",
+      "sha256": "c1c77b46edea466a711e24dcf0f2b4727ca1957ddfc6facfbd7f786a98fae6d0",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-38",
+      "source": "> > \talpha\tbeta\n>\n> after\n",
+      "sha256": "fa84f61a52025d2b8a0998c5bcd50e456a53e09c2e8ae6c0dcfec93556ed6677",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-39",
+      "source": "> >  \talpha\tbeta\n",
+      "sha256": "c6f9d081928ecab04d07a20bbf21fedf9227ebfbd1f47932c649327205b822a8",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-40",
+      "source": "> >  \talpha\tbeta\n>\n> after\n",
+      "sha256": "f587c96173bfe33ba8e752401d093f5e30c48678d606d4d8a4171edc2b5c78ff",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-41",
+      "source": "> >   \talpha\tbeta\n",
+      "sha256": "4bda111592919b7e258dad568aa3014225474378e2a9b5aa456a18a6d7113ce7",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-42",
+      "source": "> >   \talpha\tbeta\n>\n> after\n",
+      "sha256": "8624285f431b5c9dcd65eb3780754521f6294f09ce1ee5fc61b1b2847adc7e87",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-43",
+      "source": "> >    \talpha\tbeta\n",
+      "sha256": "20bc126b85f21554a7d4e28a90d4b85dd5390de8ed71bfeb10f0a8c9bccdd34b",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-44",
+      "source": "> >    \talpha\tbeta\n>\n> after\n",
+      "sha256": "7ece6380d928e54acd953352fb65f0ccb9c3354cca19b842a213689a9de434f2",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-45",
+      "source": "> > \t\talpha\tbeta\n",
+      "sha256": "4c14eef8a251104a93b4a0c1995644b6c4a7442fad2cb7435116a8bb3b488236",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-46",
+      "source": "> > \t\talpha\tbeta\n>\n> after\n",
+      "sha256": "263d0b2688ff485ceaebec7966e14a18bc44ffc0db0c396bd938acf5a47f0680",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<pre><code>  alpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "  alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-47",
+      "source": "> >    alpha\tbeta\n",
+      "sha256": "e7ad6e5fbd102cdc78df7a2f0bd115e4a4bf628454ea63c52b8dded43abaf54f",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<p>   alpha\tbeta</p>\n</blockquote>\n</blockquote>\n",
+      "expected": [],
+      "actual": [],
+      "host": [],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-48",
+      "source": "> >    alpha\tbeta\n>\n> after\n",
+      "sha256": "5139f9e48e4ded501d59f7022a0623f4c094cb5e3a02fc8df5cf899ce1a14804",
+      "expectedHtml": "<blockquote>\n<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<blockquote>\n<p>   alpha\tbeta</p>\n</blockquote>\n<p>after</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [],
+      "host": [],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-49",
+      "source": " > \talpha\tbeta\n",
+      "sha256": "86549a4601bf15b8598254aa9029f9a93563d6677ef6e40e2c75941e80432415",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-50",
+      "source": " > \talpha\tbeta\n>\n> after\n",
+      "sha256": "2157a9ef5cdf51591e3024f00006e6b136aed4c88c42f529798b056c12093b24",
+      "expectedHtml": "<blockquote>\n<p>alpha\tbeta</p>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-51",
+      "source": " > \t\talpha\tbeta\n",
+      "sha256": "5cc806ec6b2683d01bc5f655f1bfab2e5c3aa9b2f2029c6e31938a9068fcac36",
+      "expectedHtml": "<blockquote>\n<pre><code> alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-52",
+      "source": " > \t\talpha\tbeta\n>\n> after\n",
+      "sha256": "b47a45738a50c48c2265504e6a698304ad2868da87c1d75ce51c6d3c25a5c3a6",
+      "expectedHtml": "<blockquote>\n<pre><code> alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-53",
+      "source": " >  \talpha\tbeta\n",
+      "sha256": "04e74322e112364fb687c7ed3cb5f80803088d29ea5cd97e3b732b768404cd51",
+      "expectedHtml": "<blockquote>\n<pre><code> alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-54",
+      "source": " >  \talpha\tbeta\n>\n> after\n",
+      "sha256": "6c7c475d3c45203ddba7f19a9d68f4e4ea8a5d3f0116283f5efeb73cb813ca7e",
+      "expectedHtml": "<blockquote>\n<pre><code> alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-55",
+      "source": " >   \talpha\tbeta\n",
+      "sha256": "78045c78a127f89f91c1def215b39d2d3bb409cbddcb0826b2439e161f264ad9",
+      "expectedHtml": "<blockquote>\n<pre><code> alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-56",
+      "source": " >   \talpha\tbeta\n>\n> after\n",
+      "sha256": "c9703dadd4605a958dc2307f9a11d6a049c9bb171a9aafacf559fee105f2444c",
+      "expectedHtml": "<blockquote>\n<pre><code> alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-57",
+      "source": " >    \talpha\tbeta\n",
+      "sha256": "7ae7b7c783c5daa3250401744f21f7cb2f3666cd7b242af75e625a779d1063e7",
+      "expectedHtml": "<blockquote>\n<pre><code> alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-58",
+      "source": " >    \talpha\tbeta\n>\n> after\n",
+      "sha256": "3bd160c82aab505d99252ac397847d64937200a18801f690a79cc6fc909d61d7",
+      "expectedHtml": "<blockquote>\n<pre><code> alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-59",
+      "source": " >     \talpha\tbeta\n",
+      "sha256": "dbf24f7541bf57f060557f6204ddef76f62f6a5da15c0b6b9809eeb44b296206",
+      "expectedHtml": "<blockquote>\n<pre><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "\talpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-60",
+      "source": " >     \talpha\tbeta\n>\n> after\n",
+      "sha256": "5734832941fca14ed653c73b706e25fe1e4dde9c907a577cc7879e2888bd81c9",
+      "expectedHtml": "<blockquote>\n<pre><code>\talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "\talpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-61",
+      "source": " >  \t\talpha\tbeta\n",
+      "sha256": "c6403eb0bb20686e0645712812e0e30d96e7fe231d2db2a42cd9a62516a0102d",
+      "expectedHtml": "<blockquote>\n<pre><code> \talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        " \talpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-62",
+      "source": " >  \t\talpha\tbeta\n>\n> after\n",
+      "sha256": "11df886fb400c9348239488c7a7806236b802322be5458b50be9e8a29ed27e18",
+      "expectedHtml": "<blockquote>\n<pre><code> \talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>\talpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        " \talpha\tbeta\n"
+      ],
+      "actual": [
+        "\talpha\tbeta\n"
+      ],
+      "host": [
+        "\talpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": false,
+      "hostExact": false
+    },
+    {
+      "name": "quote-63",
+      "source": " >     alpha\tbeta\n",
+      "sha256": "3404a93793c8ce332721307248bcca7f329e89b4a5ced21cd6701c245fdb3308",
+      "expectedHtml": "<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    },
+    {
+      "name": "quote-64",
+      "source": " >     alpha\tbeta\n>\n> after\n",
+      "sha256": "7cb5959c490276672b06943ec3a04d8b7a8fa8a9ca23af90e387f33e541a990a",
+      "expectedHtml": "<blockquote>\n<pre><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "html": "<blockquote>\n<pre class=\"md-code\"><code>alpha\tbeta\n</code></pre>\n<p>after</p>\n</blockquote>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ],
+      "actual": [
+        "alpha\tbeta\n"
+      ],
+      "host": [
+        "alpha\tbeta\n"
+      ],
+      "error": "",
+      "exact": true,
+      "hostExact": true
+    }
+  ],
+  "metrics": {
+    "cases": 64,
+    "parserWrong": 42,
+    "actualHostWrong": 42
+  },
+  "specCrossCheck": {
+    "attribution": {
+      "work": "CommonMark Specification 0.31.2 examples",
+      "copyright": "Copyright (C) 2014-16 John MacFarlane",
+      "source": "https://spec.commonmark.org/0.31.2/spec.json",
+      "sourceSha256": "d431b29d97b6f73e69d547109cf5081578fac931e72afe95639ebe766c1b2a20",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "upstreamNotice": "https://github.com/commonmark/commonmark-spec/blob/master/LICENSE",
+      "scope": "The specCrossCheck.cases array including original CommonMark example6 and added measurements is distributed under CC BY-SA4.0.",
+      "changes": "Selected original example6 from the retained 62-example attributed source; added current reader measurement. Original markdown/html/example/section retained."
+    },
+    "cases": [
+      {
+        "markdown": ">\t\tfoo\n",
+        "html": "<blockquote>\n<pre><code>  foo\n</code></pre>\n</blockquote>\n",
+        "example": 6,
+        "section": "Tabs",
+        "current": [
+          "foo\n"
+        ],
+        "expected": [
+          "  foo\n"
+        ]
+      }
+    ]
+  },
+  "generatorSource": "'use strict'\nconst fs=require('fs'),crypto=require('crypto'),MarkdownIt=require('markdown-it'),{renderMarkdownDocument}=require('../../../miniprogram/file-reader/markdown/runtime/markdown-document'),{parseHtmlDocument}=require('../../../miniprogram/file-reader/document/html-runtime/html-dom-shim'),{readerPage}=require('../../../tests/helpers/reader-host');\nconst oracle=new MarkdownIt('commonmark'),samples=[];\nfor(const prefix of ['>','> ','> >',' > '])for(const indent of ['\\t','\\t\\t',' \\t','  \\t','   \\t','    \\t',' \\t\\t','    '])for(const tail of ['\\n','\\n>\\n> after\\n'])samples.push({name:`quote-${samples.length+1}`,source:prefix+indent+'alpha\\tbeta'+tail});\nconst code=html=>parseHtmlDocument(html).document.querySelectorAll('pre').map(n=>n.textContent);\n(async()=>{const rows=[];for(const sample of samples){const expectedHtml=oracle.render(sample.source),html=renderMarkdownDocument(sample.source).html,expected=code(expectedHtml),actual=code(html),bytes=Buffer.from(sample.source);const page=readerPage({getFileSystemManager:()=>({readFile:o=>o.success({data:bytes})})});page.openSelectedFile({name:sample.name+'.md',path:'/fixture',size:bytes.length});await new Promise(setImmediate);const host=page._htmlRuntime.document.querySelectorAll('pre').map(n=>n.textContent);rows.push({...sample,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),expectedHtml,html,expected,actual,host,error:page.data.error,exact:JSON.stringify(expected)===JSON.stringify(actual),hostExact:JSON.stringify(expected)===JSON.stringify(host)});page.disposeHtmlRuntime();page.detached()}\nconst report={at:new Date().toISOString(),id:'markdown-quote-tab-columns',oracle:'markdown-it15.0.1 commonmark preset',generator:'original prefix/indentation/tail cross product',rows,metrics:{cases:rows.length,parserWrong:rows.filter(r=>!r.exact).length,actualHostWrong:rows.filter(r=>!r.hostExact).length}};fs.writeFileSync('outputs/sevenzip-links/next-markdown/report.json',JSON.stringify(report,null,2));console.log(report.metrics)})().catch(e=>{console.error(e);process.exitCode=1})\n",
+  "nativeHtml": {
+    "processStatus": "timed-out-after-DOM-result",
+    "kind": "native HTML code-glyph offset and pre structure; not WeChat WXML pixels",
+    "cases": 64,
+    "wrong": 42,
+    "rows": [
+      {
+        "name": "quote-1",
+        "actual": [],
+        "expected": [],
+        "exact": true
+      },
+      {
+        "name": "quote-2",
+        "actual": [],
+        "expected": [],
+        "exact": true
+      },
+      {
+        "name": "quote-3",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-4",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-5",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-6",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-7",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-8",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-9",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-10",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-11",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-12",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-13",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-14",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-15",
+        "actual": [],
+        "expected": [],
+        "exact": true
+      },
+      {
+        "name": "quote-16",
+        "actual": [],
+        "expected": [],
+        "exact": true
+      },
+      {
+        "name": "quote-17",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-18",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-19",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-20",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-21",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-22",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-23",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-24",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-25",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-26",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-27",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-28",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-29",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-30",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-31",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-32",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-33",
+        "actual": [],
+        "expected": [],
+        "exact": true
+      },
+      {
+        "name": "quote-34",
+        "actual": [],
+        "expected": [],
+        "exact": true
+      },
+      {
+        "name": "quote-35",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-36",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-37",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-38",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-39",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-40",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-41",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-42",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-43",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-44",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-45",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-46",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "  alpha\tbeta\n",
+            "left": 19.265625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-47",
+        "actual": [],
+        "expected": [],
+        "exact": true
+      },
+      {
+        "name": "quote-48",
+        "actual": [],
+        "expected": [],
+        "exact": true
+      },
+      {
+        "name": "quote-49",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-50",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [],
+        "exact": false
+      },
+      {
+        "name": "quote-51",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": " alpha\tbeta\n",
+            "left": 9.625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-52",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": " alpha\tbeta\n",
+            "left": 9.625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-53",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": " alpha\tbeta\n",
+            "left": 9.625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-54",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": " alpha\tbeta\n",
+            "left": 9.625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-55",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": " alpha\tbeta\n",
+            "left": 9.625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-56",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": " alpha\tbeta\n",
+            "left": 9.625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-57",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": " alpha\tbeta\n",
+            "left": 9.625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-58",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": " alpha\tbeta\n",
+            "left": 9.625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-59",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-60",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-61",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": " \talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-62",
+        "actual": [
+          {
+            "text": "\talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "expected": [
+          {
+            "text": " \talpha\tbeta\n",
+            "left": 77.0625
+          }
+        ],
+        "exact": false
+      },
+      {
+        "name": "quote-63",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      },
+      {
+        "name": "quote-64",
+        "actual": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "expected": [
+          {
+            "text": "alpha\tbeta\n",
+            "left": 0
+          }
+        ],
+        "exact": true
+      }
+    ],
+    "chromeVersion": "152.0.7977.76",
+    "generatorSource": "const fs=require('fs'),path=require('path'),{execFileSync}=require('child_process'),{pathToFileURL}=require('url');const rows=require('./report.json').rows;\nfunction measure(rows){const result=[];for(const row of rows){const r={name:row.name};for(const [key,html] of [['actual',row.html],['expected',row.expectedHtml]]){const frame=document.createElement('iframe');frame.style='width:390px;height:200px';document.body.append(frame);const d=frame.contentDocument;d.open();d.write('<style>pre,code{font:16px monospace}</style>'+html);d.close();r[key]=[...d.querySelectorAll('pre')].map(pre=>{const walker=d.createTreeWalker(pre,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){const i=node.textContent.indexOf('alpha');if(i>=0){const range=d.createRange();range.setStart(node,i);range.setEnd(node,i+5);return {text:pre.textContent,left:range.getBoundingClientRect().left-pre.getBoundingClientRect().left}}}return {text:pre.textContent,left:null}});frame.remove()}r.exact=JSON.stringify(r.actual)===JSON.stringify(r.expected);result.push(r)}document.documentElement.dataset.result=encodeURIComponent(JSON.stringify(result));}\nconst base=path.resolve('outputs/sevenzip-links/next-markdown'),file=path.join(base,'visible.html');fs.writeFileSync(file,'<!doctype html><meta charset=\"utf-8\"><body><script>('+measure.toString()+')('+JSON.stringify(rows).replace(/</g,'\\\\u003c')+')</script>');let dump,processStatus='completed';try{dump=execFileSync('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless=new','--no-first-run','--disable-background-networking','--disable-gpu','--no-sandbox','--allow-file-access-from-files','--user-data-dir='+fs.mkdtempSync(path.join(base,'chrome-')),'--virtual-time-budget=3000','--dump-dom',pathToFileURL(file).href],{encoding:'utf8',timeout:10000,maxBuffer:10e6,stdio:['ignore','pipe','ignore']})}catch(error){if(error.code!=='ETIMEDOUT')throw error;dump=error.stdout;processStatus='timed-out-after-DOM-result';}const match=dump.match(/data-result=\"([^\"]+)\"/);if(!match)throw Error('Chrome incomplete');const result=JSON.parse(decodeURIComponent(match[1]));if(result.length!==64)throw Error('Incomplete sample set');fs.writeFileSync(path.join(base,'visible-report.json'),JSON.stringify({processStatus,kind:'native HTML code-glyph offset and pre structure; not WeChat WXML pixels',cases:result.length,wrong:result.filter(x=>!x.exact).length,rows:result},null,2));console.log({cases:result.length,wrong:result.filter(x=>!x.exact).length})\n",
+    "harnessHistory": [
+      "First probe had no explicit body and no result; stopped only its owned Chrome process.",
+      "Second probe produced complete data-result for all64 cases but Chrome shutdown timed out.",
+      "Final probe retained all64 completed DOM measurements, with timed-out-after-DOM-result process status explicitly recorded. This is not a clean process-exit or WeChat pixel pass."
+    ]
+  }
+}

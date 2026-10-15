@@ -1,0 +1,11 @@
+@import "styles/tokens.wxss";
+
+page {
+  background: #fff9f2;
+  color: #171715;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+button::after {
+  border: 0;
+}

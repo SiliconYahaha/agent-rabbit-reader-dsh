@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T10:17:15.487726+00:00",
+  "status": "fixed-validated-awaiting-draft-pr-ci",
+  "feature": "DXF MINSERT grid spacing combined with block scale, rotation, reflection and nesting",
+  "sources": 16,
+  "nativeLineSegments": 258,
+  "auditErrors": 0,
+  "baseline": {
+    "wrongDrawings": 12,
+    "exactControls": 4,
+    "fixture": "tests/fixtures/dxf-insert-grid/before.json"
+  },
+  "prototype": {
+    "correctDrawings": 16,
+    "relatedTests": 62,
+    "actualNewHost": {
+      "originals": 16,
+      "opens": 32,
+      "errorRecovery": true,
+      "staleReadIgnored": true,
+      "detachedReadIgnored": true
+    },
+    "newBrowserViews": {
+      "views": 32,
+      "pixelHashesExact": 32,
+      "nonblank": 32,
+      "sizes": [
+        "390x260",
+        "1280x720"
+      ]
+    },
+    "requiredFullGates": {
+      "check": "passed",
+      "tests": 1261,
+      "compatibilityProbes": 141,
+      "renderer": "passed",
+      "production": "passed",
+      "chromeOracle": "passed"
+    },
+    "wechat": "not run",
+    "devices": "not run"
+  },
+  "rootCause": "insertMatrix scales column/row spacing with block geometry. Grid spacing is between insertion points in rotated OCS and must remain outside the same block scale; enclosing block transforms still apply normally.",
+  "fix": "Subtract scaled block base from unscaled grid offset before applying rotation/insertion; preserve parent affine composition.",
+  "referenceReview": {
+    "fixture": "tests/fixtures/dxf-insert-grid/reference-review.json",
+    "independentPathsAgree": 14,
+    "nestedConvenienceDifferences": 2,
+    "evidence": "ezdxf1.4.4 Insert.transform updates scale/rotation/position but does not transform grid spacing before recursive_decompose expands nestedMINSERT. Expand local grids first, then apply parent matrix44 to leafLINEentities; childspacing12*parent1.25=15worldunits, while convenience output incorrectly keeps12.",
+    "originalBytesUnchanged": 16,
+    "originalConvenienceResultsReproduced": 16,
+    "regenerationCorrection": "A regenerated DXF had metadatahash differences despite fixedmeta option. Those intermediateoutputs remain. Final review reads retained original base64 only; no expected-result overwrite."
+  },
+  "references": [
+    "https://ezdxf.readthedocs.io/en/stable/blocks/insert.html",
+    "https://help.autodesk.com/cloudhelp/2025/CHT/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm"
+  ],
+  "nativeEnvironment": "/private/tmp/html-reader-dxf-mtext-env (ezdxf1.4.4; existing isolated environment)",
+  "next": [
+    "Create scoped draft PR and verify CI against exact commit.",
+    "Resolve retained grid cap and traversal budget as next scoped product change; independently review zero-spacing overdraw and negative OCS.",
+    "Merge/release/WeChat upload remains blocked by prior automatic approval review pending direct user confirmation; do not retry."
+  ],
+  "browserReferenceAudit": {
+    "initialRun": "outputs/dxf-insert-grid/content/report.json",
+    "correctedRun": "outputs/dxf-insert-grid/content-reviewed/report.json",
+    "explanation": "All initial pixel hashes matched exactly. Two rotated small views had no RGB<100 pixels because of antialiasing. Nonblank now compares each image against its own geometry-removed SVG; exact native pixel hash assertion unchanged. Both original failure and corrected reports retained."
+  },
+  "nextBoundaryExploration": {
+    "fixture": "tests/fixtures/dxf-insert-grid/next-boundaries.json",
+    "generator": "scripts/probe-dxf-grid-boundaries.py",
+    "sources": 5,
+    "auditErrors": 0,
+    "results": [
+      "20-column control: all20 lines exact.",
+      "21-column and21-row drawings: last line silently omitted; current cap20 has no truncation indication.",
+      "Zero-spacing grid: six coincident reader lines vs one deduplicated native line; multiplicity difference only, visual effect not certified.",
+      "Negative OCS extrusion: all six line positions differ; OCS not implemented."
+    ],
+    "status": "retained-unfixed; no broad DXF support claim"
+  },
+  "wechatDevelopmentDescription": "修复 DXF 图纸阵列在缩放、镜像、旋转和嵌套组合时的间距错误，改善图形位置还原与连续打开稳定性。"
+}

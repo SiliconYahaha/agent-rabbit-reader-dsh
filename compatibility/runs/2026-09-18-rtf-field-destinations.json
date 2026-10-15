@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "id": "rtf-known-starred-field-destinations",
+  "testedAt": "2026-09-18T08:58:07.603Z",
+  "status": "locally-fixed-unreleased-with-oracle-differences",
+  "rootCause": "Optional destination marker discarded field/fldrslt groups despite supported result-text semantics. File opens succeeded with field display text silently omitted.",
+  "change": "Recognize starred field and fldrslt alongside existing footnote handling; retain inherited skip/discard and hidden formatting, and never evaluate field instructions.",
+  "oracle": {
+    "source": "https://officeprotocoldoc.z19.web.core.windows.net/files/Archive_References/%5BMSFT-RTF%5D.pdf",
+    "pages": [
+      9,
+      15,
+      194,
+      195,
+      209
+    ],
+    "writer": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "visibleExport": "Unmodified Writer HTML in sandboxed Chrome iframe; visible p.innerText joined by paragraph boundaries.",
+    "cocoa": "Eight controls captured locally; four plain controls agree, four hidden controls retain hidden text and cannot certify visibility."
+  },
+  "fixtures": {
+    "generator": "tests/helpers/rtf-field-destinations.js",
+    "sha256": "f6628b70919c786bcb3d87f01cc4b0adf551ef9bdae11621196867c3e016f22b",
+    "cases": 46,
+    "malformed": 3,
+    "seed": "none: deterministic authored combinations",
+    "features": [
+      "star on field/result/both",
+      "Unicode surrogate pairs and fallback widths",
+      "hidden inheritance and explicit visibility restoration",
+      "nested fields and unknown destinations",
+      "upr selected/unselected alternatives",
+      "exact destination names and CRLF",
+      "binary braces inside instructions"
+    ]
+  },
+  "validation": {
+    "baselineWrong": 27,
+    "readerExpectedExact": 46,
+    "actualHostOpens": 46,
+    "productionWxmlViews": 46,
+    "writerExact": 38,
+    "writerDifferences": 8,
+    "initiallyExpectedWriterDifferences": 4,
+    "strictWriterComparison": "not-passed: 4 unexpected differences; record mode retains them without relaxing assertions",
+    "relatedTests": 166,
+    "fullNodeTests": 1263,
+    "fullNodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "invalidFileRecovery": "pass",
+    "staleReadIsolation": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "oracleReview": [
+    "Three upr-result cases concatenate ANSI and Unicode in Writer, a previously recorded discrepancy from the Unicode branch rule.",
+    "Three info groups placed in the document body and a bare fldinst containing a nested field are deliberately irregular robustness inputs. Writer displays their contents; reader retains metadata/instruction suppression. Initial Writer expectations remain unchanged and the strict comparison remains failing.",
+    "A binary-brace control inside fldinst yields extra control characters in Writer. The reader does not expose its instruction payload."
+  ],
+  "results": [
+    {
+      "id": "none-plain",
+      "sha256": "807f5e187047b1b539133314a2a215298f618e4136490ef8f6e5debe247c1ee7",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "none-unicode",
+      "sha256": "ef6cb5a48822c5db6c64f0f9737e9e18b333aa1dee8d92a880e1854923b9afcf",
+      "expected": "A中文😀Z",
+      "actual": "A中文😀Z",
+      "writer": "A中文😀Z",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "none-hidden-run",
+      "sha256": "3c15ff6b4bb143f2a0d9e0ed78bcb2bbf83a3a426b6325ffd52f3d94118a81cf",
+      "expected": "AVisibleZ",
+      "actual": "AVisibleZ",
+      "writer": "AVisibleZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "none-fallback",
+      "sha256": "29603d4a8adb31568978d1ca83a65601020b04a20acfe65dcb74a35017f7ff95",
+      "expected": "A你好Z",
+      "actual": "A你好Z",
+      "writer": "A你好Z",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-plain",
+      "sha256": "14f8246cd2aad0c12c4a633071cc78f00bc2276338c897412b0b4a488161da80",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-unicode",
+      "sha256": "9bfe187d61b0b512520ad8b06d9365f8d24f19b7e68f12213581fe57784a43a3",
+      "expected": "A中文😀Z",
+      "actual": "A中文😀Z",
+      "writer": "A中文😀Z",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-hidden-run",
+      "sha256": "3fc42f896bda5901ccb8a53bb085ecb6550e15c08abc80a7904866c7239ee920",
+      "expected": "AVisibleZ",
+      "actual": "AVisibleZ",
+      "writer": "AVisibleZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-fallback",
+      "sha256": "e42fbea0f775709983b0c583352677e16768a93df60228536d2e134506035b9d",
+      "expected": "A你好Z",
+      "actual": "A你好Z",
+      "writer": "A你好Z",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "result-plain",
+      "sha256": "231be13750bb0b80c48ffbbffcbdf843bcda3d24723d00400c8e2936527bea6c",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "result-unicode",
+      "sha256": "97e2c38179fedac984f350f2f9a1e855a2a3921e8751d4802a67d0ade52055c8",
+      "expected": "A中文😀Z",
+      "actual": "A中文😀Z",
+      "writer": "A中文😀Z",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "result-hidden-run",
+      "sha256": "bbb888319e41d70cd296fd8848bf53e8dd86e4cb00777eda4177632272e26530",
+      "expected": "AVisibleZ",
+      "actual": "AVisibleZ",
+      "writer": "AVisibleZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "result-fallback",
+      "sha256": "9aa198cf426ff34acf8eed2cb4355657b3dd38f30ff7bac4d1909288b1afe8f7",
+      "expected": "A你好Z",
+      "actual": "A你好Z",
+      "writer": "A你好Z",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "both-plain",
+      "sha256": "73c81c4fa8486d5e4aa4adb96f5ea77c9cb63fc0ec21f9a384de7dee352ac197",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "both-unicode",
+      "sha256": "9042d9f0b7c132e7ed97dd4a72c58ced1e3e158bf97385d58347fbc91ac90fe2",
+      "expected": "A中文😀Z",
+      "actual": "A中文😀Z",
+      "writer": "A中文😀Z",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "both-hidden-run",
+      "sha256": "8e0d1c6cd70ea3baa9f3fc45ba0382886fa2d21def2db92de68c35f0382a907d",
+      "expected": "AVisibleZ",
+      "actual": "AVisibleZ",
+      "writer": "AVisibleZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "both-fallback",
+      "sha256": "1e265763cabac66444d98e855460614c3b05e51f52cfb21b63a3c29231eb139a",
+      "expected": "A你好Z",
+      "actual": "A你好Z",
+      "writer": "A你好Z",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-in-unknown",
+      "sha256": "d8638022a74e2e36809568cb9aed836d373dffdbd8175f3cdfdadd95e5ea8955",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "AZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-in-info",
+      "sha256": "4a3266facba8458b923cd98d76538ade2f1f21e7f016821aeff05796d1166b33",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "ASecretZ",
+      "writerExact": false,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-in-hidden",
+      "sha256": "7805937ea3bf841fba564e78507403b923dcbe09179a89ab059aa0906894d73b",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "AZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-restore-hidden",
+      "sha256": "01b74ae794d75c6b3537363deda142b316a0ce731469ba75ca41567872e155f9",
+      "expected": "AVisibleZ",
+      "actual": "AVisibleZ",
+      "writer": "AVisibleZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-upr-result",
+      "sha256": "d324b17401f3fee7c8d377b01dfb0eb7f495443b96a95035457be388f3242fb5",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AANSIChosenZ",
+      "writerExact": false,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "field-upr-selected",
+      "sha256": "8730dc0bffd8c2543e65d9484ee9db40b9fc9e2d03d71ebf924113de36f26711",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "field-upr-discarded",
+      "sha256": "28d7d86acbb07bfc8ea7fd4eab6a2b46b11d2b37858163e021a6f164a1cc5e1c",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "result-in-unknown",
+      "sha256": "15fab6832a3f811fe5257d2569c6672600834454fb1a073d373f263fcc9ffa85",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "AZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "result-in-info",
+      "sha256": "2f67dc6e587f032f40d2b1b14a8c75c31735d0e76ea2e195125af59b3ed3e160",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "ASecretZ",
+      "writerExact": false,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "result-in-hidden",
+      "sha256": "0c52f58687bf539b2cc33dc57528f7657cdab95a43637dd19b6bd3f76545ab59",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "AZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "result-restore-hidden",
+      "sha256": "3bd230813a150ed010608f7a404225b51d3d5eb582a9d0a3f6518244f9c05ffe",
+      "expected": "AVisibleZ",
+      "actual": "AVisibleZ",
+      "writer": "AVisibleZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "result-upr-result",
+      "sha256": "d322173967e1d39814d805576df043a9315f1d7a0a22497575b2b538746d0412",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AANSIChosenZ",
+      "writerExact": false,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "result-upr-selected",
+      "sha256": "f8849386f8a49a218fb134859c3e3fe6d396c26bd6848e1cb1225907e46ca987",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "result-upr-discarded",
+      "sha256": "f672983d594b8377c7f6f7e061d2ac43abb4c255a8b49e3c1fc8e1e7d25c9bb5",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "both-in-unknown",
+      "sha256": "916a694b99cfb5195d7429b7bab6dc995d89c61b17d6fad7c983679689214682",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "AZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "both-in-info",
+      "sha256": "0b127af2040c5b5bb6b0899b2ed3d646479038469dda0910efb122d5abcc0cc9",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "ASecretZ",
+      "writerExact": false,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "both-in-hidden",
+      "sha256": "580d2c4ab21f2d5ac11c96e48c421f9340e38ec8dc065c580cd7cc306ae6d1e9",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "AZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "both-restore-hidden",
+      "sha256": "43520770f6ca53786ee958e63f33bea6e4a8878e096ccaf2baf57159596cc31f",
+      "expected": "AVisibleZ",
+      "actual": "AVisibleZ",
+      "writer": "AVisibleZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "both-upr-result",
+      "sha256": "e08f150298dd43d4f0b946214e539d4464b28d379db5d064d4cad46e5d52ccbf",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AANSIChosenZ",
+      "writerExact": false,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "both-upr-selected",
+      "sha256": "23ffe4bf870df318d60d7d70d37ef2679c33b59cdee9478d744ffdd3325078d8",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "both-upr-discarded",
+      "sha256": "708d6f71213779f1272e0d78fcaf916def59d020c7afd06fa520a65a1d7767fa",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "nested-fields",
+      "sha256": "604137ccc949dc09faf32f097e8205dc7db86baecd228fce0f4cc07eab1969f2",
+      "expected": "ABCDZ",
+      "actual": "ABCDZ",
+      "writer": "ABCDZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "star-crlf",
+      "sha256": "a185788734041c1f15f040ee1ccd1b411839604671cc614b7e1889040fd9fb4f",
+      "expected": "AChosenZ",
+      "actual": "AChosenZ",
+      "writer": "AChosenZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "bare-star-result",
+      "sha256": "626ac0e85eca550d846ff1ab026072382ac540827a0087a67440d81c374fef33",
+      "expected": "AVisibleZ",
+      "actual": "AVisibleZ",
+      "writer": "AVisibleZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "escaped-markup",
+      "sha256": "7387d0df133498aceef7ab568910730b907be8ce46e658415e071b1f6a650050",
+      "expected": "A{<b>&}\\Z",
+      "actual": "A{<b>&}\\Z",
+      "writer": "A{<b>&}\\Z",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "result-prefix-unknown",
+      "sha256": "9bdb9c2ec1870870483038c5fc8dd5003eaf4a57527825eec8de9eb58efe7a64",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "AZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "field-prefix-unknown",
+      "sha256": "98df4354e1c7a3d8b8003bdb9877c77f64e68416e738594ad28c9ebbbc386d5d",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "AZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "instruction-remains-hidden",
+      "sha256": "4272549abebb29a249e2446685e42b773495fdda1cafb2474a72450be141a34f",
+      "expected": "AZ",
+      "actual": "AZ",
+      "writer": "A\u0007Secret\u0003Z\n\n\b",
+      "writerExact": false,
+      "initialWriterExpectation": true
+    },
+    {
+      "id": "binary-braces-in-instruction",
+      "sha256": "c4712b316bb44137870e7d59b9637853a2c068d72741c18576e2dc56dfa279c3",
+      "expected": "AVisibleZ",
+      "actual": "AVisibleZ",
+      "writer": "A\u0007\u0003Visible\bZ",
+      "writerExact": false,
+      "initialWriterExpectation": false
+    },
+    {
+      "id": "unknown-result-child",
+      "sha256": "4c4b1f12939aebb3f81dc1c1cd373a126376c538eddb0fef010799ea4cbd0c73",
+      "expected": "ABCZ",
+      "actual": "ABCZ",
+      "writer": "ABCZ",
+      "writerExact": true,
+      "initialWriterExpectation": true
+    }
+  ],
+  "limitations": [
+    "No automatic field calculation or external link execution; existing plain-text RTF presentation remains.",
+    "46 product checks do not mean 46 independent Writer matches: only 38 match, all 8 differences retained.",
+    "Production WXML runs in browser glass-easel, not native WeChat or physical devices.",
+    "No full rich-text layout, font, image or RTF dialect claim."
+  ],
+  "commands": [
+    "node --test tests/rtf-*.test.js",
+    "node scripts/verify-rtf-field-destinations.js outputs/rtf-field-alternatives/after --record",
+    "npm run check",
+    "npm run check:production"
+  ]
+}

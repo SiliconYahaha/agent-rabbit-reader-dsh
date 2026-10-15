@@ -1,0 +1,13 @@
+# Markdown HTML / quote / list boundaries
+
+These 1056 unique sources are authored for this repository, not user documents. `cases.json` retains exact source hashes, both independently generated HTML references, their agreement flag, and the original v1.4.137 reader output. Do not overwrite the before output when the renderer changes.
+
+The generators are `scripts/probe-markdown-html-boundaries.js` (`documents`) and `scripts/probe-markdown-nested-boundaries.js` (`documents`, `transitions`). Concatenating those arrays recreates the corpus in order: 514 main/historical cases, 510 deduplicated nested cases, 32 transitions. Generation is deterministic without a random seed. L/O/Q denote unordered list, ordered list and quote; retained prefix depths expose partially closed containers. Bodies include all raw HTML block classes, paragraph/fence/heading/rule controls; marker transitions add inline HTML, indented continuation and Setext headings.
+
+Install `commonmark@0.31.2` and `markdown-it@15.0.1` into a separate temporary directory. Pass its `node_modules` path to `probe(modules, output, sources)`. The probe asserts exact reference versions and writes a new report; it does not rewrite this fixture. Run against an isolated checkout of commit `reference snapshot` to reproduce the original reader. 18 sources disagree between the two reference parsers; primary CommonMark policy remains explicit. Ordinary whitespace is normalized in structural signatures; preformatted text is exact.
+
+`node --test tests/markdown-html-boundaries.test.js` verifies source identities, structures, actual host consecutive opens, restored anchor dispatch and error/stale-read recovery. `npm run verify:markdown-html-boundaries` checks 144 actual reader rendered trees in Chrome against independent reference HTML; this runs in the existing Chrome gate. To retain baseline browser evidence, use `node scripts/verify-markdown-html-boundaries.js outputs/markdown-html-boundaries/browser-before --baseline-ref reference snapshot`.
+
+Before: 573 errors among 1038 dual-reference-agreed sources; 29 lost TAIL entirely (15 in the main matrix, 14 in the deeper matrix). After: all 1056 follow primary CommonMark; agreed cases pass actual host opens. Chrome: 101/144 failures before, 0 after. Comparison screenshots show the restored tail and complete Setext heading. Reader and native reference retain their own styling; this is not a pixel-match claim or a WeChat/device result.
+
+Full evidence and limits: `compatibility/runs/2026-09-13-markdown-html-boundaries.json`. Candidate has no release version yet; merge, GitHub Release and WeChat upload remain unperformed.

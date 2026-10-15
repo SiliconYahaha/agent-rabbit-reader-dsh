@@ -1,0 +1,4348 @@
+{
+  "schemaVersion": 1,
+  "id": "next-svg-clip-color",
+  "date": "2026-09-05",
+  "status": "reproduced-unfixed",
+  "generator": "Deterministic cross product: transparent/white background × steelblue/red/white/black × opacity 1/0.5 × outer rx 0/8 × single/nested clip. Each source retains native SVG as the independent pixel reference; no tolerance.",
+  "specification": "https://www.w3.org/TR/css-masking-1/#clipping-paths",
+  "inputs": [
+    {
+      "name": "transparent-steelblue-1-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "a29340ea0210f886c197622fb2b3f3a215d214c4034696bdc7d8066871b82c11"
+    },
+    {
+      "name": "transparent-steelblue-1-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "bdfbd3c092645a4f3d41f4f22e4f3f0c68ca12c5ae914e0c00ae8e6184dd7a47"
+    },
+    {
+      "name": "transparent-steelblue-1-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "d255925b5280e5c9cb0c196ed1416c2e9abbed68a192e7c384407adb27d5df56"
+    },
+    {
+      "name": "transparent-steelblue-1-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "6202b5977a450228b5afefce0d85f0cafcf5b15ab113db1cb34f948032e67655"
+    },
+    {
+      "name": "transparent-steelblue-0.5-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "8a136cc69fab2adafbefe2fcabb5703d50a3aaee9baf2a9417979099849eafbc"
+    },
+    {
+      "name": "transparent-steelblue-0.5-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "7e45c287c6f1fe79b759ccbcdf7b68741955550a67ee8f11731ef327899ec5ca"
+    },
+    {
+      "name": "transparent-steelblue-0.5-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "5c46353e40613c7b411f2928a62646f9af21854448f9369c47df359cfa2b6800"
+    },
+    {
+      "name": "transparent-steelblue-0.5-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "66e8863ca4250ea0153849a184b10378edfbbd6275203337893ef8cb89b1a8d7"
+    },
+    {
+      "name": "transparent-red-1-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "9b7469b12d74e8df3d71b5a41d804d236043b3988c2d2aeb7d9b2b75f3cee91a"
+    },
+    {
+      "name": "transparent-red-1-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "7345158ab90d57b32a2fc5e738fd6ebfb4b4aeeaf6cf5548e71141a55d129012"
+    },
+    {
+      "name": "transparent-red-1-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "afc03dd47d3d77599613d6ac07dfb684a099499964def32106f732fa112019a6"
+    },
+    {
+      "name": "transparent-red-1-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "fbda5731f571df787cbdabda1eb69cbc40548d0998bed8c6545ad61a5c486c9d"
+    },
+    {
+      "name": "transparent-red-0.5-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "7c519b213ba20019e0a312a30d4ec723f0df228439a856bb859e3ca18d29512c"
+    },
+    {
+      "name": "transparent-red-0.5-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "af41d8bf0d6b84adca7fc9b5c20baf777a23892fde03813e935f3de1aa76beaa"
+    },
+    {
+      "name": "transparent-red-0.5-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "4e3224ab02c8377b7914ec28c99095f80cea7acdf2509fa937ba589ea1faabc1"
+    },
+    {
+      "name": "transparent-red-0.5-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "9d7a33889d7fb522124c3b8c3bde98c3d4fbe5ca8b150d89cc46f66acfcd1bac"
+    },
+    {
+      "name": "transparent-white-1-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "5920143466815a6643b95f96442dbc7e08ad7afd6f3164179bb7f0162d04353b"
+    },
+    {
+      "name": "transparent-white-1-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "954ef200837f9341c96f6dad1f977f1b177e403663f09fd4ab157cecc3bf366c"
+    },
+    {
+      "name": "transparent-white-1-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "85d9148c8774b407605859d627565ed170c26339de958ea4b63f9909fcd6b449"
+    },
+    {
+      "name": "transparent-white-1-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "7df8648e46730612247006cc9961399458b3a5237f8038d24f370eb40fc14fa1"
+    },
+    {
+      "name": "transparent-white-0.5-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "f73d6bec35bfe66f2d706e75bfc324a82671e04fef6b0be52168e0b1b36c6ba8"
+    },
+    {
+      "name": "transparent-white-0.5-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "6d97541dda5d9a2f3cd0b50107958cf0601d2de61367ffa4e1b5ffc9aa8de1bf"
+    },
+    {
+      "name": "transparent-white-0.5-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "7ed9341014875bb25e1656806477a500fef1a316b3be692cb101a4cf0cfa9e1f"
+    },
+    {
+      "name": "transparent-white-0.5-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "37fb7c8084ba0fd1b59a03e1cd640a1561188cd1bfed71bf57a8fb474ad630a2"
+    },
+    {
+      "name": "transparent-black-1-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "1129520dfae6c74450ae191d8298159c2e475c04378a4c7776fa1d68026a5d34"
+    },
+    {
+      "name": "transparent-black-1-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "3460f9397fd8688c898b7b883ecce55584e31cc7811b62f001b5f3e23708991d"
+    },
+    {
+      "name": "transparent-black-1-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "4c5603fa33b68685f916419752483d64be8addf10783557a9658030f85c01d6f"
+    },
+    {
+      "name": "transparent-black-1-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "32e01688ed6fee39ad809937fb4a704b3430cfd5943adc5c49b7738037fd05e7"
+    },
+    {
+      "name": "transparent-black-0.5-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "0a42ce6a1e0c708c716b59731ed07986788e05ac151e051189a1b6101ad52007"
+    },
+    {
+      "name": "transparent-black-0.5-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "b8e39694c087398045f7d75fd0ea60df407a6afdbf4a1100fa5de2723dbad7b8"
+    },
+    {
+      "name": "transparent-black-0.5-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "0e00c2dddb28eb212311363da5a402c3bebde7322205a1d6137dae36a42447dd"
+    },
+    {
+      "name": "transparent-black-0.5-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "92dbeae7610cd17e1774a15f718ac1852f8f0e09efef2d903e25d5f1b00f4bdc"
+    },
+    {
+      "name": "white-steelblue-1-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "ff5a15ba61b5866ae265a3221c7fc623830cc776b9085870dc68db69fa5cf858"
+    },
+    {
+      "name": "white-steelblue-1-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "65fdbf4f8ef77912d885dcc8c6aca44f132bc0716c67bfdf8347702ed88f294f"
+    },
+    {
+      "name": "white-steelblue-1-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "220d64845f5fd8463f2006235615f0ead4f4126f3f0b8db722cb6f64cfe3b094"
+    },
+    {
+      "name": "white-steelblue-1-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "3f00de6bc69d6a610a96fb2d059635ab881886f01c6abb265d8082ee4e25a569"
+    },
+    {
+      "name": "white-steelblue-0.5-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "58ab23bb439167441644a3b1954ea8c2aab788c0829a253bf356527bb7d12ae5"
+    },
+    {
+      "name": "white-steelblue-0.5-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "15043822107739bf9a7731980ce9e5de7043feb4f63127a66fbd130c0d54f401"
+    },
+    {
+      "name": "white-steelblue-0.5-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "f9620185873d019e2bff204b022b78a5e6c25347f15fbc40cfc977cbe7d503e2"
+    },
+    {
+      "name": "white-steelblue-0.5-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"steelblue\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "06dd6385eb6c63767e6a0063f94f12de17b9e15507ec2bc76aa46ffdcee2fb85"
+    },
+    {
+      "name": "white-red-1-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "aadb9741288be5927c77d061ef9259ae624ac71ad08b05d82bc22d423561d772"
+    },
+    {
+      "name": "white-red-1-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "df37b76bac7fc3e5435a91a94de6200940f62053dc2c86caf91770c5712336ca"
+    },
+    {
+      "name": "white-red-1-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "ac4eeb8b1ce240f07cdd6dc31de974d6e17cb39659fa0723dba320502406f63b"
+    },
+    {
+      "name": "white-red-1-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "a3be1c5b39345ffdaef36ae13c8a98bd684b317645640d90ddbec981c8aa5ccf"
+    },
+    {
+      "name": "white-red-0.5-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "6ede4531ecafa7495d0c79e59b401a1876a18f1f8f4d7140c49ed7d7fb1d6f65"
+    },
+    {
+      "name": "white-red-0.5-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "46daaa5832aa1321d72a9bf72fb1e9c63fbec2879e3bf13961868f432ef8d235"
+    },
+    {
+      "name": "white-red-0.5-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "97b3aa2607d50c07a26e9b5d83ea263e628234be0674cb399b1c644c25dd8124"
+    },
+    {
+      "name": "white-red-0.5-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"red\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "eba6921a7456ef9981992767a120b014a0ce195e1e3ca55e468218d45bdd564d"
+    },
+    {
+      "name": "white-white-1-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "37ae2b27fcd9b5bd0453a99211c684c8fc43bf84e4cdc4a752f3ffb05dd12be9"
+    },
+    {
+      "name": "white-white-1-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "f6407065ecce6833b07fed9aa01075426c71d83e3d9afdd19e3ad1a738dcbd56"
+    },
+    {
+      "name": "white-white-1-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "bdc82ceae53354c5e654b6bda3fde72e483666b689092feabbdcf3a58b5b3590"
+    },
+    {
+      "name": "white-white-1-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "5e29dcb9f9e5205d05b08ab2fb67879eb6b9cc1f8e95fdef412aa9516135e58c"
+    },
+    {
+      "name": "white-white-0.5-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "b444df84b62f041335079652e1ea8d6f07a41c0e09132c6aa350a32286951a21"
+    },
+    {
+      "name": "white-white-0.5-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "f6afbd691e99530a44a3d2f762f730570ea6b0c7ecd33a725bb1d7ff42ad1af9"
+    },
+    {
+      "name": "white-white-0.5-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "8f6c3d3be99b67aed809d6d9691958f8763dfd7ffe4135669b5849f2fb626e78"
+    },
+    {
+      "name": "white-white-0.5-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"white\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "4d5ac7be2abdbfd83c81bc08b42af63eae70f217141efd15caac633dde0ccd36"
+    },
+    {
+      "name": "white-black-1-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "f9e75cd62a460005670f844ab2b5b0dfc57e7b92f04c9f273174467ab16c53c8"
+    },
+    {
+      "name": "white-black-1-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "11987e86d6b6a309c55c4a7ecb521c9c869811640f08921219f17ca0ecca0f72"
+    },
+    {
+      "name": "white-black-1-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "a433f5fccd1b6ea6d229df8d6540e86fc347c23fbc06b3893e2338ce14b6407c"
+    },
+    {
+      "name": "white-black-1-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"1\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "012635f085660a76f2e4cb35b29e2f1affa31471fab1d38841dc3cf8989ef9c8"
+    },
+    {
+      "name": "white-black-0.5-0-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "8613d6c6b5507f2bbe026a40067e98f9399e2fbca48f91160ff835e4587b0340"
+    },
+    {
+      "name": "white-black-0.5-0-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "e00fee8c29d69cc56e4e2b42bd005b9c034d83a46834230e36d2ed7364d83c73"
+    },
+    {
+      "name": "white-black-0.5-8-single",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "5350d85864d95a86157f0dcc1421b0133fb43b85879cff1e458f9c4cac44519c"
+    },
+    {
+      "name": "white-black-0.5-8-nested",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><defs><clipPath id=\"inner\"><rect x=\"40\" y=\"20\" width=\"60\" height=\"65\" rx=\"12\" ry=\"4\"/></clipPath><clipPath id=\"c\"><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" clip-path=\"url(#inner)\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"white\"/><rect width=\"256\" height=\"256\" fill=\"black\" fill-opacity=\"0.5\" clip-path=\"url(#c)\"/></svg>",
+      "sha256": "960786f44121ab75e0325972472a259f6fbb084700090336c31ab8ce26315450"
+    }
+  ],
+  "testedAt": "2026-09-05T22:37:16.108Z",
+  "chrome": "Google Chrome 152.0.7977.76",
+  "scope": "Real SVG component with browser Canvas/platform harness; not WeChat DevTools or physical devices",
+  "cases": 64,
+  "nativeExact": 56,
+  "componentExact": 56,
+  "failures": [
+    "transparent-steelblue-1-0-nested",
+    "transparent-steelblue-1-8-nested",
+    "transparent-steelblue-0.5-0-nested",
+    "transparent-steelblue-0.5-8-nested",
+    "white-steelblue-1-0-nested",
+    "white-steelblue-1-8-nested",
+    "white-steelblue-0.5-0-nested",
+    "white-steelblue-0.5-8-nested"
+  ],
+  "unexpected": [
+    "transparent-steelblue-1-0-nested",
+    "transparent-steelblue-1-8-nested",
+    "transparent-steelblue-0.5-0-nested",
+    "transparent-steelblue-0.5-8-nested",
+    "white-steelblue-1-0-nested",
+    "white-steelblue-1-8-nested",
+    "white-steelblue-0.5-0-nested",
+    "white-steelblue-0.5-8-nested"
+  ],
+  "results": [
+    {
+      "name": "transparent-steelblue-1-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-steelblue-1-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 34,
+          "maxChannelError": 191,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 1.8431372549019684,
+          "maxAlphaError": 0,
+          "maxChannelError": 21,
+          "rgbaError": 321,
+          "fallbackError": 758
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 34,
+          "maxChannelError": 191,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 34,
+          "maxChannelError": 191,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 34,
+          "maxChannelError": 191,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 321
+      }
+    },
+    {
+      "name": "transparent-steelblue-1-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 33.92549019607843,
+          "maxAlphaError": 49,
+          "maxChannelError": 187,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 2152
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 33.92549019607843,
+          "maxAlphaError": 49,
+          "maxChannelError": 187,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 33.92549019607843,
+          "maxAlphaError": 49,
+          "maxChannelError": 187,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 33.92549019607843,
+          "maxAlphaError": 49,
+          "maxChannelError": 187,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-steelblue-1-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 34,
+          "maxChannelError": 191,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 1.8431372549019684,
+          "maxAlphaError": 0,
+          "maxChannelError": 21,
+          "rgbaError": 321,
+          "fallbackError": 758
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 34,
+          "maxChannelError": 191,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 34,
+          "maxChannelError": 191,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 34,
+          "maxChannelError": 191,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 321
+      }
+    },
+    {
+      "name": "transparent-steelblue-0.5-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-steelblue-0.5-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 11.933333333333323,
+          "maxAlphaError": 17,
+          "maxChannelError": 191,
+          "rgbaError": 1703,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 1.3882352941176492,
+          "maxAlphaError": 0,
+          "maxChannelError": 43,
+          "rgbaError": 1053,
+          "fallbackError": 744
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 11.933333333333323,
+          "maxAlphaError": 17,
+          "maxChannelError": 191,
+          "rgbaError": 1703,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 11.933333333333323,
+          "maxAlphaError": 17,
+          "maxChannelError": 191,
+          "rgbaError": 1703,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 11.933333333333323,
+          "maxAlphaError": 17,
+          "maxChannelError": 191,
+          "rgbaError": 1703,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 1053
+      }
+    },
+    {
+      "name": "transparent-steelblue-0.5-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 16.972549019607843,
+          "maxAlphaError": 24,
+          "maxChannelError": 175,
+          "rgbaError": 1875,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 1875
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 16.972549019607843,
+          "maxAlphaError": 24,
+          "maxChannelError": 175,
+          "rgbaError": 1875,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 16.972549019607843,
+          "maxAlphaError": 24,
+          "maxChannelError": 175,
+          "rgbaError": 1875,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 16.972549019607843,
+          "maxAlphaError": 24,
+          "maxChannelError": 175,
+          "rgbaError": 1875,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-steelblue-0.5-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 11.933333333333323,
+          "maxAlphaError": 17,
+          "maxChannelError": 191,
+          "rgbaError": 1703,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 1.3882352941176492,
+          "maxAlphaError": 0,
+          "maxChannelError": 43,
+          "rgbaError": 1053,
+          "fallbackError": 744
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 11.933333333333323,
+          "maxAlphaError": 17,
+          "maxChannelError": 191,
+          "rgbaError": 1703,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 11.933333333333323,
+          "maxAlphaError": 17,
+          "maxChannelError": 191,
+          "rgbaError": 1703,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 11.933333333333323,
+          "maxAlphaError": 17,
+          "maxChannelError": 191,
+          "rgbaError": 1703,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 1053
+      }
+    },
+    {
+      "name": "transparent-red-1-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-red-1-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 562,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 562
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 562,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 562,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 562,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-red-1-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 49,
+          "maxChannelError": 255,
+          "rgbaError": 1546,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 1546
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 49,
+          "maxChannelError": 255,
+          "rgbaError": 1546,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 49,
+          "maxChannelError": 255,
+          "rgbaError": 1546,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 49,
+          "maxChannelError": 255,
+          "rgbaError": 1546,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-red-1-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 562,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 562
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 562,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 562,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 562,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-red-0.5-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-red-0.5-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 409,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 409
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 409,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 409,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 409,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-red-0.5-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 24,
+          "maxChannelError": 255,
+          "rgbaError": 1285,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 1285
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 24,
+          "maxChannelError": 255,
+          "rgbaError": 1285,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 24,
+          "maxChannelError": 255,
+          "rgbaError": 1285,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 24,
+          "maxChannelError": 255,
+          "rgbaError": 1285,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-red-0.5-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 409,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 409
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 409,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 409,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 409,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-white-1-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-white-1-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 1072,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 1072
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 1072,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 1072,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 1072,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-white-1-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 49,
+          "maxChannelError": 255,
+          "rgbaError": 3586,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 3586
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 49,
+          "maxChannelError": 255,
+          "rgbaError": 3586,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 49,
+          "maxChannelError": 255,
+          "rgbaError": 3586,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 49,
+          "maxChannelError": 255,
+          "rgbaError": 3586,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-white-1-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 1072,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 1072
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 1072,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 1072,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 34,
+          "maxChannelError": 255,
+          "rgbaError": 1072,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-white-0.5-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-white-0.5-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 919,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 919
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 919,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 919,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 919,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-white-0.5-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 24,
+          "maxChannelError": 255,
+          "rgbaError": 3325,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 3325
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 24,
+          "maxChannelError": 255,
+          "rgbaError": 3325,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 24,
+          "maxChannelError": 255,
+          "rgbaError": 3325,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 24,
+          "maxChannelError": 255,
+          "rgbaError": 3325,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-white-0.5-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 919,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 919
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 919,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 919,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 17,
+          "maxChannelError": 255,
+          "rgbaError": 919,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-black-1-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-black-1-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 34,
+          "maxChannelError": 34,
+          "rgbaError": 307,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 307
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 34,
+          "maxChannelError": 34,
+          "rgbaError": 307,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 34,
+          "maxChannelError": 34,
+          "rgbaError": 307,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 34,
+          "maxChannelError": 34,
+          "rgbaError": 307,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-black-1-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 49,
+          "maxChannelError": 49,
+          "rgbaError": 526,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 526
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 49,
+          "maxChannelError": 49,
+          "rgbaError": 526,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 49,
+          "maxChannelError": 49,
+          "rgbaError": 526,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 49,
+          "maxChannelError": 49,
+          "rgbaError": 526,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-black-1-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 34,
+          "maxChannelError": 34,
+          "rgbaError": 307,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 307
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 34,
+          "maxChannelError": 34,
+          "rgbaError": 307,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 34,
+          "maxChannelError": 34,
+          "rgbaError": 307,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 34,
+          "maxChannelError": 34,
+          "rgbaError": 307,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-black-0.5-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-black-0.5-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 17,
+          "maxChannelError": 17,
+          "rgbaError": 154,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 154
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 17,
+          "maxChannelError": 17,
+          "rgbaError": 154,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 17,
+          "maxChannelError": 17,
+          "rgbaError": 154,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 17,
+          "maxChannelError": 17,
+          "rgbaError": 154,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-black-0.5-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 24,
+          "maxChannelError": 24,
+          "rgbaError": 265,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 265
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 24,
+          "maxChannelError": 24,
+          "rgbaError": 265,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 24,
+          "maxChannelError": 24,
+          "rgbaError": 265,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 24,
+          "maxChannelError": 24,
+          "rgbaError": 265,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "transparent-black-0.5-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 17,
+          "maxChannelError": 17,
+          "rgbaError": 154,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 154
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 17,
+          "maxChannelError": 17,
+          "rgbaError": 154,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 17,
+          "maxChannelError": 17,
+          "rgbaError": 154,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 17,
+          "maxChannelError": 17,
+          "rgbaError": 154,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-steelblue-1-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-steelblue-1-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 25,
+          "maxAlphaError": 0,
+          "maxChannelError": 25,
+          "rgbaError": 541,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 1,
+          "maxAlphaError": 0,
+          "maxChannelError": 1,
+          "rgbaError": 98,
+          "fallbackError": 453
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 25,
+          "maxAlphaError": 0,
+          "maxChannelError": 25,
+          "rgbaError": 541,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 25,
+          "maxAlphaError": 0,
+          "maxChannelError": 25,
+          "rgbaError": 541,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 25,
+          "maxAlphaError": 0,
+          "maxChannelError": 25,
+          "rgbaError": 541,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 98
+      }
+    },
+    {
+      "name": "white-steelblue-1-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 36,
+          "maxAlphaError": 0,
+          "maxChannelError": 36,
+          "rgbaError": 798,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 798
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 36,
+          "maxAlphaError": 0,
+          "maxChannelError": 36,
+          "rgbaError": 798,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 36,
+          "maxAlphaError": 0,
+          "maxChannelError": 36,
+          "rgbaError": 798,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 36,
+          "maxAlphaError": 0,
+          "maxChannelError": 36,
+          "rgbaError": 798,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-steelblue-1-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 25,
+          "maxAlphaError": 0,
+          "maxChannelError": 25,
+          "rgbaError": 541,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 1,
+          "maxAlphaError": 0,
+          "maxChannelError": 1,
+          "rgbaError": 98,
+          "fallbackError": 453
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 25,
+          "maxAlphaError": 0,
+          "maxChannelError": 25,
+          "rgbaError": 541,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 25,
+          "maxAlphaError": 0,
+          "maxChannelError": 25,
+          "rgbaError": 541,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 25,
+          "maxAlphaError": 0,
+          "maxChannelError": 25,
+          "rgbaError": 541,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 98
+      }
+    },
+    {
+      "name": "white-steelblue-0.5-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-steelblue-0.5-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 12,
+          "maxAlphaError": 0,
+          "maxChannelError": 12,
+          "rgbaError": 359,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 1,
+          "maxAlphaError": 0,
+          "maxChannelError": 1,
+          "rgbaError": 139,
+          "fallbackError": 232
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 12,
+          "maxAlphaError": 0,
+          "maxChannelError": 12,
+          "rgbaError": 359,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 12,
+          "maxAlphaError": 0,
+          "maxChannelError": 12,
+          "rgbaError": 359,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 12,
+          "maxAlphaError": 0,
+          "maxChannelError": 12,
+          "rgbaError": 359,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 139
+      }
+    },
+    {
+      "name": "white-steelblue-0.5-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 18,
+          "maxAlphaError": 0,
+          "maxChannelError": 18,
+          "rgbaError": 405,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 405
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 18,
+          "maxAlphaError": 0,
+          "maxChannelError": 18,
+          "rgbaError": 405,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 18,
+          "maxAlphaError": 0,
+          "maxChannelError": 18,
+          "rgbaError": 405,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 18,
+          "maxAlphaError": 0,
+          "maxChannelError": 18,
+          "rgbaError": 405,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-steelblue-0.5-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 12,
+          "maxAlphaError": 0,
+          "maxChannelError": 12,
+          "rgbaError": 359,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 1,
+          "maxAlphaError": 0,
+          "maxChannelError": 1,
+          "rgbaError": 139,
+          "fallbackError": 232
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 12,
+          "maxAlphaError": 0,
+          "maxChannelError": 12,
+          "rgbaError": 359,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 12,
+          "maxAlphaError": 0,
+          "maxChannelError": 12,
+          "rgbaError": 359,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 12,
+          "maxAlphaError": 0,
+          "maxChannelError": 12,
+          "rgbaError": 359,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 139
+      }
+    },
+    {
+      "name": "white-red-1-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-red-1-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 614,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 614
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 614,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 614,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 614,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-red-1-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 0,
+          "maxChannelError": 49,
+          "rgbaError": 1052,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 1052
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 0,
+          "maxChannelError": 49,
+          "rgbaError": 1052,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 0,
+          "maxChannelError": 49,
+          "rgbaError": 1052,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 0,
+          "maxChannelError": 49,
+          "rgbaError": 1052,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-red-1-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 614,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 614
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 614,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 614,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 614,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-red-0.5-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-red-0.5-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 308,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 308
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 308,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 308,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 308,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-red-0.5-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 0,
+          "maxChannelError": 24,
+          "rgbaError": 530,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 530
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 0,
+          "maxChannelError": 24,
+          "rgbaError": 530,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 0,
+          "maxChannelError": 24,
+          "rgbaError": 530,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 0,
+          "maxChannelError": 24,
+          "rgbaError": 530,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-red-0.5-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 308,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 308
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 308,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 308,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 308,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-white-1-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-white-1-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-white-1-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-white-1-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-white-0.5-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-white-0.5-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-white-0.5-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-white-0.5-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-black-1-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-black-1-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 921,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 921
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 921,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 921,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 921,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-black-1-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 0,
+          "maxChannelError": 49,
+          "rgbaError": 1578,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 1578
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 0,
+          "maxChannelError": 49,
+          "rgbaError": 1578,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 0,
+          "maxChannelError": 49,
+          "rgbaError": 1578,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 49,
+          "maxAlphaError": 0,
+          "maxChannelError": 49,
+          "rgbaError": 1578,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-black-1-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 921,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 921
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 921,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 921,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 34,
+          "maxAlphaError": 0,
+          "maxChannelError": 34,
+          "rgbaError": 921,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-black-0.5-0-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-black-0.5-0-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 462,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 462
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 462,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 462,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 462,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-black-0.5-8-single",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 0,
+          "maxChannelError": 24,
+          "rgbaError": 795,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 795
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 0,
+          "maxChannelError": 24,
+          "rgbaError": 795,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 0,
+          "maxChannelError": 24,
+          "rgbaError": 795,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 24,
+          "maxAlphaError": 0,
+          "maxChannelError": 24,
+          "rgbaError": 795,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    },
+    {
+      "name": "white-black-0.5-8-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 462,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "maxPremultipliedError": 0,
+          "maxAlphaError": 0,
+          "maxChannelError": 0,
+          "rgbaError": 0,
+          "fallbackError": 462
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 462,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 462,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "maxPremultipliedError": 17,
+          "maxAlphaError": 0,
+          "maxChannelError": 17,
+          "rgbaError": 462,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      }
+    }
+  ],
+  "recovery": {
+    "malformedErrors": 1,
+    "ready": true,
+    "errors": []
+  },
+  "findings": {
+    "cases": 64,
+    "nativeExact": 56,
+    "componentExact": 56,
+    "remainingColorDifferences": 8,
+    "whiteBackgroundMaxChannelError": 1,
+    "transparentBackgroundMaxChannelError": 43,
+    "transparentBackgroundMaxPremultipliedError": 1.8431372549019684,
+    "scope": "Actual SVG component with Chrome Canvas host plumbing. Not WeChat DevTools or physical device results.",
+    "next": "Inspect nested clip intermediate color quantization/mask compositing. Preserve exact failures; prioritize against more visible unsupported clipping cases instead of changing tolerance.",
+    "nativeCanvasAlphaExact": 64
+  },
+  "probeExit": 1,
+  "probeExitReason": "Expected exploration assertion reports 8 exact pixel mismatches; not a passed gate.",
+  "wechatDevtools": "not-run",
+  "ios": "not-run",
+  "android": "not-run"
+}

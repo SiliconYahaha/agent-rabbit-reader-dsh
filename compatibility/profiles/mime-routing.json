@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "format": "MIME dispatch, quoted parameters and bounded view delivery",
+  "userShouldSee": "Actual archive member text, model/image contents and intact Unicode or CSV despite missing suffixes, MIME case/parameters or large initial/live updates",
+  "currentVisibleResult": "Candidate147: quote-aware decoding and normalized dispatch; native WXML21 cases, full Unicode geometry Chrome5 cases; delivery pending",
+  "oracles": [
+    "RFC9110 sections5.6.4/5.6.6/8.3.1",
+    "Python headerregistry/csv/byte encoders",
+    "macOS BSD tar archive body extraction",
+    "Native Chrome contiguous text geometry and WeChat actual WXML/taps"
+  ],
+  "capabilities": [
+    {
+      "id": "quoted-charset",
+      "status": "pass",
+      "axis": {
+        "version": "147 candidate",
+        "feature": "parameter quoted-pair and filename semicolons",
+        "encoding": "UTF8/GB18030/ShiftJIS/CP949/Big5",
+        "anomaly": "conflicting or incomplete declarations/BOM"
+      },
+      "expectedVisibleResult": "Exact original CSV strings, invalid declarations fail, subsequent valid opens remain usable",
+      "evidence": [
+        "runs/2026-10-13-mime-payload.json",
+        "tests/mime-parameters.test.js",
+        "tests/text-payload-chunks.test.js"
+      ]
+    },
+    {
+      "id": "family-dispatch",
+      "status": "pass",
+      "axis": {
+        "version": "147 candidate",
+        "feature": "missing suffix, parameter and media type casing",
+        "encoding": "native raw archive/design bytes",
+        "anomaly": "ZIP/RAR/7z/STEP/CDR/PSD plus Office API handoff"
+      },
+      "expectedVisibleResult": "Actual member bytes, known model/preview contents; Office API params only",
+      "evidence": [
+        "runs/2026-10-13-mime-payload.json",
+        "tests/mime-parameters.test.js",
+        "tests/text-payload-chunks.test.js"
+      ]
+    },
+    {
+      "id": "bounded-text-style",
+      "status": "pass",
+      "axis": {
+        "version": "147 candidate",
+        "feature": "initial and live DOM plus large style dictionary",
+        "encoding": "CJK/RTL/combining/astral/ZWJ",
+        "anomaly": "deep JSON and4096cell CSV / stale callbacks"
+      },
+      "expectedVisibleResult": "Full actual text, preserved button handle, horizontal scrolling; native batch max162034 bytes",
+      "evidence": [
+        "runs/2026-10-13-mime-payload.json",
+        "tests/mime-parameters.test.js",
+        "tests/text-payload-chunks.test.js"
+      ]
+    }
+  ],
+  "publicSamples": [],
+  "mutationQueue": [
+    {
+      "id": "huge-scalar-and-smil-fallback",
+      "status": "pending",
+      "action": "Measure real giant input values and SMIL fallback updates without dropping original values or resetting unrelated Canvas/control identity"
+    },
+    {
+      "id": "html-xhtml-charset-precedence",
+      "status": "pending",
+      "action": "Independent native browser byte/BOM/meta/XML declaration controls; do not blindly apply text MIME rules"
+    }
+  ]
+}

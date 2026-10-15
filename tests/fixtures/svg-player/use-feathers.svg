@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><defs><path id="feather" d="M0 0Q-20 -50 0 -70Q20 -50 0 0" fill="#198"/></defs><g transform="translate(50 85)"><g><animateTransform attributeName="transform" type="rotate" values="-30;30;-30" dur="2s" repeatCount="indefinite"/><use xlink:href="#feather"/></g></g></svg>

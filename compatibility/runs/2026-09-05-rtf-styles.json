@@ -1,0 +1,725 @@
+{
+  "testedAt": "2026-09-05T08:05:23.967Z",
+  "seed": null,
+  "rules": "Named paragraph/character style inheritance, direct overrides before/after styles, plain/pard resets, missing definitions, base styles and font controls. Mid-paragraph paragraph-style changes are separately recorded exploration differences.",
+  "writer": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "node": "v24.16.0",
+  "cases": 36,
+  "baselineWrong": 23,
+  "readerMatches": 36,
+  "pdfMatches": 35,
+  "htmlMatches": 30,
+  "results": [
+    {
+      "name": "paragraph-hidden",
+      "sourceSha256": "fee766e4e3aeef893a465722dc63cc83bfb0d0c7ec89f5418c211d8892365e8e",
+      "expected": "BEFORE\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "reader": "BEFORE\nAFTER",
+      "baseline": "BEFORE\nSECRET\nAFTER",
+      "writerPdf": {
+        "text": "BEFORE\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFORE\nAFTER",
+      "pdfSha256": "93bd4a4699e0cde4e2c2fb5031141041676e5868a4793e270d4a98e302a2c06f",
+      "htmlSha256": "b11c25f3e2ee0c96eb00630a7ea3d709d92bd0ea5c69475025f6fb1adfda374c",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "character-hidden",
+      "sourceSha256": "d4f075981511aafa821c64f5ed14538b6116de5d8464c1bd83a68519911c4aa5",
+      "expected": "BEFOREAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "reader": "BEFOREAFTER",
+      "baseline": "BEFORESECRETAFTER",
+      "writerPdf": {
+        "text": "BEFOREAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFOREAFTER",
+      "pdfSha256": "2a62bfa080f2cb6e4c5297f233ff6cc0100322718675d629c74197b9bab5100b",
+      "htmlSha256": "9e181273c0bcd728efa4988e76af0d8b5adf314209e8d24dde02bf3b4dc1dde8",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "character-visible-override",
+      "sourceSha256": "1b936552f6abcbe5d755f62ad55d42004c856f2f5e8da92bab9fbb7e0f1b5ca6",
+      "expected": "BEFOREVISIBLEAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Writer actual RTF import and PDF rendered page, explicit v0 retained",
+      "reader": "BEFOREVISIBLEAFTER",
+      "baseline": "BEFORESECRETVISIBLEAFTER",
+      "writerPdf": {
+        "text": "BEFOREVISIBLEAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFOREAFTER",
+      "pdfSha256": "8cfd562f3480929f9ed3ac8a8902703c893b8a5e67facb0841d1aeb8d4d4dccd",
+      "htmlSha256": "953027028adc154c2140db0be0908438a0854087c0ed2320c0895b4f6484ddd3",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": false
+    },
+    {
+      "name": "paragraph-based-hidden",
+      "sourceSha256": "2855dfa61a4b59118418cccca8cf09684a1bc11fa3b2802e330ee2ffd1221b99",
+      "expected": "BEFORE\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "reader": "BEFORE\nAFTER",
+      "baseline": "BEFORE\nSECRET\nAFTER",
+      "writerPdf": {
+        "text": "BEFORE\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFORE\nAFTER",
+      "pdfSha256": "3b2ba537e621bc16d3cc102854a0974a465ec1fe606da472d7275e63daf7ed6e",
+      "htmlSha256": "b11c25f3e2ee0c96eb00630a7ea3d709d92bd0ea5c69475025f6fb1adfda374c",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "character-plain-reset",
+      "sourceSha256": "a0bb503536bab487a92c9d6297c3878da47ce1f8a0e990c30d1a67217785bd7b",
+      "expected": "BEFOREVISIBLEAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "reader": "BEFOREVISIBLEAFTER",
+      "baseline": "BEFORESECRETVISIBLEAFTER",
+      "writerPdf": {
+        "text": "BEFOREVISIBLEAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFOREVISIBLEAFTER",
+      "pdfSha256": "72231f19aa8c32ac9a8b20440baada2a4f595adcd8620a60ec0b584334855190",
+      "htmlSha256": "5e91008c16dc815230fa5ca3ebb5bc477c77fdf9cf5e3fda96941561d109c8ff",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "paragraph-reset",
+      "sourceSha256": "3a9fdf5232a0094fa1b01f11dede8e6f226223a2efdf1d5394443ffae680bbaa",
+      "expected": "VISIBLE",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "reader": "VISIBLE",
+      "baseline": "SECRET\nVISIBLE",
+      "writerPdf": {
+        "text": "VISIBLE",
+        "pages": 1
+      },
+      "writerHtmlChrome": "VISIBLE",
+      "pdfSha256": "6c6ffa19045cecb30ca80158c488f3c60b19c07ff92b9261a66d4c8923a3fe84",
+      "htmlSha256": "2eb0ce0b7f933b5ea5c288fba1a3230b088273253598e26380bc838c61808465",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "direct-font-control",
+      "sourceSha256": "779d8dafc354dd7b3b346287a12273e7ffb00a9934667b02b74ab71c4635b910",
+      "expected": "BEFORE你好AFTER",
+      "oracle": "writer-html",
+      "expectedBasis": "Actual Writer HTML -> Chrome, explicit CP936 control. Writer PDF lacks CJK glyphs in this local font environment: blank glyphs visually inspected, pdfplumber wrongly extracts 你你. Preserve 你好; do not use the broken PDF font export as an oracle.",
+      "reader": "BEFORE你好AFTER",
+      "baseline": "BEFORE你好AFTER",
+      "writerPdf": {
+        "text": "BEFORE你你AFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFORE你好AFTER",
+      "pdfSha256": "e33dcd2beeda15d20ff10a36b2ca5d6522cd2c7acb0e869043cad8289910dde8",
+      "htmlSha256": "206c18512b393c80a9d68d20fff9d1078e00f6ec228dce380f80c85801175a8f",
+      "pdfMatchesExpected": false,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "character-hidden-font-codepage",
+      "sourceSha256": "b7aae072307de1d0280d35d86b21f2bfba019a8f816f56a19d5acc1674b201f6",
+      "expected": "BEFOREAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Writer actual RTF import and unmodified HTML paragraph innerText",
+      "reader": "BEFOREAFTER",
+      "baseline": "BEFOREÄãºÃAFTER",
+      "writerPdf": {
+        "text": "BEFOREAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFOREAFTER",
+      "pdfSha256": "9247bb3e69a6dd4f3f03a0dd2fbb465a346aa6e5e3345b82eafa8607457fd003",
+      "htmlSha256": "7526b8c104e4562037b303df7d6e58b830b168ab6b5f4f2ec950aba07d4f797a",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "plain-paragraph",
+      "sourceSha256": "66873b1c3afc915511ee183bf1d38be8e1e58c53ec943251ab4967d410bcc4ab",
+      "expected": "AFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "AFTER",
+      "baseline": "SECRETPLAIN\nAFTER",
+      "writerPdf": {
+        "text": "AFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "AFTER",
+      "pdfSha256": "3aa0ffdee1db7e8346c8121a0ab0b8c7f4676eb930942b8b3c90e6513440e9a1",
+      "htmlSha256": "0af5cf2e1a7c4e497595b2e9a35da4f1a3a1cb85de8b4106d2958e0e818404c2",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "pard-direct",
+      "sourceSha256": "33c8b4e06d3219f5e6ab3b0bdf0a99c533838eaf28c0d516628eab4337e897da",
+      "expected": "AFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "AFTER",
+      "baseline": "AFTER",
+      "writerPdf": {
+        "text": "AFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "AFTER",
+      "pdfSha256": "b6d36fafe44939abbd3be8e82c35f067f6aeb5594b0872e1cba1dd3465f7c236",
+      "htmlSha256": "86b4da2072c3c372eeca1f5db2d00813c34984d1ab66f199ef6b3d4a3428c3ee",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "style-direct-before",
+      "sourceSha256": "92795a6666c2c9f7677c90b30dbf342bccb414acf06fa849190f3c6a7d095f3f",
+      "expected": "TOKEN\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "TOKEN\nAFTER",
+      "baseline": "TOKEN\nAFTER",
+      "writerPdf": {
+        "text": "TOKEN\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "TOKEN\nAFTER",
+      "pdfSha256": "bd4871cce81a219994d2cd41078558e016758dda64fe4b07491cd51b4c70e54b",
+      "htmlSha256": "2118107b12502b573afd712c9284e1bd443fa7aa74d94873829c53832d4f34d0",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "style-direct-after",
+      "sourceSha256": "49132781aef940787c01e52530a90d4ce188dd24ada11f9db06f4d42ee69fa4c",
+      "expected": "TOKEN\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "TOKEN\nAFTER",
+      "baseline": "TOKEN\nAFTER",
+      "writerPdf": {
+        "text": "TOKEN\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "TOKEN\nAFTER",
+      "pdfSha256": "1e4afb05acc6afe7551144160f84d12c7a88d4a4e66c9505540168eb2dc19fb7",
+      "htmlSha256": "2118107b12502b573afd712c9284e1bd443fa7aa74d94873829c53832d4f34d0",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "char-direct-before",
+      "sourceSha256": "054c466a21ffb8be0512e178bb69f2677743851ad248cc275e2a89ed73a10256",
+      "expected": "BEFORETOKENAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "BEFORETOKENAFTER",
+      "baseline": "BEFORETOKENAFTER",
+      "writerPdf": {
+        "text": "BEFORETOKENAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFOREAFTER",
+      "pdfSha256": "6c198fcb1723eee0a86e4390fa4ed745093e300ec19c9e1c558fddc94d3c2505",
+      "htmlSha256": "9ff30d64da3de435cfccc56bebeeab2eeb3e748c27345aa57da21d2ee9c1ac32",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": false
+    },
+    {
+      "name": "char-direct-after",
+      "sourceSha256": "bcbe73cb0e1cc0d50bb48e27c7d29bafa403a94d3e356808b0bc7d8f77c7a534",
+      "expected": "BEFORETOKENAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "BEFORETOKENAFTER",
+      "baseline": "BEFORETOKENAFTER",
+      "writerPdf": {
+        "text": "BEFORETOKENAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFOREAFTER",
+      "pdfSha256": "74dca2354d457f9fc39f1472dbc4650b0b7de52b8c4559c7833508f9ad996dda",
+      "htmlSha256": "9ff30d64da3de435cfccc56bebeeab2eeb3e748c27345aa57da21d2ee9c1ac32",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": false
+    },
+    {
+      "name": "char-neutral-after-hidden",
+      "sourceSha256": "50020e70f554072db9931540362453b5bcad8077662a6bf8170463c98f208f3a",
+      "expected": "BEFORETOKENAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "BEFORETOKENAFTER",
+      "baseline": "BEFORESECRETTOKENAFTER",
+      "writerPdf": {
+        "text": "BEFORETOKENAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFORETOKENAFTER",
+      "pdfSha256": "a2e262abbc73301573c9c4406a168e13a93f1ba2107a21d6c15791714bd2a801",
+      "htmlSha256": "8e4e6b350fc039f59176f9bf29c5c17864bddc16b9f8c7f40e084cdca4c20219",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "char-nonadd-after-hidden",
+      "sourceSha256": "b0eae7833436aab71a9eb7fceccdf81b233e175810c6f4375056eaf4e2e14238",
+      "expected": "BEFORETOKENAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "BEFORETOKENAFTER",
+      "baseline": "BEFORESECRETTOKENAFTER",
+      "writerPdf": {
+        "text": "BEFORETOKENAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFORETOKENAFTER",
+      "pdfSha256": "0585fff7af4783c34ed4a298ad61cdc2b8e2ab85d59603a1c6dd9967fd84c781",
+      "htmlSha256": "8e4e6b350fc039f59176f9bf29c5c17864bddc16b9f8c7f40e084cdca4c20219",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "char-neutral-on-par",
+      "sourceSha256": "0ab2402055556f0d11122692e31cd3043536007c12ac2703f5629c504d6d42d1",
+      "expected": "AFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "AFTER",
+      "baseline": "SECRETTOKENPLAIN\nAFTER",
+      "writerPdf": {
+        "text": "AFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "AFTER",
+      "pdfSha256": "1e9d31246321021d5852a5d776496111c55f08f5c17408236502b867d8a46358",
+      "htmlSha256": "0af5cf2e1a7c4e497595b2e9a35da4f1a3a1cb85de8b4106d2958e0e818404c2",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "char-nonadd-on-par",
+      "sourceSha256": "96a30df60563249c01747bbe86e4d6f184e3ed1c53acec602af88fafeeb6b34e",
+      "expected": "AFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "AFTER",
+      "baseline": "SECRETTOKENPLAIN\nAFTER",
+      "writerPdf": {
+        "text": "AFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "AFTER",
+      "pdfSha256": "9c7aaaf47d39a0e184f9000db10fa4c23cddda9dce09fe138ba58e94a5e8a9f4",
+      "htmlSha256": "0af5cf2e1a7c4e497595b2e9a35da4f1a3a1cb85de8b4106d2958e0e818404c2",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "char-visible-on-par",
+      "sourceSha256": "a1a6d7a88cf4dfdc3e2f12aaf0be5acd889c3b7d8df3fe9110a8082e6afea478",
+      "expected": "TOKEN\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "TOKEN\nAFTER",
+      "baseline": "SECRETTOKENPLAIN\nAFTER",
+      "writerPdf": {
+        "text": "TOKEN\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "SECRETTOKENPLAIN\nAFTER",
+      "pdfSha256": "a07acdb929792bdcc2db3e119887e4b8b42ce65097a9276b638795b5cf246d83",
+      "htmlSha256": "fd24b5e7b05b42a6cb4d90825aac5e53238c269009752a81d28e1ea0d65bb7ee",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": false
+    },
+    {
+      "name": "switch-paragraph",
+      "sourceSha256": "bbbc86059fac1d5522ccbdaa8832cc4203813aed93bf798cfabf9bea90368420",
+      "expected": "TOKEN\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "TOKEN\nAFTER",
+      "baseline": "SECRET\nTOKEN\nAFTER",
+      "writerPdf": {
+        "text": "TOKEN\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "TOKEN\nAFTER",
+      "pdfSha256": "920fce5d4d7ac0f72dea43b2fffcc4323ffa17bda257fe38ee6109be201b7116",
+      "htmlSha256": "7f40f403190d3b45efeba3e85c02cfb216e26bc270f26a683eeb498b2174e386",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "switch-par-direct",
+      "sourceSha256": "fae7ee79ac1a26d1a6d833bef5b62d9508c9a00f052d0267505f717338012017",
+      "expected": "VISIBLE\nTOKEN\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "VISIBLE\nTOKEN\nAFTER",
+      "baseline": "VISIBLE\nTOKEN\nAFTER",
+      "writerPdf": {
+        "text": "VISIBLE\nTOKEN\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "VISIBLE\nTOKEN\nAFTER",
+      "pdfSha256": "66bd76db13aeadcf2897dcb7fca18272234f362b33e4bab5c7559546831578f7",
+      "htmlSha256": "e281112797d70833ec147205ce2b5cf20964707bd6f1ef18688f14d9272f4492",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "switch-par-direct-hidden",
+      "sourceSha256": "574f4f00a0874464310b68732b348b900ade5ed545e5df9430e1adbf59c10c3f",
+      "expected": "AFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "AFTER",
+      "baseline": "AFTER",
+      "writerPdf": {
+        "text": "AFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "AFTER",
+      "pdfSha256": "a3787b66ab5fdece7a6178f8c6e23684f3669f07a449d699ff0e17754bc53f1b",
+      "htmlSha256": "a125b7e33f25c51fca3e28e76782bafc8ddf8c2ccc6e259cb67925f30033d245",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "pard-character",
+      "sourceSha256": "1179a7e52af723e3b6a0c50965d7e4bee8adae7fdb95bd9b769e406092d6b1fd",
+      "expected": "AFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "AFTER",
+      "baseline": "SECRETTOKENAFTER",
+      "writerPdf": {
+        "text": "AFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "AFTER",
+      "pdfSha256": "bc2ff1cc4f8f61b6c36c6a72776b5aa3eafebfaa35056c2b3068e82cf5c9ccbf",
+      "htmlSha256": "6e97455d5c6a59f05f4f9aca76b9ff05ae7fb3a561f23a2fe842d6a994373c7e",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "missing-character",
+      "sourceSha256": "b5abf5e4c3824e69e3471790dd4ddf6ff8cdf374f9f660eeb9556101ff01e52b",
+      "expected": "BEFOREAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "BEFOREAFTER",
+      "baseline": "BEFORESECRETTOKENAFTER",
+      "writerPdf": {
+        "text": "BEFOREAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFOREAFTER",
+      "pdfSha256": "1fc4eca755df0144d34d05efd5965f35c856571b514f367ec2645c4b5edbbb48",
+      "htmlSha256": "cc92689a34b16a94fafe4db044cb6e4d1a702e59cff23b95659eaf23ca314da1",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "missing-paragraph",
+      "sourceSha256": "aa85cb6363da05ac6d9f84fb0dad6215225207283b442b6d50e74935f92e7c58",
+      "expected": "AFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "AFTER",
+      "baseline": "SECRET\nTOKEN\nAFTER",
+      "writerPdf": {
+        "text": "AFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "AFTER",
+      "pdfSha256": "396b88d9bf2204d1f32af95f382876aa9737e8657dc36ce81de83bf404c65e3f",
+      "htmlSha256": "0af5cf2e1a7c4e497595b2e9a35da4f1a3a1cb85de8b4106d2958e0e818404c2",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "default-hidden",
+      "sourceSha256": "36c6a760c4d4c38e3459180ef1e5146ccfbdee6daf7e81f395c4405772ec4365",
+      "expected": "",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "",
+      "baseline": "TOKEN\nAFTER",
+      "writerPdf": {
+        "text": "",
+        "pages": 1
+      },
+      "writerHtmlChrome": "",
+      "pdfSha256": "fcff55bae5b07677e435b9783d303c7e2214eb2eafd0695c7ecc5367b2beba27",
+      "htmlSha256": "6ebde83b9d196d3ced02b1c7022ae0c84580e18831dcd8dd6b4d70124843388b",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "plain-direct-par",
+      "sourceSha256": "5bc4440c171ed1b0a68dc8912d7e0b30e1bdd3d919a445f02a37cebb6573ffb3",
+      "expected": "VISIBLE\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "VISIBLE\nAFTER",
+      "baseline": "VISIBLETOKEN\nAFTER",
+      "writerPdf": {
+        "text": "VISIBLE\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "VISIBLETOKEN\nAFTER",
+      "pdfSha256": "72ac2138b12ad2252b8001d3e93f0a5f0d15630fcf67de47511621b8b5814824",
+      "htmlSha256": "8bf781883761d05b73563c2fe826d5cc85aaaf1eb66585e12a597d955df229cb",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": false
+    },
+    {
+      "name": "char-hidden-par-switch",
+      "sourceSha256": "6048893630e3926e9492b209dc78bfafae9106d3a89235a49df4791ae5e6cf44",
+      "expected": "AFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "AFTER",
+      "baseline": "SECRET\nTOKENAFTER",
+      "writerPdf": {
+        "text": "AFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "AFTER",
+      "pdfSha256": "7d62d960f83b84d8f184c92244f377dd60ba5478522effbe6e87e17f6004e7b2",
+      "htmlSha256": "0a12dd75af4df13ee664d1d23c52d1de9caadd0cef91dc2c678928a7e242f3ab",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "char-visible-par-switch",
+      "sourceSha256": "03a3d349be9cda1fdf0368275acc5729d1119366dbfb9ddeb6d7468a0a15b8fc",
+      "expected": "VISIBLE\nTOKEN",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "VISIBLE\nTOKEN",
+      "baseline": "VISIBLE\nTOKENAFTER",
+      "writerPdf": {
+        "text": "VISIBLE\nTOKEN",
+        "pages": 1
+      },
+      "writerHtmlChrome": "VISIBLE\nTOKENAFTER",
+      "pdfSha256": "91d7e73115b7697fbca7031bdfa83f006550cfe8cbfdd0f92cd7ca7497c3bb19",
+      "htmlSha256": "c52d1b592353fc8aa1b9505664317f5734a550607c47ac1d6c7aaf343ca39067",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": false
+    },
+    {
+      "name": "late-style-direct",
+      "sourceSha256": "013ff8a4fed427ee459939d6f5570ef6b8c6b759ab90a2023689c25b284c02dd",
+      "expected": "BEFORESECRET\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "BEFORESECRET\nAFTER",
+      "baseline": "BEFORESECRET\nAFTER",
+      "writerPdf": {
+        "text": "BEFORESECRET\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFORESECRET\nAFTER",
+      "pdfSha256": "93b185117baabac1077728068ddec8b418d5ca83daf8119dde8b3613aa315570",
+      "htmlSha256": "93d105986fb1503570ba71bae024fafb8e0b500a54609c3e600b0382c17fafaa",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "paragraph-based-visible",
+      "sourceSha256": "9213f158a952e53507ae0a55fa1db51a1fbbebeca1b3641866ed3916d20417a0",
+      "expected": "VISIBLE\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "VISIBLE\nAFTER",
+      "baseline": "VISIBLE\nAFTER",
+      "writerPdf": {
+        "text": "VISIBLE\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "VISIBLE\nAFTER",
+      "pdfSha256": "d2875f6fcb044ce05c32018ec34d7642a84099c20cae5cde277cf2fbd69c9f87",
+      "htmlSha256": "cb3d206a5793c5c6a5790c0a8173eca4c3bfbc116833aa66ef7da7b37e9fbe1f",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "character-based-hidden",
+      "sourceSha256": "06479691978cba5e2b4501496444eee73892e213a3e5316a6b1ac737bd655a3a",
+      "expected": "BEFOREAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "BEFOREAFTER",
+      "baseline": "BEFORESECRETAFTER",
+      "writerPdf": {
+        "text": "BEFOREAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFOREAFTER",
+      "pdfSha256": "440441e4be5bebc0329490cbce2a391da0754842d09c62ae3da73b5542faf154",
+      "htmlSha256": "9e181273c0bcd728efa4988e76af0d8b5adf314209e8d24dde02bf3b4dc1dde8",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "character-cross-kind",
+      "sourceSha256": "f5c738e39cb52db1f8f170a15f1852034d9b8c023958d8ac2cd8b1e2d362abd3",
+      "expected": "BEFORETOKENAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "BEFORETOKENAFTER",
+      "baseline": "BEFORETOKENAFTER",
+      "writerPdf": {
+        "text": "BEFORETOKENAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFORETOKENAFTER",
+      "pdfSha256": "8b2fcd6ad39741df06decbe2f7c908862ac1799148df66b1a016d0f5e2ed1344",
+      "htmlSha256": "f7a28fecf85c6180ddda45fce8486e8d659e0495e76f252c3c2b2356ee47e382",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "style0-inheritance",
+      "sourceSha256": "edadea45801831b3c311a19722b80945a26c650127a4fb87af7d0e7908b4fac0",
+      "expected": "VISIBLE\nAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "VISIBLE\nAFTER",
+      "baseline": "VISIBLE\nAFTER",
+      "writerPdf": {
+        "text": "VISIBLE\nAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "VISIBLE\nAFTER",
+      "pdfSha256": "777f080c99bc9cd9b2bf48e397435520fc07958a4be748ce3acdae8e2082698d",
+      "htmlSha256": "7324d9224442d4922a9ebbc5ff0401a52fc3fa574ab44fdfd5741b51614b8b9c",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "body-star-cs",
+      "sourceSha256": "033b9954b422b02c7307ff404b34597db29a38cb9c9c797736f751d6ca12823f",
+      "expected": "BEFOREAFTER",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "BEFOREAFTER",
+      "baseline": "BEFOREAFTER",
+      "writerPdf": {
+        "text": "BEFOREAFTER",
+        "pages": 1
+      },
+      "writerHtmlChrome": "BEFOREAFTER",
+      "pdfSha256": "ed7140a1d5ee330da58dc3dd6acff68063d3ad381d0d8b1976888fc0f53a6467",
+      "htmlSha256": "9e181273c0bcd728efa4988e76af0d8b5adf314209e8d24dde02bf3b4dc1dde8",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    },
+    {
+      "name": "plain-paragraph-in-group",
+      "sourceSha256": "e7590ccd1342c31b56f38b5261e491acf2d38932d6d0555a00e35f6ffbd838af",
+      "expected": "END",
+      "oracle": "writer-pdf",
+      "expectedBasis": "Actual LibreOffice Writer PDF visible text, with explicit fonts and codepage; RTF style/direct-format precedence.",
+      "reader": "END",
+      "baseline": "SECRETINNERAFTER\nEND",
+      "writerPdf": {
+        "text": "END",
+        "pages": 1
+      },
+      "writerHtmlChrome": "END",
+      "pdfSha256": "a8ec2f2ee60ad810c7850f5ed383154be402e1fe5261f4aef99bb3e6fafb1de7",
+      "htmlSha256": "2ed973a5283dc6acc7d7faaef9d75d0f1d08b544595fc0cf5f8ac3c308dedc6e",
+      "pdfMatchesExpected": true,
+      "htmlMatchesExpected": true
+    }
+  ],
+  "references": [
+    "https://latex2rtf.sourceforge.net/rtfspec_6.html"
+  ],
+  "limitations": [
+    "PDF text checks do not certify rich layout. Separately record rendered-page visual review.",
+    "Writer HTML export differences remain explicit; expected text is not replaced with its lossy output.",
+    "Mid-paragraph paragraph-style binding differences remain separate exploration work.",
+    "No WeChat DevTools or physical-device result."
+  ],
+  "version": "1.4.111",
+  "status": "development-uploaded",
+  "reproduce": "npm run verify:rtf-styles; RTF_PYTHON may select an installed Python with pdfplumber",
+  "targetedNodeTests": 140,
+  "targetedFailures": 0,
+  "independentExpectedMatches": 36,
+  "pdfVisualReview": {
+    "pages": 5,
+    "files": [
+      {
+        "name": "character-visible-override",
+        "pngSha256": "1133e7e4a0a159237c55b36600cbb29d098269c905b18f69669debacd0d1fae1",
+        "visibleTextConfirmed": true
+      },
+      {
+        "name": "char-visible-on-par",
+        "pngSha256": "c70ebba0ee842ef6434ec344eefbea94bee6152190032e6f5a1ab6e575edfdd6",
+        "visibleTextConfirmed": true
+      },
+      {
+        "name": "plain-direct-par",
+        "pngSha256": "f3d1153159e6dd4da82a989319fb94b5a536cdd55d570156c3ae63cf3c423d33",
+        "visibleTextConfirmed": true
+      },
+      {
+        "name": "char-visible-par-switch",
+        "pngSha256": "5937c27769ad80b336beaf2f5f2815d7e151a71d688913075cb70fb83e11ba73",
+        "visibleTextConfirmed": true
+      },
+      {
+        "name": "paragraph-hidden",
+        "pngSha256": "a21b580e252ee6b001594e141994c59cdb71b180fdade667263c51701be2c0c9",
+        "visibleTextConfirmed": true
+      }
+    ],
+    "scope": "Full QA pages checked via Poppler renders, not rich-layout certification"
+  },
+  "fontControlPdfReview": {
+    "file": "direct-font-control",
+    "pdfSha256": "8433bc2d5963ce76ce1b71c2217b9419238199c35cc3dd0520966a669f399167",
+    "observed": "CJK glyphs blank in full-page Poppler render; pdfplumber maps both to 你, font LinuxLibertineG. Exact expected 你好 remains independently confirmed by Writer HTML in Chrome."
+  },
+  "validation": {
+    "production": "pass",
+    "chrome": "pass",
+    "wechatDevtools": "not-run: local CLI not logged in",
+    "ios": "not-run",
+    "android": "not-run",
+    "fullNodeTests": 1038,
+    "fullNodeFailures": 0,
+    "chromeRtfViews": 101,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass"
+  }
+}

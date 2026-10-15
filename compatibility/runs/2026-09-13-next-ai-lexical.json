@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T08:23:31.884454+00:00",
+  "status": "confirmed-bug-awaiting-repair",
+  "version": null,
+  "feature": "DSC-looking text inside valid PostScript literal strings corrupts preview scope",
+  "sourceFixture": "tests/fixtures/ai-lexical/before.json",
+  "sourceFixtureSha256": "0a2dce2d09c033f32f2612c92a272aa54dc170693b2ef499cfb3ccccf273405e",
+  "sources": 90,
+  "uniqueSources": 90,
+  "actualHostOpens": 90,
+  "wrongVectorModels": 75,
+  "unexpectedRasterDetections": 15,
+  "hostNoPreview": 45,
+  "native": {
+    "implementation": "Ghostscript 9.56.0 via isolated @jspawn/ghostscript-wasm 0.0.2",
+    "selectedOriginals": 42,
+    "executionFailures": 0,
+    "exactExpectedArtwork": 42,
+    "framing": "EPSCrop, 40x20 original header; no source rewriting or fixed-canvas bypass",
+    "packageSource": "https://github.com/jsscheller/ghostscript-wasm"
+  },
+  "browser": {
+    "views": 42,
+    "missingPreviews": 21,
+    "wrongImages": 14,
+    "exactImages": 7,
+    "comparison": "Actual component-emitted SVG files compared to original-byte Ghostscript PNG pixels and aspect ratio. White background applied to both.",
+    "screenshotsInspected": true
+  },
+  "rootCause": "scanLegacyDsc scans physical lines for DSC markers without tracking PostScript strings. Literal %%EOF stops code; document/data markers trigger false scope/length errors; literal HiResBoundingBox overrides real canvas; literal BeginPreview is mistaken for a real raster preview.",
+  "references": [
+    {
+      "source": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
+      "section": "3.2 Strings; literal text strings",
+      "basis": "Literal strings may contain newlines, percent characters and balanced nested parentheses. Delimiter escape rules apply."
+    }
+  ],
+  "initialProbeCorrection": "report.json incorrectly read pathCount instead of paths and counted all90 as wrong vectors. It remains preserved. report-corrected.json recomputes from unchanged originals and reports75; native and host captures were not replaced.",
+  "localEvidence": [
+    {
+      "path": "outputs/ai-lexical/before/report.json",
+      "sha256": "3f879366a112b6958e258350a4dd839d0ee3f2885294a786b303c1e0cdd565e0"
+    },
+    {
+      "path": "outputs/ai-lexical/before/report-corrected.json",
+      "sha256": "ff5ef91e16c2351b769dece85648968345dde4ce948cf1f2dade02b714e10ebf"
+    },
+    {
+      "path": "outputs/ai-lexical/before/browser-report.json",
+      "sha256": "8fe1fae01ebdba6e88c2c3273df196ccf57ce71950b27ff094945fa34802b8cf"
+    },
+    {
+      "path": "outputs/ai-lexical/before/comparison.png",
+      "sha256": "ba697722ed2cb689e27482808e6f573d5f335dda255e06d2dae700ef40c7586d"
+    }
+  ],
+  "next": [
+    "Implement bounded lexical-aware DSC recognition, preserving byte offsets, literal escaping/nesting and genuine data skipping.",
+    "Expand malformed/escaped delimiter, split CRLF and hex/ASCII85/dictionary distinctions; do not infer executable resource contents from metadata.",
+    "Verify the same original pixels and actual host recovery; protect prior genuine document/data and EPSI behavior.",
+    "Add false raster fallback case with no drawable paths, then full gates/PR."
+  ],
+  "limits": [
+    "No product patch yet.",
+    "Only a supported two-rectangle artwork subset is used; no complete PostScript interpreter claim.",
+    "15 false raster detections currently established at API level; these90 have drawable vector content, so extend the actual fallback path before claiming15 wrong displayed raster images.",
+    "No WeChat WXML or physical-device verification."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "appid": "wx3a426835ea59403a",
+  "mode": "push",
+  "version": "1.4.147",
+  "robot": 1,
+  "tag": "",
+  "ref": "refs/heads/main",
+  "runId": "38412950047",
+  "runAttempt": "1",
+  "resultKeys": [
+    "devPluginId",
+    "pluginInfo",
+    "subPackageInfo"
+  ]
+}

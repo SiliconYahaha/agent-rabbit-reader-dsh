@@ -1,0 +1,298 @@
+[
+  {
+    "name": "case-1",
+    "source": "{\\rtf1\\ansi A\\V VISIBLE\\v0 Z}",
+    "expected": "AVISIBLEZ",
+    "writerVisible": "AVISIBLEZ",
+    "cocoa": "AVISIBLEZ"
+  },
+  {
+    "name": "case-3",
+    "source": "{\\rtf1\\ansi A{\\FONTtbl VISIBLE}Z}",
+    "expected": "AVISIBLEZ",
+    "writerVisible": "AVISIBLEZ",
+    "cocoa": "AVISIBLEZ"
+  },
+  {
+    "name": "case-4",
+    "source": "{\\rtf1\\ansi A{\\Fonttbl VISIBLE}Z}",
+    "expected": "AVISIBLEZ",
+    "writerVisible": "AVISIBLEZ",
+    "cocoa": "AVISIBLEZ"
+  },
+  {
+    "name": "case-5",
+    "source": "{\\rtf1\\ansi A\\U65? Z}",
+    "expected": "A? Z",
+    "writerVisible": "A? Z",
+    "cocoa": "A? Z"
+  },
+  {
+    "name": "case-7",
+    "source": "{\\rtf1\\ansi A\\PAR Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "case-8",
+    "source": "{\\rtf1\\ansi A\\Par Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "case-10",
+    "source": "{\\rtf1\\ansi A\\LINE Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "case-11",
+    "source": "{\\rtf1\\ansi A\\TAB Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "case-12",
+    "source": "{\\rtf1\\ansi A{\\Info VISIBLE}Z}",
+    "expected": "AVISIBLEZ",
+    "writerVisible": "AVISIBLEZ",
+    "cocoa": "AVISIBLEZ"
+  },
+  {
+    "name": "binary-upper-text",
+    "source": "{\\rtf1\\ansi A\\BIN3 XYZ Z}",
+    "expected": "AXYZ Z",
+    "writerVisible": "AXYZ Z",
+    "cocoa": "AXYZ Z"
+  },
+  {
+    "name": "binary-upper-braces",
+    "source": "{\\rtf1\\ansi A\\BIN9 {X}Z}",
+    "expected": "AXZ",
+    "writerVisible": "AXZ",
+    "cocoa": "AXZ"
+  },
+  {
+    "name": "binary-upper-fallback",
+    "source": "{\\rtf1\\ansi A\\uc1\\u66\\BIN3 XYZ Z}",
+    "expected": "ABXYZ Z",
+    "writerVisible": "ABYZ Z",
+    "cocoa": "ABXYZ Z"
+  },
+  {
+    "name": "binary-title-text",
+    "source": "{\\rtf1\\ansi A\\Bin3 XYZ Z}",
+    "expected": "AXYZ Z",
+    "writerVisible": "AXYZ Z",
+    "cocoa": "AXYZ Z"
+  },
+  {
+    "name": "binary-title-braces",
+    "source": "{\\rtf1\\ansi A\\Bin9 {X}Z}",
+    "expected": "AXZ",
+    "writerVisible": "AXZ",
+    "cocoa": "AXZ"
+  },
+  {
+    "name": "binary-title-fallback",
+    "source": "{\\rtf1\\ansi A\\uc1\\u66\\Bin3 XYZ Z}",
+    "expected": "ABXYZ Z",
+    "writerVisible": "ABYZ Z",
+    "cocoa": "ABXYZ Z"
+  },
+  {
+    "name": "binary-mixed-text",
+    "source": "{\\rtf1\\ansi A\\bIn3 XYZ Z}",
+    "expected": "AXYZ Z",
+    "writerVisible": "AXYZ Z",
+    "cocoa": "AXYZ Z"
+  },
+  {
+    "name": "binary-mixed-braces",
+    "source": "{\\rtf1\\ansi A\\bIn9 {X}Z}",
+    "expected": "AXZ",
+    "writerVisible": "AXZ",
+    "cocoa": "AXZ"
+  },
+  {
+    "name": "binary-mixed-fallback",
+    "source": "{\\rtf1\\ansi A\\uc1\\u66\\bIn3 XYZ Z}",
+    "expected": "ABXYZ Z",
+    "writerVisible": "ABYZ Z",
+    "cocoa": "ABXYZ Z"
+  },
+  {
+    "name": "lower-bin",
+    "source": "{\\rtf1\\ansi A\\bin3 XYZ Z}",
+    "expected": "A Z",
+    "writerVisible": "A Z",
+    "cocoa": "AXYZ Z"
+  },
+  {
+    "name": "lower-bin-fallback",
+    "source": "{\\rtf1\\ansi A\\uc1\\u66\\bin3 XYZ Z}",
+    "expected": "AB Z",
+    "writerVisible": "ABZ",
+    "cocoa": "ABXYZ Z"
+  },
+  {
+    "name": "star-0-FONTtbl",
+    "source": "{\\rtf1\\ansi A{\\*\\FONTtbl VISIBLE\\nestrow}Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "star-1-Fonttbl",
+    "source": "{\\rtf1\\ansi A{\\*\\Fonttbl VISIBLE\\nestrow}Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "star-2-Info",
+    "source": "{\\rtf1\\ansi A{\\*\\Info VISIBLE\\nestrow}Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "star-3-STYLESHEET",
+    "source": "{\\rtf1\\ansi A{\\*\\STYLESHEET VISIBLE\\nestrow}Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "star-4-NESTTABLEPROPS",
+    "source": "{\\rtf1\\ansi A{\\*\\NESTTABLEPROPS VISIBLE\\nestrow}Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "star-5-Nesttableprops",
+    "source": "{\\rtf1\\ansi A{\\*\\Nesttableprops VISIBLE\\nestrow}Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "star-nestrow-case",
+    "source": "{\\rtf1\\ansi A{\\*\\nesttableprops\\NESTROW}Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "unknown-upr",
+    "source": "{\\rtf1\\ansi A{\\UPR{one}{\\*\\ud two}}Z}",
+    "expected": "AonetwoZ",
+    "writerVisible": "AonetwoZ",
+    "cocoa": "AoneZ"
+  },
+  {
+    "name": "exact-upr",
+    "source": "{\\rtf1\\ansi A{\\upr{one}{\\*\\ud two}}Z}",
+    "expected": "AtwoZ",
+    "writerVisible": "AonetwoZ",
+    "cocoa": "AoneZ"
+  },
+  {
+    "name": "unknown-uc",
+    "source": "{\\rtf1\\ansi A\\Uc0\\u66?Z}",
+    "expected": "ABZ",
+    "writerVisible": "ABZ",
+    "cocoa": "ABZ"
+  },
+  {
+    "name": "exact-uc",
+    "source": "{\\rtf1\\ansi A\\uc0\\u66?Z}",
+    "expected": "AB?Z",
+    "writerVisible": "AB?Z",
+    "cocoa": "AB?Z"
+  },
+  {
+    "name": "upper-style-hidden",
+    "source": "{\\rtf1\\ansi {\\stylesheet{\\s1\\V Upper;}}\\s1 VISIBLE}",
+    "expected": "VISIBLE",
+    "writerVisible": "VISIBLE",
+    "cocoa": "VISIBLE"
+  },
+  {
+    "name": "lower-style-hidden",
+    "source": "{\\rtf1\\ansi {\\stylesheet{\\s1\\v Hidden;}}A{\\s1 HIDDEN}Z}",
+    "expected": "AHIDDENZ",
+    "knownGap": "Existing paragraph/default-style binding differs from Writer visible output; separate from control-case handling.",
+    "writerVisible": "AHIDDENZ",
+    "cocoa": "AHIDDENZ"
+  },
+  {
+    "name": "upper-style-id",
+    "source": "{\\rtf1\\ansi {\\stylesheet{\\S1\\v Hidden;}}\\s1 VISIBLE}",
+    "expected": "VISIBLE",
+    "knownGap": "Existing paragraph/default-style binding differs from Writer visible output; separate from control-case handling.",
+    "writerVisible": "VISIBLE",
+    "cocoa": "VISIBLE"
+  },
+  {
+    "name": "upper-hidden-reset",
+    "source": "{\\rtf1\\ansi A\\v HIDDEN\\PLAIN ALSO HIDDEN\\v0 Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AHIDDENALSO HIDDENZ"
+  },
+  {
+    "name": "lower-hidden-reset",
+    "source": "{\\rtf1\\ansi A\\v HIDDEN\\plain VISIBLE Z}",
+    "expected": "AVISIBLE Z",
+    "writerVisible": "AVISIBLE Z",
+    "cocoa": "AHIDDENVISIBLE Z"
+  },
+  {
+    "name": "apple-mixed-case",
+    "source": "{\\rtf1\\ansi A\\CocoaLigature0 B\\AppleTypeServicesU1 C}",
+    "expected": "ABC",
+    "writerVisible": "ABC",
+    "cocoa": "ABC"
+  },
+  {
+    "name": "unknown-extension",
+    "source": "{\\rtf1\\ansi A\\CustomCommand42 B}",
+    "expected": "AB",
+    "writerVisible": "AB",
+    "cocoa": "AB"
+  },
+  {
+    "name": "standalone-ud",
+    "source": "{\\rtf1\\ansi A{\\*\\ud B}Z}",
+    "expected": "ABZ",
+    "writerVisible": "ABZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "ud-discarded-parent",
+    "source": "{\\rtf1\\ansi A{\\*\\unknown{\\*\\ud SECRET}}Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "ud-hidden-parent",
+    "source": "{\\rtf1\\ansi A{\\v{\\*\\ud SECRET}}Z}",
+    "expected": "AZ",
+    "writerVisible": "AZ",
+    "cocoa": "AZ"
+  },
+  {
+    "name": "ud-unselected-branch",
+    "source": "{\\rtf1\\ansi A{\\upr{{\\*\\ud OLD}}{\\*\\ud NEW}}Z}",
+    "expected": "ANEWZ",
+    "writerVisible": "AOLDNEWZ",
+    "cocoa": "AZ"
+  }
+]

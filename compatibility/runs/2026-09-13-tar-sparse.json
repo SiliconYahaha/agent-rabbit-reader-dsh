@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T09:39:39.623980+00:00",
+  "status": "fixed-local-gates-passed-awaiting-draft-pr",
+  "feature": "GNU PAX sparse logical content and original member names",
+  "rootCause": "Pinned TarIn ignores GNU.sparse attributes, leaving packed extent bytes and the v1 map as ordinary content. Returning S_FALSE on invalid maps lets native autodetection reopen at a later header and discard sparse metadata.",
+  "fix": "Parse GNU PAX sparse 0.0/0.1/1.0, reuse native sparse stream, set logical size and original name, consume aligned v1 map blocks, validate ordered extents and exact packed length, limit maps to 65536 records, and return E_FAIL on invalid sparse metadata. Preserve scalar/map last-value semantics and repeated v0 offset/length pairs.",
+  "baseline": {
+    "initial": "tests/fixtures/tar-sparse/before.json",
+    "complete": "tests/fixtures/tar-sparse/complete-before.json",
+    "sources": 15,
+    "wrongBodies": 15,
+    "wrongNames": 10
+  },
+  "after": {
+    "sources": 15,
+    "wrongBodies": 0,
+    "wrongNames": 0,
+    "followingMemberExact": 15,
+    "basis": "Untouched authored original bytes, independently checked with Python tarfile and macOS bsdtar; first-fixed/report.json plus regression test."
+  },
+  "content": {
+    "at": "2026-09-13T09:36:21.559Z",
+    "native": [
+      {
+        "version": "0.0",
+        "sourceSha256": "c4dae6a1c3610bba0980f7865fabbda508ef2de39c475449f84f210d881c9dcb",
+        "logicalSize": 9332,
+        "imageSha256": "77b0b234bd70f9d1e2b756645ca55614e24b87549019bfca9402536ecd5b1969",
+        "pythonExact": true,
+        "bsdtarExact": true
+      },
+      {
+        "version": "0.1",
+        "sourceSha256": "198c4dfab0317e8cda407bd969a06be2fe5ddadd082acf743f0f942bf0d897f3",
+        "logicalSize": 9332,
+        "imageSha256": "77b0b234bd70f9d1e2b756645ca55614e24b87549019bfca9402536ecd5b1969",
+        "pythonExact": true,
+        "bsdtarExact": true
+      },
+      {
+        "version": "1.0",
+        "sourceSha256": "50ea2489a8a8657c36d7cf05b151656059850bea39b4a52ecbd87d26138ac300",
+        "logicalSize": 9332,
+        "imageSha256": "77b0b234bd70f9d1e2b756645ca55614e24b87549019bfca9402536ecd5b1969",
+        "pythonExact": true,
+        "bsdtarExact": true
+      }
+    ],
+    "malformed": [
+      {
+        "name": "overlap",
+        "sourceSha256": "5969b691f259e95c799ae75d7f0d836072b330931b679f72de8b70f315e5e5d8",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-46.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 0,
+        "bsdtarOutputSha256": "4b1605334ea38d09fe8ad4834d943bb88ea83bc560f0194a104fd85dadf512a8",
+        "bsdtarStderr": ""
+      },
+      {
+        "name": "outside-logical",
+        "sourceSha256": "e9e01eb2661fe7a46c8c4ffb3d4abdb4687f0f7cdc6f390e664743aa37177eb3",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-47.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 0,
+        "bsdtarOutputSha256": "dea82ef7dba7d526095b8ada963656293da159a9c7f6f89bb12eea2050c45d9d",
+        "bsdtarStderr": ""
+      },
+      {
+        "name": "packed-short",
+        "sourceSha256": "8bc9e86705d00e937806efb193852c6d5ab0a157026dac53f8a88f40398f4d31",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-48.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 0,
+        "bsdtarOutputSha256": "484b54c40f5086e2b75c7f4fc74c652d4b4c469839d1d1dc4ec111ff8e31eba5",
+        "bsdtarStderr": ""
+      },
+      {
+        "name": "packed-extra",
+        "sourceSha256": "752dc5aa56b236210b21a1f069c7200cbfe23282bf4604ed3c8c8f40453b19ae",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-49.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 0,
+        "bsdtarOutputSha256": "8e8d7ad821a72366f289dc56fa318c6948bcaecbf618d2674121687ad80fd109",
+        "bsdtarStderr": "tar: Damaged tar archive\ntar: Retrying...\ntar: Damaged tar archive\ntar: Retrying...\n"
+      },
+      {
+        "name": "count-mismatch",
+        "sourceSha256": "8adc3d5abc7191e3debff7f20829c478a3004ba6c11f75a99cda4fa94dae76dd",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-50.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 0,
+        "bsdtarOutputSha256": "246e752ccf2c581bb7bbaeb0838a3cf20eb1bbc9e7515cd683ac26f54b62952e",
+        "bsdtarStderr": ""
+      },
+      {
+        "name": "unsigned-overflow",
+        "sourceSha256": "1c55bb8026d26fa477ff563fc442313a19edf39ca18e5af0bb8f1f7c2c6152c2",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-51.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 1,
+        "bsdtarOutputSha256": "6ee1f036eb851d3cb7a1cd20fd83352ff2165e6be74d33607708a7240ca28eec",
+        "bsdtarStderr": "tar: Malformed sparse map data\ntar: Damaged tar archive\ntar: Retrying...\ntar: Damaged tar archive\ntar: Retrying...\ntar: Error exit delayed from previous errors.\n"
+      },
+      {
+        "name": "negative-offset",
+        "sourceSha256": "6efb1b9ffb2318dc21bacd709fdbde6ac72c212b4734a02591adca9115f9396b",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-52.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 1,
+        "bsdtarOutputSha256": "6ee1f036eb851d3cb7a1cd20fd83352ff2165e6be74d33607708a7240ca28eec",
+        "bsdtarStderr": "tar: (null)\ntar: Damaged tar archive\ntar: Retrying...\ntar: Damaged tar archive\ntar: Retrying...\ntar: Error exit delayed from previous errors.\n"
+      },
+      {
+        "name": "missing-map-number",
+        "sourceSha256": "23ca00b946846320e38dcd2d18cede4ef4de5398644d76e49a6e35b571814cb2",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-53.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 0,
+        "bsdtarOutputSha256": "6ee1f036eb851d3cb7a1cd20fd83352ff2165e6be74d33607708a7240ca28eec",
+        "bsdtarStderr": "tar: Damaged tar archive\ntar: Retrying...\ntar: Damaged tar archive\ntar: Retrying...\n"
+      },
+      {
+        "name": "unknown-version",
+        "sourceSha256": "bad2f1b78d531479506492e0f9939868c465649cac2d103c9361c884e91bc3d7",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-54.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 1,
+        "bsdtarOutputSha256": "7676c7ce24df31ab2d7d07d17e8e36327d8b2ea967c2ce874f8f482f8a055c7f",
+        "bsdtarStderr": "tar: Unrecognized GNU sparse file format\ntar: Unrecognized GNU sparse file format\ntar: Error exit delayed from previous errors.\n"
+      },
+      {
+        "name": "partial-offset-pair",
+        "sourceSha256": "fcfc628785ee4a5fb39c6ac73b39a78b9b068094885630e9186eded10c4a5899",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-55.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 0,
+        "bsdtarOutputSha256": "4b1605334ea38d09fe8ad4834d943bb88ea83bc560f0194a104fd85dadf512a8",
+        "bsdtarStderr": ""
+      },
+      {
+        "name": "sparse-symlink",
+        "sourceSha256": "1483d010a2d650a9cd8a9d0f1b14b99ad5d86d28bf6d5c935bd02a3c00e8c38c",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-56.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 1,
+        "bsdtarOutputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bsdtarStderr": "tar: Non-regular file cannot be sparse\ntar: Error exit delayed from previous errors.\n"
+      },
+      {
+        "name": "global-sparse",
+        "sourceSha256": "44d3a35f76b1304b8c362da1d46dd5fd2164c67983028e477d76c93d5d0afe41",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-57.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 0,
+        "bsdtarOutputSha256": "329bc74756a86027f8011c1e9240176a65c9242a14879ca0f6e2e53f82354c4a",
+        "bsdtarStderr": ""
+      },
+      {
+        "name": "v1-no-newline",
+        "sourceSha256": "c6eccab757c844b7b7766ef6ba81447c58c4affccce90f7dc7189213e104a381",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-58.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 1,
+        "bsdtarOutputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bsdtarStderr": "tar: Line too long\ntar: Error exit delayed from previous errors.\n"
+      },
+      {
+        "name": "v1-count-budget",
+        "sourceSha256": "7ea9650286db79e36e43fcdc8250751a511bdb549085afbe37c5d0680096de4c",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-59.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 1,
+        "bsdtarOutputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bsdtarStderr": "tar: Line too long\ntar: Error exit delayed from previous errors.\n"
+      },
+      {
+        "name": "v1-short-map-block",
+        "sourceSha256": "cf7467fa465c6769b633885c33b0d93a6a4bcd7d8163fa191b959d4ed4f078f1",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-60.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 1,
+        "bsdtarOutputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bsdtarStderr": "tar: (null)\ntar: Error exit delayed from previous errors.\n"
+      },
+      {
+        "name": "v1-padding-nonzero",
+        "sourceSha256": "876ee7c83d2dcf58cd0142e4978e870b418d2f7877b9eb93683e76fd271de01c",
+        "hostError": "TAR 读取失败：ERROR: /rabbit-reader-61.tar : opening : E_FAIL : Unspecified error",
+        "bsdtarStatus": 0,
+        "bsdtarOutputSha256": "896d08398bbaec89e2c245c1e5669ff47bd93db1c135e10c9e5792aeab5ba857",
+        "bsdtarStderr": ""
+      }
+    ],
+    "host": [
+      {
+        "version": "0.0",
+        "repeats": 2,
+        "previewExactBytes": true,
+        "followingHtmlText": "AFTER 正文"
+      },
+      {
+        "version": "0.1",
+        "repeats": 2,
+        "previewExactBytes": true,
+        "followingHtmlText": "AFTER 正文"
+      },
+      {
+        "version": "1.0",
+        "repeats": 2,
+        "previewExactBytes": true,
+        "followingHtmlText": "AFTER 正文"
+      }
+    ],
+    "expectedPixelsSha256": "252476365bf26996d411dca4471e6d1cc11e9ce4c59d1a9ccfbef68205af408e",
+    "wechat": "not run",
+    "device": "not run",
+    "hostRecovery": true,
+    "chrome": [
+      {
+        "name": "authored-original",
+        "width": 64,
+        "height": 48,
+        "pixelsSha256": "252476365bf26996d411dca4471e6d1cc11e9ce4c59d1a9ccfbef68205af408e"
+      },
+      {
+        "name": "reader-0.0",
+        "width": 64,
+        "height": 48,
+        "pixelsSha256": "252476365bf26996d411dca4471e6d1cc11e9ce4c59d1a9ccfbef68205af408e"
+      },
+      {
+        "name": "reader-0.1",
+        "width": 64,
+        "height": 48,
+        "pixelsSha256": "252476365bf26996d411dca4471e6d1cc11e9ce4c59d1a9ccfbef68205af408e"
+      },
+      {
+        "name": "reader-1.0",
+        "width": 64,
+        "height": 48,
+        "pixelsSha256": "252476365bf26996d411dca4471e6d1cc11e9ce4c59d1a9ccfbef68205af408e"
+      }
+    ]
+  },
+  "validation": {
+    "nodeTests": 1264,
+    "nodeFailed": 0,
+    "relatedTests": 71,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "chromeOracle": "pass",
+    "sourcePatchReverseCheck": "pass",
+    "wechat": "not run",
+    "physicalDevices": "not run"
+  },
+  "reference": "https://www.gnu.org/software/tar/manual/html_chapter/Tar-Internals.html",
+  "scripts": [
+    "scripts/probe-tar-sparse.py",
+    "scripts/probe-tar-sparse.js",
+    "scripts/verify-tar-sparse-content.js"
+  ],
+  "tests": [
+    "tests/tar-sparse.test.js",
+    "tests/tar-entry.test.js"
+  ],
+  "limits": [
+    "80 MiB raw archive and20 MiB selected logical output remain enforced.",
+    "65536 sparse map records; v1 decimal map numbers bounded to20 digits.",
+    "Old GNU aligned extension maps checked as regression; arbitrary legacy variants not claimed.",
+    "Malformed map criteria come from structure and resource limits; bsdtar returns nonzero for7/16 and tolerates the other9. Do not claim all16 are rejected independently.",
+    "PNG content checked by exact native bodies and Chrome decoded pixel hash; actual WX preview UI and devices not executed.",
+    "Compressed TAR wrappers, sparse link combinations and multiple adjacent PAX headers remain future exploration."
+  ],
+  "verificationCorrections": [
+    "First invalid-map test exposed native S_FALSE fallback; corrected parser to hard fail rather than allowing rescan.",
+    "The initial size assertion expected different wording; corrected it to the existing20MB error without changing limits.",
+    "The first host image probe assumed row0 was the image; actual host sorts names, so corrected selection by original filename. Initial logs retained."
+  ],
+  "mutationQueue": [
+    {
+      "id": "sparse-multiple-pax-headers-links",
+      "status": "pending",
+      "action": "Combine multiple local/global PAX records, hard links, Unicode and duplicate names; compare independent extraction."
+    },
+    {
+      "id": "legacy-sparse-non-block-extents",
+      "status": "pending",
+      "action": "Check old GNU unaligned extents and packed-length contradictions against independent native producers before altering old parser."
+    },
+    {
+      "id": "sparse-wechat-device",
+      "status": "pending",
+      "action": "Verify actual image preview, failure recovery and memory limits in WeChat/device once available."
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "scope": "Local Node filesystem stat/read and actual reader entry, then Chrome original bytes vs reconstructed render tree. Not WeChat native filesystem or WXML.",
+  "seed": null,
+  "rules": "UTF-8/UTF-16LE/UTF-16BE BOM x unknown/small/actual/over20MB/over200MB metadata",
+  "expected": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+  "actualLimits": [
+    {
+      "case": "actual-over20MB",
+      "hint": 1,
+      "reads": 0,
+      "error": "actual size exceeds limit"
+    },
+    {
+      "case": "missing-file-stat",
+      "hint": 1,
+      "reads": 0,
+      "error": "native stat ENOENT"
+    }
+  ],
+  "cases": [
+    {
+      "encoding": "utf8",
+      "hint": 0,
+      "actualBytes": 106,
+      "sha256": "9d387d6d8651e645c877c41a32a1a49e289e7b8578f25e7f5e8c4dce0322fd90",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf8",
+      "hint": 1,
+      "actualBytes": 106,
+      "sha256": "9d387d6d8651e645c877c41a32a1a49e289e7b8578f25e7f5e8c4dce0322fd90",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf8",
+      "hint": 106,
+      "actualBytes": 106,
+      "sha256": "9d387d6d8651e645c877c41a32a1a49e289e7b8578f25e7f5e8c4dce0322fd90",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf8",
+      "hint": 20971521,
+      "actualBytes": 106,
+      "sha256": "9d387d6d8651e645c877c41a32a1a49e289e7b8578f25e7f5e8c4dce0322fd90",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf8",
+      "hint": 209715201,
+      "actualBytes": 106,
+      "sha256": "9d387d6d8651e645c877c41a32a1a49e289e7b8578f25e7f5e8c4dce0322fd90",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16le",
+      "hint": 0,
+      "actualBytes": 202,
+      "sha256": "8b4276644aaf35e8cc8b9f547fce02a08fa0bb35f3fbc737741558cb53bd710c",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16le",
+      "hint": 1,
+      "actualBytes": 202,
+      "sha256": "8b4276644aaf35e8cc8b9f547fce02a08fa0bb35f3fbc737741558cb53bd710c",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16le",
+      "hint": 202,
+      "actualBytes": 202,
+      "sha256": "8b4276644aaf35e8cc8b9f547fce02a08fa0bb35f3fbc737741558cb53bd710c",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16le",
+      "hint": 20971521,
+      "actualBytes": 202,
+      "sha256": "8b4276644aaf35e8cc8b9f547fce02a08fa0bb35f3fbc737741558cb53bd710c",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16le",
+      "hint": 209715201,
+      "actualBytes": 202,
+      "sha256": "8b4276644aaf35e8cc8b9f547fce02a08fa0bb35f3fbc737741558cb53bd710c",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16be",
+      "hint": 0,
+      "actualBytes": 202,
+      "sha256": "989367e49694fddb390c98b1b8fe37f0bf065b15248e2cfdbd45e76fe4211d55",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16be",
+      "hint": 1,
+      "actualBytes": 202,
+      "sha256": "989367e49694fddb390c98b1b8fe37f0bf065b15248e2cfdbd45e76fe4211d55",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16be",
+      "hint": 202,
+      "actualBytes": 202,
+      "sha256": "989367e49694fddb390c98b1b8fe37f0bf065b15248e2cfdbd45e76fe4211d55",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16be",
+      "hint": 20971521,
+      "actualBytes": 202,
+      "sha256": "989367e49694fddb390c98b1b8fe37f0bf065b15248e2cfdbd45e76fe4211d55",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    },
+    {
+      "encoding": "utf16be",
+      "hint": 209715201,
+      "actualBytes": 202,
+      "sha256": "989367e49694fddb390c98b1b8fe37f0bf065b15248e2cfdbd45e76fe4211d55",
+      "original": "BEGIN \u4e2d\u6587 \ud83d\ude00 END",
+      "reader": "BEGIN \u4e2d\u6587 \ud83d\ude00 END"
+    }
+  ],
+  "passed": 15,
+  "wechat": "blocked-login",
+  "devices": "not-run",
+  "schemaVersion": 1,
+  "candidateVersion": "1.4.110",
+  "issue": 195,
+  "baseline": {
+    "tests": 4,
+    "pass": 0,
+    "fail": 4,
+    "evidence": "runs/2026-09-05-next-html-entry-size.json"
+  },
+  "relatedNodeTests": 97,
+  "relatedFailures": 0,
+  "inlineBoundary": {
+    "limitBytes": 20971520,
+    "oracle": "Node Buffer.byteLength UTF-8",
+    "units": [
+      "ASCII",
+      "CJK",
+      "astral emoji",
+      "isolated high surrogate"
+    ],
+    "bytes": [
+      20971520,
+      20971521
+    ],
+    "scope": "entry-budget acceptance/rejection before parse; does not claim visible rendering of 20MB pages"
+  },
+  "references": [
+    "https://encoding.spec.whatwg.org/#utf-8-encoder",
+    "https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.stat.html"
+  ],
+  "reproduce": [
+    "npm run verify:html-entry-size",
+    "node --test tests/html-entry-size.test.js tests/read-html-file.test.js tests/page-state.test.js"
+  ],
+  "fullValidation": {
+    "nodeTests": 997,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "productionBoundaries": "pass",
+    "chromeOracle": "pass"
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "seed": 8259418020261013,
+  "oracles": [
+    "Python json with Decimal and object_pairs_hook",
+    "Python csv strict reader",
+    "Python zipfile original UTF-8 members"
+  ],
+  "json": [
+    {
+      "id": "json-0",
+      "source": "{\"n\":9007199254740993,\"same\":1,\"same\":2,\"minus\":-0,\"huge\":1e9999}",
+      "compact": "{\"n\":9007199254740993,\"same\":1,\"same\":2,\"minus\":-0,\"huge\":1e9999}"
+    },
+    {
+      "id": "json-1",
+      "source": "{\"__proto__\":{\"polluted\":true},\"html\":\"<script>window.poison=1</script>\",\"url\":\"https://example.invalid/a\"}",
+      "compact": "{\"__proto__\":{\"polluted\":true},\"html\":\"<script>window.poison=1</script>\",\"url\":\"https://example.invalid/a\"}"
+    },
+    {
+      "id": "json-2",
+      "source": "{\"escaped\":\"\\u4e2d\\n\\t\\\\\\\"\",\"literal\":\"&lt;b&gt;中 文😀\"}",
+      "compact": "{\"escaped\":\"\\u4e2d\\n\\t\\\\\\\"\",\"literal\":\"&lt;b&gt;中 文😀\"}"
+    },
+    {
+      "id": "json-3",
+      "source": "false",
+      "compact": "false"
+    },
+    {
+      "id": "json-4",
+      "source": "null",
+      "compact": "null"
+    },
+    {
+      "id": "json-5",
+      "source": "\"孤立值\"",
+      "compact": "\"孤立值\""
+    },
+    {
+      "id": "json-6",
+      "source": "[]",
+      "compact": "[]"
+    },
+    {
+      "id": "json-7",
+      "source": "{}",
+      "compact": "{}"
+    },
+    {
+      "id": "json-8",
+      "source": "[-0,1.2300,3E+04,0.0000000000000000000001]",
+      "compact": "[-0,1.2300,3E+04,0.0000000000000000000001]"
+    },
+    {
+      "id": "json-9",
+      "source": "{\"编号\":0,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]}]}",
+      "compact": "{\"编号\":0,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]}]}"
+    },
+    {
+      "id": "json-10",
+      "source": "{\"编号\":1,\"items\":[{\"name\":\"平顶山\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]}]}",
+      "compact": "{\"编号\":1,\"items\":[{\"name\":\"平顶山\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]}]}"
+    },
+    {
+      "id": "json-11",
+      "source": "{\"编号\":2,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]}]}",
+      "compact": "{\"编号\":2,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]}]}"
+    },
+    {
+      "id": "json-12",
+      "source": "{\"编号\":3,\"items\":[{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]}]}",
+      "compact": "{\"编号\":3,\"items\":[{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]}]}"
+    },
+    {
+      "id": "json-13",
+      "source": "{\"编号\":4,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]}]}",
+      "compact": "{\"编号\":4,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]}]}"
+    },
+    {
+      "id": "json-14",
+      "source": "{\"编号\":5,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]}]}",
+      "compact": "{\"编号\":5,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]}]}"
+    },
+    {
+      "id": "json-15",
+      "source": "{\"编号\":6,\"items\":[{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]}]}",
+      "compact": "{\"编号\":6,\"items\":[{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]}]}"
+    },
+    {
+      "id": "json-16",
+      "source": "{\"编号\":7,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]}]}",
+      "compact": "{\"编号\":7,\"items\":[{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"😀\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]}]}"
+    },
+    {
+      "id": "json-17",
+      "source": "{\"编号\":8,\"items\":[{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]}]}",
+      "compact": "{\"编号\":8,\"items\":[{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"&<script>\",\"flags\":[false,null,true]},{\"name\":\"换行\\n单元格\",\"flags\":[false,null,true]},{\"name\":\"平顶山\",\"flags\":[false,null,true]}]}"
+    }
+  ],
+  "csv": [
+    {
+      "id": "csv-0",
+      "source": "编号,内容,原始值\n00000,\"a\"\"b\",😀\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00000",
+          "a\"b",
+          "😀"
+        ]
+      ]
+    },
+    {
+      "id": "csv-1",
+      "source": "编号,内容,原始值\r\n00001,\"单元格\n换行\",😀\r\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00001",
+          "单元格\n换行",
+          "😀"
+        ]
+      ]
+    },
+    {
+      "id": "csv-2",
+      "source": "编号,内容,原始值\n00002,\"单元格\n换行\",\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00002",
+          "单元格\n换行",
+          ""
+        ]
+      ]
+    },
+    {
+      "id": "csv-3",
+      "source": "编号,内容,原始值\r\n00003,\"a,b\",9007199254740993\r\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00003",
+          "a,b",
+          "9007199254740993"
+        ]
+      ]
+    },
+    {
+      "id": "csv-4",
+      "source": "编号,内容,原始值\n00004,\"单元格\n换行\",\"=WEBSERVICE(\"\"https://example.invalid\"\")\"\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00004",
+          "单元格\n换行",
+          "=WEBSERVICE(\"https://example.invalid\")"
+        ]
+      ]
+    },
+    {
+      "id": "csv-5",
+      "source": "编号,内容,原始值\r\n00005,\"单元格\n换行\",9007199254740993\r\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00005",
+          "单元格\n换行",
+          "9007199254740993"
+        ]
+      ]
+    },
+    {
+      "id": "csv-6",
+      "source": "编号,内容,原始值\n00006,\"单元格\n换行\",\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00006",
+          "单元格\n换行",
+          ""
+        ]
+      ]
+    },
+    {
+      "id": "csv-7",
+      "source": "编号,内容,原始值\r\n00007,\"a\"\"b\",\"=WEBSERVICE(\"\"https://example.invalid\"\")\"\r\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00007",
+          "a\"b",
+          "=WEBSERVICE(\"https://example.invalid\")"
+        ]
+      ]
+    },
+    {
+      "id": "csv-8",
+      "source": "编号,内容,原始值\n00008,\"a\"\"b\",😀\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00008",
+          "a\"b",
+          "😀"
+        ]
+      ]
+    },
+    {
+      "id": "csv-9",
+      "source": "编号,内容,原始值\r\n00009,<script>window.poison=1</script>,😀\r\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00009",
+          "<script>window.poison=1</script>",
+          "😀"
+        ]
+      ]
+    },
+    {
+      "id": "csv-10",
+      "source": "编号,内容,原始值\n00010,<script>window.poison=1</script>,9007199254740993\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00010",
+          "<script>window.poison=1</script>",
+          "9007199254740993"
+        ]
+      ]
+    },
+    {
+      "id": "csv-11",
+      "source": "编号,内容,原始值\r\n00011,\"a\"\"b\",9007199254740993\r\n",
+      "rows": [
+        [
+          "编号",
+          "内容",
+          "原始值"
+        ],
+        [
+          "00011",
+          "a\"b",
+          "9007199254740993"
+        ]
+      ]
+    }
+  ],
+  "encoded": [
+    {
+      "id": "utf-8-sig",
+      "base64": "77u/eyLln47luIIiOiLlubPpobblsbHwn5iAIn0=",
+      "text": "{\"城市\":\"平顶山😀\"}",
+      "mime": "application/json; charset=gbk",
+      "compact": "{\"城市\":\"平顶山😀\"}",
+      "rows": null
+    },
+    {
+      "id": "utf-16",
+      "base64": "//57ACIAzlcCXiIAOgAiAHNedphxXD3YAN4iAH0A",
+      "text": "{\"城市\":\"平顶山😀\"}",
+      "mime": "application/json",
+      "compact": "{\"城市\":\"平顶山😀\"}",
+      "rows": null
+    },
+    {
+      "id": "utf-16-be",
+      "base64": "fxZT9wAsUYVbuQANAAoAMAAxACxOLWWHAA0ACg==",
+      "text": "编号,内容\r\n01,中文\r\n",
+      "mime": "text/csv; charset=utf-16be",
+      "compact": null,
+      "rows": [
+        [
+          "编号",
+          "内容"
+        ],
+        [
+          "01",
+          "中文"
+        ]
+      ]
+    },
+    {
+      "id": "gb18030",
+      "base64": "seC6xSzE2sjdDQowMSzGvbalyb0NCg==",
+      "text": "编号,内容\r\n01,平顶山\r\n",
+      "mime": "text/csv; charset=GB18030",
+      "compact": null,
+      "rows": [
+        [
+          "编号",
+          "内容"
+        ],
+        [
+          "01",
+          "平顶山"
+        ]
+      ]
+    },
+    {
+      "id": "shift_jis",
+      "base64": "lNSNhiyT4JdlDQowMSyT+pZ7jOoNCg==",
+      "text": "番号,内容\r\n01,日本語\r\n",
+      "mime": "text/csv; charset=\"Shift_JIS\"",
+      "compact": null,
+      "rows": [
+        [
+          "番号",
+          "内容"
+        ],
+        [
+          "01",
+          "日本語"
+        ]
+      ]
+    },
+    {
+      "id": "big5",
+      "base64": "vXO4uSykuq5lDQowMSzBY8XppKSk5Q0K",
+      "text": "編號,內容\r\n01,繁體中文\r\n",
+      "mime": "text/csv; charset=big5",
+      "compact": null,
+      "rows": [
+        [
+          "編號",
+          "內容"
+        ],
+        [
+          "01",
+          "繁體中文"
+        ]
+      ]
+    },
+    {
+      "id": "cp949",
+      "base64": "ufjIoyyzu7/rDQowMSzH0bG5vu4NCg==",
+      "text": "번호,내용\r\n01,한국어\r\n",
+      "mime": "text/csv; charset=cp949",
+      "compact": null,
+      "rows": [
+        [
+          "번호",
+          "내용"
+        ],
+        [
+          "01",
+          "한국어"
+        ]
+      ]
+    }
+  ],
+  "archive": {
+    "base64": "UEsDBBQAAAAIAAAATV3LmLK/OQAAAEEAAAAJAAAAZGF0YS5qc29uq1bKU7KyNDAwN7S0NDI1MTcxsLQ01lEqTsxNVbIyhDGMdJRyM/NKi5WsdA10lDJK00GSqZZAUAsAUEsDBBQAAAAIAAAATV1B/xm3OQAAADcAAAAJAAAAdGFibGUuY3N2e75n2tP+7TpP21qfrtup87Rv/tPl3U8b9vByGQCBsY5Sok6Sko6lgYG5oaWlkamJuYmBpaUxLxcAUEsDBBQAAAAIAAAATV35YmM/LAAAAC4AAAALAAAAbGl0ZXJhbC54bWyzKU4uyiwosSvPzEvJL9cryM8szs+zNbTRh4pzPdmx9tm0dgU1hQ/zZzQAAFBLAQIUAxQAAAAIAAAATV3LmLK/OQAAAEEAAAAJAAAAAAAAAAAAAACAAQAAAABkYXRhLmpzb25QSwECFAMUAAAACAAAAE1dQf8ZtzkAAAA3AAAACQAAAAAAAAAAAAAAgAFgAAAAdGFibGUuY3N2UEsBAhQDFAAAAAgAAABNXfliYz8sAAAALgAAAAsAAAAAAAAAAAAAAIABwAAAAGxpdGVyYWwueG1sUEsFBgAAAAADAAMApwAAABUBAAAAAA==",
+    "members": [
+      {
+        "name": "data.json",
+        "source": "{\"n\":9007199254740993,\"same\":1,\"same\":2,\"minus\":-0,\"huge\":1e9999}",
+        "compact": "{\"n\":9007199254740993,\"same\":1,\"same\":2,\"minus\":-0,\"huge\":1e9999}",
+        "rows": null
+      },
+      {
+        "name": "table.csv",
+        "source": "编号,内容,原始值\r\n00003,\"a,b\",9007199254740993\r\n",
+        "compact": null,
+        "rows": [
+          [
+            "编号",
+            "内容",
+            "原始值"
+          ],
+          [
+            "00003",
+            "a,b",
+            "9007199254740993"
+          ]
+        ]
+      },
+      {
+        "name": "literal.xml",
+        "source": "<script>window.poison=1</script>\n中文 & 😀",
+        "compact": null,
+        "rows": null
+      }
+    ]
+  }
+}

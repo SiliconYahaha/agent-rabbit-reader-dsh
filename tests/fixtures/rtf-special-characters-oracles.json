@@ -1,0 +1,836 @@
+{
+  "schemaVersion": 1,
+  "writerVersion": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "cocoaMacOS": "26.5.2",
+  "normalization": "Writer: remove leading BOM and single terminal newline; Cocoa: raw output. No content substitutions.",
+  "rows": [
+    {
+      "id": "emspace-plain",
+      "sha256": "8a486e04d44e05e5887ffe313993b9963edf44c5e4859b1885b2034393607c62",
+      "writer": "AB",
+      "cocoa": "A B"
+    },
+    {
+      "id": "emspace-nested",
+      "sha256": "0c024d7d9cd44c52aa3602efc80047d8ae4c54baaf8cf371b2a678c794c2725e",
+      "writer": "AB",
+      "cocoa": "A B"
+    },
+    {
+      "id": "emspace-extra-space",
+      "sha256": "61a9708a281e5658c8b2d37a38ecf358effd3df6fa1d4afa52f5beb26ebc9b5d",
+      "writer": "A B",
+      "cocoa": "A  B"
+    },
+    {
+      "id": "emspace-hidden",
+      "sha256": "38068a757693ed12dadb2410833c4d65e6c54a8ddf0ed4157b0c9f8097a76098",
+      "writer": "AHIDDENB",
+      "cocoa": "A HIDDENB"
+    },
+    {
+      "id": "emspace-visible-child",
+      "sha256": "9f4cc88d2bde51362b73aa571691e11b2150f67a2098fa9f7cf0494c0b4a701d",
+      "writer": "AHIDDENXYHIDDENB",
+      "cocoa": "AHIDDENX YHIDDENB"
+    },
+    {
+      "id": "emspace-unknown-destination",
+      "sha256": "8d44f258d861366eeae4f98bb95437301ceaa985bf4a0f54eed506933b0515d2",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "emspace-instruction",
+      "sha256": "54e4045bdd7aa5cc75fd4bae9f4daf7ec11c3a688ebf1ed4913d2359dc3bca3f",
+      "writer": "AXYB",
+      "cocoa": "AX YB"
+    },
+    {
+      "id": "emspace-fallback-one",
+      "sha256": "a47f4ade4be41619e06b07234cfebb3439ed7f467ad88ff4cee9cdc7c18062a2",
+      "writer": "AX",
+      "cocoa": "AX B"
+    },
+    {
+      "id": "emspace-fallback-two",
+      "sha256": "e3df82981c5f3441eccf6378537a67912d648444845181ad95ce0cdeb848e659",
+      "writer": "AX",
+      "cocoa": "AX B"
+    },
+    {
+      "id": "emspace-after-fallback",
+      "sha256": "9afc7e760cb7b5536904b420a362d558854dfa419b1040fee55e2d209512075c",
+      "writer": "AXB",
+      "cocoa": "AX B"
+    },
+    {
+      "id": "emspace-unselected-branch",
+      "sha256": "c96b9721f51c713a2e16a35810e4379dab57571f304e5f388d30e29a0eb7e812",
+      "writer": "AHIDDENXYB",
+      "cocoa": "A HIDDENB"
+    },
+    {
+      "id": "emspace-case-sensitive",
+      "sha256": "8c66f041069880e639e7a9944ef92fe882d47e0cff95fdfd29c28fa43d76a7e9",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "enspace-plain",
+      "sha256": "77675b9201d4f9711629fe0c615a6fb768283efee91791c50165b447dce3f796",
+      "writer": "AB",
+      "cocoa": "A B"
+    },
+    {
+      "id": "enspace-nested",
+      "sha256": "bc5af9cd83fa330c8cb1420536d43f80b2106ef0ed6562895d3ed77858cf4044",
+      "writer": "AB",
+      "cocoa": "A B"
+    },
+    {
+      "id": "enspace-extra-space",
+      "sha256": "237355ab2b1dd21a8395caca1dd924bfb382eb371dd113afeecfd0d133a1c5ea",
+      "writer": "A B",
+      "cocoa": "A  B"
+    },
+    {
+      "id": "enspace-hidden",
+      "sha256": "6967da3a638d43f55349495a8cc98f743cd70d025785775d1ae439addddfd2c0",
+      "writer": "AHIDDENB",
+      "cocoa": "A HIDDENB"
+    },
+    {
+      "id": "enspace-visible-child",
+      "sha256": "923e679e7906e5f0437edba1da47328efe98d9c51748e224cda70e287a624a32",
+      "writer": "AHIDDENXYHIDDENB",
+      "cocoa": "AHIDDENX YHIDDENB"
+    },
+    {
+      "id": "enspace-unknown-destination",
+      "sha256": "558b6c3b3eb73565be1bace8048e9fe96308ef3fe3e3163a3ac49e92afb53e57",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "enspace-instruction",
+      "sha256": "bcf140079e53cd53b7c675fbe2ee27569d027f54067e00b4c328fccbaafe7e79",
+      "writer": "AXYB",
+      "cocoa": "AX YB"
+    },
+    {
+      "id": "enspace-fallback-one",
+      "sha256": "0f909f26ad37f63c607eed859413a4a3b32d604669256bfc8c1e1f311e02decc",
+      "writer": "AX",
+      "cocoa": "AX B"
+    },
+    {
+      "id": "enspace-fallback-two",
+      "sha256": "ec8e9a051f2079292554176292ac1a86bf87f2954676c366f65f645b726f4b4b",
+      "writer": "AX",
+      "cocoa": "AX B"
+    },
+    {
+      "id": "enspace-after-fallback",
+      "sha256": "924b68187faadbed5e5e8a3ea44ff99d8f2f7369a914105a0a232519487018e2",
+      "writer": "AXB",
+      "cocoa": "AX B"
+    },
+    {
+      "id": "enspace-unselected-branch",
+      "sha256": "a5d8e7abc146b3a64f5ba71fa901ffe753effa7d269787fd673ad178a664a4da",
+      "writer": "AHIDDENXYB",
+      "cocoa": "A HIDDENB"
+    },
+    {
+      "id": "enspace-case-sensitive",
+      "sha256": "ecfa2389228ba88d1aaee7b9aaeb70a2ac53426aba76c32181580890c7ad139f",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "qmspace-plain",
+      "sha256": "c04be825054df2caf588f1e1f81f0954c526ea0d691e517b7d1d3a827db0b25c",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "qmspace-nested",
+      "sha256": "e9a1796175264805bcd0e39a7de00298173b01f9c1da25734b1bd39d61c5db26",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "qmspace-extra-space",
+      "sha256": "0752702e26b8006cb2a0f3dddfb0a879f9566d18cf43471f33f17363fd5987cb",
+      "writer": "A B",
+      "cocoa": "A B"
+    },
+    {
+      "id": "qmspace-hidden",
+      "sha256": "a76a2c02843e805fdfe9ddb317e24e7b943f8f0efc2f2bf5430a0a1495f93f6c",
+      "writer": "AHIDDENB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "qmspace-visible-child",
+      "sha256": "23f1db2b394b17501844390847b4cfeaedc410ae7d412afccd0474bf494eef92",
+      "writer": "AHIDDENXYHIDDENB",
+      "cocoa": "AHIDDENXYHIDDENB"
+    },
+    {
+      "id": "qmspace-unknown-destination",
+      "sha256": "003158eeb6b76dc66caf36c9d0e40abaa4fe5da6ca6960d092a015b82d0d3cdb",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "qmspace-instruction",
+      "sha256": "3e5803e5c244b2147420869592bbd0659eb2a714e79f41dd6f178b46c76b1319",
+      "writer": "AXYB",
+      "cocoa": "AXYB"
+    },
+    {
+      "id": "qmspace-fallback-one",
+      "sha256": "2acf3e6f388fee9ed73520a3377244952f4c989d88f18bcbaf6bde0821672852",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "qmspace-fallback-two",
+      "sha256": "75e1abaf84f8271a12389fb87fb5b411bcdedb4bf1e94e9b5d6bdafb20bf9d39",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "qmspace-after-fallback",
+      "sha256": "f30a8cc907858d45d4d5f4cd4fb5705e3b9d3d6b44b33a65ca46bdfcb9d38af9",
+      "writer": "AXB",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "qmspace-unselected-branch",
+      "sha256": "8be6bb2ed5a53626dbd33388c98395b5c1954d65fa0c533d39c90fc0a34d22c1",
+      "writer": "AHIDDENXYB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "qmspace-case-sensitive",
+      "sha256": "f314ee1212c657d4402cbd8ccf614c3a1fa938b6bfa695c7826af124174e69ee",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwj-plain",
+      "sha256": "d4c49538459c10eb08d93c1bf6e19574c1177a0ceaacea6961ba1667e2ab82a5",
+      "writer": "AB",
+      "cocoa": "A‍B"
+    },
+    {
+      "id": "zwj-nested",
+      "sha256": "fdc430aed460199424d45e4ac56f4dd5ed477af8f36fefdc9a1adb405cf10feb",
+      "writer": "AB",
+      "cocoa": "A‍B"
+    },
+    {
+      "id": "zwj-extra-space",
+      "sha256": "15cf43ec8b093eb86acc98a1bbd5fa58605e1f3821232add1483276f7b4ace43",
+      "writer": "A B",
+      "cocoa": "A‍ B"
+    },
+    {
+      "id": "zwj-hidden",
+      "sha256": "528f66ba0e6189b3aaf5b86c7855d1bbfc14c6dcba3eeb033cceab6636addf46",
+      "writer": "AHIDDENB",
+      "cocoa": "A‍HIDDENB"
+    },
+    {
+      "id": "zwj-visible-child",
+      "sha256": "d4ab75f5073afff55025e2bb62521d5dde6679609ce406055186861ac467b35a",
+      "writer": "AHIDDENXYHIDDENB",
+      "cocoa": "AHIDDENX‍YHIDDENB"
+    },
+    {
+      "id": "zwj-unknown-destination",
+      "sha256": "c26391654bc3875ce54b573bab5de95f0a805c41f5b5494792612e180906978d",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwj-instruction",
+      "sha256": "34ee0d60cb300c9527dc52dc7c9628566738021c15a3e1f7899774b89ea45266",
+      "writer": "AXYB",
+      "cocoa": "AX‍YB"
+    },
+    {
+      "id": "zwj-fallback-one",
+      "sha256": "8302085ae364300ec1a384f163a2e4f0977399d1544ea7feb0f20a6ad44c798a",
+      "writer": "AX",
+      "cocoa": "AX‍B"
+    },
+    {
+      "id": "zwj-fallback-two",
+      "sha256": "d105f13f46f6dd57f868e1e312f2df317ecc7f2b3dd44a5717e61bfacca4f60d",
+      "writer": "AX",
+      "cocoa": "AX‍B"
+    },
+    {
+      "id": "zwj-after-fallback",
+      "sha256": "7c4932f96dffc9a8bc3b09072b1ca77cecbebb3327fa7be74d4adf268c859fba",
+      "writer": "AXB",
+      "cocoa": "AX‍B"
+    },
+    {
+      "id": "zwj-unselected-branch",
+      "sha256": "156850bab90add3e44c99bf72b12b2ea8cd87d97e368fcadeec4d4a3e4f0ad31",
+      "writer": "AHIDDENXYB",
+      "cocoa": "A‍HIDDENB"
+    },
+    {
+      "id": "zwj-case-sensitive",
+      "sha256": "624efe363a4dd00fc5f29e480144234e5967ac75d562feb5a12a62fc54fbc4ec",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwnj-plain",
+      "sha256": "61e111040e99fbcce77ebbc627d2b31fec3392556c33f920bde625e19a5166e9",
+      "writer": "AB",
+      "cocoa": "A‌B"
+    },
+    {
+      "id": "zwnj-nested",
+      "sha256": "623a279918757c7f0918ae784dcc8e2e511f43f8bba01940dfa47fef9a57d83d",
+      "writer": "AB",
+      "cocoa": "A‌B"
+    },
+    {
+      "id": "zwnj-extra-space",
+      "sha256": "e4bc4ca8bf2f569be6578d21c417dee3d1e470805e31aff855d15e353cbffb21",
+      "writer": "A B",
+      "cocoa": "A‌ B"
+    },
+    {
+      "id": "zwnj-hidden",
+      "sha256": "831681d831b9154e00e9c30013b9807bb87c6d840b64469a2769068fb7d649b2",
+      "writer": "AHIDDENB",
+      "cocoa": "A‌HIDDENB"
+    },
+    {
+      "id": "zwnj-visible-child",
+      "sha256": "3368e3e983921519c0519a99f6c6152b6baa68cfe0e6b8e44ba06ca8b45debfb",
+      "writer": "AHIDDENXYHIDDENB",
+      "cocoa": "AHIDDENX‌YHIDDENB"
+    },
+    {
+      "id": "zwnj-unknown-destination",
+      "sha256": "f2edc330cbd4d525a9b732bca4bce6fc46d7376cd2a0b278598cc9184bea87ad",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwnj-instruction",
+      "sha256": "80bf80be41e5867eca19f2da51c15544414ffa866c46f705fcfee5ef268dfb21",
+      "writer": "AXYB",
+      "cocoa": "AX‌YB"
+    },
+    {
+      "id": "zwnj-fallback-one",
+      "sha256": "0ff6b0095f6ab0af9456d6d4732591fd1631cac41f7b4456101d8ccb6422f0bb",
+      "writer": "AX",
+      "cocoa": "AX‌B"
+    },
+    {
+      "id": "zwnj-fallback-two",
+      "sha256": "e6ec1a9fdcea6cc301d94d9f395406b7c70f9b66161af90bfcc4b9c33321f692",
+      "writer": "AX",
+      "cocoa": "AX‌B"
+    },
+    {
+      "id": "zwnj-after-fallback",
+      "sha256": "cf5227abd952d3668b8dcbf46e12c57eec9a7542a0f9e062771c2c42d9446017",
+      "writer": "AXB",
+      "cocoa": "AX‌B"
+    },
+    {
+      "id": "zwnj-unselected-branch",
+      "sha256": "c2cc51af179c209ff9d834888ef29afd92c29ffef17e7507c9b19706125839dd",
+      "writer": "AHIDDENXYB",
+      "cocoa": "A‌HIDDENB"
+    },
+    {
+      "id": "zwnj-case-sensitive",
+      "sha256": "71934e88e58a2117119c63101f3c6ec8e50cf8890f061fcd34f91e52283416c8",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwbo-plain",
+      "sha256": "ef89310fce4bd0f48ee0129b610d66ec52cef220d640e3a290edc6e21f0ccddb",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwbo-nested",
+      "sha256": "7f0f7a69c71de0f2cb23f0742138b76efa11a1d0bd122de76bd9a7abdea09c61",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwbo-extra-space",
+      "sha256": "dbfbedced243e45834ba493bb4483cd0317e92cf5cf16b4cbc9b55c4e45355d5",
+      "writer": "A B",
+      "cocoa": "A B"
+    },
+    {
+      "id": "zwbo-hidden",
+      "sha256": "c9172e268c1b69f80a692c34ed1898afebb53919e83f78b1c5632844a4f2a5db",
+      "writer": "AHIDDENB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "zwbo-visible-child",
+      "sha256": "591f9a2eaa0b37ebed70d30545a1cbd4d99a734ad007272dc396d87fedf0eb54",
+      "writer": "AHIDDENXYHIDDENB",
+      "cocoa": "AHIDDENXYHIDDENB"
+    },
+    {
+      "id": "zwbo-unknown-destination",
+      "sha256": "f2feca410278db8b3e2f58dd843375aebb6876571bf39c3d8cda653f117417c4",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwbo-instruction",
+      "sha256": "5736266b57d2401e6d10b621772e60370a04644fdf60f06db9dca5102c191c66",
+      "writer": "AXYB",
+      "cocoa": "AXYB"
+    },
+    {
+      "id": "zwbo-fallback-one",
+      "sha256": "09cbdbfe6824cc75322d50620dd11fe6c416db3a1b9bed3c33289f596fcb7d2e",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "zwbo-fallback-two",
+      "sha256": "0076fa6531148e115b21c94a7e181aab519f7c45c7b76748869aa35603930cb6",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "zwbo-after-fallback",
+      "sha256": "37c45a2c2ad364618e5261b915e78b5c8ad2b5592087f67a2ace1e03f7427366",
+      "writer": "AXB",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "zwbo-unselected-branch",
+      "sha256": "6be7e164e420b243c57ee99e17222467f8d916f35734fb38095f8decf5d9e169",
+      "writer": "AHIDDENXYB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "zwbo-case-sensitive",
+      "sha256": "a9f19e43656dc8ef1d8838e751ad4e54c3516cfcb11efd624641604204b3e650",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwnbo-plain",
+      "sha256": "7f2cd5ac2ad08b162452a00cdd3d6d2366e2ebfafddf6bc887c0494fdf4cebc1",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwnbo-nested",
+      "sha256": "8a7918d580fb9b119b07861034809a0c7cd8eb6335c28f67c3d973eafd752e9d",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwnbo-extra-space",
+      "sha256": "fae6f815fae214b64559083f7a22532d7e352aea698e35778c0e4d829c52b1b4",
+      "writer": "A B",
+      "cocoa": "A B"
+    },
+    {
+      "id": "zwnbo-hidden",
+      "sha256": "82c92c4f644f2907edd593d7bf9a2b9f1a57bd784a272300eacb5ceca1a8f2aa",
+      "writer": "AHIDDENB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "zwnbo-visible-child",
+      "sha256": "4b527da3b8010994a8fc618d93d873cccfde5b2cd79e5ac468fe383b02e075a9",
+      "writer": "AHIDDENXYHIDDENB",
+      "cocoa": "AHIDDENXYHIDDENB"
+    },
+    {
+      "id": "zwnbo-unknown-destination",
+      "sha256": "865f7ca922e79dea289b8e7fbadc3f5f3a51196255e35a88cafe4b7d7b77de20",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "zwnbo-instruction",
+      "sha256": "052ab11af3f1c456cc9bf45636ba8c22c302124479dd84ba56042115f2245186",
+      "writer": "AXYB",
+      "cocoa": "AXYB"
+    },
+    {
+      "id": "zwnbo-fallback-one",
+      "sha256": "baceca59ec951fde2a31367249107694fcdce2ecdb0e17e32b0e62c8feb9cdc3",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "zwnbo-fallback-two",
+      "sha256": "911b8062951a8292fdfe35e231b103e125694f2829681395ded0e9a7c0e50939",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "zwnbo-after-fallback",
+      "sha256": "b7529c80690b66cbdc0f7fe608cd6be37867446f0075a16472295053de73a246",
+      "writer": "AXB",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "zwnbo-unselected-branch",
+      "sha256": "e20969372c034e12c08abcc4a619d6d39335efb55f2ab7d685172c2b02de22c4",
+      "writer": "AHIDDENXYB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "zwnbo-case-sensitive",
+      "sha256": "210c2517602501f0a53a7cc0642bb44aaf6448b35b96650e8979c4d626c0708c",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "ltrmark-plain",
+      "sha256": "574f12efe395a7092fe22ab85160d5f3684a3185f200379b14f64185f3f14ae5",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "ltrmark-nested",
+      "sha256": "30f9bb6a4660ac9aafa30bc28ca1d5647ccb460643a63f1055e2a7d2d643770c",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "ltrmark-extra-space",
+      "sha256": "97096d02e6ef21a023f23233ef93ae442f43a24bdc0274aa2fd90b2e8dc27bdb",
+      "writer": "A B",
+      "cocoa": "A B"
+    },
+    {
+      "id": "ltrmark-hidden",
+      "sha256": "6d07e83c8bc675af3185b12058516a76565b73deee454a4109410244914c6dd4",
+      "writer": "AHIDDENB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "ltrmark-visible-child",
+      "sha256": "aa04a1ac48cb045da047e2fe2c5baf48808e9a78c5e7c9380db4f2ee8aede416",
+      "writer": "AHIDDENXYHIDDENB",
+      "cocoa": "AHIDDENXYHIDDENB"
+    },
+    {
+      "id": "ltrmark-unknown-destination",
+      "sha256": "204dd73bc52e53e4aaa420824e7dbd09db62cd25bfdc27ad6e1a5a86f2a168e4",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "ltrmark-instruction",
+      "sha256": "2abde544430726260ac0a3e6db9140597e38f064c685dc5904fc219b258cd991",
+      "writer": "AXYB",
+      "cocoa": "AXYB"
+    },
+    {
+      "id": "ltrmark-fallback-one",
+      "sha256": "e10047624ca908b447204323dca6369949d83ed51bb4e7c0996c72369e256276",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "ltrmark-fallback-two",
+      "sha256": "2cc76152daea3d6a7826f885acdf635dd193583414f2e0f9a8168923ef2296b8",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "ltrmark-after-fallback",
+      "sha256": "4b81f1e5ecebbe0c3e696c74cf4d64dc03190d139c36fd8f093d8c83cf68ac8c",
+      "writer": "AXB",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "ltrmark-unselected-branch",
+      "sha256": "89354acf055ef27314461c661bcf9a3f46ea3d5304876191112df102347ca0a5",
+      "writer": "AHIDDENXYB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "ltrmark-case-sensitive",
+      "sha256": "4807599c9b94f3132393268d062e6d8e6c71bd7959528a25001443a44cd185ea",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "rtlmark-plain",
+      "sha256": "1fbca8cb1009e448f1b01d228d7526ff7cf3ea924878c93b4f7d5c53bc4c6757",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "rtlmark-nested",
+      "sha256": "59e2e4bafffb064cce04a21fd6d032f12a9a2a9548a0c8329300e5c31be5a773",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "rtlmark-extra-space",
+      "sha256": "1dc6e1da680fea615f60557eb511e62b5603a929d56db236b779aba5174eb601",
+      "writer": "A B",
+      "cocoa": "A B"
+    },
+    {
+      "id": "rtlmark-hidden",
+      "sha256": "b5cff08b6ccf31b7f07dcb6aee6deb24bbab6d58a2c7eb942dd8b3c9471acabf",
+      "writer": "AHIDDENB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "rtlmark-visible-child",
+      "sha256": "989dc2156a33a5549aa38e6468b7a0d879f5b6ef5578069789155a96f243b963",
+      "writer": "AHIDDENXYHIDDENB",
+      "cocoa": "AHIDDENXYHIDDENB"
+    },
+    {
+      "id": "rtlmark-unknown-destination",
+      "sha256": "178b19cf1b91f062d5bfd51dd6fb45627d47e3db704cdcb6f0224dd69d684622",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "rtlmark-instruction",
+      "sha256": "f3cb0924da6fa2ccc085940f70810b970e34530d96c16f4589b6744a2eba64a8",
+      "writer": "AXYB",
+      "cocoa": "AXYB"
+    },
+    {
+      "id": "rtlmark-fallback-one",
+      "sha256": "91514f30550e05d8bd86808a6b6452616da7a0794f395a986ea965229b8ca114",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "rtlmark-fallback-two",
+      "sha256": "87674c00a0cb394b299abeec578f0c5e0d67194fb70616021992a4c57b87db97",
+      "writer": "AX",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "rtlmark-after-fallback",
+      "sha256": "5e1d5e3f21b1c4ff64a585e37e1d7c9b8de7e82abdfecf40d42f16383361efb3",
+      "writer": "AXB",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "rtlmark-unselected-branch",
+      "sha256": "1d400f25b36cac49255b06a55ec647cbe057e90cd461e8ff3e18c079a39dc620",
+      "writer": "AHIDDENXYB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "rtlmark-case-sensitive",
+      "sha256": "e088f7a2ffaed357bbab51177ddbc35d8789335f607397151333af387e6332b2",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "page-plain",
+      "sha256": "ac0ba13378d8ce1f15443a5412c8babf45df94d33e42485d400c80b010032003",
+      "writer": "A\nB",
+      "cocoa": "A\fB"
+    },
+    {
+      "id": "page-nested",
+      "sha256": "9a83ce4171e5a8eaa79fd8f20e3f5c144e183de46954a97d7b834dc24466dd9a",
+      "writer": "A\nB",
+      "cocoa": "A\fB"
+    },
+    {
+      "id": "page-extra-space",
+      "sha256": "976919dae5ffbc5b1cd3759b4eb64427aefb18d1f3443209c7e4668aeff9a2e3",
+      "writer": "A\n B",
+      "cocoa": "A\f B"
+    },
+    {
+      "id": "page-hidden",
+      "sha256": "c019ea98a5aa9c791b859dae8910a6903287392a1ea414684cebf7efa3cb8501",
+      "writer": "A\nHIDDENB",
+      "cocoa": "A\fHIDDENB"
+    },
+    {
+      "id": "page-visible-child",
+      "sha256": "ed11423102df1390b9cbe580b5aaa801f3875c77fd0b7dadea12edb93e12aa5b",
+      "writer": "AHIDDENX\nYHIDDENB",
+      "cocoa": "AHIDDENX\fYHIDDENB"
+    },
+    {
+      "id": "page-unknown-destination",
+      "sha256": "684231e9c9ba85bc8cfb8e628007d1022410fe163067fb71e895eb5affaadd63",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "page-instruction",
+      "sha256": "532fd86582d2c60ac8f8354e6b2fdfacdd542920eea184429f8f70d1ebc3ef6b",
+      "writer": "A\nX\nYB",
+      "cocoa": "AX\fYB"
+    },
+    {
+      "id": "page-fallback-one",
+      "sha256": "85b44b006d953c1e20f2cea7440d0c21f625a6792305d2c69ed20d227a759d0d",
+      "writer": "AX\n",
+      "cocoa": "AX\fB"
+    },
+    {
+      "id": "page-fallback-two",
+      "sha256": "dd770facaf62bcab305dc7ade53ba4169c865734cdde018add5a291acaa272ca",
+      "writer": "AX\n",
+      "cocoa": "AX\fB"
+    },
+    {
+      "id": "page-after-fallback",
+      "sha256": "48ba0fe7d17cbca114af2f6a70b29e28ffb7559b0869f32b8cff1a4ea600d1f9",
+      "writer": "AX\nB",
+      "cocoa": "AX\fB"
+    },
+    {
+      "id": "page-unselected-branch",
+      "sha256": "5b92b1346fbea75a360298be095fb64fc4adf0578664c535f37db5156a922dfa",
+      "writer": "A\nHIDDENX\nYB",
+      "cocoa": "A\fHIDDENB"
+    },
+    {
+      "id": "page-case-sensitive",
+      "sha256": "85e5607c2b21058879d026034562397f7c27c8abeb3738a88cd833dfa52693c3",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "column-plain",
+      "sha256": "2e9b0ef1a409b252e63dc1d51a406ff770e8a9d073bff8f3f97b90e06c8ce906",
+      "writer": "A\nB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "column-nested",
+      "sha256": "f6d3e174fbf58693a1e5cd73ff913cb5aad617f8a1218806c59542be42b40e03",
+      "writer": "A\nB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "column-extra-space",
+      "sha256": "b07dea9ddbbd2e6ed106596778d0c8aee21a636c3699f628a4365b738e23dc7e",
+      "writer": "A\n B",
+      "cocoa": "A B"
+    },
+    {
+      "id": "column-hidden",
+      "sha256": "7cb0627931f3daafb9a6aa30181576be4aaccc9002f61a62162f1f06ddc9a289",
+      "writer": "A\nHIDDENB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "column-visible-child",
+      "sha256": "e99e171196692644b2eb541664d2ca951e613bf47db1c1113ebfcc2017f6b9fa",
+      "writer": "AHIDDENX\nYHIDDENB",
+      "cocoa": "AHIDDENXYHIDDENB"
+    },
+    {
+      "id": "column-unknown-destination",
+      "sha256": "26a80d2a09f6e027446183bd2649c57a99addf17e11b6de8418a3ae48cfe36e1",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "column-instruction",
+      "sha256": "b5856ff2925e56c0dc41ec2a2d569c521e1107dfe99615fc7f5d2e701f0fba91",
+      "writer": "A\nX\nYB",
+      "cocoa": "AXYB"
+    },
+    {
+      "id": "column-fallback-one",
+      "sha256": "9f3eb47c3ececbfb9af7a80d0112cf8705a265246b9b471346d47de4bf6f38aa",
+      "writer": "AX\n",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "column-fallback-two",
+      "sha256": "1001953f5e9bece5ba1936330afb290bab32a05586c70a7cf9b93da07403abf8",
+      "writer": "AX\n",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "column-after-fallback",
+      "sha256": "c3dc482fbee2117c3ed44a3dbba699b3d2b9c972736abe9e1025e1de2c19d1f9",
+      "writer": "AX\nB",
+      "cocoa": "AXB"
+    },
+    {
+      "id": "column-unselected-branch",
+      "sha256": "de87bb02d647559c105de4c4217113c2e2b6ed98a6f043def794ee9261e1c393",
+      "writer": "A\nHIDDENX\nYB",
+      "cocoa": "AHIDDENB"
+    },
+    {
+      "id": "column-case-sensitive",
+      "sha256": "380ad4968f9bf4b4c4088621540dbe7a21f31b591975cac0f2b287754723ab4e",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "emoji-joiner",
+      "sha256": "fdfad37ad2610eccc037f9f2a419010e66a29c942280b4d191f27dc8e2bd93bd",
+      "writer": "👩🚀",
+      "cocoa": "👩‍🚀"
+    },
+    {
+      "id": "arabic-nonjoiner",
+      "sha256": "4ff6fe04314fd504df49665beceed4e2d314f3a8c907d46273d6d3e3cdcde8f0",
+      "writer": "بب",
+      "cocoa": "ب‌ب"
+    },
+    {
+      "id": "mixed-direction",
+      "sha256": "b29cfc6b096307c9ba865808078373f6eb3d7a8db08723c20ee09cdb3e03dc9e",
+      "writer": "אב: גד",
+      "cocoa": "אב: גד"
+    },
+    {
+      "id": "softline-optional",
+      "sha256": "c50a913350abffab293cba5f4a06e3f411d618aca84504857262f61f1289c6da",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "softpage-optional",
+      "sha256": "3cfef14f943a7f01c9eee3edf4421f63a6bb685b90a411dd50c88e5f667dace5",
+      "writer": "AB",
+      "cocoa": "AB"
+    },
+    {
+      "id": "softcol-optional",
+      "sha256": "6f3f55fbc0cef609846d858e8ba377143af68331948a5a5363a041e266aee1f6",
+      "writer": "AB",
+      "cocoa": "AB"
+    }
+  ]
+}

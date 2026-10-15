@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T10:45:07.170954+00:00",
+  "status": "local-gates-passed-awaiting-draft-pr-ci",
+  "feature": "STEP rational surface weight invariance and planar boundary duplication",
+  "originals": {
+    "fixture": "tests/fixtures/step-rational-weights/before.json",
+    "count": 7,
+    "stepSyntax": "All7 accepted by steputils0.1 with13 instances each; not native CAD schema/tessellation validation.",
+    "weights": "Common scales1,1e-20,1e-12,1e-300,1e100,1e307 and mixed1e-300/1e300 endpoints",
+    "baseline": "4originals lost169 meshpoints/288triangles; all7 also included2 incorrect planar boundary triangles.",
+    "fixed": "All7 have169evaluated gridpoints and288correct surface triangles;9source poles retained."
+  },
+  "references": {
+    "geomdl": "5.3.1 rational surface evaluator;6cases finite and within3.6e-15 of Decimal reference.",
+    "decimal": "80digit original-weight quadratic Bernstein rational tensor product,13x13 samples; exact surface topology independent of reader.",
+    "homogeneousOverflow": "geomdl scale1e307 overflows weighted-control coordinates; failure retained, original-weight Decimal evaluation remainsfinite.",
+    "setupCorrection": "First geomdl call passed Euclidean triples to weighted set_ctrlpts, producing divisionbyzero. Corrected documented ctrlpts property setup; both intermediateoutputs retained.",
+    "url": "https://nurbs-python.readthedocs.io/en/5.x/module_nurbs.html"
+  },
+  "rootCause": [
+    "Absolute denominator threshold1e-12 treats legitimate small common weights as empty.",
+    "Global weight normalization would lose endpoint weights under mixed1e-300/1e300, so normalize only poles whose basis is active at sample.",
+    "Generic polygon-boundary triangulation adds a false flat face under curved surfaces and masks failed curve generation."
+  ],
+  "fix": [
+    "Normalize active rational weights per sample; accept positive finite denominator independent of absolute scale.",
+    "Reject invalid/nonpositive/nonfinite/mismatched rational weights explicitly.",
+    "Interpret owned boundaries through their face: planar triangulation applies only to FACE/PLANE, not a curved face boundary. Preserve legitimate planar siblings and standalone previews."
+  ],
+  "validation": {
+    "relatedTests": 62,
+    "coordinates": "All7 match highprecision reference within3e-15 in fixtureworldunits; regression ceiling1e-11.",
+    "host": {
+      "originals": 7,
+      "repeatedOpens": 14,
+      "badWeightRecovery": true,
+      "staleErrorIgnored": true,
+      "detachedIgnored": true
+    },
+    "chrome": {
+      "views": 21,
+      "states": [
+        "isometric",
+        "drag",
+        "top"
+      ],
+      "exactReferencePixels": 21,
+      "beforeWrongViews": 18,
+      "canvasPhysicalSize": [
+        720,
+        520
+      ]
+    },
+    "gates": {
+      "check": "passed",
+      "tests": 1263,
+      "compatibilityProbes": 141,
+      "renderer": "passed",
+      "production": "passed",
+      "chromeOracle": "passed"
+    },
+    "wechat": "not run",
+    "devices": "not run"
+  },
+  "limits": [
+    "Full parameter-domain quadratic patches; complex trimming still not certified.",
+    "Independent math/native spline evaluation, not independent STEP CAD import/tessellation.",
+    "Unsupported/invalid knot surfaces may retain boundary wireframe; do not claim complete curved support."
+  ],
+  "release": {
+    "status": "not released",
+    "wechatDevelopmentDescription": "修复 STEP 有理曲面在极小权重下消失、边界误填平面的问题，改善三维图形还原并明确提示损坏权重。"
+  },
+  "next": [
+    "Complete actual-host Canvas replay/interaction/recovery, requiredgates and scoped draftPR/CI.",
+    "Continue internationalstrings, nonclampedknots and true CAD native rendering; retain reference failures rather than replacing originals.",
+    "Prior automatic-review publication blocker remains; infrastructure details stay local."
+  ],
+  "verifierAudit": [
+    "Initial multiple host harnesses replaced global wx and misrouted file callbacks; retained content.log.",
+    "Initial large inline Canvas payload caused Chrome DOM-observation timeout; moved payload to loopback JSON fetch.",
+    "First fetched run exposed mutable operation snapshots contaminated by subsequent renders. Deep-cloned each actual/reference/before capture; original failed report/screenshots retained in content-fetched.",
+    "Final content-snapshots report: all21 exact pixel hashes. No pixel tolerance relaxed; shared viewer projection/styling explicitly distinguished from independent CAD rendering."
+  ]
+}

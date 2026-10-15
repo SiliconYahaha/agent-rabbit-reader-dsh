@@ -1,0 +1,775 @@
+{
+  "schemaVersion": 1,
+  "id": "svg-font-relative-strokes",
+  "testedAt": "2026-09-18T09:59:28.546060+00:00",
+  "rootCause": "Stroke em/rem values were resolved against default font 16 after raw inheritance. Ancestor animation overrides were applied after computed inheritance, and animated numeric values lost precision through three-decimal serialization.",
+  "change": "Resolve font sizes and em/rem stroke lengths at computation time, preserve unresolved stroke percentages, recompute inherited animated declarations per frame and use instance, and retain numeric interpolation precision.",
+  "primarySources": [
+    "https://www.w3.org/TR/css-values-4/#font-relative-lengths",
+    "https://www.w3.org/TR/css-cascade-5/#inheriting"
+  ],
+  "construction": {
+    "generator": "tests/helpers/svg-font-strokes.js",
+    "seed": "none; deterministic font, inheritance and frame matrix",
+    "cases": 55,
+    "axes": [
+      "px/pt/em/percent font sizes",
+      "parent stroke with different child font",
+      "CSS and explicit inherit",
+      "nested SVG",
+      "root rem and relative root font",
+      "shared use target with different inherited fonts",
+      "text and tspan",
+      "SMIL parent font, width, offset and root rem",
+      "backward seeking",
+      "diagonal stroke exposing relative-unit rounding",
+      "initial/unset/inherit font controls"
+    ],
+    "reference": "Separately specified numeric SVG, all originals checked against native Chrome SVG. Reader source additionally compared against reader numeric reference to isolate text-paint errors from length computation."
+  },
+  "before": {
+    "wrongReaderScenes": 51,
+    "wrongComponentFrames": 51,
+    "nativeReferenceDisagreements": 0
+  },
+  "roundingDiscovery": {
+    "evidence": "Two diagonal paths after initial font-context repair still differed from native by RGBA sums 304 and 416 (max channel 8); removing premature interpolation rounding makes both exact.",
+    "timeSamples": [
+      0.5,
+      1.5
+    ]
+  },
+  "after": {
+    "format": "SVG font-relative strokes",
+    "cases": 55,
+    "nativeOriginalVsNumericReferenceExact": 55,
+    "readerRelativeVsNumericExact": 55,
+    "readerNativePathVsNativeSvgExact": 53,
+    "readerFallbackPathVsNativeSvgExact": 53,
+    "actualHostImports": 55,
+    "actualComponentVsNativeSvgExact": 53,
+    "strictPixelComparison": "failed: two text paint cases retained",
+    "actualComponentSeekFramesExact": 12,
+    "malformedThenValidRecovery": {
+      "rejected": true,
+      "ready": true,
+      "errors": [],
+      "sum": 0,
+      "max": 0
+    },
+    "percentageStrokeRegressionExact": 64,
+    "declarationRegressionExact": 62,
+    "relatedNodeTests": 101,
+    "fullNodeTests": 1268,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "retainedTextDifferences": [
+    {
+      "name": "text-inherited-stroke",
+      "reference": {
+        "sum": 0,
+        "max": 0
+      },
+      "variants": [
+        {
+          "nativePaths": true,
+          "sum": 755,
+          "max": 191,
+          "numericReference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "nativePaths": false,
+          "sum": 755,
+          "max": 191,
+          "numericReference": {
+            "sum": 0,
+            "max": 0
+          }
+        }
+      ],
+      "component": {
+        "sum": 755,
+        "max": 191,
+        "ready": true,
+        "errors": []
+      }
+    },
+    {
+      "name": "text-absolute-control",
+      "reference": {
+        "sum": 0,
+        "max": 0
+      },
+      "variants": [
+        {
+          "nativePaths": true,
+          "sum": 755,
+          "max": 191,
+          "numericReference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "nativePaths": false,
+          "sum": 755,
+          "max": 191,
+          "numericReference": {
+            "sum": 0,
+            "max": 0
+          }
+        }
+      ],
+      "component": {
+        "sum": 755,
+        "max": 191,
+        "ready": true,
+        "errors": []
+      }
+    }
+  ],
+  "componentSeeking": [
+    {
+      "name": "animated-font-0",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-font-1.5",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-font-0.5",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-font-0",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-root-rem-0",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-root-rem-1.5",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-root-rem-0.5",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-root-rem-0",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-percent-font-0",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-percent-font-1.5",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-percent-font-0.5",
+      "sum": 0,
+      "max": 0
+    },
+    {
+      "name": "animated-percent-font-0",
+      "sum": 0,
+      "max": 0
+    }
+  ],
+  "remainingEarlierExploration": {
+    "cases": 6,
+    "failed": 1,
+    "nativeReferenceExact": 6,
+    "strictComparison": "failed; exit 1 retained",
+    "results": [
+      {
+        "name": "font-relative",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "negative-list-inherits",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "positive-sign",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "double-comma-inherits",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "path-length-calibration",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 66300,
+            "max": 255
+          },
+          {
+            "nativePaths": false,
+            "sum": 66300,
+            "max": 255
+          }
+        ],
+        "component": {
+          "sum": 66300,
+          "max": 255,
+          "ready": true,
+          "errors": []
+        }
+      },
+      {
+        "name": "zero-list-control",
+        "reference": {
+          "sum": 0,
+          "max": 0
+        },
+        "variants": [
+          {
+            "nativePaths": true,
+            "sum": 0,
+            "max": 0
+          },
+          {
+            "nativePaths": false,
+            "sum": 0,
+            "max": 0
+          }
+        ],
+        "component": {
+          "sum": 0,
+          "max": 0,
+          "ready": true,
+          "errors": []
+        }
+      }
+    ],
+    "recovery": {
+      "rejected": true,
+      "ready": true,
+      "errors": [],
+      "sum": 0,
+      "max": 0
+    }
+  },
+  "results": [
+    {
+      "name": "pixels-same-element",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "pixels-inherited-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "pixels-inherited-stroke-child-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "pixels-css",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "points-same-element",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "points-inherited-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "points-inherited-stroke-child-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "points-css",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "em-same-element",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "em-inherited-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "em-inherited-stroke-child-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "em-css",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "percent-same-element",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "percent-inherited-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "percent-inherited-stroke-child-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "percent-css",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "nested-relative-fonts",
+      "beforeRgbaError": 349032,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "explicit-inherit",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "nested-svg",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "root-em-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "root-rem-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "rem-root-reference",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "rem-font-size",
+      "beforeRgbaError": 1175040,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "use-inherits-font",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "use-relative-font",
+      "beforeRgbaError": 845016,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "use-inherits-resolved-stroke",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-font-0",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-font-0.5",
+      "beforeRgbaError": 514080,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-font-1",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-font-1.5",
+      "beforeRgbaError": 989910,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-stroke-width-0",
+      "beforeRgbaError": 269280,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-stroke-width-0.5",
+      "beforeRgbaError": 501840,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-stroke-width-1",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-stroke-width-1.5",
+      "beforeRgbaError": 966960,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-stroke-dashoffset-0",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-stroke-dashoffset-0.5",
+      "beforeRgbaError": 685440,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-stroke-dashoffset-1",
+      "beforeRgbaError": 685440,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-stroke-dashoffset-1.5",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "text-inherited-stroke",
+      "beforeRgbaError": 164413,
+      "afterRgbaError": 755,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "tspan-relative-font",
+      "beforeRgbaError": 123979,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-root-rem-0",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-percent-font-0",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-root-rem-0.5",
+      "beforeRgbaError": 514080,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-percent-font-0.5",
+      "beforeRgbaError": 514080,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-root-rem-1",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-percent-font-1",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-root-rem-1.5",
+      "beforeRgbaError": 989910,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-percent-font-1.5",
+      "beforeRgbaError": 989910,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "text-absolute-control",
+      "beforeRgbaError": 755,
+      "afterRgbaError": 755,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "shared-use-font-isolation",
+      "beforeRgbaError": 330990,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-diagonal-0.5",
+      "beforeRgbaError": 211438,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "animated-diagonal-1.5",
+      "beforeRgbaError": 404697,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "font-keyword-initial",
+      "beforeRgbaError": 0,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "font-keyword-unset",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    },
+    {
+      "name": "font-keyword-inherit",
+      "beforeRgbaError": 734400,
+      "afterRgbaError": 0,
+      "nativeReferenceError": 0,
+      "readerRelativeVsNumericError": 0
+    }
+  ],
+  "evidence": [
+    "tests/svg-font-strokes.test.js",
+    "tests/helpers/svg-font-strokes.js",
+    "scripts/verify-svg-stroke-percent.js"
+  ],
+  "commands": [
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-font-strokes/verified --font-strokes",
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-font-strokes/percent-regression",
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-font-strokes/declaration-regression --declarations",
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-font-strokes/remaining-strict --explore",
+    "node --test tests/svg-*.test.js",
+    "npm run check",
+    "npm run check:production"
+  ],
+  "limits": [
+    "Strict 55-case browser verification intentionally remains failing: text-inherited-stroke and numeric text-absolute-control each differ from native SVG by RGBA sum 755/max 191. Relative and numeric reader output are pixel-identical for all 55. This isolates the remaining text drawing difference; it does not waive it.",
+    "Strict earlier six-case exploration still fails on pathLength calibration.",
+    "Real reader entry and svg-view component run with simulated wx file/query plumbing in Chrome; no WeChat tools or physical-device claim.",
+    "Scope is em/rem stroke lengths and px/pt/em/rem/percent font resolution with named controls, not font metric units, calc/var or general mixed-unit animation.",
+    "Original qin-bear SVG remains unavailable; this does not close that screenshot report."
+  ]
+}

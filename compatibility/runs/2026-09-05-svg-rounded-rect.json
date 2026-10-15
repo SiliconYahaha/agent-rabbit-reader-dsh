@@ -1,0 +1,6403 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "version": "1.4.118",
+  "status": "development-uploaded",
+  "baseline": "v1.4.117",
+  "generator": "tests/helpers/svg-rounded-rect.js",
+  "oracle": {
+    "native": "Chrome native SVG rasterization, native SMIL evaluated attributes frozen into static SVG, analytic static references",
+    "chrome": "Google Chrome 152.0.7977.76",
+    "specification": [
+      "SVG2 rect elliptical corners https://www.w3.org/TR/SVG2/shapes.html#RectElement",
+      "Canvas roundRect DOMPoint radii https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-roundrect"
+    ],
+    "audit": "Initial native SMIL probe sampled before browser animation activation and disagreed on 6 frames. Harness now yields for animation initialization before pause/setCurrentTime; native and independent static references agree exactly. Invalid recovery uses a missing SVG root; unclosed XML was accepted by the existing parser and was not a valid rejection test."
+  },
+  "cases": 66,
+  "baselineExact": 14,
+  "actualExact": 65,
+  "newlyFixed": 51,
+  "historical": {
+    "cases": 114,
+    "baselineExact": 107,
+    "actualExact": 113,
+    "newlyFixed": 6,
+    "remaining": [
+      "group-rotated-inside"
+    ]
+  },
+  "validation": {
+    "relatedTests": 27,
+    "relatedFailures": 0,
+    "componentCases": 66,
+    "componentExact": 65,
+    "recovery": {
+      "malformedErrors": 1,
+      "ready": true,
+      "errors": []
+    },
+    "nodeTests": 1074,
+    "production": "pass",
+    "chromeOracle": "pass",
+    "wechatDevtools": "attempted-blocked",
+    "ios": "not-run",
+    "android": "not-run",
+    "devtoolsDetails": {
+      "version": "Stable 2.01.2510290",
+      "login": true,
+      "projectOpened": true,
+      "automationPort": 15849,
+      "stage": "compiler-startup",
+      "error": "TypeError [ERR_INVALID_ARG_TYPE]: The path argument must be of type string. Received undefined",
+      "stackOrigin": "DevTools core.wxvpkg / summerCompiler.js getAllPageAndComponent",
+      "observation": "Native DevTools UI showed compile failure before app startup; automator connected but initial page evaluation timed out. No Canvas capability or pixel result obtained.",
+      "ios": "not-run",
+      "android": "not-run"
+    },
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "svgClipRegression": "pass",
+    "svgViewportRegression": "pass",
+    "productCI": "pass",
+    "mainCI": "pass"
+  },
+  "limits": [
+    "Missing/no-op/throwing primitives preserve the existing approximate cubic fallback, not native pixel exactness.",
+    "No unsupported-host or physical WeChat improvement is claimed without an actual run.",
+    "One nested clip compositing control retains RGB error 321 while alpha matches exactly; not a certified exact result.",
+    "Multi-child clip unions still use their existing kernel; no new union fidelity claim."
+  ],
+  "results": [
+    {
+      "name": "rx0-ry8-fill-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 8,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 8
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 8,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 8,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 8,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0-ry8-fill-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 8
+        }
+      }
+    },
+    {
+      "name": "rx0-ry8-fill-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 7369,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 7369
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 7369,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 7369,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 7369,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0-ry8-fill-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7369,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7369,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7369,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7369,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7369,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 7369
+        }
+      }
+    },
+    {
+      "name": "rx0-ry8-stroke-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0-ry8-stroke-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx0-ry8-stroke-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 10380,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 10380
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 10380,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 10380,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 10380,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0-ry8-stroke-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10380,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10380,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10380,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10380,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10380,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 10380
+        }
+      }
+    },
+    {
+      "name": "rx0-ry8-dash-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1942,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 1942
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1942,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1942,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1942,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0-ry8-dash-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1942,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1942,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1942,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1942,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1942,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 1942
+        }
+      }
+    },
+    {
+      "name": "rx0-ry8-dash-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1197,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 1197
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1197,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1197,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1197,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0-ry8-dash-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1197,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 1197
+        }
+      }
+    },
+    {
+      "name": "rx0-ry8-gradient-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0-ry8-gradient-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx0-ry8-gradient-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 3531,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 3531
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 3531,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 3531,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 3531,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0-ry8-gradient-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3531,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3531,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3531,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3531,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3531,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 3531
+        }
+      }
+    },
+    {
+      "name": "rx8-ry0-fill-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry0-fill-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx8-ry0-fill-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 6839,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 6839
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 6839,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 6839,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 6839,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry0-fill-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6839,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6839,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6839,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6839,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6839,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 6839
+        }
+      }
+    },
+    {
+      "name": "rx8-ry0-stroke-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry0-stroke-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx8-ry0-stroke-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 7484,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 7484
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 7484,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 7484,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 7484,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry0-stroke-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7484,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7484,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7484,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7484,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7484,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 7484
+        }
+      }
+    },
+    {
+      "name": "rx8-ry0-dash-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 189233,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 189233
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 189233,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 189233,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 189233,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry0-dash-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 189233,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 189233,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 189233,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 189233,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 189233,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 189233
+        }
+      }
+    },
+    {
+      "name": "rx8-ry0-dash-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 197010,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 197010
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 197010,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 197010,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 197010,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry0-dash-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 197010,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 197010,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 197010,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 197010,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 197010,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 197010
+        }
+      }
+    },
+    {
+      "name": "rx8-ry0-gradient-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry0-gradient-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx8-ry0-gradient-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 3740,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 3740
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 3740,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 3740,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 3740,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry0-gradient-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3740,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3740,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3740,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3740,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3740,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 3740
+        }
+      }
+    },
+    {
+      "name": "rx2-ry8-fill-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 423,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 423
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 423,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 423,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 423,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx2-ry8-fill-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 423,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 423,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 423,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 423,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 423,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 423
+        }
+      }
+    },
+    {
+      "name": "rx2-ry8-fill-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 2447,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 2447
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2447,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2447,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 2447,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx2-ry8-fill-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2447,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2447,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2447,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2447,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2447,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 2447
+        }
+      }
+    },
+    {
+      "name": "rx2-ry8-stroke-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 386,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 386
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 386,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 386,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 386,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx2-ry8-stroke-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 386,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 386,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 386,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 386,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 386,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 386
+        }
+      }
+    },
+    {
+      "name": "rx2-ry8-stroke-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 51,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 51
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 51,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 51,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 51,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx2-ry8-stroke-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 51,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 51,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 51,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 51,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 51,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 51
+        }
+      }
+    },
+    {
+      "name": "rx2-ry8-dash-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1454,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 1454
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1454,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1454,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1454,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx2-ry8-dash-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1454,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1454,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1454,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1454,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1454,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 1454
+        }
+      }
+    },
+    {
+      "name": "rx2-ry8-dash-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 2025,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 2025
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2025,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2025,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 2025,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx2-ry8-dash-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2025,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2025,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2025,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2025,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2025,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 2025
+        }
+      }
+    },
+    {
+      "name": "rx2-ry8-gradient-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 8879,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 8879
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 8879,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 8879,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 8879,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx2-ry8-gradient-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8879,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8879,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8879,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8879,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8879,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 8879
+        }
+      }
+    },
+    {
+      "name": "rx2-ry8-gradient-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 15,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 15
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 15,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 15,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 15,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx2-ry8-gradient-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 15,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 15,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 15,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 15,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 15,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 15
+        }
+      }
+    },
+    {
+      "name": "rx8-ry2-fill-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 2152
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry2-fill-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 2152
+        }
+      }
+    },
+    {
+      "name": "rx8-ry2-fill-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 1572
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry2-fill-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 1572
+        }
+      }
+    },
+    {
+      "name": "rx8-ry2-stroke-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 389,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 389
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 389,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 389,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 389,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry2-stroke-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 389,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 389,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 389,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 389,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 389,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 389
+        }
+      }
+    },
+    {
+      "name": "rx8-ry2-stroke-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 41,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 41
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 41,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 41,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 41,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry2-stroke-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 41,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 41,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 41,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 41,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 41,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 41
+        }
+      }
+    },
+    {
+      "name": "rx8-ry2-dash-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 851,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 851
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 851,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 851,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 851,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry2-dash-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 851,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 851,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 851,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 851,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 851,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 851
+        }
+      }
+    },
+    {
+      "name": "rx8-ry2-dash-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 2242,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 2242
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2242,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2242,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 2242,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry2-dash-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2242,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2242,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2242,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2242,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2242,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 2242
+        }
+      }
+    },
+    {
+      "name": "rx8-ry2-gradient-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 56,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 56
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 56,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 56,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 56,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry2-gradient-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 56,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 56,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 56,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 56,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 56,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 56
+        }
+      }
+    },
+    {
+      "name": "rx8-ry2-gradient-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 48,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 48
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 48,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 48,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 48,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx8-ry2-gradient-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 48,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 48,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 48,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 48,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 48,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 48
+        }
+      }
+    },
+    {
+      "name": "rx60-ry60-fill-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 13864,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 13864
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 13864,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 13864,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 13864,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx60-ry60-fill-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 13864,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 13864,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 13864,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 13864,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 13864,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 13864
+        }
+      }
+    },
+    {
+      "name": "rx60-ry60-fill-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 21181,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 21181
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 21181,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 21181,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 21181,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx60-ry60-fill-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 21181,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 21181,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 21181,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 21181,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 21181,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 21181
+        }
+      }
+    },
+    {
+      "name": "rx60-ry60-stroke-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx60-ry60-stroke-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx60-ry60-stroke-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx60-ry60-stroke-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx60-ry60-dash-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 7712,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 7712
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 7712,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 7712,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 7712,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx60-ry60-dash-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7712,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7712,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7712,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7712,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 7712,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 7712
+        }
+      }
+    },
+    {
+      "name": "rx60-ry60-dash-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 6594,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 6594
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 6594,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 6594,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 6594,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx60-ry60-dash-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6594,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6594,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6594,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6594,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 6594,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 6594
+        }
+      }
+    },
+    {
+      "name": "rx60-ry60-gradient-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 8,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 8
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 8,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 8,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 8,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx60-ry60-gradient-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 8,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 8
+        }
+      }
+    },
+    {
+      "name": "rx60-ry60-gradient-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 9,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 9
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 9,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 9,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 9,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx60-ry60-gradient-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 9,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 9,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 9,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 9,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 9,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 9
+        }
+      }
+    },
+    {
+      "name": "rx0.25-ry0.75-fill-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0.25-ry0.75-fill-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx0.25-ry0.75-fill-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 30,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 30
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 30,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 30,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 30,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0.25-ry0.75-fill-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 30,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 30,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 30,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 30,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 30,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 30
+        }
+      }
+    },
+    {
+      "name": "rx0.25-ry0.75-stroke-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0.25-ry0.75-stroke-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx0.25-ry0.75-stroke-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0.25-ry0.75-stroke-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx0.25-ry0.75-dash-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0.25-ry0.75-dash-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx0.25-ry0.75-dash-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0.25-ry0.75-dash-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx0.25-ry0.75-gradient-plain",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0.25-ry0.75-gradient-plain",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "rx0.25-ry0.75-gradient-rotated",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 0,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 0,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "rx0.25-ry0.75-gradient-rotated",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 0
+        }
+      }
+    },
+    {
+      "name": "stroke-t0",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1166,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 1166
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1166,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1166,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1166,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": true,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "stroke-t0",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1166,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1166,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1166,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1166,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1166,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": true,
+          "errors": [],
+          "rgbaError": 1166
+        }
+      }
+    },
+    {
+      "name": "gradient-t0",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 2099,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 2099
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2099,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2099,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 2099,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": true,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "gradient-t0",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2099,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2099,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2099,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2099,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2099,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": true,
+          "errors": [],
+          "rgbaError": 2099
+        }
+      }
+    },
+    {
+      "name": "stroke-t0.5",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1772,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 1772
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1772,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1772,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1772,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": true,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "stroke-t0.5",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1772,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1772,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1772,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1772,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1772,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": true,
+          "errors": [],
+          "rgbaError": 1772
+        }
+      }
+    },
+    {
+      "name": "gradient-t0.5",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 2197,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 2197
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2197,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2197,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 2197,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": true,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "gradient-t0.5",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2197,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": true,
+          "errors": [],
+          "rgbaError": 2197
+        }
+      }
+    },
+    {
+      "name": "stroke-t1",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1058,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 1058
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1058,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1058,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1058,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": true,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "stroke-t1",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1058,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1058,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1058,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1058,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1058,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": true,
+          "errors": [],
+          "rgbaError": 1058
+        }
+      }
+    },
+    {
+      "name": "gradient-t1",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1897,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 1897
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1897,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1897,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1897,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": true,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "gradient-t1",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1897,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1897,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1897,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1897,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1897,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": true,
+          "errors": [],
+          "rgbaError": 1897
+        }
+      }
+    },
+    {
+      "name": "stroke-t1.5",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 10750,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 10750
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 10750,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 10750,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 10750,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": true,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "stroke-t1.5",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10750,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10750,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": true,
+          "errors": [],
+          "rgbaError": 10750
+        }
+      }
+    },
+    {
+      "name": "gradient-t1.5",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 10101,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 0,
+          "fallbackError": 10101
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 10101,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 10101,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 10101,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": true,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "gradient-t1.5",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10101,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10101,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10101,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10101,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 10101,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": true,
+          "errors": [],
+          "rgbaError": 10101
+        }
+      }
+    },
+    {
+      "name": "clip-rx2-ry8-false",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 404,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 404
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 404,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 404,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 404,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "clip-rx2-ry8-false",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 404,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 404,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 404,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 404,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 404,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 404
+        }
+      }
+    },
+    {
+      "name": "clip-rx2-ry8-true",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 527,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 527
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 527,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 527,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 527,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "clip-rx2-ry8-true",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 527,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 527,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 527,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 527,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 527,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 527
+        }
+      }
+    },
+    {
+      "name": "clip-rx8-ry2-false",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 2152
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "clip-rx8-ry2-false",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 2152
+        }
+      }
+    },
+    {
+      "name": "clip-rx8-ry2-true",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 1572
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "clip-rx8-ry2-true",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 1572
+        }
+      }
+    },
+    {
+      "name": "clip-rx8-ry8-false",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 2437,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 2437
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2437,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2437,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 2437,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "clip-rx8-ry8-false",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2437,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2437,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2437,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2437,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2437,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 2437
+        }
+      }
+    },
+    {
+      "name": "clip-rx8-ry8-true",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 3901,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 3901
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 3901,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 3901,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 3901,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "clip-rx8-ry8-true",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3901,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3901,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3901,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3901,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3901,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 3901
+        }
+      }
+    },
+    {
+      "name": "clip-object-box",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 3536,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 3536
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 3536,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 3536,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 3536,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "clip-object-box",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3536,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3536,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3536,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3536,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 3536,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 3536
+        }
+      }
+    },
+    {
+      "name": "clip-use",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 2152
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 2152,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "clip-use",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 2152,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 2152
+        }
+      }
+    },
+    {
+      "name": "clip-nested",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 5,
+          "rgbaError": 321,
+          "fallbackError": 758
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1023,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 321
+      },
+      "baseline": {
+        "name": "clip-nested",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1023,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1023,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1023,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1023,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1023,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 1023
+        }
+      }
+    },
+    {
+      "name": "clip-sibling-restore",
+      "nativeReferenceError": 0,
+      "variants": [
+        {
+          "mode": "missing",
+          "error": null,
+          "calls": 0,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        },
+        {
+          "mode": "native",
+          "error": null,
+          "calls": 3,
+          "rgbaError": 0,
+          "fallbackError": 1572
+        },
+        {
+          "mode": "noop",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        },
+        {
+          "mode": "probe-throws",
+          "error": null,
+          "calls": 1,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        },
+        {
+          "mode": "partial-throws",
+          "error": null,
+          "calls": 2,
+          "rgbaError": 1572,
+          "fallbackError": 0
+        }
+      ],
+      "component": {
+        "ready": true,
+        "animated": false,
+        "errors": [],
+        "rgbaError": 0
+      },
+      "baseline": {
+        "name": "clip-sibling-restore",
+        "nativeReferenceError": 0,
+        "variants": [
+          {
+            "mode": "missing",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "native",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "noop",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "probe-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "partial-throws",
+            "error": null,
+            "calls": 0,
+            "rgbaError": 1572,
+            "fallbackError": 0
+          }
+        ],
+        "component": {
+          "ready": true,
+          "animated": false,
+          "errors": [],
+          "rgbaError": 1572
+        }
+      }
+    }
+  ],
+  "pending": [
+    "clip-nested"
+  ],
+  "nestedClipDiagnostics": {
+    "mode": "native",
+    "error": null,
+    "calls": 5,
+    "differences": [
+      {
+        "x": 40,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 41,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 42,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 43,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 44,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 45,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 46,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 47,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 48,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 49,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 50,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 51,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 52,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 53,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 54,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      },
+      {
+        "x": 55,
+        "y": 25,
+        "channel": 0,
+        "value": 68,
+        "reference": 72
+      }
+    ],
+    "maxAlphaError": 0,
+    "rgbaError": 321,
+    "fallbackError": 758
+  }
+}

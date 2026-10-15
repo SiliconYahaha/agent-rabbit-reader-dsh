@@ -1,0 +1,75 @@
+{
+  "oracle": "macOS textutil / Cocoa",
+  "results": [
+    {
+      "name": "group-paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\v0 Visible;}{\\s3 Neutral;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\v0 VisibleChar;}{\\*\\cs12\\additive NeutralChar;}{\\*\\cs13 NeutralNonadditive;}}BEFORE{\\s1 SECRET}AFTER}",
+      "writerPdf": "BEFORESECRETAFTER",
+      "reader": "BEFOREAFTER",
+      "sha256": "255cadb65ce00d7c3da97c5f54a77b635c790ee1eabaff5e0bea17c785b0017c",
+      "status": "unresolved-paragraph-style-binding; outside current display-property inheritance scope",
+      "cocoaText": "BEFORESECRETAFTER"
+    },
+    {
+      "name": "late-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}BEFORE\\s1 SECRET\\par\\pard AFTER}",
+      "writerPdf": "BEFORESECRET\nAFTER",
+      "reader": "BEFORE\nAFTER",
+      "sha256": "9f21e3677d99a1738cfd8f664c6535c6c4cbf6b7db4070c2ce86b33279992f89",
+      "status": "unresolved-paragraph-style-binding; outside current display-property inheritance scope",
+      "cocoaText": "BEFORESECRET\nAFTER"
+    },
+    {
+      "name": "group-hidden-parent",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}\\s1 SECRET{\\s0 INNER}AFTER\\par\\pard END}",
+      "writerPdf": "END",
+      "reader": "INNER\nEND",
+      "sha256": "3c7bdc118204df22d93a73473b553e3254b5c4553ff739fe12b6380eab8b8af0",
+      "status": "unresolved-paragraph-style-binding; outside current display-property inheritance scope",
+      "cocoaText": "SECRETINNERAFTER\nEND"
+    },
+    {
+      "name": "group-close-before-par",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}{\\s1 SECRET}\\par AFTER}",
+      "writerPdf": "AFTER",
+      "reader": "AFTER",
+      "sha256": "f1926431e0aea21f6129f32087e1be5150f61e15470446a9285db608635c82ff",
+      "status": "unresolved-paragraph-style-binding; outside current display-property inheritance scope",
+      "cocoaText": "SECRET\nAFTER"
+    },
+    {
+      "name": "group-reset-parent",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}\\s1 SECRET{\\pard INNER}AFTER\\par\\pard END}",
+      "writerPdf": "SECRETINNERAFTER\nEND",
+      "reader": "INNER\nEND",
+      "sha256": "1fe8dee582b7617f736a65dfc3d4e639105c88b23c96ebb8cb004b91a6b7d3df",
+      "status": "unresolved-paragraph-style-binding; outside current display-property inheritance scope",
+      "cocoaText": "SECRETINNERAFTER\nEND"
+    },
+    {
+      "name": "group-cross-par",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}{\\s2\\sbasedon1 Inherited;}{\\s3\\sbasedon2\\v0 Visible;}{\\*\\cs10\\additive\\v HiddenChar;}{\\*\\cs11\\additive\\sbasedon10 InheritedChar;}{\\*\\cs12\\additive\\sbasedon1 CrossKind;}}BEFORE{\\s1 SECRET\\par INNER}AFTER\\par END}",
+      "writerPdf": "BEFORESECRET\nEND",
+      "reader": "BEFORE\nAFTER\nEND",
+      "sha256": "7b4ddd507678cca2f2f0a2dfeee64e0c4edae048ccc0bb86ee6847cd3475092c",
+      "status": "unresolved-paragraph-style-binding; outside current display-property inheritance scope",
+      "cocoaText": "BEFORESECRET\nINNERAFTER\nEND"
+    },
+    {
+      "name": "control-direct-hidden",
+      "source": "{\\rtf1 VISIBLE\\v SECRET\\v0 END}",
+      "expected": "VISIBLEEND",
+      "cocoaText": "VISIBLESECRETEND"
+    },
+    {
+      "name": "control-style-at-start",
+      "source": "{\\rtf1{\\stylesheet{\\s0 Normal;}{\\s1\\v Hidden;}}\\s1 SECRET\\par\\pard END}",
+      "expected": "END",
+      "cocoaText": "SECRET\nEND"
+    }
+  ],
+  "testedAt": "2026-09-05T10:12:32.123Z",
+  "validVisibleTextOracle": false,
+  "reason": "Cocoa includes SECRET in both direct-hidden and style-at-start controls and exports it in visible HTML. Agreement on some paragraph cases does not validate hidden-text semantics.",
+  "nextAction": "Keep five Writer disagreements pending; use a renderer that passes both hidden-text controls or verify paragraph-style binding in the format specification before changing streaming semantics."
+}

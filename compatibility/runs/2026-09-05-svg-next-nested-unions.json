@@ -1,0 +1,4047 @@
+{
+  "knownOpen": [],
+  "nativeSVGImageDifferenceCases": 32,
+  "mode": "discovery",
+  "inputs": [
+    {
+      "name": "nested-union-0",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"30\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M20 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H30V30H90V90H20V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-1",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"31\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M21 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H31V30H90V90H21V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-2",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"32\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M22 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H32V30H90V90H22V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-3",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"33\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M23 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H33V30H90V90H23V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-4",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"34\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M24 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H34V30H90V90H24V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-5",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"35\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M25 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H35V30H90V90H25V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-6",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"36\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M26 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H36V30H90V90H26V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-7",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"37\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M27 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H37V30H90V90H27V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-8",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"38\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M28 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H38V30H90V90H28V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-9",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"39\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M20 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H39V30H90V90H20V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-10",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"40\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M21 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H40V30H90V90H21V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-11",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"41\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M22 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H41V30H90V90H22V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-12",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"42\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M23 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H42V30H90V90H23V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-13",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"43\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M24 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H43V30H90V90H24V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-14",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"44\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M25 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H44V30H90V90H25V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-15",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"45\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M26 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H45V30H90V90H26V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-16",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"46\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M27 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H46V30H90V90H27V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-17",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"47\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M28 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H47V30H90V90H28V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-18",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"48\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M20 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H48V30H90V90H20V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-19",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"49\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M21 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H49V30H90V90H21V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-20",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"50\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M22 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H50V30H90V90H22V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-21",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"51\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M23 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H51V30H90V90H23V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-22",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"52\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M24 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H52V30H90V90H24V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-23",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"53\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M25 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H53V30H90V90H25V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-24",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"54\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M26 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H54V30H90V90H26V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-25",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"55\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M27 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H55V30H90V90H27V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-26",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"56\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M28 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H56V30H90V90H28V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-27",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"57\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M20 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H57V30H90V90H20V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-28",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"58\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M21 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H58V30H90V90H21V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-29",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"59\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M22 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H59V30H90V90H22V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-30",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"60\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M23 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H60V30H90V90H23V70H10Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-union-31",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><clipPath id=\"inner\"><rect width=\"61\" height=\"100\"/></clipPath><clipPath id=\"c\"><path d=\"M10 10H70V70H10Z\" clip-path=\"url(#inner)\"/><path d=\"M24 30V90H90V30Z\"/></clipPath></defs><path d=\"M0 0H100V100H0Z\" fill=\"red\" clip-path=\"url(#c)\"/></svg>",
+      "expected": {
+        "units": 100,
+        "fill": "red",
+        "target": "M0 0H100V100H0Z",
+        "clips": [
+          {
+            "d": "M10 10H61V30H90V90H24V70H10Z"
+          }
+        ]
+      }
+    }
+  ],
+  "testedAt": "2026-09-05T01:02:55.185Z",
+  "cases": 32,
+  "exactNativeCases": 0,
+  "pending": [],
+  "failures": [
+    "nested-union-0",
+    "nested-union-1",
+    "nested-union-2",
+    "nested-union-3",
+    "nested-union-4",
+    "nested-union-5",
+    "nested-union-6",
+    "nested-union-7",
+    "nested-union-8",
+    "nested-union-9",
+    "nested-union-10",
+    "nested-union-11",
+    "nested-union-12",
+    "nested-union-13",
+    "nested-union-14",
+    "nested-union-15",
+    "nested-union-16",
+    "nested-union-17",
+    "nested-union-18",
+    "nested-union-19",
+    "nested-union-20",
+    "nested-union-21",
+    "nested-union-22",
+    "nested-union-23",
+    "nested-union-24",
+    "nested-union-25",
+    "nested-union-26",
+    "nested-union-27",
+    "nested-union-28",
+    "nested-union-29",
+    "nested-union-30",
+    "nested-union-31"
+  ],
+  "results": [
+    {
+      "name": "nested-union-0",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8363954,
+          "rgbaError": 16844234,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363954,
+          "rgbaError": 16844234,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363954,
+          "rgbaError": 16844234,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363954,
+          "rgbaError": 16844234,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363954,
+          "rgbaError": 16844234,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363954,
+          "rgbaError": 16844234,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363954,
+          "rgbaError": 16844234,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-1",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 16824176,
+          "svgAlphaError": 8330891,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8363955,
+          "rgbaError": 16857240,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824176,
+          "svgAlphaError": 8330891,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363955,
+          "rgbaError": 16857240,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824176,
+          "svgAlphaError": 8330891,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363955,
+          "rgbaError": 16857240,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824176,
+          "svgAlphaError": 8330891,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363955,
+          "rgbaError": 16857240,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824176,
+          "svgAlphaError": 8330891,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363955,
+          "rgbaError": 16857240,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824176,
+          "svgAlphaError": 8330891,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363955,
+          "rgbaError": 16857240,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824176,
+          "svgAlphaError": 8330891,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363955,
+          "rgbaError": 16857240,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-2",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 16812191,
+          "svgAlphaError": 8331911,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8364003,
+          "rgbaError": 16844283,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16812191,
+          "svgAlphaError": 8331911,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364003,
+          "rgbaError": 16844283,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16812191,
+          "svgAlphaError": 8331911,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364003,
+          "rgbaError": 16844283,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16812191,
+          "svgAlphaError": 8331911,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364003,
+          "rgbaError": 16844283,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16812191,
+          "svgAlphaError": 8331911,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364003,
+          "rgbaError": 16844283,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16812191,
+          "svgAlphaError": 8331911,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364003,
+          "rgbaError": 16844283,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16812191,
+          "svgAlphaError": 8331911,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364003,
+          "rgbaError": 16844283,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-3",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-4",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 16810610,
+          "svgAlphaError": 8330330,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8363950,
+          "rgbaError": 16856980,
+          "maxChannelError": 255,
+          "changedChannels": 66612,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16810610,
+          "svgAlphaError": 8330330,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363950,
+          "rgbaError": 16856980,
+          "maxChannelError": 255,
+          "changedChannels": 66612,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16810610,
+          "svgAlphaError": 8330330,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363950,
+          "rgbaError": 16856980,
+          "maxChannelError": 255,
+          "changedChannels": 66612,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16810610,
+          "svgAlphaError": 8330330,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363950,
+          "rgbaError": 16856980,
+          "maxChannelError": 255,
+          "changedChannels": 66612,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16810610,
+          "svgAlphaError": 8330330,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363950,
+          "rgbaError": 16856980,
+          "maxChannelError": 255,
+          "changedChannels": 66612,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16810610,
+          "svgAlphaError": 8330330,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363950,
+          "rgbaError": 16856980,
+          "maxChannelError": 255,
+          "changedChannels": 66612,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16810610,
+          "svgAlphaError": 8330330,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363950,
+          "rgbaError": 16856980,
+          "maxChannelError": 255,
+          "changedChannels": 66612,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-5",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8363953,
+          "rgbaError": 16844233,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363953,
+          "rgbaError": 16844233,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363953,
+          "rgbaError": 16844233,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363953,
+          "rgbaError": 16844233,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363953,
+          "rgbaError": 16844233,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363953,
+          "rgbaError": 16844233,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811069,
+          "svgAlphaError": 8330789,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363953,
+          "rgbaError": 16844233,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-6",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 16824124,
+          "svgAlphaError": 8330839,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8363903,
+          "rgbaError": 16857188,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824124,
+          "svgAlphaError": 8330839,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363903,
+          "rgbaError": 16857188,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824124,
+          "svgAlphaError": 8330839,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363903,
+          "rgbaError": 16857188,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824124,
+          "svgAlphaError": 8330839,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363903,
+          "rgbaError": 16857188,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824124,
+          "svgAlphaError": 8330839,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363903,
+          "rgbaError": 16857188,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824124,
+          "svgAlphaError": 8330839,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363903,
+          "rgbaError": 16857188,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824124,
+          "svgAlphaError": 8330839,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363903,
+          "rgbaError": 16857188,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-7",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 16811120,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8364006,
+          "rgbaError": 16844286,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811120,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364006,
+          "rgbaError": 16844286,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811120,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364006,
+          "rgbaError": 16844286,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811120,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364006,
+          "rgbaError": 16844286,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811120,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364006,
+          "rgbaError": 16844286,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811120,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364006,
+          "rgbaError": 16844286,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16811120,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66512,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8364006,
+          "rgbaError": 16844286,
+          "maxChannelError": 255,
+          "changedChannels": 66512,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-8",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 16824125,
+          "svgAlphaError": 8330840,
+          "svgChangedChannels": 66614,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8363902,
+          "rgbaError": 16857187,
+          "maxChannelError": 255,
+          "changedChannels": 66614,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-9",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-10",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 17422916,
+          "svgAlphaError": 8630516,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8665054,
+          "rgbaError": 17457454,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422916,
+          "svgAlphaError": 8630516,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665054,
+          "rgbaError": 17457454,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422916,
+          "svgAlphaError": 8630516,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665054,
+          "rgbaError": 17457454,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422916,
+          "svgAlphaError": 8630516,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665054,
+          "rgbaError": 17457454,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422916,
+          "svgAlphaError": 8630516,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665054,
+          "rgbaError": 17457454,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422916,
+          "svgAlphaError": 8630516,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665054,
+          "rgbaError": 17457454,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422916,
+          "svgAlphaError": 8630516,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665054,
+          "rgbaError": 17457454,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-11",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 17410421,
+          "svgAlphaError": 8631026,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17410421,
+          "svgAlphaError": 8631026,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17410421,
+          "svgAlphaError": 8631026,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17410421,
+          "svgAlphaError": 8631026,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17410421,
+          "svgAlphaError": 8631026,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17410421,
+          "svgAlphaError": 8631026,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17410421,
+          "svgAlphaError": 8631026,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665103,
+          "rgbaError": 17444498,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-12",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-13",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 17408840,
+          "svgAlphaError": 8629445,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8665055,
+          "rgbaError": 17457455,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17408840,
+          "svgAlphaError": 8629445,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665055,
+          "rgbaError": 17457455,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17408840,
+          "svgAlphaError": 8629445,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665055,
+          "rgbaError": 17457455,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17408840,
+          "svgAlphaError": 8629445,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665055,
+          "rgbaError": 17457455,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17408840,
+          "svgAlphaError": 8629445,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665055,
+          "rgbaError": 17457455,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17408840,
+          "svgAlphaError": 8629445,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665055,
+          "rgbaError": 17457455,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17408840,
+          "svgAlphaError": 8629445,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665055,
+          "rgbaError": 17457455,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-14",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 17409809,
+          "svgAlphaError": 8630414,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17444447,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409809,
+          "svgAlphaError": 8630414,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17444447,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409809,
+          "svgAlphaError": 8630414,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17444447,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409809,
+          "svgAlphaError": 8630414,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17444447,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409809,
+          "svgAlphaError": 8630414,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17444447,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409809,
+          "svgAlphaError": 8630414,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17444447,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409809,
+          "svgAlphaError": 8630414,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17444447,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-15",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 17422915,
+          "svgAlphaError": 8630515,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422915,
+          "svgAlphaError": 8630515,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422915,
+          "svgAlphaError": 8630515,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422915,
+          "svgAlphaError": 8630515,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422915,
+          "svgAlphaError": 8630515,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422915,
+          "svgAlphaError": 8630515,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422915,
+          "svgAlphaError": 8630515,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665052,
+          "rgbaError": 17457452,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-16",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8665105,
+          "rgbaError": 17444500,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665105,
+          "rgbaError": 17444500,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665105,
+          "rgbaError": 17444500,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665105,
+          "rgbaError": 17444500,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665105,
+          "rgbaError": 17444500,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665105,
+          "rgbaError": 17444500,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17409860,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68858,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665105,
+          "rgbaError": 17444500,
+          "maxChannelError": 255,
+          "changedChannels": 68858,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-17",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8665002,
+          "rgbaError": 17457402,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665002,
+          "rgbaError": 17457402,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665002,
+          "rgbaError": 17457402,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665002,
+          "rgbaError": 17457402,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665002,
+          "rgbaError": 17457402,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665002,
+          "rgbaError": 17457402,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 17422865,
+          "svgAlphaError": 8630465,
+          "svgChangedChannels": 68960,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8665002,
+          "rgbaError": 17457402,
+          "maxChannelError": 255,
+          "changedChannels": 68960,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-18",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18010181,
+          "svgAlphaError": 8931671,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8966203,
+          "rgbaError": 18044713,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18010181,
+          "svgAlphaError": 8931671,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966203,
+          "rgbaError": 18044713,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18010181,
+          "svgAlphaError": 8931671,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966203,
+          "rgbaError": 18044713,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18010181,
+          "svgAlphaError": 8931671,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966203,
+          "rgbaError": 18044713,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18010181,
+          "svgAlphaError": 8931671,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966203,
+          "rgbaError": 18044713,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18010181,
+          "svgAlphaError": 8931671,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966203,
+          "rgbaError": 18044713,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18010181,
+          "svgAlphaError": 8931671,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966203,
+          "rgbaError": 18044713,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-19",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-20",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18008651,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8966254,
+          "rgbaError": 18044764,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008651,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966254,
+          "rgbaError": 18044764,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008651,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966254,
+          "rgbaError": 18044764,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008651,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966254,
+          "rgbaError": 18044764,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008651,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966254,
+          "rgbaError": 18044764,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008651,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966254,
+          "rgbaError": 18044764,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008651,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966254,
+          "rgbaError": 18044764,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-21",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18021605,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8966151,
+          "rgbaError": 18057666,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021605,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966151,
+          "rgbaError": 18057666,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021605,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966151,
+          "rgbaError": 18057666,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021605,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966151,
+          "rgbaError": 18057666,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021605,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966151,
+          "rgbaError": 18057666,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021605,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966151,
+          "rgbaError": 18057666,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021605,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966151,
+          "rgbaError": 18057666,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-22",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18007070,
+          "svgAlphaError": 8928560,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18007070,
+          "svgAlphaError": 8928560,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18007070,
+          "svgAlphaError": 8928560,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18007070,
+          "svgAlphaError": 8928560,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18007070,
+          "svgAlphaError": 8928560,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18007070,
+          "svgAlphaError": 8928560,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18007070,
+          "svgAlphaError": 8928560,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-23",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8966204,
+          "rgbaError": 18044714,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966204,
+          "rgbaError": 18044714,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966204,
+          "rgbaError": 18044714,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966204,
+          "rgbaError": 18044714,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966204,
+          "rgbaError": 18044714,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966204,
+          "rgbaError": 18044714,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966204,
+          "rgbaError": 18044714,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-24",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18021655,
+          "svgAlphaError": 8930140,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8966152,
+          "rgbaError": 18057667,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021655,
+          "svgAlphaError": 8930140,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966152,
+          "rgbaError": 18057667,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021655,
+          "svgAlphaError": 8930140,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966152,
+          "rgbaError": 18057667,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021655,
+          "svgAlphaError": 8930140,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966152,
+          "rgbaError": 18057667,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021655,
+          "svgAlphaError": 8930140,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966152,
+          "rgbaError": 18057667,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021655,
+          "svgAlphaError": 8930140,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966152,
+          "rgbaError": 18057667,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021655,
+          "svgAlphaError": 8930140,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966152,
+          "rgbaError": 18057667,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-25",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8966205,
+          "rgbaError": 18044715,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966205,
+          "rgbaError": 18044715,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966205,
+          "rgbaError": 18044715,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966205,
+          "rgbaError": 18044715,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966205,
+          "rgbaError": 18044715,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966205,
+          "rgbaError": 18044715,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18008600,
+          "svgAlphaError": 8930090,
+          "svgChangedChannels": 71204,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966205,
+          "rgbaError": 18044715,
+          "maxChannelError": 255,
+          "changedChannels": 71204,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-26",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18021656,
+          "svgAlphaError": 8930141,
+          "svgChangedChannels": 71306,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 8966154,
+          "rgbaError": 18057669,
+          "maxChannelError": 255,
+          "changedChannels": 71306,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-27",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18608411,
+          "svgAlphaError": 9230786,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 9267302,
+          "rgbaError": 18644927,
+          "maxChannelError": 255,
+          "changedChannels": 73550,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18608411,
+          "svgAlphaError": 9230786,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267302,
+          "rgbaError": 18644927,
+          "maxChannelError": 255,
+          "changedChannels": 73550,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18608411,
+          "svgAlphaError": 9230786,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267302,
+          "rgbaError": 18644927,
+          "maxChannelError": 255,
+          "changedChannels": 73550,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18608411,
+          "svgAlphaError": 9230786,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267302,
+          "rgbaError": 18644927,
+          "maxChannelError": 255,
+          "changedChannels": 73550,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18608411,
+          "svgAlphaError": 9230786,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267302,
+          "rgbaError": 18644927,
+          "maxChannelError": 255,
+          "changedChannels": 73550,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18608411,
+          "svgAlphaError": 9230786,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267302,
+          "rgbaError": 18644927,
+          "maxChannelError": 255,
+          "changedChannels": 73550,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18608411,
+          "svgAlphaError": 9230786,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267302,
+          "rgbaError": 18644927,
+          "maxChannelError": 255,
+          "changedChannels": 73550,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-28",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18620396,
+          "svgAlphaError": 9229766,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 9267253,
+          "rgbaError": 18657883,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620396,
+          "svgAlphaError": 9229766,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267253,
+          "rgbaError": 18657883,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620396,
+          "svgAlphaError": 9229766,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267253,
+          "rgbaError": 18657883,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620396,
+          "svgAlphaError": 9229766,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267253,
+          "rgbaError": 18657883,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620396,
+          "svgAlphaError": 9229766,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267253,
+          "rgbaError": 18657883,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620396,
+          "svgAlphaError": 9229766,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267253,
+          "rgbaError": 18657883,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620396,
+          "svgAlphaError": 9229766,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267253,
+          "rgbaError": 18657883,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-29",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18606881,
+          "svgAlphaError": 9229256,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 9267298,
+          "rgbaError": 18657673,
+          "maxChannelError": 255,
+          "changedChannels": 73650,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18606881,
+          "svgAlphaError": 9229256,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267298,
+          "rgbaError": 18657673,
+          "maxChannelError": 255,
+          "changedChannels": 73650,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18606881,
+          "svgAlphaError": 9229256,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267298,
+          "rgbaError": 18657673,
+          "maxChannelError": 255,
+          "changedChannels": 73650,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18606881,
+          "svgAlphaError": 9229256,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267298,
+          "rgbaError": 18657673,
+          "maxChannelError": 255,
+          "changedChannels": 73650,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18606881,
+          "svgAlphaError": 9229256,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267298,
+          "rgbaError": 18657673,
+          "maxChannelError": 255,
+          "changedChannels": 73650,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18606881,
+          "svgAlphaError": 9229256,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267298,
+          "rgbaError": 18657673,
+          "maxChannelError": 255,
+          "changedChannels": 73650,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18606881,
+          "svgAlphaError": 9229256,
+          "svgChangedChannels": 73550,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267298,
+          "rgbaError": 18657673,
+          "maxChannelError": 255,
+          "changedChannels": 73650,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-30",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 9267251,
+          "rgbaError": 18657881,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267251,
+          "rgbaError": 18657881,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267251,
+          "rgbaError": 18657881,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267251,
+          "rgbaError": 18657881,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267251,
+          "rgbaError": 18657881,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267251,
+          "rgbaError": 18657881,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267251,
+          "rgbaError": 18657881,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    },
+    {
+      "name": "nested-union-31",
+      "reference": "Independent explicit Canvas clip geometry",
+      "variants": [
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "fallback",
+          "nativePaths": false,
+          "factoryCalls": 0,
+          "alphaError": 9267254,
+          "rgbaError": 18657884,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "native",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267254,
+          "rgbaError": 18657884,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267254,
+          "rgbaError": 18657884,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "factory-ignores-string",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267254,
+          "rgbaError": 18657884,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "paint-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267254,
+          "rgbaError": 18657884,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "transform-ignored",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267254,
+          "rgbaError": 18657884,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        },
+        {
+          "svgRGBAError": 18620345,
+          "svgAlphaError": 9229715,
+          "svgChangedChannels": 73652,
+          "error": "SVG nested clipping inside a multi-child union is not supported yet",
+          "mode": "clip-throws",
+          "nativePaths": true,
+          "factoryCalls": 0,
+          "alphaError": 9267254,
+          "rgbaError": 18657884,
+          "maxChannelError": 255,
+          "changedChannels": 73652,
+          "fallbackError": 0,
+          "ink": 0
+        }
+      ]
+    }
+  ]
+}

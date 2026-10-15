@@ -1,0 +1,475 @@
+{
+  "rows": [
+    {
+      "name": "v1-none",
+      "version": 1,
+      "suffix": [],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQACAKo=",
+      "sha256": "0429d9dabad101e36b5228ee0eeb59a22a77163f28c396cd57796f5c42446d4c",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "width": 8,
+        "height": 1,
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v1-noop",
+      "version": 1,
+      "suffix": [
+        128
+      ],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQADAKqA",
+      "sha256": "b29aad11518eecec340b565bd36d84199cc7e9a9ddbd053b63cb70e1893d0352",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "width": 8,
+        "height": 1,
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v1-twoNoops",
+      "version": 1,
+      "suffix": [
+        128,
+        128
+      ],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQAEAKqAgA==",
+      "sha256": "0d3235838941051389ad08fcb95eae6b85c0ab331d92ea2a62f38c5c7e4f6b8c",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v1-literal",
+      "version": 1,
+      "suffix": [
+        0,
+        187
+      ],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQAEAKoAuw==",
+      "sha256": "5964ea532aa2d9b4757de3de77ef6aeabf083d0ddf9888e8acef23ffc8d2d0d8",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v1-shortLiteral",
+      "version": 1,
+      "suffix": [
+        0
+      ],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQADAKoA",
+      "sha256": "e0d392e23d2b26d4651a15fff76503bdc8327714a58016d15ecb292e1a919c7c",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "width": 8,
+        "height": 1,
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v1-repeat",
+      "version": 1,
+      "suffix": [
+        255,
+        42
+      ],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQAEAKr/Kg==",
+      "sha256": "0a4132e8d10c3d2e3ee623b048ff3fc7713ee4bc0b6a3645b79053c89d0cf6a5",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v1-shortRepeat",
+      "version": 1,
+      "suffix": [
+        255
+      ],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQADAKr/",
+      "sha256": "328c7be8546bc18a828342e93e640ef47922b3382b444c5bc0f82e8e495ab090",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "width": 8,
+        "height": 1,
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v1-longLiteral",
+      "version": 1,
+      "suffix": [
+        127,
+        42
+      ],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQAEAKp/Kg==",
+      "sha256": "96084aecba57f7e4bea9fbc1c21d3afdfb35e095aed2506dadb74b277c161dd9",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v1-noopLiteral",
+      "version": 1,
+      "suffix": [
+        128,
+        0,
+        42
+      ],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQAFAKqAACo=",
+      "sha256": "0e85920332624cb6dcbf201a076e6a8e9930ce4de8b5e856f7e731fe30efc56e",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v1-noopShort",
+      "version": 1,
+      "suffix": [
+        128,
+        0
+      ],
+      "sourceBase64": "OEJQUwABAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAQAEAKqAAA==",
+      "sha256": "9d0ef27d2c0d7a9d2883d72d55e0ac3942c3e967257a00feb4f64ec948016390",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "rgba": "ffffffff000000ffffffffff000000ffffffffff000000ffffffffff000000ff"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-none",
+      "version": 2,
+      "suffix": [],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAKo=",
+      "sha256": "315c55eb74fd9750af384edf597debe8b34445948115f1b3f6470d1f0d0b98a8",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "width": 8,
+        "height": 1,
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-noop",
+      "version": 2,
+      "suffix": [
+        128
+      ],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAADAKqA",
+      "sha256": "e1fd133c3def6f916a1ac0fb5fa5ea1d454623014f38f776f87f8d59378d3aa8",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "width": 8,
+        "height": 1,
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-twoNoops",
+      "version": 2,
+      "suffix": [
+        128,
+        128
+      ],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAKqAgA==",
+      "sha256": "c7306ad001d157313b96b08d28d5a67c03fc03e13cba4cf22ab99bb9cfc87c1c",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-literal",
+      "version": 2,
+      "suffix": [
+        0,
+        187
+      ],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAKoAuw==",
+      "sha256": "986387ed4dcef9000bbd14fad1206c9d646acb6971ae541e8ff3f3f86cfa4882",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-shortLiteral",
+      "version": 2,
+      "suffix": [
+        0
+      ],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAADAKoA",
+      "sha256": "730c57b93f93d6a13650446525df22e9e8e307a9ad1ccef4a3bc8218f06430d3",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "width": 8,
+        "height": 1,
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-repeat",
+      "version": 2,
+      "suffix": [
+        255,
+        42
+      ],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAKr/Kg==",
+      "sha256": "6479544984cf1ed168a27bb0cd4e441423e09b9a7c1a4005a3383cd4aa196833",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-shortRepeat",
+      "version": 2,
+      "suffix": [
+        255
+      ],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAADAKr/",
+      "sha256": "e837b0458b4cb3e86ddfd99f78eeb3b7f5c13fff4f80bfbd24d3d1599feb8f32",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "width": 8,
+        "height": 1,
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-longLiteral",
+      "version": 2,
+      "suffix": [
+        127,
+        42
+      ],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAKp/Kg==",
+      "sha256": "39ac6d26b2c8b8c8e38fc1f24336df947e54d05da2400452baa2d41ab0829ab8",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-noopLiteral",
+      "version": 2,
+      "suffix": [
+        128,
+        0,
+        42
+      ],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAFAKqAACo=",
+      "sha256": "bdd59256d210733b9cb68fa9ab842a90390b8579b5a8678d3787b9ef83f823de",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    },
+    {
+      "name": "v2-noopShort",
+      "version": 2,
+      "suffix": [
+        128,
+        0
+      ],
+      "sourceBase64": "OEJQUwACAAAAAAAAAAEAAAABAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAKqAAA==",
+      "sha256": "332f66690af1d878b49145e71390a7536febabf27e1a7505993fc81d8722539f",
+      "reader": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      },
+      "pillow": {
+        "error": "cannot identify image file <_io.BytesIO object at 0x1052a7f10>"
+      },
+      "magick": {
+        "error": "InsufficientImageDataInFile `' @ error/psd.c/ReadPSDImage/2713"
+      },
+      "psdTools": {
+        "rgba": "000000ffffffffff000000ffffffffff000000ffffffffff000000ffffffffff"
+      }
+    }
+  ],
+  "pillowVersion": "12.3.0",
+  "magickVersion": "ImageMagick 7.1.2-30 Q8 wasm32 344e9056f:20260823 https://imagemagick.org",
+  "psdToolsVersion": "1.18.0",
+  "schemaVersion": 1,
+  "testedAt": "2026-09-06T01:49:32.794Z",
+  "status": "native-disagreement-needs-packet-contract",
+  "generation": "Deterministic Cartesian product: PSD/PSB version 1/2 by ten PackBits suffixes. One 8-pixel bitmap row has packet 00 AA, followed by the recorded suffix. Its length table includes the suffix; no random inputs.",
+  "source": "https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/",
+  "scope": "20 complete synthetic source files and decoded RGBA/errors; no host preview, PNG/JPEG or device check.",
+  "summary": {
+    "cases": 20,
+    "readerAccepted": 20,
+    "psdToolsAccepted": 20,
+    "readerPsdToolsPixelMatches": 20,
+    "magickAccepted": 8,
+    "magickErrors": 12,
+    "pillowPsdAccepted": 10,
+    "pillowPsbUnsupported": 10
+  },
+  "disposition": [
+    "Retain all native errors. Reader and psd-tools stop after the expected output width and accept productive/incomplete suffixes. This is not proof of strict packet validity.",
+    "ImageMagick also rejects the double-no-op control, so its rejection cannot be adopted indiscriminately as a validity contract. Investigate input-size checks separately from PackBits packet checks.",
+    "Pillow direct PSD output reverses bitmap polarity relative to reader, psd-tools and successful ImageMagick controls; it does not open these PSBs. Do not change reader pixels to its output.",
+    "Next: audit the Adobe composite-row rule and full PackBits consumption, add multichannel/depth/row controls, and separate permitted padding/no-ops from incomplete packets before a fix."
+  ]
+}

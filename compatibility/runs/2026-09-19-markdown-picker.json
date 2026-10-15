@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-19",
+  "iteration": "markdown-picker-recovery",
+  "version": "1.4.141",
+  "scope": "Home picker recovery and consistent Markdown MIME routing",
+  "tests": {
+    "targetedNodeTests": 27,
+    "productionBoundaries": "pass",
+    "wechatOriginalFileCases": 4,
+    "tablesPerCase": 40,
+    "actualHeadingWxml": "pass",
+    "pickerMetadata": "mocked",
+    "formatChoice": "mocked Markdown selection",
+    "physicalDevices": "not run"
+  },
+  "limitations": [
+    "Exact metadata of the newly reported phone failure not available",
+    "Recovery option fixes refusal path; it is not proof of the phone filename variant",
+    "Screenshot API returned a black image while the Mac was locked; not counted as visual verification"
+  ],
+  "originals": "Existing private test-materials/files/\u5e73\u9876\u5c71\u5e02.md; not committed",
+  "evidence": "outputs/markdown-picker/wechat.json",
+  "packaging": {
+    "initialMarkdownPackageBytes": 204,
+    "cause": "dynamic require.async target omitted from upload dependency graph",
+    "fix": "literal asynchronous entry paths"
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "testUpr.rtf",
+    "sha256": "c0ca25634734078cdb85d771b74b09177a6bba325671bef60dd3684233be6882",
+    "expected": "TEST\nEnd User License Agreement\n\nTEST"
+  },
+  {
+    "name": "testUnicode.rtf",
+    "sha256": "c00f11b9ecb2ed083787955c7d05b2ef1d998a4826af41d0aa839efd5abb76b7",
+    "expected": "Արամ\nJohann Strauß\nBelgië\tRené Magritte\nবাংলা\n་ཡུལ།\nប្រទេស​​​កម្ពុជា\nᓄᓇᕗᒻᒥᐅᑦ\n中国\nČeská republika"
+  },
+  {
+    "name": "testNegativeUnicode.rtf",
+    "sha256": "9dfaa2fa0d46fa5e01b32de8c342c99eee63d326e59e044a279bf9bb6305c03e",
+    "expected": "From: http://unicode-table.com/en/#private-use-area\nF700\uf700\uf701\uf702\uf703\uf704\uf705\uf706\uf707\uf708\uf709\uf70a\uf70b\uf70c\uf70d\uf70e\uf70f\nF710\uf710\uf711\uf712\uf713\uf714\uf715\uf716\uf717\uf718\uf719\uf71a\uf71b\uf71c\uf71d\uf71e\uf71f\nF720\uf720\uf721\uf722\uf723\uf724\uf725\uf726"
+  }
+]

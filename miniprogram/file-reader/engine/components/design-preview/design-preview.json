@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "skin-design": "/file-reader/skin/design/design"
+  }
+}

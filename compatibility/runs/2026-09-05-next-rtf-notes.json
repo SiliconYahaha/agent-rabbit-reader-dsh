@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "id": "next-rtf-notes",
+  "status": "reproduced-unfixed",
+  "format": "RTF",
+  "specification": {
+    "url": "https://officeprotocoldoc.z19.web.core.windows.net/files/Archive_References/%5BMSFT-RTF%5D.pdf",
+    "pages": "192–193: footnote destination and endnote ftnalt"
+  },
+  "oracle": {
+    "writer": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "export": "PDF",
+    "extraction": "pypdf",
+    "visualCheck": "two-footnotes first page rendered by macOS sips and inspected: A1B2C in body; FIRST and SECOND separately at page bottom",
+    "cocoa": "macOS textutil auxiliary observation only",
+    "cocoaLimit": "Cocoa preserves the body but drops note text; it must not be used as the complete expected output."
+  },
+  "cases": 6,
+  "confirmedBodyNoteInterleaving": 5,
+  "customMark": "Excluded from confirmed count: Writer synthesizes extra numeric reference; investigate custom-reference semantics independently",
+  "results": [
+    {
+      "name": "footnote",
+      "source": "{\\rtf1\\ansi\\ftnbj A\\chftn{\\footnote\\pard\\plain\\chftn NOTE}B}",
+      "sourceSha256": "f8fbb869eeafdcb37d663d83abaedf6cb5de14eac574e65e9c1faa9cd2390939",
+      "readerText": "ANOTEB",
+      "writerPages": [
+        "A1B\n1NOTE"
+      ],
+      "component": {
+        "error": "",
+        "hasContent": true,
+        "bodyText": "ANOTEB"
+      },
+      "cocoaText": "AB"
+    },
+    {
+      "name": "two-footnotes",
+      "source": "{\\rtf1\\ansi\\ftnbj A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "sourceSha256": "3a85f2d06bc1bd4a61d7428dd8ffa6f42d4a8684b7c6dadce72a3437c5b02fa4",
+      "readerText": "AFIRSTBSECONDC",
+      "writerPages": [
+        "A1B2C\n1FIRST\n2SECOND"
+      ],
+      "component": {
+        "error": "",
+        "hasContent": true,
+        "bodyText": "AFIRSTBSECONDC"
+      },
+      "cocoaText": "ABC"
+    },
+    {
+      "name": "endnote",
+      "source": "{\\rtf1\\ansi\\ftnbj A\\chftn{\\footnote\\ftnalt\\pard\\plain\\chftn NOTE}B}",
+      "sourceSha256": "67e2c0f540cfddb684806547e955e499acdce92bbc85e51e5601bcd690f7fbe3",
+      "readerText": "ANOTEB",
+      "writerPages": [
+        "AiB",
+        "iNOTE"
+      ],
+      "component": {
+        "error": "",
+        "hasContent": true,
+        "bodyText": "ANOTEB"
+      },
+      "cocoaText": "AB"
+    },
+    {
+      "name": "note-paragraph",
+      "source": "{\\rtf1\\ansi\\ftnbj A\\chftn{\\footnote\\pard\\plain\\chftn FIRST\\par SECOND}B}",
+      "sourceSha256": "24c34bc4b5ea64e1e741d1c3b5f3c54938e87c245e4db45de41f85560d285f39",
+      "readerText": "AFIRST\nSECONDB",
+      "writerPages": [
+        "A1B\n1FIRST\nSECOND"
+      ],
+      "component": {
+        "error": "",
+        "hasContent": true,
+        "bodyText": "AFIRST\nSECONDB"
+      },
+      "cocoaText": "AB"
+    },
+    {
+      "name": "custom-mark",
+      "source": "{\\rtf1\\ansi\\ftnbj A*{\\footnote\\pard\\plain * NOTE}B}",
+      "sourceSha256": "9b397f066f528e6fd8525703941f6dfa546305f56ea1e66d1b7a499303e31983",
+      "readerText": "A** NOTEB",
+      "writerPages": [
+        "A*1B\n1* NOTE"
+      ],
+      "component": {
+        "error": "",
+        "hasContent": true,
+        "bodyText": "A** NOTEB"
+      },
+      "cocoaText": "A*B"
+    },
+    {
+      "name": "note-field",
+      "source": "{\\rtf1\\ansi\\ftnbj A\\chftn{\\footnote\\pard\\plain\\chftn {\\field{\\*\\fldinst HYPERLINK \"about:blank\"}{\\fldrslt LINK}}}B}",
+      "sourceSha256": "763735ac6f8da14aa57ff803f06d198953364e98189e904912d8dab30b7cf400",
+      "readerText": "ALINKB",
+      "writerPages": [
+        "A1B\n1LINK  "
+      ],
+      "component": {
+        "error": "",
+        "hasContent": true,
+        "bodyText": "ALINKB"
+      },
+      "cocoaText": "AB"
+    }
+  ],
+  "recovery": "pass",
+  "rootCause": "Footnote destination content is appended into the same text output as the surrounding body, without reference identity or boundary separation.",
+  "next": "Restore readable separation and body order for footnotes/endnotes while preserving note text and references; test Unicode, styles, tables and resource limits within note destinations.",
+  "platforms": {
+    "node": "actual reader component reproduced",
+    "wechatDevtools": "not-run: compiler startup block",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "unicodeAlternativeAudit": {
+    "scope": "Separate eight-case exploratory batch; not counted as reader failures",
+    "writer": "Rendered body control showed OLDNEW, combining both alternatives",
+    "cocoa": "Uses the ANSI OLD branch; unsuitable as a Unicode-branch oracle",
+    "reader": "Uses the Unicode NEW branch; retain primary-specification expectation",
+    "results": [
+      {
+        "name": "body",
+        "source": "{\\rtf1\\ansi {\\upr{OLD}{\\*\\ud NEW}}}",
+        "text": "NEW",
+        "writerText": "OLDNEW",
+        "cocoaText": "OLD"
+      },
+      {
+        "name": "field-result",
+        "source": "{\\rtf1\\ansi {\\field{\\*\\fldinst HYPERLINK \"about:blank\"}{\\fldrslt {\\upr{OLD}{\\*\\ud NEW}}}}}",
+        "text": "NEW",
+        "writerText": "OLDNEW",
+        "cocoaText": "OLD"
+      },
+      {
+        "name": "field-instruction",
+        "source": "{\\rtf1\\ansi {\\field{\\*\\fldinst {\\upr{OLD}{\\*\\ud NEW}}}{\\fldrslt VISIBLE}}}",
+        "text": "VISIBLE",
+        "writerText": "VISIBLE",
+        "cocoaText": "VISIBLE"
+      },
+      {
+        "name": "hidden",
+        "source": "{\\rtf1\\ansi {\\v {\\upr{OLD}{\\*\\ud NEW}}}VISIBLE}",
+        "text": "VISIBLE",
+        "writerText": "OLDVISIBLE",
+        "cocoaText": "OLDVISIBLE"
+      },
+      {
+        "name": "nested",
+        "source": "{\\rtf1\\ansi {\\upr{OLD}{\\*\\ud A{\\upr{OLD}{\\*\\ud NEW}}Z}}}",
+        "text": "ANEWZ",
+        "writerText": "OLDAOLDNEWZ",
+        "cocoaText": "OLD"
+      },
+      {
+        "name": "unknown-destination",
+        "source": "{\\rtf1\\ansi {\\*\\unknown {\\upr{OLD}{\\*\\ud NEW}}}VISIBLE}",
+        "text": "VISIBLE",
+        "writerText": "VISIBLE",
+        "cocoaText": "VISIBLE"
+      },
+      {
+        "name": "table",
+        "source": "{\\rtf1\\ansi \\trowd\\cellx1000\\intbl {\\upr{OLD}{\\*\\ud NEW}}\\cell\\row}",
+        "text": "NEW",
+        "writerText": "OLDNE\nW",
+        "cocoaText": "OLD\n"
+      },
+      {
+        "name": "footnote",
+        "source": "{\\rtf1\\ansi BODY{\\footnote {\\upr{OLD}{\\*\\ud NEW}}}END}",
+        "text": "BODYNEWEND",
+        "writerText": "BODY1END\n1OLDNEW",
+        "cocoaText": "BODYEND"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1407 @@
+{
+  "schemaVersion": 1,
+  "id": "dxf-mtext-content-and-literal-escapes",
+  "at": "2026-09-13T07:00:18.092646+00:00",
+  "testedPackageVersion": "1.4.137",
+  "status": "local-repair-verified-pending-delivery",
+  "scope": "MTEXT literal/CIF provenance, physical chunk whitespace, paragraphs, scoped character styles and stacked fractions in actual reader SVG. TEXT keeps literal paragraph commands.",
+  "runtimeSha256": {
+    "miniprogram/file-reader/engine/core/dxf-mtext.js": "60b0897546733e7f6f7d3bdca32576012293845d5601397e9b2c26ce08cd8e5d",
+    "miniprogram/file-reader/engine/core/dxf-text.js": "f9bb4d2a64447ad732fd81794f3848f242dcce5cd1a14aa67638d94dbcf3c92a",
+    "miniprogram/file-reader/engine/core/file-inspector.js": "133fd2a3ac9426748904da551fdaf8ccd810c80e4cfd4ea8be5cf197234028cb",
+    "tests/fixtures/dxf-mtext/samples.json": "f222b8037c8a3afdec8091baac799ae665eeb464cb96f071d0330f36c10bc67f",
+    "tests/dxf-mtext.test.js": "a1751a7b51b76f17c72f5ae71f8354d26316bb8e1e57f3b200bb5e4bf7de3d32",
+    "tests/dxf-text.test.js": "9221bcf84c663b6d4f3d37f52af88b2d7acce3236b898d7364744e7c4200911b",
+    "scripts/verify-dxf-mtext.js": "b897577ea5021833c35dd56fcf76fe5a7d9fd791900902e00c66706dfb724f16",
+    "package.json": "8c9eeca7ea32c1349c832321afc9eefeba04abddab7293cd232ab509e07c07f9"
+  },
+  "before": {
+    "evidence": "runs/2026-09-13-next-dxf-mtext.json",
+    "originalFiles": 40,
+    "actualHostOpens": 46,
+    "certifiedContentCases": 30,
+    "certifiedContentFailures": 28,
+    "unsettledReferenceOrInputPolicyCases": 10,
+    "supplementalRoleCases": 6,
+    "totalRetainedOriginals": 46
+  },
+  "after": {
+    "retainedOriginals": 46,
+    "browserCases": 49,
+    "browserFailures": [],
+    "browserTestedAt": "2026-09-13T06:59:26.057Z",
+    "certifiedPrimaryContentCases": 30,
+    "certifiedPrimaryContentFailures": 0,
+    "preservedReferenceOrInputPolicyCases": 10,
+    "supplementalRoleAndEditorStackCases": 6,
+    "additionalBoundsCases": [
+      "32 tabs",
+      "large following paragraph",
+      "leading and trailing spaces"
+    ]
+  },
+  "oracle": {
+    "producer": "ezdxf 1.4.4, fixed metadata; 40 primary documents regenerated twice with identical SHA256",
+    "sources": [
+      "https://help.autodesk.com/cloudhelp/2025/ENU/AutoCAD-Core/files/GUID-7D8BB40F-5C4E-4AE5-BD75-9ED7112E5967.htm",
+      "https://help.autodesk.com/cloudhelp/2026/ENU/OARX-DevGuide-Managed/files/GUID-ECEEF65E-C327-44B8-AFB9-C0ACA2CAEF55.htm"
+    ],
+    "policyAudit": {
+      "nonbreakingSpace": "Autodesk explicitly requires nonbreaking space; ezdxf plain_text emits ordinary space, fast mode retains control. Expected U+00A0 follows official source.",
+      "unicode": "ezdxf plain_text preserves CIF escapes; decoding helper required for ordinary Unicode content but must not run again on a literal escaped backslash.",
+      "stackCaret": "ezdxf caret_decode consumes ^- before stack parsing. MTextEditor.stack deliberately inserts a space after ^. Autodesk example omits it; retain disagreement and generate editor-authored stack before setting expectations. Fresh MTextEditor export is retained in supplementalRoles; do not conflate flat extraction with actual stack presentation.",
+      "malformed": "Do not remove all strings matching backslash-through-semicolon. Native fast/slow disagree; preserve original text or explicit unsupported status until scoped policy is established."
+    },
+    "drawingReview": "Before and after screenshots compare actual reader SVG with independent ezdxf drawing SVG: nested color/height, empty paragraph, horizontal/diagonal stacks, ambiguous no-space tolerance. Structural evidence only, no exact font/pixel claim.",
+    "beforeImage": "outputs/dxf-mtext/comparison.png",
+    "afterImage": "outputs/dxf-mtext/comparison-after.png",
+    "afterImageScope": "Screenshot inspected before the small-dimension serialization follow-up; latest49 SVG views are independently rerun after that change."
+  },
+  "browser": {
+    "command": "npm run verify:dxf-mtext",
+    "report": "outputs/dxf-mtext/verified/report.json",
+    "rows": [
+      {
+        "name": "R2000-escaped-braces",
+        "expected": [
+          "Before {size} after"
+        ],
+        "labels": [
+          "Before {size} after"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 23.88080596923828,
+            "height": 3.5581538677215576,
+            "y": 144.9019317626953
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-literal-backslash",
+        "expected": [
+          "Path C:\\temp\\file"
+        ],
+        "labels": [
+          "Path C:\\temp\\file"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 22.17795181274414,
+            "height": 3.4246153831481934,
+            "y": 444.570068359375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-literal-paragraph-code",
+        "expected": [
+          "Before \\P after"
+        ],
+        "labels": [
+          "Before \\P after"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 19.320096969604492,
+            "height": 3.239384412765503,
+            "y": 744.4088134765625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-nested-color-height",
+        "expected": [
+          "Before red large red after"
+        ],
+        "labels": [
+          "Before red large red after"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 40.23235321044922,
+            "height": 6.705815315246582,
+            "y": 1037.8809814453125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "style": true
+        }
+      },
+      {
+        "name": "R2000-font-metadata",
+        "expected": [
+          "ABoldB"
+        ],
+        "labels": [
+          "ABoldB"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 10.670992851257324,
+            "height": 3.339322805404663,
+            "y": 1331.9088134765625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "bold": true
+        }
+      },
+      {
+        "name": "R2000-decoration-toggles",
+        "expected": [
+          "Aunder over strikeZ"
+        ],
+        "labels": [
+          "Aunder over strikeZ"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 26.177793502807617,
+            "height": 3.2814278602600098,
+            "y": 1641.513671875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-nonbreaking-space",
+        "expected": [
+          "A B"
+        ],
+        "labels": [
+          "A B"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 4.674740314483643,
+            "height": 3.316922903060913,
+            "y": 1924.6558837890625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-paragraphs",
+        "expected": [
+          "first",
+          "third"
+        ],
+        "labels": [
+          "first",
+          "third"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 4.832086086273193,
+            "height": 3.36861515045166,
+            "y": 2163.84033203125
+          },
+          {
+            "fits": true,
+            "width": 5.83557653427124,
+            "height": 3.36861515045166,
+            "y": 2303.1259765625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "emptyParagraph": true
+        }
+      },
+      {
+        "name": "R2000-fraction-slash",
+        "expected": [
+          "1",
+          "1",
+          "2",
+          " units"
+        ],
+        "labels": [
+          "1",
+          "1",
+          "2",
+          " units"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 1.6695162057876587,
+            "height": 3.345181703567505,
+            "y": 2535.72119140625
+          },
+          {
+            "fits": true,
+            "width": 1.1683539152145386,
+            "height": 2.361304759979248,
+            "y": 2527.950927734375
+          },
+          {
+            "fits": true,
+            "width": 1.1683539152145386,
+            "height": 2.361304759979248,
+            "y": 2555.393310546875
+          },
+          {
+            "fits": true,
+            "width": 7.1715407371521,
+            "height": 3.345181703567505,
+            "y": 2535.72119140625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "stack": true,
+          "divider": true
+        }
+      },
+      {
+        "name": "R2000-fraction-diagonal",
+        "expected": [
+          "1",
+          "1",
+          "2",
+          " units"
+        ],
+        "labels": [
+          "1",
+          "1",
+          "2",
+          " units"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 1.6688578128814697,
+            "height": 3.360689163208008,
+            "y": 2836.8544921875
+          },
+          {
+            "fits": true,
+            "width": 1.1683646440505981,
+            "height": 2.310473918914795,
+            "y": 2829.1435546875
+          },
+          {
+            "fits": true,
+            "width": 1.1683646440505981,
+            "height": 2.310473918914795,
+            "y": 2854.8525390625
+          },
+          {
+            "fits": true,
+            "width": 7.169360637664795,
+            "height": 3.360689163208008,
+            "y": 2836.8544921875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "stack": true,
+          "divider": true,
+          "diagonal": true
+        }
+      },
+      {
+        "name": "R2000-tolerance-stack",
+        "expected": [
+          "1.000\\S+0.010^-0.000;"
+        ],
+        "labels": [
+          "1.000\\S+0.010^-0.000;"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 30.340621948242188,
+            "height": 3.359999656677246,
+            "y": 3145.357177734375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-percent-symbols",
+        "expected": [
+          "90° 10±2 Ø5"
+        ],
+        "labels": [
+          "90° 10±2 Ø5"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 16.85081672668457,
+            "height": 3.316923141479492,
+            "y": 3441.948974609375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-nested-eight",
+        "expected": [
+          "text"
+        ],
+        "labels": [
+          "text"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 4.8349809646606445,
+            "height": 3.3772308826446533,
+            "y": 3729.87255859375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-literal-cif",
+        "expected": [
+          "literal \\U+0041"
+        ],
+        "labels": [
+          "literal \\U+0041"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 19.420488357543945,
+            "height": 3.239384412765503,
+            "y": 4044.40869140625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-unicode-content",
+        "expected": [
+          "中文",
+          "tail"
+        ],
+        "labels": [
+          "中文",
+          "tail"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 5.999672889709473,
+            "height": 3.3772308826446533,
+            "y": 4287.58935546875
+          },
+          {
+            "fits": true,
+            "width": 3.8351924419403076,
+            "height": 3.3772308826446533,
+            "y": 4372.15576171875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-split-escape",
+        "expected": [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx中 tail"
+        ],
+        "labels": [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx中 tail"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 373.1036071777344,
+            "height": 3.5831665992736816,
+            "y": 4649.45947265625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-unknown-control",
+        "expected": [
+          "A\\Zunknown;B"
+        ],
+        "labels": [
+          "A\\Zunknown;B"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 19.509353637695312,
+            "height": 3.4375386238098145,
+            "y": 4942.16357421875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-unterminated-color",
+        "expected": [
+          "A\\C1 visible text"
+        ],
+        "labels": [
+          "A\\C1 visible text"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 21.515260696411133,
+            "height": 3.4246153831481934,
+            "y": 5244.5703125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-unterminated-stack",
+        "expected": [
+          "A\\S1/2"
+        ],
+        "labels": [
+          "A\\S1/2"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 9.010163307189941,
+            "height": 3.359999895095825,
+            "y": 5535.41064453125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-trailing-backslash",
+        "expected": [
+          "A\\"
+        ],
+        "labels": [
+          "A\\"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 2.838855743408203,
+            "height": 3.342768907546997,
+            "y": 5814.52685546875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-escaped-braces",
+        "expected": [
+          "Before {size} after"
+        ],
+        "labels": [
+          "Before {size} after"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 23.88080596923828,
+            "height": 3.5581538677215576,
+            "y": 6144.90185546875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-literal-backslash",
+        "expected": [
+          "Path C:\\temp\\file"
+        ],
+        "labels": [
+          "Path C:\\temp\\file"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 22.17795181274414,
+            "height": 3.4246153831481934,
+            "y": 6444.5703125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-literal-paragraph-code",
+        "expected": [
+          "Before \\P after"
+        ],
+        "labels": [
+          "Before \\P after"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 19.320096969604492,
+            "height": 3.239384412765503,
+            "y": 6744.40869140625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-nested-color-height",
+        "expected": [
+          "Before red large red after"
+        ],
+        "labels": [
+          "Before red large red after"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 40.23235321044922,
+            "height": 6.705815315246582,
+            "y": 7037.880859375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "style": true
+        }
+      },
+      {
+        "name": "R2007-font-metadata",
+        "expected": [
+          "ABoldB"
+        ],
+        "labels": [
+          "ABoldB"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 10.670992851257324,
+            "height": 3.339322805404663,
+            "y": 7331.90869140625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "bold": true
+        }
+      },
+      {
+        "name": "R2007-decoration-toggles",
+        "expected": [
+          "Aunder over strikeZ"
+        ],
+        "labels": [
+          "Aunder over strikeZ"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 26.177793502807617,
+            "height": 3.2814278602600098,
+            "y": 7641.513671875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-nonbreaking-space",
+        "expected": [
+          "A B"
+        ],
+        "labels": [
+          "A B"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 4.674740314483643,
+            "height": 3.316922903060913,
+            "y": 7924.65576171875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-paragraphs",
+        "expected": [
+          "first",
+          "third"
+        ],
+        "labels": [
+          "first",
+          "third"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 4.832086086273193,
+            "height": 3.36861515045166,
+            "y": 8163.84033203125
+          },
+          {
+            "fits": true,
+            "width": 5.83557653427124,
+            "height": 3.36861515045166,
+            "y": 8303.1259765625
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "emptyParagraph": true
+        }
+      },
+      {
+        "name": "R2007-fraction-slash",
+        "expected": [
+          "1",
+          "1",
+          "2",
+          " units"
+        ],
+        "labels": [
+          "1",
+          "1",
+          "2",
+          " units"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 1.6695162057876587,
+            "height": 3.345181703567505,
+            "y": 8535.7216796875
+          },
+          {
+            "fits": true,
+            "width": 1.1683539152145386,
+            "height": 2.361304759979248,
+            "y": 8527.951171875
+          },
+          {
+            "fits": true,
+            "width": 1.1683539152145386,
+            "height": 2.361304759979248,
+            "y": 8555.3935546875
+          },
+          {
+            "fits": true,
+            "width": 7.1715407371521,
+            "height": 3.345181703567505,
+            "y": 8535.7216796875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "stack": true,
+          "divider": true
+        }
+      },
+      {
+        "name": "R2007-fraction-diagonal",
+        "expected": [
+          "1",
+          "1",
+          "2",
+          " units"
+        ],
+        "labels": [
+          "1",
+          "1",
+          "2",
+          " units"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 1.6688578128814697,
+            "height": 3.360689163208008,
+            "y": 8836.8544921875
+          },
+          {
+            "fits": true,
+            "width": 1.1683646440505981,
+            "height": 2.310473918914795,
+            "y": 8829.1435546875
+          },
+          {
+            "fits": true,
+            "width": 1.1683646440505981,
+            "height": 2.310473918914795,
+            "y": 8854.8525390625
+          },
+          {
+            "fits": true,
+            "width": 7.169360637664795,
+            "height": 3.360689163208008,
+            "y": 8836.8544921875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "stack": true,
+          "divider": true,
+          "diagonal": true
+        }
+      },
+      {
+        "name": "R2007-tolerance-stack",
+        "expected": [
+          "1.000\\S+0.010^-0.000;"
+        ],
+        "labels": [
+          "1.000\\S+0.010^-0.000;"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 30.340621948242188,
+            "height": 3.359999656677246,
+            "y": 9145.357421875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-percent-symbols",
+        "expected": [
+          "90° 10±2 Ø5"
+        ],
+        "labels": [
+          "90° 10±2 Ø5"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 16.85081672668457,
+            "height": 3.316923141479492,
+            "y": 9441.94921875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-nested-eight",
+        "expected": [
+          "text"
+        ],
+        "labels": [
+          "text"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 4.8349809646606445,
+            "height": 3.3772308826446533,
+            "y": 9729.8720703125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-literal-cif",
+        "expected": [
+          "literal \\U+0041"
+        ],
+        "labels": [
+          "literal \\U+0041"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 19.420488357543945,
+            "height": 3.239384412765503,
+            "y": 10044.4091796875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-unicode-content",
+        "expected": [
+          "中文",
+          "tail"
+        ],
+        "labels": [
+          "中文",
+          "tail"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 5.999672889709473,
+            "height": 3.3772308826446533,
+            "y": 10287.5888671875
+          },
+          {
+            "fits": true,
+            "width": 3.8351924419403076,
+            "height": 3.3772308826446533,
+            "y": 10372.1552734375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-split-escape",
+        "expected": [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx中 tail"
+        ],
+        "labels": [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx中 tail"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 373.1036071777344,
+            "height": 3.5831665992736816,
+            "y": 10649.458984375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-unknown-control",
+        "expected": [
+          "A\\Zunknown;B"
+        ],
+        "labels": [
+          "A\\Zunknown;B"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 19.509353637695312,
+            "height": 3.4375386238098145,
+            "y": 10942.1630859375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-unterminated-color",
+        "expected": [
+          "A\\C1 visible text"
+        ],
+        "labels": [
+          "A\\C1 visible text"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 21.515260696411133,
+            "height": 3.4246153831481934,
+            "y": 11244.5703125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-unterminated-stack",
+        "expected": [
+          "A\\S1/2"
+        ],
+        "labels": [
+          "A\\S1/2"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 9.010163307189941,
+            "height": 3.359999895095825,
+            "y": 11535.4111328125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-trailing-backslash",
+        "expected": [
+          "A\\"
+        ],
+        "labels": [
+          "A\\"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 2.838855743408203,
+            "height": 3.342768907546997,
+            "y": 11814.5263671875
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-literal-paragraph",
+        "expected": [
+          "A\\PB"
+        ],
+        "labels": [
+          "A\\PB"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 7.427874565124512,
+            "height": 4.199999809265137,
+            "y": 12119.7861328125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-paragraph",
+        "expected": [
+          "A",
+          "B"
+        ],
+        "labels": [
+          "A",
+          "B"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 2.0096595287323,
+            "height": 3.356640100479126,
+            "y": 12358.662109375
+          },
+          {
+            "fits": true,
+            "width": 2.001422643661499,
+            "height": 3.356640100479126,
+            "y": 12481.7314453125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2000-editor-tolerance",
+        "expected": [
+          "1.000",
+          "+0.010",
+          "-0.000"
+        ],
+        "labels": [
+          "1.000",
+          "+0.010",
+          "-0.000"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 7.505878448486328,
+            "height": 3.3448798656463623,
+            "y": 12733.740234375
+          },
+          {
+            "fits": true,
+            "width": 6.4807047843933105,
+            "height": 2.315685987472534,
+            "y": 12724.501953125
+          },
+          {
+            "fits": true,
+            "width": 5.954047203063965,
+            "height": 2.315685987472534,
+            "y": 12755.9833984375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "stack": true,
+          "divider": true
+        }
+      },
+      {
+        "name": "R2007-literal-paragraph",
+        "expected": [
+          "A\\PB"
+        ],
+        "labels": [
+          "A\\PB"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 7.427874565124512,
+            "height": 4.199999809265137,
+            "y": 13019.7861328125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-paragraph",
+        "expected": [
+          "A",
+          "B"
+        ],
+        "labels": [
+          "A",
+          "B"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 2.0096595287323,
+            "height": 3.356640100479126,
+            "y": 13258.662109375
+          },
+          {
+            "fits": true,
+            "width": 2.001422643661499,
+            "height": 3.356640100479126,
+            "y": 13381.7314453125
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "R2007-editor-tolerance",
+        "expected": [
+          "1.000",
+          "+0.010",
+          "-0.000"
+        ],
+        "labels": [
+          "1.000",
+          "+0.010",
+          "-0.000"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 7.505878448486328,
+            "height": 3.3448798656463623,
+            "y": 13633.740234375
+          },
+          {
+            "fits": true,
+            "width": 6.4807047843933105,
+            "height": 2.315685987472534,
+            "y": 13624.501953125
+          },
+          {
+            "fits": true,
+            "width": 5.954047203063965,
+            "height": 2.315685987472534,
+            "y": 13655.9833984375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "stack": true,
+          "divider": true
+        }
+      },
+      {
+        "name": "tabs-bounds",
+        "expected": [
+          "A\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEND"
+        ],
+        "labels": [
+          "A\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEND"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 34.770957946777344,
+            "height": 2.265846014022827,
+            "y": 13949.662109375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      },
+      {
+        "name": "paragraph-height-change",
+        "expected": [
+          "small",
+          "LARGE"
+        ],
+        "labels": [
+          "small",
+          "LARGE"
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 6.991250038146973,
+            "height": 3.6615383625030518,
+            "y": 14215.275390625
+          },
+          {
+            "fits": true,
+            "width": 101.69922637939453,
+            "height": 33.686153411865234,
+            "y": 14233.4833984375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true,
+          "noParagraphOverlap": true
+        }
+      },
+      {
+        "name": "leading-trailing-space",
+        "expected": [
+          "  padded  "
+        ],
+        "labels": [
+          "  padded  "
+        ],
+        "bounds": [
+          {
+            "fits": true,
+            "width": 13.3430757522583,
+            "height": 3.4461536407470703,
+            "y": 14540.8818359375
+          }
+        ],
+        "checks": {
+          "content": true,
+          "bounds": true,
+          "safe": true
+        }
+      }
+    ]
+  },
+  "gates": {
+    "targetedNode": {
+      "command": "node --test tests/dxf-mtext.test.js tests/dxf-text.test.js",
+      "passed": 16,
+      "failed": 0
+    },
+    "check": {
+      "command": "npm run check",
+      "passed": 1267,
+      "failed": 0,
+      "compatibilityProbes": 141,
+      "rendererSmoke": "pass",
+      "log": "outputs/dxf-mtext/check-final.log"
+    },
+    "production": {
+      "command": "npm run check:production",
+      "status": "pass",
+      "log": "outputs/dxf-mtext/production.log"
+    },
+    "chromeRelease": {
+      "command": "npm run verify:chrome-oracle",
+      "status": "pass",
+      "log": "outputs/dxf-mtext/chrome-gate-final.log",
+      "sessionExitCode": 0
+    }
+  },
+  "remaining": [
+    "No new WeChat DevTools/WXML or physical iOS/Android checks.",
+    "CAD font identity, exact glyph metrics, automatic wrapping and attachment/rotation alignment remain incomplete.",
+    "ACI color indices beyond 9 and paragraph alignment controls are preserved with warnings.",
+    "Positioned width/oblique/stack runs use approximate advances; ordinary styled text uses native SVG tspan flow.",
+    "No-space caret tolerance remains preserved with warning because independent decoding/drawing disagrees with published example.",
+    "Version assignment and external delivery await sequencing with TAR v1.4.138 and direct release confirmation required by automatic approval review."
+  ],
+  "followup": {
+    "issue": "Four-decimal SVG serialization rounded legal 0.00001 width and height controls to zero, hiding text.",
+    "sources": [
+      "\\W0.00001;text",
+      "\\H0.00001x;text"
+    ],
+    "independentReference": "ezdxf1.4.4 MTextParser with base cap_height3 yields width0.00001 and height0.000030000000000000004 respectively.",
+    "before": [
+      "scale(0 1)",
+      "font-size=\"0\""
+    ],
+    "after": [
+      "scale(0.00001 1)",
+      "font-size=\"0.00003\""
+    ],
+    "repair": "Serialize significant digits instead of fixed decimal places; reject style underflow to zero and allow later files to recover."
+  },
+  "ciHistory": [
+    {
+      "run": 34743890343,
+      "conclusion": "failure",
+      "reason": "New profile used unsupported status and lacked required axis fields. Corrected profile to existing contract without changing tests."
+    }
+  ]
+}

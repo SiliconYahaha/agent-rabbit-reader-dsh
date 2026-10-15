@@ -1,0 +1,269 @@
+{
+  "seed": null,
+  "generator": "explicit PSD1/PSB2 1x1 RGB RLE rows with empty/no-op/extra/truncated tail packets",
+  "cases": [
+    {
+      "version": 1,
+      "id": "none",
+      "hex": "3842505300010000000000000003000000010000000100080003000000000000000000000000000100020002000200ff00000000",
+      "expected": "red pixel",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": true,
+        "pixel": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "version": 1,
+      "id": "no-op",
+      "hex": "3842505300010000000000000003000000010000000100080003000000000000000000000000000100030002000200ff8000000000",
+      "expected": "red pixel",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": true,
+        "pixel": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "version": 1,
+      "id": "extra-literal",
+      "hex": "3842505300010000000000000003000000010000000100080003000000000000000000000000000100040002000200ff000000000000",
+      "expected": "reject malformed overlong row",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": true,
+        "pixel": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "version": 1,
+      "id": "truncated-literal",
+      "hex": "3842505300010000000000000003000000010000000100080003000000000000000000000000000100030002000200ff0000000000",
+      "expected": "reject malformed overlong row",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": true,
+        "pixel": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "version": 1,
+      "id": "extra-repeat",
+      "hex": "3842505300010000000000000003000000010000000100080003000000000000000000000000000100040002000200ffff0000000000",
+      "expected": "reject malformed overlong row",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": true,
+        "pixel": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "version": 1,
+      "id": "truncated-repeat",
+      "hex": "3842505300010000000000000003000000010000000100080003000000000000000000000000000100030002000200ffff00000000",
+      "expected": "reject malformed overlong row",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": true,
+        "pixel": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "id": "none",
+      "hex": "384250530002000000000000000300000001000000010008000300000000000000000000000000000000000100000002000000020000000200ff00000000",
+      "expected": "red pixel",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": false,
+        "error": "cannot identify image file <_io.BytesIO object at 0x1085d24d0>"
+      }
+    },
+    {
+      "version": 2,
+      "id": "no-op",
+      "hex": "384250530002000000000000000300000001000000010008000300000000000000000000000000000000000100000003000000020000000200ff8000000000",
+      "expected": "red pixel",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": false,
+        "error": "cannot identify image file <_io.BytesIO object at 0x1085d24d0>"
+      }
+    },
+    {
+      "version": 2,
+      "id": "extra-literal",
+      "hex": "384250530002000000000000000300000001000000010008000300000000000000000000000000000000000100000004000000020000000200ff000000000000",
+      "expected": "reject malformed overlong row",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": false,
+        "error": "cannot identify image file <_io.BytesIO object at 0x1085d24d0>"
+      }
+    },
+    {
+      "version": 2,
+      "id": "truncated-literal",
+      "hex": "384250530002000000000000000300000001000000010008000300000000000000000000000000000000000100000003000000020000000200ff0000000000",
+      "expected": "reject malformed overlong row",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": false,
+        "error": "cannot identify image file <_io.BytesIO object at 0x1085d24d0>"
+      }
+    },
+    {
+      "version": 2,
+      "id": "extra-repeat",
+      "hex": "384250530002000000000000000300000001000000010008000300000000000000000000000000000000000100000004000000020000000200ffff0000000000",
+      "expected": "reject malformed overlong row",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": false,
+        "error": "cannot identify image file <_io.BytesIO object at 0x1085d24d0>"
+      }
+    },
+    {
+      "version": 2,
+      "id": "truncated-repeat",
+      "hex": "384250530002000000000000000300000001000000010008000300000000000000000000000000000000000100000003000000020000000200ffff00000000",
+      "expected": "reject malformed overlong row",
+      "actual": {
+        "accepted": true,
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      "pillow": {
+        "accepted": false,
+        "error": "cannot identify image file <_io.BytesIO object at 0x1085d24d0>"
+      }
+    }
+  ],
+  "pillowVersion": "12.3.0",
+  "status": "investigation; Pillow tolerates same malformed tails in PSD1 and lacks PSB2 support; not independently confirmed visible corruption",
+  "references": [
+    "https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/"
+  ]
+}

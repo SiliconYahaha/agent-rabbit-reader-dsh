@@ -1,0 +1,557 @@
+{
+  "testedAt": "2026-09-04T22:31:34.612Z",
+  "chrome": "Google Chrome 152.0.7977.76",
+  "cases": 32,
+  "grammarFailures": [],
+  "pendingPixelComparisons": [
+    "arc-pixels-1",
+    "arc-pixels-2",
+    "arc-pixels-3",
+    "arc-pixels-4",
+    "arc-pixels-5",
+    "arc-pixels-6",
+    "arc-pixels-7",
+    "arc-pixels-8",
+    "arc-pixels-9",
+    "arc-pixels-10",
+    "arc-pixels-11",
+    "arc-pixels-12",
+    "arc-pixels-13",
+    "arc-pixels-14",
+    "arc-pixels-15",
+    "arc-pixels-16",
+    "arc-pixels-17",
+    "arc-pixels-18",
+    "arc-pixels-19",
+    "arc-pixels-20",
+    "arc-pixels-21",
+    "arc-pixels-22",
+    "arc-pixels-23",
+    "arc-pixels-24",
+    "arc-pixels-25",
+    "arc-pixels-26",
+    "arc-pixels-27",
+    "arc-pixels-28",
+    "arc-pixels-29",
+    "arc-pixels-30",
+    "arc-pixels-31",
+    "arc-pixels-32"
+  ],
+  "results": [
+    {
+      "name": "arc-pixels-1",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 29,
+      "ink": 2014,
+      "alphaError": 1621
+    },
+    {
+      "name": "arc-pixels-2",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 33,
+      "ink": 1870,
+      "alphaError": 1870
+    },
+    {
+      "name": "arc-pixels-3",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 55,
+      "ink": 2173,
+      "alphaError": 2315
+    },
+    {
+      "name": "arc-pixels-4",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 48,
+      "ink": 2296,
+      "alphaError": 2111
+    },
+    {
+      "name": "arc-pixels-5",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 46,
+      "ink": 2040,
+      "alphaError": 2096
+    },
+    {
+      "name": "arc-pixels-6",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 42,
+      "ink": 1641,
+      "alphaError": 1854
+    },
+    {
+      "name": "arc-pixels-7",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 29,
+      "ink": 1543,
+      "alphaError": 1504
+    },
+    {
+      "name": "arc-pixels-8",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 39,
+      "ink": 2022,
+      "alphaError": 1861
+    },
+    {
+      "name": "arc-pixels-9",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 35,
+      "ink": 2156,
+      "alphaError": 1854
+    },
+    {
+      "name": "arc-pixels-10",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 35,
+      "ink": 1415,
+      "alphaError": 1546
+    },
+    {
+      "name": "arc-pixels-11",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 40,
+      "ink": 1634,
+      "alphaError": 1898
+    },
+    {
+      "name": "arc-pixels-12",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 43,
+      "ink": 2063,
+      "alphaError": 1928
+    },
+    {
+      "name": "arc-pixels-13",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 50,
+      "ink": 2235,
+      "alphaError": 2144
+    },
+    {
+      "name": "arc-pixels-14",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 46,
+      "ink": 2114,
+      "alphaError": 2177
+    },
+    {
+      "name": "arc-pixels-15",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 57,
+      "ink": 1959,
+      "alphaError": 2273
+    },
+    {
+      "name": "arc-pixels-16",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 12,
+      "ink": 2923,
+      "alphaError": 1285
+    },
+    {
+      "name": "arc-pixels-17",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 50,
+      "ink": 2442,
+      "alphaError": 2486
+    },
+    {
+      "name": "arc-pixels-18",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 21,
+      "ink": 1184,
+      "alphaError": 1287
+    },
+    {
+      "name": "arc-pixels-19",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 29,
+      "ink": 1346,
+      "alphaError": 1307
+    },
+    {
+      "name": "arc-pixels-20",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 34,
+      "ink": 2020,
+      "alphaError": 1811
+    },
+    {
+      "name": "arc-pixels-21",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 52,
+      "ink": 2519,
+      "alphaError": 2286
+    },
+    {
+      "name": "arc-pixels-22",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 54,
+      "ink": 2595,
+      "alphaError": 2425
+    },
+    {
+      "name": "arc-pixels-23",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 52,
+      "ink": 2206,
+      "alphaError": 2258
+    },
+    {
+      "name": "arc-pixels-24",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 25,
+      "ink": 4170,
+      "alphaError": 1998
+    },
+    {
+      "name": "arc-pixels-25",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 46,
+      "ink": 2794,
+      "alphaError": 2489
+    },
+    {
+      "name": "arc-pixels-26",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 18,
+      "ink": 1712,
+      "alphaError": 1209
+    },
+    {
+      "name": "arc-pixels-27",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 37,
+      "ink": 675,
+      "alphaError": 1776
+    },
+    {
+      "name": "arc-pixels-28",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 35,
+      "ink": 2079,
+      "alphaError": 1849
+    },
+    {
+      "name": "arc-pixels-29",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 58,
+      "ink": 2852,
+      "alphaError": 2727
+    },
+    {
+      "name": "arc-pixels-30",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 67,
+      "ink": 3081,
+      "alphaError": 2711
+    },
+    {
+      "name": "arc-pixels-31",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 55,
+      "ink": 2447,
+      "alphaError": 2194
+    },
+    {
+      "name": "arc-pixels-32",
+      "kind": "next-arc-rasterization",
+      "nativeDiff": 0,
+      "readerPrefixDiff": 0,
+      "readerDiff": 88,
+      "ink": 5218,
+      "alphaError": 3847
+    }
+  ],
+  "inputs": [
+    {
+      "name": "arc-pixels-1",
+      "input": "M70 70A18 12 0 0 0 130 110",
+      "expected": "M70 70A18 12 0 0 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-2",
+      "input": "M70 70A19 16 22.5 1 0 130 110",
+      "expected": "M70 70A19 16 22.5 1 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-3",
+      "input": "M70 70A20 20 45 0 1 130 110",
+      "expected": "M70 70A20 20 45 0 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-4",
+      "input": "M70 70A21 24 67.5 1 1 130 110",
+      "expected": "M70 70A21 24 67.5 1 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-5",
+      "input": "M70 70A22 28 90 0 0 130 110",
+      "expected": "M70 70A22 28 90 0 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-6",
+      "input": "M70 70A23 32 112.5 1 0 130 110",
+      "expected": "M70 70A23 32 112.5 1 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-7",
+      "input": "M70 70A24 36 135 0 1 130 110",
+      "expected": "M70 70A24 36 135 0 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-8",
+      "input": "M70 70A25 40 157.5 1 1 130 110",
+      "expected": "M70 70A25 40 157.5 1 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-9",
+      "input": "M70 70A26 12 0 0 0 130 110",
+      "expected": "M70 70A26 12 0 0 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-10",
+      "input": "M70 70A27 16 22.5 1 0 130 110",
+      "expected": "M70 70A27 16 22.5 1 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-11",
+      "input": "M70 70A28 20 45 0 1 130 110",
+      "expected": "M70 70A28 20 45 0 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-12",
+      "input": "M70 70A29 24 67.5 1 1 130 110",
+      "expected": "M70 70A29 24 67.5 1 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-13",
+      "input": "M70 70A30 28 90 0 0 130 110",
+      "expected": "M70 70A30 28 90 0 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-14",
+      "input": "M70 70A31 32 112.5 1 0 130 110",
+      "expected": "M70 70A31 32 112.5 1 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-15",
+      "input": "M70 70A32 36 135 0 1 130 110",
+      "expected": "M70 70A32 36 135 0 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-16",
+      "input": "M70 70A33 40 157.5 1 1 130 110",
+      "expected": "M70 70A33 40 157.5 1 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-17",
+      "input": "M70 70A34 12 0 0 0 130 110",
+      "expected": "M70 70A34 12 0 0 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-18",
+      "input": "M70 70A35 16 22.5 1 0 130 110",
+      "expected": "M70 70A35 16 22.5 1 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-19",
+      "input": "M70 70A36 20 45 0 1 130 110",
+      "expected": "M70 70A36 20 45 0 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-20",
+      "input": "M70 70A37 24 67.5 1 1 130 110",
+      "expected": "M70 70A37 24 67.5 1 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-21",
+      "input": "M70 70A38 28 90 0 0 130 110",
+      "expected": "M70 70A38 28 90 0 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-22",
+      "input": "M70 70A39 32 112.5 1 0 130 110",
+      "expected": "M70 70A39 32 112.5 1 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-23",
+      "input": "M70 70A40 36 135 0 1 130 110",
+      "expected": "M70 70A40 36 135 0 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-24",
+      "input": "M70 70A41 40 157.5 1 1 130 110",
+      "expected": "M70 70A41 40 157.5 1 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-25",
+      "input": "M70 70A42 12 0 0 0 130 110",
+      "expected": "M70 70A42 12 0 0 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-26",
+      "input": "M70 70A43 16 22.5 1 0 130 110",
+      "expected": "M70 70A43 16 22.5 1 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-27",
+      "input": "M70 70A44 20 45 0 1 130 110",
+      "expected": "M70 70A44 20 45 0 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-28",
+      "input": "M70 70A45 24 67.5 1 1 130 110",
+      "expected": "M70 70A45 24 67.5 1 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-29",
+      "input": "M70 70A46 28 90 0 0 130 110",
+      "expected": "M70 70A46 28 90 0 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-30",
+      "input": "M70 70A47 32 112.5 1 0 130 110",
+      "expected": "M70 70A47 32 112.5 1 0 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-31",
+      "input": "M70 70A48 36 135 0 1 130 110",
+      "expected": "M70 70A48 36 135 0 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    },
+    {
+      "name": "arc-pixels-32",
+      "input": "M70 70A49 40 157.5 1 1 130 110",
+      "expected": "M70 70A49 40 157.5 1 1 130 110",
+      "scale": 1,
+      "kind": "next-arc-rasterization"
+    }
+  ],
+  "scope": "32 generated radius/rotation/flag variants; measure native vs Canvas alpha errors on fixed 256px viewport. All have pixel differences; no global unclipped-geometry or visual-acceptability claim."
+}

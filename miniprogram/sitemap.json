@@ -1,0 +1,9 @@
+{
+  "desc": "兔子阅读器",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

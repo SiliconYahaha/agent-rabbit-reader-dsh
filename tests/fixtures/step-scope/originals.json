@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "oracle": "steputils 0.1",
+  "rows": [
+    {
+      "name": "control",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "b4f3c5093de277e57cb558a224c320989ae05a470247cb820e4463c9e0129330",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "comment-phantom-point",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);/* #99=CARTESIAN_POINT('',(999.,999.,999.)); */ENDSEC;END-ISO-10303-21;",
+      "sha256": "94c3018c4b724f451e18cf40695a4d1dfd1c35bcff436ced925b1a8c8525304e",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "comment-overwrite-point",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);/* #1=CARTESIAN_POINT('',(999.,999.,999.)); */ENDSEC;END-ISO-10303-21;",
+      "sha256": "c41c26859cb3da843a0602d40ac88de57756c1b4b42dff5c62a9cd5a54f17a8b",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "comment-token",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1/* comment */=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "4c8cab1b797c665603f7458c37e9cfd0d60ea574d52123b9d8a0a85efcd50f70",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "comment-coordinate",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,/* why ) ; ' */0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "374c809ab24b3972550b0a6c50d41b187da7a6328af174c0e239a108c32ba14f",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "comment-no-nesting",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);/* ignored /* #99=CARTESIAN_POINT('',(999.,999.,999.)); */ENDSEC;END-ISO-10303-21;",
+      "sha256": "15aee8a3bca87eb50f6ce2b4ea199135faab54f14f3b348459477b6a48152265",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "name-reference",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('#2',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "75d39bfbc995b36ca696da824eb199bf01811f362b1f6bdb92187382b50fc851",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('#2',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "name-reference-line",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('#2',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "de5e784573b7b7c493296e75d00b3fc3ac9e85dcfbba1defbb1b8fccc318d543",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('#2',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "header-phantom",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('#99=CARTESIAN_POINT('''',(999.,999.,999.));'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "a40f91fd2a6825d9530e66c2ed7e123bde976657c8e2bcae198c39c9c420f490",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "header-phantom-complex",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('#99=(CARTESIAN_POINT('''',(999.,999.,999.))); ENDSEC; DATA;'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "c8dccf1f53f60c605005c52db28e4717d1c0e0db2e6b590fca99d952e08cc610",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "comment-real-marker",
+      "source": "/* ISO-10303-21; #99=CARTESIAN_POINT('',(999.,999.,999.)); */ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "67cdddf1783cf550d6b408dd892c78026eec6782498a3d41469d7e1293704790",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "literal-comment-marker",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('/* literal */',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "35892d1253d76bc18378ac063fc2ec423bd8c889a005ff5b240ef3a84059701d",
+      "native": {
+        "records": {
+          "#1": "#1=CARTESIAN_POINT('/* literal */',(0.0,0.0,0.0));\n",
+          "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+          "#3": "#3=VERTEX_POINT('',#1);\n",
+          "#4": "#4=VERTEX_POINT('',#2);\n",
+          "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+          "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+          "#8": "#8=VECTOR('',#7,1.0);\n",
+          "#9": "#9=LINE('',#1,#8);\n"
+        },
+        "instances": 8
+      }
+    },
+    {
+      "name": "split-keyword",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_\nPOINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "b6a51e254a61a187a6ef0d77cc94ada96262ecc498aa514357a2cf8b80cb0e5c",
+      "native": {
+        "error": "Missing \";\" after simple entity instance: #1."
+      }
+    },
+    {
+      "name": "print-directive",
+      "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1\\N\\=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+      "sha256": "0ba1334e1872b67d0b4b65c0c89a29b339d3622ee73c3bfa4f6fee1bf14e19a8",
+      "native": {
+        "error": "Unexpected character \\ in line 1."
+      }
+    }
+  ],
+  "limits": [
+    "Original syntactically checked Part21 fragments with resolved curve references; no EXPRESS schema validator or CAD renderer executed.",
+    "Newline-within-keyword and print directives require normative checks where steputils rejects them.",
+    "Earlier seven-file screening used an unresolved curve reference; retained in prior ignored DXF outputs as screening only, not geometric oracle."
+  ]
+}

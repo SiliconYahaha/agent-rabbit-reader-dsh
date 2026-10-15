@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "format": "TAR",
+  "extensions": [
+    "tar"
+  ],
+  "mime": [
+    "application/x-tar",
+    "application/tar",
+    "application/x-gtar"
+  ],
+  "userShouldSee": "\u70b9\u5f00\u5305\u5185\u6587\u4ef6\u540e\u663e\u793a\u539f\u59cb\u6b63\u6587\uff0c\u94fe\u63a5\u627e\u5230\u5305\u5185\u76ee\u6807\uff1b\u635f\u574f\u3001\u6b67\u4e49\u6216\u8d85\u9650\u6761\u76ee\u660e\u786e\u5931\u8d25\uff0c\u540e\u7eed\u6587\u4ef6\u4ecd\u80fd\u9605\u8bfb\u3002",
+  "currentVisibleResult": "v1.4.138 candidate: component-wise TAR link bodies match native filesystem extraction in 60 cases; 42 actual Node host opens include correct HTML bodies/anchors and explicit rejection/recovery. Development upload pending; no new WeChat WXML/device proof. Integrated candidate also includes GNU PAX/old GNU sparse reading and archive folder paths, jointly rebuilt and validated; upload blocked.",
+  "oracles": [
+    "Python tarfile.extractfile reads actual regular and link bodies",
+    "System bsdtar -xOf regular-member body bytes",
+    "https://docs.python.org/3/library/tarfile.html",
+    "bsdtar extraction followed by fs.realpathSync.native and fs.readFileSync (Node JS realpath and Python tarfile disagree on some symbolic combinations)",
+    "runs/2026-09-12-tar-link-components.json"
+  ],
+  "capabilities": [
+    {
+      "id": "raw-entry-body",
+      "axis": {
+        "version": "USTAR/GNU/PAX raw TAR",
+        "feature": "actual file and MIME dispatch",
+        "complexity": "Original names, links, boundary bytes and sequential host opens",
+        "platform": "Node host and native WASM; Chrome only where stated"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u663e\u793a\u539f\u59cb HTML/Markdown \u6b63\u6587\uff0c\u951a\u70b9\u53ef\u8df3\u8f6c",
+      "evidence": [
+        "tests/tar-entry.test.js",
+        "scripts/verify-tar-entry.js"
+      ]
+    },
+    {
+      "id": "header-links",
+      "axis": {
+        "version": "USTAR/GNU/PAX raw TAR",
+        "feature": "GNU/PAX long names and header link targets",
+        "complexity": "Original names, links, boundary bytes and sequential host opens",
+        "platform": "Node host and native WASM; Chrome only where stated"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u786c\u94fe\u63a5\u4fdd\u7559\u5148\u524d\u540c\u540d\u6210\u5458\u6b63\u6587\uff1b\u7b26\u53f7\u94fe\u63a5\u548c\u76ee\u5f55\u8fd4\u56de\u53ef\u7528\uff0c\u6b67\u4e49\u6216\u65e0\u6548\u76ee\u6807\u62a5\u9519",
+      "evidence": [
+        "tests/tar-entry.test.js",
+        "runs/2026-09-08-tar-entry.json"
+      ]
+    },
+    {
+      "id": "numeric-sizes-and-boundaries",
+      "axis": {
+        "version": "USTAR/GNU/PAX raw TAR",
+        "feature": "512-byte boundaries, base256 and PAX size override",
+        "complexity": "Original names, links, boundary bytes and sequential host opens",
+        "platform": "Node host and native WASM; Chrome only where stated"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u6b63\u6587\u9010\u5b57\u8282\u4e00\u81f4\uff0c\u4e0b\u4e00\u6210\u5458\u5934\u4f4d\u7f6e\u4e0d\u504f\u79fb",
+      "evidence": [
+        "scripts/probe-tar-boundaries.js",
+        "runs/2026-09-08-tar-entry.json"
+      ]
+    },
+    {
+      "id": "native-empty-target-types",
+      "axis": {
+        "version": "USTAR/GNU/PAX raw TAR",
+        "feature": "native type survives empty hard-link target",
+        "complexity": "Original names, links, boundary bytes and sequential host opens",
+        "platform": "Node host and native WASM; Chrome only where stated"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u635f\u574f\u7a7a\u76ee\u6807\u94fe\u63a5\u660e\u786e\u4e0d\u53ef\u8bfb\uff0c\u5408\u6cd5\u7a7a\u6587\u4ef6\u4ecd\u53ef\u8bfb\u53d6",
+      "evidence": [
+        "tests/tar-entry.test.js",
+        "tools/sevenzip-native/native-listing.patch"
+      ]
+    },
+    {
+      "id": "wechat-actual-view",
+      "axis": {
+        "version": "USTAR/GNU/PAX raw TAR",
+        "feature": "actual WXML and devices",
+        "complexity": "Original names, links, boundary bytes and sequential host opens",
+        "platform": "Node host and native WASM; Chrome only where stated"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u5fae\u4fe1\u5b9e\u9645\u6b63\u6587\u548c\u70b9\u51fb\u4e0e\u53c2\u8003\u4e00\u81f4",
+      "evidence": []
+    },
+    {
+      "id": "component-order-and-hard-alias-location",
+      "status": "pass",
+      "expectedVisibleResult": "\u5305\u5185\u94fe\u63a5\u9010\u6bb5\u7ecf\u8fc7\u5b9e\u9645\u76ee\u5f55\u540e\u5904\u7406\u7236\u76ee\u5f55\uff1b\u76f8\u5bf9\u7b26\u53f7\u94fe\u63a5\u6309\u786c\u94fe\u63a5\u522b\u540d\u4f4d\u7f6e\u89e3\u6790\uff0c\u4fdd\u7559\u5148\u524d\u6210\u5458\u6b63\u6587\uff1b\u7f3a\u5931\u6216\u975e\u76ee\u5f55\u8def\u5f84\u660e\u786e\u5931\u8d25\u3002",
+      "evidence": [
+        "tests/tar-link-components.test.js",
+        "scripts/verify-tar-link-components.js",
+        "runs/2026-09-12-tar-link-components.json"
+      ],
+      "axis": {
+        "version": "USTAR/GNU/PAX",
+        "feature": "component traversal and hard-link alias location",
+        "complexity": "relative parents, required directories, finite repeats, snapshots, errors and host recovery",
+        "platform": "Native bsdtar/filesystem plus Node actual reader host; no WeChat WXML/device proof."
+      }
+    },
+    {
+      "id": "gnu-pax-sparse-logical-content",
+      "axis": {
+        "version": "GNU PAX sparse0.0/0.1/1.0",
+        "feature": "logical holes, packed maps, real names and following members",
+        "complexity": "multi-block maps, all-hole files, malformed maps, duplicate attributes, Unicode names, PNG content and recovery",
+        "platform": "Node native WASM and host harness; decoded PNG pixels in Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u6587\u4ef6\u540d\u548c\u6b63\u6587\u5b8c\u6574\u8fd8\u539f\uff1b\u793a\u4f8b PNG \u50cf\u7d20\u4e00\u81f4\uff0c\u635f\u574f\u6216\u8d85\u9650\u6620\u5c04\u5931\u8d25\u540e\u4ecd\u53ef\u6253\u5f00\u5176\u4ed6\u6587\u4ef6\u3002",
+      "evidence": [
+        "tests/tar-sparse.test.js",
+        "scripts/verify-tar-sparse-content.js",
+        "runs/2026-09-13-tar-sparse.json"
+      ]
+    },
+    {
+      "id": "oldgnu-sparse-byte-extents",
+      "status": "pass",
+      "axis": {
+        "version": "old GNU type S",
+        "feature": "byte-granular offsets/lengths and extended sparse maps",
+        "complexity": "all-hole,65data-extents,zero-size records,damaged metadata,65536record and20MiB limits",
+        "platform": "Node native WASM and actual host harness; PNG decoded pixels in Chrome"
+      },
+      "expectedVisibleResult": "\u539f\u5148\u9057\u6f0f\u76847\u4e2a\u6210\u5458\u6062\u590d\u53ef\u89c1\u4e14\u6b63\u6587\u9010\u5b57\u8282\u6b63\u786e\uff1bPNG\u50cf\u7d20\u4e0e\u539f\u56fe\u4e00\u81f4\uff0c\u635f\u574f/\u8d85\u9650\u6587\u4ef6\u660e\u786e\u5931\u8d25\uff0c\u540e\u7eed\u6587\u4ef6\u548c\u8fc7\u671f\u56de\u8c03\u4e0d\u4e32\u6270\u3002",
+      "evidence": [
+        "tests/tar-oldgnu.test.js",
+        "scripts/verify-tar-oldgnu-content.js",
+        "runs/2026-09-13-tar-oldgnu.json"
+      ]
+    },
+    {
+      "id": "visible-directory-hierarchy",
+      "axis": {
+        "version": "TAR USTAR/GNU/PAX; ZIP Store/Deflate",
+        "feature": "Implicit folders, case-distinct subtrees and same-name file/folder",
+        "complexity": "Forward/reversed member order and Chinese/literal-backslash paths",
+        "platform": "Actual Node host and production WXML in Chrome/glass-easel"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u76ee\u5f55\u540d\u79f0\u4e0e\u5c42\u7ea7\u5b8c\u6574\uff0c\u7236\u76ee\u5f55\u4e0e\u5b50\u6587\u4ef6\u4fdd\u6301\u8fde\u7eed\uff0c\u754c\u9762\u663e\u793a\u7f29\u8fdb\u4e14\u70b9\u51fb\u4ecd\u6253\u5f00\u539f\u59cb\u6210\u5458\u6b63\u6587\u3002",
+      "evidence": [
+        "tests/archive-folder-paths.test.js",
+        "runs/2026-09-18-archive-folder-paths.json"
+      ]
+    }
+  ],
+  "publicSamples": [],
+  "platformResults": {
+    "node": {
+      "status": "pass",
+      "evidence": "runs/2026-09-12-tar-link-components.json"
+    },
+    "chrome": {
+      "status": "pass",
+      "evidence": "18 actual reader-tree semantic views; no pixel equality claim"
+    },
+    "wechat-devtools": {
+      "status": "blocked",
+      "reason": "Existing compiler startup undefined path failure; no new simulator pass"
+    },
+    "ios": {
+      "status": "pending"
+    },
+    "android": {
+      "status": "pending"
+    }
+  },
+  "limits": {
+    "archiveBytes": 83886080,
+    "entryBytes": 20971520,
+    "linkBytes": 4096,
+    "linkHops": 16,
+    "crc": "TAR has no body CRC; no payload-integrity guarantee is implied.",
+    "notVerified": [
+      "WeChat actual WXML rendering",
+      "iOS/Android physical device",
+      "sparse variants",
+      "compressed TAR wrappers and volumes",
+      "Uncovered archive namespace replacement combinations and other TAR extractor policies",
+      "sparse link combinations, multiple PAX headers, legacy variants beyond tested aligned blocks",
+      "hard-to-symbolic link snapshot combinations",
+      "parent traversal after intermediate symbolic directory",
+      "sparse dialects and combinations beyond recorded PAX/oldGNU batches; PAX PR281 separate and unmerged"
+    ],
+    "knownGaps": [
+      "Complete archive without end block is rejected by pinned native engine though Python/bsdtar accept it.",
+      "Ambiguous symbolic targets fail explicitly; hard links use preceding member identity.",
+      "Stop at first end marker; concatenated subsequent archive is not shown."
+    ]
+  },
+  "testedVersion": "1.4.138",
+  "lastTestedAt": "2026-09-18T11:11:26.209970+00:00",
+  "mutationQueue": [
+    {
+      "id": "compressed-wrappers-and-sparse",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "link-snapshot-and-parent-traversal-combinations",
+      "status": "fixed-scoped",
+      "priority": "high",
+      "evidence": "runs/2026-09-12-tar-link-components.json",
+      "finding": "60 independent cases now agree; prior 54 failures corrected. 42 host opens and related regression pass."
+    },
+    {
+      "id": "wechat-body-and-device-interaction",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "compressed-wrappers-and-sparse-combinations",
+      "status": "pending",
+      "priority": "high"
+    }
+  ],
+  "linkComponentExploration": {
+    "status": "fixed-scoped-awaiting-upload",
+    "evidence": "runs/2026-09-12-tar-link-components.json",
+    "independentCases": 60,
+    "baselineFailures": 54,
+    "afterFailures": 0
+  },
+  "sparseIteration": {
+    "status": "fixed-local-not-released",
+    "evidence": "runs/2026-09-13-tar-sparse.json",
+    "baseVersion": "1.4.137"
+  },
+  "oldGnuIteration": {
+    "status": "fixed-local-not-released",
+    "evidence": "runs/2026-09-13-tar-oldgnu.json",
+    "baseVersion": "1.4.137"
+  }
+}

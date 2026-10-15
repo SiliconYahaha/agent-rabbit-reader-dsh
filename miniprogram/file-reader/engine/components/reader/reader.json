@@ -1,0 +1,15 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-html": "/file-reader/document/components/mp-html/index",
+    "design-preview": "../design-preview/design-preview",
+    "svg-view": "/file-reader/image/components/svg-view/svg-view",
+    "skin-status": "/file-reader/skin/status/status",
+    "skin-media": "/file-reader/skin/media/media",
+    "skin-inspector": "/file-reader/skin/inspector/inspector"
+  },
+  "componentPlaceholder": {
+    "svg-view": "view",
+    "mp-html": "view"
+  }
+}

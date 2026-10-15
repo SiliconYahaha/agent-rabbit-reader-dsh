@@ -1,0 +1,1068 @@
+{
+  "schemaVersion": 1,
+  "format": "7z",
+  "extensions": [
+    "7z"
+  ],
+  "mimeTypes": [
+    "application/x-7z-compressed"
+  ],
+  "signatures": [
+    "37 7A BC AF 27 1C"
+  ],
+  "userShouldSee": "\u5b8c\u6574\u7684\u771f\u5b9e\u76ee\u5f55\u6811\uff0c\u9009\u62e9\u53d7\u652f\u6301\u6761\u76ee\u540e\u770b\u5230\u89e3\u538b\u6b63\u6587\u6216\u6587\u4ef6\uff1b\u4e0d\u80fd\u53ea\u663e\u793a\u6700\u540e\u4e00\u9879\u6216\u4ec5\u663e\u793a\u5143\u6570\u636e\u3002",
+  "currentVisibleResult": "v1.4.128\u5df2\u8865\u9f50 Unix \u8f6f\u94fe\u63a5\u5c5e\u6027\u3001\u5305\u5185\u76ee\u6807\u89e3\u6790\u548c\u539f\u59cb\u5b57\u8282\u8bfb\u53d6\uff1b96\u4efd\u94fe\u63a5\u6b63\u6587\u548c24\u4e2a\u76ee\u5f55\u7ed3\u679c\u8986\u76d6\u516d\u79cd\u538b\u7f29/\u52a0\u5bc6\u7ec4\u5408\u53ca\u5355\u53cc\u5377\uff0c32\u4efd\u6b63\u6587\u4e0e\u72ec\u7acbbsdtar\u4e00\u81f4\u3002\u5b9e\u9645Node\u5bbf\u4e3b\u70b9\u51fb\u5df2\u663e\u793aHTML\uff0c\u5fae\u4fe1\u5f00\u53d1\u8005\u5de5\u5177\u7f16\u8bd1\u53ca\u771f\u673a\u4ecd\u5f85\u9a8c\u8bc1\u3002\u8fde\u7eed\u539f\u751f\u547d\u4ee4\u6062\u590d\u53c2\u6570\u6808\uff0c\u907f\u514d\u7d2f\u79ef\u8017\u5c3d\u3002",
+  "oracles": [
+    {
+      "name": "7-Zip 7z format",
+      "type": "specification",
+      "url": "https://www.7-zip.org/7z.html",
+      "expected": "7z \u5bb9\u5668\u4e2d\u7684\u591a\u4e2a\u6587\u4ef6\u3001\u56fa\u5b9e\u538b\u7f29\u4e0e\u52a0\u5bc6\u662f\u72ec\u7acb\u80fd\u529b\uff0c\u76ee\u5f55\u548c\u6b63\u6587\u90fd\u5e94\u4fdd\u7559\u3002"
+    },
+    {
+      "name": "7-Zip reference implementation",
+      "type": "reference-implementation",
+      "url": "https://github.com/ip7z/7zip",
+      "expected": "\u539f\u59cb 7-Zip \u8f93\u51fa\u7684\u6240\u6709\u6210\u5458\u90fd\u5e94\u8fdb\u5165\u9605\u8bfb\u5668\u76ee\u5f55\uff1b\u89e3\u538b\u5b57\u8282\u5e94\u4e0e\u539f\u59cb\u8f93\u5165\u4e00\u81f4\u3002"
+    },
+    {
+      "name": "macOS bsdtar/libarchive",
+      "type": "independent-implementation",
+      "expected": "Unix\u6587\u4ef6\u7cfb\u7edf\u4e2d\u7684\u5b57\u9762\u53cd\u659c\u6760\u6587\u4ef6\u540d\u4e0e\u659c\u6760\u76ee\u5f55\u662f\u4e24\u4e2a\u4e0d\u540c\u6210\u5458\uff0c\u89e3\u538b\u8def\u5f84\u548c\u6b63\u6587\u5e94\u5206\u522b\u4e00\u81f4\u3002"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "unix-symbolic-link-content",
+      "axis": {
+        "version": "native-api-2",
+        "feature": "Unix-mode-and-raw-link-bytes",
+        "complexity": "six-codec-encryption-variants-single-and-volumes",
+        "failureType": "dangling-memfs-link-and-repeated-command-stack-exhaustion"
+      },
+      "expectedVisibleResult": "\u94fe\u63a5\u70b9\u5f00\u5305\u5185\u771f\u5b9e\u6b63\u6587\u6216\u76ee\u5f55\uff0c\u540c\u540d\u94fe\u63a5\u4fdd\u6301\u539f\u751f\u5e8f\u53f7\uff0c\u8d8a\u754c\u3001\u5faa\u73af\u3001\u6b67\u4e49\u3001CRC\u635f\u574f\u53ca\u8d85\u957f\u76ee\u6807\u660e\u786e\u62d2\u7edd\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/sevenzip-links.test.js",
+        "scripts/verify-sevenzip-links.js",
+        "runs/2026-09-08-sevenzip-links.json"
+      ]
+    },
+    {
+      "id": "mixed-lzma1-ppmd-blocks",
+      "axis": {
+        "version": "header-encrypted-7z",
+        "feature": "LZMA1+PPMd",
+        "complexity": "two-solid-blocks-four-members",
+        "failureType": "each-block-bit-flip-and-reversed-volumes"
+      },
+      "expectedVisibleResult": "\u540c\u5757\u635f\u574f\u6210\u5458\u660e\u786e\u62d2\u7edd\uff0c\u72ec\u7acb\u5757\u6b63\u6587\u4e0e\u8f93\u5165\u53capy7zr\u4e00\u81f4\uff1b\u5b8c\u6574\u5305\u6062\u590d\uff0c\u56fa\u5b9e\u89e3\u7801\u4e0a\u9650\u4e0d\u8de8\u5757\u7d2f\u52a0\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-mixed-blocks.test.js",
+        "scripts/verify-7z-mixed-blocks.js",
+        "docs/release-v1.4.97-dev.md"
+      ]
+    },
+    {
+      "id": "mixed-deflate-bzip2-blocks",
+      "axis": {
+        "version": "header-encrypted-7z",
+        "feature": "Deflate+BZip2",
+        "complexity": "two-solid-blocks-four-members",
+        "failureType": "each-block-bit-flip-and-reversed-volumes"
+      },
+      "expectedVisibleResult": "Node\u4e0e\u72ec\u7acbpy7zr\u6838\u5bf9\u635f\u574f\u8303\u56f4\u548c\u5b8c\u6574\u6b63\u6587\uff1b\u624b\u673a\u754c\u9762\u7ed3\u679c\u4e0d\u7531Node\u7ed3\u679c\u66ff\u4ee3\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-mixed-blocks.test.js",
+        "scripts/verify-7z-mixed-blocks.js",
+        "docs/release-v1.4.97-dev.md"
+      ]
+    },
+    {
+      "id": "mixed-copy-lzma2-blocks",
+      "axis": {
+        "version": "header-encrypted-7z",
+        "feature": "Copy+LZMA2",
+        "complexity": "two-copy-blocks-one-solid-block",
+        "failureType": "each-block-bit-flip-and-reversed-volumes"
+      },
+      "expectedVisibleResult": "\u4fdd\u7559Copy\u6210\u5458\u5404\u81ea\u72ec\u7acb\u7684\u5757\u8fb9\u754c\u548cLZMA2\u56fa\u5b9e\u8303\u56f4\uff1b\u635f\u574f\u4e00\u5757\u4e0d\u80fd\u8bef\u4f24\u5176\u4ed6\u5757\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-mixed-blocks.test.js",
+        "scripts/verify-7z-mixed-blocks.js",
+        "docs/release-v1.4.97-dev.md"
+      ]
+    },
+    {
+      "id": "encrypted-lzma1-packed-damage",
+      "axis": {
+        "version": "7z-header-encrypted",
+        "feature": "LZMA1",
+        "failureType": "packed-data-bit-flip",
+        "complexity": "two-independent-600KiB-members"
+      },
+      "expectedVisibleResult": "\u62d2\u7edd\u635f\u574f\u9996\u9879\uff1b\u72ec\u7acb\u7b2c\u4e8c\u9879\u548c\u5b8c\u6574\u5305\u6b63\u6587\u4e00\u81f4\uff1b\u7cbe\u786e\u6210\u5458\u4e0a\u9650\u5141\u8bb8\u3001\u4f4e\u4e00\u5b57\u8282\u62d2\u7edd\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-codec-corruption.test.js",
+        "docs/compatibility-7z-codecs-2026-09-05.md"
+      ]
+    },
+    {
+      "id": "encrypted-deflate-packed-damage",
+      "axis": {
+        "version": "7z-header-encrypted",
+        "feature": "Deflate",
+        "failureType": "packed-data-bit-flip",
+        "complexity": "two-independent-600KiB-members"
+      },
+      "expectedVisibleResult": "\u62d2\u7edd\u635f\u574f\u9996\u9879\uff1b\u72ec\u7acb\u7b2c\u4e8c\u9879\u548c\u5b8c\u6574\u5305\u6b63\u6587\u4e00\u81f4\uff1b\u7cbe\u786e\u6210\u5458\u4e0a\u9650\u5141\u8bb8\u3001\u4f4e\u4e00\u5b57\u8282\u62d2\u7edd\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-codec-corruption.test.js",
+        "docs/compatibility-7z-codecs-2026-09-05.md"
+      ]
+    },
+    {
+      "id": "encrypted-bzip2-packed-damage",
+      "axis": {
+        "version": "7z-header-encrypted",
+        "feature": "BZip2",
+        "failureType": "packed-data-bit-flip",
+        "complexity": "two-independent-600KiB-members"
+      },
+      "expectedVisibleResult": "\u62d2\u7edd\u635f\u574f\u9996\u9879\uff1b\u72ec\u7acb\u7b2c\u4e8c\u9879\u548c\u5b8c\u6574\u5305\u6b63\u6587\u4e00\u81f4\uff1b\u7cbe\u786e\u6210\u5458\u4e0a\u9650\u5141\u8bb8\u3001\u4f4e\u4e00\u5b57\u8282\u62d2\u7edd\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-codec-corruption.test.js",
+        "docs/compatibility-7z-codecs-2026-09-05.md"
+      ]
+    },
+    {
+      "id": "encrypted-ppmd-packed-damage",
+      "axis": {
+        "version": "7z-header-encrypted",
+        "feature": "PPMd",
+        "failureType": "packed-data-bit-flip",
+        "complexity": "two-independent-600KiB-members"
+      },
+      "expectedVisibleResult": "\u62d2\u7edd\u635f\u574f\u9996\u9879\uff1b\u72ec\u7acb\u7b2c\u4e8c\u9879\u548c\u5b8c\u6574\u5305\u6b63\u6587\u4e00\u81f4\uff1b\u5bf9\u7167\u5668\u539f\u751f\u5d29\u6e83\u5355\u72ec\u8bb0\u5f55\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-codec-corruption.test.js",
+        "docs/compatibility-7z-codecs-2026-09-05.md"
+      ]
+    },
+    {
+      "id": "encrypted-copy-packed-damage",
+      "axis": {
+        "version": "7z-header-encrypted",
+        "feature": "Copy",
+        "failureType": "packed-data-bit-flip",
+        "complexity": "two-independent-600KiB-members"
+      },
+      "expectedVisibleResult": "\u62d2\u7edd\u635f\u574f\u9996\u9879\uff1b\u72ec\u7acb\u7b2c\u4e8c\u9879\u548c\u5b8c\u6574\u5305\u6b63\u6587\u4e00\u81f4\uff1b\u7cbe\u786e\u6210\u5458\u4e0a\u9650\u5141\u8bb8\u3001\u4f4e\u4e00\u5b57\u8282\u62d2\u7edd\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-codec-corruption.test.js",
+        "docs/compatibility-7z-codecs-2026-09-05.md"
+      ]
+    },
+    {
+      "id": "native-control-character-identity",
+      "axis": {
+        "version": "zip-7z-encrypted-volumes",
+        "feature": "native-structured-listing",
+        "complexity": "19-control-unicode-field-like-and-backslash-names",
+        "failureType": "terminal-escaping-loses-identity"
+      },
+      "expectedVisibleResult": "76\u4efd\u6b63\u6587\u9010\u5b57\u8282\u4e00\u81f4\uff1b\u5fae\u4fe1\u5b9e\u9645\u6761\u76ee\u70b9\u51fb\u4fdd\u7559\u539f\u751f\u540d\u79f0\u3001\u540c\u540d\u5e8f\u53f7\u548c\u53ef\u89c1\u63a7\u5236\u5b57\u7b26\u6807\u7b7e\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/archive-native-listing.test.js",
+        "scripts/verify-archive-native-wechat.js",
+        "docs/release-v1.4.69-dev.md"
+      ]
+    },
+    {
+      "id": "literal-backslash-member-identity",
+      "axis": {
+        "version": "7z-encrypted-volumes",
+        "feature": "slash-only-native-path-semantics",
+        "complexity": "literal-backslash-vs-nested-path-and-duplicate-members",
+        "failureType": "silent-renaming-and-member-not-found"
+      },
+      "expectedVisibleResult": "literal\\backslash.html\u4f5c\u4e3a\u5355\u4e2a\u539f\u59cb\u6587\u4ef6\u540d\u663e\u793a\u5e76\u6253\u5f00\uff0cliteral/backslash.html\u4ecd\u4f5c\u4e3a\u76ee\u5f55\u4e2d\u7684\u6587\u4ef6\uff1b\u52a0\u5bc6\u540c\u540d\u6210\u5458\u4e0e\u5206\u5377\u4fdd\u7559\u5404\u81ea\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/archive-native-listing.test.js",
+        "scripts/verify-7z-literal-backslash.js",
+        "scripts/verify-archive-native-wechat.js"
+      ]
+    },
+    {
+      "id": "native-listing-protocol-boundaries",
+      "axis": {
+        "version": "7z-native-api-2",
+        "feature": "structured-metadata",
+        "complexity": "missing-duplicate-and-oversized-fields",
+        "failureType": "ambiguous-or-incomplete-directory"
+      },
+      "expectedVisibleResult": "\u7f3a\u5931\u534f\u8bae\u3001\u91cd\u590d\u7d22\u5f15\u3001\u5371\u9669\u6570\u503c\u3001\u65e0\u6548CRC\u6216\u76ee\u5f55\u8d44\u6e90\u8d85\u9650\u65f6\u660e\u786e\u62d2\u7edd\uff1b\u4e0d\u9000\u56de\u6709\u635f\u6587\u672c\u8eab\u4efd\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/archive-native-listing.test.js: \u7ed3\u6784\u5316\u76ee\u5f55",
+        "miniprogram/file-reader/sevenzip/runtime/native-listing.js"
+      ]
+    },
+    {
+      "id": "public-ppmd-delta-bcj2",
+      "axis": {
+        "version": "7z",
+        "feature": "PPMd-Delta4-LZMA2-BCJ2-Copy",
+        "complexity": "three-independent-libarchive-fixtures",
+        "size": "27328-27627-102400-byte-members"
+      },
+      "expectedVisibleResult": "\u4e09\u4efd\u516c\u5f00\u6837\u672c\u7684\u76ee\u5f55\u53ca\u6b63\u6587\u4e0e\u539f\u751f7-Zip24.09\u548cmacOS libarchive/tar\u540c\u65f6\u4e00\u81f4\u3002",
+      "status": "pass",
+      "evidence": [
+        "scripts/verify-archive-native-listing.js",
+        "docs/release-v1.4.69-dev.md"
+      ]
+    },
+    {
+      "id": "lzma2-content",
+      "axis": {
+        "version": "7z",
+        "feature": "LZMA2",
+        "complexity": "Chinese-path",
+        "size": "31000-bytes"
+      },
+      "expectedVisibleResult": "\u8d44\u6599/\u8bf4\u660e.txt \u53ef\u6253\u5f00\u5e76\u663e\u793a\u771f\u5b9e\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: LZMA2",
+        "verify:simulator sevenZipPage"
+      ]
+    },
+    {
+      "id": "solid-multi-file-record-separators",
+      "axis": {
+        "version": "7z",
+        "feature": "solid-LZMA2",
+        "complexity": "multiple-files-and-empty-file",
+        "failureType": "lost-listing-separators"
+      },
+      "expectedVisibleResult": "\u6240\u6709\u6587\u4ef6\u7559\u5728\u76ee\u5f55\uff0c\u9996\u9879\u548c\u4e2d\u95f4\u9879\u4e0d\u4f1a\u6d88\u5931\uff1b\u6bcf\u4efd\u89e3\u538b\u5185\u5bb9\u4e0e\u8f93\u5165\u9010\u5b57\u8282\u4e00\u81f4\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: solid multi-file",
+        "scripts/verify-wechat-simulator.js: multipleEntry7zFixtureBase64"
+      ]
+    },
+    {
+      "id": "encrypted-directory-and-content",
+      "axis": {
+        "version": "7z",
+        "feature": "AES-header-encryption",
+        "complexity": "password",
+        "failureType": "wrong-password"
+      },
+      "expectedVisibleResult": "\u8f93\u5165\u6b63\u786e\u5bc6\u7801\u540e\u663e\u793a\u76ee\u5f55\u548c\u6b63\u6587\uff0c\u9519\u8bef\u5bc6\u7801\u663e\u793a\u660e\u786e\u63d0\u793a\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: encrypted directory and extraction",
+        "verify:simulator encryptedArchives"
+      ]
+    },
+    {
+      "id": "numeric-volumes",
+      "axis": {
+        "version": "7z",
+        "feature": "numeric-volumes",
+        "complexity": "three-volumes",
+        "failureType": "missing-volume"
+      },
+      "expectedVisibleResult": "\u9f50\u5377\u65f6\u7ec4\u5408\u540e\u53ef\u8bfb\u53d6\u6b63\u6587\uff0c\u7f3a\u5377\u65f6\u5217\u51fa\u7f3a\u5c11\u7684\u6587\u4ef6\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: volumes",
+        "tests/archive-volumes.test.js",
+        "verify:simulator sevenZipVolumes"
+      ]
+    },
+    {
+      "id": "literal-member-names",
+      "axis": {
+        "version": "7z-and-zip-engine",
+        "feature": "technical-listing",
+        "complexity": "hyphens-leading-trailing-spaces-equals",
+        "failureType": "silent-entry-loss-or-renaming"
+      },
+      "expectedVisibleResult": "11 \u79cd\u7279\u6b8a\u540d\u79f0\u5728\u5355\u5305\u548c\u5206\u5377\u4e2d\u5b8c\u6574\u4fdd\u7559\uff0c33 \u4efd\u89e3\u538b\u5185\u5bb9\u4e0e\u8f93\u5165\u4e00\u81f4\uff1b\u9875\u9762\u70b9\u51fb\u9996\u5c3e\u7a7a\u683c\u540d\u79f0\u540e\u4ecd\u6253\u5f00\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: \u8fde\u7eed\u6a2a\u7ebf\u4e0e\u9996\u5c3e\u7a7a\u683c",
+        "tests/design-file.test.js: \u6587\u4ef6\u540d\u672b\u5c3e\u7a7a\u683c",
+        "verify:simulator literalArchiveNames"
+      ]
+    },
+    {
+      "id": "literal-names-error-recovery",
+      "axis": {
+        "version": "7z",
+        "feature": "listing-and-extraction",
+        "complexity": "special-filenames",
+        "failureType": "size-limit-and-truncated-header"
+      },
+      "expectedVisibleResult": "\u8d85\u9650\u6210\u5458\u4e0d\u80fd\u6253\u5f00\uff0c\u622a\u65ad\u5305\u62a5\u9519\uff1b\u968f\u540e\u6253\u5f00\u6b63\u5e38\u5305\u4ecd\u80fd\u8bfb\u53d6\u539f\u59cb\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: \u7279\u6b8a\u6587\u4ef6\u540d\u4e0d\u7ed5\u8fc7\u5927\u5c0f\u4fdd\u62a4"
+      ]
+    },
+    {
+      "id": "public-copy-empty-boundaries",
+      "axis": {
+        "version": "7z",
+        "feature": "Copy-and-empty-archive",
+        "complexity": "libarchive-independent-samples",
+        "size": "zero-and-60-byte-members"
+      },
+      "expectedVisibleResult": "Copy \u7684 file1\u3001\u7a7a\u6587\u4ef6 empty \u548c\u7a7a\u5f52\u6863\u5747\u4e0e\u7cfb\u7edf libarchive \u7684\u76ee\u5f55\u548c\u89e3\u538b\u5b57\u8282\u4e00\u81f4\u3002",
+      "status": "pass",
+      "evidence": [
+        "docs/release-v1.4.39-dev.md: \u4e09\u4efd\u516c\u5f00\u6837\u672c\u4e0e\u7cfb\u7edf tar \u72ec\u7acb\u5bf9\u7167"
+      ]
+    },
+    {
+      "id": "error-keywords-are-content",
+      "axis": {
+        "version": "7z-and-zip-engine",
+        "feature": "plain-encrypted-volumes-comments",
+        "complexity": "ten-error-like-filenames",
+        "failureType": "false-command-failure"
+      },
+      "expectedVisibleResult": "10 \u79cd\u540d\u79f0\u5728 ZIP\u30017z\u3001\u52a0\u5bc6 7z \u548c\u5206\u5377\u4e2d\u9010\u6761\u6253\u5f00\uff0c40 \u4efd\u89e3\u538b\u5b57\u8282\u4e0e\u8f93\u5165\u4e00\u81f4\uff1b\u6ce8\u91ca\u4e0d\u4f1a\u53d8\u6210\u9519\u8bef\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: \u9519\u8bef\u548c\u5bc6\u7801\u5173\u952e\u8bcd",
+        "verify:simulator keywordArchiveNames.opened"
+      ]
+    },
+    {
+      "id": "crc-failure-not-password-prompt",
+      "axis": {
+        "version": "7z-and-zip-engine",
+        "feature": "structured-error",
+        "complexity": "Wrong password.txt",
+        "failureType": "CRC-corruption"
+      },
+      "expectedVisibleResult": "\u771f\u5b9e CRC \u9519\u8bef\u62e6\u4f4f\u6587\u4ef6\u6253\u5f00\u5e76\u663e\u793a\u8bca\u65ad\uff0c\u4e0d\u56e0\u6587\u4ef6\u540d\u5f39\u5bc6\u7801\u6846\uff0c\u968f\u540e\u6b63\u5e38\u5305\u4ecd\u80fd\u6253\u5f00\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-runtime.test.js: CRC \u635f\u574f",
+        "tests/page-state.test.js: \u7ed3\u6784\u5316\u9519\u8bef",
+        "verify:simulator keywordArchiveNames.realCrcFailure"
+      ]
+    },
+    {
+      "id": "public-deflate-bzip2-lzma1",
+      "axis": {
+        "version": "7z",
+        "feature": "Deflate-BZip2-LZMA1",
+        "complexity": "libarchive-independent-samples",
+        "size": "2844-byte-member"
+      },
+      "expectedVisibleResult": "\u4e09\u4efd\u72ec\u7acb\u516c\u5f00\u5305\u5747\u5f97\u5230 file1 \u7684 2844 \u5b57\u8282\u6b63\u6587\uff0c\u4e0e\u7cfb\u7edf libarchive/tar \u9010\u5b57\u8282\u4e00\u81f4\u3002",
+      "status": "pass",
+      "evidence": [
+        "docs/release-v1.4.40-dev.md: \u4e09\u4efd\u65b0\u589e\u516c\u5f00\u6837\u672c"
+      ]
+    },
+    {
+      "id": "literal-selection-output",
+      "axis": {
+        "version": "zip-7z-encrypted-volumes",
+        "feature": "disable-wildcard",
+        "complexity": "23-names-and-decoys",
+        "failureType": "unselected-files-extracted"
+      },
+      "expectedVisibleResult": "115 \u6b21\u9009\u62e9\u5747\u53ea\u751f\u6210\u9009\u4e2d\u6210\u5458\uff0c\u6b63\u6587\u9010\u5b57\u8282\u4e00\u81f4\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/archive-selection.test.js: \u5b9e\u9645 MEMFS \u8f93\u51fa\u89c2\u5bdf"
+      ]
+    },
+    {
+      "id": "literal-selection-limits-corruption",
+      "axis": {
+        "version": "zip-engine",
+        "feature": "selected-member-only",
+        "complexity": "small-target-large-or-corrupt-sibling",
+        "failureType": "unselected-CRC-or-size-bypass"
+      },
+      "expectedVisibleResult": "\u4e0d\u89e3\u538b\u672a\u9009\u4e2d 64 KB \u5339\u914d\u9879\uff1b\u65e0\u5173 CRC \u635f\u574f\u4e0d\u963b\u6b62\u76ee\u6807\uff0c\u9009\u4e2d\u635f\u574f\u6210\u5458\u4ecd\u62d2\u7edd\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/archive-selection.test.js: \u672a\u9009\u4e2d\u7684\u540c\u540d\u5339\u914d\u5927\u6587\u4ef6",
+        "tests/archive-selection.test.js: \u672a\u9009\u4e2d\u6210\u5458 CRC"
+      ]
+    },
+    {
+      "id": "literal-display-vs-cache-path",
+      "axis": {
+        "version": "all-archive-entry-routes",
+        "feature": "display-name-preservation",
+        "complexity": "wildcard-quotes-prefixes",
+        "failureType": "silent-name-replacement"
+      },
+      "expectedVisibleResult": "\u9605\u8bfb\u9875\u4fdd\u7559\u539f\u59cb basename\uff0c\u4ec5\u7f13\u5b58\u8def\u5f84\u66ff\u6362\u4e0d\u53ef\u79fb\u690d\u5b57\u7b26\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/page-state.test.js: \u7279\u6b8a\u540d\u79f0\u4fdd\u7559\u9605\u8bfb\u9875\u663e\u793a\u540d"
+      ]
+    },
+    {
+      "id": "public-multi-file-selection",
+      "axis": {
+        "version": "7z",
+        "feature": "Copy-LZMA1-mixed-LZMA1-LZMA2",
+        "complexity": "independent-multi-file-directories",
+        "size": "13-26-39-52-byte-members"
+      },
+      "expectedVisibleResult": "\u4e09\u4efd\u516c\u5f00\u5305\u7684 16 \u4e2a\u666e\u901a\u6587\u4ef6\u4e0e\u7cfb\u7edf tar \u76ee\u5f55\u53ca\u5185\u5bb9\u4e00\u81f4\u3002",
+      "status": "pass",
+      "evidence": [
+        "docs/release-v1.4.41-dev.md: \u4e09\u4efd\u516c\u5f00\u591a\u6587\u4ef6\u6837\u672c"
+      ]
+    },
+    {
+      "id": "duplicate-member-identity",
+      "axis": {
+        "version": "zip-rar-7z-volumes",
+        "feature": "same-name-members",
+        "complexity": "equal-size-different-content",
+        "failureType": "silent-content-substitution"
+      },
+      "expectedVisibleResult": "\u76ee\u5f55\u4fdd\u7559\u5404\u540c\u540d\u6587\u4ef6\u5e76\u6807\u6ce8\u5e8f\u53f7\uff1b\u70b9\u51fb\u4efb\u4e00\u6210\u5458\u5f97\u5230\u5bf9\u5e94\u6b63\u6587\uff0cZIP \u4e2d\u592e\u76ee\u5f55\u53cd\u5e8f\u4e5f\u4e0d\u4e32\u4f4d\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/archive-identity.test.js: \u76ee\u5f55\u3001RAR\u3001\u5355\u5305\u548c\u5206\u5377\u8eab\u4efd"
+      ]
+    },
+    {
+      "id": "duplicate-selection-boundaries",
+      "axis": {
+        "version": "zip-solid-7z-AES",
+        "feature": "ordinal-selection",
+        "complexity": "empty-files-literal-names-corrupt-large-siblings",
+        "failureType": "wrong-output-or-unselected-expansion"
+      },
+      "expectedVisibleResult": "\u7a7a\u6587\u4ef6\u4fdd\u6301\u7a7a\uff0cCRC \u548c\u5927\u5c0f\u4e0d\u7b26\u62d2\u7edd\uff1b\u5b9e\u9645 MEMFS \u53ea\u5199\u5165\u9009\u4e2d\u6b63\u6587\u7684 5 \u5b57\u8282\u800c\u975e\u672a\u9009\u4e2d 64 KB\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/archive-identity.test.js: \u771f\u5b9e MEMFS \u5199\u5165",
+        "tests/archive-identity.test.js: \u56fa\u5b9e 7z \u540c\u540d\u6210\u5458"
+      ]
+    },
+    {
+      "id": "native-stdin-failure-recovery",
+      "axis": {
+        "version": "7z",
+        "feature": "native-input-lifecycle",
+        "complexity": "missing-password-then-duplicate-selection",
+        "failureType": "persistent-EOF"
+      },
+      "expectedVisibleResult": "\u7f3a\u5bc6\u7801\u5931\u8d25\u540e\u6253\u5f00\u53e6\u4e00\u4e2a\u540c\u540d\u5f52\u6863\u4ecd\u53ef\u8bfb\u53d6\u6b63\u6587\uff0c\u4e0d\u7ee7\u627f\u539f\u751f stdin EOF\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/archive-identity.test.js: EOF \u72b6\u6001"
+      ]
+    },
+    {
+      "id": "public-native-member-selection",
+      "axis": {
+        "version": "7z-rar4-rar5",
+        "feature": "independent-content-oracle",
+        "complexity": "directories-and-skipped-member",
+        "size": "20-to-65536-bytes"
+      },
+      "expectedVisibleResult": "\u4e09\u4efd\u516c\u5f00\u6837\u672c\u7684 9 \u4e2a\u666e\u901a\u6210\u5458\u4e0e\u7cfb\u7edf libarchive \u5b57\u8282\u4e00\u81f4\uff1bRAR \u7b26\u53f7\u94fe\u63a5\u4ecd\u8bb0\u5f55\u5931\u8d25\u800c\u4e0d\u8ba1\u901a\u8fc7\u3002",
+      "status": "pass",
+      "evidence": [
+        "docs/release-v1.4.42-dev.md: \u72ec\u7acb\u6837\u672c"
+      ]
+    },
+    {
+      "id": "solid-decoded-prefix-work-budget",
+      "axis": {
+        "version": "7z-and-numeric-volumes",
+        "feature": "solid-block-boundaries",
+        "complexity": "12KB-archive-with-80MB-decoded-prefix",
+        "failureType": "small-entry-causes-unbounded-solid-decode"
+      },
+      "expectedVisibleResult": "\u56fa\u5b9e\u5757\u7d2f\u8ba1\u89e3\u7801\u91cf\u4e0d\u8d85\u8fc780MB\u65f6\u6253\u5f00\u771f\u5b9e\u6b63\u6587\uff1b\u8d85\u8fc71\u5b57\u8282\u65f6\u76ee\u5f55\u4fdd\u7559\u6210\u5458\u5e76\u660e\u786e\u7981\u7528\uff0c\u76ee\u6807\u5728\u5757\u9996\u6216\u65b0\u5757\u65f6\u4e0d\u53d7\u540e\u7eed\u5927\u6587\u4ef6\u8bef\u4f24\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-solid-budget.test.js",
+        "scripts/verify-7z-solid-budget.js",
+        "scripts/verify-7z-solid-budget-wechat.js"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-block-budget",
+      "axis": {
+        "version": "7z-AES-header-encryption-and-numeric-volumes",
+        "feature": "password-then-solid-block-boundaries",
+        "complexity": "wrong-password-recovery-and-80MB-exact-over-target-first",
+        "failureType": "password-path-bypasses-budget-or-contaminates-next-open"
+      },
+      "expectedVisibleResult": "\u8f93\u5165\u6b63\u786e\u5bc6\u7801\u540e\u4ecd\u6309\u771f\u5b9e\u56fa\u5b9e\u5757\u8fb9\u754c\u6267\u884c\u89e3\u7801\u5de5\u4f5c\u91cf\u4fdd\u62a4\uff1b\u9519\u8bef\u5bc6\u7801\u53ef\u91cd\u8bd5\uff0c80MB\u6574\u53ef\u6253\u5f00\u3001\u8d85\u8fc71\u5b57\u8282\u660e\u786e\u7981\u7528\uff0c\u968f\u540e\u6253\u5f00\u666e\u901a\u5305\u4e0d\u53d7\u6c61\u67d3\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-solid-budget.test.js",
+        "scripts/verify-7z-solid-budget.js",
+        "scripts/verify-7z-encrypted-solid-budget-wechat.js",
+        "py7zr 1.0.0 independent extraction"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-empty-member-reset",
+      "axis": {
+        "version": "7z-AES-header-encryption",
+        "feature": "empty-members-and-solid-block-reset",
+        "complexity": "empty-directory-empty-file-nested-empty-and-multiple-blocks",
+        "failureType": "empty-member-forges-or-hides-block-boundary"
+      },
+      "expectedVisibleResult": "\u7a7a\u76ee\u5f55\u548c\u7a7a\u6587\u4ef6\u4fdd\u7559\u539f\u59cb\u5c42\u7ea7\u4e0e\u96f6\u5b57\u8282\u6b63\u6587\uff0c\u4e0d\u5236\u9020\u6216\u541e\u6389\u56fa\u5b9e\u5757\u8fb9\u754c\uff1b\u65b0\u5757\u76ee\u6807\u4e0d\u7ee7\u627f\u524d\u5757\u7d2f\u8ba1\u91cf\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-solid-budget.test.js",
+        "scripts/verify-7z-solid-budget.js",
+        "scripts/verify-7z-encrypted-solid-budget-wechat.js",
+        "py7zr 1.0.0 independent listing and extraction"
+      ]
+    },
+    {
+      "id": "archive-directory-pagination",
+      "axis": {
+        "version": "all-archive-routes",
+        "feature": "complete-member-navigation",
+        "complexity": "501-to-10000-members",
+        "failureType": "members-after-first-500-unreachable"
+      },
+      "expectedVisibleResult": "\u76ee\u5f55\u4fdd\u7559\u5168\u90e8\u6210\u5458\u8eab\u4efd\uff0c\u6bcf\u9875\u6700\u591a\u4e0a\u5c4f500\u9879\uff1b\u7528\u6237\u53ef\u7528\u4e0a\u4e00\u9875\u548c\u4e0b\u4e00\u9875\u5230\u8fbe\u5e76\u6253\u5f00\u7b2c501\u9879\u4ee5\u540e\u6b63\u6587\uff0c\u94fe\u63a5\u6587\u4ef6\u5939\u8fd4\u56de\u65f6\u6062\u590d\u539f\u9875\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/page-state.test.js",
+        "scripts/verify-7z-encrypted-solid-budget-wechat.js"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-many-tiny-members",
+      "axis": {
+        "version": "7z-AES-header-encryption",
+        "feature": "many-member-solid-budget",
+        "complexity": "2049-members-and-80MB-exact-over",
+        "failureType": "identity-loss-budget-drift-or-unreachable-tail"
+      },
+      "expectedVisibleResult": "2049\u4e2a\u6210\u5458\u8eab\u4efd\u548c\u5757\u987a\u5e8f\u5b8c\u6574\uff1b80MB\u6574\u7684\u5c3e\u9879\u53ef\u6253\u5f00\uff0c\u8d85\u8fc71\u5b57\u8282\u660e\u786e\u7981\u7528\uff0c\u9519\u8bef\u5bc6\u7801\u540e\u6062\u590d\uff1b\u5fae\u4fe1\u76ee\u5f55\u53ef\u7ffb\u9875\u6253\u5f00\u540e\u7eed\u6b63\u6587\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-solid-budget.test.js",
+        "scripts/verify-7z-many-tiny-members.js",
+        "scripts/verify-7z-encrypted-solid-budget-wechat.js",
+        "py7zr 1.0.0 independent listing and extraction"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-truncated-volumes",
+      "axis": {
+        "version": "7z-AES-header-encryption-and-numeric-volumes",
+        "feature": "pre-password-container-integrity",
+        "complexity": "missing-middle-missing-final-one-byte-truncation-cross-volume-start-header-and-encrypted-next-header",
+        "failureType": "unknown-native-exit-or-false-password-prompt"
+      },
+      "expectedVisibleResult": "\u7f3a\u5377\u3001\u622a\u65ad\u672b\u5377\u548c\u635f\u574f\u8d77\u59cb\u5934/\u52a0\u5bc6\u76ee\u5f55\u5934\u5206\u522b\u7ed9\u51fa\u53ef\u8bfb\u5931\u8d25\uff0c\u4e0d\u663e\u793a\u76ee\u5f55\u6216\u8bef\u5f39\u5bc6\u7801\u6846\uff1b\u968f\u540e\u5b8c\u6574\u5206\u5377\u548c\u666e\u901a\u5305\u4ecd\u53ef\u6253\u5f00\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-volume-integrity.test.js",
+        "scripts/verify-7z-truncated-volumes.js",
+        "scripts/verify-7z-truncated-volumes-wechat.js",
+        "py7zr 1.0.0 independent rejection and extraction"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-packed-data-corruption-after-unlock",
+      "axis": {
+        "version": "7z-AES-header-encryption",
+        "feature": "post-password-packed-data-integrity",
+        "complexity": "two-independent-solid-blocks-first-block-bit-flip-and-recovery",
+        "failureType": "false-password-reset-or-whole-directory-loss"
+      },
+      "expectedVisibleResult": "\u6b63\u786e\u5bc6\u7801\u89e3\u9501\u76ee\u5f55\u540e\uff0c\u635f\u574f\u6210\u5458\u663e\u793a\u6587\u4ef6\u6570\u636e\u6821\u9a8c\u5931\u8d25\u4e14\u4e0d\u9000\u56de\u5bc6\u7801\u8f93\u5165\uff1b\u540c\u5305\u7b2c\u4e8c\u4e2a\u72ec\u7acb\u56fa\u5b9e\u5757\u4ecd\u6253\u5f00\u771f\u5b9e\u6b63\u6587\uff0c\u968f\u540e\u5b8c\u6574\u5305\u7b2c\u4e00\u9879\u6062\u590d\u3002",
+      "status": "pass",
+      "evidence": [
+        "tests/7z-packed-corruption.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-7z-packed-corruption.js",
+        "scripts/verify-7z-packed-corruption-wechat.js",
+        "py7zr 1.0.0 independent LZMAError and extraction"
+      ]
+    }
+  ],
+  "publicSamples": [
+    {
+      "name": "test_read_format_7zip_ppmd.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_ppmd.7z.uu",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "d377fe021f8279d6d5248ef594a36ed7f51bc34624fa110ca404e0b6ca97b120",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "ppmd_test.txt: 102400 bytes; SHA-256 e587c5d5bdacd7376e5bccbbbd22cd971f4e51cee60a0ffc9737a596d3792136; identical to native 7-Zip and libarchive"
+    },
+    {
+      "name": "test_read_format_7zip_delta4_lzma2.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_delta4_lzma2.7z.uu",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "607061d1fedb6dd94aa1b9d9ec8756cf4f93f17e6c202472c1bcc3f368d14fe4",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "file1: 27627 bytes; SHA-256 b4a742f0d31c3898596ceba5436792e33945dda76395908266640c4fb5aca5eb; identical to native 7-Zip and libarchive"
+    },
+    {
+      "name": "test_read_format_7zip_bcj2_copy_1.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_bcj2_copy_1.7z.uu",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "e38aa02cab53974becf8dd1e4f6dc7183f3bd690defb19cef5f96958d4ff4a4b",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "x86exe: 27328 bytes; SHA-256 9f24006793ce80bfb91dd66d8f65a3241cfc2c24155ec9073856cd450ae46088; identical to native 7-Zip and libarchive"
+    },
+    {
+      "name": "test_read_format_7zip_copy.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_copy.7z.uu",
+      "license": "unknown-per-fixture; upstream BSD-2-Clause tests; local verification only",
+      "redistributed": false,
+      "sha256": "67a85f85950c4aaa524eb3f22be1fbac586e90c76de21e10fc1c2ce7685e04c2",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "file1: 60 bytes; decoded SHA-256 d0c504f06bbd64d183524eb35e5482ee5d966d456b905a24147165b2904d301b; byte-identical to system libarchive/tar"
+    },
+    {
+      "name": "test_read_format_7zip_empty_file.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_empty_file.7z.uu",
+      "license": "unknown-per-fixture; upstream BSD-2-Clause tests; local verification only",
+      "redistributed": false,
+      "sha256": "dd3394959dfa85c31d6992430243166de3d6e38c0dda768b874badd6f97d7754",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "one member empty, zero bytes; byte-identical to system libarchive/tar"
+    },
+    {
+      "name": "test_read_format_7zip_empty_archive.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_empty_archive.7z.uu",
+      "license": "unknown-per-fixture; upstream BSD-2-Clause tests; local verification only",
+      "redistributed": false,
+      "sha256": "6491d66cd094d06a9d871b9a8c0f799103e35f4b342b6f9e3b6ff4f475af171d",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "zero members, matching system libarchive/tar; not a lost-member error"
+    },
+    {
+      "name": "test_read_format_7zip_deflate.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_deflate.7z.uu",
+      "license": "unknown-per-fixture; upstream BSD-2-Clause tests; local verification only",
+      "redistributed": false,
+      "sha256": "e48dd21b1f63977161994ae9e9f8c4b88dea0a42c5220c29d2a99f7c16c05587",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "file1: 2844 bytes; SHA-256 ea4bf20fca5f07682e1f15e766509ead7ff97c17ae51f33f226da7194c68fca2; byte-identical to system libarchive/tar"
+    },
+    {
+      "name": "test_read_format_7zip_bzip2.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_bzip2.7z.uu",
+      "license": "unknown-per-fixture; upstream BSD-2-Clause tests; local verification only",
+      "redistributed": false,
+      "sha256": "f2286e0ef4f0eadcdb10ab723fd5b5bd6d396350670cb57d2675b566983e8a50",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "file1: 2844 bytes; SHA-256 ea4bf20fca5f07682e1f15e766509ead7ff97c17ae51f33f226da7194c68fca2; byte-identical to system libarchive/tar"
+    },
+    {
+      "name": "test_read_format_7zip_lzma1.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_lzma1.7z.uu",
+      "license": "unknown-per-fixture; upstream BSD-2-Clause tests; local verification only",
+      "redistributed": false,
+      "sha256": "cd4595cf136ed9857088103e0f16f41b0028ac8a93a6070450c45d55f0d04d74",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "file1: 2844 bytes; SHA-256 ea4bf20fca5f07682e1f15e766509ead7ff97c17ae51f33f226da7194c68fca2; byte-identical to system libarchive/tar"
+    },
+    {
+      "name": "test_read_format_7zip_copy_2.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_copy_2.7z.uu",
+      "license": "unknown-per-fixture; upstream BSD-2-Clause tests; local verification only",
+      "redistributed": false,
+      "sha256": "076498e1fb62aa89d720e6fea478d49b3be4299676993556b8dbbb1cb2548e02",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "4 regular members of 13/26/39/52 bytes; listing and each payload byte-identical to system libarchive/tar"
+    },
+    {
+      "name": "test_read_format_7zip_lzma1_2.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_lzma1_2.7z.uu",
+      "license": "unknown-per-fixture; upstream BSD-2-Clause tests; local verification only",
+      "redistributed": false,
+      "sha256": "8022933fc37a019640c9e85cc5a92727b2f9e452d1c32889c513eb79cd2fcdef",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "4 regular members of 13/26/39/52 bytes; listing and each payload byte-identical to system libarchive/tar"
+    },
+    {
+      "name": "test_read_format_7zip_lzma1_lzma2.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_lzma1_lzma2.7z.uu",
+      "license": "unknown-per-fixture; upstream BSD-2-Clause tests; local verification only",
+      "redistributed": false,
+      "sha256": "4c067e9748f8df2ef95300f25010da2be3b3bcd7fe2c1e6ebee1573622e4ef97",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "8 regular members of 13/26/39/52 bytes; listing and each payload byte-identical to system libarchive/tar"
+    },
+    {
+      "name": "test_read_format_7zip_extract_second.7z",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_7zip_extract_second.7z.uu",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "ab2122c15aeac0b5f398cbd3634b2388789eb573dc171e2d86222a7c14f74271",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "first.txt 65536 bytes and second.txt 23 bytes match sequential bsdtar output; second body also matches upstream C test. System bsdtar individual second selection fails and is not counted as a passing oracle."
+    },
+    {
+      "name": "test_read_format_rar5_multiple_files.rar",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_rar5_multiple_files.rar.uu",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "65305723965a55a89b7e120d54807c6ae30b69532712aa20d3934296799e923b",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "test1.bin through test4.bin, each 4096 bytes, match bsdtar independently."
+    },
+    {
+      "name": "test_read_format_rar_compress_normal.rar",
+      "source": "https://github.com/libarchive/libarchive/blob/9313b877941434d9830aa4b3b700c2ae2ee68c7d/libarchive/test/test_read_format_rar_compress_normal.rar.uu",
+      "license": "unknown-per-fixture; local verification only",
+      "redistributed": false,
+      "sha256": "7d32e2ef511d0ade372345440838165df828197eff4d7816880dafde690cce03",
+      "sha256Of": "uudecoded archive bytes",
+      "expectedVisibleResult": "3 regular members (20111,20111,20 bytes) match bsdtar; testlink is an independently confirmed symbolic link and remains a reproduced reader failure, including v1.4.41 baseline."
+    }
+  ],
+  "deterministicSamples": [
+    {
+      "id": "solid-two-files",
+      "kind": "multi-entry",
+      "expectedVisibleResult": "first.txt and second.txt both extract exactly"
+    },
+    {
+      "id": "solid-directory-three-files",
+      "kind": "multi-entry",
+      "expectedVisibleResult": "docs/first.txt, docs/second.txt and empty.txt remain visible"
+    },
+    {
+      "id": "eleven-literal-names",
+      "kind": "multi-entry",
+      "expectedVisibleResult": "11 names times ZIP, solid 7z and volumes; all 33 extracted contents exactly match their original inputs"
+    },
+    {
+      "id": "ten-error-like-names",
+      "kind": "multi-entry",
+      "expectedVisibleResult": "10 names times ZIP, 7z, encrypted 7z and volumes; all 40 contents match, genuine CRC damage stays rejected"
+    },
+    {
+      "id": "literal-selection-with-decoys",
+      "kind": "multi-entry",
+      "expectedVisibleResult": "23 names times five routes; MEMFS contains only selected entry before cleanup"
+    },
+    {
+      "id": "damaged-and-oversized-unselected",
+      "kind": "boundary",
+      "expectedVisibleResult": "small intact selection succeeds; large unselected member not emitted, selected CRC damage rejected"
+    },
+    {
+      "id": "literal-backslash-vs-nested-path",
+      "kind": "path-identity",
+      "expectedVisibleResult": "plain, encrypted, duplicate and two-volume 7z routes preserve literal backslash identity while drive-prefixed and parent-traversal paths remain blocked"
+    },
+    {
+      "id": "solid-decoded-prefix-exact-over-and-block-reset",
+      "kind": "resource-boundary",
+      "expectedVisibleResult": "80MB exact opens, 80MB+1 stays listed but disabled, target-first and new-block targets open; numeric volumes and failure recovery use the same policy"
+    },
+    {
+      "id": "header-encrypted-solid-exact-over-target-first",
+      "kind": "password-resource-boundary",
+      "expectedVisibleResult": "Missing and wrong passwords reveal no directory; correct password applies the same exact/over/target-first policy to single archives and numeric volumes, and independent py7zr extracts the selected bodies byte-identically"
+    },
+    {
+      "id": "header-encrypted-empty-members-and-block-reset",
+      "kind": "password-structure-boundary",
+      "expectedVisibleResult": "Empty directories, top-level and nested empty files retain identity; a real new solid block opens without inheriting the previous block work budget"
+    },
+    {
+      "id": "header-encrypted-2049-members-exact-over-and-pagination",
+      "kind": "password-scale-boundary",
+      "expectedVisibleResult": "2049 identities match py7zr; exact 80MB opens, limit plus one is disabled, and actual WeChat pagination opens a member after the first 1000 rows"
+    },
+    {
+      "id": "header-encrypted-truncated-numeric-volumes",
+      "kind": "password-container-integrity",
+      "expectedVisibleResult": "Missing middle/final volumes, one-byte truncation and damaged start/encrypted next headers fail readably before password handling; complete and ordinary archives recover"
+    },
+    {
+      "id": "header-encrypted-two-block-packed-corruption",
+      "kind": "password-content-integrity",
+      "expectedVisibleResult": "A first-block packed-data bit flip produces a readable data-integrity error without password reset; the independent second block and a later complete archive extract byte-identically"
+    },
+    {
+      "id": "header-encrypted-lzma1-corruption",
+      "kind": "password-content-integrity",
+      "expectedVisibleResult": "LZMA1 damaged first member rejects; independent second and complete first match py7zr; exact/over member size limits remain enforced"
+    },
+    {
+      "id": "header-encrypted-deflate-corruption",
+      "kind": "password-content-integrity",
+      "expectedVisibleResult": "Deflate damaged first member rejects; independent second and complete first match py7zr; exact/over member size limits remain enforced"
+    },
+    {
+      "id": "header-encrypted-bzip2-corruption",
+      "kind": "password-content-integrity",
+      "expectedVisibleResult": "BZip2 damaged first member rejects; independent second and complete first match py7zr; exact/over member size limits remain enforced"
+    },
+    {
+      "id": "header-encrypted-ppmd-corruption",
+      "kind": "password-content-integrity",
+      "expectedVisibleResult": "PPMd damaged first member rejects; independent second and complete first match py7zr; oracle native crashes recorded separately"
+    },
+    {
+      "id": "header-encrypted-copy-corruption",
+      "kind": "password-content-integrity",
+      "expectedVisibleResult": "Copy damaged first member rejects; independent second and complete first match py7zr; exact/over member size limits remain enforced"
+    }
+  ],
+  "platformResults": {
+    "node": {
+      "status": "pass",
+      "testedAt": "2026-09-05",
+      "candidate": "1.4.96",
+      "evidence": "A real 939776-byte header-encrypted archive has two independent solid blocks. One packed-data byte in the first block is flipped: the reader returns structured data-corrupt without partial content, opens the second body byte-identically and recovers with the complete archive. Isolated py7zr 1.0.0 independently returns LZMAError for the first block and extracts the same second and complete-first hashes."
+    },
+    "wechat-devtools": {
+      "status": "pass",
+      "testedAt": "2026-09-05",
+      "candidate": "1.4.96",
+      "evidence": "SDK3.16.2 used WXWebAssembly and the live modular reader component: two password submissions, two unlock calls, three member opens and three rendered snapshots. The damaged first member showed a readable data-integrity state without clearing the verified password or two-entry directory; the independent second member and complete first member opened their real HTML bodies. The legacy full-suite nested skin selectors remain to be migrated. Not a native nested-control tap, physical iOS/Android or OS picker validation."
+    },
+    "wechat-development": {
+      "status": "pass",
+      "testedAt": "2026-09-05",
+      "release": "1.4.96"
+    },
+    "ios": {
+      "status": "pending",
+      "reason": "requires independent device check"
+    },
+    "android": {
+      "status": "pending",
+      "reason": "requires independent device check"
+    }
+  },
+  "limits": {
+    "combinedArchiveBytes": 83886080,
+    "entryBytes": 20971520,
+    "solidDecodedPrefixBytes": 83886080,
+    "volumeCount": 10
+  },
+  "metrics": {
+    "registeredCases": 37,
+    "passingCases": 37,
+    "pendingCases": 0,
+    "silentContentErrorsFixed": 9
+  },
+  "lastTestedAt": "2026-09-05",
+  "mutationQueue": [
+    {
+      "id": "newline-in-member-name",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.69",
+      "reproduction": "Native callbacks preserve LF/CR/TAB/BS member identity; 68 body cases, independent native/tar oracles and 19 actual WeChat WXML taps passed before upload through Actions33415602940.",
+      "evidence": [
+        "tests/archive-native-listing.test.js",
+        "docs/release-v1.4.69-dev.md"
+      ]
+    },
+    {
+      "id": "separator-string-in-member-name",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.39"
+    },
+    {
+      "id": "error-keyword-in-member-name",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.40",
+      "reproduction": "Valid ZIP names and comments caused false failures; separated output streams and used actual command status, preserving genuine CRC errors."
+    },
+    {
+      "id": "wildcard-in-member-name",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.41",
+      "reproduction": "Seven regressions fail before fix; -spd plus -- selects literal names. Observed MEMFS confirms only selected file is emitted."
+    },
+    {
+      "id": "duplicate-member-names",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.42",
+      "reproduction": "Seven original regressions fail before fix; preserve all directory entries, native ordinal selection and CRC validation return each corresponding body. Missing-password then duplicate selection adds an independent EOF regression."
+    },
+    {
+      "id": "rar-symbolic-link-entry",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.43",
+      "reproduction": "RAR4 public testlink now resolves to 20111 bytes of real HTML identical to bsdtar; RAR5 symbolic/hard/directory links have independent samples. Remaining link variants are tracked in rar.json."
+    },
+    {
+      "id": "literal-backslash-member-name",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.89",
+      "evidence": [
+        "tests/archive-native-listing.test.js",
+        "scripts/verify-7z-literal-backslash.js",
+        "scripts/verify-archive-native-wechat.js",
+        "GitHub Actions 33513110360"
+      ]
+    },
+    {
+      "id": "header-encrypted-duplicate-members",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.89",
+      "evidence": [
+        "tests/archive-native-listing.test.js",
+        "scripts/verify-7z-literal-backslash.js",
+        "GitHub Actions 33513110360"
+      ]
+    },
+    {
+      "id": "large-solid-archive-memory",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.90",
+      "reproduction": "A 12KB solid archive can require more than 80MB of decoded-prefix work before a 36-byte HTML target. The reader uses native solid-block boundaries, permits the exact limit, disables limit+1, resets at new blocks, and preserves target-first access.",
+      "evidence": [
+        "tests/7z-solid-budget.test.js",
+        "scripts/verify-7z-solid-budget.js",
+        "scripts/verify-7z-solid-budget-wechat.js",
+        "GitHub Actions 33516254572"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-block-budget",
+      "priority": "high",
+      "status": "verified",
+      "testedAgainst": "1.4.90",
+      "reproduction": "No product defect found. Missing/wrong/correct password, exact 80MB, 80MB+1, target-first, numeric volumes, ordinary-archive recovery, independent py7zr decryption and actual WeChat WXML controls all preserved the existing policy.",
+      "evidence": [
+        "tests/7z-solid-budget.test.js",
+        "scripts/verify-7z-solid-budget.js",
+        "scripts/verify-7z-encrypted-solid-budget-wechat.js"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-block-reset-empty-members",
+      "priority": "high",
+      "status": "verified",
+      "testedAgainst": "1.4.90",
+      "reproduction": "No product defect found. Corrected the deterministic fixture builder so nested paths are archived once from their root, then verified empty directories, top-level/nested zero-byte files and real solid-block resets in Node, py7zr and actual WeChat WXML controls.",
+      "evidence": [
+        "tests/7z-solid-budget.test.js",
+        "scripts/verify-7z-solid-budget.js",
+        "scripts/verify-7z-encrypted-solid-budget-wechat.js"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-many-tiny-members",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.91",
+      "reproduction": "The runtime retained up to 10000 identities, but the page permanently sliced logic state to the first 500 members. Full identity is now retained in memory and rendered in 500-row pages. Node and py7zr agree on 2049 encrypted members at 80MB exact and plus one; actual WeChat controls open the 1002nd member from page three.",
+      "evidence": [
+        "tests/page-state.test.js",
+        "tests/7z-solid-budget.test.js",
+        "scripts/verify-7z-many-tiny-members.js",
+        "scripts/verify-7z-encrypted-solid-budget-wechat.js",
+        "GitHub Actions 33523493274"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-truncated-volumes",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.92",
+      "reproduction": "A damaged encrypted next header previously threw without exit code or diagnostics, degrading to an unknown command failure. Numeric volume names and 7z start/next-header ranges plus CRCs are now checked before password handling without joining the archive or reading directory names.",
+      "evidence": [
+        "tests/7z-volume-integrity.test.js",
+        "scripts/verify-7z-truncated-volumes.js",
+        "scripts/verify-7z-truncated-volumes-wechat.js",
+        "py7zr 1.0.0 independent rejection and extraction",
+        "GitHub Actions 33526937935"
+      ]
+    },
+    {
+      "id": "header-encrypted-solid-packed-data-corruption-after-unlock",
+      "priority": "high",
+      "status": "fixed",
+      "release": "1.4.96",
+      "reproduction": "A correct password first unlocked the encrypted directory, but a later CRC failure in encrypted packed data was classified as password-or-corrupt; the page cleared the already verified password and disabled every encrypted member. The runtime now distinguishes post-unlock packed-data failures, and the page preserves the directory/password so independent blocks remain openable.",
+      "evidence": [
+        "tests/7z-packed-corruption.test.js",
+        "tests/page-state.test.js",
+        "scripts/verify-7z-packed-corruption.js",
+        "scripts/verify-7z-packed-corruption-wechat.js",
+        "py7zr 1.0.0 independent LZMAError and extraction"
+      ]
+    },
+    {
+      "id": "header-encrypted-mixed-codec-packed-data-corruption",
+      "priority": "high",
+      "status": "verified",
+      "testedAgainst": "1.4.96",
+      "reproduction": "Five separately generated header-encrypted archives using LZMA1, Deflate, BZip2, PPMd and Copy passed damaged-member rejection, independent-member hashes, wrong-password recovery and exact/one-byte-over member size limits. SDK3.16.2 live reader events passed for all five methods. py7zr matched normal bodies; one PPMd corrupt ciphertext caused a native SIGBUS in the oracle worker, recorded separately. No new product defect found. This is across-codec coverage, not multiple codecs within one archive.",
+      "evidence": [
+        "tests/7z-codec-corruption.test.js",
+        "scripts/verify-7z-packed-corruption.js",
+        "scripts/verify-7z-packed-corruption-wechat.js",
+        "scripts/verify-7z-public-codecs.js",
+        "docs/compatibility-7z-codecs-2026-09-05.md"
+      ]
+    },
+    {
+      "id": "header-encrypted-per-block-mixed-codecs",
+      "priority": "high",
+      "status": "verified",
+      "testedAgainst": "1.4.97",
+      "reproduction": "Three codec pairs, forty independent py7zr member comparisons and reversed three-volume Node cases preserve block boundaries and byte identity. SDK3.16.2 whole/volume LZMA1+PPMd opens preserve the directory and password after damaged-member failure, then show independent and complete HTML. The separate long-HTML batching fix is uploaded through Actions33920545843; physical device coverage remains pending.",
+      "evidence": [
+        "tests/7z-mixed-blocks.test.js",
+        "scripts/verify-7z-mixed-blocks.js",
+        "docs/release-v1.4.97-dev.md"
+      ]
+    },
+    {
+      "id": "mixed-blocks-many-members-and-ui-recovery",
+      "priority": "high",
+      "status": "pending",
+      "expectedVisibleResult": "\u6df7\u5408\u56fa\u5b9e\u4e0e\u975e\u56fa\u5b9e\u5757\u53e0\u52a0\u7a7a\u6587\u4ef6\u3001\u76ee\u5f55\u3001\u91cd\u590d\u6587\u4ef6\u540d\u548c\u5206\u9875\uff1b\u635f\u574f\u6210\u5458\u4e4b\u540e\u4ecd\u80fd\u4ece\u754c\u9762\u56de\u5230\u540c\u5305\u76ee\u5f55\u5e76\u6253\u5f00\u540e\u7eed\u9879\u3002"
+    }
+  ]
+}

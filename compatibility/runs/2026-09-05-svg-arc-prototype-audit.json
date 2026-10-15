@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "chrome": "Google Chrome 152.0.7977.76",
+  "baselineEvidence": "2026-09-05-svg-next-arc-pixels.json",
+  "scope": "Isolated Node module prototypes with native Chrome Canvas alpha comparison on 32 generated arcs; production code unchanged. These results alone cannot establish geometric accuracy.",
+  "candidates": [
+    {
+      "change": "Replace alpha with 4/3*tan(step/4)",
+      "comparison": {
+        "scope": "Local isolated formula prototype only; production worktree unchanged; 32 bounded raster samples",
+        "improved": 1,
+        "worse": 31,
+        "unchanged": 0,
+        "results": [
+          {
+            "name": "arc-pixels-1",
+            "before": 1621,
+            "after": 2451
+          },
+          {
+            "name": "arc-pixels-2",
+            "before": 1870,
+            "after": 2243
+          },
+          {
+            "name": "arc-pixels-3",
+            "before": 2315,
+            "after": 2894
+          },
+          {
+            "name": "arc-pixels-4",
+            "before": 2111,
+            "after": 2170
+          },
+          {
+            "name": "arc-pixels-5",
+            "before": 2096,
+            "after": 2781
+          },
+          {
+            "name": "arc-pixels-6",
+            "before": 1854,
+            "after": 1900
+          },
+          {
+            "name": "arc-pixels-7",
+            "before": 1504,
+            "after": 1971
+          },
+          {
+            "name": "arc-pixels-8",
+            "before": 1861,
+            "after": 2318
+          },
+          {
+            "name": "arc-pixels-9",
+            "before": 1854,
+            "after": 2200
+          },
+          {
+            "name": "arc-pixels-10",
+            "before": 1546,
+            "after": 1661
+          },
+          {
+            "name": "arc-pixels-11",
+            "before": 1898,
+            "after": 2126
+          },
+          {
+            "name": "arc-pixels-12",
+            "before": 1928,
+            "after": 2539
+          },
+          {
+            "name": "arc-pixels-13",
+            "before": 2144,
+            "after": 3011
+          },
+          {
+            "name": "arc-pixels-14",
+            "before": 2177,
+            "after": 2889
+          },
+          {
+            "name": "arc-pixels-15",
+            "before": 2273,
+            "after": 2972
+          },
+          {
+            "name": "arc-pixels-16",
+            "before": 1285,
+            "after": 1359
+          },
+          {
+            "name": "arc-pixels-17",
+            "before": 2486,
+            "after": 3198
+          },
+          {
+            "name": "arc-pixels-18",
+            "before": 1287,
+            "after": 1340
+          },
+          {
+            "name": "arc-pixels-19",
+            "before": 1307,
+            "after": 1917
+          },
+          {
+            "name": "arc-pixels-20",
+            "before": 1811,
+            "after": 2373
+          },
+          {
+            "name": "arc-pixels-21",
+            "before": 2286,
+            "after": 3170
+          },
+          {
+            "name": "arc-pixels-22",
+            "before": 2425,
+            "after": 3207
+          },
+          {
+            "name": "arc-pixels-23",
+            "before": 2258,
+            "after": 2734
+          },
+          {
+            "name": "arc-pixels-24",
+            "before": 1998,
+            "after": 2364
+          },
+          {
+            "name": "arc-pixels-25",
+            "before": 2489,
+            "after": 2582
+          },
+          {
+            "name": "arc-pixels-26",
+            "before": 1209,
+            "after": 1284
+          },
+          {
+            "name": "arc-pixels-27",
+            "before": 1776,
+            "after": 1770
+          },
+          {
+            "name": "arc-pixels-28",
+            "before": 1849,
+            "after": 2398
+          },
+          {
+            "name": "arc-pixels-29",
+            "before": 2727,
+            "after": 3824
+          },
+          {
+            "name": "arc-pixels-30",
+            "before": 2711,
+            "after": 3804
+          },
+          {
+            "name": "arc-pixels-31",
+            "before": 2194,
+            "after": 2738
+          },
+          {
+            "name": "arc-pixels-32",
+            "before": 3847,
+            "after": 4595
+          }
+        ]
+      },
+      "promotion": "rejected-pixel-regression"
+    },
+    {
+      "change": "Keep alpha; subdivide to at most pi/8 per cubic",
+      "comparison": {
+        "scope": "Local isolated subdivision prototype only; production worktree unchanged; 32 bounded raster samples",
+        "improved": 5,
+        "worse": 27,
+        "unchanged": 0,
+        "results": [
+          {
+            "name": "arc-pixels-1",
+            "before": 1621,
+            "after": 2381
+          },
+          {
+            "name": "arc-pixels-2",
+            "before": 1870,
+            "after": 1984
+          },
+          {
+            "name": "arc-pixels-3",
+            "before": 2315,
+            "after": 2920
+          },
+          {
+            "name": "arc-pixels-4",
+            "before": 2111,
+            "after": 2696
+          },
+          {
+            "name": "arc-pixels-5",
+            "before": 2096,
+            "after": 2443
+          },
+          {
+            "name": "arc-pixels-6",
+            "before": 1854,
+            "after": 2409
+          },
+          {
+            "name": "arc-pixels-7",
+            "before": 1504,
+            "after": 1821
+          },
+          {
+            "name": "arc-pixels-8",
+            "before": 1861,
+            "after": 1956
+          },
+          {
+            "name": "arc-pixels-9",
+            "before": 1854,
+            "after": 2088
+          },
+          {
+            "name": "arc-pixels-10",
+            "before": 1546,
+            "after": 1337
+          },
+          {
+            "name": "arc-pixels-11",
+            "before": 1898,
+            "after": 1823
+          },
+          {
+            "name": "arc-pixels-12",
+            "before": 1928,
+            "after": 2237
+          },
+          {
+            "name": "arc-pixels-13",
+            "before": 2144,
+            "after": 2780
+          },
+          {
+            "name": "arc-pixels-14",
+            "before": 2177,
+            "after": 2547
+          },
+          {
+            "name": "arc-pixels-15",
+            "before": 2273,
+            "after": 2780
+          },
+          {
+            "name": "arc-pixels-16",
+            "before": 1285,
+            "after": 1260
+          },
+          {
+            "name": "arc-pixels-17",
+            "before": 2486,
+            "after": 2983
+          },
+          {
+            "name": "arc-pixels-18",
+            "before": 1287,
+            "after": 1498
+          },
+          {
+            "name": "arc-pixels-19",
+            "before": 1307,
+            "after": 1680
+          },
+          {
+            "name": "arc-pixels-20",
+            "before": 1811,
+            "after": 2274
+          },
+          {
+            "name": "arc-pixels-21",
+            "before": 2286,
+            "after": 2992
+          },
+          {
+            "name": "arc-pixels-22",
+            "before": 2425,
+            "after": 2900
+          },
+          {
+            "name": "arc-pixels-23",
+            "before": 2258,
+            "after": 2567
+          },
+          {
+            "name": "arc-pixels-24",
+            "before": 1998,
+            "after": 1935
+          },
+          {
+            "name": "arc-pixels-25",
+            "before": 2489,
+            "after": 1845
+          },
+          {
+            "name": "arc-pixels-26",
+            "before": 1209,
+            "after": 1315
+          },
+          {
+            "name": "arc-pixels-27",
+            "before": 1776,
+            "after": 2036
+          },
+          {
+            "name": "arc-pixels-28",
+            "before": 1849,
+            "after": 2208
+          },
+          {
+            "name": "arc-pixels-29",
+            "before": 2727,
+            "after": 3672
+          },
+          {
+            "name": "arc-pixels-30",
+            "before": 2711,
+            "after": 3397
+          },
+          {
+            "name": "arc-pixels-31",
+            "before": 2194,
+            "after": 2635
+          },
+          {
+            "name": "arc-pixels-32",
+            "before": 3847,
+            "after": 4360
+          }
+        ]
+      },
+      "promotion": "rejected-pixel-regression"
+    }
+  ],
+  "next": "Compare native SVG lengths and sampled geometry, fill and stroke separately, and native Canvas ellipse before selecting a rendering change. Retain raw errors and add real-file/device validation."
+}

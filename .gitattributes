@@ -1,0 +1,11 @@
+# Preserve pinned upstream bytes; these originals include a blank line at EOF.
+miniprogram/file-reader/document/html-entities.LICENSE -text whitespace=-blank-at-eof
+tests/fixtures/html-entities/html5lib.LICENSE -text whitespace=-blank-at-eof
+tests/fixtures/html-entities/numericEntities.test -text whitespace=-blank-at-eof
+# Unified patch context and pinned upstream email footer contain meaningful
+# spaces/blank lines. Preserve exact patch hashes; source files stay checked.
+tools/sevenzip-native/7zz-emcc.patch -text whitespace=-blank-at-eol,-blank-at-eof
+tools/sevenzip-native/native-listing.patch -text whitespace=-blank-at-eol,-blank-at-eof
+*.pdf binary
+# PDF-compatible Illustrator originals are binary even when their headers look textual.
+scripts/assets/example-art/*.ai binary

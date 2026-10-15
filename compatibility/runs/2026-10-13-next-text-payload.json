@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-13T11:49:15.414629+00:00",
+  "status": "needs-native-confirmation-not-a-proven-phone-failure",
+  "rows": [
+    {
+      "depth": 20,
+      "items": 1000,
+      "inputBytes": 3931,
+      "elapsedMs": 74,
+      "ready": true,
+      "error": "",
+      "preChars": 47812,
+      "largestBridgePatchBytes": 54080
+    },
+    {
+      "depth": 60,
+      "items": 4000,
+      "inputBytes": 19011,
+      "elapsedMs": 204,
+      "ready": true,
+      "error": "",
+      "preChars": 518452,
+      "largestBridgePatchBytes": 542940
+    },
+    {
+      "depth": 60,
+      "items": 10000,
+      "inputBytes": 49011,
+      "elapsedMs": 422,
+      "ready": true,
+      "error": "",
+      "preChars": 1286452,
+      "largestBridgePatchBytes": 1346940
+    }
+  ],
+  "next": "Independently measure actual display and bridge behavior for deep JSON and CSV cell arrays, compare whole lexical source and scrollable tail. Preserve all content and existing boundaries."
+}

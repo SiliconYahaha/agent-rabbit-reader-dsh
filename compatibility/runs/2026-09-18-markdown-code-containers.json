@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-09-18T15:42:12.103602+00:00",
+  "format": "Markdown",
+  "version": "1.4.139",
+  "status": "development-uploaded",
+  "sources": [
+    "https://spec.commonmark.org/0.31.2/#indented-code-blocks",
+    "https://spec.commonmark.org/0.31.2/#setext-headings",
+    "https://spec.commonmark.org/0.31.2/#list-items"
+  ],
+  "oracles": {
+    "commonmark": "0.31.2",
+    "markdownIt": "15.0.1"
+  },
+  "changes": [
+    "Keep indented-code leaf state distinct from paragraph continuation in nested lists and quotes.",
+    "Carry ancestor lazy-continuation metadata through recursive parsing so missing markers cannot create spurious Setext headings.",
+    "Recognize the complete paragraph when indented continuation precedes a valid Setext underline."
+  ],
+  "validation": {
+    "authoredSources": 768,
+    "oracleAgreements": 768,
+    "beforeWrongStructures": 158,
+    "afterWrongStructures": 0,
+    "actualReaderHostOpens": 768,
+    "chromeRenderedViews": 166,
+    "chromeFailures": 0,
+    "wechatNativeViews": 9,
+    "wechatFailures": 0,
+    "commonmarkOfficialExamplesScreened": 652,
+    "officialDifferencesBefore": 17,
+    "officialDifferencesAfter": 17,
+    "officialStructuralRegressions": 0,
+    "newNodeTests": 3,
+    "relatedNodeTests": 16,
+    "physicalDevices": "not run",
+    "fullNodeTests": 1367,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "originalFiles": "pass",
+    "reportedFiles": "pass",
+    "chromeOracle": "pass",
+    "wechatFullSimulator": "pass"
+  },
+  "evidence": [
+    "tests/fixtures/markdown-code-containers.json",
+    "tests/markdown-code-containers.test.js",
+    "scripts/probe-markdown-code-containers.js",
+    "scripts/verify-markdown-code-containers.js",
+    "scripts/verify-markdown-code-containers-wechat.js"
+  ],
+  "localReports": [
+    "outputs/markdown-code-containers/before/baseline.json",
+    "outputs/markdown-code-containers/after/baseline.json",
+    "outputs/markdown-code-containers/browser/report.json",
+    "outputs/markdown-code-containers/wechat.json",
+    "outputs/markdown-code-containers/commonmark-audit.json"
+  ],
+  "limitations": [
+    "Structural comparisons preserve exact preformatted text, but normalize ordinary whitespace and are not full CommonMark conformance.",
+    "652 official examples retain 17 preexisting structural differences.",
+    "Exploratory fenced-code matrix: 1440 sources, no dual-reference-agreed failure, 540 parser disagreements retained; do not count them as fixed.",
+    "Exploratory 462 continuation sources retain 3 unclosed raw-pre whitespace differences and 1 intentional front-matter dialect difference outside this batch.",
+    "Physical iOS/Android devices not run.",
+    "Required GitHub checks currently unavailable; no merge, GitHub Release, experience version, review submission or production publication."
+  ],
+  "remoteChecks": {
+    "status": "unavailable",
+    "checkId": 105660337460,
+    "action": "Required check could not start; retain open PR and do not bypass merge gates."
+  },
+  "nextAction": "Rotate away from Markdown. Investigate remaining SVG curved dash/pathLength discrepancies with original native images and independent engine/spec review; retain strict failures and separate malformed-attribute disagreements."
+}

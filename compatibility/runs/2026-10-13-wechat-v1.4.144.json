@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "appid": "wx3a426835ea59403a",
+  "mode": "manual",
+  "version": "1.4.144",
+  "description": "兔子阅读器 1.4.144：新增支持格式与六种真实示例；改善文档和 Markdown 加载失败重试；修复设计稿切换失败和重复点击；修复原生 Canvas 绘制空白画布失败及图片源校验；整合此前文件兼容修复，原文件在本机处理。",
+  "robot": 1,
+  "tag": "v1.4.144",
+  "ref": "refs/heads/main",
+  "runId": "38370122255",
+  "runAttempt": "1",
+  "resultKeys": [
+    "devPluginId",
+    "pluginInfo",
+    "subPackageInfo"
+  ]
+}

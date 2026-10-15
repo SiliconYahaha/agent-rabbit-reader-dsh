@@ -1,0 +1,10 @@
+{
+  "package": "pathkit-wasm",
+  "version": "1.0.0",
+  "license": "BSD-3-Clause",
+  "source": "https://github.com/google/skia/tree/main/modules/pathkit",
+  "wasmSha256": "1356ccfa6551147c57624184445923393933beec4a85eff4440bb7381a78cd34",
+  "upstreamJsSha256": "d25569ca7f7611bdaa39f371bcb6459ad78c8de18e79c7608e4911c2dd787df4",
+  "maximumWasmHeapBytes": 67108864,
+  "modification": "Cap Emscripten heap growth at 64 MiB; prepend WXWebAssembly selection; Brotli-compress upstream WASM."
+}

@@ -1,0 +1,87 @@
+name: Upload WeChat development version
+
+# Manual development uploads require an explicit version, description, and confirmation.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Must equal package.json and the vX.Y.Z tag on current main
+        required: true
+        type: string
+      description:
+        description: WeChat development-version description (max 200 characters)
+        required: true
+        type: string
+      confirm:
+        description: Type UPLOAD to confirm an external upload to WeChat
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  # Manual uploads share the main caller's group so newer main code cancels
+  # them immediately. Reusable calls need a different group from their caller:
+  # sharing it would cancel the workflow that is currently invoking us.
+  group: ${{ github.event_name == 'workflow_dispatch' && format('repository-checks-{0}', github.ref) || 'wechat-development-upload-main' }}
+  cancel-in-progress: true
+
+jobs:
+  upload:
+    name: Verify and upload
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out main with version tags
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: tools/wechat-ci/package-lock.json
+
+      - name: Reject superseded commits before installing upload tools
+        run: node scripts/ci-current-main.js
+
+      # Automatic callers already passed scoped tests for this exact commit.
+      - name: Require successful main checks for manual upload
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/ci-upload-check.js
+
+      - name: Install isolated official WeChat CI runtime
+        run: npm ci --ignore-scripts --prefix tools/wechat-ci
+
+      - name: Verify production boundaries
+        run: npm run check:production
+
+      - name: Reject superseded commits immediately before upload
+        run: node scripts/ci-current-main.js
+
+      - name: Upload current main commit to WeChat
+        env:
+          WECHAT_CI_PRIVATE_KEY: ${{ secrets.WECHAT_CI_PRIVATE_KEY }}
+          WECHAT_CI_ROBOT: ${{ vars.WECHAT_CI_ROBOT || '1' }}
+          WECHAT_CI_MODE: manual
+          WECHAT_CI_VERSION: ${{ inputs.version }}
+          WECHAT_CI_DESCRIPTION: ${{ inputs.description }}
+          WECHAT_CI_CONFIRM: ${{ inputs.confirm }}
+        run: npm run release:wechat:ci
+
+      - name: Preserve non-secret upload receipt
+        if: ${{ always() && hashFiles('outputs/wechat-ci/*.json') != '' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: wechat-upload-${{ github.event_name }}-${{ github.run_id }}
+          path: outputs/wechat-ci/*.json
+          if-no-files-found: error
+          retention-days: 90

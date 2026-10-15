@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "id": "rtf-notes",
+  "format": "RTF",
+  "version": "1.4.122",
+  "baseline": "v1.4.121",
+  "status": "development-uploaded",
+  "rootCauses": [
+    "Footnote destinations wrote into the body stream; starred known footnote destinations were discarded",
+    "No reference identity or source note numbering was retained",
+    "Hidden enclosing notes must suppress the whole note while retaining numbering for later notes"
+  ],
+  "specification": {
+    "url": "https://officeprotocoldoc.z19.web.core.windows.net/files/Archive_References/%5BMSFT-RTF%5D.pdf",
+    "pages": "48,72–73,192–193"
+  },
+  "validation": {
+    "relatedTests": 290,
+    "relatedFailures": 0,
+    "contracts": 47,
+    "contractExact": 47,
+    "componentFileOpens": 47,
+    "componentAnchorActions": 146,
+    "oldFileReadAndNodeRecovery": "pass",
+    "largeNoteBytes": 1048576,
+    "noteBoundary": 4096,
+    "noteLimitFailure": 4097,
+    "referenceLimitFailure": 16385,
+    "nativeContentMatches": 31,
+    "nativeDifferences": 16,
+    "nativeScope": "PDF extracted body/note order and text without whitespace; exact source whitespace checked separately at core, component and Chrome. Not page layout certification.",
+    "chrome": "pass",
+    "node": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run: previously verified compiler startup block",
+    "ios": "not-run",
+    "android": "not-run",
+    "chromeViews": 188,
+    "chromeNotes": 47,
+    "chromeAnchorActions": 146,
+    "nodeTests": 1122,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "chromeOracle": "pass",
+    "productCI": "pass",
+    "mainCI": "pass"
+  },
+  "results": [
+    {
+      "name": "single",
+      "sourceSha256": "2c82dafdb76a7cfca9ea64d23c0112d17b6f5f92ba209311b9e499d5d7bf764a",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn NOTE}B}",
+      "expected": "A1B\n\n脚注\n1NOTE",
+      "baseline": "ANOTEB",
+      "actual": "A1B\n\n脚注\n1NOTE"
+    },
+    {
+      "name": "two",
+      "sourceSha256": "a5003a304d9c31216068ed3bde498877e6b3526b88db5035196d2d87c627b99c",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "A1B2C\n\n脚注\n1FIRST\n\n2SECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "A1B2C\n\n脚注\n1FIRST\n\n2SECOND"
+    },
+    {
+      "name": "endnote",
+      "sourceSha256": "5532b4a83a26fd0812c1db04bfd042c7d03dfd37f6d8b1e9d4131d5bd0af66da",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\ftnalt\\pard\\plain\\chftn NOTE}B}",
+      "expected": "AiB\n\n尾注\niNOTE",
+      "baseline": "ANOTEB",
+      "actual": "AiB\n\n尾注\niNOTE"
+    },
+    {
+      "name": "paragraph",
+      "sourceSha256": "cb57cf962314dff8984ef936c46d05c81d452833340b06d63fac910f8b759b80",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn FIRST\\par SECOND}B}",
+      "expected": "A1B\n\n脚注\n1FIRST\nSECOND",
+      "baseline": "AFIRST\nSECONDB",
+      "actual": "A1B\n\n脚注\n1FIRST\nSECOND"
+    },
+    {
+      "name": "field",
+      "sourceSha256": "ecbd903d0f626e8f45e6dba90b31013f80b03daf898295e6d3718691ef8d4ac0",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn {\\field{\\*\\fldinst HYPERLINK \"about:blank\"}{\\fldrslt LINK}}}B}",
+      "expected": "A1B\n\n脚注\n1LINK",
+      "baseline": "ALINKB",
+      "actual": "A1B\n\n脚注\n1LINK"
+    },
+    {
+      "name": "single-starred",
+      "sourceSha256": "414d973f0020b8c8aa98d5576a6de179186dad8b4a7e9d0aff6d4544a3fe4691",
+      "source": "{\\rtf1\\ansi A\\chftn{\\*\\footnote\\pard\\plain\\chftn NOTE}B}",
+      "expected": "A1B\n\n脚注\n1NOTE",
+      "baseline": "AB",
+      "actual": "A1B\n\n脚注\n1NOTE"
+    },
+    {
+      "name": "two-starred",
+      "sourceSha256": "5bff96a97122190c9b1cd074c42a460fb6f72bf37c6c18c7ca8a8b36cbf10988",
+      "source": "{\\rtf1\\ansi A\\chftn{\\*\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\*\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "A1B2C\n\n脚注\n1FIRST\n\n2SECOND",
+      "baseline": "ABC",
+      "actual": "A1B2C\n\n脚注\n1FIRST\n\n2SECOND"
+    },
+    {
+      "name": "endnote-starred",
+      "sourceSha256": "afbcb4f107bb86e34a291f432e59673f1020d9720bc61a61eebe14c7b5a760e7",
+      "source": "{\\rtf1\\ansi A\\chftn{\\*\\footnote\\ftnalt\\pard\\plain\\chftn NOTE}B}",
+      "expected": "AiB\n\n尾注\niNOTE",
+      "baseline": "AB",
+      "actual": "AiB\n\n尾注\niNOTE"
+    },
+    {
+      "name": "paragraph-starred",
+      "sourceSha256": "2803b6e5c410b1b0c8b3b39816aed8cebba53ef85d7ce61ba361265afe8e0736",
+      "source": "{\\rtf1\\ansi A\\chftn{\\*\\footnote\\pard\\plain\\chftn FIRST\\par SECOND}B}",
+      "expected": "A1B\n\n脚注\n1FIRST\nSECOND",
+      "baseline": "AB",
+      "actual": "A1B\n\n脚注\n1FIRST\nSECOND"
+    },
+    {
+      "name": "field-starred",
+      "sourceSha256": "80a602d7bf8a838c943a59445bd54f1bd909c133bc025fa05943e3052d0980de",
+      "source": "{\\rtf1\\ansi A\\chftn{\\*\\footnote\\pard\\plain\\chftn {\\field{\\*\\fldinst HYPERLINK \"about:blank\"}{\\fldrslt LINK}}}B}",
+      "expected": "A1B\n\n脚注\n1LINK",
+      "baseline": "AB",
+      "actual": "A1B\n\n脚注\n1LINK"
+    },
+    {
+      "name": "mixed",
+      "sourceSha256": "c5769a848da6f8d795495f453a8ad8ddc537f1645fd42044d5e6b1e7d4de197f",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn FOOT}B\\chftn{\\footnote\\ftnalt\\pard\\plain\\chftn END}C\\chftn{\\footnote\\pard\\plain\\chftn SECOND}D}",
+      "expected": "A1BiC2D\n\n脚注\n1FOOT\n\n2SECOND\n\n尾注\niEND",
+      "baseline": "AFOOTBENDCSECONDD",
+      "actual": "A1BiC2D\n\n脚注\n1FOOT\n\n2SECOND\n\n尾注\niEND"
+    },
+    {
+      "name": "sibling-reference",
+      "sourceSha256": "e416a6bb8aea526f650004508f9a6a92c712c4aefaaab6609e4899c25a03966e",
+      "source": "{\\rtf1\\ansi A{\\super\\chftn}{\\footnote\\pard\\plain\\chftn NOTE}B}",
+      "expected": "A1B\n\n脚注\n1NOTE",
+      "baseline": "ANOTEB",
+      "actual": "A1B\n\n脚注\n1NOTE"
+    },
+    {
+      "name": "custom-mark",
+      "sourceSha256": "68fc3a9ad3e1a4054f2bd5603e053b93c7f4f5c01d866d0195dba01c94c04d2d",
+      "source": "{\\rtf1\\ansi A*{\\*\\footnote\\pard\\plain * NOTE}B}",
+      "expected": "A*B\n\n脚注\n* NOTE",
+      "baseline": "A*B",
+      "actual": "A*B\n\n脚注\n* NOTE"
+    },
+    {
+      "name": "arabic-start",
+      "sourceSha256": "869b99806069a5d72fd8dd7ec71770ef050ab16b40ccfee294e14b76cb8f4e82",
+      "source": "{\\rtf1\\ansi\\ftnstart9 A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "A9B10C\n\n脚注\n9FIRST\n\n10SECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "A9B10C\n\n脚注\n9FIRST\n\n10SECOND"
+    },
+    {
+      "name": "alpha-lower",
+      "sourceSha256": "50356adf6647175de505b54ea2db5d78d07ac036c16ef27b0a16f2dd2541792d",
+      "source": "{\\rtf1\\ansi\\ftnnalc\\ftnstart27 A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "AaaBbbC\n\n脚注\naaFIRST\n\nbbSECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "AaaBbbC\n\n脚注\naaFIRST\n\nbbSECOND"
+    },
+    {
+      "name": "alpha-upper",
+      "sourceSha256": "8087bb44ece969bcb3571d31f21813723622c47567a378a3e0141cccb0039155",
+      "source": "{\\rtf1\\ansi\\ftnnauc\\ftnstart26 A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "AZBAAC\n\n脚注\nZFIRST\n\nAASECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "AZBAAC\n\n脚注\nZFIRST\n\nAASECOND"
+    },
+    {
+      "name": "roman-lower",
+      "sourceSha256": "28a98284d91c8d1da4f4b60a92bcbd9b98f009fbfc0738182afef29fce6ee261",
+      "source": "{\\rtf1\\ansi\\ftnnrlc\\ftnstart4 A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "AivBvC\n\n脚注\nivFIRST\n\nvSECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "AivBvC\n\n脚注\nivFIRST\n\nvSECOND"
+    },
+    {
+      "name": "roman-upper",
+      "sourceSha256": "1cdd544d4fd4ddccc448b6d56073743f2623cac88e9d3e4e5b072b65337a8490",
+      "source": "{\\rtf1\\ansi\\ftnnruc\\ftnstart9 A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "AIXBXC\n\n脚注\nIXFIRST\n\nXSECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "AIXBXC\n\n脚注\nIXFIRST\n\nXSECOND"
+    },
+    {
+      "name": "chicago",
+      "sourceSha256": "4f85a89e540b1a7a94980f198a2ff768c3d4c441fe11240bb28cb3c6d6795814",
+      "source": "{\\rtf1\\ansi\\ftnnchi\\ftnstart7 A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "A‡‡B§§C\n\n脚注\n‡‡FIRST\n\n§§SECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "A‡‡B§§C\n\n脚注\n‡‡FIRST\n\n§§SECOND"
+    },
+    {
+      "name": "circle",
+      "sourceSha256": "c9c27560d65315f190e1530ee9146446b74629fbcec10ec418e42dca12819064",
+      "source": "{\\rtf1\\ansi\\ftnncnum\\ftnstart19 A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "A⑲B⑳C\n\n脚注\n⑲FIRST\n\n⑳SECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "A⑲B⑳C\n\n脚注\n⑲FIRST\n\n⑳SECOND"
+    },
+    {
+      "name": "wide",
+      "sourceSha256": "a8b4c4daf5adcb32c5180060b890f2ccdcaefe4e7bb509ae085b3b5279fabb45",
+      "source": "{\\rtf1\\ansi\\ftnndbar\\ftnstart12 A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "A１２B１３C\n\n脚注\n１２FIRST\n\n１３SECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "A１２B１３C\n\n脚注\n１２FIRST\n\n１３SECOND"
+    },
+    {
+      "name": "section-roman",
+      "sourceSha256": "90758580e8d37f2dd1b9e6a538f7f291fb0d29e050c861209fee5a6ad51cae2b",
+      "source": "{\\rtf1\\ansi\\sectd\\sftnnruc\\sftnstart4 A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}C}",
+      "expected": "AIVBVC\n\n脚注\nIVFIRST\n\nVSECOND",
+      "baseline": "AFIRSTBSECONDC",
+      "actual": "AIVBVC\n\n脚注\nIVFIRST\n\nVSECOND"
+    },
+    {
+      "name": "section-restart",
+      "sourceSha256": "37822fe5e305c5d58fe631ade755bcc05e92ae2d5f6177b5d68f2dea936036aa",
+      "source": "{\\rtf1\\ansi\\ftnrestart A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}\\sect\\sectd B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}}",
+      "expected": "A1\nB1\n\n脚注\n1FIRST\n\n1SECOND",
+      "baseline": "AFIRSTBSECOND",
+      "actual": "A1\nB1\n\n脚注\n1FIRST\n\n1SECOND"
+    },
+    {
+      "name": "section-continuous",
+      "sourceSha256": "d8dbbee9d9ab9534092dcf2be19261c6026f68eb3c699c35825390d5e3ed719f",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn FIRST}\\sect\\sectd B\\chftn{\\footnote\\pard\\plain\\chftn SECOND}}",
+      "expected": "A1\nB2\n\n脚注\n1FIRST\n\n2SECOND",
+      "baseline": "AFIRSTBSECOND",
+      "actual": "A1\nB2\n\n脚注\n1FIRST\n\n2SECOND"
+    },
+    {
+      "name": "unicode",
+      "sourceSha256": "6406b6b59ec4eea8921a78f77b34c91ad9b0a8162f6aca0f527ddb4289f47307",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn \\u20320?\\u22909?}B}",
+      "expected": "A1B\n\n脚注\n1你好",
+      "baseline": "A你好B",
+      "actual": "A1B\n\n脚注\n1你好"
+    },
+    {
+      "name": "cp1250",
+      "sourceSha256": "bd8a7d9a652db2be837a958521fda7803c78dd2a731f09e211581e0335a23810",
+      "source": "{\\rtf1\\ansi\\ansicpg1250 A\\chftn{\\footnote\\pard\\plain\\chftn \\'c8esk\\'fd}B}",
+      "expected": "A1B\n\n脚注\n1Český",
+      "baseline": "AČeskýB",
+      "actual": "A1B\n\n脚注\n1Český"
+    },
+    {
+      "name": "note-hidden-run",
+      "sourceSha256": "fee2f0ba135c7b2f843ddb2660ea6246b3620062f6c19c404795c9aa6f3990e6",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn ONE{\\v HIDDEN}TWO}B}",
+      "expected": "A1B\n\n脚注\n1ONETWO",
+      "baseline": "AONETWOB",
+      "actual": "A1B\n\n脚注\n1ONETWO"
+    },
+    {
+      "name": "note-style-hidden",
+      "sourceSha256": "d5352901fa830d676a9309dbd0ad206d91cda87a5f956fca673f2bb1765bf0f4",
+      "source": "{\\rtf1\\ansi{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}} A\\chftn{\\footnote\\pard\\plain\\chftn ONE{\\cs1 HIDDEN}TWO}B}",
+      "expected": "A1B\n\n脚注\n1ONETWO",
+      "baseline": "AONETWOB",
+      "actual": "A1B\n\n脚注\n1ONETWO"
+    },
+    {
+      "name": "body-paragraph-state",
+      "sourceSha256": "dcf80db803353d667ecdd2905b47eb706e3d809be8cc87ca1ddf8cf274c78edf",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn FIRST\\par SECOND}\\par B}",
+      "expected": "A1\nB\n\n脚注\n1FIRST\nSECOND",
+      "baseline": "AFIRST\nSECOND\nB",
+      "actual": "A1\nB\n\n脚注\n1FIRST\nSECOND"
+    },
+    {
+      "name": "note-table",
+      "sourceSha256": "2e1fccb231ebcaa72493ea7dc4577fd41a8534321b4f56dd1f10f52963c0193f",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn \\trowd\\cellx2000\\cellx4000\\intbl X\\cell Y\\cell\\row}B}",
+      "expected": "A1B\n\n脚注\n1X\tY",
+      "baseline": "AX\tY\t\nB",
+      "actual": "A1B\n\n脚注\n1X\tY"
+    },
+    {
+      "name": "unknown-parent",
+      "sourceSha256": "5849c9933edb5012631bff1828706504c106d6e532c5cb1faeb576950bf9480b",
+      "source": "{\\rtf1\\ansi A{\\*\\unknown \\chftn{\\*\\footnote\\pard\\plain\\chftn HIDDEN}}B\\chftn{\\footnote\\pard\\plain\\chftn NOTE}}",
+      "expected": "AB1\n\n脚注\n1NOTE",
+      "baseline": "ABNOTE",
+      "actual": "AB1\n\n脚注\n1NOTE"
+    },
+    {
+      "name": "ansi-discard",
+      "sourceSha256": "44db353ebf3031ab38fcf8e4c81ba36047b87a0d1e0d39871bde78b8eb2590c0",
+      "source": "{\\rtf1\\ansi A{\\upr{\\chftn{\\footnote\\pard\\plain\\chftn OLD}}{\\*\\ud NEW}}B\\chftn{\\footnote\\pard\\plain\\chftn NOTE}}",
+      "expected": "ANEWB1\n\n脚注\n1NOTE",
+      "baseline": "ANEWBNOTE",
+      "actual": "ANEWB1\n\n脚注\n1NOTE"
+    },
+    {
+      "name": "note-unicode-alternative",
+      "sourceSha256": "d17bf592d67fc9aadec0ed702c3e3e425948e7d22bcdb1160831fffd784435dd",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn {\\upr{OLD}{\\*\\ud NEW}}}B}",
+      "expected": "A1B\n\n脚注\n1NEW",
+      "baseline": "ANEWB",
+      "actual": "A1B\n\n脚注\n1NEW"
+    },
+    {
+      "name": "html-escape",
+      "sourceSha256": "c3ecd2c67ac03b6452174eaf642a4bc00573cbaebd97ce0f7a3dd557b614d842",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\pard\\plain\\chftn <script>BAD</script> & <img>}B}",
+      "expected": "A1B\n\n脚注\n1<script>BAD</script> & <img>",
+      "baseline": "A<script>BAD</script> & <img>B",
+      "actual": "A1B\n\n脚注\n1<script>BAD</script> & <img>"
+    },
+    {
+      "name": "missing-note-marker",
+      "sourceSha256": "61e0b82e0ba8fcd0fa55182c736ae916fb5daa8125e519802dac17f1c4c13427",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote NOTE}B}",
+      "expected": "A1B\n\n脚注\n1 NOTE",
+      "baseline": "ANOTEB",
+      "actual": "A1B\n\n脚注\n1 NOTE"
+    },
+    {
+      "name": "literal-number-note",
+      "sourceSha256": "77061ba6c7433634b3d3df101b374f10f77b57f3e8ca42e0f9f7552462428abc",
+      "source": "{\\rtf1\\ansi A\\chftn{\\footnote 123}B}",
+      "expected": "A1B\n\n脚注\n1 123",
+      "baseline": "A123B",
+      "actual": "A1B\n\n脚注\n1 123"
+    },
+    {
+      "name": "hidden-enclosing-note",
+      "sourceSha256": "db36c13e4b2ecc35b6e446b21a5040f59ffe34e8e0f6d3e5008b31de865da73a",
+      "source": "{\\rtf1\\ansi A{\\v\\chftn{\\footnote\\pard\\plain\\chftn HIDDEN}}B\\chftn{\\footnote\\pard\\plain\\chftn VISIBLE}}",
+      "expected": "AB2\n\n脚注\n2VISIBLE",
+      "baseline": "AHIDDENBVISIBLE",
+      "actual": "AB2\n\n脚注\n2VISIBLE"
+    },
+    {
+      "name": "writer-arabic-start",
+      "sourceSha256": "4256e2646c453952d1c8b20615f18456b7d6ef84c127b89199e848b6356f5bfa",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17\\super endnote reference;}\n{\\*\\cs18\\snext18 Endnote Characters;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnnar\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart9\\ftnrstcont\\ftnnar\\fet\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nA}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab FIRST}\n}}\n}{\nB}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab SECOND}\n}}\n}{\nC}\n\\par }",
+      "expected": "A9B10C\n\n脚注\n9\tFIRST\n\n10\tSECOND",
+      "baseline": "ABC",
+      "actual": "A9B10C\n\n脚注\n9\tFIRST\n\n10\tSECOND"
+    },
+    {
+      "name": "writer-alpha-lower",
+      "sourceSha256": "153042839807b1edfa14f905a7416a2a4fefc9f10f62dd990b0257a2079a5039",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17\\super endnote reference;}\n{\\*\\cs18\\snext18 Endnote Characters;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnnalc\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart27\\ftnrstcont\\ftnnalc\\fet\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nA}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab FIRST}\n}}\n}{\nB}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab SECOND}\n}}\n}{\nC}\n\\par }",
+      "expected": "AaaBbbC\n\n脚注\naa\tFIRST\n\nbb\tSECOND",
+      "baseline": "ABC",
+      "actual": "AaaBbbC\n\n脚注\naa\tFIRST\n\nbb\tSECOND"
+    },
+    {
+      "name": "writer-alpha-upper",
+      "sourceSha256": "256de5dba58aed00130f0f40cdac7d860964ed5fa4560d98809b33e1d94fa631",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17\\super endnote reference;}\n{\\*\\cs18\\snext18 Endnote Characters;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnnauc\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart26\\ftnrstcont\\ftnnauc\\fet\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nA}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab FIRST}\n}}\n}{\nB}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab SECOND}\n}}\n}{\nC}\n\\par }",
+      "expected": "AZBAAC\n\n脚注\nZ\tFIRST\n\nAA\tSECOND",
+      "baseline": "ABC",
+      "actual": "AZBAAC\n\n脚注\nZ\tFIRST\n\nAA\tSECOND"
+    },
+    {
+      "name": "writer-roman-lower",
+      "sourceSha256": "78dcb24f34e171bf11f5b3dd55f3b8a1c0db7611d4c0eb119e83ee92eb73e5b9",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17\\super endnote reference;}\n{\\*\\cs18\\snext18 Endnote Characters;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnnrlc\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart4\\ftnrstcont\\ftnnrlc\\fet\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nA}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab FIRST}\n}}\n}{\nB}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab SECOND}\n}}\n}{\nC}\n\\par }",
+      "expected": "AivBvC\n\n脚注\niv\tFIRST\n\nv\tSECOND",
+      "baseline": "ABC",
+      "actual": "AivBvC\n\n脚注\niv\tFIRST\n\nv\tSECOND"
+    },
+    {
+      "name": "writer-roman-upper",
+      "sourceSha256": "1f1206f0f4ca3e76c0da95db1559a7744facb79c96592ced000d4d5a6b99adcd",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17\\super endnote reference;}\n{\\*\\cs18\\snext18 Endnote Characters;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnnruc\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart9\\ftnrstcont\\ftnnruc\\fet\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nA}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab FIRST}\n}}\n}{\nB}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab SECOND}\n}}\n}{\nC}\n\\par }",
+      "expected": "AIXBXC\n\n脚注\nIX\tFIRST\n\nX\tSECOND",
+      "baseline": "ABC",
+      "actual": "AIXBXC\n\n脚注\nIX\tFIRST\n\nX\tSECOND"
+    },
+    {
+      "name": "writer-chicago",
+      "sourceSha256": "b73c13f782d3f7a516b21b9abdfaaaed44984b04c8d4368d1af739f0f84d240c",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17\\super endnote reference;}\n{\\*\\cs18\\snext18 Endnote Characters;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnnchi\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart7\\ftnrstcont\\ftnnchi\\fet\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nA}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab FIRST}\n}}\n}{\nB}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab SECOND}\n}}\n}{\nC}\n\\par }",
+      "expected": "A‡‡B§§C\n\n脚注\n‡‡\tFIRST\n\n§§\tSECOND",
+      "baseline": "ABC",
+      "actual": "A‡‡B§§C\n\n脚注\n‡‡\tFIRST\n\n§§\tSECOND"
+    },
+    {
+      "name": "writer-circle",
+      "sourceSha256": "d82813394228770aca60fa01874f41c4c7be0bd0a66cea1dcac229ecfbc72f82",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17\\super endnote reference;}\n{\\*\\cs18\\snext18 Endnote Characters;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnncnum\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart19\\ftnrstcont\\ftnncnum\\fet\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nA}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab FIRST}\n}}\n}{\nB}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab SECOND}\n}}\n}{\nC}\n\\par }",
+      "expected": "A⑲B⑳C\n\n脚注\n⑲\tFIRST\n\n⑳\tSECOND",
+      "baseline": "ABC",
+      "actual": "A⑲B⑳C\n\n脚注\n⑲\tFIRST\n\n⑳\tSECOND"
+    },
+    {
+      "name": "writer-wide",
+      "sourceSha256": "6921680315c8c885f11157b98c6a6bdeaa2ad87e379c41f25ccb5132605bebaa",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17\\super endnote reference;}\n{\\*\\cs18\\snext18 Endnote Characters;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnndbar\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart12\\ftnrstcont\\ftnndbar\\fet\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nA}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab FIRST}\n}}\n}{\nB}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab SECOND}\n}}\n}{\nC}\n\\par }",
+      "expected": "A１２B１３C\n\n脚注\n１２\tFIRST\n\n１３\tSECOND",
+      "baseline": "ABC",
+      "actual": "A１２B１３C\n\n脚注\n１２\tFIRST\n\n１３\tSECOND"
+    },
+    {
+      "name": "writer-section-roman",
+      "sourceSha256": "e6f4062722a139ec7cd53e96a7f80006a588bf4a9b2bcac213507cdceb5ab945",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17\\super endnote reference;}\n{\\*\\cs18\\snext18 Endnote Characters;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnnruc\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart4\\ftnrstcont\\ftnnruc\\fet\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nA}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab FIRST}\n}}\n}{\nB}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab SECOND}\n}}\n}{\nC}\n\\par }",
+      "expected": "AIVBVC\n\n脚注\nIV\tFIRST\n\nV\tSECOND",
+      "baseline": "ABC",
+      "actual": "AIVBVC\n\n脚注\nIV\tFIRST\n\nV\tSECOND"
+    },
+    {
+      "name": "writer-export",
+      "sourceSha256": "05e05656db39f15e4e6be9495021b12b63c44c2ebb9baa1be3d998cb7f70b852",
+      "source": "{\\rtf1\\ansi\\deff3\\adeflang1025\n{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}{\\f2\\fswiss\\fprq2\\fcharset0 Arial;}{\\f3\\froman\\fprq2\\fcharset0 Liberation Serif{\\*\\falt Times New Roman};}{\\f4\\fswiss\\fprq2\\fcharset0 Liberation Sans{\\*\\falt Arial};}{\\f5\\fnil\\fprq2\\fcharset0 Linux Libertine G;}{\\f6\\fnil\\fprq2\\fcharset0 Noto Sans;}{\\f7\\fswiss\\fprq0\\fcharset128 Noto Sans;}}\n{\\colortbl;\\red0\\green0\\blue0;\\red0\\green0\\blue255;\\red0\\green255\\blue255;\\red0\\green255\\blue0;\\red255\\green0\\blue255;\\red255\\green0\\blue0;\\red255\\green255\\blue0;\\red255\\green255\\blue255;\\red0\\green0\\blue128;\\red0\\green128\\blue128;\\red0\\green128\\blue0;\\red128\\green0\\blue128;\\red128\\green0\\blue0;\\red128\\green128\\blue0;\\red128\\green128\\blue128;\\red192\\green192\\blue192;}\n{\\stylesheet{\\s0\\snext0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033 Normal;}\n{\\*\\cs15\\snext15 Footnote Characters;}\n{\\*\\cs16\\snext16\\super footnote reference;}\n{\\*\\cs17\\snext17 Endnote Characters;}\n{\\*\\cs18\\snext18\\super endnote reference;}\n{\\s19\\sbasedon0\\snext20\\sb240\\sa120\\keepn\\rtlch\\af6\\afs28\\ltrch\\hich\\af4\\afs28\\dbch\\af5\\loch\\f4\\fs28 Heading;}\n{\\s20\\sbasedon0\\snext20\\sl276\\slmult1\\sb0\\sa140 Body Text;}\n{\\s21\\sbasedon20\\snext21\\rtlch\\af7\\ltrch List;}\n{\\s22\\sbasedon0\\snext22\\sb120\\sa120\\noline\\rtlch\\af7\\afs24\\ai\\ltrch\\fs24\\i caption;}\n{\\s23\\sbasedon0\\snext23\\noline\\rtlch\\af7\\ltrch Index;}\n{\\s24\\sbasedon0\\snext24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 footnote text;}\n{\\s25\\sbasedon0\\snext25\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20 endnote text;}\n}{\\*\\listtable{\\list\\listtemplateid1\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\n{\\listlevel\\levelnfc255\\leveljc0\\levelstartat1\\levelfollow2{\\leveltext \\'00;}{\\levelnumbers;}\\fi0\\li0}\\listid1}\n}{\\listoverridetable{\\listoverride\\listid1\\listoverridecount0\\ls1}}{\\*\\generator LibreOfficeDev/26.8.0.0.alpha0$MacOSX_AARCH64 LibreOffice_project/2c87e51eeaa2b413ff4ae097b2705eea1995d8e5}{\\info{\\creatim\\yr0\\mo0\\dy0\\hr0\\min0}{\\revtim\\yr0\\mo0\\dy0\\hr0\\min0}{\\printim\\yr0\\mo0\\dy0\\hr0\\min0}}{\\*\\userprops}\\deftab709\n\\hyphauto1\\viewscale100\\formshade\\nobrkwrptbl\\paperh16838\\paperw11906\\margl1134\\margr1134\\margt1134\\margb1134\\sectd\\sbknone\\sftnnar\\saftnnrlc\\sectunlocked1\\pgwsxn11906\\pghsxn16838\\marglsxn1134\\margrsxn1134\\margtsxn1134\\margbsxn1134\\ftnbj\\ftnstart1\\ftnrstcont\\ftnnar\\fet2\\aftnrstcont\\aftnstart1\\aftnnrlc\n{\\*\\ftnsep\\chftnsep}\\pgndec\\fi-340\\li340\\lin340\\noline\\ltrpar\\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nBody A}{{\\super \\chftn{\\*\\footnote \\chftn\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab First footnote.}\n\\par \\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\nSecond note paragraph.}\n}}\n}{\n B.}\n\\par \\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nBody C}{{\\super \\chftn{\\*\\footnote\\ftnalt \\chftn\\pard\\plain \\s25\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab Separate endnote.}\n}}\n}{\n D.}\n\\par \\fi-340\\li340\\lin340\\noline\\ltrpar\\pard\\plain \\s0\\nowidctlpar\\hyphpar0\\ltrpar\\kerning1\\cf0\\rtlch\\af6\\afs24\\alang1081\\ltrch\\hich\\af3\\afs24\\alang1033\\dbch\\af5\\langfe2052\\loch\\f3\\fs24\\lang1033\\ltrpar{\nBody E}{{\\super *{\\*\\footnote *\\pard\\plain \\s24\\fi-340\\li340\\lin340\\noline\\rtlch\\afs20\\ltrch\\fs20{\n\\tab Custom marked note.}\n}}\n}{\n F.}\n\\par }",
+      "expected": "Body A1 B.\nBody Ci D.\nBody E* F.\n\n脚注\n1\tFirst footnote.\nSecond note paragraph.\n\n*\tCustom marked note.\n\n尾注\ni\tSeparate endnote.",
+      "baseline": "Body A B.\nBody C D.\nBody E* F.",
+      "actual": "Body A1 B.\nBody Ci D.\nBody E* F.\n\n脚注\n1\tFirst footnote.\nSecond note paragraph.\n\n*\tCustom marked note.\n\n尾注\ni\tSeparate endnote."
+    }
+  ],
+  "nativeReference": "tests/fixtures/rtf-notes-reference.json",
+  "hiddenExploration": {
+    "stage": "pre-fix candidate observations; final hidden scope/count covered by hidden-enclosing-note plus regression tests",
+    "cases": [
+      {
+        "name": "hiddenRef",
+        "source": "{\\rtf1\\ansi A{\\v\\chftn}{\\footnote\\pard\\plain\\chftn NOTE}B}",
+        "actual": "A1B\n\n脚注\n1NOTE",
+        "writerPages": [
+          "A1B\n1NOTE"
+        ]
+      },
+      {
+        "name": "hiddenParent",
+        "source": "{\\rtf1\\ansi A{\\v\\chftn{\\footnote\\pard\\plain\\chftn NOTE}}B}",
+        "actual": "A1B\n\n脚注\n1NOTE",
+        "writerPages": [
+          "AB"
+        ]
+      },
+      {
+        "name": "hiddenNote",
+        "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\v\\chftn NOTE}B}",
+        "actual": "A1B\n\n脚注\n1 ",
+        "writerPages": [
+          "A1B\n1"
+        ]
+      },
+      {
+        "name": "hiddenChild",
+        "source": "{\\rtf1\\ansi A\\chftn{\\footnote\\v\\chftn HIDDEN{\\v0 VISIBLE}}B}",
+        "actual": "A1B\n\n脚注\n1 VISIBLE",
+        "writerPages": [
+          "A1B\n1VISIBLE"
+        ]
+      },
+      {
+        "name": "hiddenCustom",
+        "source": "{\\rtf1\\ansi A{\\v *}{\\footnote * NOTE}B}",
+        "actual": "AB\n\n脚注\nA * NOTE",
+        "writerPages": [
+          "A1B\n1* NOTE"
+        ]
+      }
+    ]
+  },
+  "oracleReview": [
+    "Writer complete input confirmed repeated letters aa,bb and four-symbol Chicago sequence; initial implementation assumptions corrected",
+    "Minimal Writer numbering import, Unicode alternatives, Chinese PDF mapping and numbering-style differences retained; expected source contracts not replaced",
+    "First anchor browser check used srcdoc, whose relative fragment resolves against the parent URL. Verifier now serves each actual render-tree view at its own URL and waits for navigation; exact targets unchanged"
+  ],
+  "limits": [
+    "Original rich page layout is not reproduced; per-page restart emits a visible continuity notice",
+    "Unsupported or excessively long numbering labels use explicit reader-order labels and a visible notice",
+    "No local DevTools or physical-device validation claimed"
+  ]
+}

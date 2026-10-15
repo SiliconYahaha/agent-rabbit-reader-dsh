@@ -1,0 +1,13 @@
+.formats-page { padding: 36rpx 36rpx 64rpx; color: var(--reader-ink); }
+.formats-heading { font-size: 38rpx; font-weight: 800; line-height: 1.4; }
+.formats-note { margin: 14rpx 0 24rpx; color: var(--reader-muted); font-size: 24rpx; line-height: 1.6; }
+.format-info-row { display: flex; align-items: flex-start; gap: 18rpx; padding: 20rpx; margin-bottom: 14rpx; border: 2rpx solid rgba(23, 23, 21, .27); border-radius: 20rpx; background: var(--reader-surface); }
+.format-info-icon { display: flex; flex: 0 0 62rpx; width: 62rpx; height: 62rpx; align-items: center; justify-content: center; border-radius: 16rpx; background: #e5efc5; color: var(--reader-ink); font-size: 28rpx; font-weight: 800; }
+.tone-design { background: #ffe3d7; }
+.tone-archive { background: #e6dac6; }
+.tone-text { background: #e4e9d9; }
+.tone-media { background: #dce6e8; }
+.format-info-copy { flex: 1; min-width: 0; }
+.format-extensions { font-size: 26rpx; font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; }
+.format-info-title { margin-top: 4rpx; font-size: 24rpx; font-weight: 650; }
+.format-usage { margin-top: 6rpx; color: var(--reader-muted); font-size: 22rpx; line-height: 1.5; }

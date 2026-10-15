@@ -1,0 +1,38 @@
+[
+  {
+    "name": "clip-path-content-clip-004.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-content-clip-004.svg",
+    "sha256": "646c0042f18ab4eb8259651ef74e15a2ee8ba5582359ac0e9f92e04470c2cc45",
+    "reference": "clip-path-content-clip-004-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-content-clip-004-ref.svg",
+    "referenceSha256": "56cba3ed585cdb555c6831a8abb6f9342b3beac77b577c16ce9c64a1eaca6967",
+    "license": "BSD-3-Clause"
+  },
+  {
+    "name": "clip-path-objectboundingbox-001.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-objectboundingbox-001.svg",
+    "sha256": "f2de89c9d7c99442bc63f35512fada17ee76533e853cb09affb3e9dff6cb413e",
+    "reference": "clip-path-square-002-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-002-ref.svg",
+    "referenceSha256": "d65c04b638f46e201059a6fcdbd37b9fbe8f1909047a8752fac6639df2fe3b54",
+    "license": "BSD-3-Clause"
+  },
+  {
+    "name": "clip-path-objectboundingbox-002.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-objectboundingbox-002.svg",
+    "sha256": "5eafdb3bc61cf292f0e073eb67b5aa9338ba780f2c0656bd751991d753ff75ea",
+    "reference": "clip-path-square-002-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-square-002-ref.svg",
+    "referenceSha256": "d65c04b638f46e201059a6fcdbd37b9fbe8f1909047a8752fac6639df2fe3b54",
+    "license": "BSD-3-Clause"
+  },
+  {
+    "name": "clip-path-objectboundingbox-003.svg",
+    "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/clip-path-objectboundingbox-003.svg",
+    "sha256": "5423f75b4ca08b8bcf58ffb8d683db78aecf971a427e776a8892c05bc24c9780",
+    "reference": "clip-path-circle-001-ref.svg",
+    "referenceSource": "https://raw.githubusercontent.com/web-platform-tests/wpt/d317428a65e0312e0a199d5db69591e252431dfe/css/css-masking/clip-path-svg-content/reference/clip-path-circle-001-ref.svg",
+    "referenceSha256": "edff87c34425134240b387423f7266e7134b2bfaef30a9b619ecb67a4bf124e4",
+    "license": "BSD-3-Clause"
+  }
+]

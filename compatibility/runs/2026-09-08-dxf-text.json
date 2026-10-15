@@ -1,0 +1,2212 @@
+{
+  "schemaVersion": 1,
+  "testedAt": "2026-09-08T06:48:00.434Z",
+  "targetVersion": "1.4.133",
+  "status": "development-uploaded",
+  "baseline": {
+    "evidence": "runs/2026-09-08-next-dxf-text.json",
+    "originalDrawings": 12,
+    "labels": 32,
+    "wrongLabels": 24,
+    "clipping": {
+      "version": "1.4.132",
+      "rows": [
+        {
+          "name": "text-newline",
+          "sourceSha256": "3023c2c774e9cc1120ee66e4aa084e3ddf21d924b997183e0e3c112cc655e64b",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "A\\U+000A0\\U+000ALINE\\U+000A10\\U+000A999",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 70.02899932861328,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "text-markup",
+          "sourceSha256": "85aaa8acfb7ecd2c6041601a14a1f278c07d991c3d0a9575b9b498ae39f5f036",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "\\U+003Cscript\\U+003E & tail",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 42.04200744628906,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "text-nul",
+          "sourceSha256": "ba871a4c9333c3c7c881b0bb04fcce517a9c5c2c3ab22de399081649c71ca4a1",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "AB\\U+0000CD",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 20.961000442504883,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "text-pair",
+          "sourceSha256": "1fcf7f3b09d89f7b1c295bec4f22fffa5e8e50a748a01908d505d98546ef5249",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "\\U+D83D\\U+DE80",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 26.379005432128906,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "text-unpaired",
+          "sourceSha256": "c90ce61c4e2b8c209fd9c0aa7e91df98dd4ad829d3d34632c74799961f3a8c6b",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "\\U+D83D",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 13.29300594329834,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "text-double-slash",
+          "sourceSha256": "265052643bbb273344e9bef4d467c1df936435735a499cd340f40a1dc112ed66",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "literal \\\\U+0041",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 22.239011764526367,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "mtext-double-slash",
+          "sourceSha256": "22b5bf662cf3758bfce9ef5e0f3f24396584d3adf95226421b6fac4744619cec",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "literal \\\\U+0041",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 22.239011764526367,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "mtext-triple-slash",
+          "sourceSha256": "b8fcbbd5dbefd29a3fd576e56e5478ad74c7f92005f0c0833e99d16babfe2657",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "literal \\\\\\U+0041",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 23.739011764526367,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "mtext-escaped-braces",
+          "sourceSha256": "0ec70cf645be3e99fcefb2ba36a64535dc238056362fa736232165193af48599",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "\\{ABC\\}",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 11.184001922607422,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "mtext-format-unicode",
+          "sourceSha256": "fa540e70e447f7e8d71b30284c4edc4947656ec6e873186b3edd5485bf0d0fa6",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "{\\C1;\\U+4E2D\\U+6587} tail",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 38.475006103515625,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "mtext-chunk-cif",
+          "sourceSha256": "06388c5e917db34efb1ec1e670557edcdef7d92c452f3a9abe58bf0dace39722",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\U+4E2D tail",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 393.9420166015625,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        },
+        {
+          "name": "mtext-chunk-unicode",
+          "sourceSha256": "a634f26a931b0a512ea221c06d5d64e62305d81e43b5674b8cab9f5784282d17",
+          "viewBox": {
+            "x": -0.06000000238418579,
+            "y": -0.06000000238418579,
+            "width": 1,
+            "height": 1
+          },
+          "labels": [
+            {
+              "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d\u6587 tail",
+              "x": 0,
+              "y": -3.180379867553711,
+              "width": 386.85601806640625,
+              "height": 4.20015811920166,
+              "fits": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "views": 12,
+        "clipped": 12
+      }
+    }
+  },
+  "rootCauses": [
+    "Legacy DXF bytes passed through unchecked UTF8 decoding; invalid continuation consumption corrupted both text and physical line structure.",
+    "CIF Unicode string values were never decoded, and MTEXT logical chunks need assembly before one decoding pass.",
+    "Preview extents included text insertion points, without glyph bounds; minimum font size tied to the expanded extent would make long text grow again."
+  ],
+  "fix": [
+    "Read header version/codepage with bounded ASCII values; use strict supported decoders, modernUTF8 and declared legacy defaults.",
+    "Separate complete physical group pairs, normalize numeric group codes and end atEOF before interpreting Unicode values.",
+    "Defer MTEXT text chunks, join and decode once; block escaped newline/markup structure injection, unsupported Unicode controls and incomplete surrogate pairs.",
+    "Freeze display sizes from geometry before adding conservative fallback-font bounds, without replacing text or using textLength distortion."
+  ],
+  "browser": {
+    "schemaVersion": 1,
+    "testedAt": "2026-09-08T06:42:38.599Z",
+    "node": "v24.16.0",
+    "chrome": "152.0.7977.76",
+    "rows": [
+      {
+        "name": "R12-cp1252",
+        "sourceSha256": "9660b2c3ee4fb3a615e970697c09659a2e72bcfec1dd38cec4cd06c296073e8a",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "Caf\u00e9 \u00d8resund",
+          "LABEL \u4e2d\u6587"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6.39 -29.39 91.28 34.28\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-6.39\" y=\"-29.39\" width=\"91.28\" height=\"34.28\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1826\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">Caf\u00e9 \u00d8resund</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 34.279998779296875
+            },
+            "texts": [
+              "Caf\u00e9 \u00d8resund",
+              "LABEL \u4e2d\u6587"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.17296600341797,
+                "width": 19.335264205932617,
+                "height": 4.149263858795166,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.172966003417969,
+                "width": 16.44069480895996,
+                "height": 4.149263858795166,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 113,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 34.279998779296875
+            },
+            "texts": [
+              "Caf\u00e9 \u00d8resund",
+              "LABEL \u4e2d\u6587"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.177509307861328,
+                "width": 19.334728240966797,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.177508354187012,
+                "width": 16.439315795898438,
+                "height": 4.188532829284668,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 113,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R12-gbk",
+        "sourceSha256": "eebed7d6ba07d6eeb7d9795db3eb99a22e897daa3a4d57357b000fb7e9e9bcfd",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\u4e2d\u6587\u56fe\u7eb8",
+          "LABEL \u4e2d\u6587"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6.39 -29.39 91.28 34.28\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-6.39\" y=\"-29.39\" width=\"91.28\" height=\"34.28\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1826\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u4e2d\u6587\u56fe\u7eb8</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 34.279998779296875
+            },
+            "texts": [
+              "\u4e2d\u6587\u56fe\u7eb8",
+              "LABEL \u4e2d\u6587"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.17296600341797,
+                "width": 12.001593589782715,
+                "height": 4.149263858795166,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.172966003417969,
+                "width": 16.44069480895996,
+                "height": 4.149263858795166,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 113,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 34.279998779296875
+            },
+            "texts": [
+              "\u4e2d\u6587\u56fe\u7eb8",
+              "LABEL \u4e2d\u6587"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.177509307861328,
+                "width": 12.000282287597656,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.177508354187012,
+                "width": 16.439315795898438,
+                "height": 4.188532829284668,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 113,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R12-cp932",
+        "sourceSha256": "ad8a3f3412443eb6adbbc07f637e32a1334ef7eac6780c6f7cd2a12f08b66271",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\u65e5\u672c\u8a9e\u8a2d\u8a08",
+          "LABEL \u4e2d\u6587"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6.39 -29.39 91.28 34.28\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-6.39\" y=\"-29.39\" width=\"91.28\" height=\"34.28\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1826\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u65e5\u672c\u8a9e\u8a2d\u8a08</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 34.279998779296875
+            },
+            "texts": [
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08",
+              "LABEL \u4e2d\u6587"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.17296600341797,
+                "width": 14.999131202697754,
+                "height": 4.149263858795166,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.172966003417969,
+                "width": 16.44069480895996,
+                "height": 4.149263858795166,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 113,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 34.279998779296875
+            },
+            "texts": [
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08",
+              "LABEL \u4e2d\u6587"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.177509307861328,
+                "width": 14.999506950378418,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.177508354187012,
+                "width": 16.439315795898438,
+                "height": 4.188532829284668,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 113,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R12-cp1251",
+        "sourceSha256": "5df070bd3952ad1d338c43ff69401a6e0c435b7406b7b1b19657996d4d4e1d03",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442",
+          "LABEL \u4e2d\u6587"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6.39 -29.39 91.28 34.28\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-6.39\" y=\"-29.39\" width=\"91.28\" height=\"34.28\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1826\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 34.279998779296875
+            },
+            "texts": [
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442",
+              "LABEL \u4e2d\u6587"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.17296600341797,
+                "width": 21.287858963012695,
+                "height": 4.149263858795166,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.172966003417969,
+                "width": 16.44069480895996,
+                "height": 4.149263858795166,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 113,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 34.279998779296875
+            },
+            "texts": [
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442",
+              "LABEL \u4e2d\u6587"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.177509307861328,
+                "width": 21.287948608398438,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.177508354187012,
+                "width": 16.439315795898438,
+                "height": 4.188532829284668,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 113,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R2000-cp1252",
+        "sourceSha256": "b4c5d9b534d17d4bc71e776b0ab805f2f0b6af4ab79cb6cf5cd3774851e1cdc8",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "Caf\u00e9 \u00d8resund",
+          "LABEL \u4e2d\u6587",
+          "Caf\u00e9 \u00d8resund Second line"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-8.07 -31.07 122.64 49.14\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-8.07\" y=\"-31.07\" width=\"122.64\" height=\"49.14\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.2453\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">Caf\u00e9 \u00d8resund</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text><text x=\"0\" y=\"10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">Caf\u00e9 \u00d8resund Second line</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -8.069999694824219,
+              "y": -31.06999969482422,
+              "width": 122.63999938964844,
+              "height": 49.13999938964844
+            },
+            "texts": [
+              "Caf\u00e9 \u00d8resund",
+              "LABEL \u4e2d\u6587",
+              "Caf\u00e9 \u00d8resund Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.279417037963867,
+                "width": 19.322948455810547,
+                "height": 4.263243675231934,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.279417991638184,
+                "width": 16.42783546447754,
+                "height": 4.263243675231934,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.720581531524658,
+                "width": 36.51427459716797,
+                "height": 4.263243198394775,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 120,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -8.069999694824219,
+              "y": -31.06999969482422,
+              "width": 122.63999938964844,
+              "height": 49.13999938964844
+            },
+            "texts": [
+              "Caf\u00e9 \u00d8resund",
+              "LABEL \u4e2d\u6587",
+              "Caf\u00e9 \u00d8resund Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.201953887939453,
+                "width": 19.329978942871094,
+                "height": 4.269272327423096,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.201953887939453,
+                "width": 16.435789108276367,
+                "height": 4.269272327423096,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.798045635223389,
+                "width": 36.53290557861328,
+                "height": 4.269272327423096,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 120,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R2000-gbk",
+        "sourceSha256": "b302e876760175e98b75fc3054cc8cf426a2d4be45eb1cc17874a8cff443f20b",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\u4e2d\u6587\u56fe\u7eb8",
+          "LABEL \u4e2d\u6587",
+          "\u4e2d\u6587\u56fe\u7eb8 Second line"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6.39 -29.39 91.28 45.78\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-6.39\" y=\"-29.39\" width=\"91.28\" height=\"45.78\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1826\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u4e2d\u6587\u56fe\u7eb8</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text><text x=\"0\" y=\"10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u4e2d\u6587\u56fe\u7eb8 Second line</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 45.779998779296875
+            },
+            "texts": [
+              "\u4e2d\u6587\u56fe\u7eb8",
+              "LABEL \u4e2d\u6587",
+              "\u4e2d\u6587\u56fe\u7eb8 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.173099517822266,
+                "width": 12.002095222473145,
+                "height": 4.149437427520752,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.173099517822266,
+                "width": 16.441383361816406,
+                "height": 4.149437427520752,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.826900959014893,
+                "width": 29.206241607666016,
+                "height": 4.149437427520752,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 299,
+              "height": 150,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 45.779998779296875
+            },
+            "texts": [
+              "\u4e2d\u6587\u56fe\u7eb8",
+              "LABEL \u4e2d\u6587",
+              "\u4e2d\u6587\u56fe\u7eb8 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.177509307861328,
+                "width": 12.000282287597656,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.177508354187012,
+                "width": 16.439315795898438,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.822493076324463,
+                "width": 29.206893920898438,
+                "height": 4.188532829284668,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 299,
+              "height": 150,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R2000-cp932",
+        "sourceSha256": "365fb66d0ceec4d4c026623ea0111e959dfe4c65a1c546bbc46242d5970d66b7",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\u65e5\u672c\u8a9e\u8a2d\u8a08",
+          "LABEL \u4e2d\u6587",
+          "\u65e5\u672c\u8a9e\u8a2d\u8a08 Second line"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6.39 -29.39 91.28 45.78\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-6.39\" y=\"-29.39\" width=\"91.28\" height=\"45.78\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1826\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u65e5\u672c\u8a9e\u8a2d\u8a08</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text><text x=\"0\" y=\"10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u65e5\u672c\u8a9e\u8a2d\u8a08 Second line</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 45.779998779296875
+            },
+            "texts": [
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08",
+              "LABEL \u4e2d\u6587",
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.173099517822266,
+                "width": 14.99975872039795,
+                "height": 4.149437427520752,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.173099517822266,
+                "width": 16.441383361816406,
+                "height": 4.149437427520752,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.826900959014893,
+                "width": 32.20771789550781,
+                "height": 4.149437427520752,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 299,
+              "height": 150,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 45.779998779296875
+            },
+            "texts": [
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08",
+              "LABEL \u4e2d\u6587",
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.177509307861328,
+                "width": 14.999506950378418,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.177508354187012,
+                "width": 16.439315795898438,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.822493076324463,
+                "width": 32.207244873046875,
+                "height": 4.188532829284668,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 299,
+              "height": 150,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R2000-cp1251",
+        "sourceSha256": "2b6f11d5708280845cbd31e213501567e768a2d23c2bacbca8f9be92b3cb6470",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442",
+          "LABEL \u4e2d\u6587",
+          "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 Second line"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-8.34 -31.34 127.68 49.68\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-8.34\" y=\"-31.34\" width=\"127.68\" height=\"49.68\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.2554\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text><text x=\"0\" y=\"10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 Second line</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -8.34000015258789,
+              "y": -31.34000015258789,
+              "width": 127.68000030517578,
+              "height": 49.68000030517578
+            },
+            "texts": [
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442",
+              "LABEL \u4e2d\u6587",
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.072771072387695,
+                "width": 21.27466583251953,
+                "height": 4.097026824951172,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.072771072387695,
+                "width": 16.4307861328125,
+                "height": 4.097026824951172,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.927229881286621,
+                "width": 38.46831130981445,
+                "height": 4.097026824951172,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 117,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -8.34000015258789,
+              "y": -31.34000015258789,
+              "width": 127.68000030517578,
+              "height": 49.68000030517578
+            },
+            "texts": [
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442",
+              "LABEL \u4e2d\u6587",
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.131471633911133,
+                "width": 21.282630920410156,
+                "height": 4.1416215896606445,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.131470680236816,
+                "width": 16.435482025146484,
+                "height": 4.1416215896606445,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.868530750274658,
+                "width": 38.48519515991211,
+                "height": 4.1416215896606445,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 117,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R2007-cp1252",
+        "sourceSha256": "8b04b1f7fb9c3ccb3e241fe820d6549e26fa9be6112d9fd666e9f4c3d955bb52",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "Caf\u00e9 \u00d8resund",
+          "LABEL \u4e2d\u6587",
+          "Caf\u00e9 \u00d8resund Second line"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-8.07 -31.07 122.64 49.14\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-8.07\" y=\"-31.07\" width=\"122.64\" height=\"49.14\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.2453\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">Caf\u00e9 \u00d8resund</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text><text x=\"0\" y=\"10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">Caf\u00e9 \u00d8resund Second line</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -8.069999694824219,
+              "y": -31.06999969482422,
+              "width": 122.63999938964844,
+              "height": 49.13999938964844
+            },
+            "texts": [
+              "Caf\u00e9 \u00d8resund",
+              "LABEL \u4e2d\u6587",
+              "Caf\u00e9 \u00d8resund Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.279417037963867,
+                "width": 19.322948455810547,
+                "height": 4.263243675231934,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.279417991638184,
+                "width": 16.42783546447754,
+                "height": 4.263243675231934,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.720581531524658,
+                "width": 36.51427459716797,
+                "height": 4.263243198394775,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 120,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -8.069999694824219,
+              "y": -31.06999969482422,
+              "width": 122.63999938964844,
+              "height": 49.13999938964844
+            },
+            "texts": [
+              "Caf\u00e9 \u00d8resund",
+              "LABEL \u4e2d\u6587",
+              "Caf\u00e9 \u00d8resund Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.201953887939453,
+                "width": 19.329978942871094,
+                "height": 4.269272327423096,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.201953887939453,
+                "width": 16.435789108276367,
+                "height": 4.269272327423096,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.798045635223389,
+                "width": 36.53290557861328,
+                "height": 4.269272327423096,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 120,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R2007-gbk",
+        "sourceSha256": "eaaf23263c7dfde789f8b75ab81fabae5a3881d607ba3bbe53e374a92b31f7b3",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\u4e2d\u6587\u56fe\u7eb8",
+          "LABEL \u4e2d\u6587",
+          "\u4e2d\u6587\u56fe\u7eb8 Second line"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6.39 -29.39 91.28 45.78\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-6.39\" y=\"-29.39\" width=\"91.28\" height=\"45.78\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1826\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u4e2d\u6587\u56fe\u7eb8</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text><text x=\"0\" y=\"10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u4e2d\u6587\u56fe\u7eb8 Second line</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 45.779998779296875
+            },
+            "texts": [
+              "\u4e2d\u6587\u56fe\u7eb8",
+              "LABEL \u4e2d\u6587",
+              "\u4e2d\u6587\u56fe\u7eb8 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.173099517822266,
+                "width": 12.002095222473145,
+                "height": 4.149437427520752,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.173099517822266,
+                "width": 16.441383361816406,
+                "height": 4.149437427520752,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.826900959014893,
+                "width": 29.206241607666016,
+                "height": 4.149437427520752,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 299,
+              "height": 150,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 45.779998779296875
+            },
+            "texts": [
+              "\u4e2d\u6587\u56fe\u7eb8",
+              "LABEL \u4e2d\u6587",
+              "\u4e2d\u6587\u56fe\u7eb8 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.177509307861328,
+                "width": 12.000282287597656,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.177508354187012,
+                "width": 16.439315795898438,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.822493076324463,
+                "width": 29.206893920898438,
+                "height": 4.188532829284668,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 299,
+              "height": 150,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R2007-cp932",
+        "sourceSha256": "a88ee082c95276c3f4dfe1b50a7881e25a4bbba39069d6b0d908b4edbd7ccfb7",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\u65e5\u672c\u8a9e\u8a2d\u8a08",
+          "LABEL \u4e2d\u6587",
+          "\u65e5\u672c\u8a9e\u8a2d\u8a08 Second line"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6.39 -29.39 91.28 45.78\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-6.39\" y=\"-29.39\" width=\"91.28\" height=\"45.78\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1826\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u65e5\u672c\u8a9e\u8a2d\u8a08</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text><text x=\"0\" y=\"10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u65e5\u672c\u8a9e\u8a2d\u8a08 Second line</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 45.779998779296875
+            },
+            "texts": [
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08",
+              "LABEL \u4e2d\u6587",
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.173099517822266,
+                "width": 14.99975872039795,
+                "height": 4.149437427520752,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.173099517822266,
+                "width": 16.441383361816406,
+                "height": 4.149437427520752,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.826900959014893,
+                "width": 32.20771789550781,
+                "height": 4.149437427520752,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 299,
+              "height": 150,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -6.389999866485596,
+              "y": -29.389999389648438,
+              "width": 91.27999877929688,
+              "height": 45.779998779296875
+            },
+            "texts": [
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08",
+              "LABEL \u4e2d\u6587",
+              "\u65e5\u672c\u8a9e\u8a2d\u8a08 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.177509307861328,
+                "width": 14.999506950378418,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.177508354187012,
+                "width": 16.439315795898438,
+                "height": 4.188532829284668,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.822493076324463,
+                "width": 32.207244873046875,
+                "height": 4.188532829284668,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 299,
+              "height": 150,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "R2007-cp1251",
+        "sourceSha256": "0ab390ec9522343281521a700bbcf0ab6c812d11930b0a4b95b49c51dd9f7b36",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442",
+          "LABEL \u4e2d\u6587",
+          "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 Second line"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-8.34 -31.34 127.68 49.68\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-8.34\" y=\"-31.34\" width=\"127.68\" height=\"49.68\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.2554\" vector-effect=\"non-scaling-stroke\"><path d=\"M 0 0 L 80 0\" fill=\"none\"/><text x=\"0\" y=\"-20\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442</text><text x=\"0\" y=\"-10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">LABEL \u4e2d\u6587</text><text x=\"0\" y=\"10\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 Second line</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -8.34000015258789,
+              "y": -31.34000015258789,
+              "width": 127.68000030517578,
+              "height": 49.68000030517578
+            },
+            "texts": [
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442",
+              "LABEL \u4e2d\u6587",
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.072771072387695,
+                "width": 21.27466583251953,
+                "height": 4.097026824951172,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.072771072387695,
+                "width": 16.4307861328125,
+                "height": 4.097026824951172,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.927229881286621,
+                "width": 38.46831130981445,
+                "height": 4.097026824951172,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 117,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -8.34000015258789,
+              "y": -31.34000015258789,
+              "width": 127.68000030517578,
+              "height": 49.68000030517578
+            },
+            "texts": [
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442",
+              "LABEL \u4e2d\u6587",
+              "\u041f\u0440\u0438\u0432\u0435\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 Second line"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -23.131471633911133,
+                "width": 21.282630920410156,
+                "height": 4.1416215896606445,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": -13.131470680236816,
+                "width": 16.435482025146484,
+                "height": 4.1416215896606445,
+                "fits": true
+              },
+              {
+                "x": 0,
+                "y": 6.868530750274658,
+                "width": 38.48519515991211,
+                "height": 4.1416215896606445,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 117,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "text-newline",
+        "sourceSha256": "3023c2c774e9cc1120ee66e4aa084e3ddf21d924b997183e0e3c112cc655e64b",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "A\n0\nLINE\n10\n999"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-5.64 -8.64 77.28 14.28\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-5.64\" y=\"-8.64\" width=\"77.28\" height=\"14.28\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1546\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">A\n0\nLINE\n10\n999</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -5.639999866485596,
+              "y": -8.640000343322754,
+              "width": 77.27999877929688,
+              "height": 14.279999732971191
+            },
+            "texts": [
+              "A\n0\nLINE\n10\n999"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.1002421379089355,
+                "width": 22.706045150756836,
+                "height": 4.1336565017700195,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 55,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -5.639999866485596,
+              "y": -8.640000343322754,
+              "width": 77.27999877929688,
+              "height": 14.279999732971191
+            },
+            "texts": [
+              "A\n0\nLINE\n10\n999"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.1792798042297363,
+                "width": 22.709688186645508,
+                "height": 4.2186598777771,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 55,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "text-markup",
+        "sourceSha256": "85aaa8acfb7ecd2c6041601a14a1f278c07d991c3d0a9575b9b498ae39f5f036",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "<script> & tail"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-5.64 -8.64 77.28 14.28\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-5.64\" y=\"-8.64\" width=\"77.28\" height=\"14.28\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1546\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">&lt;script&gt; &amp; tail</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -5.639999866485596,
+              "y": -8.640000343322754,
+              "width": 77.27999877929688,
+              "height": 14.279999732971191
+            },
+            "texts": [
+              "<script> & tail"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.1002421379089355,
+                "width": 19.857696533203125,
+                "height": 4.1336565017700195,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 55,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -5.639999866485596,
+              "y": -8.640000343322754,
+              "width": 77.27999877929688,
+              "height": 14.279999732971191
+            },
+            "texts": [
+              "<script> & tail"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.1792798042297363,
+                "width": 19.8599910736084,
+                "height": 4.2186598777771,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 55,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "text-nul",
+        "sourceSha256": "ba871a4c9333c3c7c881b0bb04fcce517a9c5c2c3ab22de399081649c71ca4a1",
+        "error": "\u6587\u4ef6\u68c0\u67e5\u5931\u8d25\uff1aDXF \u6587\u5b57\u5305\u542b\u65e0\u6cd5\u663e\u793a\u7684\u63a7\u5236\u5b57\u7b26",
+        "hasContent": false,
+        "knownGap": false,
+        "expectedTexts": [
+          "AB\u0000CD"
+        ]
+      },
+      {
+        "name": "text-pair",
+        "sourceSha256": "1fcf7f3b09d89f7b1c295bec4f22fffa5e8e50a748a01908d505d98546ef5249",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "\ud83d\ude80"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-1.86 -4.86 6.72 6.72\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-1.86\" y=\"-4.86\" width=\"6.72\" height=\"6.72\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.05\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\ud83d\ude80</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -1.8600000143051147,
+              "y": -4.860000133514404,
+              "width": 6.71999979019165,
+              "height": 6.71999979019165
+            },
+            "texts": [
+              "\ud83d\ude80"
+            ],
+            "labels": [
+              {
+                "x": -0.017967915162444115,
+                "y": -3.180320978164673,
+                "width": 3.0365777015686035,
+                "height": 4.204492092132568,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 150,
+              "height": 150,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -1.8600000143051147,
+              "y": -4.860000133514404,
+              "width": 6.71999979019165,
+              "height": 6.71999979019165
+            },
+            "texts": [
+              "\ud83d\ude80"
+            ],
+            "labels": [
+              {
+                "x": -0.0468745231628418,
+                "y": -3.1792402267456055,
+                "width": 3.1405930519104004,
+                "height": 4.199999809265137,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 150,
+              "height": 150,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "text-unpaired",
+        "sourceSha256": "c90ce61c4e2b8c209fd9c0aa7e91df98dd4ad829d3d34632c74799961f3a8c6b",
+        "error": "\u6587\u4ef6\u68c0\u67e5\u5931\u8d25\uff1aDXF Unicode \u8f6c\u4e49\u4e0d\u662f\u5b8c\u6574\u5b57\u7b26",
+        "hasContent": false,
+        "knownGap": false,
+        "expectedTexts": [
+          "\ud83d"
+        ]
+      },
+      {
+        "name": "text-double-slash",
+        "sourceSha256": "265052643bbb273344e9bef4d467c1df936435735a499cd340f40a1dc112ed66",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "literal \\A"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4.29 -7.29 52.08 11.58\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-4.29\" y=\"-7.29\" width=\"52.08\" height=\"11.58\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1042\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">literal \\A</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -4.289999961853027,
+              "y": -7.289999961853027,
+              "width": 52.08000183105469,
+              "height": 11.579999923706055
+            },
+            "texts": [
+              "literal \\A"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.2029147148132324,
+                "width": 12.150187492370605,
+                "height": 4.177714824676514,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 67,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -4.289999961853027,
+              "y": -7.289999961853027,
+              "width": 52.08000183105469,
+              "height": 11.579999923706055
+            },
+            "texts": [
+              "literal \\A"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.172673463821411,
+                "width": 12.148609161376953,
+                "height": 4.202762126922607,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 67,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "mtext-double-slash",
+        "sourceSha256": "22b5bf662cf3758bfce9ef5e0f3f24396584d3adf95226421b6fac4744619cec",
+        "error": "",
+        "hasContent": true,
+        "knownGap": true,
+        "expectedTexts": [
+          "literal A"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4.29 -7.29 52.08 11.58\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-4.29\" y=\"-7.29\" width=\"52.08\" height=\"11.58\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1042\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">literal \\A</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -4.289999961853027,
+              "y": -7.289999961853027,
+              "width": 52.08000183105469,
+              "height": 11.579999923706055
+            },
+            "texts": [
+              "literal \\A"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.2029147148132324,
+                "width": 12.150187492370605,
+                "height": 4.177714824676514,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": false,
+            "raster": {
+              "width": 300,
+              "height": 67,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -4.289999961853027,
+              "y": -7.289999961853027,
+              "width": 52.08000183105469,
+              "height": 11.579999923706055
+            },
+            "texts": [
+              "literal \\A"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.172673463821411,
+                "width": 12.148609161376953,
+                "height": 4.202762126922607,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": false,
+            "raster": {
+              "width": 300,
+              "height": 67,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "mtext-triple-slash",
+        "sourceSha256": "b8fcbbd5dbefd29a3fd576e56e5478ad74c7f92005f0c0833e99d16babfe2657",
+        "error": "",
+        "hasContent": true,
+        "knownGap": true,
+        "expectedTexts": [
+          "literal \\A"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4.56 -7.56 57.12 12.12\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-4.56\" y=\"-7.56\" width=\"57.12\" height=\"12.12\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1142\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">literal \\\\A</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -4.559999942779541,
+              "y": -7.559999942779541,
+              "width": 57.119998931884766,
+              "height": 12.119999885559082
+            },
+            "texts": [
+              "literal \\\\A"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.2079427242279053,
+                "width": 13.64569091796875,
+                "height": 4.277256965637207,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": false,
+            "raster": {
+              "width": 300,
+              "height": 64,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -4.559999942779541,
+              "y": -7.559999942779541,
+              "width": 57.119998931884766,
+              "height": 12.119999885559082
+            },
+            "texts": [
+              "literal \\\\A"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.1634867191314697,
+                "width": 13.64959716796875,
+                "height": 4.20291805267334,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": false,
+            "raster": {
+              "width": 300,
+              "height": 64,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "mtext-escaped-braces",
+        "sourceSha256": "0ec70cf645be3e99fcefb2ba36a64535dc238056362fa736232165193af48599",
+        "error": "",
+        "hasContent": true,
+        "knownGap": true,
+        "expectedTexts": [
+          "{ABC}"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-3.48 -6.48 36.96 9.96\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-3.48\" y=\"-6.48\" width=\"36.96\" height=\"9.96\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.0739\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">\\{ABC\\}</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -3.4800000190734863,
+              "y": -6.480000019073486,
+              "width": 36.959999084472656,
+              "height": 9.960000038146973
+            },
+            "texts": [
+              "\\{ABC\\}"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.1626172065734863,
+                "width": 11.18343448638916,
+                "height": 4.150935173034668,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": false,
+            "raster": {
+              "width": 300,
+              "height": 81,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -3.4800000190734863,
+              "y": -6.480000019073486,
+              "width": 36.959999084472656,
+              "height": 9.960000038146973
+            },
+            "texts": [
+              "\\{ABC\\}"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.1873726844787598,
+                "width": 11.18413257598877,
+                "height": 4.210841178894043,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": false,
+            "raster": {
+              "width": 300,
+              "height": 81,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "mtext-format-unicode",
+        "sourceSha256": "fa540e70e447f7e8d71b30284c4edc4947656ec6e873186b3edd5485bf0d0fa6",
+        "error": "",
+        "hasContent": true,
+        "knownGap": true,
+        "expectedTexts": [
+          "\u4e2d\u6587\ntail"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-5.1 -8.1 67.2 13.2\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-5.1\" y=\"-8.1\" width=\"67.2\" height=\"13.2\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"0.1344\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">{\\C1;\u4e2d\u6587} tail</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -5.099999904632568,
+              "y": -8.100000381469727,
+              "width": 67.19999694824219,
+              "height": 13.199999809265137
+            },
+            "texts": [
+              "{\\C1;\u4e2d\u6587} tail"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.23476505279541,
+                "width": 18.889118194580078,
+                "height": 4.313019752502441,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": false,
+            "raster": {
+              "width": 300,
+              "height": 59,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -5.099999904632568,
+              "y": -8.100000381469727,
+              "width": 67.19999694824219,
+              "height": 13.199999809265137
+            },
+            "texts": [
+              "{\\C1;\u4e2d\u6587} tail"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.1899523735046387,
+                "width": 18.888837814331055,
+                "height": 4.200103759765625,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": false,
+            "raster": {
+              "width": 300,
+              "height": 59,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "mtext-chunk-cif",
+        "sourceSha256": "06388c5e917db34efb1ec1e670557edcdef7d92c452f3a9abe58bf0dace39722",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-69.63 -72.63 1271.76 142.26\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-69.63\" y=\"-72.63\" width=\"1271.76\" height=\"142.26\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"2.5435\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -69.62999725341797,
+              "y": -72.62999725341797,
+              "width": 1271.760009765625,
+              "height": 142.25999450683594
+            },
+            "texts": [
+              "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.4011380672454834,
+                "width": 383.0000305175781,
+                "height": 3.7213895320892334,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 34,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -69.62999725341797,
+              "y": -72.62999725341797,
+              "width": 1271.760009765625,
+              "height": 142.25999450683594
+            },
+            "texts": [
+              "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.0184550285339355,
+                "width": 383.6424865722656,
+                "height": 4.024606704711914,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 34,
+              "complete": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "mtext-chunk-unicode",
+        "sourceSha256": "a634f26a931b0a512ea221c06d5d64e62305d81e43b5674b8cab9f5784282d17",
+        "error": "",
+        "hasContent": true,
+        "knownGap": false,
+        "expectedTexts": [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d\u6587 tail"
+        ],
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-69.9 -72.9 1276.8 142.8\"><defs><marker id=\"dxf-arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 Z\" fill=\"#ff5b43\"/></marker></defs><rect x=\"-69.9\" y=\"-72.9\" width=\"1276.8\" height=\"142.8\" fill=\"#fffdf8\"/><g stroke=\"#171715\" stroke-width=\"2.5536\" vector-effect=\"non-scaling-stroke\"><text x=\"0\" y=\"0\" font-size=\"3\" fill=\"#171715\" stroke=\"none\">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d\u6587 tail</text></g></svg>",
+        "views": [
+          {
+            "viewport": 390,
+            "viewBox": {
+              "x": -69.9000015258789,
+              "y": -72.9000015258789,
+              "width": 1276.800048828125,
+              "height": 142.8000030517578
+            },
+            "texts": [
+              "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d\u6587 tail"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.4140467643737793,
+                "width": 383.01336669921875,
+                "height": 3.731860637664795,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 34,
+              "complete": true
+            }
+          },
+          {
+            "viewport": 1280,
+            "viewBox": {
+              "x": -69.9000015258789,
+              "y": -72.9000015258789,
+              "width": 1276.800048828125,
+              "height": 142.8000030517578
+            },
+            "texts": [
+              "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d\u6587 tail"
+            ],
+            "labels": [
+              {
+                "x": 0,
+                "y": -3.030604839324951,
+                "width": 385.59710693359375,
+                "height": 4.040806293487549,
+                "fits": true
+              }
+            ],
+            "scripts": 0,
+            "contentExact": true,
+            "raster": {
+              "width": 300,
+              "height": 34,
+              "complete": true
+            }
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "originalDrawings": 24,
+      "actualHostOpens": 24,
+      "rejected": 2,
+      "chromeViews": 44,
+      "certifiedContentViews": 36,
+      "knownGapViews": 8,
+      "glyphBoundsPass": true
+    },
+    "limits": [
+      "Node mocked file API, Chrome rendering of actual returned SVG and data-image decoding; not WeChat WXML or physical devices.",
+      "Conservative Unicode text bounds avoid clipping; no CAD font/rotation/anchor fidelity is implied.",
+      "Four MTEXT literal/format combinations remain uncertified. Native regular/slow/recover/explicit Unicode helper differ; raw comparisons are in original fixtures.",
+      "Text-only long labels fit the viewBox, but full-drawing fit can make long text small; no device zoom/readability claim."
+    ]
+  },
+  "validation": {
+    "relatedNodeTests": 143,
+    "relatedFailed": 0,
+    "focusedTests": 8,
+    "fullGate": "pass",
+    "production": "pass",
+    "fullNodeTests": 1233,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass"
+  },
+  "references": [
+    "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2553CF98-44F6-4828-82DD-FE3BC7448113.htm",
+    "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-5E5DB93B-F8D3-4433-ADF7-E92E250D2BAB.htm",
+    "https://ezdxf.readthedocs.io/en/stable/drawing/management.html",
+    "https://ezdxf.readthedocs.io/en/stable/low_level_tools/dxf_unicode_decoder.html",
+    "https://ezdxf.readthedocs.io/en/stable/dxfinternals/entities/mtext.html"
+  ],
+  "originals": [
+    "tests/fixtures/dxf-text/samples.json",
+    "tests/fixtures/dxf-text/combinations.json"
+  ],
+  "generators": [
+    "scripts/probe-dxf-text.py",
+    "scripts/probe-dxf-combinations.py"
+  ],
+  "audit": [
+    "The initial generator cp936 alias emitted ANSI1252 while encoding GBK bytes; corrected to gbk and asserted native original labels before certifying the12files. Faulty originals retained in previous exploration audit.",
+    "CIF helper, normal/slow plaintext and recover imports are distinct references. The12extra source fixtures retain every actual result and the native slow-parser error instead of one invented universal oracle.",
+    "Modern UTF8 surrogate pairs are Unicode characters; unsupported controls/unpaired surrogates are explicit errors rather than literal control notation.",
+    "Four existing MTEXT literal/inline-code gaps remain in8views;44images/bounds pass does not mean all44content views pass.",
+    "Text bounds use conservative font-space estimates; actual Chrome boxes verified for these files. This is not native CAD text geometry, original font face, rotated text or all Unicode mark sequence certification."
+  ],
+  "limits": [
+    "Binary DXF, unsupported high-byte codepages and MIF not newly supported.",
+    "MTEXT inline formatting, escaped literal markers and original line layout remain incomplete.",
+    "Text rotation/anchor/width-factor, OCS, layers, font metrics and device zoom readability remain unverified.",
+    "Node mocked file API and Chrome only. No WeChat WXML/iOS/Android result."
+  ]
+}

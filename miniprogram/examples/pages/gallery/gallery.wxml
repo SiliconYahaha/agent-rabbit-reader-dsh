@@ -1,0 +1,26 @@
+<view class="examples-page">
+  <view class="examples-heading">选一种文件，看看能打开什么</view>
+  <view class="examples-note">点卡片，就能打开一份真实示例。</view>
+  <view wx:if="{{error}}" class="example-error" role="alert">{{error}}</view>
+  <button wx:for="{{cards}}" wx:key="id" class="example-card" data-id="{{item.id}}" bindtap="openExample" disabled="{{!!opening}}" aria-label="{{item.format + '，' + item.usage + '，打开示例：' + item.title}}">
+    <view class="example-format tone-{{item.tone}}">
+      <text class="example-icon">{{item.icon}}</text>
+      <text class="example-extension">{{item.format}}</text>
+    </view>
+    <view class="example-info">
+      <view class="example-title">{{item.usage}}</view>
+      <view class="example-description">{{item.detail}}</view>
+      <view class="example-name">{{opening === item.id ? '准备中…' : '示例 · ' + item.title}}</view>
+    </view>
+    <image class="example-preview" src="{{item.preview}}" mode="aspectFill" aria-hidden="true" />
+  </button>
+  <navigator class="example-card more-formats-card" url="/examples/pages/formats/formats" aria-label="支持更多格式，查看完整清单">
+    <view class="example-format tone-more"><text class="example-icon">＋</text></view>
+    <view class="example-info">
+      <view class="example-title">支持更多格式</view>
+      <view class="example-description">查看完整格式清单与兼容说明</view>
+    </view>
+    <text class="example-arrow">›</text>
+  </navigator>
+  <view class="examples-footnote">本机打开 · 原文件不上传</view>
+</view>

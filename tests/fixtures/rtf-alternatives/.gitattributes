@@ -1,0 +1,2 @@
+# Preserve upstream CRLF, raw bytes and trailing NUL for hash-based regression.
+*.rtf binary

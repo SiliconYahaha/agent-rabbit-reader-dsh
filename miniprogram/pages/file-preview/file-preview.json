@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "文件预览",
+  "componentFramework": "glass-easel",
+  "glassEaselWebview": true,
+  "usingComponents": {
+    "design-preview": "/file-reader/engine/components/design-preview/design-preview"
+  },
+  "componentPlaceholder": {
+    "design-preview": "view"
+  }
+}

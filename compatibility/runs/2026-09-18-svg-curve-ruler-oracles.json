@@ -1,0 +1,2903 @@
+{
+  "schemaVersion": 1,
+  "id": "svg-curve-ruler-cross-engine",
+  "testedAt": "2026-09-18T15:50:15.107988+00:00",
+  "status": "investigation-retained-failures-no-product-change",
+  "productVersion": "1.4.139 unchanged",
+  "construction": {
+    "generator": "tests/helpers/svg-path-length.js",
+    "generatorSha256": "34886309fc68587bd16f5461a2c925b7cb4aafe71d6467b194954174b2bd31a7",
+    "casesPerEngine": 60,
+    "engines": 2,
+    "entry": "Actual reader file open and SVG component Canvas render, compared with same-engine original native SVG pixels.",
+    "capabilityProbe": "8 Canvas ellipse dash lengths with 3 hit-test positions each; diagnostic only, not a production fingerprint."
+  },
+  "sources": [
+    "https://www.w3.org/TR/SVG2/paths.html#PathLengthAttribute",
+    "https://raw.githubusercontent.com/google/skia/main/src/core/SkContourMeasure.cpp"
+  ],
+  "findings": [
+    "Chrome original-component failures remain 16/60: 13 curved cases and 3 malformed pathLength attributes. The rewritten numeric SVG is a separate reference and differs from 19 original Chrome images.",
+    "Firefox original-component failures are 11/60. All 3 malformed pathLength controls match the reader; their prior Chrome differences are browser interoperability cases, not dual-reference-certified defects.",
+    "Firefox circle/ellipse pathLength rendering differs strongly with the existing Skia-style rational-arc ruler. The same ruler improves Chrome. A blanket replacement is not justified.",
+    "Original-native SVG and rewritten numeric SVG must remain separate: getTotalLength does not reliably reproduce the internal paint ruler.",
+    "Firefox reports 180 for the collinear reversing cubic, while Chrome reports about 203.819458. Preserve independent analytical cusp evidence rather than treating either browser as an unconditional oracle."
+  ],
+  "engines": [
+    {
+      "engine": "chrome",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "summary": {
+        "cases": 60,
+        "componentExact": 44,
+        "nativePathExact": 44,
+        "fallbackExact": 44,
+        "rewrittenReferenceDifferences": 19
+      },
+      "rows": [
+        {
+          "name": "line-100",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "line-400",
+          "nativeLength": 200,
+          "nativeInk": 136224,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "path-100",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "path-400",
+          "nativeLength": 200,
+          "nativeInk": 136224,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "closed-100",
+          "nativeLength": 640,
+          "nativeInk": 437352,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "closed-400",
+          "nativeLength": 640,
+          "nativeInk": 436460,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "subpaths-100",
+          "nativeLength": 400,
+          "nativeInk": 220320,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "subpaths-400",
+          "nativeLength": 400,
+          "nativeInk": 213180,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "rect-100",
+          "nativeLength": 704,
+          "nativeInk": 481198,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "rect-400",
+          "nativeLength": 704,
+          "nativeInk": 479356,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "rounded-100",
+          "nativeLength": 668.4163818359375,
+          "nativeInk": 457004,
+          "originalComponentDifference": {
+            "sum": 3542,
+            "max": 109
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 20,
+            "max": 4
+          },
+          "nativePathDifference": {
+            "sum": 3542,
+            "max": 109
+          },
+          "fallbackDifference": {
+            "sum": 3542,
+            "max": 109
+          }
+        },
+        {
+          "name": "rounded-400",
+          "nativeLength": 668.4163818359375,
+          "nativeInk": 454080,
+          "originalComponentDifference": {
+            "sum": 13740,
+            "max": 128
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 29,
+            "max": 3
+          },
+          "nativePathDifference": {
+            "sum": 13740,
+            "max": 128
+          },
+          "fallbackDifference": {
+            "sum": 13740,
+            "max": 128
+          }
+        },
+        {
+          "name": "circle-100",
+          "nativeLength": 501.8427734375,
+          "nativeInk": 344664,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "circle-400",
+          "nativeLength": 501.8427734375,
+          "nativeInk": 341460,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 21,
+            "max": 2
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "ellipse-100",
+          "nativeLength": 461.45404052734375,
+          "nativeInk": 313906,
+          "originalComponentDifference": {
+            "sum": 1,
+            "max": 1
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 15,
+            "max": 4
+          },
+          "nativePathDifference": {
+            "sum": 1,
+            "max": 1
+          },
+          "fallbackDifference": {
+            "sum": 1,
+            "max": 1
+          }
+        },
+        {
+          "name": "ellipse-400",
+          "nativeLength": 461.45404052734375,
+          "nativeInk": 314527,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 138,
+            "max": 7
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "polyline-100",
+          "nativeLength": 289.4427185058594,
+          "nativeInk": 198005,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "polyline-400",
+          "nativeLength": 289.4427185058594,
+          "nativeInk": 197507,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "polygon-100",
+          "nativeLength": 560,
+          "nativeInk": 382732,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "polygon-400",
+          "nativeLength": 560,
+          "nativeInk": 381380,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "cubic-100",
+          "nativeLength": 363.113037109375,
+          "nativeInk": 247981,
+          "originalComponentDifference": {
+            "sum": 5454,
+            "max": 79
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 5454,
+            "max": 79
+          },
+          "nativePathDifference": {
+            "sum": 5454,
+            "max": 79
+          },
+          "fallbackDifference": {
+            "sum": 5454,
+            "max": 79
+          }
+        },
+        {
+          "name": "cubic-400",
+          "nativeLength": 363.113037109375,
+          "nativeInk": 246721,
+          "originalComponentDifference": {
+            "sum": 5670,
+            "max": 68
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 5689,
+            "max": 68
+          },
+          "nativePathDifference": {
+            "sum": 5670,
+            "max": 68
+          },
+          "fallbackDifference": {
+            "sum": 5670,
+            "max": 68
+          }
+        },
+        {
+          "name": "quadratic-100",
+          "nativeLength": 266.74114990234375,
+          "nativeInk": 181305,
+          "originalComponentDifference": {
+            "sum": 6632,
+            "max": 82
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 6632,
+            "max": 82
+          },
+          "nativePathDifference": {
+            "sum": 6632,
+            "max": 82
+          },
+          "fallbackDifference": {
+            "sum": 6632,
+            "max": 82
+          }
+        },
+        {
+          "name": "quadratic-400",
+          "nativeLength": 266.74114990234375,
+          "nativeInk": 181853,
+          "originalComponentDifference": {
+            "sum": 7648,
+            "max": 91
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 7613,
+            "max": 91
+          },
+          "nativePathDifference": {
+            "sum": 7613,
+            "max": 91
+          },
+          "fallbackDifference": {
+            "sum": 7648,
+            "max": 91
+          }
+        },
+        {
+          "name": "smooth-100",
+          "nativeLength": 394.4342041015625,
+          "nativeInk": 270049,
+          "originalComponentDifference": {
+            "sum": 8872,
+            "max": 138
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 8837,
+            "max": 138
+          },
+          "nativePathDifference": {
+            "sum": 8820,
+            "max": 138
+          },
+          "fallbackDifference": {
+            "sum": 8872,
+            "max": 138
+          }
+        },
+        {
+          "name": "smooth-400",
+          "nativeLength": 394.4342041015625,
+          "nativeInk": 268436,
+          "originalComponentDifference": {
+            "sum": 16204,
+            "max": 136
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 16157,
+            "max": 136
+          },
+          "nativePathDifference": {
+            "sum": 16164,
+            "max": 136
+          },
+          "fallbackDifference": {
+            "sum": 16204,
+            "max": 136
+          }
+        },
+        {
+          "name": "arc-100",
+          "nativeLength": 308.6048583984375,
+          "nativeInk": 212256,
+          "originalComponentDifference": {
+            "sum": 10143,
+            "max": 159
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 6100,
+            "max": 90
+          },
+          "nativePathDifference": {
+            "sum": 6023,
+            "max": 88
+          },
+          "fallbackDifference": {
+            "sum": 10143,
+            "max": 159
+          }
+        },
+        {
+          "name": "arc-400",
+          "nativeLength": 308.6048583984375,
+          "nativeInk": 209978,
+          "originalComponentDifference": {
+            "sum": 21772,
+            "max": 167
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 14014,
+            "max": 141
+          },
+          "nativePathDifference": {
+            "sum": 13508,
+            "max": 118
+          },
+          "fallbackDifference": {
+            "sum": 21772,
+            "max": 167
+          }
+        },
+        {
+          "name": "cusp-100",
+          "nativeLength": 203.8194580078125,
+          "nativeInk": 125054,
+          "originalComponentDifference": {
+            "sum": 510,
+            "max": 22
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 510,
+            "max": 22
+          },
+          "nativePathDifference": {
+            "sum": 510,
+            "max": 22
+          },
+          "fallbackDifference": {
+            "sum": 510,
+            "max": 22
+          }
+        },
+        {
+          "name": "cusp-400",
+          "nativeLength": 203.8194580078125,
+          "nativeInk": 127470,
+          "originalComponentDifference": {
+            "sum": 2026,
+            "max": 24
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 2026,
+            "max": 24
+          },
+          "nativePathDifference": {
+            "sum": 2026,
+            "max": 24
+          },
+          "fallbackDifference": {
+            "sum": 2026,
+            "max": 24
+          }
+        },
+        {
+          "name": "units-percent",
+          "nativeLength": 200,
+          "nativeInk": 151468,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-mixed",
+          "nativeLength": 200,
+          "nativeInk": 128296,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-px",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-font",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-odd",
+          "nativeLength": 200,
+          "nativeInk": 97920,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-zero-dash",
+          "nativeLength": 200,
+          "nativeInk": 30750,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-solid",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-none",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "author--2",
+          "nativeLength": 200,
+          "nativeInk": 137700,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "author-bad",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 66300,
+            "max": 255
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 66300,
+            "max": 255
+          },
+          "nativePathDifference": {
+            "sum": 66300,
+            "max": 255
+          },
+          "fallbackDifference": {
+            "sum": 66300,
+            "max": 255
+          }
+        },
+        {
+          "name": "author-100px",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 66300,
+            "max": 255
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 66300,
+            "max": 255
+          },
+          "nativePathDifference": {
+            "sum": 66300,
+            "max": 255
+          },
+          "fallbackDifference": {
+            "sum": 66300,
+            "max": 255
+          }
+        },
+        {
+          "name": "author-empty",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 66300,
+            "max": 255
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 66300,
+            "max": 255
+          },
+          "nativePathDifference": {
+            "sum": 66300,
+            "max": 255
+          },
+          "fallbackDifference": {
+            "sum": 66300,
+            "max": 255
+          }
+        },
+        {
+          "name": "author-0",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-no-offset",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-zero-first",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-negative-offset",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-solid",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-all-zero",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-length-0",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-length-0.5",
+          "nativeLength": 200,
+          "nativeInk": 136000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 40,
+            "max": 1
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-length-1",
+          "nativeLength": 200,
+          "nativeInk": 137700,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-length-1.5",
+          "nativeLength": 200,
+          "nativeInk": 136336,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "inherited-paint",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "transform",
+          "nativeLength": 200,
+          "nativeInk": 76990,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "nested",
+          "nativeLength": 200,
+          "nativeInk": 53444,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "use-instance",
+          "nativeLength": null,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-geometry-0",
+          "nativeLength": 100,
+          "nativeInk": 68340,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-geometry-0.5",
+          "nativeLength": 125,
+          "nativeInk": 85444,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-geometry-1",
+          "nativeLength": 150,
+          "nativeInk": 102524,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-geometry-1.5",
+          "nativeLength": 175,
+          "nativeInk": 119616,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        }
+      ],
+      "recovery": {
+        "rejected": true,
+        "ready": true,
+        "errors": [],
+        "sum": 0,
+        "max": 0
+      },
+      "seeking": [
+        {
+          "name": "animated-length-0",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-length-1.5",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-length-0.5",
+          "sum": 40,
+          "max": 1
+        },
+        {
+          "name": "animated-length-0",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-geometry-0",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-geometry-1.5",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-geometry-0.5",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-geometry-0",
+          "sum": 0,
+          "max": 0
+        }
+      ],
+      "complexity": {
+        "rejected": true,
+        "ready": true,
+        "errors": [],
+        "sum": 0,
+        "max": 0
+      },
+      "capabilityObservation": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "rows": [
+          {
+            "dash": 125,
+            "quarter": false,
+            "before": false,
+            "after": false
+          },
+          {
+            "dash": 125.45,
+            "quarter": false,
+            "before": true,
+            "after": false
+          },
+          {
+            "dash": 125.5,
+            "quarter": true,
+            "before": true,
+            "after": false
+          },
+          {
+            "dash": 125.55,
+            "quarter": true,
+            "before": true,
+            "after": false
+          },
+          {
+            "dash": 125.6,
+            "quarter": true,
+            "before": true,
+            "after": true
+          },
+          {
+            "dash": 125.65,
+            "quarter": true,
+            "before": true,
+            "after": true
+          },
+          {
+            "dash": 125.7,
+            "quarter": true,
+            "before": true,
+            "after": true
+          },
+          {
+            "dash": 126,
+            "quarter": true,
+            "before": true,
+            "after": true
+          }
+        ]
+      }
+    },
+    {
+      "engine": "firefox",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0",
+      "summary": {
+        "cases": 60,
+        "componentExact": 49,
+        "nativePathExact": 49,
+        "fallbackExact": 49,
+        "rewrittenReferenceDifferences": 6
+      },
+      "rows": [
+        {
+          "name": "line-100",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "line-400",
+          "nativeLength": 200,
+          "nativeInk": 136224,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "path-100",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "path-400",
+          "nativeLength": 200,
+          "nativeInk": 136224,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "closed-100",
+          "nativeLength": 640,
+          "nativeInk": 437352,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "closed-400",
+          "nativeLength": 640,
+          "nativeInk": 436458,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "subpaths-100",
+          "nativeLength": 400,
+          "nativeInk": 220320,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "subpaths-400",
+          "nativeLength": 400,
+          "nativeInk": 213180,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "rect-100",
+          "nativeLength": 704,
+          "nativeInk": 481194,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "rect-400",
+          "nativeLength": 704,
+          "nativeInk": 479356,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "rounded-100",
+          "nativeLength": 668.8201904296875,
+          "nativeInk": 456622,
+          "originalComponentDifference": {
+            "sum": 109,
+            "max": 8
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 109,
+            "max": 8
+          },
+          "fallbackDifference": {
+            "sum": 109,
+            "max": 8
+          }
+        },
+        {
+          "name": "rounded-400",
+          "nativeLength": 668.8201904296875,
+          "nativeInk": 456695,
+          "originalComponentDifference": {
+            "sum": 203,
+            "max": 7
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 5,
+            "max": 1
+          },
+          "nativePathDifference": {
+            "sum": 203,
+            "max": 7
+          },
+          "fallbackDifference": {
+            "sum": 203,
+            "max": 7
+          }
+        },
+        {
+          "name": "circle-100",
+          "nativeLength": 502.7249450683594,
+          "nativeInk": 342981,
+          "originalComponentDifference": {
+            "sum": 11970,
+            "max": 202
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 11970,
+            "max": 202
+          },
+          "fallbackDifference": {
+            "sum": 11970,
+            "max": 202
+          }
+        },
+        {
+          "name": "circle-400",
+          "nativeLength": 502.7249450683594,
+          "nativeInk": 340817,
+          "originalComponentDifference": {
+            "sum": 33276,
+            "max": 255
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 116,
+            "max": 8
+          },
+          "nativePathDifference": {
+            "sum": 33276,
+            "max": 255
+          },
+          "fallbackDifference": {
+            "sum": 33276,
+            "max": 255
+          }
+        },
+        {
+          "name": "ellipse-100",
+          "nativeLength": 462.2138366699219,
+          "nativeInk": 315433,
+          "originalComponentDifference": {
+            "sum": 14314,
+            "max": 214
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 45,
+            "max": 4
+          },
+          "nativePathDifference": {
+            "sum": 14314,
+            "max": 214
+          },
+          "fallbackDifference": {
+            "sum": 14314,
+            "max": 214
+          }
+        },
+        {
+          "name": "ellipse-400",
+          "nativeLength": 462.2138366699219,
+          "nativeInk": 315688,
+          "originalComponentDifference": {
+            "sum": 29048,
+            "max": 197
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 130,
+            "max": 8
+          },
+          "nativePathDifference": {
+            "sum": 29048,
+            "max": 197
+          },
+          "fallbackDifference": {
+            "sum": 29048,
+            "max": 197
+          }
+        },
+        {
+          "name": "polyline-100",
+          "nativeLength": 289.4427185058594,
+          "nativeInk": 197902,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "polyline-400",
+          "nativeLength": 289.4427185058594,
+          "nativeInk": 197602,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "polygon-100",
+          "nativeLength": 560,
+          "nativeInk": 382728,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "polygon-400",
+          "nativeLength": 560,
+          "nativeInk": 381368,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "cubic-100",
+          "nativeLength": 363.1126708984375,
+          "nativeInk": 247170,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "cubic-400",
+          "nativeLength": 363.1126708984375,
+          "nativeInk": 246985,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "quadratic-100",
+          "nativeLength": 266.7410583496094,
+          "nativeInk": 182499,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 3,
+            "max": 3
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "quadratic-400",
+          "nativeLength": 266.7410583496094,
+          "nativeInk": 181520,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "smooth-100",
+          "nativeLength": 394.433349609375,
+          "nativeInk": 266198,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "smooth-400",
+          "nativeLength": 394.433349609375,
+          "nativeInk": 268639,
+          "originalComponentDifference": {
+            "sum": 40,
+            "max": 3
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 40,
+            "max": 3
+          },
+          "fallbackDifference": {
+            "sum": 40,
+            "max": 3
+          }
+        },
+        {
+          "name": "arc-100",
+          "nativeLength": 308.6046142578125,
+          "nativeInk": 211858,
+          "originalComponentDifference": {
+            "sum": 3846,
+            "max": 65
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 24,
+            "max": 4
+          },
+          "nativePathDifference": {
+            "sum": 432,
+            "max": 7
+          },
+          "fallbackDifference": {
+            "sum": 3846,
+            "max": 65
+          }
+        },
+        {
+          "name": "arc-400",
+          "nativeLength": 308.6046142578125,
+          "nativeInk": 210222,
+          "originalComponentDifference": {
+            "sum": 7014,
+            "max": 73
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 1170,
+            "max": 55
+          },
+          "fallbackDifference": {
+            "sum": 7014,
+            "max": 73
+          }
+        },
+        {
+          "name": "cusp-100",
+          "nativeLength": 180,
+          "nativeInk": 131716,
+          "originalComponentDifference": {
+            "sum": 76882,
+            "max": 255
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 76882,
+            "max": 255
+          },
+          "fallbackDifference": {
+            "sum": 76882,
+            "max": 255
+          }
+        },
+        {
+          "name": "cusp-400",
+          "nativeLength": 180,
+          "nativeInk": 128416,
+          "originalComponentDifference": {
+            "sum": 67954,
+            "max": 255
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 67954,
+            "max": 255
+          },
+          "fallbackDifference": {
+            "sum": 67954,
+            "max": 255
+          }
+        },
+        {
+          "name": "units-percent",
+          "nativeLength": 200,
+          "nativeInk": 151480,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-mixed",
+          "nativeLength": 200,
+          "nativeInk": 128296,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-px",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-font",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-odd",
+          "nativeLength": 200,
+          "nativeInk": 97920,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-zero-dash",
+          "nativeLength": 200,
+          "nativeInk": 30750,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-solid",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "units-none",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "author--2",
+          "nativeLength": 200,
+          "nativeInk": 137700,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "author-bad",
+          "nativeLength": 200,
+          "nativeInk": 137700,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "author-100px",
+          "nativeLength": 200,
+          "nativeInk": 137700,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "author-empty",
+          "nativeLength": 200,
+          "nativeInk": 137700,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "author-0",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-no-offset",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-zero-first",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-negative-offset",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-solid",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "zero-all-zero",
+          "nativeLength": 200,
+          "nativeInk": 204000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-length-0",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-length-0.5",
+          "nativeLength": 200,
+          "nativeInk": 136000,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-length-1",
+          "nativeLength": 200,
+          "nativeInk": 137700,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-length-1.5",
+          "nativeLength": 200,
+          "nativeInk": 136340,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "inherited-paint",
+          "nativeLength": 200,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "transform",
+          "nativeLength": 200,
+          "nativeInk": 76990,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "nested",
+          "nativeLength": 200,
+          "nativeInk": 53444,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "use-instance",
+          "nativeLength": null,
+          "nativeInk": 136680,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-geometry-0",
+          "nativeLength": 100,
+          "nativeInk": 68340,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-geometry-0.5",
+          "nativeLength": 125,
+          "nativeInk": 85444,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-geometry-1",
+          "nativeLength": 150,
+          "nativeInk": 102524,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "animated-geometry-1.5",
+          "nativeLength": 175,
+          "nativeInk": 119616,
+          "originalComponentDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "rewrittenReferenceDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "nativePathDifference": {
+            "sum": 0,
+            "max": 0
+          },
+          "fallbackDifference": {
+            "sum": 0,
+            "max": 0
+          }
+        }
+      ],
+      "recovery": {
+        "rejected": true,
+        "ready": true,
+        "errors": [],
+        "sum": 0,
+        "max": 0
+      },
+      "seeking": [
+        {
+          "name": "animated-length-0",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-length-1.5",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-length-0.5",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-length-0",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-geometry-0",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-geometry-1.5",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-geometry-0.5",
+          "sum": 0,
+          "max": 0
+        },
+        {
+          "name": "animated-geometry-0",
+          "sum": 0,
+          "max": 0
+        }
+      ],
+      "complexity": {
+        "rejected": true,
+        "ready": true,
+        "errors": [],
+        "sum": 0,
+        "max": 0
+      },
+      "capabilityObservation": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0",
+        "rows": [
+          {
+            "dash": 125,
+            "quarter": false,
+            "before": false,
+            "after": false
+          },
+          {
+            "dash": 125.45,
+            "quarter": false,
+            "before": true,
+            "after": false
+          },
+          {
+            "dash": 125.5,
+            "quarter": false,
+            "before": true,
+            "after": false
+          },
+          {
+            "dash": 125.55,
+            "quarter": true,
+            "before": true,
+            "after": false
+          },
+          {
+            "dash": 125.6,
+            "quarter": true,
+            "before": true,
+            "after": false
+          },
+          {
+            "dash": 125.65,
+            "quarter": true,
+            "before": true,
+            "after": true
+          },
+          {
+            "dash": 125.7,
+            "quarter": true,
+            "before": true,
+            "after": true
+          },
+          {
+            "dash": 126,
+            "quarter": true,
+            "before": true,
+            "after": true
+          }
+        ]
+      }
+    }
+  ],
+  "rejectedExperiment": {
+    "change": "Temporarily replace native-ellipse ellipseStrokeLength with pathLength(shape.segments); all production bytes restored afterward.",
+    "result": "Reduces Firefox circle/ellipse differences but does not make any of these four exact; not shipped, not a fix claim.",
+    "rows": [
+      {
+        "name": "circle-100",
+        "difference": {
+          "sum": 10,
+          "max": 2
+        }
+      },
+      {
+        "name": "circle-400",
+        "difference": {
+          "sum": 23,
+          "max": 7
+        }
+      },
+      {
+        "name": "ellipse-100",
+        "difference": {
+          "sum": 1039,
+          "max": 59
+        }
+      },
+      {
+        "name": "ellipse-400",
+        "difference": {
+          "sum": 1191,
+          "max": 69
+        }
+      }
+    ]
+  },
+  "validation": {
+    "relatedNodeTests": 10,
+    "relatedNodeFailures": 0,
+    "recordMode": "Preserves failures as data; exit0 means observation finished, not corpus pass. Existing strict assertions unchanged.",
+    "productDiff": "none",
+    "wechat": "DevTools SDK3.17.2 offscreen Canvas: 8 dash lengths x3 point observations match Chrome. No new actual WXML pixel or physical-device validation.",
+    "physicalDevices": "not run"
+  },
+  "nextAction": "Keep 1.4.139 uploaded product unchanged. Broaden Canvas measurement observations beyond one ellipse on independent curves and actual WeChat WXML Canvas. The DevTools offscreen observations match Chrome but are not sufficient for a production fingerprint. Preserve browser divergences; continue other formats when physical platform evidence is unavailable.",
+  "wechatCapabilityObservation": {
+    "platform": "devtools",
+    "SDKVersion": "3.17.2",
+    "canvas": "wx.createOffscreenCanvas",
+    "capabilities": {
+      "ellipse": "function",
+      "isPointInStroke": "function",
+      "setLineDash": "function"
+    },
+    "rows": [
+      {
+        "dash": 125,
+        "quarter": false,
+        "before": false,
+        "after": false
+      },
+      {
+        "dash": 125.45,
+        "quarter": false,
+        "before": true,
+        "after": false
+      },
+      {
+        "dash": 125.5,
+        "quarter": true,
+        "before": true,
+        "after": false
+      },
+      {
+        "dash": 125.55,
+        "quarter": true,
+        "before": true,
+        "after": false
+      },
+      {
+        "dash": 125.6,
+        "quarter": true,
+        "before": true,
+        "after": true
+      },
+      {
+        "dash": 125.65,
+        "quarter": true,
+        "before": true,
+        "after": true
+      },
+      {
+        "dash": 125.7,
+        "quarter": true,
+        "before": true,
+        "after": true
+      },
+      {
+        "dash": 126,
+        "quarter": true,
+        "before": true,
+        "after": true
+      }
+    ]
+  },
+  "commands": [
+    "node scripts/verify-svg-stroke-percent.js outputs/svg-curve-ruler/chrome --path-length --record",
+    "HTML_READER_FIREFOX=<isolated Firefox binary> node scripts/verify-svg-stroke-percent.js outputs/svg-curve-ruler/firefox --path-length --record",
+    "node scripts/probe-svg-dash-ruler.js outputs/svg-curve-ruler/chrome-capability.json",
+    "HTML_READER_FIREFOX=<isolated Firefox binary> node scripts/probe-svg-dash-ruler.js outputs/svg-curve-ruler/firefox-capability.json",
+    "node scripts/probe-svg-dash-ruler-wechat.js <already-enabled v1.4.139 project>",
+    "node --test tests/svg-path-length.test.js tests/svg-ellipse-paint.test.js"
+  ]
+}

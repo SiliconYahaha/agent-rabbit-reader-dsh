@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T07:49:48.280667+00:00",
+  "status": "validated-awaiting-pr",
+  "version": null,
+  "baseVersion": "1.4.137",
+  "feature": "Markdown nested HTML, list and quote paragraph boundaries",
+  "rootCauses": [
+    "Closed HTML and nested containers incorrectly accepted unmarked paragraph continuation; trailing content could disappear.",
+    "Reparsed lists lost dequoted source columns and leaked lexer top-level state, changing tight-list paragraphs.",
+    "Quote marker transitions reinterpreted an existing paragraph as standalone HTML/code or split Setext heading content; manufactured terminators were mistaken for source blank lines."
+  ],
+  "fixes": [
+    "Track the deepest open paragraph across nested lists and quotes, distinguish interrupting HTML from complete inline tags, and close containers at actual blank boundaries.",
+    "Preserve source lines and physical columns during reparsing; restore lexer and tokenizer methods even after failure.",
+    "Join supported Setext paragraph continuations without consuming following blocks; bound nested tracking and preserve recovery."
+  ],
+  "fixture": "tests/fixtures/markdown-html-boundaries/cases.json",
+  "sourceRules": {
+    "randomSeed": null,
+    "generation": "Deterministic Cartesian combinations; no randomness. 14 body kinds x 5 endings x 7 containers plus 24 historical cases; 510 unique deeper combinations; 32 marker transitions.",
+    "uniqueSources": 1056,
+    "batches": [
+      514,
+      510,
+      32
+    ],
+    "deduplication": "Initial nested exploration had 540 rows including 30 repeated sources; final corpus keeps 510 unique rows and original exploratory reports remain local."
+  },
+  "oracles": {
+    "primary": "commonmark.js 0.31.2",
+    "secondary": "markdown-it 15.0.1 commonmark mode",
+    "spec": "https://spec.commonmark.org/0.31.2/#block-quotes",
+    "storedReferencesReproducedExactly": true,
+    "policy": "18 retained reference-parser disagreements are separately reported; current reader follows primary CommonMark for these cases."
+  },
+  "results": {
+    "independentAgreement": 1038,
+    "beforeCertifiedFailures": 573,
+    "afterCertifiedFailures": 0,
+    "primaryExact": 1056,
+    "referenceDisagreements": 18,
+    "beforeMissingTail": 29,
+    "actualHostConsecutiveOpens": 1038,
+    "chromeViews": 144,
+    "chromeBeforeFailures": 101,
+    "chromeAfterFailures": 0,
+    "interaction": "Restored tail anchor dispatch reaches target through actual onDomTap bridge; failed and late reads cannot replace CURRENT document.",
+    "recovery": "1000 quote marker transitions retain every VALUE; depth 257 reports explicit error and subsequent parses recover."
+  },
+  "validation": {
+    "npmRunCheck": {
+      "status": "pass",
+      "tests": 1264,
+      "failed": 0,
+      "compatibilityProbes": 141,
+      "rendererSmoke": "pass"
+    },
+    "production": "pass",
+    "chromeOracle": "pass",
+    "profileSchema": "pass",
+    "diffCheck": "pass"
+  },
+  "fileHashes": {
+    "tests/fixtures/markdown-html-boundaries/cases.json": "0aedcd8ecdb1e4cdebbee2e0e2c8d377a7743d1506b3cb7f6246627c7c9f3647",
+    "miniprogram/file-reader/markdown/runtime/list-tokenizer.js": "7c24af363cdf4c9f20ff97f8e7a67519f0af86e76ccbf463d750ba321ee7cfb8",
+    "miniprogram/file-reader/markdown/runtime/quote-tokenizer.js": "e14e9549d80367ac86c1ea9f52f334f84f9aad78d02af6b3308f5c613aeb30a4",
+    "tests/markdown-html-boundaries.test.js": "26269bf27824a874c247dcfc306646db55b7eded433d32d125d227e2c8e01fa3",
+    "scripts/probe-markdown-html-boundaries.js": "460cc43a9cd1443173938f36ef7d881de9b303f8d20ea3227b8bcc19d5c6dbbc",
+    "scripts/probe-markdown-nested-boundaries.js": "4d1b668bfc99d4d1455b8949d757ed5586308e00af364deadb5fec2f9668b9b1",
+    "scripts/verify-markdown-html-boundaries.js": "897477fb9adc542b27987791b6dfbe472162ad1c61885564a71c87944eeb52bc"
+  },
+  "localEvidence": [
+    {
+      "path": "outputs/markdown-html-boundaries/browser-before/report.json",
+      "sha256": "7fce50ef0f37d7a924dad4267c7bcf93f64a6ff5a74de438747c1eef1ec44b10"
+    },
+    {
+      "path": "outputs/markdown-html-boundaries/browser/report.json",
+      "sha256": "cb6ea66f3a7166a6e03ac52ce500b8c2c4de21bc44aca38556521caa5eb3503a"
+    },
+    {
+      "path": "outputs/markdown-html-boundaries/browser-before/comparison.png",
+      "sha256": "df447ebcdec2b1060907f72bdebfb74df11c30af879b853f098edc4df03a0ed7"
+    },
+    {
+      "path": "outputs/markdown-html-boundaries/browser/comparison.png",
+      "sha256": "0b644bf5f577a03923cf67f4ad9e5af9516b7c13d0d41fb2315059520aec4e74"
+    },
+    {
+      "path": "outputs/markdown-html-boundaries/independent-final/baseline.json",
+      "sha256": "cbf2a896455a92922b59b3d2162c97cf9649a5a65888ac6d07461afbbef3b7ef"
+    }
+  ],
+  "limits": [
+    "Structural signatures normalize ordinary whitespace but preserve code text; Chrome checks visible body, exact pre text, marker visibility and container ancestry.",
+    "The screenshot comparison retains reader styling versus native reference styling; it is not pixel equivalence.",
+    "No WeChat WXML, DevTools or physical-device validation in this batch.",
+    "Not a complete CommonMark conformance claim; prior task-list/footnote dialect and full-spec differences outside this batch remain."
+  ]
+}

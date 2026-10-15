@@ -1,0 +1,1724 @@
+{
+  "schemaVersion": 1,
+  "id": "rar-crc",
+  "date": "2026-09-05",
+  "version": "1.4.123",
+  "source": "tests/helpers/rar-crc.js plus retained 13 pre-fix exact archives",
+  "specification": "https://www.rarlab.com/technote.htm",
+  "node": "v24.16.0",
+  "libarchiveVersion": "bsdtar 3.5.3 - libarchive 3.7.4 zlib/1.2.12 liblzma/5.4.3 bz2lib/1.0.8",
+  "results": [
+    {
+      "name": "rar4-valid",
+      "sha256": "f62d8e99d849cac8229c9cefab25d56f76b405ff8f0d220506a6f9d702c03a20",
+      "bytes": 84,
+      "expected": "byte-exact",
+      "baseline": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "fallback": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-crc-zero-invalid",
+      "sha256": "7af13c3c8465d1a281642f1fd65fe78196a085fed9854a9ca83a9a9ebd3e63b6",
+      "bytes": 84,
+      "expected": "reject",
+      "baseline": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 包内文件 CRC 校验失败，压缩包可能损坏"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-crc-zero-valid",
+      "sha256": "b47c4f989020ae7af757cd5db3576d0de27b7511e63550afbdaa85e2bb172b56",
+      "bytes": 81,
+      "expected": "byte-exact",
+      "baseline": {
+        "accepted": true,
+        "bytes": 13,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "fallback": {
+        "accepted": true,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "435243205a45524f2021495df4",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-empty-zero-valid",
+      "sha256": "48a21a1d07f348af1bcfe6010f9d5ad6576e502308d875cd7d4d05aad0fad029",
+      "bytes": 68,
+      "expected": "byte-exact",
+      "baseline": {
+        "accepted": true,
+        "bytes": 0,
+        "hex": ""
+      },
+      "fallback": {
+        "accepted": true,
+        "hex": ""
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": ""
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-data-flip",
+      "sha256": "390a7c1378f2f0a62567e5f8d69621acbcb332552637bd19e38acd6216ce1af2",
+      "bytes": 84,
+      "expected": "reject",
+      "baseline": {
+        "accepted": false,
+        "error": "RAR 包内文件 CRC 校验失败，压缩包可能损坏"
+      },
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 包内文件 CRC 校验失败，压缩包可能损坏"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4d4f44494649454420434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-header-crc",
+      "sha256": "570c96334280bb92b60504768e9de9ff23cf6f39de7d3aa53125a96200a9160a",
+      "bytes": 84,
+      "expected": "reject",
+      "baseline": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部 CRC 校验失败"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: Header CRC error\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-valid",
+      "sha256": "443499010d82855d1efa325685885cdb403e8efe12120f6586f195e25e59201e",
+      "bytes": 69,
+      "expected": "byte-exact",
+      "baseline": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "fallback": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-crc-zero-invalid",
+      "sha256": "b564fb9109312cf3899b8f02f837a80afda140896cfa7ddd5559ee9e46671a33",
+      "bytes": 69,
+      "expected": "reject",
+      "baseline": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 包内文件 CRC 校验失败，压缩包可能损坏"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-crc-zero-valid",
+      "sha256": "7683588d7fcec3c359f042dc71c8ae2db03220282018b19c46dfe4bcf1aa1fc5",
+      "bytes": 66,
+      "expected": "byte-exact",
+      "baseline": {
+        "accepted": true,
+        "bytes": 13,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "fallback": {
+        "accepted": true,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "435243205a45524f2021495df4"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "435243205a45524f2021495df4",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-empty-zero-valid",
+      "sha256": "47d7d2dd26054843d3aceaad9dc001bf019a8a4a30f6a3e4f2513e86b6c5e296",
+      "bytes": 53,
+      "expected": "byte-exact",
+      "baseline": {
+        "accepted": true,
+        "bytes": 0,
+        "hex": ""
+      },
+      "fallback": {
+        "accepted": true,
+        "hex": ""
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": ""
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-data-flip",
+      "sha256": "a3de9f47623d983625696138142b4ef4cb1bcc71eb59643971a8bdcdec3823ac",
+      "bytes": 69,
+      "expected": "reject",
+      "baseline": {
+        "accepted": false,
+        "error": "RAR 包内文件 CRC 校验失败，压缩包可能损坏"
+      },
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 包内文件 CRC 校验失败，压缩包可能损坏"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4d4f44494649454420434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-header-crc",
+      "sha256": "b29a4b1b1d462b1b19a75ffc55dd48f6fb2f2f676137f8376c4889bb34ca0b3a",
+      "bytes": 69,
+      "expected": "reject",
+      "baseline": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部 CRC 校验失败"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: Header CRC error\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-crc-absent",
+      "sha256": "d6c38fc30db21317faaa25effcf1284e2e6ca394cb12b7019f5aa5e446f13001",
+      "bytes": 65,
+      "expected": "byte-exact",
+      "baseline": {
+        "accepted": true,
+        "bytes": 16,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "fallback": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-truncated-data",
+      "sha256": "76181b5fd66d0cd5d93acb6684f792c3798d7b9414fc77a56606db6aaa71aced",
+      "bytes": 76,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "unrarList": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "4f524947494e414c20434f4e54454e",
+        "stderr": "entry.txt: Truncated RAR file data: Inappropriate file type or format\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar4-truncated-tail-header",
+      "sha256": "cd4df359a723b749e7b77e37efb173e3b1c8f3028e982e9d09676fb8b9820934",
+      "bytes": 82,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-missing-end-marker",
+      "sha256": "d3444c1d5b57a060e1c2fb78dddd22084f9a6406f1c9c0d1e7046091bce031fd",
+      "bytes": 77,
+      "expected": "byte-exact",
+      "fallback": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-link-fallback-blocked",
+      "sha256": "3308eba2805ef636b62f290509661a1a52af0e05caa621bb85ef4a7fbe5111b4",
+      "bytes": 126,
+      "expected": "fallback-not-openable",
+      "fallback": {
+        "accepted": false,
+        "openable": false
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "Cannot read properties of undefined (reading 'file')"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt",
+          "target.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "00000000000000000000",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-name-crosses-header",
+      "sha256": "f2a6fd890f17d2e121be4981b769b2d8b8f9b91ce571664bc40bd48ae61dcfeb",
+      "bytes": 84,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: Invalid filename size\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar4-split-fallback-blocked",
+      "sha256": "f0d20cdc651ed1c781169273565270f129f45eb58b07348e8513bded99d9786b",
+      "bytes": 84,
+      "expected": "fallback-not-openable",
+      "fallback": {
+        "accepted": false,
+        "openable": false
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-large-zero-high",
+      "sha256": "9ebae943f30c8c8120a32ae5166d4161fd2ddf418237cca86bcd4c350473022c",
+      "bytes": 92,
+      "expected": "byte-exact",
+      "fallback": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar4-large-packed-truncated",
+      "sha256": "8802d97edb11bb072c19823349ae1ce051afab8372b4135a07fcc11b64db0452",
+      "bytes": 92,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "unrarList": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "4f524947494e414c20434f4e54454e54c43d7b00400700",
+        "stderr": "tar: Truncated input file (needed 4294967289 bytes, only 0 available)\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-truncated-data",
+      "sha256": "0623939826e11e3cfdd2dc9f0474571d636a37747c27359a6d7e36bae066842b",
+      "bytes": 60,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "unrarList": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "entry.txt: I/O error when unstoring file: Inappropriate file type or format\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-truncated-tail-header",
+      "sha256": "90060ca0ff69d6f949b36526535be107bc787fbeb4931131d01792b2890fd5b3",
+      "bytes": 67,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-missing-end-marker",
+      "sha256": "19864a9ddcd9ebdefacc6cbfa535969b84ebd07331f1e8043552d747537c2ac3",
+      "bytes": 61,
+      "expected": "byte-exact",
+      "fallback": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "4f524947494e414c20434f4e54454e54"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "4f524947494e414c20434f4e54454e54",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-link-fallback-blocked",
+      "sha256": "65092aab5eeaa294ff2737966367215fd8f45b628b7222c52cb70a4a96637a69",
+      "bytes": 105,
+      "expected": "fallback-not-openable",
+      "fallback": {
+        "accepted": false,
+        "openable": false
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "Cannot read properties of undefined (reading 'file')"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt",
+          "target.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-name-crosses-header",
+      "sha256": "093f23e0716367b1b645587b70d53951c71abea2130d036837d8853301632cf1",
+      "bytes": 72,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-name-vint-crosses-header",
+      "sha256": "ed9864c507f2b350de65a8e29948eff70489110af8d7b6bf3c0fa410f1696351",
+      "bytes": 62,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "UnRAR returned no member bytes"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          ""
+        ]
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-mtime-crosses-header",
+      "sha256": "7c01d747ab542175e5b6c301297334f952f1b476a0c50638414ca7872e58c8a9",
+      "bytes": 57,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "UnRAR returned no member bytes"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          ""
+        ]
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: Declared solid file, but no window buffer initialized yet.\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-crc-crosses-header",
+      "sha256": "1259f46fe8d525229f43102eb559cabb40f5c9778b4ed3da6fe66febafacb7a2",
+      "bytes": 57,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "UnRAR returned no member bytes"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          ""
+        ]
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: Declared solid file, but no window buffer initialized yet.\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-data-size-unsafe",
+      "sha256": "0a64894c47ead82094ae3776d60a366fe095e9469d94afcae32334633733bd2d",
+      "bytes": 78,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部整数超过安全范围"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "unrarList": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "entry.txt: I/O error when unstoring file: Inappropriate file type or format\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-extra-size-crosses-header",
+      "sha256": "0f6650db0b8946d8ed5be5699b973b38167bb353a11771c7db1167f9ca627839",
+      "bytes": 75,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "unrarList": {
+        "accepted": false,
+        "error": "Archive header or data are damaged",
+        "reason": "ERAR_BAD_DATA"
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: Truncated input file (needed 498 bytes, only 28 available)\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-extra-record-crosses-header",
+      "sha256": "01c9fa20b67fb5cc938aa6070e461b843fcfe6b53514db23d13f83174c49cf3d",
+      "bytes": 74,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "52415220636865636b73756d20e6ada3e696870a",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-extra-record-empty",
+      "sha256": "f26f7c8a8db67102e342b9eeaf814953b64bfd13177a454e0fbc60f05e8a3552",
+      "bytes": 73,
+      "expected": "reject",
+      "fallback": {
+        "accepted": false,
+        "error": "RAR 头部或文件数据长度越界，文件可能已截断"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: (null)\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    },
+    {
+      "name": "rar5-unknown-extra",
+      "sha256": "036313060d7c81df09243eeba1884c207f15a70aa5283ea7a209a9edd0977735",
+      "bytes": 74,
+      "expected": "byte-exact",
+      "fallback": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "52415220636865636b73756d20e6ada3e696870a",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-padded-name-vint",
+      "sha256": "56cb3a12fc9f47466354ee8866866d77bd7819dfad79f6e346c87db41fe423c7",
+      "bytes": 72,
+      "expected": "byte-exact",
+      "fallback": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "52415220636865636b73756d20e6ada3e696870a",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-unknown-block",
+      "sha256": "d76e16832a9fc605d9f9e24b6530e1e98a39b94d1af821a71b3a4dfe739c3047",
+      "bytes": 78,
+      "expected": "byte-exact",
+      "fallback": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "52415220636865636b73756d20e6ada3e696870a",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-split-fallback-blocked",
+      "sha256": "b8af704aa60e3da26d43a7760b00f37c172acc570b70d1e74ba448ebd8a584ec",
+      "bytes": 71,
+      "expected": "fallback-not-openable",
+      "fallback": {
+        "accepted": false,
+        "openable": false
+      },
+      "unrarDirect": {
+        "accepted": false,
+        "error": "File read error",
+        "reason": "ERAR_EREAD"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 0,
+        "hex": "52415220636865636b73756d20e6ada3e696870a",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "rar5-unknown-size-fallback-blocked",
+      "sha256": "290fa8cd26f41edc6ad7611c2ba5104c6e816216b24b8bea4e9b198a47722ce1",
+      "bytes": 71,
+      "expected": "fallback-not-openable",
+      "fallback": {
+        "accepted": false,
+        "openable": false
+      },
+      "unrarDirect": {
+        "accepted": true,
+        "hex": "52415220636865636b73756d20e6ada3e696870a"
+      },
+      "unrarList": {
+        "accepted": true,
+        "names": [
+          "entry.txt"
+        ]
+      },
+      "libarchive": {
+        "status": 1,
+        "hex": "",
+        "stderr": "tar: Files with unknown unpacked size are not supported\ntar: entry.txt: Not found in archive\ntar: Error exit delayed from previous errors.\n"
+      }
+    }
+  ],
+  "fullEntry": [
+    {
+      "name": "rar4-valid",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar4-crc-zero-invalid",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 0,
+      "error": "包内文件打开失败：RAR 包内文件 CRC 校验失败，压缩包可能损坏",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-crc-zero-valid",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "CRC ZERO !I]�",
+      "outputHex": "435243205a45524f2021495df4"
+    },
+    {
+      "name": "rar4-empty-zero-valid",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": null,
+      "outputHex": ""
+    },
+    {
+      "name": "rar4-data-flip",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 0,
+      "error": "包内文件打开失败：RAR 包内文件 CRC 校验失败，压缩包可能损坏",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-header-crc",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部 CRC 校验失败",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-valid",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar5-crc-zero-invalid",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 0,
+      "error": "包内文件打开失败：RAR 包内文件 CRC 校验失败，压缩包可能损坏",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-crc-zero-valid",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "CRC ZERO !I]�",
+      "outputHex": "435243205a45524f2021495df4"
+    },
+    {
+      "name": "rar5-empty-zero-valid",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": null,
+      "outputHex": ""
+    },
+    {
+      "name": "rar5-data-flip",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 0,
+      "error": "包内文件打开失败：RAR 包内文件 CRC 校验失败，压缩包可能损坏",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-header-crc",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部 CRC 校验失败",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-crc-absent",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar4-truncated-data",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-truncated-tail-header",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-missing-end-marker",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar4-name-crosses-header",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-large-zero-high",
+      "mode": "no-wasm",
+      "archiveType": "rar4",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar4-large-packed-truncated",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-truncated-data",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-truncated-tail-header",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-missing-end-marker",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar5-name-crosses-header",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-name-vint-crosses-header",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-mtime-crosses-header",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-crc-crosses-header",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-data-size-unsafe",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部整数超过安全范围",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-extra-size-crosses-header",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-extra-record-crosses-header",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-extra-record-empty",
+      "mode": "no-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-unknown-extra",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "RAR checksum 正文\n",
+      "outputHex": "52415220636865636b73756d20e6ada3e696870a"
+    },
+    {
+      "name": "rar5-padded-name-vint",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "RAR checksum 正文\n",
+      "outputHex": "52415220636865636b73756d20e6ada3e696870a"
+    },
+    {
+      "name": "rar5-unknown-block",
+      "mode": "no-wasm",
+      "archiveType": "rar5",
+      "summary": "已校验并读取 1 个文件头；备用读取仅支持完整的未压缩普通文件。 RAR 解压内核未能启动：当前运行环境没有可用的 RAR WebAssembly 内核",
+      "writes": 1,
+      "error": "",
+      "text": "RAR checksum 正文\n",
+      "outputHex": "52415220636865636b73756d20e6ada3e696870a"
+    },
+    {
+      "name": "rar4-valid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar4-crc-zero-invalid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 0,
+      "error": "包内文件打开失败：Archive header or data are damaged",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-crc-zero-valid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "CRC ZERO !I]�",
+      "outputHex": "435243205a45524f2021495df4"
+    },
+    {
+      "name": "rar4-empty-zero-valid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": null,
+      "outputHex": ""
+    },
+    {
+      "name": "rar4-data-flip",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 0,
+      "error": "包内文件打开失败：Archive header or data are damaged",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-header-crc",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：Archive header or data are damaged",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-valid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar5-crc-zero-invalid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 0,
+      "error": "包内文件打开失败：Archive header or data are damaged",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-crc-zero-valid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "CRC ZERO !I]�",
+      "outputHex": "435243205a45524f2021495df4"
+    },
+    {
+      "name": "rar5-empty-zero-valid",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": null,
+      "outputHex": ""
+    },
+    {
+      "name": "rar5-data-flip",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 0,
+      "error": "包内文件打开失败：Archive header or data are damaged",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-header-crc",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：Archive header or data are damaged",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-crc-absent",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar4-truncated-data",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：File read error",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-truncated-tail-header",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-missing-end-marker",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar4-name-crosses-header",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar4-large-zero-high",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar4-large-packed-truncated",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：File read error",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-truncated-data",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：File read error",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-truncated-tail-header",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-missing-end-marker",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "ORIGINAL CONTENT",
+      "outputHex": "4f524947494e414c20434f4e54454e54"
+    },
+    {
+      "name": "rar5-name-crosses-header",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-name-vint-crosses-header",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-mtime-crosses-header",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-crc-crosses-header",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-data-size-unsafe",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：File read error",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-extra-size-crosses-header",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：Archive header or data are damaged",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-extra-record-crosses-header",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-extra-record-empty",
+      "mode": "native-wasm",
+      "archiveType": null,
+      "summary": "",
+      "writes": 0,
+      "error": "RAR 读取失败：RAR 头部或文件数据长度越界，文件可能已截断",
+      "text": null,
+      "outputHex": null
+    },
+    {
+      "name": "rar5-unknown-extra",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "RAR checksum 正文\n",
+      "outputHex": "52415220636865636b73756d20e6ada3e696870a"
+    },
+    {
+      "name": "rar5-padded-name-vint",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "RAR checksum 正文\n",
+      "outputHex": "52415220636865636b73756d20e6ada3e696870a"
+    },
+    {
+      "name": "rar5-unknown-block",
+      "mode": "native-wasm",
+      "archiveType": "rar-engine",
+      "summary": "已由本机 RAR 解压内核读取 1 个目录项；文件可直接点开。",
+      "writes": 1,
+      "error": "",
+      "text": "RAR checksum 正文\n",
+      "outputHex": "52415220636865636b73756d20e6ada3e696870a"
+    }
+  ],
+  "oracleAudit": "UnRAR getFileList rejects the two damaged header-CRC samples, while its extract-only API accepts them; both outcomes are retained. Direct UnRAR list+extract rejects the invalid data CRCs, including zero. bsdtar -xO does not reject these data-CRC failures. Six additional malformed metadata/tail cases are tolerated by direct UnRAR but violate record-local bounds, so the reader explicitly rejects them. Legal missing end markers, padded vints, unknown blocks/extras and high-size-zero headers remain readable.",
+  "platforms": {
+    "nodeComponent": "pass",
+    "wechatDevtools": "not-run: existing compiler startup failure",
+    "ios": "not-run",
+    "android": "not-run"
+  },
+  "status": "development-uploaded",
+  "generator": "tests/helpers/rar-crc.js",
+  "beforeEvidence": "2026-09-05-next-rar-crc.json",
+  "validation": {
+    "samples": 38,
+    "fullEntry": 66,
+    "relatedTests": 208,
+    "relatedFailures": 0,
+    "recovery": "pass: invalid then valid, late old-file failure ignored",
+    "node": "pass",
+    "production": "pass",
+    "chromeOracle": "pass",
+    "wechatDevtools": "not-run: prior compiler startup block",
+    "ios": "not-run",
+    "android": "not-run",
+    "nodeTests": 1164,
+    "nodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "failedWrites": 0,
+    "staleErrorBodies": 0,
+    "productCI": "pass",
+    "mainCI": "pass"
+  }
+}

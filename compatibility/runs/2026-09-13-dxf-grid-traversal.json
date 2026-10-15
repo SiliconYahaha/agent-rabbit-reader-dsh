@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T10:30:47.963318+00:00",
+  "status": "local-gates-passed-awaiting-draft-pr-ci",
+  "feature": "DXF full grid counts and bounded block traversal",
+  "rootCauses": [
+    "Per-axis clamp20 silently drops legal rows/columns.",
+    "Depth6 silently suppresses nested content.",
+    "Primitive cap does not bound empty/unsupported block expansion or stop outer loops.",
+    "Coincident zero-spacing cells repeat antialiased overdraw."
+  ],
+  "changes": [
+    "Expand actual grid dimensions within existing1200 primitive budget.",
+    "24000 shared record/cell work budget stops empty/unsupported expansion with existing visible truncation metadata.",
+    "Path-local cycle check; support64 nested blocks, reject deeper input explicitly. Reused sibling references remain legal.",
+    "Skip directly empty blocks; collapse zero-spacing axes to one native insertion location."
+  ],
+  "originals": {
+    "fixture": "tests/fixtures/dxf-grid-traversal/before.json",
+    "count": 11,
+    "nativeLineSegments": 2894,
+    "nativeAuditErrors": 0,
+    "baselineExact": 0,
+    "fixedCompleteExact": 9,
+    "partialPolicy": "1201-line source displays correct first1200 with visible truncation. 65-level source explicitly rejected; neither counted as full native match."
+  },
+  "adversarial": {
+    "fixture": "tests/fixtures/dxf-grid-traversal/adversarial-before.json",
+    "cases": 6,
+    "baselineTimeouts": 3,
+    "timeoutMs": 2000,
+    "afterTimeouts": 0,
+    "afterProcessMs": [
+      25,
+      36,
+      35,
+      26,
+      25,
+      29
+    ],
+    "note": "Whole isolated process wall time on this machine, not a universal performance guarantee."
+  },
+  "host": {
+    "originals": 10,
+    "repeatedOriginalOpens": 20,
+    "errorAndBudgetRecovery": true,
+    "staleErrorIgnored": true,
+    "detachedIgnored": true
+  },
+  "chrome": {
+    "views": 20,
+    "sizes": [
+      "390x260",
+      "1280x720"
+    ],
+    "exactNativePixelHashes": 20,
+    "nonblank": 20,
+    "zeroSpacingBeforeAfter": "Old coincident repeated strokes visibly darken/widen antialiased line; fixed SVG matches native deduplicated reference."
+  },
+  "relatedTests": 65,
+  "gates": {
+    "firstCheck": "1263 passed,1 failed: inherited DXF spacing profile schema status/axis error. Fixed in dependency commit2064196; first failure retained.",
+    "check": "passed",
+    "production": "passed",
+    "chromeOracle": "passed",
+    "tests": 1264,
+    "compatibilityProbes": 141,
+    "renderer": "passed"
+  },
+  "references": [
+    "https://ezdxf.readthedocs.io/en/stable/blocks/insert.html"
+  ],
+  "limits": [
+    "Authored2D LINE block cases; OCS and layer visibility remain unfixed.",
+    "1200 preview primitives;24000 work units;64 block depth. Truncation is explicit, not complete rendering.",
+    "WeChat developer tools and physical devices not run."
+  ],
+  "release": {
+    "status": "not released; draft PR pending",
+    "wechatDevelopmentDescription": "\u4fee\u590d DXF \u5927\u9635\u5217\u7f3a\u884c\u7f3a\u5217\u3001\u6df1\u5c42\u5d4c\u5957\u5185\u5bb9\u9057\u6f0f\u548c\u96f6\u95f4\u8ddd\u7ebf\u6761\u53d8\u7c97\u7684\u95ee\u9898\uff0c\u589e\u52a0\u590d\u6742\u56fe\u7eb8\u7684\u5904\u7406\u9650\u5236\u53ca\u660e\u786e\u63d0\u793a\u3002"
+  },
+  "next": [
+    "Scoped stacked PR and exact-head CI readback; do not retry unchanged infrastructure blockers.",
+    "Move to different format exploration while retaining negative OCS original and DXF layer visibility queue.",
+    "Merge/release/upload remains subject to prior automatic-review blocker; no implicit confirmation from goal continuation."
+  ]
+}

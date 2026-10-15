@@ -1,0 +1,1765 @@
+{
+  "schemaVersion": 1,
+  "nativeVersion": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "provenance": "72 repository-authored deterministic sources: 6 body variants x 4 boundary visibility patterns x 3 containers. Native import and original reader output are historical evidence, not automatically correct expectations.",
+  "cases": [
+    {
+      "name": "plain-visible-paragraph",
+      "body": "plain",
+      "boundary": "visible",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par LEFT\\par RIGHT\\par AFTER}",
+      "sha256": "af91a12d5a654eb995a05bba80ed8067199ada7c02909efe48e08d894cceb1d3",
+      "reader": "BEFORE\nLEFT\nRIGHT\nAFTER",
+      "writer": {
+        "name": "plain-visible-paragraph",
+        "visible": "BEFORE\n\nLEFT\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-visible-table",
+      "body": "plain",
+      "boundary": "visible",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\cell RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "c9fef4382b939eea51f7060a9f0c5f8af01eb82d7f07393d84c84f9323f018a1",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "plain-visible-table",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-visible-nested",
+      "body": "plain",
+      "boundary": "visible",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 LEFT\\nestcell RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "8981b85e7fd2ed9aa30a996d6a37eb08f18b5b2b91feaf7978dbf1d7d4f0400e",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "plain-visible-nested",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-hidden-paragraph",
+      "body": "plain",
+      "boundary": "hidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par LEFT\\v \\par \\v0 RIGHT\\par AFTER}",
+      "sha256": "3bd4d0f00da158255ea9335eef60ceb3f312d5687e736bf741c82f21c807baed",
+      "reader": "BEFORE\nLEFTRIGHT\nAFTER",
+      "writer": {
+        "name": "plain-hidden-paragraph",
+        "visible": "BEFORE\n\nLEFT\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-hidden-table",
+      "body": "plain",
+      "boundary": "hidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\v \\cell \\v0 RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "cb5544c391e9842ed7895416b76d7507a1cfd53591864cd171b767c5ab3fdae2",
+      "reader": "BEFORE\nLEFTRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "plain-hidden-table",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-hidden-nested",
+      "body": "plain",
+      "boundary": "hidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 LEFT\\v \\nestcell \\v0 RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "48517402c1d6754a6d3289f98f28adf66cc162f0b3215f57b2df2778ab324fe8",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "plain-hidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-hiddenThenReset-paragraph",
+      "body": "plain",
+      "boundary": "hiddenThenReset",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par LEFT\\v HIDDEN\\par \\plain RIGHT\\par AFTER}",
+      "sha256": "f3e9cdedc5c163e3d2c1029a76e014e37bfd8feb7f2317a7659a1e42c33162e9",
+      "reader": "BEFORE\nLEFTRIGHT\nAFTER",
+      "writer": {
+        "name": "plain-hiddenThenReset-paragraph",
+        "visible": "BEFORE\n\nLEFT\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-hiddenThenReset-table",
+      "body": "plain",
+      "boundary": "hiddenThenReset",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\v HIDDEN\\cell \\plain RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "d16d426e9698c0e10c35d632cad977caa788124ad556ef004b9410a8aa438f48",
+      "reader": "BEFORE\nLEFTRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "plain-hiddenThenReset-table",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-hiddenThenReset-nested",
+      "body": "plain",
+      "boundary": "hiddenThenReset",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 LEFT\\v HIDDEN\\nestcell \\plain RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "daaa6025f13bee107dbe643bfc2f0cc8dda219be8950315cca515b0fbe829e8d",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "plain-hiddenThenReset-nested",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-groupHidden-paragraph",
+      "body": "plain",
+      "boundary": "groupHidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par LEFT{\\v \\par }RIGHT\\par AFTER}",
+      "sha256": "ddd4f6495231d940ce414e24b9101b05514654871a55fd279cd818073a39e424",
+      "reader": "BEFORE\nLEFTRIGHT\nAFTER",
+      "writer": {
+        "name": "plain-groupHidden-paragraph",
+        "visible": "BEFORE\n\nLEFT\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-groupHidden-table",
+      "body": "plain",
+      "boundary": "groupHidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT{\\v \\cell }RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "3fd1f4179f9099a83a909bc5a45adefc82637396632b0c1ef5e86dc445b4edb6",
+      "reader": "BEFORE\nLEFTRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "plain-groupHidden-table",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "plain-groupHidden-nested",
+      "body": "plain",
+      "boundary": "groupHidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 LEFT{\\v \\nestcell }RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "8de29ba5d3f2d4611d86eb961e053c8a2f7e14017979f9bf48fb5afda4d384b4",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "plain-groupHidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-visible-paragraph",
+      "body": "unicode",
+      "boundary": "visible",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\u20320?\\u22909?\\par RIGHT\\par AFTER}",
+      "sha256": "35cfccacbc11f3365846d36f40509f799e8496de1c27d079b7de83a322c80224",
+      "reader": "BEFORE\n\u4f60\u597d\nRIGHT\nAFTER",
+      "writer": {
+        "name": "unicode-visible-paragraph",
+        "visible": "BEFORE\n\n\u4f60\u597d\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60\u597d",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-visible-table",
+      "body": "unicode",
+      "boundary": "visible",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\u20320?\\u22909?\\cell RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "e3003dcab3e7cf33600722c426a43ecd041533bc27260d4d7771440f93eef9f8",
+      "reader": "BEFORE\n\u4f60\u597d\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "unicode-visible-table",
+        "visible": "BEFORE\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60\u597d",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60\u597d",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-visible-nested",
+      "body": "unicode",
+      "boundary": "visible",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\u20320?\\u22909?\\nestcell RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "bfa08ab0d4b5dcb9a2d32e1962d0d68a405376b4ef000901866d79c44a30884b",
+      "reader": "BEFORE\nOUTER\n\u4f60\u597d\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "unicode-visible-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60\u597d",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60\u597d",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-hidden-paragraph",
+      "body": "unicode",
+      "boundary": "hidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\u20320?\\u22909?\\v \\par \\v0 RIGHT\\par AFTER}",
+      "sha256": "4e176bfb4d313ffbd022d9505e88f9fdc14d6c9787284d1ab5e561520d48a914",
+      "reader": "BEFORE\n\u4f60\u597dRIGHT\nAFTER",
+      "writer": {
+        "name": "unicode-hidden-paragraph",
+        "visible": "BEFORE\n\n\u4f60\u597d\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60\u597d",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-hidden-table",
+      "body": "unicode",
+      "boundary": "hidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\u20320?\\u22909?\\v \\cell \\v0 RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "fd2ad69569de061cc580b62b9f12d89a9d3cc448f73467579763c2e10d556df6",
+      "reader": "BEFORE\n\u4f60\u597dRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "unicode-hidden-table",
+        "visible": "BEFORE\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60\u597d",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60\u597d",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-hidden-nested",
+      "body": "unicode",
+      "boundary": "hidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\u20320?\\u22909?\\v \\nestcell \\v0 RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "47120ca33a55a058be491fab8d3fc4c1e18722ef2ac1aac2fd2711a4b86064d7",
+      "reader": "BEFORE\nOUTER\n\u4f60\u597dRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "unicode-hidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60\u597d",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60\u597d",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-hiddenThenReset-paragraph",
+      "body": "unicode",
+      "boundary": "hiddenThenReset",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\u20320?\\u22909?\\v HIDDEN\\par \\plain RIGHT\\par AFTER}",
+      "sha256": "642f9958de91a4fb44996a18001de8364e69aad55efd436d1c7a84d7d2d82355",
+      "reader": "BEFORE\n\u4f60\u597dRIGHT\nAFTER",
+      "writer": {
+        "name": "unicode-hiddenThenReset-paragraph",
+        "visible": "BEFORE\n\n\u4f60\u597d\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60\u597d",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-hiddenThenReset-table",
+      "body": "unicode",
+      "boundary": "hiddenThenReset",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\u20320?\\u22909?\\v HIDDEN\\cell \\plain RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "7edf109a476c7327a5adbf8ef5f1e2bd3c43db14e6a809125691888118dc1ac1",
+      "reader": "BEFORE\n\u4f60\u597dRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "unicode-hiddenThenReset-table",
+        "visible": "BEFORE\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60\u597d",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60\u597d",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-hiddenThenReset-nested",
+      "body": "unicode",
+      "boundary": "hiddenThenReset",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\u20320?\\u22909?\\v HIDDEN\\nestcell \\plain RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "9f569283bb983b01a227e25fc8450b7f6a248b7adb89c0326381465f91935286",
+      "reader": "BEFORE\nOUTER\n\u4f60\u597dRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "unicode-hiddenThenReset-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60\u597d",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60\u597d",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-groupHidden-paragraph",
+      "body": "unicode",
+      "boundary": "groupHidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\u20320?\\u22909?{\\v \\par }RIGHT\\par AFTER}",
+      "sha256": "5fb19c7bc1083ff58a84068d4e8193956ac5d861636ac3605fce2c560e5d9612",
+      "reader": "BEFORE\n\u4f60\u597dRIGHT\nAFTER",
+      "writer": {
+        "name": "unicode-groupHidden-paragraph",
+        "visible": "BEFORE\n\n\u4f60\u597d\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60\u597d",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-groupHidden-table",
+      "body": "unicode",
+      "boundary": "groupHidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\u20320?\\u22909?{\\v \\cell }RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "7ca56cf7526ad532e522ccdd2587edbe19d0ad49f488f3ebdacf62fb256cc1b4",
+      "reader": "BEFORE\n\u4f60\u597dRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "unicode-groupHidden-table",
+        "visible": "BEFORE\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60\u597d",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60\u597d",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "unicode-groupHidden-nested",
+      "body": "unicode",
+      "boundary": "groupHidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\u20320?\\u22909?{\\v \\nestcell }RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "4b13c23d77d544a2fa156b0ff5a6606dc296dc30008cf5650588f82630b3af67",
+      "reader": "BEFORE\nOUTER\n\u4f60\u597dRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "unicode-groupHidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60\u597d\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60\u597d",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60\u597d",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-visible-paragraph",
+      "body": "field",
+      "boundary": "visible",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}\\par RIGHT\\par AFTER}",
+      "sha256": "c2a57fae722634e2db96e2cdf632a20bc15b630ccb20de3f8729ca2bee51343c",
+      "reader": "BEFORE\nLINK\nRIGHT\nAFTER",
+      "writer": {
+        "name": "field-visible-paragraph",
+        "visible": "BEFORE\n\nLINK\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "LINK",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-visible-table",
+      "body": "field",
+      "boundary": "visible",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}\\cell RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "0fac0be60f66a72c8472ad4b0e1956091d4996c3754672ed441bc30d27b23a3f",
+      "reader": "BEFORE\nLINK\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "field-visible-table",
+        "visible": "BEFORE\n\nLINK\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LINK",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LINK",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-visible-nested",
+      "body": "field",
+      "boundary": "visible",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}\\nestcell RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "554683a7e7c76da22fab88fdf95d3b3400b0f56447901b322a56e28ab46c340a",
+      "reader": "BEFORE\nOUTER\nLINK\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "field-visible-nested",
+        "visible": "BEFORE\n\nOUTER\n\nLINK\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLINK\n\n\t\n\nRIGHT\n\nEND",
+          "LINK",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LINK",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-hidden-paragraph",
+      "body": "field",
+      "boundary": "hidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}\\v \\par \\v0 RIGHT\\par AFTER}",
+      "sha256": "ea08490eb8913832d2c2d05ad43b986bd7ba27c9ee134b0b341e0200164d9fdc",
+      "reader": "BEFORE\nLINKRIGHT\nAFTER",
+      "writer": {
+        "name": "field-hidden-paragraph",
+        "visible": "BEFORE\n\nLINK\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "LINK",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-hidden-table",
+      "body": "field",
+      "boundary": "hidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}\\v \\cell \\v0 RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "19f55ea029d00cc334cb3f128d64efabee77cbe52d177d1beefee79034d3540f",
+      "reader": "BEFORE\nLINKRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "field-hidden-table",
+        "visible": "BEFORE\n\nLINK\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LINK",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LINK",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-hidden-nested",
+      "body": "field",
+      "boundary": "hidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}\\v \\nestcell \\v0 RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "ee5ae80f0299be05ac27f04af96421f895297c7cc436543e7ae496a2b851196a",
+      "reader": "BEFORE\nOUTER\nLINKRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "field-hidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\nLINK\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLINK\n\n\t\n\nRIGHT\n\nEND",
+          "LINK",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LINK",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-hiddenThenReset-paragraph",
+      "body": "field",
+      "boundary": "hiddenThenReset",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}\\v HIDDEN\\par \\plain RIGHT\\par AFTER}",
+      "sha256": "3a1fb3fcfcd0a66848d3ea8fadab1810cfde41aaf93135c6385b86a36e704219",
+      "reader": "BEFORE\nLINKRIGHT\nAFTER",
+      "writer": {
+        "name": "field-hiddenThenReset-paragraph",
+        "visible": "BEFORE\n\nLINK\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "LINK",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-hiddenThenReset-table",
+      "body": "field",
+      "boundary": "hiddenThenReset",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}\\v HIDDEN\\cell \\plain RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "e9154654baed6ac03b7a7dcad5f0180f6c4d2657f78000a64fb197113c0b1154",
+      "reader": "BEFORE\nLINKRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "field-hiddenThenReset-table",
+        "visible": "BEFORE\n\nLINK\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LINK",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LINK",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-hiddenThenReset-nested",
+      "body": "field",
+      "boundary": "hiddenThenReset",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}\\v HIDDEN\\nestcell \\plain RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "f4de942cb812c30d2f2daaa13c09b07096d84244ac34adff93598fbe8b051eef",
+      "reader": "BEFORE\nOUTER\nLINKRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "field-hiddenThenReset-nested",
+        "visible": "BEFORE\n\nOUTER\n\nLINK\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLINK\n\n\t\n\nRIGHT\n\nEND",
+          "LINK",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LINK",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-groupHidden-paragraph",
+      "body": "field",
+      "boundary": "groupHidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}{\\v \\par }RIGHT\\par AFTER}",
+      "sha256": "cf0925d413404a7db3a3901a20ca7ab39d2f07f7363628876d09717e41e41f06",
+      "reader": "BEFORE\nLINKRIGHT\nAFTER",
+      "writer": {
+        "name": "field-groupHidden-paragraph",
+        "visible": "BEFORE\n\nLINK\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "LINK",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-groupHidden-table",
+      "body": "field",
+      "boundary": "groupHidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}{\\v \\cell }RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "85e844a4e7893f29c45baa4c59cf5d0f6e10d3c32675bf3ab417d919252e9260",
+      "reader": "BEFORE\nLINKRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "field-groupHidden-table",
+        "visible": "BEFORE\n\nLINK\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LINK",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LINK",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "field-groupHidden-nested",
+      "body": "field",
+      "boundary": "groupHidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt LINK}}{\\v \\nestcell }RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "b6351fd1d4a5006ab6aab81a6d2e45fc925c07f34cde43dc67c136be9ee8705f",
+      "reader": "BEFORE\nOUTER\nLINKRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "field-groupHidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\nLINK\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLINK\n\n\t\n\nRIGHT\n\nEND",
+          "LINK",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LINK",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-visible-paragraph",
+      "body": "hiddenIsland",
+      "boundary": "visible",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par {\\v HIDE{\\v0 VISIBLE}HIDE}\\par RIGHT\\par AFTER}",
+      "sha256": "eed4aa418f044e8fa88fabc76fa69ec746226ef12a63677d0fe86f64c0dc9111",
+      "reader": "BEFORE\nVISIBLE\nRIGHT\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-visible-paragraph",
+        "visible": "BEFORE\n\nVISIBLE\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "VISIBLE",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-visible-table",
+      "body": "hiddenIsland",
+      "boundary": "visible",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\v HIDE{\\v0 VISIBLE}HIDE}\\cell RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "178b887bdc08c68712a0bebc4be2888f34a0ec0889fd035296be4ec87cbe7064",
+      "reader": "BEFORE\nVISIBLE\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-visible-table",
+        "visible": "BEFORE\n\nVISIBLE\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "VISIBLE",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "VISIBLE",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-visible-nested",
+      "body": "hiddenIsland",
+      "boundary": "visible",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 {\\v HIDE{\\v0 VISIBLE}HIDE}\\nestcell RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "205bdf954c18bcc24c73272bb0b0ed305b46603da47963ff63ec7600d91c5621",
+      "reader": "BEFORE\nOUTER\nVISIBLE\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-visible-nested",
+        "visible": "BEFORE\n\nOUTER\n\nVISIBLE\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nVISIBLE\n\n\t\n\nRIGHT\n\nEND",
+          "VISIBLE",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "VISIBLE",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-hidden-paragraph",
+      "body": "hiddenIsland",
+      "boundary": "hidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par {\\v HIDE{\\v0 VISIBLE}HIDE}\\v \\par \\v0 RIGHT\\par AFTER}",
+      "sha256": "294866a2c15a5bdbe2cb744de4d621c041e9953ec05616a51a36f4e3ae519455",
+      "reader": "BEFORE\nVISIBLERIGHT\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-hidden-paragraph",
+        "visible": "BEFORE\n\nVISIBLE\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "VISIBLE",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-hidden-table",
+      "body": "hiddenIsland",
+      "boundary": "hidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\v HIDE{\\v0 VISIBLE}HIDE}\\v \\cell \\v0 RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "8b6746a87e992ce10713e06c9d34fec207de25cd8387315e5fda23949c165703",
+      "reader": "BEFORE\nVISIBLERIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-hidden-table",
+        "visible": "BEFORE\n\nVISIBLE\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "VISIBLE",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "VISIBLE",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-hidden-nested",
+      "body": "hiddenIsland",
+      "boundary": "hidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 {\\v HIDE{\\v0 VISIBLE}HIDE}\\v \\nestcell \\v0 RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "c46be0e9660b7f0c637cfcdbb89861aefd365dc2325c1eeb4d32ba71e58ba3e1",
+      "reader": "BEFORE\nOUTER\nVISIBLERIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-hidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\nVISIBLE\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nVISIBLE\n\n\t\n\nRIGHT\n\nEND",
+          "VISIBLE",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "VISIBLE",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-hiddenThenReset-paragraph",
+      "body": "hiddenIsland",
+      "boundary": "hiddenThenReset",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par {\\v HIDE{\\v0 VISIBLE}HIDE}\\v HIDDEN\\par \\plain RIGHT\\par AFTER}",
+      "sha256": "69aace1dea00c2bdeaa39b059454757306d3a16bc1d10a6bc152c04c038badc9",
+      "reader": "BEFORE\nVISIBLERIGHT\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-hiddenThenReset-paragraph",
+        "visible": "BEFORE\n\nVISIBLE\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "VISIBLE",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-hiddenThenReset-table",
+      "body": "hiddenIsland",
+      "boundary": "hiddenThenReset",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\v HIDE{\\v0 VISIBLE}HIDE}\\v HIDDEN\\cell \\plain RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "033cafb44589e58007ab00e312bdf4e1c2ff3adb27ead370d186855d151776eb",
+      "reader": "BEFORE\nVISIBLERIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-hiddenThenReset-table",
+        "visible": "BEFORE\n\nVISIBLE\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "VISIBLE",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "VISIBLE",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-hiddenThenReset-nested",
+      "body": "hiddenIsland",
+      "boundary": "hiddenThenReset",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 {\\v HIDE{\\v0 VISIBLE}HIDE}\\v HIDDEN\\nestcell \\plain RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "1d5184bb65dacc30e8953154b6d6bb0fcbe21ef0906a59b504839029700c5741",
+      "reader": "BEFORE\nOUTER\nVISIBLERIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-hiddenThenReset-nested",
+        "visible": "BEFORE\n\nOUTER\n\nVISIBLE\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nVISIBLE\n\n\t\n\nRIGHT\n\nEND",
+          "VISIBLE",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "VISIBLE",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-groupHidden-paragraph",
+      "body": "hiddenIsland",
+      "boundary": "groupHidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par {\\v HIDE{\\v0 VISIBLE}HIDE}{\\v \\par }RIGHT\\par AFTER}",
+      "sha256": "0d48e25f07bdd46a4a5df96a184d576347aed6a783e7a3c59c9b9f9fa5dfabd6",
+      "reader": "BEFORE\nVISIBLERIGHT\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-groupHidden-paragraph",
+        "visible": "BEFORE\n\nVISIBLE\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "VISIBLE",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-groupHidden-table",
+      "body": "hiddenIsland",
+      "boundary": "groupHidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\v HIDE{\\v0 VISIBLE}HIDE}{\\v \\cell }RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "749543415ab1485432673a19f85bfc1b5d20a0d1bfd8e61b5723daf8e28f3f45",
+      "reader": "BEFORE\nVISIBLERIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-groupHidden-table",
+        "visible": "BEFORE\n\nVISIBLE\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "VISIBLE",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "VISIBLE",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "hiddenIsland-groupHidden-nested",
+      "body": "hiddenIsland",
+      "boundary": "groupHidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 {\\v HIDE{\\v0 VISIBLE}HIDE}{\\v \\nestcell }RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "41a96638f30169db446bb8e34027423519e5a08d49ca73b92c2749db8c00a5ab",
+      "reader": "BEFORE\nOUTER\nVISIBLERIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "hiddenIsland-groupHidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\nVISIBLE\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nVISIBLE\n\n\t\n\nRIGHT\n\nEND",
+          "VISIBLE",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "VISIBLE",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true
+    },
+    {
+      "name": "fallbackControl-visible-paragraph",
+      "body": "fallbackControl",
+      "boundary": "visible",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\uc1\\u20320\\v TAIL\\par RIGHT\\par AFTER}",
+      "sha256": "77e5387f973b0c3179518a0ccd9064cf65a8c2ec1d4b3ce176d2f9ebb2876bd4",
+      "reader": "BEFORE\n\u4f60TAIL\nRIGHT\nAFTER",
+      "writer": {
+        "name": "fallbackControl-visible-paragraph",
+        "visible": "BEFORE\n\n\u4f60",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-visible-table",
+      "body": "fallbackControl",
+      "boundary": "visible",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\uc1\\u20320\\v TAIL\\cell RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "aef82c3ccfbf83beb5ee153288d517b761d7b7b8647fecc8c4e99c20bfeaa322",
+      "reader": "BEFORE\n\u4f60TAIL\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackControl-visible-table",
+        "visible": "BEFORE\n\n\u4f60\n\n\t",
+        "cells": [
+          "\u4f60",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-visible-nested",
+      "body": "fallbackControl",
+      "boundary": "visible",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\uc1\\u20320\\v TAIL\\nestcell RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "3435a1f8903e6b26602ac1be479bf34f716b1b23c4353825b5bd753f7bb4b8de",
+      "reader": "BEFORE\nOUTER\n\u4f60TAIL\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackControl-visible-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60\n\n\t",
+        "cells": [
+          "OUTER\n\n\u4f60\n\n\t",
+          "\u4f60",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-hidden-paragraph",
+      "body": "fallbackControl",
+      "boundary": "hidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\uc1\\u20320\\v TAIL\\v \\par \\v0 RIGHT\\par AFTER}",
+      "sha256": "cfafae2adc9a93b02cc69514ff97301c7d97a72343e099467676d70567f63de5",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\nAFTER",
+      "writer": {
+        "name": "fallbackControl-hidden-paragraph",
+        "visible": "BEFORE\n\n\u4f60\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-hidden-table",
+      "body": "fallbackControl",
+      "boundary": "hidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\uc1\\u20320\\v TAIL\\v \\cell \\v0 RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "a19db67320cb8fcda0a08320d62ab34ddffd3c6355dca3815995897a07bede2d",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackControl-hidden-table",
+        "visible": "BEFORE\n\n\u4f60\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-hidden-nested",
+      "body": "fallbackControl",
+      "boundary": "hidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\uc1\\u20320\\v TAIL\\v \\nestcell \\v0 RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "ada0a3cc45518fc2cbe58d60e55c0f998d940e0d8b55c14a15cf1c020ec42b00",
+      "reader": "BEFORE\nOUTER\n\u4f60TAILRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackControl-hidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-hiddenThenReset-paragraph",
+      "body": "fallbackControl",
+      "boundary": "hiddenThenReset",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\uc1\\u20320\\v TAIL\\v HIDDEN\\par \\plain RIGHT\\par AFTER}",
+      "sha256": "c8b77974ca82160cbaf2fadde1a072ca39cc6fb315e501638dad7b2c8cc90f42",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\nAFTER",
+      "writer": {
+        "name": "fallbackControl-hiddenThenReset-paragraph",
+        "visible": "BEFORE\n\n\u4f60\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-hiddenThenReset-table",
+      "body": "fallbackControl",
+      "boundary": "hiddenThenReset",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\uc1\\u20320\\v TAIL\\v HIDDEN\\cell \\plain RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "5409715a5cce5f543f51f7937fc79fd22b29e68abacbfe4bc357973e12c91b19",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackControl-hiddenThenReset-table",
+        "visible": "BEFORE\n\n\u4f60\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-hiddenThenReset-nested",
+      "body": "fallbackControl",
+      "boundary": "hiddenThenReset",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\uc1\\u20320\\v TAIL\\v HIDDEN\\nestcell \\plain RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "5e5ef7a7b2037d256189555298797546c8c787c5241d3558b33720200b8a054b",
+      "reader": "BEFORE\nOUTER\n\u4f60TAILRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackControl-hiddenThenReset-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-groupHidden-paragraph",
+      "body": "fallbackControl",
+      "boundary": "groupHidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\uc1\\u20320\\v TAIL{\\v \\par }RIGHT\\par AFTER}",
+      "sha256": "87e941b76d6a9134f411e8c27268382af835a79fed5e339478dbad3a2c9614a0",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\nAFTER",
+      "writer": {
+        "name": "fallbackControl-groupHidden-paragraph",
+        "visible": "BEFORE\n\n\u4f60",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-groupHidden-table",
+      "body": "fallbackControl",
+      "boundary": "groupHidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\uc1\\u20320\\v TAIL{\\v \\cell }RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "dbf38b9639e1665869c1cdabcd2a8991f2b215344f993fc9f72559e0f7871eb6",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackControl-groupHidden-table",
+        "visible": "BEFORE\n\n\u4f60\n\n\t",
+        "cells": [
+          "\u4f60",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackControl-groupHidden-nested",
+      "body": "fallbackControl",
+      "boundary": "groupHidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\uc1\\u20320\\v TAIL{\\v \\nestcell }RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "553d0489c9932470438579b9cfe7cda98c668c2e7d62bb573d1c330e76e0bee5",
+      "reader": "BEFORE\nOUTER\n\u4f60TAILRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackControl-groupHidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60\n\n\t",
+        "cells": [
+          "OUTER\n\n\u4f60\n\n\t",
+          "\u4f60",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-visible-paragraph",
+      "body": "fallbackGroup",
+      "boundary": "visible",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\uc2\\u20320?{\\v HIDE}TAIL\\par RIGHT\\par AFTER}",
+      "sha256": "659e12feef266f9108ef46ce0986460e9008927ab75b4a1f93ca3ca7066645f7",
+      "reader": "BEFORE\n\u4f60TAIL\nRIGHT\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-visible-paragraph",
+        "visible": "BEFORE\n\n\u4f60AIL\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60AIL",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-visible-table",
+      "body": "fallbackGroup",
+      "boundary": "visible",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\uc2\\u20320?{\\v HIDE}TAIL\\cell RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "d0b766a7e9174a8fa682940729eeb1c71f2ca719f41998168bad94eeeb9ed241",
+      "reader": "BEFORE\n\u4f60TAIL\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-visible-table",
+        "visible": "BEFORE\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60AIL",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60AIL",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-visible-nested",
+      "body": "fallbackGroup",
+      "boundary": "visible",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\uc2\\u20320?{\\v HIDE}TAIL\\nestcell RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "5686b9b41009207ce0de6ecb6ad276b6f5ba0c05757707f92312230d1d6c2f5d",
+      "reader": "BEFORE\nOUTER\n\u4f60TAIL\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-visible-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60AIL",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60AIL",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-hidden-paragraph",
+      "body": "fallbackGroup",
+      "boundary": "hidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\uc2\\u20320?{\\v HIDE}TAIL\\v \\par \\v0 RIGHT\\par AFTER}",
+      "sha256": "fd6a47be2f198205c9624a1be37ec7fe746c84c87f6752ca0b8d0060466787a5",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-hidden-paragraph",
+        "visible": "BEFORE\n\n\u4f60AIL\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60AIL",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-hidden-table",
+      "body": "fallbackGroup",
+      "boundary": "hidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\uc2\\u20320?{\\v HIDE}TAIL\\v \\cell \\v0 RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "90f55b1b7bb902228181cd20aa8961d1e8e5e93f06ddc3cc265f78ef4202c345",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-hidden-table",
+        "visible": "BEFORE\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60AIL",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60AIL",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-hidden-nested",
+      "body": "fallbackGroup",
+      "boundary": "hidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\uc2\\u20320?{\\v HIDE}TAIL\\v \\nestcell \\v0 RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "ae96d70bc886582208ad48232e78085cdba5a73a50aeda190071028e0f57cadc",
+      "reader": "BEFORE\nOUTER\n\u4f60TAILRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-hidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60AIL",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60AIL",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-hiddenThenReset-paragraph",
+      "body": "fallbackGroup",
+      "boundary": "hiddenThenReset",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\uc2\\u20320?{\\v HIDE}TAIL\\v HIDDEN\\par \\plain RIGHT\\par AFTER}",
+      "sha256": "db7aec17df2c1363d672c22c94bcc81475d90c82145862096b2f10c16626853f",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-hiddenThenReset-paragraph",
+        "visible": "BEFORE\n\n\u4f60AIL\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60AIL",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-hiddenThenReset-table",
+      "body": "fallbackGroup",
+      "boundary": "hiddenThenReset",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\uc2\\u20320?{\\v HIDE}TAIL\\v HIDDEN\\cell \\plain RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "fce60ac81f65a0e56064d118ec5411be449c34b2822f4c86458e8cd89dacc05b",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-hiddenThenReset-table",
+        "visible": "BEFORE\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60AIL",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60AIL",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-hiddenThenReset-nested",
+      "body": "fallbackGroup",
+      "boundary": "hiddenThenReset",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\uc2\\u20320?{\\v HIDE}TAIL\\v HIDDEN\\nestcell \\plain RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "7d53050d4b751ab2b4b83a6e580309454c6bd9ca5e6d94019a9da45a8ddf3c99",
+      "reader": "BEFORE\nOUTER\n\u4f60TAILRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-hiddenThenReset-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60AIL",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60AIL",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-groupHidden-paragraph",
+      "body": "fallbackGroup",
+      "boundary": "groupHidden",
+      "container": "paragraph",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\uc2\\u20320?{\\v HIDE}TAIL{\\v \\par }RIGHT\\par AFTER}",
+      "sha256": "17d4367b7235641b87d34860305a4ca00d96caddbb386a00bb50c8cc387075d7",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-groupHidden-paragraph",
+        "visible": "BEFORE\n\n\u4f60AIL\n\nRIGHT\n\nAFTER",
+        "cells": [],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60AIL",
+          "RIGHT",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-groupHidden-table",
+      "body": "fallbackGroup",
+      "boundary": "groupHidden",
+      "container": "table",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl \\uc2\\u20320?{\\v HIDE}TAIL{\\v \\cell }RIGHT\\cell\\row\\pard \\par AFTER}",
+      "sha256": "6b090bb38810df521974ac0c692b5b244d448b3c8c044787852fa153b045d3b5",
+      "reader": "BEFORE\n\u4f60TAILRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-groupHidden-table",
+        "visible": "BEFORE\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "\u4f60AIL",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\u4f60AIL",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    },
+    {
+      "name": "fallbackGroup-groupHidden-nested",
+      "body": "fallbackGroup",
+      "boundary": "groupHidden",
+      "container": "nested",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}\\uc1 BEFORE\\par \\trowd\\cellx6000\\intbl\\itap1 OUTER\\par\\itap2 \\uc2\\u20320?{\\v HIDE}TAIL{\\v \\nestcell }RIGHT\\nestcell{\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row\\pard \\par AFTER}",
+      "sha256": "c4bfe3b11721f5adce1ec41b29e19145563c6e751870be8686f9fdb6f9faaf15",
+      "reader": "BEFORE\nOUTER\n\u4f60TAILRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "fallbackGroup-groupHidden-nested",
+        "visible": "BEFORE\n\nOUTER\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\u4f60AIL\n\n\t\n\nRIGHT\n\nEND",
+          "\u4f60AIL",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "\u4f60AIL",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": false
+    }
+  ]
+}

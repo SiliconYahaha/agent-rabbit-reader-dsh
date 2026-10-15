@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>兔子阅读器 · 设计与文案规范</title>
+  <style>
+    :root {
+      --paper:#fff9f2; --surface:#fffdf8; --ink:#171715; --muted:#62605c;
+      --coral:#ff5b43; --coral-dark:#e74431; --lime:#b9e63b;
+      font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+      color:var(--ink); background:var(--paper); color-scheme:light;
+    }
+    *{box-sizing:border-box} body{margin:0;background:var(--paper)}
+    main{width:min(1080px,calc(100% - 32px));margin:auto;padding:64px 0 96px}
+    .kicker{margin:0 0 12px;color:var(--muted);font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    h1{max-width:800px;margin:0;font-size:clamp(42px,7vw,76px);line-height:1;letter-spacing:-.055em}
+    .lead{max-width:760px;margin:22px 0 0;color:var(--muted);font-size:18px;line-height:1.7}
+    section{margin-top:70px} h2{margin:0 0 22px;font-size:30px;letter-spacing:-.035em}
+    .card{border:2px solid var(--ink);border-radius:26px;background:var(--surface);box-shadow:8px 8px 0 var(--ink)}
+    .brand{display:grid;grid-template-columns:.85fr 1.15fr;gap:32px;padding:36px}
+    .art{display:grid;place-items:center;min-height:380px}.hero{width:min(100%,420px);display:block}
+    .rules{display:grid;align-content:center;gap:16px}.rule{padding:18px 20px;border:2px solid var(--ink);border-radius:18px;background:var(--paper)}
+    .rule strong{display:block;margin-bottom:6px;font-size:18px}.rule p{margin:0;color:var(--muted);line-height:1.6}
+    .tokens{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.swatch{overflow:hidden;border:2px solid var(--ink);border-radius:18px;background:var(--surface)}
+    .color{height:108px;background:var(--c)}.label{padding:13px}.label b,.label code{display:block}.label code{margin-top:4px;color:var(--muted);font-size:12px}
+    .components{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}.panel{padding:30px}
+    .primary{display:flex;min-height:76px;align-items:center;justify-content:center;gap:12px;border-radius:20px;color:white;background:var(--coral);box-shadow:0 8px 0 var(--coral-dark);font-size:20px;font-weight:850}
+    .primary img,.secondary img{width:24px;height:24px}.note{margin:18px 0 24px;color:var(--muted);font-size:14px;text-align:center}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.secondary{display:flex;min-height:56px;align-items:center;justify-content:center;gap:8px;border:2px solid var(--ink);border-radius:16px;background:var(--surface);font-weight:750}
+    .mini-brand{text-align:center}.mark{width:122px;height:122px;object-fit:contain}.brand-name{margin-top:-10px;font-size:20px;font-weight:650;letter-spacing:.04em}
+    .trust{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:30px;color:var(--muted);font-size:14px}.trust img{width:24px;height:24px}
+    table{width:100%;overflow:hidden;border:2px solid var(--ink);border-radius:18px;border-collapse:separate;border-spacing:0;background:var(--surface)}
+    th,td{padding:16px 18px;border-bottom:1px solid #ddd6cd;text-align:left}tr:last-child th,tr:last-child td{border-bottom:0}th{width:190px}td{color:var(--muted);line-height:1.55}
+    @media(max-width:760px){main{padding-top:40px}.brand,.components{grid-template-columns:1fr}.tokens{grid-template-columns:repeat(2,1fr)}.art{min-height:300px}}
+  </style>
+</head>
+<body><main>
+  <p class="kicker">Rabbit Reader · Shared UI Reference</p>
+  <h1>收到文件，就在微信里看。</h1>
+  <p class="lead">视觉关键词是手绘、纸张、兔子与开箱感。产品外壳负责让人安心地选择文件；内容打开后，品牌主动缩小，让网页本身成为主角。</p>
+
+  <section><h2>01 · 品牌与插画</h2><div class="card brand"><div class="art"><img class="hero" src="../miniprogram/assets/brand-hero-sketch-transparent.png" alt="兔子从 HTML 纸箱中举起网页的手绘插画"></div><div class="rules">
+    <div class="rule"><strong>标志只写 HTML</strong><p>不再使用 &amp;lt; 与 &amp;gt;。账号头像使用现有橙绿色兔耳 Logo；首页和分享大图使用兔子纸箱插画，不重绘品牌资产。</p></div>
+    <div class="rule"><strong>黑色手绘线是骨架</strong><p>纸箱、插画和控件统一使用有温度的墨线感；界面组件仍保持清晰、规整和可点击。</p></div>
+    <div class="rule"><strong>插画不是装饰</strong><p>“兔子从纸箱中打开网页”直接解释了产品用途，首页无需再堆叠大段口号。</p></div>
+  </div></div></section>
+
+  <section><h2>02 · 核心色</h2><div class="tokens">
+    <div class="swatch" style="--c:#fff9f2"><div class="color"></div><div class="label"><b>暖纸</b><code>#FFF9F2</code></div></div>
+    <div class="swatch" style="--c:#fffdf8"><div class="color"></div><div class="label"><b>米白</b><code>#FFFDF8</code></div></div>
+    <div class="swatch" style="--c:#171715"><div class="color"></div><div class="label"><b>墨色</b><code>#171715</code></div></div>
+    <div class="swatch" style="--c:#ff5b43"><div class="color"></div><div class="label"><b>珊瑚</b><code>#FF5B43</code></div></div>
+    <div class="swatch" style="--c:#b9e63b"><div class="color"></div><div class="label"><b>青柠</b><code>#B9E63B</code></div></div>
+  </div></section>
+
+  <section><h2>03 · 组件与标记</h2><div class="components">
+    <div class="card panel"><div class="note"><strong>HTML · SVG</strong><br>Ai · PSD · ZIP 等文件</div><div class="primary"><img src="../miniprogram/assets/icons/folder-open.svg" alt="">打开文件</div><div class="note">从微信聊天选择，最多 10 个</div><div class="row"><div class="secondary"><img src="../miniprogram/assets/icons/clipboard-text.svg" alt="">粘贴 HTML</div><div class="secondary"><img src="../miniprogram/assets/icons/book-2.svg" alt="">打开示例</div></div><div class="trust"><img src="../miniprogram/assets/icons/shield-check.svg" alt="">本机处理 · 原文件不上传</div></div>
+    <div class="card panel mini-brand"><img class="mark" src="../miniprogram/assets/brand-logo.png" alt="橙绿色兔耳 Logo"><div class="brand-name">账号头像：橙绿色 Logo<br>分享大图：首页兔子纸箱插画</div></div>
+  </div></section>
+
+<p class="lead">首页5项格式已确认：突出补充微信聊天文件预览的价值，不用PDF等常规格式占展示位置。协作状态与分工见 <a href="contest-readiness.md">参赛前协作清单</a>。</p>
+
+  <section><h2>04 · 使用规则</h2><table>
+    <tr><th>主次动作</th><td>珊瑚色只给“打开文件”这一主动作；粘贴与示例使用描边按钮。</td></tr>
+    <tr><th>圆角与阴影</th><td>按钮 16–20px 圆角；主按钮使用同色硬阴影，工具栏允许珊瑚色偏移阴影。</td></tr>
+    <tr><th>示例卡片</th><td>一行格式标识、一行趣味标题、一句说明；整张卡可点。使用整行宽度，不受微信 style v2 默认按钮宽度限制。加载时禁止重复点按，失败后可重试。</td></tr>
+    <tr><th>字体</th><td>中文使用系统字体保证微信内可读性；品牌图形中的手写字只存在于插画资产内。</td></tr>
+    <tr><th>首页与阅读页</th><td>首页负责选文件；阅读页从微信原生导航下方直接展示正文，不增加文件名或“换文件”顶部栏。返回首页只使用微信原生小房子。</td></tr>
+    <tr><th>产品边界</th><td>首页突出HTML、SVG，补充Ai、PSD、ZIP；完整支持范围与文件实际保存内容有关。DWG图纸不在当前内容预览范围，限制在对应文件打开时说明。</td></tr>
+  </table></section>
+  <section><h2>05 · 文案与协作</h2><table>
+    <tr><th>一个入口</th><td>首页与分享文案：miniprogram/utils/product-copy.js；阅读状态与错误：file-reader/skin/copy.js；切换栏样式：styles/file-queue.wxss。</td></tr>
+    <tr><th>文字只做一件事</th><td>按钮写动作，说明写必要条件；状态用短句。错误保留原因、限制与下一步，不能为了短而省掉密码、大小或格式边界。</td></tr>
+    <tr><th>技术信息按需出现</th><td>首页不列解析器、分包和不支持的格式。失败提示给出下一步，底层错误保留在开发诊断；文件内容本身不受界面文案精简影响。</td></tr>
+    <tr><th>品牌资产</th><td>保留现有Logo与兔子插画。账号头像、分享大图、首页插画分别记录，不把更改分享大图视为后台头像已更新。</td></tr>
+    <tr><th>本轮与后续</th><td>首页与示例页共用 styles/tokens.wxss 的品牌颜色；新增页面继续复用。其余历史组件逐步迁移，全部状态与跨端视觉仍需验收。</td></tr>
+  </table></section>
+</main></body></html>

@@ -1,0 +1,88 @@
+{
+  "issue": 194,
+  "scope": "Node real reader component with controlled InnerAudioContext callbacks, not WeChat",
+  "results": [
+    {
+      "event": "Canplay",
+      "changedKeys": [],
+      "additionalPatches": 0,
+      "error": "",
+      "text": "Current document"
+    },
+    {
+      "event": "TimeUpdate",
+      "changedKeys": [],
+      "additionalPatches": 0,
+      "error": "",
+      "text": "Current document"
+    },
+    {
+      "event": "Waiting",
+      "changedKeys": [
+        "mediaDiagnostic"
+      ],
+      "additionalPatches": 1,
+      "error": "",
+      "text": "Current document"
+    },
+    {
+      "event": "Seeking",
+      "changedKeys": [
+        "mediaDiagnostic"
+      ],
+      "additionalPatches": 1,
+      "error": "",
+      "text": "Current document"
+    },
+    {
+      "event": "Seeked",
+      "changedKeys": [
+        "mediaDiagnostic"
+      ],
+      "additionalPatches": 1,
+      "error": "",
+      "text": "Current document"
+    },
+    {
+      "event": "Play",
+      "changedKeys": [
+        "mediaPlaying"
+      ],
+      "additionalPatches": 1,
+      "error": "",
+      "text": "Current document"
+    },
+    {
+      "event": "Pause",
+      "changedKeys": [],
+      "additionalPatches": 1,
+      "error": "",
+      "text": "Current document"
+    },
+    {
+      "event": "Stop",
+      "changedKeys": [],
+      "additionalPatches": 1,
+      "error": "",
+      "text": "Current document"
+    },
+    {
+      "event": "Ended",
+      "changedKeys": [],
+      "additionalPatches": 1,
+      "error": "",
+      "text": "Current document"
+    },
+    {
+      "event": "Error",
+      "changedKeys": [
+        "error",
+        "mediaDiagnostic",
+        "mediaCanPlay"
+      ],
+      "additionalPatches": 2,
+      "error": "音频播放失败：文件已失效、损坏或路径不可读。请核对文件扩展名与实际编码。",
+      "text": "Current document"
+    }
+  ]
+}

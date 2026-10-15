@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "testedAt": "2026-09-18T08:25:36.494004+00:00",
+  "id": "markdown-native-table-scroll",
+  "original": {
+    "bytes": 28767,
+    "sha256": "65acef280c660e126162daadd4186358d25075f5076af05b3d86e755ec494155",
+    "redistributed": false,
+    "tables": 40
+  },
+  "rootCause": "Markdown uses the DOM renderer; the scroll-table flag on the mp-html fallback does not create scroll containers in that path. Grid tables exceed the clipped reader viewport.",
+  "change": "Each normalized table uses a native horizontal scroll-view. Width stays within the parent; table cells retain normal size and source order. Fixed-width tables do not scale the entire page. Hidden tables remain hidden.",
+  "platform": "Actual reader file-open and compiled production WXML in official glass-easel with Chrome DOM backend; scroll-view browser adapter. Not a WeChat native gesture test.",
+  "results": [
+    {
+      "width": 320,
+      "tables": 40,
+      "beforeScrollers": 0,
+      "afterScrollers": 40,
+      "allCellsPreserved": true,
+      "rightmostHeaderReachable": 40,
+      "overflowingTablesScrolled": 40,
+      "pageWidth": 320
+    },
+    {
+      "width": 390,
+      "tables": 40,
+      "beforeScrollers": 0,
+      "afterScrollers": 40,
+      "allCellsPreserved": true,
+      "rightmostHeaderReachable": 40,
+      "overflowingTablesScrolled": 40,
+      "pageWidth": 390
+    },
+    {
+      "width": 430,
+      "tables": 40,
+      "beforeScrollers": 0,
+      "afterScrollers": 40,
+      "allCellsPreserved": true,
+      "rightmostHeaderReachable": 40,
+      "overflowingTablesScrolled": 30,
+      "pageWidth": 430
+    }
+  ],
+  "validation": {
+    "fullNodePassed": 1262,
+    "fullNodeFailed": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "production": "pass",
+    "wechatDevtools": "not-run",
+    "physicalDevices": "not-run"
+  },
+  "evidence": [
+    "scripts/verify-markdown-table-scroll.js",
+    "tests/markdown-table-scroll.test.js"
+  ],
+  "limitations": [
+    "Original qin-bear SVG is still unavailable; this fix does not claim to resolve that separate report.",
+    "Raw nested HTML tables expose a separate existing parser boundary defect; retained for the next investigation."
+  ]
+}

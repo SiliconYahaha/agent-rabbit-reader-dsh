@@ -1,0 +1,26 @@
+[
+  {
+    "name": "bicycle.svg",
+    "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/bicycle.svg",
+    "license": "MIT; LICENSE retained alongside samples",
+    "redistributed": true,
+    "sha256": "e588fccb4995e2fbbe37dd1962785832dc1aa144cd4c84ea9547f38f187eb6bf",
+    "expectedVisibleResult": "完整图标路径；紧凑标志派生与原图一致，非法尾部派生保留原图有效前缀。"
+  },
+  {
+    "name": "flower1.svg",
+    "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/flower1.svg",
+    "license": "MIT; LICENSE retained alongside samples",
+    "redistributed": true,
+    "sha256": "945ae70b3e57ad27dfc6eb088f9bc86745d917d3168406101992b7817ae66f5d",
+    "expectedVisibleResult": "完整图标路径；紧凑标志派生与原图一致，非法尾部派生保留原图有效前缀。"
+  },
+  {
+    "name": "globe.svg",
+    "source": "https://github.com/twbs/icons/blob/6945b7006285d444cc17ff2e22c7691719229526/icons/globe.svg",
+    "license": "MIT; LICENSE retained alongside samples",
+    "redistributed": true,
+    "sha256": "ec69cc7c1a11c12c2a5165508eb0ed54d8089d8b6b3921fab35153d2a4df4e8f",
+    "expectedVisibleResult": "完整图标路径；紧凑标志派生与原图一致，非法尾部派生保留原图有效前缀。"
+  }
+]

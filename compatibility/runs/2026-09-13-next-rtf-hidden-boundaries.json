@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T07:59:39.904046+00:00",
+  "status": "confirmed-bug-awaiting-repair",
+  "feature": "RTF hidden character state suppresses structural table separators",
+  "version": null,
+  "fixture": "tests/fixtures/rtf-hidden-boundaries/before.json",
+  "fixtureSha256": "79edde9f17b0fadc74436a0dfcae51bcfff3aac9455eb356b0d4da9e017d2261",
+  "sources": 72,
+  "actualHostConsecutiveOpens": 72,
+  "native": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "nativeImportHtmlViews": 72,
+  "confirmedTableBoundaryFailures": 24,
+  "confirmedCases": [
+    "plain-hidden-table",
+    "plain-hidden-nested",
+    "plain-hiddenThenReset-table",
+    "plain-hiddenThenReset-nested",
+    "plain-groupHidden-table",
+    "plain-groupHidden-nested",
+    "unicode-hidden-table",
+    "unicode-hidden-nested",
+    "unicode-hiddenThenReset-table",
+    "unicode-hiddenThenReset-nested",
+    "unicode-groupHidden-table",
+    "unicode-groupHidden-nested",
+    "field-hidden-table",
+    "field-hidden-nested",
+    "field-hiddenThenReset-table",
+    "field-hiddenThenReset-nested",
+    "field-groupHidden-table",
+    "field-groupHidden-nested",
+    "hiddenIsland-hidden-table",
+    "hiddenIsland-hidden-nested",
+    "hiddenIsland-hiddenThenReset-table",
+    "hiddenIsland-hiddenThenReset-nested",
+    "hiddenIsland-groupHidden-table",
+    "hiddenIsland-groupHidden-nested"
+  ],
+  "paragraphBoundaryDifferencesAwaitingPolicy": 12,
+  "paragraphCases": [
+    "plain-hidden-paragraph",
+    "plain-hiddenThenReset-paragraph",
+    "plain-groupHidden-paragraph",
+    "unicode-hidden-paragraph",
+    "unicode-hiddenThenReset-paragraph",
+    "unicode-groupHidden-paragraph",
+    "field-hidden-paragraph",
+    "field-hiddenThenReset-paragraph",
+    "field-groupHidden-paragraph",
+    "hiddenIsland-hidden-paragraph",
+    "hiddenIsland-hiddenThenReset-paragraph",
+    "hiddenIsland-groupHidden-paragraph"
+  ],
+  "referenceFallbackDifferences": 24,
+  "referencePolicy": "Writer consumes a fallback control word as formatting and continues fallback skipping across braces. RTF1.9.1 pp14-15 requires a control word count of one and termination at a group delimiter; retain reader character semantics for these 24 cases. Not reader defects.",
+  "referenceSources": [
+    {
+      "url": "https://officeprotocoldoc.z19.web.core.windows.net/files/Archive_References/%5BMSFT-RTF%5D.pdf",
+      "pages": [
+        14,
+        15,
+        93,
+        94
+      ],
+      "basis": "Unicode fallback token/group rules; cell and row control words partition table structure. Hidden character formatting cannot stand in for removal of a table boundary."
+    }
+  ],
+  "rootCause": "rtf-reader WORD_TEXT cell/nestcell/row/nestrow are sent through appendText, which suppresses them under isHidden(). This concatenates visible cells around a hidden mark. nesttableprops has a separate row path, so nesting variants must be checked together.",
+  "visibleEvidence": "Two actual host rendered trees in Chrome visibly show LEFTRIGHT where unmodified Writer HTML shows separate LEFT and RIGHT cells. All 72 actual host outputs match baseline parser, including the failures.",
+  "localEvidence": [
+    {
+      "path": "outputs/rtf-hidden-tables/before/report.json",
+      "sha256": "38843b6781500dac26534d70b33acd60e2f8061b89a4d2ca65cfa233e8f77712"
+    },
+    {
+      "path": "outputs/rtf-hidden-tables/before/host.json",
+      "sha256": "b982a6c7f78f6f6c9a795176e42ebed6dec4dcc19fdfc7ea5a990ba0771b26ae"
+    },
+    {
+      "path": "outputs/rtf-hidden-tables/before/comparison.html",
+      "sha256": "288ca0945480c3d6367aa57cfeac8dc86b7ac7d8eaab47d38ab3aa10e8baa29a"
+    },
+    {
+      "path": "outputs/rtf-hidden-tables/before/comparison.png",
+      "sha256": "d607389ba88fb327725f814c1466775cb866e536c1d3ad271a94b704d805af3d"
+    }
+  ],
+  "next": [
+    "Expand valid fixtures across hidden row/nestrow, empty cells, wholly hidden cells, hidden styles and note/field destinations; preserve original before outputs.",
+    "Repair structural separator emission without revealing hidden text or reviving discarded destinations. Review explicit hidden paragraph marks separately before changing prior semantics.",
+    "Verify actual content on host and Chrome, independent native output, failed/repeated opens and linked RTF regressions; then complete existing gates and PR."
+  ],
+  "limitations": [
+    "No product patch yet.",
+    "No full table layout or merged-cell support claim.",
+    "No WeChat WXML, developer tool or physical device validation.",
+    "Paragraph-mark differences require further application/specification policy review; they are not silently merged into certified table failures."
+  ]
+}

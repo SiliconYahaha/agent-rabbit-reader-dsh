@@ -1,0 +1,520 @@
+diff --git a/CPP/7zip/Common/FileStreams.cpp b/CPP/7zip/Common/FileStreams.cpp
+index f90e280..655c82b 100644
+--- a/CPP/7zip/Common/FileStreams.cpp
++++ b/CPP/7zip/Common/FileStreams.cpp
+@@ -2,6 +2,10 @@
+ 
+ #include "StdAfx.h"
+ 
++#ifdef __EMSCRIPTEN__
++#include <emscripten.h>
++#endif
++
+ // #include <stdio.h>
+ 
+ #ifndef _WIN32
+@@ -878,6 +882,21 @@ Z7_COM7F_IMF(CStdOutFileStream::Write(const void *data, UInt32 size, UInt32 *pro
+   if (processedSize)
+     *processedSize = 0;
+ 
++  #ifdef __EMSCRIPTEN__
++  // Optional bounded binary sink; ordinary terminal output stays unchanged.
++  const int captured = EM_ASM_INT({
++    return typeof Module['rabbitWriteBytes'] === 'function'
++        ? Module['rabbitWriteBytes'](HEAPU8.subarray($0, $0 + $1)) : 0;
++  }, data, size);
++  if (captured < 0) return E_FAIL;
++  if (captured > 0)
++  {
++    if (processedSize) *processedSize = size;
++    _size += size;
++    return S_OK;
++  }
++  #endif
++
+   #ifdef _WIN32
+ 
+   UInt32 realProcessedSize;
+diff --git a/CPP/7zip/UI/Common/Extract.cpp b/CPP/7zip/UI/Common/Extract.cpp
+index 010b01c..0e70259 100644
+--- a/CPP/7zip/UI/Common/Extract.cpp
++++ b/CPP/7zip/UI/Common/Extract.cpp
+@@ -2,6 +2,10 @@
+ 
+ #include "StdAfx.h"
+ 
++#ifdef __EMSCRIPTEN__
++#include <emscripten.h>
++#endif
++
+ #include "../../../Common/StringConvert.h"
+ 
+ #include "../../../Windows/FileDir.h"
+@@ -153,6 +157,15 @@ static HRESULT DecompressArchive(
+           continue;
+       }
+ 
++      #ifdef __EMSCRIPTEN__
++      // Filter before the decoder chooses its final solid-block member. Doing
++      // this only in GetStream still decodes later same-name occurrences.
++      if (options.StdOutMode && EM_ASM_INT({
++          return typeof Module['rabbitShouldExtract'] === 'function'
++              && !Module['rabbitShouldExtract']($0);
++        }, i))
++        continue;
++      #endif
+       realIndices.Add(i);
+     }
+     
+diff --git a/CPP/7zip/UI/Console/List.cpp b/CPP/7zip/UI/Console/List.cpp
+index 874caef..3f20ceb 100644
+--- a/CPP/7zip/UI/Console/List.cpp
++++ b/CPP/7zip/UI/Console/List.cpp
+@@ -20,6 +20,11 @@
+ #include "List.h"
+ #include "OpenCallbackConsole.h"
+ 
++#ifdef __EMSCRIPTEN__
++#include <emscripten.h>
++extern "C" EMSCRIPTEN_KEEPALIVE int rabbit_reader_listing_version() { return 3; }
++#endif
++
+ using namespace NWindows;
+ using namespace NCOM;
+ 
+@@ -547,6 +552,45 @@ inline bool IsPropId_for_PathString(UInt32 propId)
+ 
+ HRESULT CFieldPrinter::PrintItemInfo(UInt32 index, const CListStat &st)
+ {
++#ifdef __EMSCRIPTEN__
++  // Machine-readable metadata must not round-trip through terminal escaping.
++  // Keep the normal CLI output unchanged for interactive users.
++  if (EM_ASM_INT({ return typeof Module['rabbitOnEntry'] === 'function'; }))
++  {
++    AString rawPath;
++    ConvertUnicodeToUTF8(FilePath, rawPath);
++    for (unsigned n = 0; n < rawPath.Len(); n++)
++      if (rawPath[n] == 0) return E_FAIL;
++    EM_ASM({ Module['rabbitOnEntry']($0, UTF8ToString($1), !!$2); },
++        index, rawPath.Ptr(), IsDir);
++    // Attribute numbers are not the lossy, human-readable permission string.
++    const PROPID attrProps[] = { kpidAttrib, kpidPosixAttrib };
++    for (unsigned n = 0; n < 2; n++)
++    {
++      CPropVariant prop;
++      RINOK(Arc->Archive->GetProperty(index, attrProps[n], &prop))
++      if (prop.vt != VT_EMPTY && prop.vt != VT_UI4) return E_FAIL;
++      EM_ASM({ Module['rabbitOnField']($0, $1 ? 'PosixAttributesRaw' : 'AttributesRaw',
++          $2 ? String($3 >>> 0) : ''); }, index, n, prop.vt == VT_UI4,
++          prop.vt == VT_UI4 ? prop.ulVal : 0);
++    }
++    const PROPID props[] = { kpidSize, kpidPackSize, kpidEncrypted,
++        kpidMethod, kpidCRC, kpidSymLink, kpidHardLink, kpidCopyLink, kpidCharacts };
++    for (unsigned n = 0; n < sizeof(props) / sizeof(props[0]); n++)
++    {
++      CPropVariant prop;
++      RINOK(Arc->Archive->GetProperty(index, props[n], &prop))
++      UString value;
++      ConvertPropertyToString2(value, prop, props[n]);
++      AString raw;
++      ConvertUnicodeToUTF8(value, raw);
++      for (unsigned p = 0; p < raw.Len(); p++)
++        if (raw[p] == 0) return E_FAIL;
++      EM_ASM({ Module['rabbitOnField']($0, UTF8ToString($1), UTF8ToString($2)); },
++          index, kPropIdToName[props[n]], raw.Ptr());
++    }
++  }
++#endif
+   char temp[128];
+   size_t tempPos = 0;
+ 
+@@ -1291,6 +1335,11 @@ HRESULT ListArchives(
+     
+     UInt32 numItems;
+     RINOK(archive->GetNumberOfItems(&numItems))
++#ifdef __EMSCRIPTEN__
++    const bool rabbitListing = EM_ASM_INT({ return typeof Module['rabbitOnListing'] === 'function'; });
++    UInt32 rabbitEmitted = 0;
++    if (rabbitListing) EM_ASM({ Module['rabbitOnListing']('begin', $0); }, numItems);
++#endif
+  
+     CReadArcItem item;
+     UStringVector pathParts;
+@@ -1361,7 +1410,13 @@ HRESULT ListArchives(
+       if (isAltStream && !showAltStreams)
+         continue;
+       RINOK(fp.PrintItemInfo(i, st))
++#ifdef __EMSCRIPTEN__
++      rabbitEmitted++;
++#endif
+     }
++#ifdef __EMSCRIPTEN__
++    if (rabbitListing) EM_ASM({ Module['rabbitOnListing']('end', $0); }, rabbitEmitted);
++#endif
+ 
+     UInt64 numStreams = stat2.GetNumStreams();
+     if (!stdInMode
+diff --git a/CPP/7zip/Bundles/Alone2/post.js b/CPP/7zip/Bundles/Alone2/post.js
+--- a/CPP/7zip/Bundles/Alone2/post.js
++++ b/CPP/7zip/Bundles/Alone2/post.js
+@@ -1,4 +1,9 @@
+ Module.FS = FS;
+ Module.NODEFS = NODEFS;
+ Module.WORKERFS = WORKERFS;
+-Module.callMain = callMain;
+\ No newline at end of file
++// callMain allocates argv on the WASM stack. This reader invokes it repeatedly.
++Module.callMain = function(args) {
++  var saved = stackSave();
++  try { return callMain(args); }
++  finally { stackRestore(saved); }
++};
+diff --git a/CPP/7zip/Archive/Tar/TarIn.cpp b/CPP/7zip/Archive/Tar/TarIn.cpp
+--- a/CPP/7zip/Archive/Tar/TarIn.cpp
++++ b/CPP/7zip/Archive/Tar/TarIn.cpp
+@@ -337,32 +337,35 @@ HRESULT CArchive::GetNextItemReal(CItemEx &item)
+   {
+     Byte isExtended = (Byte)buf[482];
+     if (isExtended != 0 && isExtended != 1)
+-      return S_OK;
+-    RIF(ParseSize(buf + 483, item.Size, item.Size_IsBin))
+-    UInt64 min = 0;
++      return E_FAIL;
++    if (!ParseSize(buf + 483, item.Size, item.Size_IsBin)) return E_FAIL;
++    if (item.Size >= ((UInt64)1 << 63)) return E_FAIL;
++    UInt64 min = 0, packed = 0;
++    unsigned mapRecords = 0;
+     for (unsigned i = 0; i < 4; i++)
+     {
+       p = buf + 386 + 24 * i;
+       if (GetBe32(p) == 0)
+       {
+         if (isExtended != 0)
+-          return S_OK;
++          return E_FAIL;
+         break;
+       }
+       CSparseBlock sb;
+-      RIF(ParseSize(p, sb.Offset))
+-      RIF(ParseSize(p + 12, sb.Size))
+-      item.SparseBlocks.Add(sb);
++      if (!ParseSize(p, sb.Offset)) return E_FAIL;
++      if (!ParseSize(p + 12, sb.Size)) return E_FAIL;
++      // Sparse extents are byte ranges; only archive records are 512-byte aligned.
++      if (++mapRecords > 65536 || sb.Size > item.PackSize - packed) return E_FAIL;
++      packed += sb.Size;
++      if (sb.Size) item.SparseBlocks.Add(sb);
+       if (sb.Offset < min || sb.Offset > item.Size)
+-        return S_OK;
+-      if ((sb.Offset & 0x1FF) != 0 || (sb.Size & 0x1FF) != 0)
+-        return S_OK;
++        return E_FAIL;
+       min = sb.Offset + sb.Size;
+       if (min < sb.Offset)
+-        return S_OK;
++        return E_FAIL;
+     }
+     if (min > item.Size)
+-      return S_OK;
++      return E_FAIL;
+ 
+     while (isExtended != 0)
+     {
+@@ -371,7 +374,7 @@ HRESULT CArchive::GetNextItemReal(CItemEx &item)
+       if (processedSize != NFileHeader::kRecordSize)
+       {
+         error = k_ErrorType_UnexpectedEnd;
+-        return S_OK;
++        return E_FAIL;
+       }
+ 
+       item.HeaderSize += NFileHeader::kRecordSize;
+@@ -383,31 +386,32 @@ HRESULT CArchive::GetNextItemReal(CItemEx &item)
+ 
+       isExtended = (Byte)buf[21 * 24];
+       if (isExtended != 0 && isExtended != 1)
+-        return S_OK;
++        return E_FAIL;
+       for (unsigned i = 0; i < 21; i++)
+       {
+         p = buf + 24 * i;
+         if (GetBe32(p) == 0)
+         {
+           if (isExtended != 0)
+-            return S_OK;
++            return E_FAIL;
+           break;
+         }
+         CSparseBlock sb;
+-        RIF(ParseSize(p, sb.Offset))
+-        RIF(ParseSize(p + 12, sb.Size))
+-        item.SparseBlocks.Add(sb);
++        if (!ParseSize(p, sb.Offset)) return E_FAIL;
++        if (!ParseSize(p + 12, sb.Size)) return E_FAIL;
++        // Sparse extents are byte ranges; only archive records are 512-byte aligned.
++        if (++mapRecords > 65536 || sb.Size > item.PackSize - packed) return E_FAIL;
++        packed += sb.Size;
++        if (sb.Size) item.SparseBlocks.Add(sb);
+         if (sb.Offset < min || sb.Offset > item.Size)
+-          return S_OK;
+-        if ((sb.Offset & 0x1FF) != 0 || (sb.Size & 0x1FF) != 0)
+-          return S_OK;
++          return E_FAIL;
+         min = sb.Offset + sb.Size;
+         if (min < sb.Offset)
+-          return S_OK;
++          return E_FAIL;
+       }
+     }
+-    if (min > item.Size)
+-      return S_OK;
++    if (min > item.Size || packed != item.PackSize)
++      return E_FAIL;
+   }
+  
+   if (item.PackSize >= (UInt64)1 << 63)
+@@ -529,8 +533,197 @@ HRESULT CArchive::ReadDataToBuffer(const CItemEx &item,
+  
+ 
+ 
++
++// GNU PAX sparse maps describe logical offsets, not bytes in the archive.
++// Keep map storage bounded independently of the selected output byte limit.
++static const unsigned kSparseBlocksMax = 65536;
++
++static bool SparseNumber(const char *&p, UInt64 &n)
++{
++  const char *start = p;
++  n = 0;
++  while (*p >= '0' && *p <= '9')
++  {
++    const unsigned digit = (unsigned)(*p++ - '0');
++    if (n > (((UInt64)1 << 63) - 1 - digit) / 10)
++      return false;
++    n = n * 10 + digit;
++  }
++  return p != start;
++}
++
++struct CPaxSparse
++{
++  enum { kSize = 1, kCount = 2, kMap = 4, kMajor = 8,
++    kMinor = 16, kRealSize = 32, kName = 64, kPairs = 128 };
++  unsigned Flags;
++  bool Present, Bad, PendingOffset;
++  UInt64 Size, Count, Major, Minor, RealSize, Offset;
++  AString Name;
++  CRecordVector<CSparseBlock> Blocks;
++
++  CPaxSparse(): Flags(0), Present(false), Bad(false), PendingOffset(false),
++    Size(0), Count(0), Major(0), Minor(0), RealSize(0), Offset(0) {}
++
++  bool Add(UInt64 offset, UInt64 size)
++  {
++    if (Blocks.Size() >= kSparseBlocksMax)
++      return false;
++    CSparseBlock b;
++    b.Offset = offset;
++    b.Size = size;
++    Blocks.Add(b);
++    return true;
++  }
++
++  bool Parse(const AString &key, const AString &value)
++  {
++    Present = true;
++    const char *p = value.Ptr();
++    UInt64 n = 0;
++    unsigned flag = 0;
++    if (key.IsEqualTo("GNU.sparse.name"))
++    {
++      flag = kName;
++      if (value.IsEmpty()) return false;
++      Name = value;
++    }
++    else if (key.IsEqualTo("GNU.sparse.map"))
++    {
++      flag = kMap;
++      if (Flags & kPairs) return false;
++      Blocks.Clear(); // POSIX: the last map attribute replaces the previous one.
++      while (*p)
++      {
++        UInt64 off, len;
++        if (!SparseNumber(p, off) || *p++ != ',' ||
++            !SparseNumber(p, len) || !Add(off, len)) return false;
++        if (!*p) break;
++        if (*p++ != ',' || !*p) return false;
++      }
++    }
++    else
++    {
++      if (!SparseNumber(p, n) || *p) return false;
++      if (key.IsEqualTo("GNU.sparse.offset"))
++      {
++        if (PendingOffset || (Flags & kMap)) return false;
++        Flags |= kPairs;
++        PendingOffset = true;
++        Offset = n;
++        return true;
++      }
++      if (key.IsEqualTo("GNU.sparse.numbytes"))
++      {
++        if (!PendingOffset || !Add(Offset, n)) return false;
++        PendingOffset = false;
++        return true;
++      }
++      if (key.IsEqualTo("GNU.sparse.size")) { flag = kSize; Size = n; }
++      else if (key.IsEqualTo("GNU.sparse.numblocks")) { flag = kCount; Count = n; }
++      else if (key.IsEqualTo("GNU.sparse.major")) { flag = kMajor; Major = n; }
++      else if (key.IsEqualTo("GNU.sparse.minor")) { flag = kMinor; Minor = n; }
++      else if (key.IsEqualTo("GNU.sparse.realsize")) { flag = kRealSize; RealSize = n; }
++      else return false;
++    }
++    Flags |= flag;
++    return true;
++  }
++
++  HRESULT Apply(CItemEx &item, ISequentialInStream *stream)
++  {
++    if (!Present) return S_OK;
++    if (Bad || PendingOffset || (item.LinkFlag != '0' && item.LinkFlag != 0))
++      return E_FAIL;
++    UInt64 logicalSize;
++    if (Flags & (kMajor | kMinor))
++    {
++      if (Flags != (kMajor | kMinor | kRealSize | kName) || Major != 1 || Minor != 0)
++        return E_FAIL;
++      logicalSize = RealSize;
++      // Read complete map records only. A map may span many 512-byte records;
++      // its final record is zero padded before packed extent bytes begin.
++      Byte block[512];
++      UInt64 consumed = 0, number = 0, off = 0, expected = 1, index = 0;
++      unsigned digits = 0;
++      bool done = false;
++      while (!done)
++      {
++        if (item.PackSize - consumed < sizeof(block)) return E_FAIL;
++        size_t read = sizeof(block);
++        RINOK(ReadStream(stream, block, &read))
++        if (read != sizeof(block)) return E_FAIL;
++        consumed += sizeof(block);
++        for (unsigned i = 0; i < sizeof(block); i++)
++        {
++          const Byte c = block[i];
++          if (done)
++          {
++            if (c) return E_FAIL;
++            continue;
++          }
++          if (c >= '0' && c <= '9')
++          {
++            if (++digits > 20 || number > (((UInt64)1 << 63) - 1 - (c - '0')) / 10)
++              return E_FAIL;
++            number = number * 10 + (c - '0');
++            continue;
++          }
++          if (c != '\n' || !digits) return E_FAIL;
++          if (index == 0)
++          {
++            if (number > kSparseBlocksMax) return E_FAIL;
++            expected = 1 + 2 * number;
++          }
++          else if (index & 1) off = number;
++          else if (!Add(off, number)) return E_FAIL;
++          index++;
++          done = (index == expected);
++          number = 0;
++          digits = 0;
++        }
++      }
++      item.HeaderSize += consumed;
++      item.PackSize -= consumed;
++    }
++    else
++    {
++      if ((Flags & (kSize | kCount)) != (kSize | kCount) ||
++          (Flags & kRealSize) || Count != Blocks.Size() ||
++          ((Flags & kMap) && !(Flags & kName))) return E_FAIL;
++      logicalSize = Size;
++    }
++    UInt64 end = 0, packed = 0;
++    FOR_VECTOR(i, Blocks)
++    {
++      const CSparseBlock &b = Blocks[i];
++      if (b.Offset < end || b.Offset > logicalSize || b.Size > logicalSize - b.Offset ||
++          b.Size > item.PackSize - packed) return E_FAIL;
++      end = b.Offset + b.Size;
++      packed += b.Size;
++    }
++    if (packed != item.PackSize) return E_FAIL;
++    item.SparseBlocks.Clear();
++    FOR_VECTOR(i, Blocks)
++    {
++      // Empty extents carry no data. Removing them also avoids equal-offset
++      // ambiguity in the native sparse stream's binary search.
++      if (Blocks[i].Size) item.SparseBlocks.Add(Blocks[i]);
++    }
++    item.Size = logicalSize;
++    item.LinkFlag = NFileHeader::NLinkFlag::kSparse;
++    if (Flags & kName)
++    {
++      item.Name = Name;
++      item.pax_path_WasUsed = true;
++    }
++    return S_OK;
++  }
++};
++
+ struct CPaxInfo: public CPaxTimes
+ {
++  CPaxSparse Sparse;
+   bool DoubleTagError;
+   bool TagParsingError;
+   bool UnknownLines_Overflow;
+@@ -696,7 +889,16 @@ bool CPaxInfo::ParsePax(const CTempBuffer &tb, bool isFile)
+     val.SetFrom(s + i + 1, (unsigned)(size - 1 - (i + 1)));
+     
+     bool parsed = false;
+-    if (isFile)
++    if (name.IsPrefixedBy("GNU.sparse."))
++    {
++      if (!isFile || !Sparse.Parse(name, val))
++      {
++        Sparse.Bad = true;
++        return false;
++      }
++      parsed = true;
++    }
++    else if (isFile)
+     {
+       bool isDetectedName = true;
+       // only lower case (name) is supported
+@@ -967,7 +1169,10 @@ HRESULT CArchive::ReadItem2(CItemEx &item)
+           PaxGlobal_Defined = true;
+         }
+         else
++        {
++          if (paxInfo.Sparse.Bad || paxInfo.Sparse.Present) return E_FAIL;
+           _is_PaxGlobal_Error = true;
++        }
+         
+         if (isStartHeader
+             && item.Num_Pax_Records == 1
+@@ -1021,7 +1226,7 @@ HRESULT CArchive::ReadItem2(CItemEx &item)
+   {
+     CPaxInfo paxInfo;
+     if (!paxInfo.ParsePax(PaxBuf, true))
+-      item.Pax_Error = true;
++      return E_FAIL;
+     else
+     {
+       if (paxInfo.Path_Defined) //  if (!paxInfo.Path.IsEmpty())
+@@ -1069,6 +1274,8 @@ HRESULT CArchive::ReadItem2(CItemEx &item)
+         item.pax_size_WasUsed = true;
+       }
+       
++      RINOK(paxInfo.Sparse.Apply(item, SeqStream))
++
+       item.PaxTimes = paxInfo;
+       item.PaxExtra.RawLines = paxInfo.UnknownLines;
+       if (paxInfo.UnknownLines_Overflow)

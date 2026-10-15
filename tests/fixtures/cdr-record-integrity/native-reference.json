@@ -1,0 +1,1007 @@
+{
+  "at": "2026-09-13T08:53:59.703Z",
+  "implementation": "libcdr0.1.9 native cdr2raw/cdr2xhtml from Homebrew bottle",
+  "originalBytes": true,
+  "rows": [
+    {
+      "name": "indexed-control-z0",
+      "sourceSha256": "28fa30e3f6c965c9d0099a94d494f64c6b218d07abf2ae420119f52b477b6ed1",
+      "category": "known-good",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "literal-all-z0",
+      "sourceSha256": "0a12fa6eba4e4922578056c26d5b1fcdedc545190e47765d8ab8384ca38a4dbc",
+      "category": "native-source-supported-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "literal-root-z0",
+      "sourceSha256": "0fe5e95066b04e4062c7111bf1c818c0e263c24ac21e12a6a8ba178590eb4c59",
+      "category": "native-source-supported-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "literal-loda-z0",
+      "sourceSha256": "efc1364d481fd8461009ca6c3d37b10ecd87a1468c50c423b029bffe6d5c1e70",
+      "category": "native-source-supported-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "zero-tail-control-z0",
+      "sourceSha256": "f3b0aebe52bf1a1fd69dad5989b3a0662e1cbdab293df15b982859a8ee464ce6",
+      "category": "native-source-supported-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "short-header-tail-z0",
+      "sourceSha256": "5305b0f938e4d16645017b6cb4912863fad458d9281a094b4429bd450de0899d",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xhtml": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "impossible-length-tail-z0",
+      "sourceSha256": "104fcce2ecb552947b224b1ba878a2e004117138b4d347227d063a938a803fd5",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "oversized-root-z0",
+      "sourceSha256": "9528fc0fe04dd8d02d3abae52fd381551312321478278cba918cf481f0d968e3",
+      "category": "malformed-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xhtml": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "indexed-control-z6",
+      "sourceSha256": "ed46ae69adadf942b276fe66c3c3331912ce3451a0d1de1fe0ff862a8e0411ce",
+      "category": "known-good",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "literal-all-z6",
+      "sourceSha256": "c7f206caa5a4ba81f104f20bbfd684eae1a04cef8e5cee6c95a698d0d2cf1363",
+      "category": "native-source-supported-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "literal-root-z6",
+      "sourceSha256": "a4f14af0160d867ff8c9c71eb3929596ed98150835ad521da59dbdf8dcacf02a",
+      "category": "native-source-supported-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "literal-loda-z6",
+      "sourceSha256": "ca6b062b73dd4a110604f7efddb34c850cb6274faa2747a81a03b322c8e9720d",
+      "category": "native-source-supported-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "zero-tail-control-z6",
+      "sourceSha256": "fdcc39f0651ba62361893d821849b99aa102aac7fbab991d9cfb61d4a740661d",
+      "category": "native-source-supported-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "short-header-tail-z6",
+      "sourceSha256": "5111cfdd9450163c5cd019236348852fa224ffde05a08509d8a085f2cd2590e7",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xhtml": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "impossible-length-tail-z6",
+      "sourceSha256": "927be2828c661b2659e010622236dd1d305b4f1a84c49eb6c61dee2faa8b14c6",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "oversized-root-z6",
+      "sourceSha256": "7bc3ef4ff3adc265c895238c0f1da0f6d66cd6fd8eb49e00c7c9db1e300c1945",
+      "category": "malformed-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xhtml": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "indexed-control-z9",
+      "sourceSha256": "1af8ea02c2310701a64691f038a87fa163145c3ba38de42dd42f395104fca5b7",
+      "category": "known-good",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "literal-all-z9",
+      "sourceSha256": "0ec96d3ee78ac654a5f7cdfc1379bb065be5b9c55b4940e2daf8570804e56be4",
+      "category": "native-source-supported-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "literal-root-z9",
+      "sourceSha256": "ac0ee2ddfa20957d5775b79644084d12f82ed962994d7660eb6e594e81daa481",
+      "category": "native-source-supported-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "literal-loda-z9",
+      "sourceSha256": "b3238cc5ecb12a01949665be061432891e98325ba21f7f74116465aa92ec1b45",
+      "category": "native-source-supported-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "zero-tail-control-z9",
+      "sourceSha256": "5a7801548b48fc48d4645cbb310a96f6bd3f5c2b4d7cd3976c9d2400a1b34cd8",
+      "category": "native-source-supported-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "short-header-tail-z9",
+      "sourceSha256": "9eadfb4178cc8918731ea3bdbff6a61193c1a1a8784e48b89d7f026a6f3267d5",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xhtml": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "impossible-length-tail-z9",
+      "sourceSha256": "b9a34694d211d4c60c0cb4e53a9a86b2806a9daf66d960ebbee7935434e97711",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff5b43, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 6.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: L, svg:x: 6.2500in, svg:y: 1.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "52e9bb696bfdef85ef085f14abbc72a874ad561e16f6fe9b9c0507e7ec0f29ad"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM450.0000,180.0000\nL522.0000,180.0000\nL450.0000,108.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff5b43; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "b97791d73b408325c35411ef5d876c8e30c9bc289805ead1516f0b6013b8fc26"
+      }
+    },
+    {
+      "name": "oversized-root-z9",
+      "sourceSha256": "adf3750b9855da183a33ef0ff668104538daf2ec280453f7d864e4ffa5bce07e",
+      "category": "malformed-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xhtml": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "indexed-red",
+      "sourceSha256": "112ae43b9ffab4fb60be19153d7210b1364c97c220c22b1582d09ebe1a3d44da",
+      "category": "native-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "literal-all-red",
+      "sourceSha256": "85a79c90369dd8f121bc3617c62090da36f1208ac533a7ddb03203cc31f79d61",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "literal-loda-red",
+      "sourceSha256": "e570588a39746bb0dc4c97c3fdac59f2aceae61294f00cf1dac1aa300e04b46d",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "prefix-zero-1-red",
+      "sourceSha256": "068b88a762b612ee235d74462b66a2f6b64b24a21796e4069b8f3b54649f6235",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "prefix-zero-2-red",
+      "sourceSha256": "0c4b5620e99613d1f27c765c193e79fb7af332e9c4927675d80b28caa8fc4af5",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "prefix-zero-3-red",
+      "sourceSha256": "b84fd9881a1130f0c913cc732fc9c6efe2e0c60adf9698fd66c8e8b15099d559",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "prefix-zero-16-red",
+      "sourceSha256": "d78a9804c9800de3d395c08da5c27e810fe5caa63a607f971f473cc797b5198f",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "nested-zeros-red",
+      "sourceSha256": "2f130dee82733f15da3a97c782cf91d2fe2fe252f031920b915cab756528c5a5",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "mixed-zeros-literals-red",
+      "sourceSha256": "7d34a36232fa951ad42c42edd0b1c85f48b0dc6ad7cff576f4860d161abb8a3f",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "malformed-root-tail-red",
+      "sourceSha256": "e9102845ac206f962984267f1342632384e989e0cb1f8e711e1e677553ae7ca4",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "short-root-tail-red",
+      "sourceSha256": "e5a7917c3d6c8625a7f2097f7f82bdf321c893d8dc8638b65fb56dcbd77d30d8",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xhtml": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "malformed-nested-tail-red",
+      "sourceSha256": "90df0534558ca911f772262b97e74f8929da0a2373e924ff305f8f7e92375daf",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "odd-unknown-red",
+      "sourceSha256": "45e27df2cea208ef6d69ada9b5c2e0ae6e3b001c8ec2891f007f1c8f22683350",
+      "category": "native-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #ff0000, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 4.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 5.2500in, svg:y: 5.5000in), (librevenge:path-action: L, svg:x: 4.2500in, svg:y: 4.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "5bc0896c68ba1505ce9e9a964fb5377b1a5209bf89733d02322eae44cc97a704"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM306.0000,396.0000\nL378.0000,396.0000\nL306.0000,324.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #ff0000; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "53de486bc98f4a4493d5c892b8e3744b7e41d41ae6ccaced2bd225e72aff5efe"
+      }
+    },
+    {
+      "name": "indexed-blue",
+      "sourceSha256": "e36b8968d9f58f3653aae96b5784bb6dc3b3276df4fea4ffdb2472f89a6e6941",
+      "category": "native-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "literal-all-blue",
+      "sourceSha256": "1e3dfbe6cdc07fc699ba04020618273672af21f51a2756e87f3e6d0004b11b05",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "literal-loda-blue",
+      "sourceSha256": "a2d2715ce07a15900b096a3e9f8fff41028674fafc38e05930db177f8ae935d6",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "prefix-zero-1-blue",
+      "sourceSha256": "5f5e137c4fcaf1ea9b0da188d4ff1c96e0502b268e590fa7f6ea2390343da89d",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "prefix-zero-2-blue",
+      "sourceSha256": "9edd3aaa2ef623a5a2c3bb0df4b6d63cb2e2eac6ec33fac2e97281ce09cef64f",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "prefix-zero-3-blue",
+      "sourceSha256": "8058abfeaf30937a4bc14b49a2e7f0206937755e50dce5e9c61a3a48bbcb3083",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "prefix-zero-16-blue",
+      "sourceSha256": "badb2b7e67602eafe69e2708d64f92c7dcddf1ba2160923da3367715c0e44814",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "nested-zeros-blue",
+      "sourceSha256": "39bfb265f8f81fc78b52b9a51cdd0ae49db5d9c4c322a90d3fc0692f6d2337a7",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "mixed-zeros-literals-blue",
+      "sourceSha256": "a4fc75e757a6e66946b0239a35d35c6c2cc81bd10c94945802adfa5f882d177e",
+      "category": "native-candidate",
+      "beforePreview": false,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "malformed-root-tail-blue",
+      "sourceSha256": "7c808b83196b9d339da8a9747459c5d16cb3fd122ca3457e03f1b3c99efad588",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "short-root-tail-blue",
+      "sourceSha256": "b524ef62ea4082669db0563886ef315f58f464a7515c51047a922b0d34d117c1",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xhtml": {
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "ERROR: Parsing of document failed!\n",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "malformed-nested-tail-blue",
+      "sourceSha256": "85238409ea2149d0515627d3b41906c81f2c59ad3500d730f973e2eb33b73e70",
+      "category": "malformed-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    },
+    {
+      "name": "odd-unknown-blue",
+      "sourceSha256": "7b6f2185ab42050caea0057d203ded95bc34787a28c604b5044abdc16342f62f",
+      "category": "native-candidate",
+      "beforePreview": true,
+      "raw": {
+        "status": 0,
+        "signal": null,
+        "stdout": "startDocument()\n  startPage(svg:height: 11.0000in, svg:width: 8.5000in)\n    setStyle(draw:fill: solid, draw:fill-color: #0000ff, draw:stroke: none, svg:fill-rule: evenodd)\n    drawPath (svg:d: ((librevenge:path-action: M, svg:x: 7.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 8.2500in, svg:y: 3.5000in), (librevenge:path-action: L, svg:x: 7.2500in, svg:y: 2.5000in), (librevenge:path-action: Z)))\n  endPage\nendDocument\n",
+        "stderr": "",
+        "sha256": "33cd624a2591d1f9186e0332ae00708f3f994e8524e19bae1ee48eb36594172a"
+      },
+      "xhtml": {
+        "status": 0,
+        "signal": null,
+        "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<body>\n<?import namespace=\"svg\" urn=\"http://www.w3.org/2000/svg\"?>\n<!-- \n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n -->\n<svg:svg version=\"1.1\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"8.5000in\" height=\"11.0000in\" viewBox=\"0 0 612.0000 792.0000\" >\n<svg:path d=\" \nM522.0000,252.0000\nL594.0000,252.0000\nL522.0000,180.0000\nZ\" \nstyle=\"fill-rule: evenodd; fill: #0000ff; \"/>\n</svg:svg>\n\n</body>\n</html>\n",
+        "stderr": "",
+        "sha256": "43b452c24492c686b9149351972e683bd8c2ba7494317514dbea1a476f07e720"
+      }
+    }
+  ]
+}

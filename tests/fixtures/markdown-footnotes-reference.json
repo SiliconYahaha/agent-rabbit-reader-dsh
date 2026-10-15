@@ -1,0 +1,700 @@
+{
+  "oracle": {
+    "markdownIt": "15.0.1",
+    "footnote": "4.0.0",
+    "options": {
+      "html": true
+    },
+    "policy": "Raw independent HTML retained. One source-backed contract repairs demonstrated nested-definition oracle errors; one records a table delimiter dialect difference. No reader output is used as an expected result."
+  },
+  "cases": [
+    {
+      "name": "indent-s-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n FOLLOW\n\nTAIL",
+      "sha256": "d0d224c6e0124af34bf4680a0600c493c9b5eaedfd222deec3722b775d0173c2",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "indent-s-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n FOLLOW\n\nTAIL",
+      "sha256": "743ff5e5b823e6c401c0bacc5ed10c8cc20370a2baae9276c11b1e22b5321e66",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>FOLLOW</p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "indent-ss-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n  FOLLOW\n\nTAIL",
+      "sha256": "1dc94af0a39586901e93ce89710197753b798b1176bc5102f4341cad54906d71",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "indent-ss-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n  FOLLOW\n\nTAIL",
+      "sha256": "401914d5d00366fea4557aea2d4134025819188abddffb1cafebc0a250efb23f",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>FOLLOW</p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "indent-sss-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n   FOLLOW\n\nTAIL",
+      "sha256": "176e7bef7afe39dd25f47b02a5f0dae1f412981ebd3007406ed437e7a84bcc4b",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "indent-sss-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n   FOLLOW\n\nTAIL",
+      "sha256": "d9c2a432cf50d6e5d582518b30ffa67df441777df43868b1dcf426e8f30dedde",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>FOLLOW</p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "indent-ssss-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n    FOLLOW\n\nTAIL",
+      "sha256": "af6a3c31ac42d1746da9b28b69fef24b5591873bd4ee31f2f697e5651cd6215f",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "indent-ssss-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n    FOLLOW\n\nTAIL",
+      "sha256": "a44fce8ed893d124507a26207eafd935aa4788a606e83d9cbb54c70101d21706",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE</p>\n<p>FOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "indent-tab-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\tFOLLOW\n\nTAIL",
+      "sha256": "7c9030e0e1a348907b9601c885405eaeb30768d14f372057dc430e09547acfba",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "indent-tab-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n\tFOLLOW\n\nTAIL",
+      "sha256": "96193815e7bea9aa82b66620ce51b04e6bccc471fe4aab7e9b8e971e5b6fef7f",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE</p>\n<p>FOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "paragraphs",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    SECOND\n\nTAIL",
+      "sha256": "205c00b507f3d27b2d3114f45839e23d0588d7952eb74176342dc1d61c7d28d0",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<p>SECOND <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "list",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    - ONE\n    - TWO\n\nTAIL",
+      "sha256": "7efc3b0228e56c821a48c1a152de7e57fabbd15ece83bba043e4a77e689a55cc",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<ul>\n<li>ONE</li>\n<li>TWO</li>\n</ul>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "blockquote",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    > QUOTED\n\nTAIL",
+      "sha256": "5c1ce80c15935ef02fdb02e138773c029486dcaa66340825d63d45ec4bad76b7",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<blockquote>\n<p>QUOTED</p>\n</blockquote>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n        KEEP  SPACES\n        NEXT\n\nTAIL",
+      "sha256": "7c33a8fd09f193c335c8a5f8a3ec1a0a0e70c82b1ad5d228c97c869f60cc0ebf",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>KEEP  SPACES\nNEXT\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "fenced",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```txt\n    KEEP  SPACES\n    NEXT\n    ```\n\nTAIL",
+      "sha256": "deb7b673e2611a4b0466cdf0506b4033925a4d26d7c06681f09aaefee45ad127",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code class=\"language-txt\">KEEP  SPACES\nNEXT\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "definitionFirst",
+      "source": "[^n]: NOTE\n\nBODY[^n]",
+      "sha256": "5066844de5bfbdf6ed11433e79b3a31a457409682dc0cadf8a60fdeb6880c232",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "caseSensitive",
+      "source": "BODY[^n] OTHER[^N]\n\n[^n]: LOWER\n[^N]: UPPER",
+      "sha256": "7f84e97a72c2a9f64db5eb0b2a020114683bf864eb486d6f384ab25c80cad932",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup> OTHER<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>LOWER <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>UPPER <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "repeated",
+      "source": "BODY[^n] AGAIN[^n]\n\n[^n]: NOTE",
+      "sha256": "d0567f967878de948bb9fc8071056e4dca60a698a919e12bcaee1ddf4c666dbe",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup> AGAIN<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1:1\">[1:1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a> <a href=\"#fnref1:1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "insideCode",
+      "source": "`[^n]`\n\n```\n[^n]: KEEP CODE\n```\n\nTAIL[^n]",
+      "sha256": "5cc771dac23c07d8ffedc1b27c52a44307779906a0a9b1b8ac94437d6cc21b22",
+      "referenceHtml": "<p><code>[^n]</code></p>\n<pre><code>[^n]: KEEP CODE\n</code></pre>\n<p>TAIL[^n]</p>\n"
+    },
+    {
+      "name": "escaped",
+      "source": "BODY\\[^n]\n\n[^n]: NOTE",
+      "sha256": "3c2b3c7a545febcbf4fc34ae7febb82de6636a4ae8eb006fcc780f6f39de2331",
+      "referenceHtml": "<p>BODY[^n]</p>\n"
+    },
+    {
+      "name": "unused",
+      "source": "BODY\n\n[^n]: UNUSED",
+      "sha256": "25676d5c96790fc013ce3f40629c6e072e951a174f3264d6f3219dfdb03e2758",
+      "referenceHtml": "<p>BODY</p>\n"
+    },
+    {
+      "name": "nestedRef",
+      "source": "BODY[^n]\n\n[^n]: NOTE[^m]\n[^m]: SECOND",
+      "sha256": "5d2c11005639b8372eeff3a52e2220162b95723e300aa3f55d8c88bbe6ff5d74",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>SECOND <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "prototype",
+      "source": "BODY[^__proto__] OTHER[^constructor]\n\n[^__proto__]: FIRST\n[^constructor]: SECOND",
+      "sha256": "36208f12e8aea86a73b4b0cac657be6c9eb1427a164aedce8dabf91dc6a230a5",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup> OTHER<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>SECOND <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "empty",
+      "source": "BODY[^n]\n\n[^n]:\n\nTAIL",
+      "sha256": "02d316e423741a0c47cbefad320b650c5aa2c1c804a5ef36b388a0dcac1b2986",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "definitionBlockquote",
+      "source": "> BODY[^n]\n>\n> [^n]: NOTE\n\nTAIL",
+      "sha256": "9369a892df3ce9d067e50390b7d2a2a307b6a741e7d1d94316a8634431894607",
+      "referenceHtml": "<blockquote>\n<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n</blockquote>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "noSpace",
+      "source": "BODY[^n]\n\n[^n]:NOTE",
+      "sha256": "ee5cb530b4e0ddbde3e081baf63fa56bb6ff87d0fad0db55de9c4ce6b651354f",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "duplicate",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n[^n]: SECOND",
+      "sha256": "9d5ba1eba3ca7ec59ad4b77f750e9789aacb7dc754b5e91f09d95f2b2bd12dbd",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>SECOND <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "unresolved",
+      "source": "BODY[^missing] TAIL",
+      "sha256": "c8547ed5072a26d843abd8ba1d7e75245864ba3fc42886945ec5903c7baea740",
+      "referenceHtml": "<p>BODY[^missing] TAIL</p>\n"
+    },
+    {
+      "name": "nestedList",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    - ONE\n      - INNER\n    - TWO\n\nTAIL",
+      "sha256": "2952a6f7175592df854a99d719af362c7f06a5611c9a0df87217f4379d394fea",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<ul>\n<li>ONE\n<ul>\n<li>INNER</li>\n</ul>\n</li>\n<li>TWO</li>\n</ul>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "ordered",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    1. ONE\n    2. TWO\n\nTAIL",
+      "sha256": "aed6287bd8025610d8b792c6613fec08835129e143a4c5dd60d00ecb803fcbb9",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<ol>\n<li>ONE</li>\n<li>TWO</li>\n</ol>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "tightListFirst",
+      "source": "BODY[^n]\n\n[^n]: - ONE\n    - TWO\n\nTAIL",
+      "sha256": "fc9d0a9b2b9a783ee8be985bcc621627f31a2b96fe5bb15cf6775aac325a002a",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><ul>\n<li>ONE</li>\n<li>TWO</li>\n</ul>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "quoteFirst",
+      "source": "BODY[^n]\n\n[^n]: > ONE\n    >\n    > TWO\n\nTAIL",
+      "sha256": "ff8e2bdbab379ed0b5abe3f8d9dc34dca14804b2fcea09e09db80135ec419400",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><blockquote>\n<p>ONE</p>\n<p>TWO</p>\n</blockquote>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "heading",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    # HEADING\n\n    LAST\n\nTAIL",
+      "sha256": "aa415c7861d61aaeba289e8eb8dffe2fa644ce12d60d5e650bacd8d88245183c",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<h1>HEADING</h1>\n<p>LAST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "table",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    A | B\n    - | -\n    C | D\n\nTAIL",
+      "sha256": "61673bedc54f71267e5d17c62988bec8a0ffaade77398b7f6f6386f0c4f20849",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p><table>\n<thead>\n<tr>\n<th>A</th>\n<th>B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>C</td>\n<td>D</td>\n</tr>\n</tbody>\n</table>\n<a href=\"#fnref1\" class=\"footnote-backref\">↩</a></li>\n</ol>\n</section>\n",
+      "referenceError": "Delimiter ambiguity: markdown-it 15.0.1 prioritizes a list for a leading hyphen followed by a space. The reader uses the GFM table interpretation. Independent HTML comes from the equivalent unambiguous -|- delimiter; original output retained.",
+      "originalReferenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<p>A | B</p>\n<ul>\n<li>| -\nC | D</li>\n</ul>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "emphasis",
+      "source": "BODY[^n]\n\n[^n]: *FIRST* **SECOND** `[^n]` &amp; <b>THIRD</b>\n\nTAIL",
+      "sha256": "3a53d3e44971927a626703d4c4cee14bda75e684697ad37d784d9861a31a36fc",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p><em>FIRST</em> <strong>SECOND</strong> <code>[^n]</code> &amp; <b>THIRD</b> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "linkDefinition",
+      "source": "BODY[^n]\n\n[^n]: [LINK][ref]\n\n    [ref]: https://example.com/\n\nTAIL",
+      "sha256": "a2c49bf1a62e42984000c156d0b2660d895bd5a7082b485f14ddb1924e9f494d",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p><a href=\"https://example.com/\">LINK</a> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "globalLink",
+      "source": "BODY[^n]\n\n[^n]: [LINK][ref]\n\n[ref]: https://example.com/\n\nTAIL",
+      "sha256": "0d516b49002a16b75a31e4bbd7445e55f97faf0dd1e02f7ddd8ece1a0418a3f8",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p><a href=\"https://example.com/\">LINK</a> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "longBlank",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n\n\n    LAST\n\nTAIL",
+      "sha256": "09b59a0f5ac06729cbdd28d5e36b3394cb5c4cd974ca5b78400fe8f0152bf583",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<p>LAST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "lazyHeading",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n# BODY HEADING\n\nTAIL",
+      "sha256": "ca95a9139dbf6bdfca7ecd96fb2ff6f82488ce1b9bc267ceefdff9f79981cc94",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<h1>BODY HEADING</h1>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "lazyList",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n- BODY LIST\n\nTAIL",
+      "sha256": "b09182943eb33f2b6c1a87a91553d38bb607bf7823344e4725fbba90fdd07821",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<ul>\n<li>BODY LIST</li>\n</ul>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "lazyFence",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n```\nBODY CODE\n```\n\nTAIL",
+      "sha256": "2ebbc1e7976c32b869941c855a580e5dec651ea2c3555b9d1d0761e442e6d4f6",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<pre><code>BODY CODE\n</code></pre>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "lazyThematic",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n***\nBODY AFTER\n\nTAIL",
+      "sha256": "9aaa2eef16b0955eab89730202b53c2ba9adff9c2ef0248f9bf0ea41481130ae",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr>\n<p>BODY AFTER</p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "lazyQuote",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n> BODY QUOTE\n\nTAIL",
+      "sha256": "4413b2ba7534fd26224b4f9bbf86d2b64242e5cb38ffc97385344653bd2440a7",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<blockquote>\n<p>BODY QUOTE</p>\n</blockquote>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "lazyThenIndented",
+      "source": "BODY[^n]\n\n[^n]: FIRST\nLAZY\n    CONTINUED\n\nTAIL",
+      "sha256": "ab0c2f6dda0ea9dbb99c9c23673d2c46547f5086a7c21b4ef9a97629a6a00a6d",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST\nLAZY\nCONTINUED <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "blankIndentThenBody",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n    \n  BODY AFTER\n\nTAIL",
+      "sha256": "86c71759692c0b8842c31b82dc9db23bcd37b528b9fa0045d4756024515e3620",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>BODY AFTER</p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "unclosedNoteFence",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    CODE\n\nTAIL",
+      "sha256": "6a00524aa953311a773596703f2372546641f7124748488f91a528d66a43e5d8",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>CODE\n\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "nestedDefinition",
+      "source": "BODY[^n]\n\n[^n]: FIRST[^m]\n\n    [^m]: SECOND\n\nTAIL",
+      "sha256": "eb9d47925cd942ea7d3b8aad25e53d517fc61f8264001e7e6a73781aa9d98ca6",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a id=\"fnref1\" href=\"#fn1\">[1]</a></sup></p><p>TAIL</p><section class=\"footnotes\"><ol><li id=\"fn1\" class=\"footnote-item\"><p>FIRST<sup class=\"footnote-ref\"><a id=\"fnref2\" href=\"#fn2\">[2]</a></sup></p><a class=\"footnote-backref\" href=\"#fnref1\">↩</a></li><li id=\"fn2\" class=\"footnote-item\"><p>SECOND</p><a class=\"footnote-backref\" href=\"#fnref2\">↩</a></li></ol></section>",
+      "referenceError": "Both independent footnote extensions lose content or a target for a nested definition. Reviewed source contract preserves FIRST, SECOND and both reachable references; original markdown-it output retained.",
+      "originalReferenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n<li id=\"fn2\" class=\"footnote-item\"><p>SECOND <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "emptyThenParagraph",
+      "source": "BODY[^n]\n\n[^n]: \n\n    FIRST\n\nTAIL",
+      "sha256": "fdb775680685992cbdb966bce0565091796c2f16b068b2bf771af1ae32a43ad4",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "tabsMixed",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n \tSECOND\n\t\tCODE\n\nTAIL",
+      "sha256": "39159483c906cddf45044d45a807e7e16ffecdd8752159fdf015f134a884acab",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<p>SECOND\nCODE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "escapedCode",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n        <tag>&amp;\\keep\n\nTAIL",
+      "sha256": "a2217495602cfc04fa81c7b5d5616a30438911a7437ac3721a7b7e5b897d596f",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>&lt;tag&gt;&amp;amp;\\keep\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "htmlBlocks",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    <div>HTML\n\n    BLOCK</div>\n\nTAIL",
+      "sha256": "636d8d45b106a24c27df2c7a789eea763ad0675ebcdbca1d9588b2f7d41e0b7d",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<div>HTML\n<p>BLOCK</div> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "firstIndentedCode",
+      "source": "BODY[^n]\n\n[^n]:         CODE\n        NEXT\n\nTAIL",
+      "sha256": "2d5336eb809181545d2e2212fbcab27a95ea26327bcba8cfecd32f0aa9de7cb9",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><pre><code> CODE\nNEXT\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "selfReference",
+      "source": "BODY[^a]\n\n[^a]: A[^a]",
+      "sha256": "6d1c56f8441922bc6df4eaecd94fa60f6bac115eb203ea7b3c77e6c73545f2ee",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>A<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1:1\">[1:1]</a></sup> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a> <a href=\"#fnref1:1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "mutualReferences",
+      "source": "BODY[^a]\n\n[^a]: A[^b]\n[^b]: B[^a]",
+      "sha256": "6947cf3a2c3928bfc3824e35e9fd0b44ff052ce66a61c2c7f5966d83f5b74351",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>A<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a> <a href=\"#fnref1:1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>B<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1:1\">[1:1]</a></sup> <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "sharedNested",
+      "source": "BODY[^a] OTHER[^b]\n\n[^a]: A[^c]\n[^b]: B[^c]\n[^c]: C",
+      "sha256": "b5d43e2c2af49f622ec24fbcbcd48ab14c16763713340ee10e37cd23146708e8",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup> OTHER<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>A<sup class=\"footnote-ref\"><a href=\"#fn3\" id=\"fnref3\">[3]</a></sup> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>B<sup class=\"footnote-ref\"><a href=\"#fn3\" id=\"fnref3:1\">[3:1]</a></sup> <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn3\" class=\"footnote-item\"><p>C <a href=\"#fnref3\" class=\"footnote-backref\">↩︎</a> <a href=\"#fnref3:1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "unicodeLabel",
+      "source": "BODY[^中文] OTHER[^é]\n\n[^中文]: 中文\n[^é]: É",
+      "sha256": "6d334307adc3f41fd1ad9ab23369a18824bff5dabba08b51fa1bfc453b178c22",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup> OTHER<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>中文 <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>É <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "spaceLabelDialect",
+      "source": "BODY[^with space]\n\n[^with space]: NOTE",
+      "sha256": "9c6f82dd9fc49ccb8819319f5061c768b6ada34c3313b273555b0d4cb4c7e04f",
+      "referenceHtml": "<p>BODY<a href=\"NOTE\">^with space</a></p>\n"
+    },
+    {
+      "name": "punctuationLabel",
+      "source": "BODY[^a&b] OTHER[^a\"b]\n\n[^a&b]: AMP\n[^a\"b]: QUOTE",
+      "sha256": "fbff106ce93f138178dccb9e18a9fe29bf87bac678142bc92e4185b674c3f831",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup> OTHER<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>AMP <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>QUOTE <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "nestedDuplicate",
+      "source": "BODY[^a]\n\n[^a]: OLD\n\n    [^a]: NEW",
+      "sha256": "b78cd275b35dc6d26a325e37055246349cd9c24fafdb30ad3caa62744a5729ff",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NEW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "listDefinition",
+      "source": "- BODY[^n]\n\n  [^n]: NOTE\n\nTAIL",
+      "sha256": "91cdddfe298b032af5c54296dbeeefb74fb451fa1a06c835b284e8c0e1739768",
+      "referenceHtml": "<ul>\n<li>\n<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n</li>\n</ul>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "definitionIndent0",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\nTAIL",
+      "sha256": "bf44a11a93d2a892632c7743afe4eb4b9dfb1b42fa821202a3b7554129feb777",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "definitionIndent1",
+      "source": "BODY[^n]\n\n [^n]: NOTE\n\nTAIL",
+      "sha256": "f6e990029c72c384dfe1f65214ed3ea35965bbe975af82b39af4b565749632b7",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "definitionIndent2",
+      "source": "BODY[^n]\n\n  [^n]: NOTE\n\nTAIL",
+      "sha256": "d2762988f70b5462134ac9525f2ca99bee525cb2037e7177391a91969d1f25ce",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "definitionIndent3",
+      "source": "BODY[^n]\n\n   [^n]: NOTE\n\nTAIL",
+      "sha256": "76d2a11bdaab3fdd5adf9765b07784e31e184f271c74ee45ef218ae7f0811cee",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "definitionIndent4",
+      "source": "BODY[^n]\n\n    [^n]: NOTE\n\nTAIL",
+      "sha256": "c87ca8601b2459275ac0d343374562b360502ded0985bee31b9b9f6470d9acca",
+      "referenceHtml": "<p>BODY[^n]</p>\n<pre><code>[^n]: NOTE\n</code></pre>\n<p>TAIL</p>\n"
+    },
+    {
+      "name": "firstPad\"\"",
+      "source": "BODY[^n]\n\n[^n]:NOTE",
+      "sha256": "ee5cb530b4e0ddbde3e081baf63fa56bb6ff87d0fad0db55de9c4ce6b651354f",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "firstPad\" \"",
+      "source": "BODY[^n]\n\n[^n]: NOTE",
+      "sha256": "6386ddee2a2477d5d073fb1126a4c40adb1cf0a96b8758fcc390d2196942e9e1",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "firstPad\"    \"",
+      "source": "BODY[^n]\n\n[^n]:    NOTE",
+      "sha256": "40aa99b266a25a6df2645f0f3349ef95f9ac2ce255b631761eafb44279c41f5d",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "firstPad\"\\t\"",
+      "source": "BODY[^n]\n\n[^n]:\tNOTE",
+      "sha256": "12e1a06338704ff024b77a917ec84834066e23c56dbf29f5968c46d6afdd3d66",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "firstPad\" \\t\"",
+      "source": "BODY[^n]\n\n[^n]: \tNOTE",
+      "sha256": "c54e0526ff88dfb4107028494a2b55072e1d12763779a04c00f574363411b1fd",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-closed",
+      "source": "```\nx\n```",
+      "sha256": "a7cc9733bfc37e729c17889589aeeb7771a0b95d05977dbcee1ca1107d38a1ee",
+      "referenceHtml": "<pre><code>x\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-closed",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    x\n    ```\n\nTAIL",
+      "sha256": "27ff76a1fb47ede73942ae4a70d9395e8b8fe98678175b6f124c6bb65c804aa4",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-twoBlank",
+      "source": "```\nx\n\n\n```",
+      "sha256": "9c3b81396b97797b3c1080811a2618c4a0f830e113ad8df02cfade54403e3fa9",
+      "referenceHtml": "<pre><code>x\n\n\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-twoBlank",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    x\n    \n    \n    ```\n\nTAIL",
+      "sha256": "23a2fe01826d5d4bb739deece0b18735e5b7298bf3d3c17e86d2a3b8cb5ca45b",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n\n\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-oneBlank",
+      "source": "```\nx\n\n```",
+      "sha256": "77e5691c911d635c252a7601c833fd30a9407b7ab6e802af05085c54bd894f52",
+      "referenceHtml": "<pre><code>x\n\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-oneBlank",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    x\n    \n    ```\n\nTAIL",
+      "sha256": "f0bc6c5533adfebf3e09f0ca50aecc1b8314d92353f4e41ce86b74ff20964cf9",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-empty",
+      "source": "```\n```",
+      "sha256": "b90a4164732c9e71d5a3bc7d64d9f913bc06c799ce2fa8315804c58fba8c10f9",
+      "referenceHtml": "<pre><code></code></pre>\n"
+    },
+    {
+      "name": "noteCode-empty",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    ```\n\nTAIL",
+      "sha256": "0394082c8833e3395e8cbcf1a4994a750462ce1e50cedb50bdca36a1ce04e5a7",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code></code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-blankOnly",
+      "source": "```\n\n```",
+      "sha256": "be9fee0a93cb20cc7926ef24c91157ad51e233655e52e4a8846d1cc51796148c",
+      "referenceHtml": "<pre><code>\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-blankOnly",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    \n    ```\n\nTAIL",
+      "sha256": "c24b3c6a0f012d0d1d05acb9c20743d792d655e0f3d91911e7f639b9653fc3f0",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-noContent",
+      "source": "```",
+      "sha256": "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+      "referenceHtml": "<pre><code></code></pre>\n"
+    },
+    {
+      "name": "noteCode-noContent",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n\nTAIL",
+      "sha256": "e2cd764ed148e175c23a47c0e2bbb3dbed3d86f713bcc47797a6aa2a5305f146",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-unclosed",
+      "source": "```\nx",
+      "sha256": "b32bf6e96e13c489652cbff0893f0f41b89ec616ded25ab1eb7d5d28b196aaba",
+      "referenceHtml": "<pre><code>x</code></pre>\n"
+    },
+    {
+      "name": "noteCode-unclosed",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    x\n\nTAIL",
+      "sha256": "ede9c89ab27bfa428c55a7463bd937788d902afa07496c47ce2b351770bd4dff",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-unclosedLF",
+      "source": "```\nx\n",
+      "sha256": "851e5135175bf3606e5637e552132c268414b7a9f18904d99519d04b08903661",
+      "referenceHtml": "<pre><code>x\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-unclosedLF",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    x\n    \n\nTAIL",
+      "sha256": "52d1c45089386094709b597bfbfc2f01c6fedad6470dec79c4ae5a91cca85cb4",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n\n\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-spaces",
+      "source": "```\n  x  \n \n```",
+      "sha256": "913b59ae480a8168a7fcc4e7bd70787aad3d4a83508045bb982f3d9dd66fc677",
+      "referenceHtml": "<pre><code>  x  \n \n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-spaces",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n      x  \n     \n    ```\n\nTAIL",
+      "sha256": "7df5312befb493c4803fe1ca27b92b5a0154a261cfe20a0459b08339caf9afcf",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>  x  \n \n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-entities",
+      "source": "```\n<tag>&amp;\\x\n```",
+      "sha256": "fbc34b0f3c1b061c421597d18d904618841b51d1792e95030def07bea3ff2c40",
+      "referenceHtml": "<pre><code>&lt;tag&gt;&amp;amp;\\x\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-entities",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    <tag>&amp;\\x\n    ```\n\nTAIL",
+      "sha256": "d0471a2a1dd951b5c207a8235307d22d72d3c2c20e8d8acfba21028ccac68604",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>&lt;tag&gt;&amp;amp;\\x\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-tilde",
+      "source": "~~~~js\nx\n~~~\n~~~~~",
+      "sha256": "6a45c1a1c47da3ca84af53142c606ce5faf004ea413945f88b2ba69b02833d04",
+      "referenceHtml": "<pre><code class=\"language-js\">x\n~~~\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-tilde",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ~~~~js\n    x\n    ~~~\n    ~~~~~\n\nTAIL",
+      "sha256": "c5f25ff9b74b3dfd1448088669c94791c3f3b2c12cf36bc367206fe3cf7f65e0",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code class=\"language-js\">x\n~~~\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-mixedFence",
+      "source": "```\nx\n~~~\n```",
+      "sha256": "4a04caec2958a4a22d971338a0a6b7498a9df2621ebac222c33374b96e8a0334",
+      "referenceHtml": "<pre><code>x\n~~~\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-mixedFence",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    x\n    ~~~\n    ```\n\nTAIL",
+      "sha256": "8ff049c1594ea0977ce89b5728b5e36c34aa3355b0f003f84b2f9ca94e92240a",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n~~~\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-indent",
+      "source": "  ```\n x\n   y\n  ```",
+      "sha256": "1d09793721a5f7a73fc9c4966698beae2d55a879380942ca1fbf01e53c9b75f4",
+      "referenceHtml": "<pre><code>x\n y\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-indent",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n      ```\n     x\n       y\n      ```\n\nTAIL",
+      "sha256": "9263b31cc8f682833f477282eeb346b74c89416d109651f3dd957478d94836d2",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n y\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-tabs",
+      "source": "  ```\n\tx\n  ```",
+      "sha256": "cdca8b8ba20c1d1c79da515016d83a5a8aa27672b7cd16c29eb47c392fd3773f",
+      "referenceHtml": "<pre><code>  x\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-tabs",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n      ```\n    \tx\n      ```\n\nTAIL",
+      "sha256": "71577f298360bbd4e01dc13b557b4fd5d1bf17a96d6e4a2d6d5c1963b4a9a916",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>  x\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-closeSpaces",
+      "source": "```\nx\n   ``` \t",
+      "sha256": "9f61ecf00f5622388f19c6acf1d1546f49cd3831de76bb6000e306a8314fe2ee",
+      "referenceHtml": "<pre><code>x\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-closeSpaces",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    x\n       ``` \t\n\nTAIL",
+      "sha256": "273cbbffd4b0573a6fb28035776163450e1d698dc959713be738e59434617334",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-closeExtra",
+      "source": "```\nx\n``` BAD\n```",
+      "sha256": "6d8993adc77b7d772248a71f26c97eca1e8f43994c87ba3eab482f3fd241a13c",
+      "referenceHtml": "<pre><code>x\n``` BAD\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-closeExtra",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```\n    x\n    ``` BAD\n    ```\n\nTAIL",
+      "sha256": "730ae50cb800eefa29a48efb7e9303357e09342e7da808b8076e1b7dbeab7e32",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n``` BAD\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-indentCode",
+      "source": "    x\n\n    y\n\n",
+      "sha256": "9ba30de086139fd2768d61a51883b15870dcc1b0dd06754402c2a1ccbd95a02a",
+      "referenceHtml": "<pre><code>x\n\ny\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-indentCode",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n        x\n    \n        y\n    \n    \n\nTAIL",
+      "sha256": "6322d7184cb5363397c569e87573b5b8791e81acb076afc3363ec82c66762dd7",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n\ny\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-indentEOF",
+      "source": "    x",
+      "sha256": "c282582f0ef940a15aece231787f6ddcb1e1f243a92c98d69ac80ce9044361db",
+      "referenceHtml": "<pre><code>x\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-indentEOF",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n        x\n\nTAIL",
+      "sha256": "7abcb6531c2124fd2250c7811f5cebb5cc16e3340b53439d3a8bf4c0843ddc44",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>x\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-diff",
+      "source": "```diff\n+x\n-y\n\n```",
+      "sha256": "cdf856c51303f64b709fa51e93ebf62583f11c9d2b6cbb01f866ba1c84b4bef6",
+      "referenceHtml": "<pre><code class=\"language-diff\">+x\n-y\n\n</code></pre>\n"
+    },
+    {
+      "name": "noteCode-diff",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```diff\n    +x\n    -y\n    \n    ```\n\nTAIL",
+      "sha256": "4ac74e13c6b4f711ad980991c605c44e138b48334ce98b03bbec3bcb408844e8",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code class=\"language-diff\">+x\n-y\n\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-openingBacktickInfo",
+      "source": "```a`b\nx\n```",
+      "sha256": "8605cbcd474d8a5a8a4284b53d30b9a07a8e599ec408b795da4f33fda3b6ed48",
+      "referenceHtml": "<p>```a`b\nx</p>\n<pre><code></code></pre>\n"
+    },
+    {
+      "name": "noteCode-openingBacktickInfo",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```a`b\n    x\n    ```\n\nTAIL",
+      "sha256": "e7a6432f1e9f17a140922a8356e651b6380507d00853b704fe70e098458c4a21",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<p>```a`b\nx</p>\n<pre><code>\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "closing-tab-before-body",
+      "source": "```\nx\n``` \t\nBODY",
+      "sha256": "a4a0fd17f00615fbed21be6bd99260035b8bd4465e53106c1dd7f24bbe48cd53",
+      "referenceHtml": "<pre><code>x\n</code></pre>\n<p>BODY</p>\n"
+    },
+    {
+      "name": "note-closing-tab-before-body",
+      "source": "BODY[^n]\n\n[^n]: ```\n    x\n    ``` \t\nBODY AFTER",
+      "sha256": "b84e2ee424c7a99598087016d494facb4c6787fdf8934a1b76345943adce1de0",
+      "referenceHtml": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>BODY AFTER</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><pre><code>x\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n"
+    },
+    {
+      "name": "code-unicode-8232",
+      "source": "```\nKEEP ```\nAFTER\n```",
+      "sha256": "de01a7d7300b4ffc9d8db179942ce97d7863997c8b0a125c7a505cb4e3c9e841",
+      "referenceHtml": "<pre><code>KEEP ```\nAFTER\n</code></pre>\n"
+    },
+    {
+      "name": "code-unicode-8233",
+      "source": "```\nKEEP ```\nAFTER\n```",
+      "sha256": "db23e46571328b108c004df00563cce88bfbfe117b26515acd2bc7165cfb00fb",
+      "referenceHtml": "<pre><code>KEEP ```\nAFTER\n</code></pre>\n"
+    }
+  ]
+}

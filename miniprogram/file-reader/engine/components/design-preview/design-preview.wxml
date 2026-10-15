@@ -1,0 +1,8 @@
+<!-- 引擎只出预览图与事实；抬头、状态、元数据卡、按钮由宿主皮肤 /file-reader/skin/design 渲染。 -->
+<skin-design mark="{{skinMark}}" name="{{name}}" size="{{sizeLabel}}" loading="{{loading}}" loading-text="{{skinLoadingText}}"
+  metadata-title="{{skinMetadataTitle}}" metadata="{{metadata}}" message="{{message}}" error="{{error}}"
+  can-open-pdf="{{canOpenPdf}}" open-pdf-text="{{skinOpenPdfText}}" bind:openpdf="openAiPdf">
+  <view slot="preview" class="preview-page">
+    <image wx:if="{{previewPath}}" class="preview-image" src="{{previewPath}}" mode="widthFix" binderror="onImageError" />
+  </view>
+</skin-design>

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T09:49:17.785663+00:00",
+  "status": "prototype-fixed-awaiting-content-and-gates",
+  "rootCause": "Pinned TarIn requires512-byte alignment for oldGNU sparse offsets/lengths, although these are byte ranges; invalid-format rescan then skips original sparse member and exposes later headers. Packed-size totals were not validated.",
+  "sources": 9,
+  "independentPythonAndBsdtarExact": 9,
+  "baselineMissingMembers": 7,
+  "baselineExactBodies": 2,
+  "prototypeExactBodies": 9,
+  "fixtures": [
+    "tests/fixtures/tar-oldgnu/before.json",
+    "tests/fixtures/tar-oldgnu/first-fixed-probe.json"
+  ],
+  "fix": "Remove extent alignment restriction, preserve aligned archive record handling, validate packed sum and65536record map budget, discard zero-length data extents after validation and fail explicitly on bad oldGNU metadata.",
+  "verificationCorrection": "Build completed before initial intended baseline probe; that9/9fixed result is retained as first-fixed-probe.json. Actual baseline was separately rerun with TAR_OLDGNU_ENGINE_ROOT pointing at canonical clean main original glue/WASM;7omitted/2exact. Both artifact hashes are recorded.",
+  "verification": {
+    "firstRelatedTests": "pass; see outputs/tar-oldgnu/first-tests.log",
+    "fullCheck": "not run",
+    "production": "not run",
+    "actualHostNewContent": "not run",
+    "browserNewContent": "not run",
+    "wechat": "not run",
+    "devices": "not run"
+  },
+  "next": [
+    "Exercise sparsePNG with actual host/image preview handoff, followingHTML, repeat/open failure and stale callbacks.",
+    "Expand extension-block corruption, map budget and selected logical byte bounds; independent originals and old/PAX shared regression.",
+    "Required gates, scoped commit/push/draftPR and exact-headCI. Publication blocker remains."
+  ]
+}

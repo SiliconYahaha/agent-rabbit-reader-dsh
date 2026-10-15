@@ -1,0 +1,813 @@
+{
+  "basis": "Original base modules executed on unchanged authored inputs; includes spec-only opaque bytes and ASCII85 vector-looking prose pending native validation.",
+  "cases": [
+    {
+      "name": "escapedClose-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(escaped \\)\n%%EOF\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "d06aaf93467a938af85f4d0ab7563eb5a79ed43e0ca7a3b123c37edc65793ffa",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "escapedOpen-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(escaped \\(\n%%EOF\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "15de1c1a30ca91d824e6dc912409948950c0f5c97fb0ac83847c70bc19108aac",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "escapedSlash-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(escaped \\\\\n%%EOF\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "83cd9d892539f186c518f75787291089ee35d67c1b6064a608d75e37b569bf16",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "continuation-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(continued\\\n%%EOF\n) pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "c43e5f4bd4c2b849a691b475a2926ce68046e1574b6e82473af784519afd3b45",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "midlineComment-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(text)%%EOF\n\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "48d2d87dcefe1b8a7b0030dff8e514d47c7137b942178c17811bb50d80039c8d",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "multilineMidline-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(\ntext)%%HiResBoundingBox: 0 0 1 1\n\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "e18516b66ffcebed8cd21de59d91963e2b99164bb8df6ea33c14bbeb9b89f300",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "commentParens-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n% ( unmatched parentheses in a real comment\n\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "c018a2b2761b4a1e4c9db299b624997af6afa118e9bff5239c4f4e3202c724c2",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "commentEnd-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(text) % ( not a new string\n\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "f64a92cc9ddd0bf807a5fd21f1075ed8fe92c9994976224fe9efa638619167bd",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "twoStrings-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(first\n%%EOF\n) (second\n%%BeginBinary: 999999\n) pop pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "47cae795e3cc3998a490eb5bb03c68fdc61e52018d7183434084e526394c731b",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "hexDictionary-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n<< /text <283e0a2525454f460a29> >> pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "62bf22b617d4090d743225f3b20e505c758e1ba65f8759fbe420a806c68891c8",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "ascii85-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n<~!!!!!>\n%%EOF\n!!!!~> pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "52e6e93540f8a40921e423577523dd0ee5779897ea4f7e69fd3277a216d0890a",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "ascii85VectorProse-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n<~> 0 0 9 9 re f !!!!!!!~> pop\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "9a67fe96f58ab12e2b408af94ead3b3d38dada4b744f3a9792bbf8cebabb71c6",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 3
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "nestedDocument-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n%%BeginDocument: child.eps\n(\n%%EndDocument\n%%EOF\n) pop\n%%EOF\n%%EndDocument\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "9cf1f0edbcc5634929833cb20dba0f2ab9ffd6269c520bb8670d086592c89818",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "opaqueBytes-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n%%BeginBinary: 7\n()(<~\r\n%%EndBinary\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "d3607fb3b713bd6793ef8e0e52385b565c15c212badefb726e8eb130ea8b087d",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "realNextLine-lf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n1 0 0 setrgbcolor\n0 0 moveto\n20 0 lineto\n20 20 lineto\n0 20 lineto\nclosepath fill\n(\nignored) pop\n%%BeginDocument: child\n%%HiResBoundingBox: 0 0 1 1\n%%EndDocument\n0 0 1 setrgbcolor\n20 0 moveto\n40 0 lineto\n40 20 lineto\n20 20 lineto\nclosepath fill\n%%EOF\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "87429ffcb14fe8aedd6c3e27fb79da7dc6c2ff5a165c6d66672ac973b99bf598",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "escapedClose-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(escaped \\)\r%%EOF\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "034a26fa854f2445d5651c7667c9677c640223759e3d8dd6a13e3abe25630a93",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "escapedOpen-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(escaped \\(\r%%EOF\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "89ded9bcf96ee2ea69ec9b754a214cb0d9c95e7cba5be3f915abea492f9670e6",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "escapedSlash-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(escaped \\\\\r%%EOF\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "8bb3921ae0bd93a05a099f3b6c5282921b4145979bf9198f198549af038a2bd4",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "continuation-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(continued\\\r%%EOF\r) pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "822d099b1b7c66f68a96b7c7bd758cfcfb9f2c63e929316c785e1b401829e89d",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "midlineComment-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(text)%%EOF\r\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "1977a46d53d6b5d1c6e96b7fe022a7b4157bc88feab2936bab38a7ef81e8d0c6",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "multilineMidline-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(\rtext)%%HiResBoundingBox: 0 0 1 1\r\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "2c5d232fb69b6beab790e846d20a46ed488d4d9ae26c7b6c272b845d0cb50e59",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "commentParens-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r% ( unmatched parentheses in a real comment\r\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "635d3bb57337390f6e12782b28d4ae7c39e5bff1d21cf7eef301261ed2ddf007",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "commentEnd-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(text) % ( not a new string\r\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "efb024d736dbfff171122aa479b4606f600bbfad5a3409c8bc8a673f115d6255",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "twoStrings-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(first\r%%EOF\r) (second\r%%BeginBinary: 999999\r) pop pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "236f5f7ab0a331e935ccaf37bea895d3c5ba9a4b2f41e9152b91b9e01be4037e",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "hexDictionary-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r<< /text <283e0a2525454f460a29> >> pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "ab07e180a956490a10090057ef232e1b069c8ac80ef1c74441270e1f30523006",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "ascii85-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r<~!!!!!>\r%%EOF\r!!!!~> pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "fb6fb435e4f5af9c344690c4fd3d75fe2814d7935003ac83e2691fcaac65b50a",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "ascii85VectorProse-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r<~> 0 0 9 9 re f !!!!!!!~> pop\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "6cfa08ec699d757945f245c69b89afbbd987ccdf34302a3fdc5fef358a7f3942",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 3
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "nestedDocument-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r%%BeginDocument: child.eps\r(\r%%EndDocument\r%%EOF\r) pop\r%%EOF\r%%EndDocument\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "26cbac17fea23dc5defb2ee79190f1f740dd68edd60a1e5d9f959b4e933a4640",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "realNextLine-cr",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r%%BoundingBox: 0 0 40 20\r%%EndComments\r1 0 0 setrgbcolor\r0 0 moveto\r20 0 lineto\r20 20 lineto\r0 20 lineto\rclosepath fill\r(\rignored) pop\r%%BeginDocument: child\r%%HiResBoundingBox: 0 0 1 1\r%%EndDocument\r0 0 1 setrgbcolor\r20 0 moveto\r40 0 lineto\r40 20 lineto\r20 20 lineto\rclosepath fill\r%%EOF\r",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "b0812b1f8eac1d3a6d2682d74e9155b9d71eedd679dd61b50864c8ec94a6acdf",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "escapedClose-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(escaped \\)\r\n%%EOF\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "2a92319c91515a1afddd0ffd64c35923060b65d5f49c76359ba2028636cf87b1",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "escapedOpen-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(escaped \\(\r\n%%EOF\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "b8bb97f559b5b145d6b1753bb3c875605caa0f8398d276b9bf05d907a0177ec3",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "escapedSlash-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(escaped \\\\\r\n%%EOF\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "cd5bbb6310dfbc647ca836958401336da5ee6c8dc0fae0678262d1c16c9667f6",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "continuation-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(continued\\\r\n%%EOF\r\n) pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": true,
+      "sha256": "86aa028a0f37716746b3de6ffb3a8e7025135dd16fccd2225fc45590934a6111",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "midlineComment-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(text)%%EOF\r\n\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "46c5ac2313250a896a131f4b564ff41d7b19bfc60abf9c087e06cf7ab31151e1",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "multilineMidline-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(\r\ntext)%%HiResBoundingBox: 0 0 1 1\r\n\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "3f399fd34de272ef924136e14f04ae706072ff851dae622566c919fa977ec2bd",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "commentParens-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n% ( unmatched parentheses in a real comment\r\n\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "72a338e74a258566039bdcb9549be4ce59097c7871daaaab18b0204d6866d781",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "commentEnd-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(text) % ( not a new string\r\n\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "634d157ea639234a56f46be12fa3c575e1a1ce97587d5dd2db3b6fb0ae10f9d5",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "twoStrings-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(first\r\n%%EOF\r\n) (second\r\n%%BeginBinary: 999999\r\n) pop pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "957cac6d09fce95169d06803114add60bf6d7420ccfbb907b86f59010951cf8a",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "hexDictionary-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n<< /text <283e0a2525454f460a29> >> pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "7b135f01cd7d6b7c36a5c6030fbe7c485faae8c26e4eaf6266c03081c2558c1c",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "ascii85-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n<~!!!!!>\r\n%%EOF\r\n!!!!~> pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "4cce6deee1a306f75b3ed806c61ce726a2d49a621c6087d14917d827fbedb3ea",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "ascii85VectorProse-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n<~> 0 0 9 9 re f !!!!!!!~> pop\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "54b38350ef3e889cc64345ed8e2a4888ea9cf5244a6b655eafe0260f0b619892",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 3
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "nestedDocument-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n%%BeginDocument: child.eps\r\n(\r\n%%EndDocument\r\n%%EOF\r\n) pop\r\n%%EOF\r\n%%EndDocument\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "32b947d212d96a830a066e7138e2389264d88fe979cf8df34fb05892a63112e8",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 1
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "realNextLine-crlf",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\r\n%%BoundingBox: 0 0 40 20\r\n%%EndComments\r\n1 0 0 setrgbcolor\r\n0 0 moveto\r\n20 0 lineto\r\n20 20 lineto\r\n0 20 lineto\r\nclosepath fill\r\n(\r\nignored) pop\r\n%%BeginDocument: child\r\n%%HiResBoundingBox: 0 0 1 1\r\n%%EndDocument\r\n0 0 1 setrgbcolor\r\n20 0 moveto\r\n40 0 lineto\r\n40 20 lineto\r\n20 20 lineto\r\nclosepath fill\r\n%%EOF\r\n",
+      "expected": {
+        "width": 40,
+        "height": 20,
+        "paths": 2,
+        "rasterPreview": false
+      },
+      "native": false,
+      "sha256": "bccdf98013924d3f2b105d24e94ed85e1bd8e4c795fbe89a0e465a99833d3a04",
+      "vector": {
+        "width": 40,
+        "height": 20,
+        "paths": 2
+      },
+      "rasterError": "\u6587\u4ef6\u6ca1\u6709 DSC/EPSI \u4f4d\u56fe\u9884\u89c8\u6bb5"
+    },
+    {
+      "name": "fake-preview-only",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n(\n%%BeginPreview: 1 1 8 1\n% ff\n%%EndPreview\n) pop\n%%EOF\n",
+      "expected": {
+        "noPreview": true
+      },
+      "native": true,
+      "sha256": "6788615058af0be93ed550c6917cc0e32ccf17ec09241e7927f3bb1196bfe735",
+      "vectorError": "\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84",
+      "raster": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "name": "real-preview-after-string",
+      "source": "%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 40 20\n%%EndComments\n(\n%%BeginPreview: 1 1 8 1\n% ff\n%%EndPreview\n) pop\n%%BeginPreview: 1 1 8 1\n% 00\n%%EndPreview\n%%EOF\n",
+      "expected": {
+        "rasterPreview": true,
+        "pixel": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      "native": false,
+      "sha256": "20e2360ace574233323acf03f7657b2a100846b6c6820af68f3801d1a1665e23",
+      "vectorError": "\u6ca1\u6709\u627e\u5230\u53ef\u5b89\u5168\u8fd8\u539f\u7684\u57fa\u7840\u77e2\u91cf\u8def\u5f84",
+      "raster": {
+        "width": 1,
+        "height": 1
+      }
+    }
+  ]
+}

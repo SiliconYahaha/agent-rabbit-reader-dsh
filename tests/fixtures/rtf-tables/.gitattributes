@@ -1,0 +1,4 @@
+# Keep reference files byte-identical across operating systems.
+*.rtf binary
+# Preserve the upstream license bytes, including original trailing spaces.
+LICENSE.txt -text whitespace=-blank-at-eol

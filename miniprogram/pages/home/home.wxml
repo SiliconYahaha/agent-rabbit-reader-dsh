@@ -1,0 +1,39 @@
+<view class="home-page">
+  <view class="welcome">
+    <image class="hero-illustration" src="/assets/brand-hero-sketch-transparent.png" mode="aspectFit" aria-label="兔子从纸箱中举起网页的手绘插画" />
+  </view>
+
+  <view class="open-actions">
+    <view class="format-summary">
+      <text class="core-formats">{{copy.coreFormats}}</text>
+      <text class="more-formats">{{copy.moreFormats}}</text>
+    </view>
+    <button class="file-button" bindtap="chooseFile">
+      <image class="button-icon button-icon-light" src="/assets/icons/folder-open.svg" mode="aspectFit" aria-hidden="true" />
+      <text>{{copy.open}}</text>
+    </button>
+    <view class="file-button-note">
+      <text>{{copy.pickerNote}}</text>
+    </view>
+
+    <view class="secondary-actions">
+      <button class="source-button" bindtap="showPaste"><image class="button-icon" src="/assets/icons/clipboard-text.svg" mode="aspectFit" aria-hidden="true" />{{copy.paste}}</button>
+      <button class="source-button" bindtap="loadSample"><image class="button-icon" src="/assets/icons/book-2.svg" mode="aspectFit" aria-hidden="true" />{{copy.sample}}</button>
+    </view>
+
+    <button class="share-button" open-type="share" aria-label="分享兔子阅读器给微信好友">{{copy.share}}</button>
+
+    <view wx:if="{{inputMode === 'paste'}}" class="input-box">
+      <textarea class="html-input" value="{{draftHtml}}" placeholder="{{copy.placeholder}}" maxlength="-1" bindinput="onHtmlInput" />
+      <view wx:if="{{error}}" class="input-error" role="alert">{{error}}</view>
+      <button class="action-button" bindtap="parseDraft">{{copy.openDraft}}</button>
+    </view>
+  </view>
+
+  <view class="trust-line">
+    <image class="trust-mark" src="/assets/icons/shield-check.svg" mode="aspectFit" aria-hidden="true" />
+    <view class="trust-copy">{{copy.privacy}}</view>
+  </view>
+
+  <view wx:if="{{error && inputMode !== 'paste'}}" class="error-card">{{error}}</view>
+</view>

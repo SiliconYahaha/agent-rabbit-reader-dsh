@@ -1,0 +1,251 @@
+{
+  "oracle": "markdown-it 15.0.1 with markdown-it-footnote 4.0.0",
+  "basis": [
+    "https://spec.commonmark.org/0.31.2/#tabs",
+    "https://spec.commonmark.org/0.31.2/#indented-code-blocks"
+  ],
+  "generation": "Eight leading space/tab forms in body and footnotes, plus eleven boundary/container/line-ending combinations. No randomness. Raw references retained without changing oracle whitespace.",
+  "cases": [
+    {
+      "name": "indent-tab-body",
+      "source": "\talpha\tbeta\n",
+      "sha256": "c270d5c6e9e2a306df86adfa2b2b509af87e4c598a9051c936aa7adbaf35b142",
+      "referenceHtml": "<pre><code>alpha\tbeta\n</code></pre>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-tab-footnote",
+      "source": "Body[^a]\n\n[^a]: Note\n\n    \talpha\tbeta\n",
+      "sha256": "aecac2303711634b13c18c749074a015e601652b489ea55a1fa5004ec7fdcec5",
+      "referenceHtml": "<p>Body<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Note</p>\n<pre><code>alpha\tbeta\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-one-space-tab-body",
+      "source": " \talpha\tbeta\n",
+      "sha256": "66ea59ae6f550b735c7951cb73d86ca6cc39dc9d4e70ab1ee73ccc298b017acb",
+      "referenceHtml": "<pre><code>alpha\tbeta\n</code></pre>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-one-space-tab-footnote",
+      "source": "Body[^a]\n\n[^a]: Note\n\n     \talpha\tbeta\n",
+      "sha256": "bd1faa1277875da03fa261cad6bebc75b7923493888dc2d91a1727040a2ce043",
+      "referenceHtml": "<p>Body<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Note</p>\n<pre><code>alpha\tbeta\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-two-space-tab-body",
+      "source": "  \talpha\tbeta\n",
+      "sha256": "46a49834115e69e7618e1e4418b6420648f7d99cd723b5f53a6dd62eda9743f7",
+      "referenceHtml": "<pre><code>alpha\tbeta\n</code></pre>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-two-space-tab-footnote",
+      "source": "Body[^a]\n\n[^a]: Note\n\n      \talpha\tbeta\n",
+      "sha256": "fc513cb05122f30f2011226022c26ef9ab67d593333d26dff395b85adee1b585",
+      "referenceHtml": "<p>Body<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Note</p>\n<pre><code>alpha\tbeta\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-three-space-tab-body",
+      "source": "   \talpha\tbeta\n",
+      "sha256": "cb7588b0c181c2596a4ebd12772935dad76b9667924f9cb14b80eb9a8ab32e64",
+      "referenceHtml": "<pre><code>alpha\tbeta\n</code></pre>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-three-space-tab-footnote",
+      "source": "Body[^a]\n\n[^a]: Note\n\n       \talpha\tbeta\n",
+      "sha256": "7d26df2d707d80dd9dbb7eb9e06da4c75688927103f4c9fd592e6b42de867859",
+      "referenceHtml": "<p>Body<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Note</p>\n<pre><code>alpha\tbeta\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-tab-space-body",
+      "source": "\t alpha\tbeta\n",
+      "sha256": "22f20cb49c19757dab48c3eff53d450daad43ad751671bd711122d87495d87b0",
+      "referenceHtml": "<pre><code> alpha\tbeta\n</code></pre>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-tab-space-footnote",
+      "source": "Body[^a]\n\n[^a]: Note\n\n    \t alpha\tbeta\n",
+      "sha256": "18df6f85f13b00fe84735dabb704708f2a5c3c09bf65868327909560453e627a",
+      "referenceHtml": "<p>Body<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Note</p>\n<pre><code> alpha\tbeta\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "expected": [
+        " alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-two-tabs-body",
+      "source": "\t\talpha\tbeta\n",
+      "sha256": "4d1e6dd9a3a9b9b8672328a2e4538ed443e5a04a895355f24321fedaf270066d",
+      "referenceHtml": "<pre><code>\talpha\tbeta\n</code></pre>\n",
+      "expected": [
+        "\talpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-two-tabs-footnote",
+      "source": "Body[^a]\n\n[^a]: Note\n\n    \t\talpha\tbeta\n",
+      "sha256": "dc9dcdf3349d461a485fc5dfa332e4ef4ebebb4f3d5dbadebed3d4c783602d1b",
+      "referenceHtml": "<p>Body<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Note</p>\n<pre><code>\talpha\tbeta\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "expected": [
+        "\talpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-two-space-two-tabs-body",
+      "source": "  \t\talpha\tbeta\n",
+      "sha256": "88f14abe89984ae082103a8c1674f668bee4046156a5100628d9630f0307a1ec",
+      "referenceHtml": "<pre><code>\talpha\tbeta\n</code></pre>\n",
+      "expected": [
+        "\talpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-two-space-two-tabs-footnote",
+      "source": "Body[^a]\n\n[^a]: Note\n\n      \t\talpha\tbeta\n",
+      "sha256": "f8e871be83f6e4c800918113d4501e14ff472abcfe99b06165a4108d14a1ecc4",
+      "referenceHtml": "<p>Body<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Note</p>\n<pre><code>\talpha\tbeta\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "expected": [
+        "\talpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-four-spaces-body",
+      "source": "    alpha\tbeta\n",
+      "sha256": "d58d5d542cac21ddab7a0befbb51aa98355da6a3a6764fcf0c06930de347a154",
+      "referenceHtml": "<pre><code>alpha\tbeta\n</code></pre>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-four-spaces-footnote",
+      "source": "Body[^a]\n\n[^a]: Note\n\n        alpha\tbeta\n",
+      "sha256": "816d47e5e3411a608ba5369129eba2fbe3bf223c2921f513e44fa0fd4eacf8b4",
+      "referenceHtml": "<p>Body<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Note</p>\n<pre><code>alpha\tbeta\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "expected": [
+        "alpha\tbeta\n"
+      ]
+    },
+    {
+      "name": "indent-multiline",
+      "source": " \tfirst\n  \tsecond\n   \tthird\n\n    last\n",
+      "sha256": "3f67887a68a19237682db9945f8ed3b26abb6a4179a0f51291957414d02a2f95",
+      "referenceHtml": "<pre><code>first\nsecond\nthird\n\nlast\n</code></pre>\n",
+      "expected": [
+        "first\nsecond\nthird\n\nlast\n"
+      ]
+    },
+    {
+      "name": "indent-blank-whitespace",
+      "source": " \tfirst\n \t  \n  \tsecond\n",
+      "sha256": "6c1d7a07550f1d04db878729dc31bc91bb14716cdf3d759ca0cd00bf7fd32882",
+      "referenceHtml": "<pre><code>first\n  \nsecond\n</code></pre>\n",
+      "expected": [
+        "first\n  \nsecond\n"
+      ]
+    },
+    {
+      "name": "indent-paragraph-interruption",
+      "source": "Paragraph\n  \tcontinuation\n",
+      "sha256": "d96080b02ff9c63196d197878b22676dc7dfc4c9e95aca5c05ae0118320dd88d",
+      "referenceHtml": "<p>Paragraph\ncontinuation</p>\n",
+      "expected": []
+    },
+    {
+      "name": "indent-following-body",
+      "source": " \tcode\n\nAFTER\n",
+      "sha256": "2fafcaff1a2421c6d7dd48e94d50ddf3d7e5b5b1a63986676fa950764ecbc07a",
+      "referenceHtml": "<pre><code>code\n</code></pre>\n<p>AFTER</p>\n",
+      "expected": [
+        "code\n"
+      ]
+    },
+    {
+      "name": "indent-unicode-separators",
+      "source": "    alpha     beta   gamma\n",
+      "sha256": "d83ab4fc44ac44de08e71ecbe5196549eaaaa37224b34308087a1ac8e9816468",
+      "referenceHtml": "<pre><code>alpha     beta   gamma\n</code></pre>\n",
+      "expected": [
+        "alpha     beta   gamma\n"
+      ]
+    },
+    {
+      "name": "indent-internal-tabs",
+      "source": " \talpha\t  beta\t\tend  \n",
+      "sha256": "f426a9f246729a65b5e33ca52bc5a11dfd75a4b46cf43a8e7a0f8d0635f6d56d",
+      "referenceHtml": "<pre><code>alpha\t  beta\t\tend  \n</code></pre>\n",
+      "expected": [
+        "alpha\t  beta\t\tend  \n"
+      ]
+    },
+    {
+      "name": "indent-no-final-lf",
+      "source": "  \tEOF",
+      "sha256": "cc2ae2dad1a662721dfac16d42d1d948da7d902633c4609c6e06d2e0ca9e273d",
+      "referenceHtml": "<pre><code>EOF\n</code></pre>\n",
+      "expected": [
+        "EOF\n"
+      ]
+    },
+    {
+      "name": "indent-crlf",
+      "source": " \tfirst\r\n  \tsecond\r\n",
+      "sha256": "451666e861056d29c32781426dfb1665572ad1de7ae7f37db801796821155c57",
+      "referenceHtml": "<pre><code>first\nsecond\n</code></pre>\n",
+      "expected": [
+        "first\nsecond\n"
+      ]
+    },
+    {
+      "name": "indent-excess-indent",
+      "source": "   \t  \tinner\n",
+      "sha256": "cb0485d94990c495a71c714c7ecab1c2f9b32f630ba2b247f1516766f9659075",
+      "referenceHtml": "<pre><code>  \tinner\n</code></pre>\n",
+      "expected": [
+        "  \tinner\n"
+      ]
+    },
+    {
+      "name": "indent-list-code",
+      "source": "- Item\n\n    \tcode\n",
+      "sha256": "6d12b5a8697bde10251692b6ea7f9b62e94091198289208c802e48add8d0e46b",
+      "referenceHtml": "<ul>\n<li>\n<p>Item</p>\n<pre><code>  code\n</code></pre>\n</li>\n</ul>\n",
+      "expected": [
+        "  code\n"
+      ]
+    },
+    {
+      "name": "indent-quote-spaces",
+      "source": ">      \tcode\n",
+      "sha256": "95c13a1eb2c5973a268757db33addefd24ef24a46406350ed343abfdf47f081b",
+      "referenceHtml": "<blockquote>\n<pre><code> \tcode\n</code></pre>\n</blockquote>\n",
+      "expected": [
+        " \tcode\n"
+      ]
+    }
+  ]
+}

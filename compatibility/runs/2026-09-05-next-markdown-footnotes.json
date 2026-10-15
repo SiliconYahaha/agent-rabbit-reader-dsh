@@ -1,0 +1,2161 @@
+{
+  "testedAt": "2026-09-05T23:32:02.084Z",
+  "versions": {
+    "markdownIt": "15.0.1",
+    "footnote": "4.0.0",
+    "python": "3.10.3"
+  },
+  "scope": "Actual reader file entry and document-renderer nodes in Chrome compared with two independent Markdown footnote implementations; body whitespace normalized, code whitespace raw, references and note block structure retained",
+  "inputs": [
+    {
+      "name": "indent-s-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n FOLLOW\n\nTAIL",
+      "sha256": "d0d224c6e0124af34bf4680a0600c493c9b5eaedfd222deec3722b775d0173c2"
+    },
+    {
+      "name": "indent-s-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n FOLLOW\n\nTAIL",
+      "sha256": "743ff5e5b823e6c401c0bacc5ed10c8cc20370a2baae9276c11b1e22b5321e66"
+    },
+    {
+      "name": "indent-ss-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n  FOLLOW\n\nTAIL",
+      "sha256": "1dc94af0a39586901e93ce89710197753b798b1176bc5102f4341cad54906d71"
+    },
+    {
+      "name": "indent-ss-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n  FOLLOW\n\nTAIL",
+      "sha256": "401914d5d00366fea4557aea2d4134025819188abddffb1cafebc0a250efb23f"
+    },
+    {
+      "name": "indent-sss-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n   FOLLOW\n\nTAIL",
+      "sha256": "176e7bef7afe39dd25f47b02a5f0dae1f412981ebd3007406ed437e7a84bcc4b"
+    },
+    {
+      "name": "indent-sss-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n   FOLLOW\n\nTAIL",
+      "sha256": "d9c2a432cf50d6e5d582518b30ffa67df441777df43868b1dcf426e8f30dedde"
+    },
+    {
+      "name": "indent-ssss-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n    FOLLOW\n\nTAIL",
+      "sha256": "af6a3c31ac42d1746da9b28b69fef24b5591873bd4ee31f2f697e5651cd6215f"
+    },
+    {
+      "name": "indent-ssss-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n    FOLLOW\n\nTAIL",
+      "sha256": "a44fce8ed893d124507a26207eafd935aa4788a606e83d9cbb54c70101d21706"
+    },
+    {
+      "name": "indent-tab-adjacent",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\tFOLLOW\n\nTAIL",
+      "sha256": "7c9030e0e1a348907b9601c885405eaeb30768d14f372057dc430e09547acfba"
+    },
+    {
+      "name": "indent-tab-blank",
+      "source": "BODY[^n]\n\n[^n]: NOTE\n\n\tFOLLOW\n\nTAIL",
+      "sha256": "96193815e7bea9aa82b66620ce51b04e6bccc471fe4aab7e9b8e971e5b6fef7f"
+    },
+    {
+      "name": "paragraphs",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    SECOND\n\nTAIL",
+      "sha256": "205c00b507f3d27b2d3114f45839e23d0588d7952eb74176342dc1d61c7d28d0"
+    },
+    {
+      "name": "list",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    - ONE\n    - TWO\n\nTAIL",
+      "sha256": "7efc3b0228e56c821a48c1a152de7e57fabbd15ece83bba043e4a77e689a55cc"
+    },
+    {
+      "name": "blockquote",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    > QUOTED\n\nTAIL",
+      "sha256": "5c1ce80c15935ef02fdb02e138773c029486dcaa66340825d63d45ec4bad76b7"
+    },
+    {
+      "name": "code",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n        KEEP  SPACES\n        NEXT\n\nTAIL",
+      "sha256": "7c33a8fd09f193c335c8a5f8a3ec1a0a0e70c82b1ad5d228c97c869f60cc0ebf"
+    },
+    {
+      "name": "fenced",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n    ```txt\n    KEEP  SPACES\n    NEXT\n    ```\n\nTAIL",
+      "sha256": "deb7b673e2611a4b0466cdf0506b4033925a4d26d7c06681f09aaefee45ad127"
+    },
+    {
+      "name": "definitionFirst",
+      "source": "[^n]: NOTE\n\nBODY[^n]",
+      "sha256": "5066844de5bfbdf6ed11433e79b3a31a457409682dc0cadf8a60fdeb6880c232"
+    },
+    {
+      "name": "caseSensitive",
+      "source": "BODY[^n] OTHER[^N]\n\n[^n]: LOWER\n[^N]: UPPER",
+      "sha256": "7f84e97a72c2a9f64db5eb0b2a020114683bf864eb486d6f384ab25c80cad932"
+    },
+    {
+      "name": "repeated",
+      "source": "BODY[^n] AGAIN[^n]\n\n[^n]: NOTE",
+      "sha256": "d0567f967878de948bb9fc8071056e4dca60a698a919e12bcaee1ddf4c666dbe"
+    },
+    {
+      "name": "insideCode",
+      "source": "`[^n]`\n\n```\n[^n]: KEEP CODE\n```\n\nTAIL[^n]",
+      "sha256": "5cc771dac23c07d8ffedc1b27c52a44307779906a0a9b1b8ac94437d6cc21b22"
+    },
+    {
+      "name": "escaped",
+      "source": "BODY\\[^n]\n\n[^n]: NOTE",
+      "sha256": "3c2b3c7a545febcbf4fc34ae7febb82de6636a4ae8eb006fcc780f6f39de2331"
+    },
+    {
+      "name": "unused",
+      "source": "BODY\n\n[^n]: UNUSED",
+      "sha256": "25676d5c96790fc013ce3f40629c6e072e951a174f3264d6f3219dfdb03e2758"
+    },
+    {
+      "name": "nestedRef",
+      "source": "BODY[^n]\n\n[^n]: NOTE[^m]\n[^m]: SECOND",
+      "sha256": "5d2c11005639b8372eeff3a52e2220162b95723e300aa3f55d8c88bbe6ff5d74"
+    },
+    {
+      "name": "prototype",
+      "source": "BODY[^__proto__] OTHER[^constructor]\n\n[^__proto__]: FIRST\n[^constructor]: SECOND",
+      "sha256": "36208f12e8aea86a73b4b0cac657be6c9eb1427a164aedce8dabf91dc6a230a5"
+    },
+    {
+      "name": "empty",
+      "source": "BODY[^n]\n\n[^n]:\n\nTAIL",
+      "sha256": "02d316e423741a0c47cbefad320b650c5aa2c1c804a5ef36b388a0dcac1b2986"
+    },
+    {
+      "name": "definitionBlockquote",
+      "source": "> BODY[^n]\n>\n> [^n]: NOTE\n\nTAIL",
+      "sha256": "9369a892df3ce9d067e50390b7d2a2a307b6a741e7d1d94316a8634431894607"
+    },
+    {
+      "name": "noSpace",
+      "source": "BODY[^n]\n\n[^n]:NOTE",
+      "sha256": "ee5cb530b4e0ddbde3e081baf63fa56bb6ff87d0fad0db55de9c4ce6b651354f"
+    },
+    {
+      "name": "duplicate",
+      "source": "BODY[^n]\n\n[^n]: FIRST\n\n[^n]: SECOND",
+      "sha256": "9d5ba1eba3ca7ec59ad4b77f750e9789aacb7dc754b5e91f09d95f2b2bd12dbd"
+    },
+    {
+      "name": "unresolved",
+      "source": "BODY[^missing] TAIL",
+      "sha256": "c8547ed5072a26d843abd8ba1d7e75245864ba3fc42886945ec5903c7baea740"
+    }
+  ],
+  "views": [
+    {
+      "name": "indent-s-adjacent",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"6\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"9\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"11\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"12\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"15\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"18\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"19\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"20\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"21\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE\n FOLLOW&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "indent-s-blank",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"30\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"33\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"35\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"36\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"39\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"42\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"43\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"44\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"45\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>FOLLOW</p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>FOLLOW</p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "indent-ss-adjacent",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"54\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"57\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"59\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"60\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"63\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"66\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"67\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"68\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"69\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE\n  FOLLOW&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "indent-ss-blank",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"78\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"81\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"83\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"84\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"87\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"90\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"91\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"92\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"93\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>FOLLOW</p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>FOLLOW</p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "indent-sss-adjacent",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"102\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"105\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"107\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"108\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"111\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"114\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"115\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"116\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"117\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE\n   FOLLOW&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "indent-sss-blank",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"126\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"129\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"131\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"132\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"135\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"138\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"139\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"140\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"141\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>FOLLOW</p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>FOLLOW</p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "indent-ssss-adjacent",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"150\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"153\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"155\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"156\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"159\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"162\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"163\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"164\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"165\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE\nFOLLOW&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "indent-ssss-blank",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"174\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"177\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"179\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"180\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"183\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"186\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"187\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"188\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"189\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE</p>\n<p>FOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE</p>\n<p>FOLLOW&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "indent-tab-adjacent",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"198\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"201\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"203\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"204\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"207\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"210\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"211\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"212\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"213\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE\nFOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE\nFOLLOW&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "indent-tab-blank",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"222\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"225\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"227\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"228\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"231\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"234\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"235\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"236\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"237\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE FOLLOW</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE FOLLOW</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE</p>\n<p>FOLLOW <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE</p>\n<p>FOLLOW&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "paragraphs",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"246\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"249\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"251\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"252\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"255\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"258\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"259\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"260\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"261\" style=\"display:inline;margin-right:6px\">[1]</span> FIRST SECOND</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> FIRST SECOND</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<p>SECOND <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>FIRST</p>\n<p>SECOND&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "list",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"270\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"273\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"275\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"276\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"279\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"282\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"283\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"284\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"285\" style=\"display:inline;margin-right:6px\">[1]</span> FIRST - ONE - TWO</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> FIRST - ONE - TWO</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<ul>\n<li>ONE</li>\n<li>TWO</li>\n</ul>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>FIRST</p>\n<ul>\n<li>ONE</li>\n<li>TWO</li>\n</ul>\n<p><a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "blockquote",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"294\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"297\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"299\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"300\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"303\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"306\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"307\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"308\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"309\" style=\"display:inline;margin-right:6px\">[1]</span> FIRST > QUOTED</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> FIRST &gt; QUOTED</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<blockquote>\n<p>QUOTED</p>\n</blockquote>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>FIRST</p>\n<blockquote>\n<p>QUOTED</p>\n</blockquote>\n<p><a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "code",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"318\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"321\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"323\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"324\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"327\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"330\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"331\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"332\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"333\" style=\"display:inline;margin-right:6px\">[1]</span> FIRST KEEP SPACES NEXT</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> FIRST KEEP  SPACES NEXT</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code>KEEP  SPACES\nNEXT\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>FIRST</p>\n<pre><code>KEEP  SPACES\nNEXT\n</code></pre>\n<p><a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "fenced",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"342\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"345\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"347\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"348\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"351\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"354\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"355\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"356\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"357\" style=\"display:inline;margin-right:6px\">[1]</span> FIRST <code data-hr-nid=\"360\" style=\"display:inline\">txt KEEP SPACES NEXT </code></li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> FIRST <code>txt KEEP  SPACES NEXT </code></li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST</p>\n<pre><code class=\"language-txt\">KEEP  SPACES\nNEXT\n</code></pre>\n <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>FIRST</p>\n<p><code>txt\nKEEP  SPACES\nNEXT</code>&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "definitionFirst",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"368\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"371\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"373\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"374\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><section class=\"md-footnotes\" data-hr-nid=\"377\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"378\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"379\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"380\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "caseSensitive",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"389\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"392\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"394\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"395\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup> OTHER<sup class=\"md-footnote-ref\" data-hr-nid=\"398\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-2\" data-hr-nid=\"399\" style=\"display:inline;color:#0000ee;text-decoration:none\">[2]</a></sup></p><section class=\"md-footnotes\" data-hr-nid=\"402\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"403\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"404\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"405\" style=\"display:inline;margin-right:6px\">[1]</span> LOWER</li><li id=\"md-fn-2\" class=\"md-footnote\" data-hr-nid=\"408\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"409\" style=\"display:inline;margin-right:6px\">[2]</span> UPPER</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup> OTHER<sup class=\"md-footnote-ref\"><a href=\"#md-fn-2\">[2]</a></sup></p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> LOWER</li><li id=\"md-fn-2\" class=\"md-footnote\"><span class=\"md-footnote-num\">[2]</span> UPPER</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup> OTHER<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>LOWER <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>UPPER <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup> OTHER<sup id=\"fnref:N\"><a class=\"footnote-ref\" href=\"#fn:N\">2</a></sup></p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>LOWER&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n<li id=\"fn:N\">\n<p>UPPER&#160;<a class=\"footnote-backref\" href=\"#fnref:N\" title=\"Jump back to footnote 2 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "repeated",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"418\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"421\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"423\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"424\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup> AGAIN<sup class=\"md-footnote-ref\" data-hr-nid=\"427\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"428\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><section class=\"md-footnotes\" data-hr-nid=\"431\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"432\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"433\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"434\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup> AGAIN<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup> AGAIN<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1:1\">[1:1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a> <a href=\"#fnref1:1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup> AGAIN<sup id=\"fnref2:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a><a class=\"footnote-backref\" href=\"#fnref2:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "insideCode",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"443\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"446\" style=\"display:block;margin:1em 0\"><code data-hr-nid=\"447\" style=\"display:inline\">[^n]</code></p><pre class=\"md-code\" data-hr-nid=\"450\" style=\"display:block;font-family:monospace;margin:1em 0;padding:14px;border-radius:10px;background:#111827;color:#e5e7eb;overflow:auto;white-space:pre-wrap;word-break:break-word\"><code data-hr-nid=\"451\" style=\"display:inline\">[^n]: KEEP CODE</code></pre><p data-hr-nid=\"454\" style=\"display:block;margin:1em 0\">TAIL[^n]</p></article>",
+      "productHtml": "<p><code>[^n]</code></p>\n<pre class=\"md-code\"><code>[^n]: KEEP CODE</code></pre>\n<p>TAIL[^n]</p>\n",
+      "markdownIt": "<p><code>[^n]</code></p>\n<pre><code>[^n]: KEEP CODE\n</code></pre>\n<p>TAIL[^n]</p>\n",
+      "python": "<p><code>[^n]</code></p>\n<pre><code>[^n]: KEEP CODE\n</code></pre>\n<p>TAIL[^n]</p>"
+    },
+    {
+      "name": "escaped",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"462\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"465\" style=\"display:block;margin:1em 0\">BODY[^n]</p></article>",
+      "productHtml": "<p>BODY[^n]</p>\n",
+      "markdownIt": "<p>BODY[^n]</p>\n",
+      "python": "<p>BODY[^n]</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "unused",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"473\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"476\" style=\"display:block;margin:1em 0\">BODY</p></article>",
+      "productHtml": "<p>BODY</p>\n",
+      "markdownIt": "<p>BODY</p>\n",
+      "python": "<p>BODY</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>UNUSED&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "nestedRef",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"484\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"487\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"489\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"490\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><section class=\"md-footnotes\" data-hr-nid=\"493\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"494\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"495\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"496\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE<sup class=\"md-footnote-ref\" data-hr-nid=\"499\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-2\" data-hr-nid=\"500\" style=\"display:inline;color:#0000ee;text-decoration:none\">[2]</a></sup></li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE<sup class=\"md-footnote-ref\"><a href=\"#md-fn-2\">[2]</a></sup></li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>SECOND <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE<sup id=\"fnref:m\"><a class=\"footnote-ref\" href=\"#fn:m\">2</a></sup>&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n<li id=\"fn:m\">\n<p>SECOND&#160;<a class=\"footnote-backref\" href=\"#fnref:m\" title=\"Jump back to footnote 2 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "prototype",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"508\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"511\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"513\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"514\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup> OTHER<sup class=\"md-footnote-ref\" data-hr-nid=\"517\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-2\" data-hr-nid=\"518\" style=\"display:inline;color:#0000ee;text-decoration:none\">[2]</a></sup></p><section class=\"md-footnotes\" data-hr-nid=\"521\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"522\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"523\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"524\" style=\"display:inline;margin-right:6px\">[1]</span> FIRST</li><li id=\"md-fn-2\" class=\"md-footnote\" data-hr-nid=\"527\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"528\" style=\"display:inline;margin-right:6px\">[2]</span> SECOND</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup> OTHER<sup class=\"md-footnote-ref\"><a href=\"#md-fn-2\">[2]</a></sup></p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> FIRST</li><li id=\"md-fn-2\" class=\"md-footnote\"><span class=\"md-footnote-num\">[2]</span> SECOND</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup> OTHER<sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>FIRST <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>SECOND <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:__proto__\"><a class=\"footnote-ref\" href=\"#fn:__proto__\">1</a></sup> OTHER<sup id=\"fnref:constructor\"><a class=\"footnote-ref\" href=\"#fn:constructor\">2</a></sup></p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:__proto__\">\n<p>FIRST&#160;<a class=\"footnote-backref\" href=\"#fnref:__proto__\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n<li id=\"fn:constructor\">\n<p>SECOND&#160;<a class=\"footnote-backref\" href=\"#fnref:constructor\" title=\"Jump back to footnote 2 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "empty",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"537\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"540\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"542\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"543\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><p data-hr-nid=\"546\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"549\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"550\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"551\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"552\" style=\"display:inline;margin-right:6px\">[1]</span></li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> </li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"> <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\"></li>\n</ol>\n</div>"
+    },
+    {
+      "name": "definitionBlockquote",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"561\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><blockquote data-hr-nid=\"564\" style=\"display:block;margin:1em 40px\"><p data-hr-nid=\"566\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"568\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"569\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p></blockquote><p data-hr-nid=\"573\" style=\"display:block;margin:1em 0\">TAIL</p><section class=\"md-footnotes\" data-hr-nid=\"576\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"577\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"578\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"579\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE</li></ol></section></article>",
+      "productHtml": "<blockquote>\n<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n</blockquote>\n<p>TAIL</p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE</li></ol></section>\n",
+      "markdownIt": "<blockquote>\n<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n</blockquote>\n<p>TAIL</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<blockquote>\n<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n</blockquote>\n<p>TAIL</p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "noSpace",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"588\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"591\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"593\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"594\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><section class=\"md-footnotes\" data-hr-nid=\"597\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"598\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"599\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"600\" style=\"display:inline;margin-right:6px\">[1]</span> NOTE</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> NOTE</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>NOTE <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>NOTE&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "duplicate",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"609\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"612\" style=\"display:block;margin:1em 0\">BODY<sup class=\"md-footnote-ref\" data-hr-nid=\"614\" style=\"display:inline;font-size:.8333em;vertical-align:super\"><a href=\"#md-fn-1\" data-hr-nid=\"615\" style=\"display:inline;color:#0000ee;text-decoration:none\">[1]</a></sup></p><section class=\"md-footnotes\" data-hr-nid=\"618\" style=\"display:block;margin-top:24px;padding-top:12px;border-top:1px solid #d9e0ea;font-size:14px;color:#4b5563\"><ol class=\"md-footnote-list\" data-hr-nid=\"619\" style=\"display:block;margin:1em 0;list-style-type:decimal;padding-left:0;list-style:none\"><li id=\"md-fn-1\" class=\"md-footnote\" data-hr-nid=\"620\" style=\"display:list-item;margin:4px 0\"><span class=\"md-footnote-num\" data-hr-nid=\"621\" style=\"display:inline;margin-right:6px\">[1]</span> SECOND</li></ol></section></article>",
+      "productHtml": "<p>BODY<sup class=\"md-footnote-ref\"><a href=\"#md-fn-1\">[1]</a></sup></p>\n<section class=\"md-footnotes\"><ol class=\"md-footnote-list\"><li id=\"md-fn-1\" class=\"md-footnote\"><span class=\"md-footnote-num\">[1]</span> SECOND</li></ol></section>\n",
+      "markdownIt": "<p>BODY<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>SECOND <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n",
+      "python": "<p>BODY<sup id=\"fnref:n\"><a class=\"footnote-ref\" href=\"#fn:n\">1</a></sup></p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:n\">\n<p>SECOND&#160;<a class=\"footnote-backref\" href=\"#fnref:n\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+    },
+    {
+      "name": "unresolved",
+      "actual": "<article class=\"markdown-document\" data-hr-nid=\"630\" style=\"display:block;box-sizing:border-box;padding:20px;line-height:1.75;background:#fff\"><p data-hr-nid=\"633\" style=\"display:block;margin:1em 0\">BODY[^missing] TAIL</p></article>",
+      "productHtml": "<p>BODY[^missing] TAIL</p>\n",
+      "markdownIt": "<p>BODY[^missing] TAIL</p>\n",
+      "python": "<p>BODY[^missing] TAIL</p>"
+    }
+  ],
+  "results": [
+    {
+      "name": "indent-s-adjacent",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "indent-s-blank",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY FOLLOW TAIL",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY FOLLOW TAIL",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "indent-ss-adjacent",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "indent-ss-blank",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY FOLLOW TAIL",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY FOLLOW TAIL",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "indent-sss-adjacent",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "indent-sss-blank",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY FOLLOW TAIL",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY FOLLOW TAIL",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "indent-ssss-adjacent",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "indent-ssss-blank",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 2,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 2,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "indent-tab-adjacent",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "indent-tab-blank",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 2,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE FOLLOW",
+            "paragraphs": 2,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "paragraphs",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST SECOND",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST SECOND",
+            "paragraphs": 2,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST SECOND",
+            "paragraphs": 2,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "list",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST - ONE - TWO",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST ONE TWO",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 2,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST ONE TWO",
+            "paragraphs": 2,
+            "code": [],
+            "listItems": 2,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "blockquote",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST > QUOTED",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST QUOTED",
+            "paragraphs": 2,
+            "code": [],
+            "listItems": 0,
+            "quotes": 1
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST QUOTED",
+            "paragraphs": 3,
+            "code": [],
+            "listItems": 0,
+            "quotes": 1
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "code",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST KEEP SPACES NEXT",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST KEEP SPACES NEXT",
+            "paragraphs": 1,
+            "code": [
+              "KEEP  SPACES\nNEXT\n"
+            ],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST KEEP SPACES NEXT",
+            "paragraphs": 2,
+            "code": [
+              "KEEP  SPACES\nNEXT\n"
+            ],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "fenced",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST txt KEEP SPACES NEXT",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST KEEP SPACES NEXT",
+            "paragraphs": 1,
+            "code": [
+              "KEEP  SPACES\nNEXT\n"
+            ],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "FIRST txt KEEP SPACES NEXT",
+            "paragraphs": 2,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "definitionFirst",
+      "actual": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "caseSensitive",
+      "actual": {
+        "body": "BODY OTHER",
+        "notes": [
+          {
+            "text": "LOWER",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          },
+          {
+            "text": "UPPER",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          },
+          {
+            "text": "[2]",
+            "target": "#md-fn-2",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY OTHER",
+        "notes": [
+          {
+            "text": "LOWER",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          },
+          {
+            "text": "UPPER",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          },
+          {
+            "text": "[2]",
+            "target": "#fn2",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY OTHER",
+        "notes": [
+          {
+            "text": "LOWER",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          },
+          {
+            "text": "UPPER",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          },
+          {
+            "text": "2",
+            "target": "#fn:N",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "repeated",
+      "actual": {
+        "body": "BODY AGAIN",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          },
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY AGAIN",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          },
+          {
+            "text": "[1:1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY AGAIN",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          },
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "insideCode",
+      "actual": {
+        "body": "[^n] [^n]: KEEP CODE TAIL[^n]",
+        "notes": [],
+        "refs": [],
+        "code": [
+          "[^n]: KEEP CODE"
+        ]
+      },
+      "markdownIt": {
+        "body": "[^n] [^n]: KEEP CODE TAIL[^n]",
+        "notes": [],
+        "refs": [],
+        "code": [
+          "[^n]: KEEP CODE\n"
+        ]
+      },
+      "python": {
+        "body": "[^n] [^n]: KEEP CODE TAIL[^n]",
+        "notes": [],
+        "refs": [],
+        "code": [
+          "[^n]: KEEP CODE\n"
+        ]
+      }
+    },
+    {
+      "name": "escaped",
+      "actual": {
+        "body": "BODY[^n]",
+        "notes": [],
+        "refs": [],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY[^n]",
+        "notes": [],
+        "refs": [],
+        "code": []
+      },
+      "python": {
+        "body": "BODY[^n]",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [],
+        "code": []
+      }
+    },
+    {
+      "name": "unused",
+      "actual": {
+        "body": "BODY",
+        "notes": [],
+        "refs": [],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY",
+        "notes": [],
+        "refs": [],
+        "code": []
+      },
+      "python": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "UNUSED",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [],
+        "code": []
+      }
+    },
+    {
+      "name": "nestedRef",
+      "actual": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "NOTE[2]",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          },
+          {
+            "text": "[2]",
+            "target": "#md-fn-2",
+            "exists": false
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "NOTE[2]",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          },
+          {
+            "text": "SECOND",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          },
+          {
+            "text": "[2]",
+            "target": "#fn2",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "NOTE2",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          },
+          {
+            "text": "SECOND",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          },
+          {
+            "text": "2",
+            "target": "#fn:m",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "prototype",
+      "actual": {
+        "body": "BODY OTHER",
+        "notes": [
+          {
+            "text": "FIRST",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          },
+          {
+            "text": "SECOND",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          },
+          {
+            "text": "[2]",
+            "target": "#md-fn-2",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY OTHER",
+        "notes": [
+          {
+            "text": "FIRST",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          },
+          {
+            "text": "SECOND",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          },
+          {
+            "text": "[2]",
+            "target": "#fn2",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY OTHER",
+        "notes": [
+          {
+            "text": "FIRST",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          },
+          {
+            "text": "SECOND",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:__proto__",
+            "exists": true
+          },
+          {
+            "text": "2",
+            "target": "#fn:constructor",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "empty",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "definitionBlockquote",
+      "actual": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY TAIL",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "noSpace",
+      "actual": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "NOTE",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "duplicate",
+      "actual": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "SECOND",
+            "paragraphs": 0,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#md-fn-1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "SECOND",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "[1]",
+            "target": "#fn1",
+            "exists": true
+          }
+        ],
+        "code": []
+      },
+      "python": {
+        "body": "BODY",
+        "notes": [
+          {
+            "text": "SECOND",
+            "paragraphs": 1,
+            "code": [],
+            "listItems": 0,
+            "quotes": 0
+          }
+        ],
+        "refs": [
+          {
+            "text": "1",
+            "target": "#fn:n",
+            "exists": true
+          }
+        ],
+        "code": []
+      }
+    },
+    {
+      "name": "unresolved",
+      "actual": {
+        "body": "BODY[^missing] TAIL",
+        "notes": [],
+        "refs": [],
+        "code": []
+      },
+      "markdownIt": {
+        "body": "BODY[^missing] TAIL",
+        "notes": [],
+        "refs": [],
+        "code": []
+      },
+      "python": {
+        "body": "BODY[^missing] TAIL",
+        "notes": [],
+        "refs": [],
+        "code": []
+      }
+    }
+  ],
+  "schemaVersion": 1,
+  "id": "next-markdown-footnotes",
+  "date": "2026-09-05",
+  "generation": {
+    "seed": null,
+    "rule": "Named indentation 1/2/3/4 spaces and tab with blank/adjacent continuations, plus 18 structural and reference controls"
+  },
+  "actions": [
+    {
+      "name": "definitionFirst",
+      "href": "#md-fn-1",
+      "targetExists": true,
+      "scrollTriggered": true,
+      "targetMatches": true
+    },
+    {
+      "name": "repeated",
+      "href": "#md-fn-1",
+      "targetExists": true,
+      "scrollTriggered": true,
+      "targetMatches": true
+    },
+    {
+      "name": "repeated",
+      "href": "#md-fn-1",
+      "targetExists": true,
+      "scrollTriggered": true,
+      "targetMatches": true
+    },
+    {
+      "name": "nestedRef",
+      "href": "#md-fn-1",
+      "targetExists": true,
+      "scrollTriggered": true,
+      "targetMatches": true
+    },
+    {
+      "name": "nestedRef",
+      "href": "#md-fn-2",
+      "targetExists": false,
+      "scrollTriggered": false,
+      "targetMatches": false
+    }
+  ],
+  "findings": {
+    "bodySwallowed": [
+      "indent-s-blank",
+      "indent-ss-blank",
+      "indent-sss-blank"
+    ],
+    "missingTarget": [
+      "nestedRef"
+    ],
+    "blockStructureLost": [
+      "paragraphs",
+      "list",
+      "blockquote",
+      "code",
+      "fenced"
+    ],
+    "priorCodeNewline": [
+      "insideCode"
+    ],
+    "note": "Preserve independent parser disagreements; source and raw HTML retained."
+  },
+  "specifications": [
+    "https://python-markdown.github.io/extensions/footnotes/",
+    "https://github.com/markdown-it/markdown-it-footnote",
+    "https://michelf.ca/projects/php-markdown/extra/#footnotes"
+  ]
+}

@@ -1,0 +1,1388 @@
+{
+  "schemaVersion": 1,
+  "id": "tar-link-component-order",
+  "status": "confirmed-bug-not-fixed",
+  "testedVersion": "1.4.137",
+  "createdAt": "2026-09-12T07:31:35.802Z",
+  "runtimeSha256": "52fc291262079c7a96c718cac9ba81d18d9904d3453b2c242e825afde06887cb",
+  "scope": "Actual native archive listing, reader link resolution and body extraction compared with system bsdtar extraction and native filesystem reads. No actual reader page or WeChat view run for this new batch yet.",
+  "summary": {
+    "cases": 28,
+    "formats": [
+      "USTAR",
+      "PAX"
+    ],
+    "validNativeBodies": 22,
+    "exactBodies": 4,
+    "wrongBodies": 14,
+    "nativeRejectedButReaderAccepted": 6,
+    "validNativeButReaderRejected": 4
+  },
+  "standards": [
+    {
+      "url": "https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap04.html",
+      "section": "Pathname Resolution",
+      "interpretation": "Resolve intermediate symbolic links before processing remaining components; dot-dot refers to the predecessor directory parent. Read and native realpath provide the local oracle."
+    }
+  ],
+  "formatCaveat": "Hard links to symbolic inodes are confirmed libarchive behavior. POSIX pax utility page returned HTTP 403 during this investigation; do not yet call this combination universally conforming USTAR.",
+  "rootCauses": [
+    "Lexical normalization removes parent components before traversing intermediate symbolic directories and validates away required existing-directory components.",
+    "Hard links preserve a prior symbolic inode but relative targets must resolve at its current alias location; current resolver reuses the prior entry name."
+  ],
+  "originalBatch": {
+    "createdAt": "2026-09-12T07:19:35.087Z",
+    "repo": "<checkout>",
+    "scope": "New authored TAR combinations; actual system extraction and native filesystem content, never Node JS realpath as the oracle.",
+    "specs": [
+      {
+        "name": "dotdot-after-link",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "real/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "real/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "real/body.txt",
+            "body": "REAL\n"
+          },
+          {
+            "name": "real/deep/body.txt",
+            "body": "DEEP\n"
+          },
+          {
+            "name": "folder",
+            "target": "real/deep",
+            "type": "2"
+          },
+          {
+            "name": "open.txt",
+            "target": "folder/../body.txt",
+            "type": "2"
+          }
+        ]
+      },
+      {
+        "name": "two-dotdots-after-link",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "real/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "real/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "real/body.txt",
+            "body": "REAL\n"
+          },
+          {
+            "name": "real/deep/body.txt",
+            "body": "DEEP\n"
+          },
+          {
+            "name": "folder",
+            "target": "real/deep",
+            "type": "2"
+          },
+          {
+            "name": "open.txt",
+            "target": "folder/../../body.txt",
+            "type": "2"
+          }
+        ]
+      },
+      {
+        "name": "repeat-link-finite",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "real/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "real/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "real/body.txt",
+            "body": "REAL\n"
+          },
+          {
+            "name": "real/deep/body.txt",
+            "body": "DEEP\n"
+          },
+          {
+            "name": "folder",
+            "target": "real/deep",
+            "type": "2"
+          },
+          {
+            "name": "open.txt",
+            "target": "folder/../../folder/../body.txt",
+            "type": "2"
+          }
+        ]
+      },
+      {
+        "name": "dot-and-empty-components",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "real/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "real/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "real/body.txt",
+            "body": "REAL\n"
+          },
+          {
+            "name": "real/deep/body.txt",
+            "body": "DEEP\n"
+          },
+          {
+            "name": "folder",
+            "target": "real/deep",
+            "type": "2"
+          },
+          {
+            "name": "open.txt",
+            "target": "folder//./../body.txt",
+            "type": "2"
+          }
+        ]
+      },
+      {
+        "name": "explicit-link-child",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "real/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "real/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "real/body.txt",
+            "body": "REAL\n"
+          },
+          {
+            "name": "real/deep/body.txt",
+            "body": "DEEP\n"
+          },
+          {
+            "name": "folder",
+            "target": "real/deep",
+            "type": "2"
+          },
+          {
+            "name": "open.txt",
+            "target": "folder/body.txt",
+            "type": "2"
+          }
+        ]
+      },
+      {
+        "name": "missing-before-dotdot",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "real/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "real/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "real/body.txt",
+            "body": "REAL\n"
+          },
+          {
+            "name": "real/deep/body.txt",
+            "body": "DEEP\n"
+          },
+          {
+            "name": "folder",
+            "target": "real/deep",
+            "type": "2"
+          },
+          {
+            "name": "open.txt",
+            "target": "missing/../body.txt",
+            "type": "2"
+          }
+        ]
+      },
+      {
+        "name": "file-before-dotdot",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "real/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "real/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "real/body.txt",
+            "body": "REAL\n"
+          },
+          {
+            "name": "real/deep/body.txt",
+            "body": "DEEP\n"
+          },
+          {
+            "name": "folder",
+            "target": "real/deep",
+            "type": "2"
+          },
+          {
+            "name": "open.txt",
+            "target": "body.txt/../body.txt",
+            "type": "2"
+          }
+        ]
+      },
+      {
+        "name": "file-with-trailing-slash",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "real/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "real/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "real/body.txt",
+            "body": "REAL\n"
+          },
+          {
+            "name": "real/deep/body.txt",
+            "body": "DEEP\n"
+          },
+          {
+            "name": "folder",
+            "target": "real/deep",
+            "type": "2"
+          },
+          {
+            "name": "open.txt",
+            "target": "body.txt/",
+            "type": "2"
+          }
+        ]
+      },
+      {
+        "name": "hard-symbolic-8",
+        "selected": "new/open.txt",
+        "members": [
+          {
+            "name": "old/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "new/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "old/body.txt",
+            "body": "OLD\n"
+          },
+          {
+            "name": "new/body.txt",
+            "body": "NEW\n"
+          },
+          {
+            "name": "old/link.txt",
+            "target": "body.txt",
+            "type": "2"
+          },
+          {
+            "name": "new/open.txt",
+            "target": "old/link.txt",
+            "type": "1"
+          }
+        ]
+      },
+      {
+        "name": "hard-symbolic-9",
+        "selected": "new/open.txt",
+        "members": [
+          {
+            "name": "old/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "new/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "old/body.txt",
+            "body": "OLD\n"
+          },
+          {
+            "name": "new/body.txt",
+            "body": "NEW\n"
+          },
+          {
+            "name": "old/link.txt",
+            "target": "../body.txt",
+            "type": "2"
+          },
+          {
+            "name": "new/open.txt",
+            "target": "old/link.txt",
+            "type": "1"
+          }
+        ]
+      },
+      {
+        "name": "hard-symbolic-10",
+        "selected": "层/新/open.txt",
+        "members": [
+          {
+            "name": "old/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "层/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "层/新/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "old/body.txt",
+            "body": "OLD\n"
+          },
+          {
+            "name": "层/body.txt",
+            "body": "PARENT\n"
+          },
+          {
+            "name": "层/新/body.txt",
+            "body": "NEW\n"
+          },
+          {
+            "name": "old/link.txt",
+            "target": "body.txt",
+            "type": "2"
+          },
+          {
+            "name": "层/新/open.txt",
+            "target": "old/link.txt",
+            "type": "1"
+          }
+        ]
+      },
+      {
+        "name": "hard-symbolic-11",
+        "selected": "层/新/open.txt",
+        "members": [
+          {
+            "name": "old/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "层/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "层/新/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "old/body.txt",
+            "body": "OLD\n"
+          },
+          {
+            "name": "层/body.txt",
+            "body": "PARENT\n"
+          },
+          {
+            "name": "层/新/body.txt",
+            "body": "NEW\n"
+          },
+          {
+            "name": "old/link.txt",
+            "target": "../body.txt",
+            "type": "2"
+          },
+          {
+            "name": "层/新/open.txt",
+            "target": "old/link.txt",
+            "type": "1"
+          }
+        ]
+      },
+      {
+        "name": "hard-symbolic-directory-suffix",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "real/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "real/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "body.txt",
+            "body": "ROOT\n"
+          },
+          {
+            "name": "real/body.txt",
+            "body": "REAL\n"
+          },
+          {
+            "name": "real/deep/body.txt",
+            "body": "DEEP\n"
+          },
+          {
+            "name": "folder",
+            "target": "real/deep",
+            "type": "2"
+          },
+          {
+            "name": "old/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "new/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "old/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "new/deep/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "old/deep/body.txt",
+            "body": "OLD\n"
+          },
+          {
+            "name": "new/deep/body.txt",
+            "body": "NEW\n"
+          },
+          {
+            "name": "old/link",
+            "target": "deep",
+            "type": "2"
+          },
+          {
+            "name": "new/alias",
+            "target": "old/link",
+            "type": "1"
+          },
+          {
+            "name": "open.txt",
+            "target": "new/alias/body.txt",
+            "type": "2"
+          }
+        ]
+      },
+      {
+        "name": "symbolic-target-hard-symbolic",
+        "selected": "open.txt",
+        "members": [
+          {
+            "name": "old/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "new/",
+            "type": "5",
+            "mode": 493
+          },
+          {
+            "name": "old/body.txt",
+            "body": "OLD\n"
+          },
+          {
+            "name": "new/body.txt",
+            "body": "NEW\n"
+          },
+          {
+            "name": "old/link",
+            "target": "body.txt",
+            "type": "2"
+          },
+          {
+            "name": "new/alias",
+            "target": "old/link",
+            "type": "1"
+          },
+          {
+            "name": "open.txt",
+            "target": "new/alias",
+            "type": "2"
+          }
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "name": "dotdot-after-link",
+        "format": "ustar",
+        "sha256": "b74c940f467442150d2c06d180ea38ff55f0647c717d2bcb3d4ce2c9d68c3330",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-dotdot-after-link/input.tar",
+        "native": {
+          "resolved": "real/body.txt",
+          "body": "REAL\n"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "two-dotdots-after-link",
+        "format": "ustar",
+        "sha256": "55f116e3754d4f20f3d5293fe65beb1829a3b2bc07735a3bb70642296a8e6c20",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-two-dotdots-after-link/input.tar",
+        "native": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "reader": {
+          "error": "TAR 链接指向归档之外"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "repeat-link-finite",
+        "format": "ustar",
+        "sha256": "9ec5ca652c234e1f0f4d1aa88d8b53ea0e85323ebeb2248892dcf541b1d500c0",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-repeat-link-finite/input.tar",
+        "native": {
+          "resolved": "real/body.txt",
+          "body": "REAL\n"
+        },
+        "reader": {
+          "error": "TAR 链接指向归档之外"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "dot-and-empty-components",
+        "format": "ustar",
+        "sha256": "7b3c4faabaf9976ae263130907374869b449a9ebf34fd9f94be2c3f193d6b3a5",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-dot-and-empty-components/input.tar",
+        "native": {
+          "resolved": "real/body.txt",
+          "body": "REAL\n"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "explicit-link-child",
+        "format": "ustar",
+        "sha256": "2edb630b31a645f7d00e8a1a5c3593fd03b835412f7cb77900e3c64c0ebcf04d",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-explicit-link-child/input.tar",
+        "native": {
+          "resolved": "real/deep/body.txt",
+          "body": "DEEP\n"
+        },
+        "reader": {
+          "resolved": "real/deep/body.txt",
+          "body": "DEEP\n"
+        },
+        "bodyExact": true
+      },
+      {
+        "name": "missing-before-dotdot",
+        "format": "ustar",
+        "sha256": "52aad2fb02ea5c35b4fb4f520873edd7e4fe7f80ec63f45799b1bf5b399bafa1",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-missing-before-dotdot/input.tar",
+        "native": {
+          "error": "ENOENT"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "file-before-dotdot",
+        "format": "ustar",
+        "sha256": "212ad55ac67e5b69d3be39b9efdbcce009cb6dab1b1532355ef6637ea4dfa59c",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-file-before-dotdot/input.tar",
+        "native": {
+          "error": "ENOTDIR"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "file-with-trailing-slash",
+        "format": "ustar",
+        "sha256": "9934a4b82c9f4d0a9fa0760f592efadbc8bcc66448a59f068843956c5fbd7b3c",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-file-with-trailing-slash/input.tar",
+        "native": {
+          "error": "ENOTDIR"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "hard-symbolic-8",
+        "format": "ustar",
+        "sha256": "8739c16900fe05440257d5c3221c5b38fec545e4c8f84e03a4873fc419a3bcb9",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-hard-symbolic-8/input.tar",
+        "native": {
+          "resolved": "new/body.txt",
+          "body": "NEW\n"
+        },
+        "reader": {
+          "resolved": "old/body.txt",
+          "body": "OLD\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "hard-symbolic-9",
+        "format": "ustar",
+        "sha256": "d8a5896a5446ca84fd4cf58dac930d26b9f5f5b61b3818af002763fafca162fa",
+        "bytes": 6144,
+        "archive": "<temporary-expanded-run>/ustar-hard-symbolic-9/input.tar",
+        "native": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": true
+      },
+      {
+        "name": "hard-symbolic-10",
+        "format": "ustar",
+        "sha256": "f8caf16dfea318d3c1e9febb3cb6a57734e4c9f9cccc6d0a4a499429f6f108f7",
+        "bytes": 7680,
+        "archive": "<temporary-expanded-run>/ustar-hard-symbolic-10/input.tar",
+        "native": {
+          "resolved": "层/新/body.txt",
+          "body": "NEW\n"
+        },
+        "reader": {
+          "resolved": "old/body.txt",
+          "body": "OLD\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "hard-symbolic-11",
+        "format": "ustar",
+        "sha256": "0676bacaf16ac386e21d86a85ee4e10ae5e246e775b924c867a161c9bf421250",
+        "bytes": 7680,
+        "archive": "<temporary-expanded-run>/ustar-hard-symbolic-11/input.tar",
+        "native": {
+          "resolved": "层/body.txt",
+          "body": "PARENT\n"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "hard-symbolic-directory-suffix",
+        "format": "ustar",
+        "sha256": "f28198704d414dc47844bf08e90b5ce4bd34be4678ca5c74211352d6460c90ba",
+        "bytes": 11264,
+        "archive": "<temporary-expanded-run>/ustar-hard-symbolic-directory-suffix/input.tar",
+        "native": {
+          "resolved": "new/deep/body.txt",
+          "body": "NEW\n"
+        },
+        "reader": {
+          "resolved": "old/deep/body.txt",
+          "body": "OLD\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "symbolic-target-hard-symbolic",
+        "format": "ustar",
+        "sha256": "5ab2b5890537fce7f3c7b00d41dbb6c15de582930be6eaa2664d27bb3124a2d7",
+        "bytes": 5632,
+        "archive": "<temporary-expanded-run>/ustar-symbolic-target-hard-symbolic/input.tar",
+        "native": {
+          "resolved": "new/body.txt",
+          "body": "NEW\n"
+        },
+        "reader": {
+          "resolved": "old/body.txt",
+          "body": "OLD\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "dotdot-after-link",
+        "format": "pax",
+        "sha256": "201c9550600accea67fa2c79d91623e031feaf2a530f3d1b9c442c70843fbd68",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-dotdot-after-link/input.tar",
+        "native": {
+          "resolved": "real/body.txt",
+          "body": "REAL\n"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "two-dotdots-after-link",
+        "format": "pax",
+        "sha256": "960e46285484826065358e7aa4aa3fe81ec28d0d77e38c6f0d0a41982b1d6478",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-two-dotdots-after-link/input.tar",
+        "native": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "reader": {
+          "error": "TAR 链接指向归档之外"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "repeat-link-finite",
+        "format": "pax",
+        "sha256": "84d0f900d72c4319dd558f0e2e2807c233ca145c46a8779caddf80f533eb26d7",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-repeat-link-finite/input.tar",
+        "native": {
+          "resolved": "real/body.txt",
+          "body": "REAL\n"
+        },
+        "reader": {
+          "error": "TAR 链接指向归档之外"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "dot-and-empty-components",
+        "format": "pax",
+        "sha256": "a62185348bdd08367d5b2f5d6d6090e1c4131ff570b614df0d197ced33c7a7a2",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-dot-and-empty-components/input.tar",
+        "native": {
+          "resolved": "real/body.txt",
+          "body": "REAL\n"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "explicit-link-child",
+        "format": "pax",
+        "sha256": "6908eb22fbaf44cf73bd93df936625280f977ec1a19a6f021c3fdaf5a11b771a",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-explicit-link-child/input.tar",
+        "native": {
+          "resolved": "real/deep/body.txt",
+          "body": "DEEP\n"
+        },
+        "reader": {
+          "resolved": "real/deep/body.txt",
+          "body": "DEEP\n"
+        },
+        "bodyExact": true
+      },
+      {
+        "name": "missing-before-dotdot",
+        "format": "pax",
+        "sha256": "46396f33340221a0fd12435e84da49d1c06d505863807ce2d729f7eb4462713a",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-missing-before-dotdot/input.tar",
+        "native": {
+          "error": "ENOENT"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "file-before-dotdot",
+        "format": "pax",
+        "sha256": "c461c1728df2de56b61ee66180427e8b4f7d7a78d2d71547d3c652e388495b06",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-file-before-dotdot/input.tar",
+        "native": {
+          "error": "ENOTDIR"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "file-with-trailing-slash",
+        "format": "pax",
+        "sha256": "34f87d0f1b0684289caf7888eb6fd34902fc0061e8cade30cba662098188f7b6",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-file-with-trailing-slash/input.tar",
+        "native": {
+          "error": "ENOTDIR"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "hard-symbolic-8",
+        "format": "pax",
+        "sha256": "9b2676183654d97bcb67c0045999e0353f490f9184c7eb194def2b842974ea49",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-hard-symbolic-8/input.tar",
+        "native": {
+          "resolved": "new/body.txt",
+          "body": "NEW\n"
+        },
+        "reader": {
+          "resolved": "old/body.txt",
+          "body": "OLD\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "hard-symbolic-9",
+        "format": "pax",
+        "sha256": "ebffb79563a05f77d0fbaa62ccf8ee5215a3feff3d37a1aac56d2b35e23d51c3",
+        "bytes": 13312,
+        "archive": "<temporary-expanded-run>/pax-hard-symbolic-9/input.tar",
+        "native": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": true
+      },
+      {
+        "name": "hard-symbolic-10",
+        "format": "pax",
+        "sha256": "6c4651dce2f6ffa43a9d1970e76e930e92f9b69f6bbba8c279352a5df98ee01f",
+        "bytes": 16896,
+        "archive": "<temporary-expanded-run>/pax-hard-symbolic-10/input.tar",
+        "native": {
+          "resolved": "层/新/body.txt",
+          "body": "NEW\n"
+        },
+        "reader": {
+          "resolved": "old/body.txt",
+          "body": "OLD\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "hard-symbolic-11",
+        "format": "pax",
+        "sha256": "536f0654711ccc387c97f2e64da500ca019487412b15b03e72c2b107a83d74a8",
+        "bytes": 16896,
+        "archive": "<temporary-expanded-run>/pax-hard-symbolic-11/input.tar",
+        "native": {
+          "resolved": "层/body.txt",
+          "body": "PARENT\n"
+        },
+        "reader": {
+          "resolved": "body.txt",
+          "body": "ROOT\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "hard-symbolic-directory-suffix",
+        "format": "pax",
+        "sha256": "7ef89dad723ac939808d07eb286a1a9bc4158dc4b947757153206e027aa577a0",
+        "bytes": 26624,
+        "archive": "<temporary-expanded-run>/pax-hard-symbolic-directory-suffix/input.tar",
+        "native": {
+          "resolved": "new/deep/body.txt",
+          "body": "NEW\n"
+        },
+        "reader": {
+          "resolved": "old/deep/body.txt",
+          "body": "OLD\n"
+        },
+        "bodyExact": false
+      },
+      {
+        "name": "symbolic-target-hard-symbolic",
+        "format": "pax",
+        "sha256": "b8f1d9ef6917b502216aa31d0899d19c2098f0f97dd8f2aec60fc82ab702d476",
+        "bytes": 12800,
+        "archive": "<temporary-expanded-run>/pax-symbolic-target-hard-symbolic/input.tar",
+        "native": {
+          "resolved": "new/body.txt",
+          "body": "NEW\n"
+        },
+        "reader": {
+          "resolved": "old/body.txt",
+          "body": "OLD\n"
+        },
+        "bodyExact": false
+      }
+    ]
+  },
+  "oracleAudit": {
+    "generatedAt": "2026-09-12T07:08:09.251Z",
+    "repo": "<checkout>",
+    "workingTree": "",
+    "node": "v24.16.0",
+    "bsdtar": "bsdtar 3.5.3 - libarchive 3.7.4 zlib/1.2.12 liblzma/5.4.3 bz2lib/1.0.8",
+    "scope": "Original bounded TAR files. System bsdtar extracts actual local links; lstat/readlink/realpath and readFile compare real file content with reader. No repository edits, deletion, WeChat or physical-device claim.",
+    "output": "<temporary-native-audit>",
+    "rows": [
+      {
+        "pythonTarfile": {
+          "status": 0,
+          "signal": null,
+          "stdout": "{\"body\": \"WRONG ROOT BODY\\n\"}\n",
+          "stderr": "",
+          "result": {
+            "body": "WRONG ROOT BODY\n"
+          }
+        },
+        "name": "parent-after-symbolic-directory",
+        "format": "ustar",
+        "archive": "<temporary-native-audit>/ustar-parent-after-symbolic-directory/input.tar",
+        "sha256": "0fe80755cb579a00347183dc0443cf5cf2118bce2ac8fd19bb1f62d6be3858c1",
+        "bytes": 5120,
+        "extracted": "<temporary-native-audit>/ustar-parent-after-symbolic-directory/extracted",
+        "native": {
+          "status": 0,
+          "signal": null,
+          "stdout": "",
+          "stderr": ""
+        },
+        "links": [
+          {
+            "name": "folder",
+            "symbolic": true,
+            "inode": 7729642,
+            "device": 16777233,
+            "nlink": 1,
+            "mode": "120644",
+            "readlink": "real/deep",
+            "realpath": "<temporary-native-audit>/ustar-parent-after-symbolic-directory/extracted/real/deep",
+            "realpathNative": "<temporary-native-audit>/ustar-parent-after-symbolic-directory/extracted/real/deep",
+            "body": null
+          },
+          {
+            "name": "open.txt",
+            "symbolic": true,
+            "inode": 7729643,
+            "device": 16777233,
+            "nlink": 1,
+            "mode": "120644",
+            "readlink": "folder/../body.txt",
+            "realpath": "<temporary-native-audit>/ustar-parent-after-symbolic-directory/extracted/body.txt",
+            "realpathNative": "<temporary-native-audit>/ustar-parent-after-symbolic-directory/extracted/real/body.txt",
+            "body": "EXPECTED REAL BODY\n"
+          }
+        ],
+        "nativeOpen": {
+          "name": "open.txt",
+          "symbolic": true,
+          "inode": 7729643,
+          "device": 16777233,
+          "nlink": 1,
+          "mode": "120644",
+          "readlink": "folder/../body.txt",
+          "realpath": "<temporary-native-audit>/ustar-parent-after-symbolic-directory/extracted/body.txt",
+          "realpathNative": "<temporary-native-audit>/ustar-parent-after-symbolic-directory/extracted/real/body.txt",
+          "body": "EXPECTED REAL BODY\n",
+          "realpathDisagrees": true,
+          "bodyViaJsRealpath": "WRONG ROOT BODY\n",
+          "bodyViaNativeRealpath": "EXPECTED REAL BODY\n"
+        },
+        "reader": {
+          "selected": "open.txt",
+          "linkType": 1,
+          "linkTarget": "folder/../body.txt",
+          "canOpen": true,
+          "resolved": "body.txt",
+          "body": "WRONG ROOT BODY\n"
+        },
+        "readerNativeExact": false,
+        "expected": "EXPECTED REAL BODY\n",
+        "nativeExpectedExact": true
+      },
+      {
+        "pythonTarfile": {
+          "status": 0,
+          "signal": null,
+          "stdout": "{\"body\": \"OLD BODY\\n\"}\n",
+          "stderr": "",
+          "result": {
+            "body": "OLD BODY\n"
+          }
+        },
+        "name": "hard-link-to-relative-symbolic-link",
+        "format": "ustar",
+        "archive": "<temporary-native-audit>/ustar-hard-link-to-relative-symbolic-link/input.tar",
+        "sha256": "eb7bbaf882a779f05321a4e49ca26f26c2fbd3b11d03f93a3ec39ce32f79cb06",
+        "bytes": 5120,
+        "extracted": "<temporary-native-audit>/ustar-hard-link-to-relative-symbolic-link/extracted",
+        "native": {
+          "status": 0,
+          "signal": null,
+          "stdout": "",
+          "stderr": ""
+        },
+        "links": [
+          {
+            "name": "old/link.txt",
+            "symbolic": true,
+            "inode": 7729651,
+            "device": 16777233,
+            "nlink": 2,
+            "mode": "120644",
+            "readlink": "body.txt",
+            "realpath": "<temporary-native-audit>/ustar-hard-link-to-relative-symbolic-link/extracted/old/body.txt",
+            "realpathNative": "<temporary-native-audit>/ustar-hard-link-to-relative-symbolic-link/extracted/old/body.txt",
+            "body": "OLD BODY\n"
+          },
+          {
+            "name": "new/link.txt",
+            "symbolic": true,
+            "inode": 7729651,
+            "device": 16777233,
+            "nlink": 2,
+            "mode": "120644",
+            "readlink": "body.txt",
+            "realpath": "<temporary-native-audit>/ustar-hard-link-to-relative-symbolic-link/extracted/new/body.txt",
+            "realpathNative": "<temporary-native-audit>/ustar-hard-link-to-relative-symbolic-link/extracted/new/body.txt",
+            "body": "NEW BODY\n"
+          }
+        ],
+        "nativeOpen": {
+          "name": "new/link.txt",
+          "symbolic": true,
+          "inode": 7729651,
+          "device": 16777233,
+          "nlink": 2,
+          "mode": "120644",
+          "readlink": "body.txt",
+          "realpath": "<temporary-native-audit>/ustar-hard-link-to-relative-symbolic-link/extracted/new/body.txt",
+          "realpathNative": "<temporary-native-audit>/ustar-hard-link-to-relative-symbolic-link/extracted/new/body.txt",
+          "body": "NEW BODY\n",
+          "realpathDisagrees": false,
+          "bodyViaJsRealpath": "NEW BODY\n",
+          "bodyViaNativeRealpath": "NEW BODY\n"
+        },
+        "reader": {
+          "selected": "new/link.txt",
+          "linkType": 4,
+          "linkTarget": "old/link.txt",
+          "canOpen": true,
+          "resolved": "old/body.txt",
+          "body": "OLD BODY\n"
+        },
+        "readerNativeExact": false,
+        "expected": null,
+        "nativeExpectedExact": null
+      },
+      {
+        "pythonTarfile": {
+          "status": 0,
+          "signal": null,
+          "stdout": "{\"body\": \"WRONG ROOT BODY\\n\"}\n",
+          "stderr": "",
+          "result": {
+            "body": "WRONG ROOT BODY\n"
+          }
+        },
+        "name": "parent-after-symbolic-directory",
+        "format": "pax",
+        "archive": "<temporary-native-audit>/pax-parent-after-symbolic-directory/input.tar",
+        "sha256": "a10086659711584eebad2c3445900b6a226bc5c204fb69dac3e679bfe20cb0e8",
+        "bytes": 11264,
+        "extracted": "<temporary-native-audit>/pax-parent-after-symbolic-directory/extracted",
+        "native": {
+          "status": 0,
+          "signal": null,
+          "stdout": "",
+          "stderr": ""
+        },
+        "links": [
+          {
+            "name": "folder",
+            "symbolic": true,
+            "inode": 7729661,
+            "device": 16777233,
+            "nlink": 1,
+            "mode": "120644",
+            "readlink": "real/deep",
+            "realpath": "<temporary-native-audit>/pax-parent-after-symbolic-directory/extracted/real/deep",
+            "realpathNative": "<temporary-native-audit>/pax-parent-after-symbolic-directory/extracted/real/deep",
+            "body": null
+          },
+          {
+            "name": "open.txt",
+            "symbolic": true,
+            "inode": 7729662,
+            "device": 16777233,
+            "nlink": 1,
+            "mode": "120644",
+            "readlink": "folder/../body.txt",
+            "realpath": "<temporary-native-audit>/pax-parent-after-symbolic-directory/extracted/body.txt",
+            "realpathNative": "<temporary-native-audit>/pax-parent-after-symbolic-directory/extracted/real/body.txt",
+            "body": "EXPECTED REAL BODY\n"
+          }
+        ],
+        "nativeOpen": {
+          "name": "open.txt",
+          "symbolic": true,
+          "inode": 7729662,
+          "device": 16777233,
+          "nlink": 1,
+          "mode": "120644",
+          "readlink": "folder/../body.txt",
+          "realpath": "<temporary-native-audit>/pax-parent-after-symbolic-directory/extracted/body.txt",
+          "realpathNative": "<temporary-native-audit>/pax-parent-after-symbolic-directory/extracted/real/body.txt",
+          "body": "EXPECTED REAL BODY\n",
+          "realpathDisagrees": true,
+          "bodyViaJsRealpath": "WRONG ROOT BODY\n",
+          "bodyViaNativeRealpath": "EXPECTED REAL BODY\n"
+        },
+        "reader": {
+          "selected": "open.txt",
+          "linkType": 1,
+          "linkTarget": "folder/../body.txt",
+          "canOpen": true,
+          "resolved": "body.txt",
+          "body": "WRONG ROOT BODY\n"
+        },
+        "readerNativeExact": false,
+        "expected": "EXPECTED REAL BODY\n",
+        "nativeExpectedExact": true
+      },
+      {
+        "pythonTarfile": {
+          "status": 0,
+          "signal": null,
+          "stdout": "{\"body\": \"OLD BODY\\n\"}\n",
+          "stderr": "",
+          "result": {
+            "body": "OLD BODY\n"
+          }
+        },
+        "name": "hard-link-to-relative-symbolic-link",
+        "format": "pax",
+        "archive": "<temporary-native-audit>/pax-hard-link-to-relative-symbolic-link/input.tar",
+        "sha256": "51879b739611e51acac65ca9bfe7f41b58595ccb401d1befbcd559877aa733d0",
+        "bytes": 11264,
+        "extracted": "<temporary-native-audit>/pax-hard-link-to-relative-symbolic-link/extracted",
+        "native": {
+          "status": 0,
+          "signal": null,
+          "stdout": "",
+          "stderr": ""
+        },
+        "links": [
+          {
+            "name": "old/link.txt",
+            "symbolic": true,
+            "inode": 7729670,
+            "device": 16777233,
+            "nlink": 2,
+            "mode": "120644",
+            "readlink": "body.txt",
+            "realpath": "<temporary-native-audit>/pax-hard-link-to-relative-symbolic-link/extracted/old/body.txt",
+            "realpathNative": "<temporary-native-audit>/pax-hard-link-to-relative-symbolic-link/extracted/old/body.txt",
+            "body": "OLD BODY\n"
+          },
+          {
+            "name": "new/link.txt",
+            "symbolic": true,
+            "inode": 7729670,
+            "device": 16777233,
+            "nlink": 2,
+            "mode": "120644",
+            "readlink": "body.txt",
+            "realpath": "<temporary-native-audit>/pax-hard-link-to-relative-symbolic-link/extracted/new/body.txt",
+            "realpathNative": "<temporary-native-audit>/pax-hard-link-to-relative-symbolic-link/extracted/new/body.txt",
+            "body": "NEW BODY\n"
+          }
+        ],
+        "nativeOpen": {
+          "name": "new/link.txt",
+          "symbolic": true,
+          "inode": 7729670,
+          "device": 16777233,
+          "nlink": 2,
+          "mode": "120644",
+          "readlink": "body.txt",
+          "realpath": "<temporary-native-audit>/pax-hard-link-to-relative-symbolic-link/extracted/new/body.txt",
+          "realpathNative": "<temporary-native-audit>/pax-hard-link-to-relative-symbolic-link/extracted/new/body.txt",
+          "body": "NEW BODY\n",
+          "realpathDisagrees": false,
+          "bodyViaJsRealpath": "NEW BODY\n",
+          "bodyViaNativeRealpath": "NEW BODY\n"
+        },
+        "reader": {
+          "selected": "new/link.txt",
+          "linkType": 4,
+          "linkTarget": "old/link.txt",
+          "canOpen": true,
+          "resolved": "old/body.txt",
+          "body": "OLD BODY\n"
+        },
+        "readerNativeExact": false,
+        "expected": null,
+        "nativeExpectedExact": null
+      }
+    ],
+    "oracleDifferences": {
+      "jsRealpathDisagreements": 2,
+      "preferredContentOracle": "System bsdtar extraction plus direct readFile and fs.realpathSync.native. Node fs.realpathSync is separately recorded and is not a content or containment oracle for intermediate symlinks followed by parent traversal.",
+      "pythonTarfile": "CPython extractfile matches reader in these two sample families, differing from actual extracted filesystem content.",
+      "previousReport": "/private/tmp/html-reader-tar-link-oracle-ya1k4hzm/run-Qlg6lJ/report.json"
+    }
+  },
+  "oraclePolicy": "Use actual file reads and fs.realpathSync.native. Node JS realpathSync and Python tarfile.extractfile disagree on parent traversal; Python also follows the previous symbolic-link location for hard-link combinations. Preserve these disagreements, not a majority vote.",
+  "next": "Construct scoped token-wise resolution with retained hard-link member identity and alias location. Verify error paths, finite repeated links, cycles, bounds, duplicates, host actual bodies and then deliver as a new version."
+}

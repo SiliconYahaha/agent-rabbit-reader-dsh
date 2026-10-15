@@ -1,0 +1,153 @@
+{
+  "source": "scripts/verify-svg-symbols-native.js",
+  "playwright": "1.63.0",
+  "chrome": "152.0.7977.76",
+  "firefox": "155.0 / playwright 1543",
+  "scope": "Actual native DOM screenshots after two requestAnimationFrames; not frozen SVG image pixels",
+  "files": [
+    {
+      "file": "chrome-svg-auto-target-size-reference.png",
+      "sha256": "24601edb220f4ab5a544a6ebc45da69fdcea7cb9fbbea512aeecc65e41042ff1"
+    },
+    {
+      "file": "chrome-svg-auto-target-size-source.png",
+      "sha256": "933c9548b55e0b3cc25919a7cdbfafea61f3e4264acb04ac4712e2e21da51e1e"
+    },
+    {
+      "file": "chrome-svg-css-size-overrides-reference.png",
+      "sha256": "24601edb220f4ab5a544a6ebc45da69fdcea7cb9fbbea512aeecc65e41042ff1"
+    },
+    {
+      "file": "chrome-svg-css-size-overrides-source.png",
+      "sha256": "a457f54a76fc9869bd91e2c615f0623bf82d03272790ec0e134a27717992ee85"
+    },
+    {
+      "file": "chrome-symbol-auto-target-size-reference.png",
+      "sha256": "24601edb220f4ab5a544a6ebc45da69fdcea7cb9fbbea512aeecc65e41042ff1"
+    },
+    {
+      "file": "chrome-symbol-auto-target-size-source.png",
+      "sha256": "933c9548b55e0b3cc25919a7cdbfafea61f3e4264acb04ac4712e2e21da51e1e"
+    },
+    {
+      "file": "chrome-symbol-css-size-overrides-reference.png",
+      "sha256": "24601edb220f4ab5a544a6ebc45da69fdcea7cb9fbbea512aeecc65e41042ff1"
+    },
+    {
+      "file": "chrome-symbol-css-size-overrides-source.png",
+      "sha256": "a457f54a76fc9869bd91e2c615f0623bf82d03272790ec0e134a27717992ee85"
+    },
+    {
+      "file": "chrome-symbol-instance-ignores-display-none-reference.png",
+      "sha256": "00bf643edfea0b68408ad41942f871d07e8cebe1ebbc543eed43bcaf26ab20c7"
+    },
+    {
+      "file": "chrome-symbol-instance-ignores-display-none-source.png",
+      "sha256": "933c9548b55e0b3cc25919a7cdbfafea61f3e4264acb04ac4712e2e21da51e1e"
+    },
+    {
+      "file": "chrome-symbol-viewbox-animation-0-reference.png",
+      "sha256": "24601edb220f4ab5a544a6ebc45da69fdcea7cb9fbbea512aeecc65e41042ff1"
+    },
+    {
+      "file": "chrome-symbol-viewbox-animation-0-source.png",
+      "sha256": "24601edb220f4ab5a544a6ebc45da69fdcea7cb9fbbea512aeecc65e41042ff1"
+    },
+    {
+      "file": "chrome-symbol-viewbox-animation-0.5-reference.png",
+      "sha256": "fd0bf0bb998d84f2c1f04d736a05834b2b66381cc944db1acf3c0461fa3831e5"
+    },
+    {
+      "file": "chrome-symbol-viewbox-animation-0.5-source.png",
+      "sha256": "fd0bf0bb998d84f2c1f04d736a05834b2b66381cc944db1acf3c0461fa3831e5"
+    },
+    {
+      "file": "chrome-symbol-viewbox-animation-1-reference.png",
+      "sha256": "f12c0b9b5351546496435457b636fa6d233bbbc8cd31669c1de9305b77d3c7d2"
+    },
+    {
+      "file": "chrome-symbol-viewbox-animation-1-source.png",
+      "sha256": "98ded6cdf545d58c3964a247fd1d3088f157c8adda1bbd92677298fe0a378cce"
+    },
+    {
+      "file": "chrome-symbol-viewbox-animation-1.5-reference.png",
+      "sha256": "dc3abe23b7d5bcc072ed24f460ce058a27a020ac8c034bfbbecdb1f3bdd3ab5a"
+    },
+    {
+      "file": "chrome-symbol-viewbox-animation-1.5-source.png",
+      "sha256": "dc3abe23b7d5bcc072ed24f460ce058a27a020ac8c034bfbbecdb1f3bdd3ab5a"
+    },
+    {
+      "file": "firefox-svg-auto-target-size-reference.png",
+      "sha256": "e20950d7f213808db4522e3615909d251b8db76bf1cfb2a0ac016f38781f84a2"
+    },
+    {
+      "file": "firefox-svg-auto-target-size-source.png",
+      "sha256": "e20950d7f213808db4522e3615909d251b8db76bf1cfb2a0ac016f38781f84a2"
+    },
+    {
+      "file": "firefox-svg-css-size-overrides-reference.png",
+      "sha256": "e20950d7f213808db4522e3615909d251b8db76bf1cfb2a0ac016f38781f84a2"
+    },
+    {
+      "file": "firefox-svg-css-size-overrides-source.png",
+      "sha256": "07e9dab3fec0f436468e71300b8f432865bc0c2ac562553edd7f587e19ffb342"
+    },
+    {
+      "file": "firefox-symbol-auto-target-size-reference.png",
+      "sha256": "e20950d7f213808db4522e3615909d251b8db76bf1cfb2a0ac016f38781f84a2"
+    },
+    {
+      "file": "firefox-symbol-auto-target-size-source.png",
+      "sha256": "e20950d7f213808db4522e3615909d251b8db76bf1cfb2a0ac016f38781f84a2"
+    },
+    {
+      "file": "firefox-symbol-css-size-overrides-reference.png",
+      "sha256": "e20950d7f213808db4522e3615909d251b8db76bf1cfb2a0ac016f38781f84a2"
+    },
+    {
+      "file": "firefox-symbol-css-size-overrides-source.png",
+      "sha256": "07e9dab3fec0f436468e71300b8f432865bc0c2ac562553edd7f587e19ffb342"
+    },
+    {
+      "file": "firefox-symbol-instance-ignores-display-none-reference.png",
+      "sha256": "a69ead446943f0597f23822a5c9163228773c74d40fbb1d2f50e2b9d2cfb58c0"
+    },
+    {
+      "file": "firefox-symbol-instance-ignores-display-none-source.png",
+      "sha256": "dd585e223765ec602bba78adfd2f4504e180ec05e9d3beed7828d33fddedb250"
+    },
+    {
+      "file": "firefox-symbol-viewbox-animation-0-reference.png",
+      "sha256": "e20950d7f213808db4522e3615909d251b8db76bf1cfb2a0ac016f38781f84a2"
+    },
+    {
+      "file": "firefox-symbol-viewbox-animation-0-source.png",
+      "sha256": "e20950d7f213808db4522e3615909d251b8db76bf1cfb2a0ac016f38781f84a2"
+    },
+    {
+      "file": "firefox-symbol-viewbox-animation-0.5-reference.png",
+      "sha256": "a50ba53645118d4935edb68ae37445a6955715ce211b1816f8fa4a9f180382d9"
+    },
+    {
+      "file": "firefox-symbol-viewbox-animation-0.5-source.png",
+      "sha256": "a50ba53645118d4935edb68ae37445a6955715ce211b1816f8fa4a9f180382d9"
+    },
+    {
+      "file": "firefox-symbol-viewbox-animation-1-reference.png",
+      "sha256": "0efc7c77633b4a98e2c6c3992b0ba81ba3653990ca09fd64b0c84c3c8747e3f2"
+    },
+    {
+      "file": "firefox-symbol-viewbox-animation-1-source.png",
+      "sha256": "0efc7c77633b4a98e2c6c3992b0ba81ba3653990ca09fd64b0c84c3c8747e3f2"
+    },
+    {
+      "file": "firefox-symbol-viewbox-animation-1.5-reference.png",
+      "sha256": "4917c13d25003289f0257ad4f9f163e94000dcc02124494e492bb2d201f09039"
+    },
+    {
+      "file": "firefox-symbol-viewbox-animation-1.5-source.png",
+      "sha256": "4917c13d25003289f0257ad4f9f163e94000dcc02124494e492bb2d201f09039"
+    }
+  ]
+}

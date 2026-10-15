@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "candidateVersion": "1.4.109",
+  "issue": 194,
+  "scope": "Reader media session isolation; no codec fidelity claim",
+  "generation": {
+    "seed": null,
+    "rules": "Exhaustive named Cartesian event and replacement cases; deterministic callbacks, no random input",
+    "audioEvents": [
+      "Canplay",
+      "TimeUpdate",
+      "Waiting",
+      "Seeking",
+      "Seeked",
+      "Play",
+      "Pause",
+      "Stop",
+      "Ended",
+      "Error"
+    ],
+    "audioTargets": [
+      "HTML",
+      "same-path audio",
+      "video",
+      "detach"
+    ],
+    "videoEvents": [
+      "Play",
+      "Pause",
+      "LoadedMetadata",
+      "Waiting",
+      "Ended",
+      "Error"
+    ],
+    "videoTargets": [
+      "HTML",
+      "same-path video",
+      "audio",
+      "detach"
+    ],
+    "headerResults": [
+      "success",
+      "fail"
+    ],
+    "headerTargets": [
+      "HTML",
+      "same-path audio",
+      "video",
+      "detach"
+    ],
+    "extraSequences": [
+      "stale skin toggle and seek vs current controls",
+      "current source error emitted during src assignment then valid HTML",
+      "destroy emits synchronous error",
+      "canplay finishLoading reenters new audio",
+      "src error finishLoading reenters new audio"
+    ]
+  },
+  "expected": "Old sessions produce no state patches and cannot control the new player; current errors and controls remain observable; no deferred timer remains after disposal.",
+  "baseline": {
+    "evidence": "runs/2026-09-05-next-media-callbacks.json",
+    "staleAudioCallbacksWithStatePollution": 8,
+    "initialTests": {
+      "tests": 5,
+      "pass": 1,
+      "fail": 4
+    },
+    "reentrantBeforeAdditionalGuards": {
+      "tests": 13,
+      "pass": 11,
+      "fail": 2
+    }
+  },
+  "validation": {
+    "targetedNodeTests": 103,
+    "targetedFailures": 0,
+    "officialFramework": {
+      "runtime": "glass-easel@1.1.0",
+      "compiler": "glass-easel-template-compiler@1.1.0",
+      "source": "actual engine skin-media WXML, actual skin properties and forwarding methods",
+      "backend": "official EmptyBackendContext; no native media decoder or WeChat simulator",
+      "sequence": [
+        "video",
+        "same-path video",
+        "audio",
+        "same-path audio",
+        "HTML"
+      ],
+      "freshVideoInstance": true,
+      "freshAudioInstance": true,
+      "oldSession": 1,
+      "newSession": 2,
+      "oldIdentityPreserved": true,
+      "currentErrorReported": true,
+      "currentControlsWork": true,
+      "htmlUnaffected": true,
+      "life": [
+        "attached",
+        "detached",
+        "attached",
+        "detached",
+        "attached",
+        "detached",
+        "attached",
+        "detached"
+      ],
+      "seen": [
+        {
+          "name": "onVideoLoadedMetadata",
+          "session": 1
+        },
+        {
+          "name": "onVideoError",
+          "session": 1
+        },
+        {
+          "name": "onVideoPlay",
+          "session": 2
+        },
+        {
+          "name": "onVideoError",
+          "session": 2
+        },
+        {
+          "name": "toggleAudio",
+          "session": 3
+        },
+        {
+          "name": "seekAudio",
+          "session": 3
+        },
+        {
+          "name": "toggleAudio",
+          "session": 4
+        },
+        {
+          "name": "seekAudio",
+          "session": 4
+        },
+        {
+          "name": "onVideoError",
+          "session": 2
+        },
+        {
+          "name": "toggleAudio",
+          "session": 4
+        },
+        {
+          "name": "seekAudio",
+          "session": 4
+        }
+      ]
+    },
+    "wechatDevtools": "CLI islogin rechecked: login false; no native player run",
+    "ios": "not-run",
+    "android": "not-run",
+    "fullNodeTests": 993,
+    "fullNodeFailures": 0,
+    "compatibilityProbes": 141,
+    "rendererSmoke": "pass",
+    "productionBoundaries": "pass",
+    "chromeOracle": "pass"
+  },
+  "reproduce": [
+    "node --test tests/media-lifecycle.test.js tests/media-framework.test.js tests/page-state.test.js",
+    "npm run verify:media-lifecycle"
+  ],
+  "rootCauses": [
+    "Unguarded native audio callbacks and asynchronous header reads write new file state",
+    "Reused video skin instance has no stable open identity",
+    "Old callback continuation cancels or overwrites new session timer after reentrant file replacement"
+  ],
+  "fix": "Engine session generation + file revision/context checks; fresh keyed skin instance; guarded real custom event dataset; cancel timers and invalidate before destroy; listeners before src assignment",
+  "references": [
+    "https://github.com/wechat-miniprogram/glass-easel",
+    "https://developers.weixin.qq.com/miniprogram/dev/framework/component-framework/event-object.html",
+    "https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/list.html"
+  ],
+  "limits": [
+    "Official EmptyBackendContext confirms WXML component identity and event forwarding, not native video/audio implementation.",
+    "Native decoding, backgrounding, iOS/Android audio focus and actual playback remain pending."
+  ]
+}

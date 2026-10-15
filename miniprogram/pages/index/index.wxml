@@ -1,0 +1,9 @@
+<view class="reader-host {{queueCount > 1 ? 'reader-host-with-queue' : ''}}">
+  <file-reader id="reader" file="{{file}}" siblings="{{siblings}}"/>
+
+  <view wx:if="{{queueCount > 1}}" class="file-queue" aria-label="已选择 {{queueCount}} 个文件，当前第 {{queuePosition}} 个">
+    <button size="mini" class="queue-button" disabled="{{!hasPreviousFile}}" bindtap="openPreviousFile">上一份</button>
+    <text class="queue-position">{{queuePosition}}/{{queueCount}}</text>
+    <button size="mini" class="queue-button" disabled="{{!hasNextFile}}" bindtap="openNextFile">下一份</button>
+  </view>
+</view>

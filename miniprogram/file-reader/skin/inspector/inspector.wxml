@@ -1,0 +1,54 @@
+<view class="file-inspector">
+  <view class="inspector-header">
+    <text class="inspector-kicker">{{kicker}}</text>
+    <text class="inspector-title">{{title}}</text>
+    <text class="inspector-summary">{{summary}}</text>
+  </view>
+  <slot name="preview"/>
+  <view class="metadata-grid">
+    <view wx:for="{{metadata}}" wx:key="label" class="metadata-card">
+      <text class="metadata-label">{{item.label}}</text>
+      <text class="metadata-value" selectable>{{item.value}}</text>
+    </view>
+  </view>
+  <view wx:if="{{needsPassword}}" class="archive-password-card">
+    <text class="archive-password-title">输入压缩包密码</text>
+    <text class="archive-password-copy">密码仅本次使用，换文件即清除，不上传。</text>
+    <input class="archive-password-input" password confirm-type="done" placeholder="压缩包密码" bindinput="onPasswordInput" bindconfirm="onUnlock"/>
+    <button class="archive-password-button" bindtap="onUnlock">解锁</button>
+    <text wx:if="{{passwordStatus}}" class="archive-password-status">{{passwordStatus}}</text>
+  </view>
+  <view wx:if="{{nameEncodingOptions.length}}" class="archive-name-encoding-card">
+    <view class="archive-name-encoding-copy">
+      <text class="archive-name-encoding-title">文件名显示</text>
+      <text class="archive-name-encoding-current">当前：{{nameEncoding}}</text>
+    </view>
+    <view class="archive-name-encoding-options">
+      <button wx:for="{{nameEncodingOptions}}" wx:key="value" class="archive-name-encoding-button archive-name-encoding-{{item.value}} {{item.active ? 'archive-name-encoding-button-active' : ''}}" data-value="{{item.value}}" bindtap="onEncoding">{{item.label}}</button>
+    </view>
+  </view>
+  <view wx:if="{{linkFolder}}" class="archive-password-card">
+    <button class="archive-password-button archive-link-back" bindtap="onBack">返回目录</button>
+    <text class="archive-password-copy">目标文件夹：{{linkFolder}}</text>
+    <text wx:if="{{!entries.length}}" class="archive-password-copy">文件夹为空</text>
+  </view>
+  <view wx:if="{{entries.length}}" class="entry-list">
+    <view class="entry-list-heading">文件目录（{{entryCount || entries.length}}）</view>
+    <view wx:if="{{pages > 1}}" class="entry-page-controls">
+      <button class="entry-page-button" disabled="{{!hasPreviousPage}}" bindtap="onPrevious">上一页</button>
+      <text class="entry-page-count">{{page}} / {{pages}}</text>
+      <button class="entry-page-button" disabled="{{!hasNextPage}}" bindtap="onNext">下一页</button>
+    </view>
+    <view wx:for="{{entries}}" wx:key="index" class="entry-row {{item.canOpen ? 'entry-row-actionable' : ''}} {{item.isDirectory ? 'entry-row-directory' : ''}}" style="margin-left:{{item.indentRpx || 0}}rpx" data-index="{{index}}" bindtap="onOpen">
+      <text class="entry-name" selectable>{{item.displayName || item.name}}</text>
+      <text class="entry-detail">{{item.detail}}</text>
+      <text wx:if="{{item.canOpen}}" class="entry-open-hint">打开 ›</text>
+    </view>
+    <view wx:if="{{pages > 1}}" class="entry-page-controls entry-page-controls-bottom">
+      <button class="entry-page-button" disabled="{{!hasPreviousPage}}" bindtap="onPrevious">上一页</button>
+      <text class="entry-page-count">{{page}} / {{pages}}</text>
+      <button class="entry-page-button" disabled="{{!hasNextPage}}" bindtap="onNext">下一页</button>
+    </view>
+  </view>
+  <view wx:if="{{note}}" class="local-only-note">{{note}}</view>
+</view>

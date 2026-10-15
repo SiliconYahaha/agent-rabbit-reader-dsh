@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "format": "CDR",
+  "extensions": [
+    "cdr"
+  ],
+  "mime": [
+    "application/x-cdr"
+  ],
+  "signatures": [
+    "RIFF/CDR*",
+    "RIFF/CARA",
+    "PK ZIP document"
+  ],
+  "userShouldSee": "\u57fa\u7840\u77e2\u91cf\u6b63\u6587\u6216\u660e\u786e\u6807\u6ce8\u7684\u771f\u5b9e\u5185\u5d4c\u9884\u89c8\uff1b\u538b\u7f29\u6570\u636e\u635f\u574f\u4e0d\u5f97\u5192\u5145\u6210\u529f\u753b\u5e03\uff0c\u4e0d\u80fd\u53ea\u5c55\u793a\u6587\u4ef6\u4fe1\u606f\u3002",
+  "currentVisibleResult": "Unreleased compressed-record repair: direct byte lengths and zero padding retain valid basic artwork. Malformed/truncated/over-limit records explicitly fail instead of returning silently partial drawings; an independent thumbnail remains an explained fallback. 35 valid source views match native libcdr artwork in the same content-fit coordinates; 15 anomaly contracts pass. Existing text/bitmap/multi-list full-fidelity gaps remain.",
+  "oracles": [
+    "Corel official tutorial originals",
+    "libcdr 0.1.9 cdr2xhtml independent vector output",
+    "Node native zlib decoded bytes and Adler checks",
+    "Photopea unofficial CDR specification",
+    "libcdr0.1.9 native cdr2raw/cdr2xhtml original bytes; independent CDR path/style outputs and Chrome content-fit pixels"
+  ],
+  "capabilities": [
+    {
+      "id": "bounded-dual-zlib",
+      "axis": {
+        "version": "RIFF CDR/CARA",
+        "feature": "LIST cmpr two streams",
+        "anomaly": "Adler/truncation/actual output/aggregate budget",
+        "platform": "Node and WeChat"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u6b63\u5e38\u8def\u5f84\u4e0e\u989c\u8272\u4fdd\u6301\u4e00\u81f4\uff1b\u574f\u6d41\u62d2\u7edd\uff1b\u4ec5\u6709\u72ec\u7acb\u7f29\u7565\u56fe\u65f6\u8bf4\u660e\u964d\u7ea7\u539f\u56e0",
+      "evidence": [
+        "tests/cdr-inflate-limit.test.js",
+        "tests/bounded-zlib.test.js"
+      ]
+    },
+    {
+      "id": "basic-path-content",
+      "axis": {
+        "version": "CDRA",
+        "feature": "loda/trfd/fild",
+        "complexity": "100 deterministic colors and translations",
+        "platform": "Node"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u6bcf\u4e2a\u4e09\u89d2\u5f62\u7684\u8def\u5f84\u5750\u6807\u548c\u586b\u8272\u4e0e\u9884\u5148\u58f0\u660e\u7684\u7b54\u6848\u5b8c\u5168\u76f8\u540c",
+      "evidence": [
+        "tests/cdr-inflate-limit.test.js"
+      ]
+    },
+    {
+      "id": "declared-outline-content",
+      "axis": {
+        "version": "CDRA",
+        "feature": "outl flags/width/caps/join/stretch/dashes",
+        "complexity": "100 deterministic variants and 39 independent native combinations",
+        "platform": "Node / libcdr 0.1.9"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u4e0d\u6dfb\u52a0\u6587\u4ef6\u672a\u58f0\u660e\u7684\u63cf\u8fb9\uff0c\u4fdd\u7559\u7ec6\u7ebf\u548c\u771f\u5b9e\u7ebf\u6761\u6837\u5f0f\uff1b\u5bbd\u63cf\u8fb9\u4e0d\u88c1\u5207",
+      "evidence": [
+        "tests/cdr-outline.test.js",
+        "scripts/verify-cdr-outlines.js"
+      ]
+    },
+    {
+      "id": "complete-vector-fidelity",
+      "axis": {
+        "version": "CDR6\u201312",
+        "feature": "text/bitmaps/transparency/gradient/multiple pages",
+        "complexity": "Corel tutorial originals",
+        "platform": "Chromium / native libcdr"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u5b8c\u6574\u6b63\u6587\u4e0e\u539f\u8f6f\u4ef6\u4e00\u81f4\uff1bfinal_logo.cdr \u5f53\u524d\u7f3a\u5c11\u72ec\u7acb\u8f93\u51fa\u4e2d\u7684 THE COFFEE SHOP \u6587\u5b57\uff0c\u676f\u5b50\u8986\u76d6\u548c\u84b8\u6c7d\u4e5f\u4e0d\u540c",
+      "evidence": [
+        "scripts/verify-cdr-references.js; Playwright side-by-side inspection 2026-08-31 (not a fidelity pass)"
+      ]
+    },
+    {
+      "id": "compressed-record-lengths-and-integrity",
+      "axis": {
+        "syntax": "table indexes, literal sizes, zero padding, odd unknown chunks",
+        "structure": "nested lists, root/nested truncated tails and record/depth limits",
+        "compression": "zlib stored/default/high compression with valid Adler checksums",
+        "content": "declared translated colored triangles and retained Corel tutorial originals",
+        "lifecycle": "actual reader reopen, thumbnail fallback, late/detached callbacks"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u5408\u6cd5\u7684\u76f4\u63a5\u957f\u5ea6\u3001\u586b\u5145\u548c\u5d4c\u5957\u7ec4\u5408\u4e0d\u7f3a\u56fe\uff1b\u7ed3\u6784\u635f\u574f\u4e0d\u5192\u5145\u6b63\u5e38\u5b8c\u6574\u753b\u5e03\u3002",
+      "evidence": [
+        "runs/2026-09-13-cdr-record-integrity.json",
+        "tests/cdr-record-integrity.test.js",
+        "tests/fixtures/cdr-record-integrity/native-reference.json",
+        "scripts/verify-cdr-record-integrity.js"
+      ]
+    }
+  ],
+  "publicSamples": [
+    {
+      "name": "CoffeeShop.cdr",
+      "source": "https://product.corel.com/en/draw/10/Tutorials/Rave/html_docs/htmlpics/CoffeeShop.cdr",
+      "sourcePage": "https://product.corel.com/en/draw/10/Tutorials/Rave/html_docs/popups/pop_download_logo.htm",
+      "license": "Corel proprietary tutorial sample; local compatibility verification only",
+      "redistributed": false,
+      "sha256": "fee56e451bb7b1030a70ea9f18088478435c0f1d61c7bb2d4cd5b96d9e428c8a",
+      "expectedVisibleResult": "CoffeeShop logo with cup, steam, frame and converted letters; reader currently 11 basic paths; CARA requires an explicitly labelled CDRA-header derivative for libcdr reference"
+    },
+    {
+      "name": "final_logo.cdr",
+      "source": "https://product.corel.com/en/draw/10/Tutorials/Draw/html_docs/htmlpics/final_logo.cdr",
+      "sourcePage": "https://product.corel.com/en/draw/10/Tutorials/Draw/html_docs/popups/pop_bus_down.htm",
+      "license": "Corel proprietary tutorial sample; local compatibility verification only",
+      "redistributed": false,
+      "sha256": "c1a5cb96ad4c6923b8fdc6af587ad5b874306d9a3683de4e0e9b3bf02701da6d",
+      "expectedVisibleResult": "Corel business-card tutorial logo; reader currently 31 basic paths and 3 reported unsupported objects; not a complete-fidelity pass"
+    }
+  ],
+  "platformResults": {
+    "node": {
+      "status": "pass",
+      "evidence": "1264 full tests,141 compatibility probes,renderer smoke,production gate;72 related tests;50 actual host opens plus bounds/fallback/recovery"
+    },
+    "wechat-devtools": {
+      "status": "pending",
+      "reason": "Not run for this change; historical 2026-08-31 result is not current validation."
+    },
+    "ios": {
+      "status": "pending",
+      "reason": "physical-device verification required"
+    },
+    "android": {
+      "status": "pending",
+      "reason": "physical-device verification required"
+    },
+    "chrome": {
+      "status": "pass",
+      "evidence": "35 native artwork views exact in declared content-fit coordinates;15 structural-error contracts;before40failures after0. Page-layout fidelity not claimed."
+    }
+  },
+  "limits": {
+    "aggregateGraphicBytes": 33554432,
+    "aggregateLengthTableBytes": 4194304,
+    "deflateBlocksPerStream": 16384,
+    "riffEntries": 500
+  },
+  "lastTestedAt": "2026-09-13T09:07:44.461939+00:00",
+  "mutationQueue": [
+    {
+      "id": "multi-list-partial-rendering",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "record-table-invalid-index-and-truncation",
+      "priority": "high",
+      "status": "fixed-scoped",
+      "evidence": "runs/2026-09-13-cdr-record-integrity.json"
+    },
+    {
+      "id": "text-and-embedded-bitmap-fidelity",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "outline-transform-inheritance-and-arrows",
+      "priority": "high",
+      "status": "pending",
+      "evidence": "This round covers direct outl styles; affine/anisotropic scaling, inherited styles and arrowheads still need independent visible-content cases."
+    },
+    {
+      "id": "native-visual-differences",
+      "priority": "high",
+      "status": "pending",
+      "evidence": "final_logo.cdr: 360800 B cmpr has bmp resource; main cmpr has 2 txsm/2 txtj records and loda types 4/5. Reader omits THE COFFEE SHOP text; steam/cup overlay also differ in independent rendering."
+    },
+    {
+      "id": "queue-position-wrap",
+      "priority": "medium",
+      "status": "pending",
+      "evidence": "12-file simulator stress queue wraps 2 / 12 into two lines; actual picker maximum remains 10. Capture cdr-1.png."
+    },
+    {
+      "id": "physical-memory-and-recovery",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "aggregate-record-budget-across-compressed-lists",
+      "priority": "high",
+      "status": "pending",
+      "evidence": "Record cap remains per compressed stream; inspect aggregate object allocations across multiple small lists within byte budgets."
+    }
+  ],
+  "testedVersion": "unreleased branch based on v1.4.137"
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "svg-compact-arc-flags",
+    "input": "M0 0A10 10 0 0110 10",
+    "expected": "M0 0A10 10 0 0 1 10 10",
+    "inputLength": 15.710169792175293,
+    "expectedLength": 15.710169792175293,
+    "reader": [
+      {
+        "type": "M",
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "expectedReader": [
+      {
+        "type": "M",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "type": "C",
+        "x1": 5.4858377035486345,
+        "y1": 3.3591067921463508e-16,
+        "x2": 10,
+        "y2": 4.514162296451366,
+        "x": 10,
+        "y": 10
+      }
+    ]
+  },
+  {
+    "id": "invalid-token-prefix-recovery",
+    "input": "M0 0L10 0X L20 20",
+    "expected": "M0 0L10 0",
+    "inputLength": 10,
+    "expectedLength": 10,
+    "reader": [
+      {
+        "type": "M",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "type": "L",
+        "x": 10,
+        "y": 0
+      },
+      {
+        "type": "L",
+        "x": 20,
+        "y": 20
+      }
+    ],
+    "expectedReader": [
+      {
+        "type": "M",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "type": "L",
+        "x": 10,
+        "y": 0
+      }
+    ]
+  }
+]

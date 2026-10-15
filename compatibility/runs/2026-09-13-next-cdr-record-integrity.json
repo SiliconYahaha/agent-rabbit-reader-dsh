@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "testedAt": "2026-09-13T08:47:54.577425+00:00",
+  "status": "discovery-needs-native-execution",
+  "feature": "CDR compressed record length interpretation and partial-success on broken records",
+  "sourceFixture": "tests/fixtures/cdr-record-integrity/before.json",
+  "sourceFixtureSha256": "fda6fd10c573459a16fad139fba1a588f29e3be8ab4f70534251500e7f42e31e",
+  "sources": 24,
+  "generation": "8 structural scenarios x zlib levels0/6/9, deterministic authored triangle, both streams recompressed with valid Adler checksums.",
+  "observations": {
+    "literalLengthCandidatesWithoutPreview": 9,
+    "malformedTailCandidatesReportingSuccessfulVector": 6,
+    "controlsWithPreview": 6,
+    "oversizedRootWithoutPreview": 3
+  },
+  "primarySource": {
+    "url": "https://github.com/LibreOffice/libcdr/blob/77f52f694362ba0f01b3fdac6ebcc91e5debe400/src/lib/CDRParser.cpp#L565",
+    "observed": "parseRecord maps lengths through blockLengths only if size is in range, otherwise retains literal length; skips zero bytes; catches parse errors. Source inspection changes candidate interpretation but is not actual native execution."
+  },
+  "next": [
+    "Locate or build an isolated native libcdr reader; previous native artifacts not located under current outputs/scratch/tmp and no Homebrew libcdr or LibreOffice application found.",
+    "Run exact original bytes, compare valid direct-length candidates to indexed controls and inspect native corruption behavior. Do not reject all non-index values by assumption.",
+    "Expand nested records, limits, real multiple-list documents and actual host recovery; retain originals and avoid parser changes until contracts are established."
+  ],
+  "limits": [
+    "No product fix in this worktree.",
+    "No native execution, browser, WeChat or device results yet.",
+    "Malformed-candidate means an authored structural anomaly; independent behavior still pending.",
+    "Do not replace legitimate content support with blanket rejection."
+  ]
+}

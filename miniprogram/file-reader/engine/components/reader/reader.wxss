@@ -1,0 +1,161 @@
+.reader-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 0;
+  background: #fff9f2;
+}
+
+.design-reader {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+.step-model-shell {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 0 24rpx;
+  overflow: hidden;
+  border: 2rpx solid #171715;
+  border-radius: 20rpx;
+  background: #fffdf8;
+}
+
+.step-model-canvas,
+.step-model-fallback {
+  display: block;
+  width: 100%;
+  height: 420rpx;
+}
+
+.step-model-canvas {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+}
+
+.step-model-canvas-ready { opacity: 1; }
+
+.step-model-fallback {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+}
+
+.step-model-toolbar {
+  display: flex;
+  position: relative;
+  z-index: 3;
+  gap: 10rpx;
+  padding: 12rpx 14rpx 8rpx;
+  border-top: 2rpx solid #171715;
+}
+
+.step-view-button {
+  flex: 1;
+  margin: 0;
+  padding: 10rpx 8rpx;
+  border: 2rpx solid #171715;
+  border-radius: 999rpx;
+  color: #171715;
+  background: #fffdf8;
+  font-size: 22rpx;
+  line-height: 1.2;
+}
+
+.step-view-active { background: #b9e63b; }
+
+.step-model-status {
+  display: block;
+  padding: 4rpx 18rpx 16rpx;
+  color: #68645c;
+  font-size: 21rpx;
+  text-align: center;
+}
+
+.reader-canvas {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.standalone-svg {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+
+.dom-render-clip {
+  position: relative;
+  max-width: 100%;
+}
+
+.dom-render-frame {
+  min-height: 1px;
+}
+
+.dom-render-root {
+  box-sizing: border-box;
+  min-height: 100%;
+  overflow-wrap: anywhere;
+}
+
+.dom-node {
+  box-sizing: border-box;
+}
+
+/* Each wide table scrolls independently; keep surrounding prose at its
+   normal width and let vertical gestures continue scrolling the page. */
+.dom-table-scroll {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.dom-picker-value {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: inherit;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  line-height: inherit;
+}
+
+.dom-canvas-box {
+  display: block;
+  max-width: 100%;
+}
+
+.dom-canvas {
+  display: block;
+  box-sizing: border-box;
+}
+
+.hr-media-placeholder {
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px dashed #aab2bd;
+  color: #667085;
+  background: #f8fafc;
+}
+
+.html-view {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.loading {
+  padding: 60rpx 0;
+  color: #62605c;
+  text-align: center;
+}
+
+.svg-animation-notice { padding: 10px 14px; color: #715630; background: #fff4df; font-size: 13px; }
+.svg-animation-notice button { margin-top: 8px; }

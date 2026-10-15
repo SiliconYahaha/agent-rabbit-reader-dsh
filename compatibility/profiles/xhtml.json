@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "format": "XHTML",
+  "extensions": [
+    "xhtml",
+    "xht"
+  ],
+  "mime": [
+    "application/xhtml+xml"
+  ],
+  "signatures": [
+    "XML XHTML namespace root; explicit text/html keeps HTML grammar regardless of suffix/doctype"
+  ],
+  "userShouldSee": "\u539f\u59cb XML \u6b63\u6587\u3001CDATA \u5b57\u7b26\u3001\u5185\u8054\u6837\u5f0f\u548c\u5df2\u9a8c\u8bc1\u7684\u5b89\u5168\u4ea4\u4e92\uff1b\u4e0d\u80fd\u628a\u8bc6\u522b\u6210\u529f\u3001\u88ab\u622a\u65ad\u7684 HTML \u6216\u9519\u8bef\u6062\u590d\u5f53\u6210\u539f\u6587\u4ef6\u9884\u89c8\u3002",
+  "currentVisibleResult": "v1.4.52 \u672a\u4e0a\u4f20\u5019\u9009\uff1aXML \u6587\u4ef6\u5165\u53e3\u3001CDATA\u3001\u57fa\u672c\u5b9e\u4f53\u3001\u5c5e\u6027\u5927\u5c0f\u5199\u548c\u7f16\u7801\u9519\u8bef\u5904\u7406\u901a\u8fc7 Node/Chrome\u3002\u4e24\u4efd\u516c\u5f00\u539f\u4ef6\u901a\u8fc7\u4e0d\u6539\u5199\u6e90\u6587\u4ef6\u7684 MIME \u5bf9\u7167\uff1b\u5fae\u4fe1\u5b9e\u9645\u89c6\u56fe\u53ca\u771f\u673a\u5f85\u9a8c\u8bc1\u3002",
+  "oracles": [
+    "Chrome actual application/xhtml+xml documents, inline execution, textContent, computed colors and dimensions",
+    "https://www.w3.org/TR/xml/#sec-cdata-sect",
+    "https://www.w3.org/TR/xhtml-media-types/#summary"
+  ],
+  "capabilities": [
+    {
+      "id": "mime-and-file-entry",
+      "axis": {
+        "version": "XML 1.0 subset",
+        "feature": "xhtml/xht and MIME input, ordinary HTML remains separate",
+        "complexity": "raw bytes, XML declarations, switches and malformed files",
+        "platform": "Node mocked WeChat entry"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u4ece\u6587\u4ef6\u5165\u53e3\u76f4\u63a5\u770b\u5230\u6b63\u6587\uff1b\u4e2d\u6587\u7f16\u7801\u6b63\u786e\uff0c\u9519\u8bef\u6587\u4ef6\u4e0d\u6b8b\u7559\u4e0a\u4e00\u4efd\u5185\u5bb9",
+      "evidence": [
+        "tests/page-state.test.js: three XHTML file-entry/tap/switch tests",
+        "tests/xhtml-document.test.js: MIME and eight declared-encoding samples"
+      ]
+    },
+    {
+      "id": "cdata-text-style-and-script",
+      "axis": {
+        "version": "XML 1.0 subset",
+        "feature": "CDATA, XML/numeric entities, case, self-closing tags and exact text",
+        "complexity": "28 generated raw-source documents and 2 click states",
+        "platform": "Node/Chrome"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "<b>\u539f\u6587</b> &amp; \u662f\u5b57\u9762\u6b63\u6587\uff0c\u70b9\u51fb\u540e\u7eff\u8272\u6587\u5b57\u53d8\u84dd\u5e76\u663e\u793a\u66f4\u65b0\u6210\u529f\uff1b\u6837\u5f0f\u6b63\u6587\u4e0d\u5e26 CDATA \u5916\u58f3",
+      "evidence": [
+        "scripts/verify-xhtml.js: 53 comparisons, 28 valid/23 malformed/2 interaction states",
+        "tests/xhtml-document.test.js: real sandbox tap and emitted styles"
+      ]
+    },
+    {
+      "id": "public-raw-cascade",
+      "axis": {
+        "version": "WPT 9bd47eefe9095a8464fdcce401747dcd737d1eec",
+        "feature": "original XHTML CDATA stylesheet",
+        "complexity": "two unchanged public files with SHA-256 and original license",
+        "platform": "Chrome XML versus reader output"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u7eff\u8272 100\u00d7100 \u65b9\u5757\uff1bPASSED \u6587\u5b57\u548c\u9752\u8272\u4e0a\u8fb9\u6846\u3001\u84dd\u8272\u4e0b\u8fb9\u6846",
+      "evidence": [
+        "scripts/verify-css-cascade-order.js: 242 checks, two original XML documents, no CSS extraction adapter",
+        "tests/css-cascade-order.test.js: fixed source hashes"
+      ]
+    },
+    {
+      "id": "malformed-and-resource-boundaries",
+      "axis": {
+        "version": "XML 1.0 subset",
+        "feature": "malformed input, XXE/DTD restrictions, depth/node/encoding budgets",
+        "complexity": "23 syntax errors, 4 policy restrictions, 100001 nodes and 260 levels",
+        "platform": "Node isolated 5-second process; Chrome syntax comparison"
+      },
+      "status": "pass",
+      "expectedVisibleResult": "\u635f\u574f\u6216\u4e0d\u652f\u6301\u7684\u6587\u4ef6\u660e\u786e\u505c\u6b62\uff0c\u4e0d\u52a0\u8f7d\u5916\u90e8\u5b9e\u4f53\uff0c\u4e0d\u8fd4\u56de\u4f2a\u9020\u6b63\u6587",
+      "evidence": [
+        "tests/xhtml-document.test.js",
+        "scripts/verify-xhtml.js separates valid-but-unsupported policy cases from syntax errors"
+      ]
+    },
+    {
+      "id": "wechat-actual-view",
+      "axis": {
+        "version": "v1.4.52 candidate",
+        "feature": "actual view text/colors/dimensions and tap",
+        "complexity": "generated CDATA interaction plus raw public green square",
+        "platform": "WeChat developer tools/iOS/Android"
+      },
+      "status": "pending",
+      "expectedVisibleResult": "\u5fae\u4fe1\u5b9e\u9645\u6587\u5b57\u3001\u989c\u8272\u3001\u7eff\u8272\u65b9\u5757\u5c3a\u5bf8\u548c\u6309\u94ae\u884c\u4e3a\u4e0e\u72ec\u7acb\u6d4f\u89c8\u5668\u8bc1\u636e\u4e00\u81f4",
+      "evidence": []
+    }
+  ],
+  "publicSamples": [
+    {
+      "name": "sort-by-order-001.xht",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/CSS2/cascade/sort-by-order-001.xht",
+      "license": "WPT BSD-3-Clause, original notice included",
+      "redistributed": true,
+      "sha256": "325edd8c159b87559c554b2e029fb7ddf47a43a221a7037b549055bca3c73fd1",
+      "expectedVisibleResult": "green 100x100 square without source rewriting or CDATA-stripping adapter"
+    },
+    {
+      "name": "specificity-011.xht",
+      "source": "https://raw.githubusercontent.com/web-platform-tests/wpt/9bd47eefe9095a8464fdcce401747dcd737d1eec/css/CSS2/cascade/specificity-011.xht",
+      "license": "WPT BSD-3-Clause, original notice included",
+      "redistributed": true,
+      "sha256": "2168917e23baa7351e076305ec0fc352f2a7eeffb0789c798becd3f76b0e5937",
+      "expectedVisibleResult": "PASSED with teal top and blue bottom solid borders"
+    }
+  ],
+  "platformResults": {
+    "node": {
+      "status": "pass",
+      "testedAt": "2026-08-31",
+      "evidence": "509 tests, 141 probes; XHTML-specific nine tests plus three mocked file-entry tests"
+    },
+    "chrome": {
+      "status": "pass",
+      "testedAt": "2026-08-31",
+      "evidence": "53 XML comparisons, two raw public cases within 242 cascade checks; prior suites rerun"
+    },
+    "wechat-devtools": {
+      "status": "pending",
+      "reason": "Mac UI access previously rejected; no new unlock confirmation. Assertions added but not executed; do not bypass via CLI"
+    },
+    "ios": {
+      "status": "pending",
+      "reason": "physical device not tested"
+    },
+    "android": {
+      "status": "pending",
+      "reason": "physical device not tested"
+    }
+  },
+  "limits": {
+    "sourceUtf16Units": 20971520,
+    "nodes": 100000,
+    "openElements": 256,
+    "workerTimeoutMs": 5000,
+    "limitations": "Non-validating XHTML reader, not a complete XML DOM. XHTML root/body required. Only five predefined XML entities and numeric references; no internal DTD/entity expansion or external DTD/stylesheets/scripts. Unknown/empty namespaces rejected. SVG/MathML retain existing renderer limitations; namespace selectors, dynamic XML innerHTML/CDATA node APIs, script timing/document.write and full CSSOM remain incomplete. UTF-8/UTF-16 plus declared GB18030/Shift_JIS/Big5/Windows-1252/Latin1; unsupported or corrupt encodings stop rather than guess."
+  },
+  "testedVersion": "1.4.52",
+  "lastTestedAt": "2026-08-31",
+  "mutationQueue": [
+    {
+      "id": "wechat-raw-xhtml-and-real-tap",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "xml-fragment-innerhtml-and-cdata-dom",
+      "priority": "high",
+      "status": "pending",
+      "note": "Dynamic XML innerHTML, CDATA nodeType/API and generic XML DOMParser remain incomplete, no full DOM claim"
+    },
+    {
+      "id": "xhtml-script-timing-and-document-write",
+      "priority": "high",
+      "status": "pending",
+      "note": "Sandbox still scans then executes inline scripts; parser-blocking timing and head scripts depending on partial DOM not equivalent to browser"
+    },
+    {
+      "id": "namespace-css-svg-and-mathml",
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "large-xhtml-heap-and-real-device",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "id": "main-package-budget",
+      "priority": "high",
+      "status": "pending",
+      "note": "Production source package 2092950 bytes, only 4202 bytes below 2 MiB; address layout/build budget before more runtime features"
+    }
+  ]
+}

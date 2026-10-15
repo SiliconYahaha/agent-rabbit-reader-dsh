@@ -1,0 +1,3249 @@
+{
+  "schemaVersion": 1,
+  "status": "pending",
+  "reason": "Nested svg ignores preserveAspectRatio none and xMaxYMax meet; 32 silent geometry/color failures against Chrome",
+  "inputs": [
+    {
+      "name": "nested-viewport-0",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"96\" height=\"48\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.75,
+              0,
+              0,
+              0.375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-1",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"100\" height=\"52\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.40625,
+              0,
+              0,
+              0.40625,
+              68,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-2",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"104\" height=\"56\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.8125,
+              0,
+              0,
+              0.4375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-3",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"108\" height=\"60\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.46875,
+              0,
+              0,
+              0.46875,
+              68,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-4",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"112\" height=\"48\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.875,
+              0,
+              0,
+              0.375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-5",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"116\" height=\"52\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.40625,
+              0,
+              0,
+              0.40625,
+              84,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-6",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"120\" height=\"56\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.9375,
+              0,
+              0,
+              0.4375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-7",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"124\" height=\"60\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.46875,
+              0,
+              0,
+              0.46875,
+              84,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-8",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"128\" height=\"48\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1,
+              0,
+              0,
+              0.375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-9",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"132\" height=\"52\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.40625,
+              0,
+              0,
+              0.40625,
+              100,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-10",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"136\" height=\"56\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.0625,
+              0,
+              0,
+              0.4375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-11",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"140\" height=\"60\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.46875,
+              0,
+              0,
+              0.46875,
+              100,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-12",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"144\" height=\"48\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.125,
+              0,
+              0,
+              0.375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-13",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"148\" height=\"52\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.40625,
+              0,
+              0,
+              0.40625,
+              116,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-14",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"152\" height=\"56\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.1875,
+              0,
+              0,
+              0.4375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-15",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"156\" height=\"60\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.46875,
+              0,
+              0,
+              0.46875,
+              116,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-16",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"160\" height=\"48\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.25,
+              0,
+              0,
+              0.375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-17",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"164\" height=\"52\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.40625,
+              0,
+              0,
+              0.40625,
+              132,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-18",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"168\" height=\"56\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.3125,
+              0,
+              0,
+              0.4375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-19",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"172\" height=\"60\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.46875,
+              0,
+              0,
+              0.46875,
+              132,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-20",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"176\" height=\"48\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.375,
+              0,
+              0,
+              0.375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-21",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"180\" height=\"52\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.40625,
+              0,
+              0,
+              0.40625,
+              148,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-22",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"184\" height=\"56\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.4375,
+              0,
+              0,
+              0.4375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-23",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"188\" height=\"60\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.46875,
+              0,
+              0,
+              0.46875,
+              148,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-24",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"192\" height=\"48\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.5,
+              0,
+              0,
+              0.375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-25",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"196\" height=\"52\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.40625,
+              0,
+              0,
+              0.40625,
+              164,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-26",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"200\" height=\"56\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.5625,
+              0,
+              0,
+              0.4375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-27",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"204\" height=\"60\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.46875,
+              0,
+              0,
+              0.46875,
+              164,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-28",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"208\" height=\"48\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.625,
+              0,
+              0,
+              0.375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-29",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"212\" height=\"52\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.40625,
+              0,
+              0,
+              0.40625,
+              180,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-30",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"216\" height=\"56\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"none\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              1.6875,
+              0,
+              0,
+              0.4375,
+              20,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "nested-viewport-31",
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><clipPath id=\"c\" clipPathUnits=\"objectBoundingBox\"><rect x=\"0\" y=\"0\" width=\"0.5\" height=\"0.5\"/></clipPath></defs><rect width=\"256\" height=\"256\" fill=\"red\"/><g id=\"target\" fill=\"green\" clip-path=\"url(#c)\"><svg x=\"20\" y=\"12\" width=\"220\" height=\"60\" viewBox=\"0 0 128 128\" preserveAspectRatio=\"xMaxYMax meet\"><rect width=\"128\" height=\"128\"/></svg></g></svg>",
+      "oracle": {
+        "measureId": "target",
+        "clip": [
+          0,
+          0,
+          0.5,
+          0.5
+        ],
+        "paints": [
+          {
+            "d": "M0 0h128v128h-128Z",
+            "matrix": [
+              0.46875,
+              0,
+              0,
+              0.46875,
+              180,
+              12
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "chrome": {
+    "testedAt": "2026-09-05T02:18:42.044Z",
+    "reference": "Native Chrome DOM getBBox plus independent Canvas Path2D paints; pinned WPT reference SVGs",
+    "cases": 32,
+    "exactPixels": 0,
+    "failures": [
+      "nested-viewport-0",
+      "nested-viewport-1",
+      "nested-viewport-2",
+      "nested-viewport-3",
+      "nested-viewport-4",
+      "nested-viewport-5",
+      "nested-viewport-6",
+      "nested-viewport-7",
+      "nested-viewport-8",
+      "nested-viewport-9",
+      "nested-viewport-10",
+      "nested-viewport-11",
+      "nested-viewport-12",
+      "nested-viewport-13",
+      "nested-viewport-14",
+      "nested-viewport-15",
+      "nested-viewport-16",
+      "nested-viewport-17",
+      "nested-viewport-18",
+      "nested-viewport-19",
+      "nested-viewport-20",
+      "nested-viewport-21",
+      "nested-viewport-22",
+      "nested-viewport-23",
+      "nested-viewport-24",
+      "nested-viewport-25",
+      "nested-viewport-26",
+      "nested-viewport-27",
+      "nested-viewport-28",
+      "nested-viewport-29",
+      "nested-viewport-30",
+      "nested-viewport-31"
+    ],
+    "results": [
+      {
+        "name": "nested-viewport-0",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 96,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 48,
+            "rgbaError": 220608,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 220608,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 96,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 48,
+            "rgbaError": 220608,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 220608,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 96,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 48,
+            "rgbaError": 220608,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 220608,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-1",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 68,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 24,
+            "rgbaError": 477984,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 477984,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 68,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 24,
+            "rgbaError": 477984,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 477984,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 68,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 24,
+            "rgbaError": 477984,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 477984,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-2",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 104,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 48,
+            "rgbaError": 257376,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 257376,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 104,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 48,
+            "rgbaError": 257376,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 257376,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 104,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 48,
+            "rgbaError": 257376,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 257376,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-3",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 68,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 24,
+            "rgbaError": 551520,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 551520,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 68,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 24,
+            "rgbaError": 551520,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 551520,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 68,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 44,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 24,
+            "rgbaError": 551520,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 551520,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-4",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 112,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 64,
+            "rgbaError": 294144,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 294144,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 112,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 64,
+            "rgbaError": 294144,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 294144,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 112,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 64,
+            "rgbaError": 294144,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 294144,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-5",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 84,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 32,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 84,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 32,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 84,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 32,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-6",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 120,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 64,
+            "rgbaError": 343168,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 343168,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 120,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 64,
+            "rgbaError": 343168,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 343168,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 120,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 64,
+            "rgbaError": 343168,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 343168,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-7",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 84,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 32,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 84,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 32,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 84,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 32,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-8",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 80,
+            "rgbaError": 367680,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 367680,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 80,
+            "rgbaError": 367680,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 367680,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 80,
+            "rgbaError": 367680,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 367680,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-9",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 100,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 40,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 100,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 40,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 100,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 40,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-10",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 136,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 80,
+            "rgbaError": 428960,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 428960,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 136,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 80,
+            "rgbaError": 428960,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 428960,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 136,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 80,
+            "rgbaError": 428960,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 428960,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-11",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 100,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 40,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 100,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 40,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 100,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 60,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 40,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-12",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 144,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 96,
+            "rgbaError": 441216,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 441216,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 144,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 96,
+            "rgbaError": 441216,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 441216,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 144,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 96,
+            "rgbaError": 441216,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 441216,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-13",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 116,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 48,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 116,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 48,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 116,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 48,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-14",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 152,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 96,
+            "rgbaError": 514752,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 514752,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 152,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 96,
+            "rgbaError": 514752,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 514752,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 152,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 96,
+            "rgbaError": 514752,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 514752,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-15",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 116,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 48,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 116,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 48,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 116,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 68,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 48,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-16",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 160,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 112,
+            "rgbaError": 514752,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 514752,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 160,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 112,
+            "rgbaError": 514752,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 514752,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 160,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 112,
+            "rgbaError": 514752,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 514752,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-17",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 132,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 56,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 132,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 56,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 132,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 56,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-18",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 168,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 112,
+            "rgbaError": 600544,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 600544,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 168,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 112,
+            "rgbaError": 600544,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 600544,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 168,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 112,
+            "rgbaError": 600544,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 600544,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-19",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 132,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 56,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 132,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 56,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 132,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 76,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 56,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-20",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 176,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 128,
+            "rgbaError": 588288,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 588288,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 176,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 128,
+            "rgbaError": 588288,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 588288,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 176,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 128,
+            "rgbaError": 588288,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 588288,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-21",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 148,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 64,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 148,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 64,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 148,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 64,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-22",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 184,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 128,
+            "rgbaError": 686336,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 686336,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 184,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 128,
+            "rgbaError": 686336,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 686336,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 184,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 128,
+            "rgbaError": 686336,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 686336,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-23",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 148,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 64,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 148,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 64,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 148,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 84,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 64,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-24",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 192,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 144,
+            "rgbaError": 661824,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 661824,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 192,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 144,
+            "rgbaError": 661824,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 661824,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 192,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 144,
+            "rgbaError": 661824,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 661824,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-25",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 164,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 72,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 164,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 72,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 164,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 72,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-26",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 200,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 144,
+            "rgbaError": 772128,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 772128,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 200,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 144,
+            "rgbaError": 772128,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 772128,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 200,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 144,
+            "rgbaError": 772128,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 772128,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-27",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 164,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 72,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 164,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 72,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 164,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 92,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 72,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-28",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 208,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 160,
+            "rgbaError": 735360,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 735360,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 208,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 160,
+            "rgbaError": 735360,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 735360,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 208,
+              "height": 48
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 48,
+              "height": 48
+            },
+            "boundsError": 160,
+            "rgbaError": 735360,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 735360,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-29",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 180,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 80,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 180,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 80,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 180,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 52,
+              "height": 52
+            },
+            "boundsError": 80,
+            "rgbaError": 517816,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 517816,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-30",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 216,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 160,
+            "rgbaError": 857920,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 857920,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 216,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 160,
+            "rgbaError": 857920,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 857920,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 216,
+              "height": 56
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 56,
+              "height": 56
+            },
+            "boundsError": 160,
+            "rgbaError": 857920,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 857920,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport-31",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 180,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 80,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 180,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 80,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 180,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "actualBox": {
+              "x": 100,
+              "y": 12,
+              "width": 60,
+              "height": 60
+            },
+            "boundsError": 80,
+            "rgbaError": 689400,
+            "maxChannelError": 255,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 255,
+            "svgRGBAError": 689400,
+            "fallbackError": 0
+          }
+        ]
+      }
+    ]
+  }
+}

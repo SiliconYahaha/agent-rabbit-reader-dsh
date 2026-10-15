@@ -1,0 +1,396 @@
+{
+  "at": "2026-09-13T08:53:09.859Z",
+  "status": "native pending",
+  "cases": [
+    {
+      "name": "indexed-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRugAAABDRFJBTElTVNwAAABjbXBymwAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJx9jjEKwkAQAEdjVMRCxFruARYW9lomGLC4YJ/kvKAcnIQUPtcn+ANl9URtnGqWYdnNUp0PAOMrZY/OAFz2q2kHiIl5cSdLdd4HzkV9EJfiy5MS7wGu9qXzppA9DUTADFDBF8AW2AGj0OahvVleo1/fJPLKc5Y7UtvGuraxpgskgNwbAxNgyDe3NX/59Ac9ph0fQ1BuZwEABAB4nA3GMQEAIAgAsIUwFD/ENQABiOMhu3aQCBTuvveDhw84tARY",
+      "sha256": "112ae43b9ffab4fb60be19153d7210b1364c97c220c22b1582d09ebe1a3d44da",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-0.06 -1.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"-0.06\" y=\"-1.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M0 0L1 0L0 -1Z\" fill=\"#ff0000\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    },
+    {
+      "name": "literal-all-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRvAAAABDRFJBTElTVOQAAABjbXByowAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJx9jjEKwkAQRZ+EgIiFiLXsASws7LVMMGCxi33iuiGysBJSeDgP4AE8gEfwAIIyGlEbH3x4w4eZyVJtboANG+Uqb0fAYT0bdoCYmBd3slSbM7DPy634CQjFTokfAV+Gwgeba0ASAbJLtT4BlsAK6LXduO3eTC/Rry8SeeU5yx0DNLXzTe1sAkjkzz4wALp8c53zl0//AINfIVpDUG5nAQAEAHicDcYxAQAgCACwhTAUP8Q1AAGI4yG7dpAIFO6+94OHDzi0BFg=",
+      "sha256": "85a79c90369dd8f121bc3617c62090da36f1208ac533a7ddb03203cc31f79d61",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "literal-loda-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRugAAABDRFJBTElTVNwAAABjbXBymwAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJx9jjEKwkAQAEdjVMRCxFruARYW9lomGLC4YJ/kvKAcnIQUPtcn+ANl9URtHFiYZYrdLNX5ADC+UvboDMBlv5p2gJiYF3eyVOd94FzUB3Epvjwp8R7gal86bwoNyETADFDBF8AW2AGj0OahvVleo1/fJPLKc5c7UtvGuraxpgskgPw5BibAkG9ua/7y6Q93Th1xQ1BuZwEABAB4nA3GMQEAIAgAsIUwFD/ENQABiOMhu3aQCBTuvveDhw84tARY",
+      "sha256": "e570588a39746bb0dc4c97c3fdac59f2aceae61294f00cf1dac1aa300e04b46d",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "prefix-zero-1-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRugAAABDRFJBTElTVNwAAABjbXBymwAAAAUBAAAtAAAAIAAAAENQbmcBAAQAeJx9jjEKwkAQRZ8mUZEUItayB7BIYa9lRMEiYp+4bogsrIQUHjdHyA2U0RW18VdveDP8YbfJDkNAu5MyldUAt+Ny2gMiIl65I3sD4JqXZ2Exrrgo4RCwpSus07ncZUAAzADleQFsgT0w9m7u3TtJG/zyOpVXnrP0iG1qY5va6D6QAtIXAxNgxHe6FX/z8Q89px0fQ1BuZwEABAB4nA3GMQEAIAgAsIUwFD/ENQABiOMhu3aQCBTuvveDhw84tARY",
+      "sha256": "068b88a762b612ee235d74462b66a2f6b64b24a21796e4069b8f3b54649f6235",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "prefix-zero-2-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRukAAABDRFJBTElTVN0AAABjbXBynAAAAAYBAAAtAAAAIAAAAENQbmcBAAQAeJx9jjEKwkAQRZ/GGBELEWvZA1iksNcyomARsU+ybkhYWAkpPK5H8AbKxBW18VdveDP8gf02PUaAdoUyldUA19Nq1gNCQl55dHtD4JKVZ2ExLq+V8ACwpcut05ncpUAAzAHleQnsgAMw9m7h3TvxLfjlTSKvdLP0iG0bY9vG6D6QANI3AabAiO/c1/zNxz8BPagdH0NQbmcBAAQAeJwNxjEBACAIALCFMBQ/xDUAAYjjIbt2kAgU7r73g4cPOLQEWA==",
+      "sha256": "0c4b5620e99613d1f27c765c193e79fb7af332e9c4927675d80b28caa8fc4af5",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "prefix-zero-3-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRukAAABDRFJBTElTVN0AAABjbXBynAAAAAcBAAAtAAAAIAAAAENQbmcBAAQAeJx9jjEKwkAQRZ/GGBELEWvZA1iksNcyomARsU+ybkhYWAkpPK5H8AbKxBW18VdveDP8Afbb9BgB2hXKVFYDXE+rWQ8ICXnl0e0NgUtWnoXFuLxWwgPAli63TmdylwIBMAeU5yWwAw7A2LuFd+/Et+CXN4m80s3SI7ZtjG0bo/tAAkjfBJgCI75zX/M3H/8EPakdH0NQbmcBAAQAeJwNxjEBACAIALCFMBQ/xDUAAYjjIbt2kAgU7r73g4cPOLQEWA==",
+      "sha256": "b84fd9881a1130f0c913cc732fc9c6efe2e0c60adf9698fd66c8e8b15099d559",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "prefix-zero-16-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRuoAAABDRFJBTElTVN4AAABjbXBynQAAABQBAAAtAAAAIAAAAENQbmcBAAQAeJx9jzEKwkAQRZ/GGBELEWvZA6SwsNcyomARsU9cNygLKyGFx80RcgNlZFW28VefeX+YPxBqv82PCaDdWZmr1TJ7nFazHhAT+9TznRsC96K6iBfiypsSPwBs5UrrdCF7ORABc0B5nwI74ACMPVt49tGyjUK/yaTKt6fQpja2qY3uAxkg9ybAFBgFn3Vr/urHXz22HR9DUG5nAQAEAHicDcYxAQAgCACwhTAUP8Q1AAGI4yG7dpAIFO6+94OHDzi0BFg=",
+      "sha256": "d78a9804c9800de3d395c08da5c27e810fe5caa63a607f971f473cc797b5198f",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "nested-zeros-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRusAAABDRFJBTElTVN8AAABjbXByoAAAABwBAAArAAAAIAAAAENQbmcBAAQAeJx9jrEKwkAQRJ/GqIiFiLXcB1hY2GuZYMDign3imaAcnIiFn+sn+AfKkg2Yxil2dnaWnc1Sm48AF04GqC7eATyPm3kPiIlp8JGSpTYfAreiPqsUP5RXo3IA+DqUQsEVcsMCEbAAjPYrYA8cgIl6S/VarF9Rt98l8lY7kjRZeNwr35DrAwkgqVNgBoz5xXvLX3T8L6YGHR9DUG5nAQAEAHicBcExAQAwCAAg7GCo/TtsbAMj2ENIfDwUGoNFBgc3FwOc",
+      "sha256": "2f130dee82733f15da3a97c782cf91d2fe2fe252f031920b915cab756528c5a5",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "mixed-zeros-literals-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRu8AAABDRFJBTElTVOMAAABjbXByowAAABEBAAAsAAAAIAAAAENQbmcBAAQAeJx9jjEKwkAQRV8IERELEWvZA1hY2GuZoGARtU9cNygLK5LC43kBT2DjEbyBMtkVTOOHP8yfP8x8YJXlm04E2u0V5mj1CLjuZsMISEjwePvNB3AuqkMj7oArT6oRN8BWrsQ6XeSAMAbkngr9BFgCa6AXvHHwvpg+43a/SCWOH8inLVBfjJWiU0AoafvAAOjyi9ecv2j5H2LmIHZDUG5nAQAEAHicBcFBEQAgCACw8TGBofxz9KUACSjjdpF4KDQGixN8NacDdA==",
+      "sha256": "7d34a36232fa951ad42c42edd0b1c85f48b0dc6ad7cff576f4860d161abb8a3f",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "malformed-root-tail-red",
+      "category": "malformed-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRu0AAABDRFJBTElTVOEAAABjbXByoAAAAAwBAAAtAAAAIAAAAENQbmcBAAQAeJx9jjEKwkAQRZ/GqIiFiLXsASws7LVMMGCRYJ+4blAWVkIKj+sRvMHK6Ira+Ko/PIb/szQvBoB2B2VOVgNc96tpB4iJeeHJ0rzoA5eyPkoW46qzktwDbO0q63QpfzkQATNAhbwAtsAOGAU3D+7N8hb95k0iU5639IhtG2PbxugukADSNwYmwJBv7mv+8vGy23vvHztJIrtDUG5nAQAEAHicDcYxAQAgCACwhTAUP8Q1AAGI4yG7dpAIFO6+94OHDzi0BFg=",
+      "sha256": "e9102845ac206f962984267f1342632384e989e0cb1f8e711e1e677553ae7ca4",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-0.06 -1.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"-0.06\" y=\"-1.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M0 0L1 0L0 -1Z\" fill=\"#ff0000\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    },
+    {
+      "name": "short-root-tail-red",
+      "category": "malformed-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRu4AAABDRFJBTElTVOIAAABjbXByoQAAAAsBAAAtAAAAIAAAAENQbmcBAAQAeJx9jjsKwkAURY/GqIiFiLXMAiz89VomGLBIsE8cJygDIyGFy3UJ7kB5OqI2nuo+Do97kzjNOoB2e2WOVgNcdsthAwgJeXEnidOsDZzz8iBZjCtOSnILsKUrrNO5/KVAAIwA5fME2ABboOfd2Ls302vwm9eRTHne0iO2roytK6ObQARIXx8YAF2+ua34y8fL7tl88QATvh9VQ1BuZwEABAB4nA3GMQEAIAgAsIUwFD/ENQABiOMhu3aQCBTuvveDhw84tARY",
+      "sha256": "e5a7917c3d6c8625a7f2097f7f82bdf321c893d8dc8638b65fb56dcbd77d30d8",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-0.06 -1.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"-0.06\" y=\"-1.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M0 0L1 0L0 -1Z\" fill=\"#ff0000\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    },
+    {
+      "name": "malformed-nested-tail-red",
+      "category": "malformed-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRu4AAABDRFJBTElTVOIAAABjbXByoAAAAAwBAAAuAAAAIAAAAENQbmcBAAQAeJx9jjEKwkAQRZ/GqIiFiLXsASws7LVMMGCRYJ+4blAWVkIKj+sRvMHK6Ira+Ko/PIb/szQvBoB2B2VOVgNc96tpB4iJeeHJ0rzoA5eyPkoW46qzktwDbO0q63QpfzkQATNAhbwAtsAOGAU3D+7N8hb95k0iU5639IhtG2PbxugukADSNwYmwJBv7mv+8vGy23vvHztJIrtDUG5nAQAEAHicDcZBEQAgCACweUcEQvHXuAQwhGFkryU2Cgc9v3iIxQc1FwNp",
+      "sha256": "90df0534558ca911f772262b97e74f8929da0a2373e924ff305f8f7e92375daf",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-0.06 -1.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"-0.06\" y=\"-1.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M0 0L1 0L0 -1Z\" fill=\"#ff0000\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    },
+    {
+      "name": "odd-unknown-red",
+      "category": "native-candidate",
+      "variant": "red",
+      "color": 16711680,
+      "translation": [
+        0,
+        0
+      ],
+      "base64": "UklGRvUAAABDRFJBTElTVOkAAABjbXBypQAAABABAAAwAAAAJAAAAENQbmcBAAQAeJx9jjEOgkAURB8gSoyFMdZmD2BhYa8lKNECpAdXiGaTNYTC43oEb6D5ilEbX/PnZyaZiaMkDQBt92q126wBHNejPBrtAJdsPpLr4/PiThwlaQ8459VBdBewxUmJlpSpbGGszl0gATxgDKhWTwEp2gL91pu03pvZ1fvVy1CmPH/p6QBNXZqmLrUkQ9kNDIAhEPDNbcFfPv4Do5ceZUNQbmcBAAQAeJwNxjENACAMALASHgQgaj+TiwAEIGjr1YmNg0Di9l//Yw0KNVcDaA==",
+      "sha256": "45e27df2cea208ef6d69ada9b5c2e0ae6e3b001c8ec2891f007f1c8f22683350",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-0.06 -1.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"-0.06\" y=\"-1.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M0 0L1 0L0 -1Z\" fill=\"#ff0000\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    },
+    {
+      "name": "indexed-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvIAAABDRFJBTElTVOYAAABjbXBypQAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAURF+MURELEWvdzsbCwl63SzBgkWCfuCYoCyshhaVH9QjeQPkSIYJTveHxmR9HSdoHjDuq4mwNwO2wnnhAQCCVFxBHSdoDrll5Ehbj8osS7gK2dLl1JpO7BPCBKaAaXgI7YA8MGzdr3Derh//L21Be+XTZEVtXha2rwnSAEJC9ETAGBrTz3LSb0gvNH3/35voNVtAeyUNQbmcBAAQAeJwNxjEBACAIALCFMBQ/xDUAAYjjIbt2kAgU7r73g4cPOLQEWA==",
+      "sha256": "e36b8968d9f58f3653aae96b5784bb6dc3b3276df4fea4ffdb2472f89a6e6941",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"2.94 -3.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"2.94\" y=\"-3.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M3 -2L4 -2L3 -3Z\" fill=\"#0000ff\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    },
+    {
+      "name": "literal-all-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvkAAABDRFJBTElTVO0AAABjbXByrAAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAURF8IARELEWvdzsbCwl7TJRiw2GCfuCYoCyshhaUH8wAewAN4BA8gKF8iRHBg4A0D/08S6/QJGLdVxd6aIXDazAceEBAgegFJrNMbcMzKnfAVcPlBCV8AW7rcOpNpQOwDcks1PAVWwBroNt2o6b6a3f1fXkYy5ZPlTwrUVWHrqjARIJadPaAPdGjrsWgnFU5C/vRnbxy+AZyJIwRDUG5nAQAEAHicDcYxAQAgCACwhTAUP8Q1AAGI4yG7dpAIFO6+94OHDzi0BFg=",
+      "sha256": "1e3dfbe6cdc07fc699ba04020618273672af21f51a2756e87f3e6d0004b11b05",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "literal-loda-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvIAAABDRFJBTElTVOYAAABjbXBypQAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAURF+MURELEWvdzsbCwl63SzBgkWCfuCYoCyshhaVH9QjeQPkSIYIDH97wij9xlKR9wLijKs7WANwO64kHBARSeQFxlKQ94JqVJ2ExLr8o4S5gS5dbZ7IEkPOBKaAaXgI7YA8MGzdr3Derh//L21CmfLr8EVtXha2rwnSAEJCdI2AMDGjnuWk3pReaP/7uzfUbkHgfG0NQbmcBAAQAeJwNxjEBACAIALCFMBQ/xDUAAYjjIbt2kAgU7r73g4cPOLQEWA==",
+      "sha256": "a2d2715ce07a15900b096a3e9f8fff41028674fafc38e05930db177f8ae935d6",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "prefix-zero-1-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvEAAABDRFJBTElTVOUAAABjbXBypAAAAAUBAAAtAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAQRV+MURELEWvdzsbCwl63iyhYRNInrhuUhZWQwtKjegRvoIxEiOCv3ufNMMNukxy6gPFHZc/OANzS5SgAIiKpvACZ6wDXrDgJi/H5RQm3AVf43HmTyV4ChMAYUDXPgS2wB/q1m9Tum8Uj/OV1LK98utwRW5XWVaU1LSAG5N4AGAI9mnmumk3pmeaPvwdT/QZW0R7JQ1BuZwEABAB4nA3GMQEAIAgAsIUwFD/ENQABiOMhu3aQCBTuvveDhw84tARY",
+      "sha256": "5f5e137c4fcaf1ea9b0da188d4ff1c96e0502b268e590fa7f6ea2390343da89d",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "prefix-zero-2-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvEAAABDRFJBTElTVOUAAABjbXBypAAAAAYBAAAtAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAQRV+MURELEWvdzsbCwl63iyhYROwT1wRlYSWksPSoHsEbKBNWiOCv3ufNMAO7TXLoAsadVH6xBuB+XI4CICKSyhvquQ5wS4uzsBiXXZVwG7CFy6wzqewlQAiMAeV5DmyBPdD3buLdN4tn+MvrWF6pu9wRW5W5rcrctIAYkHsDYAj0aOa1ajalZ5o//hFM9QdW0h7JQ1BuZwEABAB4nA3GMQEAIAgAsIUwFD/ENQABiOMhu3aQCBTuvveDhw84tARY",
+      "sha256": "9edd3aaa2ef623a5a2c3bb0df4b6d63cb2e2eac6ec33fac2e97281ce09cef64f",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "prefix-zero-3-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvEAAABDRFJBTElTVOUAAABjbXBypAAAAAcBAAAtAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAQRV+MURELEWvdzsbCwl7TRRQsIvaJ6wZlYSWksPSoHsEbKKMrRPBX7/NmmAE2q3TXBrQ7KHOyGuC6nw8CICKSypPPXAu4ZMVRWIzLz0q4CdjC5dbpTPZSIASGgPI8BdbAFuh6N/Lum9k9/OVlIq+8u9wRW5XGVqXRDSAB5F4P6AMd6nks6k3Fk5g//haM4xdW0x7JQ1BuZwEABAB4nA3GMQEAIAgAsIUwFD/ENQABiOMhu3aQCBTuvveDhw84tARY",
+      "sha256": "8058abfeaf30937a4bc14b49a2e7f0206937755e50dce5e9c61a3a48bbcb3083",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "prefix-zero-16-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvMAAABDRFJBTElTVOcAAABjbXBypgAAABQBAAAtAAAAIAAAAENQbmcBAAQAeJxtjzEKwkAQRV+MURELEWvdzsbCwl63iyhYROwT1wRlYSWksPSoHsEbKCOrGHCqP/P+MH+gXptVsmsDxh1UfrJGZtf9fBAAEdHb8/S+FnBJi6NoIS47K9FNwBYus86kspcAITAElNdTYA1sga5nI88+NbuHdb2MJco3p9CqzG1V5qYBxIDc6wF9oFP77LH47ZSeaP7wWzDWL1bgHslDUG5nAQAEAHicDcYxAQAgCACwhTAUP8Q1AAGI4yG7dpAIFO6+94OHDzi0BFg=",
+      "sha256": "badb2b7e67602eafe69e2708d64f92c7dcddf1ba2160923da3367715c0e44814",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "nested-zeros-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvUAAABDRFJBTElTVOkAAABjbXByqgAAABwBAAArAAAAIAAAAENQbmcBAAQAeJxtjrEKwkAQRF+MURELEWu9zsbCwl7TJRiwSLBPPBOUgxOxsPRT/QT/QFm9QASn2J3ZWXY2idOsC2i7V0B5NBrgtluOPCAgEMnrU0niNOsA57w6OCm+LU7KyTZgKltIszqXGyngA2NAOT4HNsAW6Dtv4rwai4f/y9eRvFWPJE0WrpfSfJtuAREgqQNgCPRo4rlqKhXOQv74d28q8zfELh7JQ1BuZwEABAB4nAXBMQEAMAgAIOxgqP07bGwDI9hDSHw8FBqDRQYHNxcDnA==",
+      "sha256": "39bfb265f8f81fc78b52b9a51cdd0ae49db5d9c4c322a90d3fc0692f6d2337a7",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "mixed-zeros-literals-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvkAAABDRFJBTElTVO0AAABjbXByrQAAABEBAAAsAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAQRd8SIiIWIta6nY2Fhb2miyhYRO0T1wRlYUUsLD2aF/AENh7BGygTV4jghz/Mnz/MfGA+TZY1BcZtNPnOmg5wXo/aCggJEbykyOYdOKTFthQ3wGV7XYorYAuXYZ1JE0AYAHJP+34AzIAF0PBe13tfDB/Bbz+JJc5nIJ9WwOmYWykmBoSStgm0gDpVPMdVpaN+xB//onoyfwOBDiIgQ1BuZwEABAB4nAXBQREAIAgAsPExgaH8c/SlAAko43aReCg0BosTfDWnA3Q=",
+      "sha256": "a4fc75e757a6e66946b0239a35d35c6c2cc81bd10c94945802adfa5f882d177e",
+      "preview": false,
+      "svg": "",
+      "summary": "已解析 CorelDRAW RIFF 块目录，但没有得到可显示的基础矢量或缩略图。。"
+    },
+    {
+      "name": "malformed-root-tail-blue",
+      "category": "malformed-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvcAAABDRFJBTElTVOsAAABjbXByqgAAAAwBAAAtAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAURF+MURELEWvdzsbCwl7TJRiwiNgnrgnKwkpIYelRPYI3WPkSIYJTveHxmZ/E6aEPaHtSxcVogPtxPfGAgEAqDkji9NADbll5FhZj86sS7gKmtLmxOpO7FPCBKaAaXgI7YA8MGzdr3Derp//L20he+XTZEVtXhamrQneACJC9ETAGBrTz2rSbChchf/zDm4fyt3POvQFhwyRlQ1BuZwEABAB4nA3GMQEAIAgAsIUwFD/ENQABiOMhu3aQCBTuvveDhw84tARY",
+      "sha256": "7c808b83196b9d339da8a9747459c5d16cb3fd122ca3457e03f1b3c99efad588",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"2.94 -3.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"2.94\" y=\"-3.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M3 -2L4 -2L3 -3Z\" fill=\"#0000ff\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    },
+    {
+      "name": "short-root-tail-blue",
+      "category": "malformed-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvcAAABDRFJBTElTVOsAAABjbXByqgAAAAsBAAAtAAAAIAAAAENQbmcBAAQAeJxtjrsKwkAQRU+MURELEWvdzsbCV6/pEhQsEuwT1wRlYSWksPRT/QT/QBmJEMFbncthuLMLo7gNaHtU2dlogNthNXAAD08qL2AXRnELuCb5SViMTS9KuAmY3KbG6kTuIsAFhoCqeApsgT3Qrdyoct/MHu4vbwJ55dNlR2xZZKYsMt0AAkD2ekAf6FDPc11vyp/4/PF3Z+zL3/PF8g04jiD/Q1BuZwEABAB4nA3GMQEAIAgAsIUwFD/ENQABiOMhu3aQCBTuvveDhw84tARY",
+      "sha256": "b524ef62ea4082669db0563886ef315f58f464a7515c51047a922b0d34d117c1",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"2.94 -3.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"2.94\" y=\"-3.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M3 -2L4 -2L3 -3Z\" fill=\"#0000ff\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    },
+    {
+      "name": "malformed-nested-tail-blue",
+      "category": "malformed-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRvgAAABDRFJBTElTVOwAAABjbXByqgAAAAwBAAAuAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAURF+MURELEWvdzsbCwl7TJRiwiNgnrgnKwkpIYelRPYI3WPkSIYJTveHxmZ/E6aEPaHtSxcVogPtxPfGAgEAqDkji9NADbll5FhZj86sS7gKmtLmxOpO7FPCBKaAaXgI7YA8MGzdr3Derp//L20he+XTZEVtXhamrQneACJC9ETAGBrTz2rSbChchf/zDm4fyt3POvQFhwyRlQ1BuZwEABAB4nA3GQREAIAgAsHlHBELx17gEMIRhZK8lNgoHPb94iMUHNRcDaQ==",
+      "sha256": "85238409ea2149d0515627d3b41906c81f2c59ad3500d730f973e2eb33b73e70",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"2.94 -3.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"2.94\" y=\"-3.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M3 -2L4 -2L3 -3Z\" fill=\"#0000ff\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    },
+    {
+      "name": "odd-unknown-blue",
+      "category": "native-candidate",
+      "variant": "blue",
+      "color": 255,
+      "translation": [
+        3,
+        2
+      ],
+      "base64": "UklGRv4AAABDRFJBTElTVPIAAABjbXByrgAAABABAAAwAAAAJAAAAENQbmcBAAQAeJxtjjELglAUhT8zS6Ihorne1tLQ0F5uWlKD1q6ZUjx4IQ6N/dR+Qv+guGFg0FnudzgHzg2DKHaBzBzVer/dAFgtm/ysMwu4HRZDuQ6ORLyAMIjiLnBNipNwBzDpRQlLSxcm1SZLWkAE2MAIUDXPABnaAb06G9fZV/OH/csrX175eNlpA1WZ66rMM2n68jfQBwaAS1PPZdMpb+rxJ79bE+8NvMEgD0NQbmcBAAQAeJwNxjENACAMALASHgQgaj+TiwAEIGjr1YmNg0Di9l//Yw0KNVcDaA==",
+      "sha256": "7b6f2185ab42050caea0057d203ded95bc34787a28c604b5044abdc16342f62f",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"2.94 -3.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"2.94\" y=\"-3.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M3 -2L4 -2L3 -3Z\" fill=\"#0000ff\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "已在本机解开 LIST cmpr，并从 loda / trfd 记录还原 1 个基础矢量对象；即使文件没有 DISP 缩略图，也会显示真实矢量内容。"
+    }
+  ]
+}

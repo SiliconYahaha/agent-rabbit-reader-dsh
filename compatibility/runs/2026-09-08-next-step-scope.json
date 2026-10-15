@@ -1,0 +1,1028 @@
+{
+  "schemaVersion": 1,
+  "testedAt": "2026-09-08T07:05:02.932Z",
+  "status": "reproduced-step-lexical-scope-gaps",
+  "baseVersion": "1.4.133",
+  "summary": {
+    "originalFiles": 14,
+    "actualHostOpens": 14,
+    "chromeCanvasViews": 42,
+    "nativeAcceptedFiles": 12,
+    "nativeAcceptedWrongModels": 8,
+    "nativeAcceptedWrongCanvasViews": 24
+  },
+  "rootCauses": [
+    "Whole-file regular expressions treat comments and header string values as geometry records.",
+    "Entity reference extraction counts #digits inside string names as true graph links.",
+    "Physical line breaks and explicit print directives need distinct lexical handling."
+  ],
+  "originals": {
+    "schemaVersion": 1,
+    "oracle": "steputils 0.1",
+    "rows": [
+      {
+        "name": "control",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "b4f3c5093de277e57cb558a224c320989ae05a470247cb820e4463c9e0129330",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "comment-phantom-point",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);/* #99=CARTESIAN_POINT('',(999.,999.,999.)); */ENDSEC;END-ISO-10303-21;",
+        "sha256": "94c3018c4b724f451e18cf40695a4d1dfd1c35bcff436ced925b1a8c8525304e",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "comment-overwrite-point",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);/* #1=CARTESIAN_POINT('',(999.,999.,999.)); */ENDSEC;END-ISO-10303-21;",
+        "sha256": "c41c26859cb3da843a0602d40ac88de57756c1b4b42dff5c62a9cd5a54f17a8b",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "comment-token",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1/* comment */=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "4c8cab1b797c665603f7458c37e9cfd0d60ea574d52123b9d8a0a85efcd50f70",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "comment-coordinate",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,/* why ) ; ' */0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "374c809ab24b3972550b0a6c50d41b187da7a6328af174c0e239a108c32ba14f",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "comment-no-nesting",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);/* ignored /* #99=CARTESIAN_POINT('',(999.,999.,999.)); */ENDSEC;END-ISO-10303-21;",
+        "sha256": "15aee8a3bca87eb50f6ce2b4ea199135faab54f14f3b348459477b6a48152265",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "name-reference",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('#2',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "75d39bfbc995b36ca696da824eb199bf01811f362b1f6bdb92187382b50fc851",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('#2',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "name-reference-line",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('#2',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "de5e784573b7b7c493296e75d00b3fc3ac9e85dcfbba1defbb1b8fccc318d543",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('#2',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "header-phantom",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('#99=CARTESIAN_POINT('''',(999.,999.,999.));'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "a40f91fd2a6825d9530e66c2ed7e123bde976657c8e2bcae198c39c9c420f490",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "header-phantom-complex",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('#99=(CARTESIAN_POINT('''',(999.,999.,999.))); ENDSEC; DATA;'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "c8dccf1f53f60c605005c52db28e4717d1c0e0db2e6b590fca99d952e08cc610",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "comment-real-marker",
+        "source": "/* ISO-10303-21; #99=CARTESIAN_POINT('',(999.,999.,999.)); */ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "67cdddf1783cf550d6b408dd892c78026eec6782498a3d41469d7e1293704790",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "literal-comment-marker",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_POINT('/* literal */',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "35892d1253d76bc18378ac063fc2ec423bd8c889a005ff5b240ef3a84059701d",
+        "native": {
+          "records": {
+            "#1": "#1=CARTESIAN_POINT('/* literal */',(0.0,0.0,0.0));\n",
+            "#2": "#2=CARTESIAN_POINT('',(10.0,0.0,0.0));\n",
+            "#3": "#3=VERTEX_POINT('',#1);\n",
+            "#4": "#4=VERTEX_POINT('',#2);\n",
+            "#5": "#5=EDGE_CURVE('',#3,#4,#9,.T.);\n",
+            "#7": "#7=DIRECTION('',(1.0,0.0,0.0));\n",
+            "#8": "#8=VECTOR('',#7,1.0);\n",
+            "#9": "#9=LINE('',#1,#8);\n"
+          },
+          "instances": 8
+        }
+      },
+      {
+        "name": "split-keyword",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1=CARTESIAN_\nPOINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "b6a51e254a61a187a6ef0d77cc94ada96262ecc498aa514357a2cf8b80cb0e5c",
+        "native": {
+          "error": "Missing \";\" after simple entity instance: #1."
+        }
+      },
+      {
+        "name": "print-directive",
+        "source": "ISO-10303-21;HEADER;FILE_DESCRIPTION(('Original lexical scope probe'),'2;1');FILE_NAME('scope.step','',('author'),('local'),'probe','','');FILE_SCHEMA(('AUTOMOTIVE_DESIGN'));ENDSEC;DATA;#1\\N\\=CARTESIAN_POINT('',(0.,0.,0.));#2=CARTESIAN_POINT('',(10.,0.,0.));#3=VERTEX_POINT('',#1);#4=VERTEX_POINT('',#2);#5=EDGE_CURVE('',#3,#4,#9,.T.);#7=DIRECTION('',(1.,0.,0.));#8=VECTOR('',#7,1.);#9=LINE('',#1,#8);ENDSEC;END-ISO-10303-21;",
+        "sha256": "0ba1334e1872b67d0b4b65c0c89a29b339d3622ee73c3bfa4f6fee1bf14e19a8",
+        "native": {
+          "error": "Unexpected character \\ in line 1."
+        }
+      }
+    ],
+    "limits": [
+      "Original syntactically checked Part21 fragments with resolved curve references; no EXPRESS schema validator or CAD renderer executed.",
+      "Newline-within-keyword and print directives require normative checks where steputils rejects them.",
+      "Earlier seven-file screening used an unresolved curve reference; retained in prior ignored DXF outputs as screening only, not geometric oracle."
+    ]
+  },
+  "host": {
+    "schemaVersion": 1,
+    "testedAt": "2026-09-08T07:05:02.932Z",
+    "version": "1.4.133",
+    "oracle": "steputils 0.1",
+    "chrome": "152.0.7977.76",
+    "rows": [
+      {
+        "name": "control",
+        "sha256": "b4f3c5093de277e57cb558a224c320989ae05a470247cb820e4463c9e0129330",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "f32e652da4fd9f7a774890227f309e4932a5f206365ad9899b6e84a3f667d168",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "89118af3e76fe85c41a480e349eae3a5e33d53ec87120812efd3eed47a55cb0f",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "aa07a34e28ea119dd922710e2835fb870f07a40098b471be26c25ffdd015153e",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "comment-phantom-point",
+        "sha256": "94c3018c4b724f451e18cf40695a4d1dfd1c35bcff436ced925b1a8c8525304e",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              999,
+              999,
+              999
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "fe8184a5c257d5205168e2279df144546f2dcd2e07e72d21b7d75012a9d7c82a",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "8eab397c788fb934d33cc3e5670248875639930730fba8be7fbef275d032b377",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "c616a5659d27834f577d0221046548160a4f7f4942aa0baf4bdfc54457611843",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "comment-overwrite-point",
+        "sha256": "c41c26859cb3da843a0602d40ac88de57756c1b4b42dff5c62a9cd5a54f17a8b",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              999,
+              999,
+              999
+            ],
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "68e57abaa3a1bc9c88a16e107292a16e1d1a9d3cb0afb4c15bace2533153ade8",
+            "matchesControl": false,
+            "operations": 27,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "2797c7c77b17b999045c18d4f9f46ddc5ab9bd0ea26f02ed0e8a2d1a2fadccec",
+            "matchesControl": false,
+            "operations": 27,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "5970660bea8f906ba0aca1bfa41fdaa019f415fd6df5677d85920643f9f8e330",
+            "matchesControl": false,
+            "operations": 27,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "comment-token",
+        "sha256": "4c8cab1b797c665603f7458c37e9cfd0d60ea574d52123b9d8a0a85efcd50f70",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "comment-coordinate",
+        "sha256": "374c809ab24b3972550b0a6c50d41b187da7a6328af174c0e239a108c32ba14f",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "edges": [],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "comment-no-nesting",
+        "sha256": "15aee8a3bca87eb50f6ce2b4ea199135faab54f14f3b348459477b6a48152265",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              999,
+              999,
+              999
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "fe8184a5c257d5205168e2279df144546f2dcd2e07e72d21b7d75012a9d7c82a",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "8eab397c788fb934d33cc3e5670248875639930730fba8be7fbef275d032b377",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "c616a5659d27834f577d0221046548160a4f7f4942aa0baf4bdfc54457611843",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "name-reference",
+        "sha256": "75d39bfbc995b36ca696da824eb199bf01811f362b1f6bdb92187382b50fc851",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "70f24a8796bac8fcb55c9bd0150d3a9e16f6f55a39d813311e679e0bc02f5470",
+            "matchesControl": false,
+            "operations": 25,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "500a7696cbfe35cc78c6bab16fb223720f9ac318a5923fa7cc9413acc1e154be",
+            "matchesControl": false,
+            "operations": 25,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "430c43bbc2dd3f7d8afbf5a10711111e122f1ce734c59881844dd8a465463fc2",
+            "matchesControl": false,
+            "operations": 25,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "name-reference-line",
+        "sha256": "de5e784573b7b7c493296e75d00b3fc3ac9e85dcfbba1defbb1b8fccc318d543",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "f32e652da4fd9f7a774890227f309e4932a5f206365ad9899b6e84a3f667d168",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "89118af3e76fe85c41a480e349eae3a5e33d53ec87120812efd3eed47a55cb0f",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "aa07a34e28ea119dd922710e2835fb870f07a40098b471be26c25ffdd015153e",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "header-phantom",
+        "sha256": "a40f91fd2a6825d9530e66c2ed7e123bde976657c8e2bcae198c39c9c420f490",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              999,
+              999,
+              999
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "fe8184a5c257d5205168e2279df144546f2dcd2e07e72d21b7d75012a9d7c82a",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "8eab397c788fb934d33cc3e5670248875639930730fba8be7fbef275d032b377",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "c616a5659d27834f577d0221046548160a4f7f4942aa0baf4bdfc54457611843",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "header-phantom-complex",
+        "sha256": "c8dccf1f53f60c605005c52db28e4717d1c0e0db2e6b590fca99d952e08cc610",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "f32e652da4fd9f7a774890227f309e4932a5f206365ad9899b6e84a3f667d168",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "89118af3e76fe85c41a480e349eae3a5e33d53ec87120812efd3eed47a55cb0f",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "aa07a34e28ea119dd922710e2835fb870f07a40098b471be26c25ffdd015153e",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "comment-real-marker",
+        "sha256": "67cdddf1783cf550d6b408dd892c78026eec6782498a3d41469d7e1293704790",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              999,
+              999,
+              999
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "fe8184a5c257d5205168e2279df144546f2dcd2e07e72d21b7d75012a9d7c82a",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "8eab397c788fb934d33cc3e5670248875639930730fba8be7fbef275d032b377",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "c616a5659d27834f577d0221046548160a4f7f4942aa0baf4bdfc54457611843",
+            "matchesControl": false,
+            "operations": 31,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "literal-comment-marker",
+        "sha256": "35892d1253d76bc18378ac063fc2ec423bd8c889a005ff5b240ef3a84059701d",
+        "nativeAccepted": true,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "f32e652da4fd9f7a774890227f309e4932a5f206365ad9899b6e84a3f667d168",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "89118af3e76fe85c41a480e349eae3a5e33d53ec87120812efd3eed47a55cb0f",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "aa07a34e28ea119dd922710e2835fb870f07a40098b471be26c25ffdd015153e",
+            "matchesControl": true,
+            "operations": 27,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "split-keyword",
+        "sha256": "b6a51e254a61a187a6ef0d77cc94ada96262ecc498aa514357a2cf8b80cb0e5c",
+        "nativeAccepted": false,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      },
+      {
+        "name": "print-directive",
+        "sha256": "0ba1334e1872b67d0b4b65c0c89a29b339d3622ee73c3bfa4f6fee1bf14e19a8",
+        "nativeAccepted": false,
+        "error": "",
+        "model": {
+          "kind": "step-wireframe",
+          "points": [
+            [
+              10,
+              0,
+              0
+            ]
+          ],
+          "edges": [],
+          "faces": []
+        },
+        "views": [
+          {
+            "state": "isometric",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 1
+          },
+          {
+            "state": "drag",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 2
+          },
+          {
+            "state": "top",
+            "pixelSha256": "c296b9e5f7daeb274b0c01662597a69c149c8f5f4b35746a7b0bd19439b6fa13",
+            "matchesControl": false,
+            "operations": 21,
+            "ready": true,
+            "revision": 3
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "originalFiles": 14,
+      "actualHostOpens": 14,
+      "chromeCanvasViews": 42,
+      "nativeAcceptedFiles": 12,
+      "nativeAcceptedWrongModels": 8,
+      "nativeAcceptedWrongCanvasViews": 24
+    },
+    "limits": [
+      "Original syntactically checked Part21 fragments with resolved curve references; no EXPRESS schema validator or CAD renderer executed.",
+      "Newline-within-keyword and print directives require normative checks where steputils rejects them.",
+      "Earlier seven-file screening used an unresolved curve reference; retained in prior ignored DXF outputs as screening only, not geometric oracle.",
+      "Actual host Canvas commands replayed in Chrome; no WeChat WXML or physical devices.",
+      "Pixel identity compares equivalent original graphs; steputils is a lexical record oracle, not independent CAD rasterizer."
+    ]
+  },
+  "references": [
+    "https://www.steptools.com/stds/step/IS_final_p21e3.html",
+    "https://github.com/mozman/steputils"
+  ],
+  "limits": [
+    "Original syntactically checked Part21 fragments with resolved curve references; no EXPRESS schema validator or CAD renderer executed.",
+    "Newline-within-keyword and print directives require normative checks where steputils rejects them.",
+    "Earlier seven-file screening used an unresolved curve reference; retained in prior ignored DXF outputs as screening only, not geometric oracle.",
+    "Actual host Canvas commands replayed in Chrome; no WeChat WXML or physical devices.",
+    "Pixel identity compares equivalent original graphs; steputils is a lexical record oracle, not independent CAD rasterizer."
+  ]
+}

@@ -1,0 +1,1294 @@
+{
+  "at": "2026-09-13T08:46:08.766Z",
+  "status": "discovery-needs-native-execution",
+  "scenarios": 8,
+  "sources": 24,
+  "random": false,
+  "generation": "Known authored triangle, independent Node zlib recompression levels0/6/9; modify record size fields, table bounds and trailing records while keeping both compression checksums valid.",
+  "independentSource": "https://github.com/LibreOffice/libcdr/blob/77f52f694362ba0f01b3fdac6ebcc91e5debe400/src/lib/CDRParser.cpp#L565",
+  "important": "Native source maps a size through the table only when it is within range; otherwise it retains literal length. Do not reject every non-index as invalid. Native binary not currently located; no native rendering success or corruption verdict claimed.",
+  "records": [
+    {
+      "offset": 0,
+      "id": "LIST",
+      "index": 7,
+      "size": 252,
+      "depth": 0
+    },
+    {
+      "offset": 12,
+      "id": "fild",
+      "index": 5,
+      "size": 20,
+      "depth": 1
+    },
+    {
+      "offset": 40,
+      "id": "LIST",
+      "index": 6,
+      "size": 212,
+      "depth": 1
+    },
+    {
+      "offset": 52,
+      "id": "LIST",
+      "index": 4,
+      "size": 200,
+      "depth": 2
+    },
+    {
+      "offset": 64,
+      "id": "LIST",
+      "index": 3,
+      "size": 188,
+      "depth": 3
+    },
+    {
+      "offset": 76,
+      "id": "loda",
+      "index": 0,
+      "size": 83,
+      "depth": 4
+    },
+    {
+      "offset": 168,
+      "id": "LIST",
+      "index": 2,
+      "size": 84,
+      "depth": 4
+    },
+    {
+      "offset": 180,
+      "id": "trfd",
+      "index": 1,
+      "size": 72,
+      "depth": 5
+    }
+  ],
+  "rows": [
+    {
+      "name": "indexed-control-z0",
+      "category": "known-good",
+      "sha256": "28fa30e3f6c965c9d0099a94d494f64c6b218d07abf2ae420119f52b477b6ed1",
+      "base64": "UklGRmoBAABDRFJBTElTVF4BAABjbXByFwEAAAQBAAAzAAAAIAAAAENQbmcBAAQAeAEBBAH7/kxJU1QHAAAAZG9jIGZpbGQFAAAAeFY0EgEAAAAFAAUAAAAAAENb/wBMSVNUBgAAAHBhZ2VMSVNUBAAAAG9iaiBMSVNUAwAAAGxnb2Jsb2RhAAAAAFMAAAADAAAAFAAAACAAAAADAAAALAAAAEsAAABPAAAACgAAABQAAAAeAAAAAwAAAAAAAAAAAAAAMOADAAAAAAAAAAAAMOADAABASHhWNBIAAAAAAExJU1QCAAAAdHJmbHRyZmQBAAAASAAAAAEAAAAMAAAAEAAAAAgAAAAAAAAAAAAAAAAA8D8AAAAAAAAAAAAAAACAAR9BAAAAAAAAAAAAAAAAAADwPwAAAAAgQSdB4tcfZ0NQbmcBAAQAeAEBIADf/1MAAABIAAAAVAAAALwAAADIAAAAFAAAANQAAAD8AAAAQPAEWA==",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "indexed-control.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "370 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "370 B"
+        }
+      ]
+    },
+    {
+      "name": "literal-all-z0",
+      "category": "native-source-supported-candidate",
+      "sha256": "0a12fa6eba4e4922578056c26d5b1fcdedc545190e47765d8ab8384ca38a4dbc",
+      "base64": "UklGRmoBAABDRFJBTElTVF4BAABjbXByFwEAAAQBAAAzAAAAIAAAAENQbmcBAAQAeAEBBAH7/kxJU1T8AAAAZG9jIGZpbGQUAAAAeFY0EgEAAAAFAAUAAAAAAENb/wBMSVNU1AAAAHBhZ2VMSVNUyAAAAG9iaiBMSVNUvAAAAGxnb2Jsb2RhUwAAAFMAAAADAAAAFAAAACAAAAADAAAALAAAAEsAAABPAAAACgAAABQAAAAeAAAAAwAAAAAAAAAAAAAAMOADAAAAAAAAAAAAMOADAABASHhWNBIAAAAAAExJU1RUAAAAdHJmbHRyZmRIAAAASAAAAAEAAAAMAAAAEAAAAAgAAAAAAAAAAAAAAAAA8D8AAAAAAAAAAAAAAACAAR9BAAAAAAAAAAAAAAAAAADwPwAAAAAgQSdBJr8jokNQbmcBAAQAeAEBIADf/1MAAABIAAAAVAAAALwAAADIAAAAFAAAANQAAAD8AAAAQPAEWA==",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "literal-all.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "370 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "0"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "370 B"
+        }
+      ]
+    },
+    {
+      "name": "literal-root-z0",
+      "category": "native-source-supported-candidate",
+      "sha256": "0fe5e95066b04e4062c7111bf1c818c0e263c24ac21e12a6a8ba178590eb4c59",
+      "base64": "UklGRmoBAABDRFJBTElTVF4BAABjbXByFwEAAAQBAAAzAAAAIAAAAENQbmcBAAQAeAEBBAH7/kxJU1T8AAAAZG9jIGZpbGQFAAAAeFY0EgEAAAAFAAUAAAAAAENb/wBMSVNUBgAAAHBhZ2VMSVNUBAAAAG9iaiBMSVNUAwAAAGxnb2Jsb2RhAAAAAFMAAAADAAAAFAAAACAAAAADAAAALAAAAEsAAABPAAAACgAAABQAAAAeAAAAAwAAAAAAAAAAAAAAMOADAAAAAAAAAAAAMOADAABASHhWNBIAAAAAAExJU1QCAAAAdHJmbHRyZmQBAAAASAAAAAEAAAAMAAAAEAAAAAgAAAAAAAAAAAAAAAAA8D8AAAAAAAAAAAAAAACAAR9BAAAAAAAAAAAAAAAAAADwPwAAAAAgQSdB1+YgXENQbmcBAAQAeAEBIADf/1MAAABIAAAAVAAAALwAAADIAAAAFAAAANQAAAD8AAAAQPAEWA==",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "literal-root.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "370 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "0"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "370 B"
+        }
+      ]
+    },
+    {
+      "name": "literal-loda-z0",
+      "category": "native-source-supported-candidate",
+      "sha256": "efc1364d481fd8461009ca6c3d37b10ecd87a1468c50c423b029bffe6d5c1e70",
+      "base64": "UklGRmoBAABDRFJBTElTVF4BAABjbXByFwEAAAQBAAAzAAAAIAAAAENQbmcBAAQAeAEBBAH7/kxJU1QHAAAAZG9jIGZpbGQFAAAAeFY0EgEAAAAFAAUAAAAAAENb/wBMSVNUBgAAAHBhZ2VMSVNUBAAAAG9iaiBMSVNUAwAAAGxnb2Jsb2RhUwAAAFMAAAADAAAAFAAAACAAAAADAAAALAAAAEsAAABPAAAACgAAABQAAAAeAAAAAwAAAAAAAAAAAAAAMOADAAAAAAAAAAAAMOADAABASHhWNBIAAAAAAExJU1QCAAAAdHJmbHRyZmQBAAAASAAAAAEAAAAMAAAAEAAAAAgAAAAAAAAAAAAAAAAA8D8AAAAAAAAAAAAAAACAAR9BAAAAAAAAAAAAAAAAAADwPwAAAAAgQSdBHUIfukNQbmcBAAQAeAEBIADf/1MAAABIAAAAVAAAALwAAADIAAAAFAAAANQAAAD8AAAAQPAEWA==",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "literal-loda.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "370 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "5"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "370 B"
+        }
+      ]
+    },
+    {
+      "name": "zero-tail-control-z0",
+      "category": "native-source-supported-candidate",
+      "sha256": "f3b0aebe52bf1a1fd69dad5989b3a0662e1cbdab293df15b982859a8ee464ce6",
+      "base64": "UklGRm4BAABDRFJBTElTVGIBAABjbXByGwEAAAgBAAAzAAAAIAAAAENQbmcBAAQAeAEBCAH3/kxJU1QHAAAAZG9jIGZpbGQFAAAAeFY0EgEAAAAFAAUAAAAAAENb/wBMSVNUBgAAAHBhZ2VMSVNUBAAAAG9iaiBMSVNUAwAAAGxnb2Jsb2RhAAAAAFMAAAADAAAAFAAAACAAAAADAAAALAAAAEsAAABPAAAACgAAABQAAAAeAAAAAwAAAAAAAAAAAAAAMOADAAAAAAAAAAAAMOADAABASHhWNBIAAAAAAExJU1QCAAAAdHJmbHRyZmQBAAAASAAAAAEAAAAMAAAAEAAAAAgAAAAAAAAAAAAAAAAA8D8AAAAAAAAAAAAAAACAAR9BAAAAAAAAAAAAAAAAAADwPwAAAAAgQSdBAAAAAGCCH2dDUG5nAQAEAHgBASAA3/9TAAAASAAAAFQAAAC8AAAAyAAAABQAAADUAAAA/AAAAEDwBFg=",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "zero-tail-control.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "374 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "374 B"
+        }
+      ]
+    },
+    {
+      "name": "short-header-tail-z0",
+      "category": "malformed-candidate",
+      "sha256": "5305b0f938e4d16645017b6cb4912863fad458d9281a094b4429bd450de0899d",
+      "base64": "UklGRnEBAABDRFJBTElTVGUBAABjbXByHgEAAAsBAAAzAAAAIAAAAENQbmcBAAQAeAEBCwH0/kxJU1QHAAAAZG9jIGZpbGQFAAAAeFY0EgEAAAAFAAUAAAAAAENb/wBMSVNUBgAAAHBhZ2VMSVNUBAAAAG9iaiBMSVNUAwAAAGxnb2Jsb2RhAAAAAFMAAAADAAAAFAAAACAAAAADAAAALAAAAEsAAABPAAAACgAAABQAAAAeAAAAAwAAAAAAAAAAAAAAMOADAAAAAAAAAAAAMOADAABASHhWNBIAAAAAAExJU1QCAAAAdHJmbHRyZmQBAAAASAAAAAEAAAAMAAAAEAAAAAgAAAAAAAAAAAAAAAAA8D8AAAAAAAAAAAAAAACAAR9BAAAAAAAAAAAAAAAAAADwPwAAAAAgQSdBbG9kYTEyM8jnIZ1DUG5nAQAEAHgBASAA3/9TAAAASAAAAFQAAAC8AAAAyAAAABQAAADUAAAA/AAAAEDwBFg=",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "short-header-tail.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "377 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "377 B"
+        }
+      ]
+    },
+    {
+      "name": "impossible-length-tail-z0",
+      "category": "malformed-candidate",
+      "sha256": "104fcce2ecb552947b224b1ba878a2e004117138b4d347227d063a938a803fd5",
+      "base64": "UklGRnIBAABDRFJBTElTVGYBAABjbXByHwEAAAwBAAAzAAAAIAAAAENQbmcBAAQAeAEBDAHz/kxJU1QHAAAAZG9jIGZpbGQFAAAAeFY0EgEAAAAFAAUAAAAAAENb/wBMSVNUBgAAAHBhZ2VMSVNUBAAAAG9iaiBMSVNUAwAAAGxnb2Jsb2RhAAAAAFMAAAADAAAAFAAAACAAAAADAAAALAAAAEsAAABPAAAACgAAABQAAAAeAAAAAwAAAAAAAAAAAAAAMOADAAAAAAAAAAAAMOADAABASHhWNBIAAAAAAExJU1QCAAAAdHJmbHRyZmQBAAAASAAAAAEAAAAMAAAAEAAAAAgAAAAAAAAAAAAAAAAA8D8AAAAAAAAAAAAAAACAAR9BAAAAAAAAAAAAAAAAAADwPwAAAAAgQSdBbG9kYf/////yuiUDQ1BuZwEABAB4AQEgAN//UwAAAEgAAABUAAAAvAAAAMgAAAAUAAAA1AAAAPwAAABA8ARY",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "impossible-length-tail.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "378 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "378 B"
+        }
+      ]
+    },
+    {
+      "name": "oversized-root-z0",
+      "category": "malformed-candidate",
+      "sha256": "9528fc0fe04dd8d02d3abae52fd381551312321478278cba918cf481f0d968e3",
+      "base64": "UklGRmoBAABDRFJBTElTVF4BAABjbXByFwEAAAQBAAAzAAAAIAAAAENQbmcBAAQAeAEBBAH7/kxJU1QHAAAAZG9jIGZpbGQFAAAAeFY0EgEAAAAFAAUAAAAAAENb/wBMSVNUBgAAAHBhZ2VMSVNUBAAAAG9iaiBMSVNUAwAAAGxnb2Jsb2RhAAAAAFMAAAADAAAAFAAAACAAAAADAAAALAAAAEsAAABPAAAACgAAABQAAAAeAAAAAwAAAAAAAAAAAAAAMOADAAAAAAAAAAAAMOADAABASHhWNBIAAAAAAExJU1QCAAAAdHJmbHRyZmQBAAAASAAAAAEAAAAMAAAAEAAAAAgAAAAAAAAAAAAAAAAA8D8AAAAAAAAAAAAAAACAAR9BAAAAAAAAAAAAAAAAAADwPwAAAAAgQSdB4tcfZ0NQbmcBAAQAeAEBIADf/1MAAABIAAAAVAAAALwAAADIAAAAFAAAANQAAABgAQAAPoMDvQ==",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "oversized-root.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "370 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "0"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "370 B"
+        }
+      ]
+    },
+    {
+      "name": "indexed-control-z6",
+      "category": "known-good",
+      "sha256": "ed46ae69adadf942b276fe66c3c3331912ce3451a0d1de1fe0ff862a8e0411ce",
+      "base64": "UklGRvYAAABDRFJBTElTVOoAAABjbXByqQAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJxtjrEKwkAQRF+MURELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wT9QViJEcJp9s7OwE4Vx0gW0Par8bLQH3PbLkQN4iIPN4UUUxkkHuKbFSbgN2OyihF3AFDYzVqdyHwOyGwOq5jmwBXZAv84mdfbV4uH+8jqQKh8vf1pAVeamKnMt/QJA5gAYAj2aeq6a7u5Mff7kyp/5b+LXH2dDUG5nAQAEAHicDccxAQAgCACwhTAUP8Q1AAGI4yHflggU7rpx9oOHD0DwBFg=",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "indexed-control.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "254 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "254 B"
+        }
+      ]
+    },
+    {
+      "name": "literal-all-z6",
+      "category": "native-source-supported-candidate",
+      "sha256": "c7f206caa5a4ba81f104f20bbfd684eae1a04cef8e5cee6c95a698d0d2cf1363",
+      "base64": "UklGRvwAAABDRFJBTElTVPAAAABjbXByrwAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJxtjjEKwkAURF8IARELEWvdzsbCwl6DTYIBiwQbq8Q1QVlYCSksPZgH8AAewCN4AEH5EiGCAwNvGPh/ojBOnoC2W5Xvje4Dp/W05wAeHqLF5kUUxskNOKbFTvgK2OyghC+AKWxmrE5jQOwCckvVPAaWwApo192g7r6a3N1fngcy5ZPlTwJUZW6qMtcBIJadHaALtGjqMWumszP0+dMrf+S/ASa/I6JDUG5nAQAEAHicDccxAQAgCACwhTAUP8Q1AAGI4yHflggU7rpx9oOHD0DwBFg=",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "literal-all.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "260 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "0"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "260 B"
+        }
+      ]
+    },
+    {
+      "name": "literal-root-z6",
+      "category": "native-source-supported-candidate",
+      "sha256": "a4f14af0160d867ff8c9c71eb3929596ed98150835ad521da59dbdf8dcacf02a",
+      "base64": "UklGRvcAAABDRFJBTElTVOsAAABjbXByqgAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJxtjrEKwkAQRF+MERELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wQ8QlJUIEZxm3+ws7ERhnDwBbQ8qPxntAdfdYugAHuJgvX8RhXHSAS5pcRRuAzY7K2EXMIXNjNWp3MeA7EaAqnkGbIAt0KuzcZ19Nb+7v7wKpMrHy58WUJW5qcpcS78AkNkHBkCXph7Lprs5E58/ufKn/hvX5iBcQ1BuZwEABAB4nA3HMQEAIAgAsIUwFD/ENQABiOMh35YIFO66cfaDhw9A8ARY",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "literal-root.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "255 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "0"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "255 B"
+        }
+      ]
+    },
+    {
+      "name": "literal-loda-z6",
+      "category": "native-source-supported-candidate",
+      "sha256": "ca6b062b73dd4a110604f7efddb34c850cb6274faa2747a81a03b322c8e9720d",
+      "base64": "UklGRvYAAABDRFJBTElTVOoAAABjbXByqQAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeJxtjrEKwkAQRF+MURELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wT9QViJEcGDZNzvFThTGSRfQ9qjys9EecNsvRw7gIQ42hxdRGCcd4JoWJ+E2YLOLEnYBU9jMWJ3GgIzcxoCqeQ5sgR3Qr7NJnX21eLi/vA6kysfLnxZQlbmpylxLvwCQPQCGQI+mnqumuztTnz+58mf+Gx1CH7pDUG5nAQAEAHicDccxAQAgCACwhTAUP8Q1AAGI4yHflggU7rpx9oOHD0DwBFg=",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "literal-loda.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "254 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "5"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "254 B"
+        }
+      ]
+    },
+    {
+      "name": "zero-tail-control-z6",
+      "category": "native-source-supported-candidate",
+      "sha256": "fdcc39f0651ba62361893d821849b99aa102aac7fbab991d9cfb61d4a740661d",
+      "base64": "UklGRvcAAABDRFJBTElTVOsAAABjbXByqgAAAAgBAAAtAAAAIAAAAENQbmcBAAQAeJxtjrEKwkAQRF+MURELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wT9QNkRQcJt9M7OwE4Vx0gW0Par8bLQH3PbLkQN4iILN4UUUxkkHuKbFSbgN2OyihF3AFDYzVqdyHwPijQHV8BzYAjug32STJvvM4uH+8jqQKrWWPy2gKnNTlbmWfgEgewAMgR7f81x9q7sz9fmTK39W+29ggh9nQ1BuZwEABAB4nA3HMQEAIAgAsIUwFD/ENQABiOMh35YIFO66cfaDhw9A8ARY",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "zero-tail-control.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "255 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "255 B"
+        }
+      ]
+    },
+    {
+      "name": "short-header-tail-z6",
+      "category": "malformed-candidate",
+      "sha256": "5111cfdd9450163c5cd019236348852fa224ffde05a08509d8a085f2cd2590e7",
+      "base64": "UklGRvsAAABDRFJBTElTVO8AAABjbXByrgAAAAsBAAAtAAAAIAAAAENQbmcBAAQAeJxtjrsKwlAQRE+MURELEWu9nY2Fr16DTYKCRYKNVeI1QbkQCSks/VQ/wT9QViJEcJo9s7Ows/WDsAno7KiSs9EOcNsvehbgIA7WhxdbPwgbwDVKT8J1IIsvStgGTJrFJtOR3AeA7PqAKnkMbIAd0C6zQZl9NXnYv7zypMrHy58aUOSJKfJESz8PkNkBukCLqp7LqrtbQ5c/uXJHrvSezuZvyOchnUNQbmcBAAQAeJwNxzEBACAIALCFMBQ/xDUAAYjjId+WCBTuunH2g4cPQPAEWA==",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "short-header-tail.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "259 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "259 B"
+        }
+      ]
+    },
+    {
+      "name": "impossible-length-tail-z6",
+      "category": "malformed-candidate",
+      "sha256": "927be2828c661b2659e010622236dd1d305b4f1a84c49eb6c61dee2faa8b14c6",
+      "base64": "UklGRvsAAABDRFJBTElTVO8AAABjbXByrgAAAAwBAAAtAAAAIAAAAENQbmcBAAQAeJxtjrEKwkAQRF+MURELEWu9zsbCwl6DTYKCRYKNVWJMUA5OQgpLP9VP8A9OViJEcJp9s7OwswujuAtk5qTyi8484H5YjhzAQxxsjpZdGMUd4JYUZ+E2YNKrEnYBXZhUmyyR+wiQ3RhQNc+BLbAH+nU2qbOvFk/3l9eBVPl4+dMCqjLXVZln0i8AZA6AIdCjqdeq6R7O1OdPrvyZL72ttfYN8rolA0NQbmcBAAQAeJwNxzEBACAIALCFMBQ/xDUAAYjjId+WCBTuunH2g4cPQPAEWA==",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "impossible-length-tail.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "259 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "259 B"
+        }
+      ]
+    },
+    {
+      "name": "oversized-root-z6",
+      "category": "malformed-candidate",
+      "sha256": "7bc3ef4ff3adc265c895238c0f1da0f6d66cd6fd8eb49e00c7c9db1e300c1945",
+      "base64": "UklGRvcAAABDRFJBTElTVOsAAABjbXByqQAAAAQBAAAuAAAAIAAAAENQbmcBAAQAeJxtjrEKwkAQRF+MURELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wT9QViJEcJp9s7OwE4Vx0gW0Par8bLQH3PbLkQN4iIPN4UUUxkkHuKbFSbgN2OyihF3AFDYzVqdyHwOyGwOq5jmwBXZAv84mdfbV4uH+8jqQKh8vf1pAVeamKnMt/QJA5gAYAj2aeq6a7u5Mff7kyp/5b+LXH2dDUG5nAQAEAHicC2ZgYPBgYGAIYWBg2ANkn2BgYBAB8q8wMDAkMDIwAAA+gwO9",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "oversized-root.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "255 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "0"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "255 B"
+        }
+      ]
+    },
+    {
+      "name": "indexed-control-z9",
+      "category": "known-good",
+      "sha256": "1af8ea02c2310701a64691f038a87fa163145c3ba38de42dd42f395104fca5b7",
+      "base64": "UklGRvYAAABDRFJBTElTVOoAAABjbXByqQAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeNptjrEKwkAQRF+MURELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wT9QViJEcJp9s7OwE4Vx0gW0Par8bLQH3PbLkQN4iIPN4UUUxkkHuKbFSbgN2OyihF3AFDYzVqdyHwOyGwOq5jmwBXZAv84mdfbV4uH+8jqQKh8vf1pAVeamKnMt/QJA5gAYAj2aeq6a7u5Mff7kyp/5b+LXH2dDUG5nAQAEAHjaDccxAQAgCACwhTAUP8Q1AAGI4yHflggU7rpx9oOHD0DwBFg=",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "indexed-control.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "254 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "254 B"
+        }
+      ]
+    },
+    {
+      "name": "literal-all-z9",
+      "category": "native-source-supported-candidate",
+      "sha256": "0ec96d3ee78ac654a5f7cdfc1379bb065be5b9c55b4940e2daf8570804e56be4",
+      "base64": "UklGRvwAAABDRFJBTElTVPAAAABjbXByrwAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeNptjjEKwkAURF8IARELEWvdzsbCwl6DTYIBiwQbq8Q1QVlYCSksPZgH8AAewCN4AEH5EiGCAwNvGPh/ojBOnoC2W5Xvje4Dp/W05wAeHqLF5kUUxskNOKbFTvgK2OyghC+AKWxmrE5jQOwCckvVPAaWwApo192g7r6a3N1fngcy5ZPlTwJUZW6qMtcBIJadHaALtGjqMWumszP0+dMrf+S/ASa/I6JDUG5nAQAEAHjaDccxAQAgCACwhTAUP8Q1AAGI4yHflggU7rpx9oOHD0DwBFg=",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "literal-all.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "260 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "0"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "260 B"
+        }
+      ]
+    },
+    {
+      "name": "literal-root-z9",
+      "category": "native-source-supported-candidate",
+      "sha256": "ac0ee2ddfa20957d5775b79644084d12f82ed962994d7660eb6e594e81daa481",
+      "base64": "UklGRvcAAABDRFJBTElTVOsAAABjbXByqgAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeNptjrEKwkAQRF+MERELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wQ8QlJUIEZxm3+ws7ERhnDwBbQ8qPxntAdfdYugAHuJgvX8RhXHSAS5pcRRuAzY7K2EXMIXNjNWp3MeA7EaAqnkGbIAt0KuzcZ19Nb+7v7wKpMrHy58WUJW5qcpcS78AkNkHBkCXph7Lprs5E58/ufKn/hvX5iBcQ1BuZwEABAB42g3HMQEAIAgAsIUwFD/ENQABiOMh35YIFO66cfaDhw9A8ARY",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "literal-root.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "255 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "0"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "255 B"
+        }
+      ]
+    },
+    {
+      "name": "literal-loda-z9",
+      "category": "native-source-supported-candidate",
+      "sha256": "b3238cc5ecb12a01949665be061432891e98325ba21f7f74116465aa92ec1b45",
+      "base64": "UklGRvYAAABDRFJBTElTVOoAAABjbXByqQAAAAQBAAAtAAAAIAAAAENQbmcBAAQAeNptjrEKwkAQRF+MURELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wT9QViJEcGDZNzvFThTGSRfQ9qjys9EecNsvRw7gIQ42hxdRGCcd4JoWJ+E2YLOLEnYBU9jMWJ3GgIzcxoCqeQ5sgR3Qr7NJnX21eLi/vA6kysfLnxZQlbmpylxLvwCQPQCGQI+mnqumuztTnz+58mf+Gx1CH7pDUG5nAQAEAHjaDccxAQAgCACwhTAUP8Q1AAGI4yHflggU7rpx9oOHD0DwBFg=",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "literal-loda.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "254 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "5"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "254 B"
+        }
+      ]
+    },
+    {
+      "name": "zero-tail-control-z9",
+      "category": "native-source-supported-candidate",
+      "sha256": "5a7801548b48fc48d4645cbb310a96f6bd3f5c2b4d7cd3976c9d2400a1b34cd8",
+      "base64": "UklGRvcAAABDRFJBTElTVOsAAABjbXByqgAAAAgBAAAtAAAAIAAAAENQbmcBAAQAeNptjrEKwkAQRF+MURELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wT9QNkRQcJt9M7OwE4Vx0gW0Par8bLQH3PbLkQN4iILN4UUUxkkHuKbFSbgN2OyihF3AFDYzVqdyHwPijQHV8BzYAjug32STJvvM4uH+8jqQKrWWPy2gKnNTlbmWfgEgewAMgR7f81x9q7sz9fmTK39W+29ggh9nQ1BuZwEABAB42g3HMQEAIAgAsIUwFD/ENQABiOMh35YIFO66cfaDhw9A8ARY",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "zero-tail-control.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "255 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "255 B"
+        }
+      ]
+    },
+    {
+      "name": "short-header-tail-z9",
+      "category": "malformed-candidate",
+      "sha256": "9eadfb4178cc8918731ea3bdbff6a61193c1a1a8784e48b89d7f026a6f3267d5",
+      "base64": "UklGRvsAAABDRFJBTElTVO8AAABjbXByrgAAAAsBAAAtAAAAIAAAAENQbmcBAAQAeNptjrsKwlAQRE+MURELEWu9nY2Fr16DTYKCRYKNVeI1QbkQCSks/VQ/wT9QViJEcJo9s7Ows/WDsAno7KiSs9EOcNsvehbgIA7WhxdbPwgbwDVKT8J1IIsvStgGTJrFJtOR3AeA7PqAKnkMbIAd0C6zQZl9NXnYv7zypMrHy58aUOSJKfJESz8PkNkBukCLqp7LqrtbQ5c/uXJHrvSezuZvyOchnUNQbmcBAAQAeNoNxzEBACAIALCFMBQ/xDUAAYjjId+WCBTuunH2g4cPQPAEWA==",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "short-header-tail.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "259 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "259 B"
+        }
+      ]
+    },
+    {
+      "name": "impossible-length-tail-z9",
+      "category": "malformed-candidate",
+      "sha256": "b9a34694d211d4c60c0cb4e53a9a86b2806a9daf66d960ebbee7935434e97711",
+      "base64": "UklGRvsAAABDRFJBTElTVO8AAABjbXByrgAAAAwBAAAtAAAAIAAAAENQbmcBAAQAeNptjrEKwkAQRF+MURELEWu9zsbCwl6DTYKCRYKNVWJMUA5OQgpLP9VP8A9OViJEcJp9s7OwswujuAtk5qTyi8484H5YjhzAQxxsjpZdGMUd4JYUZ+E2YNKrEnYBXZhUmyyR+wiQ3RhQNc+BLbAH+nU2qbOvFk/3l9eBVPl4+dMCqjLXVZln0i8AZA6AIdCjqdeq6R7O1OdPrvyZL72ttfYN8rolA0NQbmcBAAQAeNoNxzEBACAIALCFMBQ/xDUAAYjjId+WCBTuunH2g4cPQPAEWA==",
+      "preview": true,
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"1.94 -4.06 1.12 1.12\" preserveAspectRatio=\"xMidYMid meet\" data-cdr-vectors=\"1\"><rect x=\"1.94\" y=\"-4.06\" width=\"1.12\" height=\"1.12\" fill=\"#fffdf8\"/><defs></defs><path d=\"M2 -3L3 -3L2 -4Z\" fill=\"#ff5b43\" fill-rule=\"evenodd\" stroke=\"none\" stroke-width=\"0\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/></svg>",
+      "summary": "\u5df2\u5728\u672c\u673a\u89e3\u5f00 LIST cmpr\uff0c\u5e76\u4ece loda / trfd \u8bb0\u5f55\u8fd8\u539f 1 \u4e2a\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61\uff1b\u5373\u4f7f\u6587\u4ef6\u6ca1\u6709 DISP \u7f29\u7565\u56fe\uff0c\u4e5f\u4f1a\u663e\u793a\u771f\u5b9e\u77e2\u91cf\u5185\u5bb9\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "impossible-length-tail.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "259 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "8"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "1"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "3"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "259 B"
+        }
+      ]
+    },
+    {
+      "name": "oversized-root-z9",
+      "category": "malformed-candidate",
+      "sha256": "adf3750b9855da183a33ef0ff668104538daf2ec280453f7d864e4ffa5bce07e",
+      "base64": "UklGRvcAAABDRFJBTElTVOsAAABjbXByqQAAAAQBAAAuAAAAIAAAAENQbmcBAAQAeNptjrEKwkAQRF+MURELEWu9zsbCwl6DTYIBiwQbq8QzQTk4CSks/VQ/wT9QViJEcJp9s7OwE4Vx0gW0Par8bLQH3PbLkQN4iIPN4UUUxkkHuKbFSbgN2OyihF3AFDYzVqdyHwOyGwOq5jmwBXZAv84mdfbV4uH+8jqQKh8vf1pAVeamKnMt/QJA5gAYAj2aeq6a7u5Mff7kyp/5b+LXH2dDUG5nAQAEAHjaC2ZgYPBgYGAIYWBg2ANkn2BgYBAB8q8wMDAkMDIwAAA+gwO9",
+      "preview": false,
+      "svg": "",
+      "summary": "\u5df2\u89e3\u6790 CorelDRAW RIFF \u5757\u76ee\u5f55\uff0c\u4f46\u6ca1\u6709\u5f97\u5230\u53ef\u663e\u793a\u7684\u57fa\u7840\u77e2\u91cf\u6216\u7f29\u7565\u56fe\u3002\u3002",
+      "metadata": [
+        {
+          "label": "\u6587\u4ef6",
+          "value": "oversized-root.cdr"
+        },
+        {
+          "label": "\u5b9e\u9645\u8bfb\u53d6",
+          "value": "255 B"
+        },
+        {
+          "label": "\u5bb9\u5668\u6807\u8bc6",
+          "value": "CDRA"
+        },
+        {
+          "label": "\u6587\u6863\u7248\u672c",
+          "value": "1000"
+        },
+        {
+          "label": "RIFF \u5757",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u6570\u636e\u5217\u8868",
+          "value": "1"
+        },
+        {
+          "label": "\u538b\u7f29\u5185\u90e8\u8bb0\u5f55",
+          "value": "0"
+        },
+        {
+          "label": "\u57fa\u7840\u77e2\u91cf\u5bf9\u8c61",
+          "value": "0"
+        },
+        {
+          "label": "\u77e2\u91cf\u63a7\u5236\u70b9",
+          "value": "0"
+        },
+        {
+          "label": "\u58f0\u660e\u5927\u5c0f",
+          "value": "255 B"
+        }
+      ]
+    }
+  ]
+}

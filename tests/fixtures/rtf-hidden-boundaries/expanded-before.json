@@ -1,0 +1,1581 @@
+{
+  "schemaVersion": 1,
+  "nativeVersion": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "nativeEmptyCellPolicy": "Writer emits an empty p/br paragraph for the character-style empty middle cell in two views. Its innerText is exactly newline, while the cell remains empty and in position. Raw native output is preserved.",
+  "cases": [
+    {
+      "name": "table-hidden-cell-mark-direct",
+      "shape": "hidden-cell-mark",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\v \\cell \\v0 RIGHT\\cell \\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "a6ad47c0e9f1aa571bf6e9eee66a42e932420007989d7bf1e5f798fbbd79351b",
+      "reader": "BEFORE\nLEFTRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-hidden-cell-mark-direct",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "bcb4bfa6e1cfffa9e29368671801f609ca0036b04fc28cc60b4e8768aaa7e367"
+    },
+    {
+      "name": "table-hidden-cell-mark-character-style",
+      "shape": "hidden-cell-mark",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\cs1 \\cell \\cs2 RIGHT\\cell \\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "aabd7299b0e9bee91ca17589303f6780158abe23a5f7d677f8d8d89b465e6ef2",
+      "reader": "BEFORE\nLEFTRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-hidden-cell-mark-character-style",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "bcb4bfa6e1cfffa9e29368671801f609ca0036b04fc28cc60b4e8768aaa7e367"
+    },
+    {
+      "name": "table-hidden-cell-mark-field-result",
+      "shape": "hidden-cell-mark",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\v \\cell \\v0 RIGHT\\cell \\row }}\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "699ec4a949e7d7ba2b1b878b6ce18ca5d75b17116d361e6669383fa00f047b53",
+      "reader": "BEFORE\nLEFTRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-hidden-cell-mark-field-result",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "71e0ac54c560a35d5c51e63242e8b875bee37133550c8c749c17cb120aed1f0e"
+    },
+    {
+      "name": "table-hidden-content-and-cell-direct",
+      "shape": "hidden-content-and-cell",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT{\\v HIDDEN\\cell }RIGHT\\cell \\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "68dbbeaea2713b27ccfa946995720d6006e68b92d957c25aa9bd0e966e1a27c1",
+      "reader": "BEFORE\nLEFTRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-hidden-content-and-cell-direct",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font><font face=\"Arial, serif\"><span style=\"display: none\">HIDDEN</span></font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "8e7400c10d6bab47c25ea5e6c42876b60f44654d19d090cd238c72898ee8c99f"
+    },
+    {
+      "name": "table-hidden-content-and-cell-character-style",
+      "shape": "hidden-content-and-cell",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT{\\cs1 HIDDEN\\cell }RIGHT\\cell \\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "40474fcae2c24c479060d5dd121cb3a1b9b3da0e1793bfd67c14ae7a77e31ab9",
+      "reader": "BEFORE\nLEFTRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-hidden-content-and-cell-character-style",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font><span style=\"display: none\"><font face=\"Arial, serif\">HIDDEN</font></span></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "11d08518b56da94f33093297bfb1173e5a61f76fe134f85dbd3e9c326a7d7b6e"
+    },
+    {
+      "name": "table-hidden-content-and-cell-field-result",
+      "shape": "hidden-content-and-cell",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\trowd\\cellx2000\\cellx4000\\intbl LEFT{\\v HIDDEN\\cell }RIGHT\\cell \\row }}\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "dbaa220ea3e119f927104be8be453ca1b2fd8e03de21cea253d85577514e42db",
+      "reader": "BEFORE\nLEFTRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-hidden-content-and-cell-field-result",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font><font face=\"Arial, serif\"><span style=\"display: none\">HIDDEN</span></font></a></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "0bb4752d4195469c9906459c006e343d95faec52f466da6efb5fd1d8f09ce37c"
+    },
+    {
+      "name": "table-empty-hidden-middle-direct",
+      "shape": "empty-hidden-middle",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\cellx6000\\intbl LEFT\\cell {\\v \\cell }RIGHT\\cell \\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\t\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "8e78231a51600195354cbc5c395234dd74bae1cc52b335d307369eabf500bedd",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-empty-hidden-middle-direct",
+        "visible": "BEFORE\n\nLEFT\n\n\t\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "16d2b67bbcbe4b4e696c7f7357c74299c7c9c24df09ed4afbff7299e76775f16"
+    },
+    {
+      "name": "table-empty-hidden-middle-character-style",
+      "shape": "empty-hidden-middle",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\cellx6000\\intbl LEFT\\cell {\\cs1 \\cell }RIGHT\\cell \\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\t\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "9811f0d2e0ad1a5e6aa0b26bc1af94eac8db2e596966cb53123f7d8c95967bf6",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-empty-hidden-middle-character-style",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\n\n\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "\n",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "\n",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><br/>\n\n\t\t\t</p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "0af0a3c9894225d6e003fcad3d17ca4a3eb79ece79a66bfcf61932554ecc78e7"
+    },
+    {
+      "name": "table-empty-hidden-middle-field-result",
+      "shape": "empty-hidden-middle",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\trowd\\cellx2000\\cellx4000\\cellx6000\\intbl LEFT\\cell {\\v \\cell }RIGHT\\cell \\row }}\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\t\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "976392c69c6fa100510c5130c4e48b92738a0d1b31c76d6b04c946865555c783",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-empty-hidden-middle-field-result",
+        "visible": "BEFORE\n\nLEFT\n\n\t\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "e177aa59911e44ff8800b31ded8dd75f5ffb8fdce67304c6062ec618749a9a52"
+    },
+    {
+      "name": "table-whole-hidden-middle-direct",
+      "shape": "whole-hidden-middle",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\cellx6000\\intbl LEFT\\cell {\\v HIDDEN\\cell }RIGHT\\cell \\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\t\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "60870974672518381e4b3831e7bcdecf471de3a551cfc00320667695139cf490",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-whole-hidden-middle-direct",
+        "visible": "BEFORE\n\nLEFT\n\n\t\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "16d2b67bbcbe4b4e696c7f7357c74299c7c9c24df09ed4afbff7299e76775f16"
+    },
+    {
+      "name": "table-whole-hidden-middle-character-style",
+      "shape": "whole-hidden-middle",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\cellx6000\\intbl LEFT\\cell {\\cs1 HIDDEN\\cell }RIGHT\\cell \\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\t\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "d6d553a4efeff71ea8c373afeea3c2f361518e9693a7f39e050266de6e4d142d",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-whole-hidden-middle-character-style",
+        "visible": "BEFORE\n\nLEFT\n\n\t\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "16d2b67bbcbe4b4e696c7f7357c74299c7c9c24df09ed4afbff7299e76775f16"
+    },
+    {
+      "name": "table-whole-hidden-middle-field-result",
+      "shape": "whole-hidden-middle",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\trowd\\cellx2000\\cellx4000\\cellx6000\\intbl LEFT\\cell {\\v HIDDEN\\cell }RIGHT\\cell \\row }}\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\t\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "1405fed6e1be08fa14baac861b251da09bdf406e44447d21c46809d7dbe69873",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "writer": {
+        "name": "table-whole-hidden-middle-field-result",
+        "visible": "BEFORE\n\nLEFT\n\n\t\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "e177aa59911e44ff8800b31ded8dd75f5ffb8fdce67304c6062ec618749a9a52"
+    },
+    {
+      "name": "table-hidden-row-end-direct",
+      "shape": "hidden-row-end",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\cell RIGHT\\cell {\\v \\row }\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "e48bf3ffb4c2b9ade925c01cb6d878bdee7bd6e6ed0bf57bd6b50aab96e1a8f5",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\nAFTER",
+      "writer": {
+        "name": "table-hidden-row-end-direct",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "bcb4bfa6e1cfffa9e29368671801f609ca0036b04fc28cc60b4e8768aaa7e367"
+    },
+    {
+      "name": "table-hidden-row-end-character-style",
+      "shape": "hidden-row-end",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\cell RIGHT\\cell {\\cs1 \\row }\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "268048a63136b6d81796ea49c965f2429023f125247b14c0d2d9d5d64d407b4a",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\nAFTER",
+      "writer": {
+        "name": "table-hidden-row-end-character-style",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "bcb4bfa6e1cfffa9e29368671801f609ca0036b04fc28cc60b4e8768aaa7e367"
+    },
+    {
+      "name": "table-hidden-row-end-field-result",
+      "shape": "hidden-row-end",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\cell RIGHT\\cell {\\v \\row }}}\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "4a7b59c5835788fe27113e1067b9633c624538a794d58bfb4ddba12eaeca2b12",
+      "reader": "BEFORE\nLEFT\tRIGHT\t\nAFTER",
+      "writer": {
+        "name": "table-hidden-row-end-field-result",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "71e0ac54c560a35d5c51e63242e8b875bee37133550c8c749c17cb120aed1f0e"
+    },
+    {
+      "name": "table-hidden-final-cell-and-row-direct",
+      "shape": "hidden-final-cell-and-row",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\cell RIGHT{\\v \\cell \\row }\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "0cab463090acf38a80353d74b75f35cadd40a477a8295eaf82a76379e0cfceb7",
+      "reader": "BEFORE\nLEFT\tRIGHT\nAFTER",
+      "writer": {
+        "name": "table-hidden-final-cell-and-row-direct",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "bcb4bfa6e1cfffa9e29368671801f609ca0036b04fc28cc60b4e8768aaa7e367"
+    },
+    {
+      "name": "table-hidden-final-cell-and-row-character-style",
+      "shape": "hidden-final-cell-and-row",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\cell RIGHT{\\cs1 \\cell \\row }\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "250d535035e6e9588c60e381b0dc3866fcbe0966aaf936d1f2e61aa657e2cc1d",
+      "reader": "BEFORE\nLEFT\tRIGHT\nAFTER",
+      "writer": {
+        "name": "table-hidden-final-cell-and-row-character-style",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "bcb4bfa6e1cfffa9e29368671801f609ca0036b04fc28cc60b4e8768aaa7e367"
+    },
+    {
+      "name": "table-hidden-final-cell-and-row-field-result",
+      "shape": "hidden-final-cell-and-row",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\trowd\\cellx2000\\cellx4000\\intbl LEFT\\cell RIGHT{\\v \\cell \\row }}}\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "db9e64497aeef694a410dfa1b12f7f7c7c83b2f980f7b74936ff431fe5bbe35d",
+      "reader": "BEFORE\nLEFT\tRIGHT\nAFTER",
+      "writer": {
+        "name": "table-hidden-final-cell-and-row-field-result",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "71e0ac54c560a35d5c51e63242e8b875bee37133550c8c749c17cb120aed1f0e"
+    },
+    {
+      "name": "table-whole-hidden-row-direct",
+      "shape": "whole-hidden-row",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\v HIDDEN\\cell SECRET\\cell \\row }\\pard\\par AFTER}",
+      "expected": "BEFORE\n\t\t\n\nAFTER",
+      "expectedCells": [
+        "",
+        ""
+      ],
+      "sha256": "0b47b4884f92cf43567d03398704457b844fb970467c299df4f49900f5b318c2",
+      "reader": "BEFORE\n\nAFTER",
+      "writer": {
+        "name": "table-whole-hidden-row-direct",
+        "visible": "BEFORE\n\n\t\n\n\n\n\nAFTER",
+        "cells": [
+          "",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "57414c9a922a9804255cb6277d98662d837c980d28025ae8ea2671148a2db76b"
+    },
+    {
+      "name": "table-whole-hidden-row-character-style",
+      "shape": "whole-hidden-row",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\cs1 HIDDEN\\cell SECRET\\cell \\row }\\pard\\par AFTER}",
+      "expected": "BEFORE\n\t\t\n\nAFTER",
+      "expectedCells": [
+        "",
+        ""
+      ],
+      "sha256": "892624891bafd6dc0788ca512f95abe0d88fad23c0a81346c977b5a250fe9d29",
+      "reader": "BEFORE\n\nAFTER",
+      "writer": {
+        "name": "table-whole-hidden-row-character-style",
+        "visible": "BEFORE\n\n\t\n\n\n\n\nAFTER",
+        "cells": [
+          "",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "57414c9a922a9804255cb6277d98662d837c980d28025ae8ea2671148a2db76b"
+    },
+    {
+      "name": "table-whole-hidden-row-field-result",
+      "shape": "whole-hidden-row",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\trowd\\cellx2000\\cellx4000\\intbl {\\v HIDDEN\\cell SECRET\\cell \\row }}}\\pard\\par AFTER}",
+      "expected": "BEFORE\n\t\t\n\nAFTER",
+      "expectedCells": [
+        "",
+        ""
+      ],
+      "sha256": "ca5e7be0433b33264ceff00d34c1a95def647e335051ef2a7731043ce1c2516b",
+      "reader": "BEFORE\n\nAFTER",
+      "writer": {
+        "name": "table-whole-hidden-row-field-result",
+        "visible": "BEFORE\n\n\t\n\n\n\n\nAFTER",
+        "cells": [
+          "",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "13ab6ec5692c9973b99ae032e9f20e7580a90904ade58dcd2139496224480c34"
+    },
+    {
+      "name": "table-nested-visible-island-direct",
+      "shape": "nested-visible-island",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\v HIDDEN{\\v0 LEFT}\\cell SECRET{\\v0 RIGHT}\\cell \\row }\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "80881b2d8c1262f38cb91625161200196b6a56e11305f5d89e3575a1f6a6cad4",
+      "reader": "BEFORE\nLEFTRIGHT\nAFTER",
+      "writer": {
+        "name": "table-nested-visible-island-direct",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\"><span style=\"display: none\">HIDDEN</span></font><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\"><span style=\"display: none\">SECRET</span></font><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "d56b3e1bd4a71c4f0c9c7d729e0c8111f7665c6b177f8e8eb29c4803647f742d"
+    },
+    {
+      "name": "table-nested-visible-island-character-style",
+      "shape": "nested-visible-island",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx2000\\cellx4000\\intbl {\\cs1 HIDDEN{\\cs2 LEFT}\\cell SECRET{\\cs2 RIGHT}\\cell \\row }\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "afadef551a800bfc2f4588043e2cca99aeeac589de6cd929c0b333b8a06618db",
+      "reader": "BEFORE\nLEFTRIGHT\nAFTER",
+      "writer": {
+        "name": "table-nested-visible-island-character-style",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><span style=\"display: none\"><font face=\"Arial, serif\">HIDDEN</font></span><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><span style=\"display: none\"><font face=\"Arial, serif\">SECRET</font></span><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "808a51016ad8fdf0989b0e7f6940112f93aa438528fb3f9f171bfa8482e5e091"
+    },
+    {
+      "name": "table-nested-visible-island-field-result",
+      "shape": "nested-visible-island",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\trowd\\cellx2000\\cellx4000\\intbl {\\v HIDDEN{\\v0 LEFT}\\cell SECRET{\\v0 RIGHT}\\cell \\row }}}\\pard\\par AFTER}",
+      "expected": "BEFORE\nLEFT\tRIGHT\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "5287903d6be14d01dc7498f09e8acdd50b3bb5a9e1ecab670dcd303cd21356d8",
+      "reader": "BEFORE\nLEFTRIGHT\nAFTER",
+      "writer": {
+        "name": "table-nested-visible-island-field-result",
+        "visible": "BEFORE\n\nLEFT\n\n\t\n\nRIGHT\n\n\n\n\nAFTER",
+        "cells": [
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "LEFT",
+          "RIGHT",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"133\"/>\n\t<col width=\"133\"/>\n\t<tr valign=\"top\">\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\"><span style=\"display: none\">HIDDEN</span></font><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t</td>\n\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\"><span style=\"display: none\">SECRET</span></font><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "82af60704d0a5dcf13db33cd7dc78c1f4f66bfcdfaadf14e6c84f040b7845f60"
+    },
+    {
+      "name": "nested-hidden-cell-mark-direct",
+      "shape": "hidden-cell-mark",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\v \\nestcell \\v0 RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "4b12080ca515be4a0888920cc592a207c2f1d107b93acc50fe7464cc35a79bed",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-cell-mark-direct",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "1fa30091b6eff002990250f61a21515da221e9c6bb77d11711791ea298c15545"
+    },
+    {
+      "name": "nested-hidden-cell-mark-character-style",
+      "shape": "hidden-cell-mark",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\cs1 \\nestcell \\cs2 RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "b18a0fb7f20f4644eb697a70eea43d75f004edce98aea58d5be860f563dfc626",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-cell-mark-character-style",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "1fa30091b6eff002990250f61a21515da221e9c6bb77d11711791ea298c15545"
+    },
+    {
+      "name": "nested-hidden-cell-mark-field-result",
+      "shape": "hidden-cell-mark",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\intbl\\itap2 LEFT\\v \\nestcell \\v0 RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "e678cb6e1f3af33527a39a8e13928992b755d73718c8534f61109e345a54a47d",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-cell-mark-field-result",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "9d1e4b8069e24def93fa8900f325d2e16fc37f5df849bb4a1548deef54a236b4"
+    },
+    {
+      "name": "nested-hidden-content-and-cell-direct",
+      "shape": "hidden-content-and-cell",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT{\\v HIDDEN\\nestcell }RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "fbd3e0938bd47c52eb77896391bee5e8f316171beb778593d2becb70d7d1ab59",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-content-and-cell-direct",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font><font face=\"Arial, serif\"><span style=\"display: none\">HIDDEN</span></font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "6242861bfd3ee02f970cb2f67b54d515e02d383489ddfb0df8a87d36305f2660"
+    },
+    {
+      "name": "nested-hidden-content-and-cell-character-style",
+      "shape": "hidden-content-and-cell",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT{\\cs1 HIDDEN\\nestcell }RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "dc619f7b36e9c4c558c89f82354f1c24a62027aff405189bba466540064967f6",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-content-and-cell-character-style",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font><span style=\"display: none\"><font face=\"Arial, serif\">HIDDEN</font></span></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "e5b6749f388b3ef457f22a5371dcf51242744af9a94a52b4167fbcaea9e6d344"
+    },
+    {
+      "name": "nested-hidden-content-and-cell-field-result",
+      "shape": "hidden-content-and-cell",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\intbl\\itap2 LEFT{\\v HIDDEN\\nestcell }RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "8e7294775968fd5f926c7a2ec0b58953c1d73f3e30c15ef575a246d96d48d040",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-content-and-cell-field-result",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font><font face=\"Arial, serif\"><span style=\"display: none\">HIDDEN</span></font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "71722110c47d64294fc8f887ac5c84520ed887e9aac9778b6cc63c971770b0cc"
+    },
+    {
+      "name": "nested-empty-hidden-middle-direct",
+      "shape": "empty-hidden-middle",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\nestcell {\\v \\nestcell }RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\cellx6000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\t\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "058329e4c5e4b62f1604e7cc3913a241f92fbe8248376165dc3a06cf9e6f7574",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-empty-hidden-middle-direct",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "31a47243803708535dae7658b027998327ea2b4efbbea2161d1fa8d78d8a920b"
+    },
+    {
+      "name": "nested-empty-hidden-middle-character-style",
+      "shape": "empty-hidden-middle",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\nestcell {\\cs1 \\nestcell }RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\cellx6000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\t\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "6d4bfe1fd1cec498b6fa863153185e0120f19408909d1ac0538d9b11991f19b1",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-empty-hidden-middle-character-style",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\n\n\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\n\n\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "\n",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "\n",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><br/>\n\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "bb221e30824f2da1d684da9b98a24975cbc57ea597caf22c0c2b3e8082b00c49"
+    },
+    {
+      "name": "nested-empty-hidden-middle-field-result",
+      "shape": "empty-hidden-middle",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\intbl\\itap2 LEFT\\nestcell {\\v \\nestcell }RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\cellx6000\\nestrow}}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\t\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "4931f520102c95d8ccfabcf60fc7db183a534ce38c47de210b512906b49f7ce9",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-empty-hidden-middle-field-result",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "7293b591a4665e60e3fe8e3e0d8ccdd1065993b224be4cb0fceac48885c8f3f6"
+    },
+    {
+      "name": "nested-whole-hidden-middle-direct",
+      "shape": "whole-hidden-middle",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\nestcell {\\v HIDDEN\\nestcell }RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\cellx6000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\t\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "98b2d2bc6485a77c582b590b7a9cd43c72727b9904da73aa73b37f9979cf9c73",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-whole-hidden-middle-direct",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "31a47243803708535dae7658b027998327ea2b4efbbea2161d1fa8d78d8a920b"
+    },
+    {
+      "name": "nested-whole-hidden-middle-character-style",
+      "shape": "whole-hidden-middle",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\nestcell {\\cs1 HIDDEN\\nestcell }RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\cellx6000\\nestrow}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\t\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "8cd3080be3455c488d311490a24ee316d5c34b13429370b4cb23f36e5bad91ca",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-whole-hidden-middle-character-style",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "31a47243803708535dae7658b027998327ea2b4efbbea2161d1fa8d78d8a920b"
+    },
+    {
+      "name": "nested-whole-hidden-middle-field-result",
+      "shape": "whole-hidden-middle",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\intbl\\itap2 LEFT\\nestcell {\\v HIDDEN\\nestcell }RIGHT\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\cellx6000\\nestrow}}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\t\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "",
+        "RIGHT"
+      ],
+      "sha256": "540d92f27225eaf9883078b768c4429172049ce104e6c4abeeb1feac40d39d9d",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-whole-hidden-middle-field-result",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"400\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "7293b591a4665e60e3fe8e3e0d8ccdd1065993b224be4cb0fceac48885c8f3f6"
+    },
+    {
+      "name": "nested-hidden-row-end-direct",
+      "shape": "hidden-row-end",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\nestcell RIGHT\\nestcell {\\v {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "565ff676b0f661be3ef8b5cc96ef81eeb29dbc776e520dfdc5905329bee874c8",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-row-end-direct",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "1fa30091b6eff002990250f61a21515da221e9c6bb77d11711791ea298c15545"
+    },
+    {
+      "name": "nested-hidden-row-end-character-style",
+      "shape": "hidden-row-end",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\nestcell RIGHT\\nestcell {\\cs1 {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "75cd76ef3a5ed07bc03f53910f194b620085c5b2f33883e2bc9011d04d696fa9",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-row-end-character-style",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "1fa30091b6eff002990250f61a21515da221e9c6bb77d11711791ea298c15545"
+    },
+    {
+      "name": "nested-hidden-row-end-field-result",
+      "shape": "hidden-row-end",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\intbl\\itap2 LEFT\\nestcell RIGHT\\nestcell {\\v {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "11aac2c540829a13f66369593f0afbf46d3a23bce8f268cf51762118cd3156df",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-row-end-field-result",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "9d1e4b8069e24def93fa8900f325d2e16fc37f5df849bb4a1548deef54a236b4"
+    },
+    {
+      "name": "nested-hidden-final-cell-and-row-direct",
+      "shape": "hidden-final-cell-and-row",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\nestcell RIGHT{\\v \\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "690c005c14e27a3229cee584706fb158591336f6a9b1305167c807033231106f",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-final-cell-and-row-direct",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "1fa30091b6eff002990250f61a21515da221e9c6bb77d11711791ea298c15545"
+    },
+    {
+      "name": "nested-hidden-final-cell-and-row-character-style",
+      "shape": "hidden-final-cell-and-row",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 LEFT\\nestcell RIGHT{\\cs1 \\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "87a4decee816f594df0f9c402b2f5d5e8a27f44a3f6efec002453941ab2e305a",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-final-cell-and-row-character-style",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "1fa30091b6eff002990250f61a21515da221e9c6bb77d11711791ea298c15545"
+    },
+    {
+      "name": "nested-hidden-final-cell-and-row-field-result",
+      "shape": "hidden-final-cell-and-row",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\intbl\\itap2 LEFT\\nestcell RIGHT{\\v \\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "a8f3dddb37f8cd932c0563b1974f19046d82d917090add25af190861f8de3176",
+      "reader": "BEFORE\nOUTER\nLEFT\tRIGHT\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-hidden-final-cell-and-row-field-result",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "9d1e4b8069e24def93fa8900f325d2e16fc37f5df849bb4a1548deef54a236b4"
+    },
+    {
+      "name": "nested-whole-hidden-row-direct",
+      "shape": "whole-hidden-row",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 {\\v HIDDEN\\nestcell SECRET\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\n\t\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "",
+        ""
+      ],
+      "sha256": "6f19c859acf09060a619e7beff903f09a3386cf41d4539ad3aa5e4d1c3eb9d93",
+      "reader": "BEFORE\nOUTER\n\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-whole-hidden-row-direct",
+        "visible": "BEFORE\n\nOUTER\n\n\t\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\t\n\nEND",
+          "",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "708373b91ba0b99667fa43ee26dec25db6afb14a7444312d6d1cfde5d47322fd"
+    },
+    {
+      "name": "nested-whole-hidden-row-character-style",
+      "shape": "whole-hidden-row",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 {\\cs1 HIDDEN\\nestcell SECRET\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\n\t\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "",
+        ""
+      ],
+      "sha256": "044a9dddcabf8fc35c8d6dc3b4ada2d7838e17c7bd27bf6b01f1143c1ab90147",
+      "reader": "BEFORE\nOUTER\n\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-whole-hidden-row-character-style",
+        "visible": "BEFORE\n\nOUTER\n\n\t\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\t\n\nEND",
+          "",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "708373b91ba0b99667fa43ee26dec25db6afb14a7444312d6d1cfde5d47322fd"
+    },
+    {
+      "name": "nested-whole-hidden-row-field-result",
+      "shape": "whole-hidden-row",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\intbl\\itap2 {\\v HIDDEN\\nestcell SECRET\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\n\t\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "",
+        ""
+      ],
+      "sha256": "e814792a81eb206a95657490944f2898ab6f169c6c1fc1aa054e072a4847ca64",
+      "reader": "BEFORE\nOUTER\n\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-whole-hidden-row-field-result",
+        "visible": "BEFORE\n\nOUTER\n\n\t\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\n\t\n\nEND",
+          "",
+          ""
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\">\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "09d4acdaeaf8ef60289341abb31b5a8b20ad851550841ef0c6f878ec64feb4e8"
+    },
+    {
+      "name": "nested-nested-visible-island-direct",
+      "shape": "nested-visible-island",
+      "mode": "direct",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 {\\v HIDDEN{\\v0 LEFT}\\nestcell SECRET{\\v0 RIGHT}\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "815bec9e606ea88df4867ba4c5161ea877990b2b074b74a2415a8dbeefaf4802",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-nested-visible-island-direct",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\"><span style=\"display: none\">HIDDEN</span></font><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\"><span style=\"display: none\">SECRET</span></font><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "ddcba4043c66279f4142e4d8a76891f53bea4fe5d843ed9380d21c2e0db9d981"
+    },
+    {
+      "name": "nested-nested-visible-island-character-style",
+      "shape": "nested-visible-island",
+      "mode": "character-style",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par \\intbl\\itap2 {\\cs1 HIDDEN{\\cs2 LEFT}\\nestcell SECRET{\\cs2 RIGHT}\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "c1edea07129d0e1c778ee0ea001e065517dfeb2848f2216d3b69d524d77cd5b0",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-nested-visible-island-character-style",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><span style=\"display: none\"><font face=\"Arial, serif\">HIDDEN</font></span><font face=\"Arial, serif\">LEFT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><span style=\"display: none\"><font face=\"Arial, serif\">SECRET</font></span><font face=\"Arial, serif\">RIGHT</font></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "4edcd7d5d14703b9d79389fa54b896677abeffa7e37a02aeb0e64ce374d90a96"
+    },
+    {
+      "name": "nested-nested-visible-island-field-result",
+      "shape": "nested-visible-island",
+      "mode": "field-result",
+      "source": "{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fcharset0 Arial;}}{\\stylesheet{\\s0 Normal;}{\\*\\cs1\\v Hidden;}{\\*\\cs2\\v0 Visible;}}\\uc1 BEFORE\\par \\trowd\\cellx8000\\intbl\\itap1 OUTER\\par {\\field{\\*\\fldinst HYPERLINK \"https://example.com\"}{\\fldrslt \\intbl\\itap2 {\\v HIDDEN{\\v0 LEFT}\\nestcell SECRET{\\v0 RIGHT}\\nestcell {\\*\\nesttableprops\\trowd\\itap2\\cellx2000\\cellx4000\\nestrow}}}}\\pard\\intbl\\itap1 END\\cell\\row \\pard\\par AFTER}",
+      "expected": "BEFORE\nOUTER\nLEFT\tRIGHT\t\nEND\t\n\nAFTER",
+      "expectedCells": [
+        "LEFT",
+        "RIGHT"
+      ],
+      "sha256": "50187e34c36ba8536b2675dced61d896708fcf620a9970b49209614df4fd7718",
+      "reader": "BEFORE\nOUTER\nLEFTRIGHT\nEND\t\n\nAFTER",
+      "writer": {
+        "name": "nested-nested-visible-island-field-result",
+        "visible": "BEFORE\n\nOUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND\n\n\n\n\nAFTER",
+        "cells": [
+          "OUTER\n\nLEFT\n\n\t\n\nRIGHT\n\nEND",
+          "LEFT",
+          "RIGHT"
+        ],
+        "paragraphs": [
+          "BEFORE",
+          "OUTER",
+          "LEFT",
+          "RIGHT",
+          "END",
+          "\n",
+          "AFTER"
+        ]
+      },
+      "sameCharacters": true,
+      "nativeHtml": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n\t<title></title>\n\t<meta name=\"generator\" content=\"LibreOfficeDev 26.8.0.0.alpha0 (MacOSX)\"/>\n\t<meta name=\"created\" content=\"00:00:00\"/>\n\t<meta name=\"changed\" content=\"00:00:00\"/>\n\t<style type=\"text/css\">\n\t\t@page { size: 21.59cm 27.94cm; margin: 2.54cm }\n\t\tp { margin-bottom: 0.25cm; line-height: 115%; background: transparent }\n\t\ta:link { color: #000080; text-decoration: underline }\n\t</style>\n</head>\n<body lang=\"zh-CN\" link=\"#000080\" vlink=\"#800000\" dir=\"ltr\"><p style=\"line-height: 100%; margin-bottom: 0cm\">\n<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">BEFORE</font></span></font></font></p>\n<table width=\"533\" cellpadding=\"0\" cellspacing=\"0\">\n\t<col width=\"533\"/>\n\t<tr>\n\t\t<td width=\"533\" valign=\"top\" style=\"border: none; padding: 0cm\"><p style=\"margin-bottom: 0cm\">\n\t\t\t<font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">OUTER</font></span></font></font></p>\n\t\t\t<table width=\"267\" cellpadding=\"0\" cellspacing=\"0\">\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<col width=\"133\"/>\n\t\t\t\t<tr valign=\"top\">\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\"><span style=\"display: none\">HIDDEN</span></font><font face=\"Arial, serif\">LEFT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td width=\"133\" style=\"border: none; padding: 0cm\"><p><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><a href=\"https://example.com/\"><font face=\"Arial, serif\"><span style=\"display: none\">SECRET</span></font><font face=\"Arial, serif\">RIGHT</font></a></span></font></font></p>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">END</font></span></font></font></p>\n\t\t</td>\n\t</tr>\n</table>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><br/>\n\n</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm\"><font face=\"Liberation Serif, serif\"><font size=\"3\" style=\"font-size: 12pt\"><span lang=\"en-US\"><font face=\"Arial, serif\">AFTER</font></span></font></font></p>\n</body>\n</html>",
+      "nativeHtmlSha256": "dfd96877c7747d23c1abaec3874ec54a8ba200e45bce1fff2eff6a2a6c63b6a3"
+    }
+  ]
+}

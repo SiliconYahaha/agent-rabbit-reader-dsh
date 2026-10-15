@@ -1,0 +1,4026 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "status": "candidate-only-not-product",
+  "format": "SVG",
+  "direction": "Replace rounded rect cubic approximation with native Canvas roundRect when available; retain bounded path fallback.",
+  "generator": "const fs=require('fs');const cases=[];\nfor(const [rx,ry] of [[0,8],[8,0],[2,8],[8,2],[60,60],[0.25,0.75]])for(const mode of ['fill','stroke','dash','gradient'])for(const transform of ['', 'translate(35 10) rotate(11 70 65)']){\n const name='rx'+rx+'-ry'+ry+'-'+mode+'-'+(transform?'rotated':'plain');\n const paint=mode==='fill'?'fill=\"steelblue\"':mode==='gradient'?'fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"':'fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"'+(mode==='dash'?' stroke-dasharray=\"7 3\"':'');\n const source=`<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"${rx}\" ry=\"${ry}\" transform=\"${transform}\" ${paint}/></svg>`;cases.push({name,source,referenceSource:source});\n}\nfs.writeFileSync('outputs/next-svg-rounded/new-cases.json',JSON.stringify(cases,null,2)+'\\n');\n",
+  "prototype": "const fs=require('fs'),path=require('path'),Module=require('module');const name=path.resolve('scripts/verify-svg-container-bounds.js');let script=fs.readFileSync(name,'utf8');const injection=`\nconst oldPath='path: () => applySegments(ctx, shape.segments),';\nconst newPath=\\`path: () => { if (node.name === 'rect' && shape.segments.length === 10 && typeof ctx.roundRect === 'function') { const b=shape.bounds;ctx.beginPath();ctx.roundRect(b.x,b.y,b.width,b.height,[{x:shape.segments[0].x-b.x,y:shape.segments[2].y-b.y}]); } else applySegments(ctx,shape.segments) },\\`;\nif(!modules['svg/svg-rasterizer.js'].includes(oldPath))throw Error('Missing target');\nmodules['svg/svg-rasterizer.js']=modules['svg/svg-rasterizer.js'].replace(oldPath,newPath);\n`;\nscript=script.replace(\"include('index.js');include('svg/svg-clip-union.js')\",\"include('index.js');include('svg/svg-clip-union.js')\"+injection);const m=new Module(name,module);m.filename=name;m.paths=Module._nodeModulePaths(path.dirname(name));m._compile(script,name);\n",
+  "oracle": "Chrome 152 native SVG image, exact RGBA; native Path2D, fallback and factory-throws modes. Candidate is runtime bundle injection only.",
+  "previousBatch": {
+    "cases": 114,
+    "baselineExact": 107,
+    "candidateExact": 113,
+    "newlyExact": 6,
+    "remaining": [
+      "group-rotated-inside"
+    ]
+  },
+  "newBatch": {
+    "cases": 48,
+    "baselineExact": 14,
+    "candidateExact": 48,
+    "newlyExact": 34,
+    "regressions": [],
+    "results": [
+      {
+        "name": "rx0-ry8-fill-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 8,
+            "maxChannelError": 1,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 0.5098039215686185,
+            "svgRGBAError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 8,
+            "maxChannelError": 1,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 0.5098039215686185,
+            "svgRGBAError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 8,
+            "maxChannelError": 1,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 0.5098039215686185,
+            "svgRGBAError": 8,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0-ry8-fill-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 7369,
+            "maxChannelError": 255,
+            "maxAlphaError": 17,
+            "maxPremultipliedError": 12.06666666666667,
+            "svgRGBAError": 7369,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 7369,
+            "maxChannelError": 255,
+            "maxAlphaError": 17,
+            "maxPremultipliedError": 12.06666666666667,
+            "svgRGBAError": 7369,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 7369,
+            "maxChannelError": 255,
+            "maxAlphaError": 17,
+            "maxPremultipliedError": 12.06666666666667,
+            "svgRGBAError": 7369,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0-ry8-stroke-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0-ry8-stroke-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 10380,
+            "maxChannelError": 255,
+            "maxAlphaError": 48,
+            "maxPremultipliedError": 26.270588235294127,
+            "svgRGBAError": 10380,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 10380,
+            "maxChannelError": 255,
+            "maxAlphaError": 48,
+            "maxPremultipliedError": 26.270588235294127,
+            "svgRGBAError": 10380,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 10380,
+            "maxChannelError": 255,
+            "maxAlphaError": 48,
+            "maxPremultipliedError": 26.270588235294127,
+            "svgRGBAError": 10380,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0-ry8-dash-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1942,
+            "maxChannelError": 139,
+            "maxAlphaError": 64,
+            "maxPremultipliedError": 34.88627450980392,
+            "svgRGBAError": 1942,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1942,
+            "maxChannelError": 139,
+            "maxAlphaError": 64,
+            "maxPremultipliedError": 34.88627450980392,
+            "svgRGBAError": 1942,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1942,
+            "maxChannelError": 139,
+            "maxAlphaError": 64,
+            "maxPremultipliedError": 34.88627450980392,
+            "svgRGBAError": 1942,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0-ry8-dash-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1197,
+            "maxChannelError": 139,
+            "maxAlphaError": 97,
+            "maxPremultipliedError": 52.87058823529412,
+            "svgRGBAError": 1197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1197,
+            "maxChannelError": 139,
+            "maxAlphaError": 97,
+            "maxPremultipliedError": 52.87058823529412,
+            "svgRGBAError": 1197,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1197,
+            "maxChannelError": 139,
+            "maxAlphaError": 97,
+            "maxPremultipliedError": 52.87058823529412,
+            "svgRGBAError": 1197,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0-ry8-gradient-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0-ry8-gradient-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3531,
+            "maxChannelError": 255,
+            "maxAlphaError": 14,
+            "maxPremultipliedError": 11,
+            "svgRGBAError": 3531,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3531,
+            "maxChannelError": 255,
+            "maxAlphaError": 14,
+            "maxPremultipliedError": 11,
+            "svgRGBAError": 3531,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3531,
+            "maxChannelError": 255,
+            "maxAlphaError": 14,
+            "maxPremultipliedError": 11,
+            "svgRGBAError": 3531,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry0-fill-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry0-fill-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 6839,
+            "maxChannelError": 255,
+            "maxAlphaError": 25,
+            "maxPremultipliedError": 16.898039215686275,
+            "svgRGBAError": 6839,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 6839,
+            "maxChannelError": 255,
+            "maxAlphaError": 25,
+            "maxPremultipliedError": 16.898039215686275,
+            "svgRGBAError": 6839,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 6839,
+            "maxChannelError": 255,
+            "maxAlphaError": 25,
+            "maxPremultipliedError": 16.898039215686275,
+            "svgRGBAError": 6839,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry0-stroke-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry0-stroke-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 7484,
+            "maxChannelError": 255,
+            "maxAlphaError": 30,
+            "maxPremultipliedError": 16.941176470588236,
+            "svgRGBAError": 7484,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 7484,
+            "maxChannelError": 255,
+            "maxAlphaError": 30,
+            "maxPremultipliedError": 16.941176470588236,
+            "svgRGBAError": 7484,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 7484,
+            "maxChannelError": 255,
+            "maxAlphaError": 30,
+            "maxPremultipliedError": 16.941176470588236,
+            "svgRGBAError": 7484,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry0-dash-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 189233,
+            "maxChannelError": 255,
+            "maxAlphaError": 255,
+            "maxPremultipliedError": 139,
+            "svgRGBAError": 189233,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 189233,
+            "maxChannelError": 255,
+            "maxAlphaError": 255,
+            "maxPremultipliedError": 139,
+            "svgRGBAError": 189233,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 189233,
+            "maxChannelError": 255,
+            "maxAlphaError": 255,
+            "maxPremultipliedError": 139,
+            "svgRGBAError": 189233,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry0-dash-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 197010,
+            "maxChannelError": 255,
+            "maxAlphaError": 255,
+            "maxPremultipliedError": 139,
+            "svgRGBAError": 197010,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 197010,
+            "maxChannelError": 255,
+            "maxAlphaError": 255,
+            "maxPremultipliedError": 139,
+            "svgRGBAError": 197010,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 197010,
+            "maxChannelError": 255,
+            "maxAlphaError": 255,
+            "maxPremultipliedError": 139,
+            "svgRGBAError": 197010,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry0-gradient-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry0-gradient-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"0\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3740,
+            "maxChannelError": 255,
+            "maxAlphaError": 5,
+            "maxPremultipliedError": 48,
+            "svgRGBAError": 3740,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3740,
+            "maxChannelError": 255,
+            "maxAlphaError": 5,
+            "maxPremultipliedError": 48,
+            "svgRGBAError": 3740,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 3740,
+            "maxChannelError": 255,
+            "maxAlphaError": 5,
+            "maxPremultipliedError": 48,
+            "svgRGBAError": 3740,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx2-ry8-fill-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 423,
+            "maxChannelError": 28,
+            "maxAlphaError": 17,
+            "maxPremultipliedError": 12.172549019607843,
+            "svgRGBAError": 423,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 423,
+            "maxChannelError": 28,
+            "maxAlphaError": 17,
+            "maxPremultipliedError": 12.172549019607843,
+            "svgRGBAError": 423,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 423,
+            "maxChannelError": 28,
+            "maxAlphaError": 17,
+            "maxPremultipliedError": 12.172549019607843,
+            "svgRGBAError": 423,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx2-ry8-fill-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2447,
+            "maxChannelError": 255,
+            "maxAlphaError": 28,
+            "maxPremultipliedError": 20.235294117647058,
+            "svgRGBAError": 2447,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2447,
+            "maxChannelError": 255,
+            "maxAlphaError": 28,
+            "maxPremultipliedError": 20.235294117647058,
+            "svgRGBAError": 2447,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2447,
+            "maxChannelError": 255,
+            "maxAlphaError": 28,
+            "maxPremultipliedError": 20.235294117647058,
+            "svgRGBAError": 2447,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx2-ry8-stroke-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 386,
+            "maxChannelError": 7,
+            "maxAlphaError": 7,
+            "maxPremultipliedError": 4.027450980392157,
+            "svgRGBAError": 386,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 386,
+            "maxChannelError": 7,
+            "maxAlphaError": 7,
+            "maxPremultipliedError": 4.027450980392157,
+            "svgRGBAError": 386,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 386,
+            "maxChannelError": 7,
+            "maxAlphaError": 7,
+            "maxPremultipliedError": 4.027450980392157,
+            "svgRGBAError": 386,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx2-ry8-stroke-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 51,
+            "maxChannelError": 28,
+            "maxAlphaError": 28,
+            "maxPremultipliedError": 16.15294117647059,
+            "svgRGBAError": 51,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 51,
+            "maxChannelError": 28,
+            "maxAlphaError": 28,
+            "maxPremultipliedError": 16.15294117647059,
+            "svgRGBAError": 51,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 51,
+            "maxChannelError": 28,
+            "maxAlphaError": 28,
+            "maxPremultipliedError": 16.15294117647059,
+            "svgRGBAError": 51,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx2-ry8-dash-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1454,
+            "maxChannelError": 143,
+            "maxAlphaError": 64,
+            "maxPremultipliedError": 35.08627450980393,
+            "svgRGBAError": 1454,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1454,
+            "maxChannelError": 143,
+            "maxAlphaError": 64,
+            "maxPremultipliedError": 35.08627450980393,
+            "svgRGBAError": 1454,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1454,
+            "maxChannelError": 143,
+            "maxAlphaError": 64,
+            "maxPremultipliedError": 35.08627450980393,
+            "svgRGBAError": 1454,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx2-ry8-dash-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2025,
+            "maxChannelError": 142,
+            "maxAlphaError": 65,
+            "maxPremultipliedError": 35.13725490196079,
+            "svgRGBAError": 2025,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2025,
+            "maxChannelError": 142,
+            "maxAlphaError": 65,
+            "maxPremultipliedError": 35.13725490196079,
+            "svgRGBAError": 2025,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2025,
+            "maxChannelError": 142,
+            "maxAlphaError": 65,
+            "maxPremultipliedError": 35.13725490196079,
+            "svgRGBAError": 2025,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx2-ry8-gradient-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 8879,
+            "maxChannelError": 255,
+            "maxAlphaError": 3,
+            "maxPremultipliedError": 4,
+            "svgRGBAError": 8879,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 8879,
+            "maxChannelError": 255,
+            "maxAlphaError": 3,
+            "maxPremultipliedError": 4,
+            "svgRGBAError": 8879,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 8879,
+            "maxChannelError": 255,
+            "maxAlphaError": 3,
+            "maxPremultipliedError": 4,
+            "svgRGBAError": 8879,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx2-ry8-gradient-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"2\" ry=\"8\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 15,
+            "maxChannelError": 4,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 4,
+            "svgRGBAError": 15,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 15,
+            "maxChannelError": 4,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 4,
+            "svgRGBAError": 15,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 15,
+            "maxChannelError": 4,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 4,
+            "svgRGBAError": 15,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry2-fill-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2152,
+            "maxChannelError": 187,
+            "maxAlphaError": 49,
+            "maxPremultipliedError": 33.92549019607843,
+            "svgRGBAError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2152,
+            "maxChannelError": 187,
+            "maxAlphaError": 49,
+            "maxPremultipliedError": 33.92549019607843,
+            "svgRGBAError": 2152,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2152,
+            "maxChannelError": 187,
+            "maxAlphaError": 49,
+            "maxPremultipliedError": 33.92549019607843,
+            "svgRGBAError": 2152,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry2-fill-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1572,
+            "maxChannelError": 185,
+            "maxAlphaError": 36,
+            "maxPremultipliedError": 25.411764705882348,
+            "svgRGBAError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1572,
+            "maxChannelError": 185,
+            "maxAlphaError": 36,
+            "maxPremultipliedError": 25.411764705882348,
+            "svgRGBAError": 1572,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 1572,
+            "maxChannelError": 185,
+            "maxAlphaError": 36,
+            "maxPremultipliedError": 25.411764705882348,
+            "svgRGBAError": 1572,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry2-stroke-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 389,
+            "maxChannelError": 141,
+            "maxAlphaError": 38,
+            "maxPremultipliedError": 21.011764705882353,
+            "svgRGBAError": 389,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 389,
+            "maxChannelError": 141,
+            "maxAlphaError": 38,
+            "maxPremultipliedError": 21.011764705882353,
+            "svgRGBAError": 389,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 389,
+            "maxChannelError": 141,
+            "maxAlphaError": 38,
+            "maxPremultipliedError": 21.011764705882353,
+            "svgRGBAError": 389,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry2-stroke-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 41,
+            "maxChannelError": 27,
+            "maxAlphaError": 27,
+            "maxPremultipliedError": 15.070588235294117,
+            "svgRGBAError": 41,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 41,
+            "maxChannelError": 27,
+            "maxAlphaError": 27,
+            "maxPremultipliedError": 15.070588235294117,
+            "svgRGBAError": 41,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 41,
+            "maxChannelError": 27,
+            "maxAlphaError": 27,
+            "maxPremultipliedError": 15.070588235294117,
+            "svgRGBAError": 41,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry2-dash-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 851,
+            "maxChannelError": 128,
+            "maxAlphaError": 42,
+            "maxPremultipliedError": 22.72941176470588,
+            "svgRGBAError": 851,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 851,
+            "maxChannelError": 128,
+            "maxAlphaError": 42,
+            "maxPremultipliedError": 22.72941176470588,
+            "svgRGBAError": 851,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 851,
+            "maxChannelError": 128,
+            "maxAlphaError": 42,
+            "maxPremultipliedError": 22.72941176470588,
+            "svgRGBAError": 851,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry2-dash-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2242,
+            "maxChannelError": 149,
+            "maxAlphaError": 53,
+            "maxPremultipliedError": 28.141176470588228,
+            "svgRGBAError": 2242,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2242,
+            "maxChannelError": 149,
+            "maxAlphaError": 53,
+            "maxPremultipliedError": 28.141176470588228,
+            "svgRGBAError": 2242,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 2242,
+            "maxChannelError": 149,
+            "maxAlphaError": 53,
+            "maxPremultipliedError": 28.141176470588228,
+            "svgRGBAError": 2242,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry2-gradient-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 56,
+            "maxChannelError": 20,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 20,
+            "svgRGBAError": 56,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 56,
+            "maxChannelError": 20,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 20,
+            "svgRGBAError": 56,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 56,
+            "maxChannelError": 20,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 20,
+            "svgRGBAError": 56,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx8-ry2-gradient-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"8\" ry=\"2\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 48,
+            "maxChannelError": 20,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 20,
+            "svgRGBAError": 48,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 48,
+            "maxChannelError": 20,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 20,
+            "svgRGBAError": 48,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 48,
+            "maxChannelError": 20,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 20,
+            "svgRGBAError": 48,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx60-ry60-fill-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 13864,
+            "maxChannelError": 182,
+            "maxAlphaError": 81,
+            "maxPremultipliedError": 57.17647058823529,
+            "svgRGBAError": 13864,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 13864,
+            "maxChannelError": 182,
+            "maxAlphaError": 81,
+            "maxPremultipliedError": 57.17647058823529,
+            "svgRGBAError": 13864,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 13864,
+            "maxChannelError": 182,
+            "maxAlphaError": 81,
+            "maxPremultipliedError": 57.17647058823529,
+            "svgRGBAError": 13864,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx60-ry60-fill-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 21181,
+            "maxChannelError": 255,
+            "maxAlphaError": 113,
+            "maxPremultipliedError": 78.70196078431373,
+            "svgRGBAError": 21181,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 21181,
+            "maxChannelError": 255,
+            "maxAlphaError": 113,
+            "maxPremultipliedError": 78.70196078431373,
+            "svgRGBAError": 21181,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 21181,
+            "maxChannelError": 255,
+            "maxAlphaError": 113,
+            "maxPremultipliedError": 78.70196078431373,
+            "svgRGBAError": 21181,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx60-ry60-stroke-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx60-ry60-stroke-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx60-ry60-dash-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 7712,
+            "maxChannelError": 255,
+            "maxAlphaError": 69,
+            "maxPremultipliedError": 36.898039215686275,
+            "svgRGBAError": 7712,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 7712,
+            "maxChannelError": 255,
+            "maxAlphaError": 69,
+            "maxPremultipliedError": 36.898039215686275,
+            "svgRGBAError": 7712,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 7712,
+            "maxChannelError": 255,
+            "maxAlphaError": 69,
+            "maxPremultipliedError": 36.898039215686275,
+            "svgRGBAError": 7712,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx60-ry60-dash-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 6594,
+            "maxChannelError": 255,
+            "maxAlphaError": 54,
+            "maxPremultipliedError": 30.188235294117646,
+            "svgRGBAError": 6594,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 6594,
+            "maxChannelError": 255,
+            "maxAlphaError": 54,
+            "maxPremultipliedError": 30.188235294117646,
+            "svgRGBAError": 6594,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 6594,
+            "maxChannelError": 255,
+            "maxAlphaError": 54,
+            "maxPremultipliedError": 30.188235294117646,
+            "svgRGBAError": 6594,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx60-ry60-gradient-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 8,
+            "maxChannelError": 1,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 0.45882352941177373,
+            "svgRGBAError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 8,
+            "maxChannelError": 1,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 0.45882352941177373,
+            "svgRGBAError": 8,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 8,
+            "maxChannelError": 1,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 0.45882352941177373,
+            "svgRGBAError": 8,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx60-ry60-gradient-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"60\" ry=\"60\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 9,
+            "maxChannelError": 1,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 1,
+            "svgRGBAError": 9,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 9,
+            "maxChannelError": 1,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 1,
+            "svgRGBAError": 9,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 9,
+            "maxChannelError": 1,
+            "maxAlphaError": 1,
+            "maxPremultipliedError": 1,
+            "svgRGBAError": 9,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0.25-ry0.75-fill-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0.25-ry0.75-fill-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"steelblue\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 30,
+            "maxChannelError": 6,
+            "maxAlphaError": 2,
+            "maxPremultipliedError": 1.0431372549019642,
+            "svgRGBAError": 30,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 30,
+            "maxChannelError": 6,
+            "maxAlphaError": 2,
+            "maxPremultipliedError": 1.0431372549019642,
+            "svgRGBAError": 30,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 30,
+            "maxChannelError": 6,
+            "maxAlphaError": 2,
+            "maxPremultipliedError": 1.0431372549019642,
+            "svgRGBAError": 30,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0.25-ry0.75-stroke-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0.25-ry0.75-stroke-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0.25-ry0.75-dash-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0.25-ry0.75-dash-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"none\" stroke=\"darkblue\" stroke-width=\"3.25\" stroke-dasharray=\"7 3\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0.25-ry0.75-gradient-plain",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "rx0.25-ry0.75-gradient-rotated",
+        "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "referenceSource": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\" viewBox=\"0 0 256 256\"><defs><linearGradient id=\"g\"><stop stop-color=\"red\"/><stop offset=\"1\" stop-color=\"blue\"/></linearGradient></defs><rect x=\"30.25\" y=\"25.75\" width=\"91.5\" height=\"78.5\" rx=\"0.25\" ry=\"0.75\" transform=\"translate(35 10) rotate(11 70 65)\" fill=\"url(#g)\" stroke=\"darkblue\" stroke-width=\"2.5\"/></svg>",
+        "baseline": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ],
+        "candidate": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "Prototype has not been committed to the renderer.",
+    "Hosts without roundRect still use existing approximate cubic fallback; check actual WeChat capability before claiming improvement there.",
+    "Rotated straight-fill historical failure remains; no tolerance widening.",
+    "Need specification, guard and recovery coverage, ellipse/zero radii semantics, actual component integration before a release."
+  ],
+  "wechatDevtools": "not-run",
+  "physicalDevices": "not-run",
+  "specification": {
+    "svg": "https://www.w3.org/TR/SVG2/shapes.html#RectElement",
+    "canvas": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-roundrect",
+    "review": "SVG rect corners are elliptical arcs with independently clamped rx/ry; Canvas roundRect accepts an elliptical DOMPoint radius and creates clockwise closed path. Verify zero-radius and percentage resolution separately; do not let Canvas proportional overlap scaling replace SVG independent clamping."
+  },
+  "missingApi": {
+    "cases": 48,
+    "exact": 14,
+    "errors": 0,
+    "failures": [
+      "rx0-ry8-fill-plain",
+      "rx0-ry8-fill-rotated",
+      "rx0-ry8-stroke-rotated",
+      "rx0-ry8-dash-plain",
+      "rx0-ry8-dash-rotated",
+      "rx0-ry8-gradient-rotated",
+      "rx8-ry0-fill-rotated",
+      "rx8-ry0-stroke-rotated",
+      "rx8-ry0-dash-plain",
+      "rx8-ry0-dash-rotated",
+      "rx8-ry0-gradient-rotated",
+      "rx2-ry8-fill-plain",
+      "rx2-ry8-fill-rotated",
+      "rx2-ry8-stroke-plain",
+      "rx2-ry8-stroke-rotated",
+      "rx2-ry8-dash-plain",
+      "rx2-ry8-dash-rotated",
+      "rx2-ry8-gradient-plain",
+      "rx2-ry8-gradient-rotated",
+      "rx8-ry2-fill-plain",
+      "rx8-ry2-fill-rotated",
+      "rx8-ry2-stroke-plain",
+      "rx8-ry2-stroke-rotated",
+      "rx8-ry2-dash-plain",
+      "rx8-ry2-dash-rotated",
+      "rx8-ry2-gradient-plain",
+      "rx8-ry2-gradient-rotated",
+      "rx60-ry60-fill-plain",
+      "rx60-ry60-fill-rotated",
+      "rx60-ry60-dash-plain",
+      "rx60-ry60-dash-rotated",
+      "rx60-ry60-gradient-plain",
+      "rx60-ry60-gradient-rotated",
+      "rx0.25-ry0.75-fill-rotated"
+    ]
+  },
+  "throwingApi": {
+    "cases": 48,
+    "exact": 0,
+    "errors": 48,
+    "failures": [
+      "rx0-ry8-fill-plain",
+      "rx0-ry8-fill-rotated",
+      "rx0-ry8-stroke-plain",
+      "rx0-ry8-stroke-rotated",
+      "rx0-ry8-dash-plain",
+      "rx0-ry8-dash-rotated",
+      "rx0-ry8-gradient-plain",
+      "rx0-ry8-gradient-rotated",
+      "rx8-ry0-fill-plain",
+      "rx8-ry0-fill-rotated",
+      "rx8-ry0-stroke-plain",
+      "rx8-ry0-stroke-rotated",
+      "rx8-ry0-dash-plain",
+      "rx8-ry0-dash-rotated",
+      "rx8-ry0-gradient-plain",
+      "rx8-ry0-gradient-rotated",
+      "rx2-ry8-fill-plain",
+      "rx2-ry8-fill-rotated",
+      "rx2-ry8-stroke-plain",
+      "rx2-ry8-stroke-rotated",
+      "rx2-ry8-dash-plain",
+      "rx2-ry8-dash-rotated",
+      "rx2-ry8-gradient-plain",
+      "rx2-ry8-gradient-rotated",
+      "rx8-ry2-fill-plain",
+      "rx8-ry2-fill-rotated",
+      "rx8-ry2-stroke-plain",
+      "rx8-ry2-stroke-rotated",
+      "rx8-ry2-dash-plain",
+      "rx8-ry2-dash-rotated",
+      "rx8-ry2-gradient-plain",
+      "rx8-ry2-gradient-rotated",
+      "rx60-ry60-fill-plain",
+      "rx60-ry60-fill-rotated",
+      "rx60-ry60-stroke-plain",
+      "rx60-ry60-stroke-rotated",
+      "rx60-ry60-dash-plain",
+      "rx60-ry60-dash-rotated",
+      "rx60-ry60-gradient-plain",
+      "rx60-ry60-gradient-rotated",
+      "rx0.25-ry0.75-fill-plain",
+      "rx0.25-ry0.75-fill-rotated",
+      "rx0.25-ry0.75-stroke-plain",
+      "rx0.25-ry0.75-stroke-rotated",
+      "rx0.25-ry0.75-dash-plain",
+      "rx0.25-ry0.75-dash-rotated",
+      "rx0.25-ry0.75-gradient-plain",
+      "rx0.25-ry0.75-gradient-rotated"
+    ]
+  },
+  "hostProbe": "const fs=require('fs'),path=require('path'),Module=require('module');const file=path.resolve('outputs/next-svg-rounded/probe.cjs');let source=fs.readFileSync(file,'utf8');source=source.replace('const m=new Module(name,module);',`script=script.replace(\"const ctx=canvas.getContext('2d'),results=[]\", \"const ctx=canvas.getContext('2d'),results=[];ctx.roundRect=\"+(process.argv.includes('--throw-api')?\"()=>{throw new Error('host API unavailable')}\":\"undefined\"));const m=new Module(name,module);`);const m=new Module(file,module);m.filename=file;m.paths=Module._nodeModulePaths(path.dirname(file));m._compile(source,file);\n"
+}

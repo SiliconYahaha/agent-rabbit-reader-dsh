@@ -1,0 +1,190 @@
+{
+  "results": [
+    {
+      "kind": "cycle",
+      "base64": "MApTRUNUSU9OCjIKQkxPQ0tTCjAKQkxPQ0sKMgpMT09QCjEwCjAKMjAKMAowCklOU0VSVAoyCkxPT1AKNzAKMjAKNzEKMjAKNDQKMQo0NQoxCjAKRU5EQkxLCjAKRU5EU0VDCjAKU0VDVElPTgoyCkVOVElUSUVTCjAKSU5TRVJUCjIKTE9PUAo3MAoxCjcxCjEKNDQKMQo0NQoxCjAKRU5EU0VDCjAKRU9GCg==",
+      "elapsedMs": 2004,
+      "timedOut": true,
+      "status": null,
+      "signal": "SIGTERM",
+      "result": null
+    },
+    {
+      "kind": "empty-tree",
+      "base64": "MApTRUNUSU9OCjIKQkxPQ0tTCjAKQkxPQ0sKMgpCMAoxMAowCjIwCjAKMApFTkRCTEsKMApCTE9DSwoyCkIxCjEwCjAKMjAKMAowCklOU0VSVAoyCkIwCjcwCjIwCjcxCjIwCjQ0CjEKNDUKMQowCkVOREJMSwowCkJMT0NLCjIKQjIKMTAKMAoyMAowCjAKSU5TRVJUCjIKQjEKNzAKMjAKNzEKMjAKNDQKMQo0NQoxCjAKRU5EQkxLCjAKQkxPQ0sKMgpCMwoxMAowCjIwCjAKMApJTlNFUlQKMgpCMgo3MAoyMAo3MQoyMAo0NAoxCjQ1CjEKMApFTkRCTEsKMApCTE9DSwoyCkI0CjEwCjAKMjAKMAowCklOU0VSVAoyCkIzCjcwCjIwCjcxCjIwCjQ0CjEKNDUKMQowCkVOREJMSwowCkJMT0NLCjIKQjUKMTAKMAoyMAowCjAKSU5TRVJUCjIKQjQKNzAKMjAKNzEKMjAKNDQKMQo0NQoxCjAKRU5EQkxLCjAKQkxPQ0sKMgpCNgoxMAowCjIwCjAKMApJTlNFUlQKMgpCNQo3MAoyMAo3MQoyMAo0NAoxCjQ1CjEKMApFTkRCTEsKMApFTkRTRUMKMApTRUNUSU9OCjIKRU5USVRJRVMKMApJTlNFUlQKMgpCNgo3MAoyMAo3MQoyMAo0NAoxCjQ1CjEKMApFTkRTRUMKMApFT0YK",
+      "elapsedMs": 2003,
+      "timedOut": true,
+      "status": null,
+      "signal": "SIGTERM",
+      "result": null
+    },
+    {
+      "kind": "unsupported-tree",
+      "base64": "MApTRUNUSU9OCjIKQkxPQ0tTCjAKQkxPQ0sKMgpCMAoxMAowCjIwCjAKMApQT0lOVAoxMAowCjIwCjAKMApFTkRCTEsKMApCTE9DSwoyCkIxCjEwCjAKMjAKMAowCklOU0VSVAoyCkIwCjcwCjIwCjcxCjIwCjQ0CjEKNDUKMQowCkVOREJMSwowCkJMT0NLCjIKQjIKMTAKMAoyMAowCjAKSU5TRVJUCjIKQjEKNzAKMjAKNzEKMjAKNDQKMQo0NQoxCjAKRU5EQkxLCjAKQkxPQ0sKMgpCMwoxMAowCjIwCjAKMApJTlNFUlQKMgpCMgo3MAoyMAo3MQoyMAo0NAoxCjQ1CjEKMApFTkRCTEsKMApCTE9DSwoyCkI0CjEwCjAKMjAKMAowCklOU0VSVAoyCkIzCjcwCjIwCjcxCjIwCjQ0CjEKNDUKMQowCkVOREJMSwowCkJMT0NLCjIKQjUKMTAKMAoyMAowCjAKSU5TRVJUCjIKQjQKNzAKMjAKNzEKMjAKNDQKMQo0NQoxCjAKRU5EQkxLCjAKQkxPQ0sKMgpCNgoxMAowCjIwCjAKMApJTlNFUlQKMgpCNQo3MAoyMAo3MQoyMAo0NAoxCjQ1CjEKMApFTkRCTEsKMApFTkRTRUMKMApTRUNUSU9OCjIKRU5USVRJRVMKMApJTlNFUlQKMgpCNgo3MAoyMAo3MQoyMAo0NAoxCjQ1CjEKMApFTkRTRUMKMApFT0YK",
+      "elapsedMs": 2002,
+      "timedOut": true,
+      "status": null,
+      "signal": "SIGTERM",
+      "result": null
+    },
+    {
+      "kind": "empty-huge",
+      "base64": "MApTRUNUSU9OCjIKQkxPQ0tTCjAKQkxPQ0sKMgpVTklUCjEwCjAKMjAKMAowCkVOREJMSwowCkVORFNFQwowClNFQ1RJT04KMgpFTlRJVElFUwowCklOU0VSVAoyClVOSVQKNzAKMzI3NjcKNzEKMzI3NjcKNDQKMQo0NQoxCjAKTElORQoxMAowCjIwCjAKMTEKNAoyMQoyCjAKRU5EU0VDCjAKRU9GCg==",
+      "elapsedMs": 27,
+      "timedOut": false,
+      "status": 0,
+      "signal": null,
+      "result": {
+        "preview": true,
+        "metadata": [
+          {
+            "label": "文件",
+            "value": "x.dxf"
+          },
+          {
+            "label": "实际读取",
+            "value": "169 B"
+          },
+          {
+            "label": "AutoCAD 版本",
+            "value": "未声明"
+          },
+          {
+            "label": "插入单位代码",
+            "value": "未声明"
+          },
+          {
+            "label": "实体类型",
+            "value": "2"
+          },
+          {
+            "label": "块定义/展开引用",
+            "value": "1 / 400"
+          },
+          {
+            "label": "填充边界/尺寸",
+            "value": "0 / 0"
+          },
+          {
+            "label": "样条/多段线弧",
+            "value": "0 / 0"
+          },
+          {
+            "label": "HATCH 曲线边",
+            "value": "0"
+          },
+          {
+            "label": "预览图元",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "reuse",
+      "base64": "MApTRUNUSU9OCjIKQkxPQ0tTCjAKQkxPQ0sKMgpVTklUCjEwCjAKMjAKMAowCkxJTkUKMTAKMAoyMAowCjExCjQKMjEKMgowCkVOREJMSwowCkVORFNFQwowClNFQ1RJT04KMgpFTlRJVElFUwowCklOU0VSVAoyClVOSVQKNzAKMQo3MQoxCjQ0CjEKNDUKMQowCklOU0VSVAoyClVOSVQKNzAKMQo3MQoxCjQ0CjEKNDUKMQowCkVORFNFQwowCkVPRgo=",
+      "elapsedMs": 25,
+      "timedOut": false,
+      "status": 0,
+      "signal": null,
+      "result": {
+        "preview": true,
+        "metadata": [
+          {
+            "label": "文件",
+            "value": "x.dxf"
+          },
+          {
+            "label": "实际读取",
+            "value": "197 B"
+          },
+          {
+            "label": "AutoCAD 版本",
+            "value": "未声明"
+          },
+          {
+            "label": "插入单位代码",
+            "value": "未声明"
+          },
+          {
+            "label": "实体类型",
+            "value": "2"
+          },
+          {
+            "label": "块定义/展开引用",
+            "value": "1 / 2"
+          },
+          {
+            "label": "填充边界/尺寸",
+            "value": "0 / 0"
+          },
+          {
+            "label": "样条/多段线弧",
+            "value": "0 / 0"
+          },
+          {
+            "label": "HATCH 曲线边",
+            "value": "0"
+          },
+          {
+            "label": "预览图元",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "huge",
+      "base64": "MApTRUNUSU9OCjIKQkxPQ0tTCjAKQkxPQ0sKMgpVTklUCjEwCjAKMjAKMAowCkxJTkUKMTAKMAoyMAowCjExCjQKMjEKMgowCkVOREJMSwowCkVORFNFQwowClNFQ1RJT04KMgpFTlRJVElFUwowCklOU0VSVAoyClVOSVQKNzAKMzI3NjcKNzEKMzI3NjcKNDQKMQo0NQoxCjAKRU5EU0VDCjAKRU9GCg==",
+      "elapsedMs": 26,
+      "timedOut": false,
+      "status": 0,
+      "signal": null,
+      "result": {
+        "preview": true,
+        "metadata": [
+          {
+            "label": "文件",
+            "value": "x.dxf"
+          },
+          {
+            "label": "实际读取",
+            "value": "169 B"
+          },
+          {
+            "label": "AutoCAD 版本",
+            "value": "未声明"
+          },
+          {
+            "label": "插入单位代码",
+            "value": "未声明"
+          },
+          {
+            "label": "实体类型",
+            "value": "2"
+          },
+          {
+            "label": "块定义/展开引用",
+            "value": "1 / 400"
+          },
+          {
+            "label": "填充边界/尺寸",
+            "value": "0 / 0"
+          },
+          {
+            "label": "样条/多段线弧",
+            "value": "0 / 0"
+          },
+          {
+            "label": "HATCH 曲线边",
+            "value": "0"
+          },
+          {
+            "label": "预览图元",
+            "value": "400"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+'use strict'
+
+const assert = require('node:assert/strict')
+const fs = require('node:fs')
+const path = require('node:path')
+const test = require('node:test')
+const zlib = require('node:zlib')
+
+const { extractRarEntry, inspectRarArchive } = require('../miniprogram/file-reader/archive/rar-runtime')
+
+// FolderTest.rar from YuJianrong/node-unrar.js (MIT), pinned as a deterministic
+// RAR 5 fixture containing both Normal-compressed and stored Unicode paths.
+const COMPRESSED_RAR = Buffer.from('UmFyIRoHAM+QcwAADQAAAAAAAAAUoHQggD0AnhQAAPQBEAACbhqo9vJjhkodMx0AIAAAAEZvbGRlcjFcRm9sZGVyIFNwYWNlXGxvbmcudHh0FZUREQ0Q/I2VNSnN/65PPqa7PqScUtAIUhMz0czBYAqZiHdkO6cf8J5UpKEIOgyH6fp/r/j/3/v/f///7fr9/2/z9/9/j8P5fj/P8v6fn/X9P7fr/f9v8fv/n+H2P4/Z/l9r+f2/6fc/r93+33v7/f+D8Hw/h+L8Xx/j+T8ny/l+b83z/n8D2Hg+x8L2Xh+z8T2ni+18b23j+38j3Hk+58r3Xl+78z3nm+98733n+/9D4Ho/B9L4Xp/D9T4nq/F9b43r/H9j5Hs/J9r5Xt/L9z5nu/N9753v/P4DuHA9x4LuXB9z4TunC914bu3D934jvHE954rvXF974zvnG9947v3H9/5DwHI+B5LwXJ+D5TwnK+F5bw3L+H5jxHM+J5rxXN+L5zxnO+N57x3P+P6DyHQ+R6LyXR+T6TynS+V6by3T+X6jzHU+Z6rzXV+b6zznW+d67z3X+f7D0HY+h7L0XZ+j7T0na+l7b03b+n7j1Hc+p7r1Xd+r7z1ne+t7713f+vwDgGA8BwLgWB8DwTgmC8Fwbg2D8HwjhGE8JwrhWF8LwzhmG8Nw7h2H8PxDiGI8RxLiWJ8TxTimK8Vxbi2L8XxjjGM8ZxrjWN8bxzjmO8dx7j2P8fyDkGQ8hyLkWR8jyTkmS8lybk2T8nyjlGU8pyrlWV8ryzlmW8ty7l2X8vzDmGY8xzLmWZ8zzTmma81zbm2b83zjnGc85zrnWd87zznme89z7n2f8/0DoGg9B0LoWh9D0Tomi9F0bo2j9H0jpGk9J0rpWl9L0zpmm9N07p2n9P1DqGo9R1LqWp9T1Tqmq9V1bq2r9X1jrGs9Z1rrWt9b1zrmu9d17r2v9f2CBsMHYoWxw9kibLF2aNs8faJG0ydqlbXL2yZts3bp23z9wobjR3KludPdKm61d2rbvX3ixvNnerW9298ub7d369v95ALyA3kC/X6vIHeQT6e7yC7xeQbebyD71eQje7yE74vIVvm8he+ryGb7vIbvy8h2/byH7+vIhv+8iO4LyJbhvInuK8im47yK7kvItuW8i+5ryMbnvIzui8jW6byN7qvI5uu8ju7LyPbtvI/u68kG77yQ7AvJFsG8kewrySbDvJLsS8k2xbyT7GvJRse8lOyLyVbJvJXsq8lmy7yW7MvJds28l+zryYbPvJjtC8mW0byZ7SvJptO8mu1LybbVvJvta8nG17yc7YvJ1tm8ne2ryebbvJ7ty8n23byf7evKBt+8oOgLyhaBvKHoK8omg7yi6EvKNoW8o+hrykaHvKToi8pWibyl6KvKZou8pujLynaNvKfo68qGj7yo6QvKlpG8qekryqaTvKrpS8q2lbyr6WvKxpe8rOmLytaZvK3pq8rmm7yu6cvK9p28r+nrywafvLDqC8sWobyx6ivLJqO8supLyzalvLPqa8tGp7y06ovLVqm8teqry2arvLbqy8t2rby36uvLhq+8uOsLy5axvLnrK8ums7y660vLtrW8u+try8a3vLzri8vWuby966vL5ru8vuvLy/a9vL/r68wGv7zA4AvMFgG8weArzCYDvMLgS8w2BbzD4GvMRge8xOCLzFYJvMXgq8xmC7zG4MvMdg28x+DrzIYPvMjhC8yWEbzJ4SvMphO8yuFLzLYVvMvha8zGF7zM4YvM1hm8zeGrzOYbvM7hy8z2HbzP4evNBh+80OILzRYhvNHiK80mI7zS4kvNNiW80+JrzUYnvNTii81WKbzV4qvNZiu81uLLzXYtvNfi682GL7zY4wvNljG82eMrzaYzvNrjS822Nbzb42vNxje83OOLzdY5vN3jq83mO7ze48vN9j283+PrzgY/vODkC84WQbzh5CvOJkO84uRLzjZFvOPka85GR7zk5IvOVkm85eSrzmZLvObky852Tbzn5OvOhk+86OULzpZRvOnlK86mU7zq5UvOtlW86+VrzsZXvOzli87WWbzt5avO5lu87uXLzvZdvO/l688GX7zw5gvPFmG88eYrzyZjvPLmS882Zbzz5mvPRme89OaLz1ZpvPXmq89ma7z25svPdm289+brz4ZvvPjnC8+Wcbz55yvPpnO8+udLz7Z1vPvna8/Gd7z854vP1nm8/eerz+Z7vP7ny6/137Xn/z9egBn+9AFegEvQDfXxegIvQFfT3egM3i9AdvN6BDer0CW93oFN8XoFt83oGN9XoGt93oHN+XoHt+3oIN/XoIt/3oJNwXoJtw3oKNxXoKtx3oLNyXoLty3oMNzXoMtz3oNN0XoNt03oON1XoOt13oPN2XoPt23oQN3XoQt33oRNgXoRtg3oSNhXoSth3oTNiXoTti3oUNjXoUtj3oVNkXoVtk3oWNlXoWtl3oXNmXoXtm3oYNnXoYtn3oZNoXoZto3oaNpXoatp3obNqXobtq3ocNrXoctr3odNsXodts3oeNtXoett3ofNuXoftu3ogNvXogtv3ohNAXohtA3oiNBXoitB3ojNCXojtC3okNDXoktD3olNEXoltE3omNFXomtF3onNGXontG3ooNHXootH3opNIXoptI3oqNJXoqtJ3orNKXortK3osNLXostL3otNMXottM3ouNNXoutN3ovNOXovtO3owNPXowtP3oxNQXoxtQ3oyNRXoytR3ozNSXoztS3o0NTXo0tT3o1NUXo1tU3o2NVXo2tV3o3NWXo3tW3o4NXXo4tX3o5NYXo5tY3o6NZXo6tZ3o7NaXo7ta3o8NbXo8tb3o9NcXo9tc3o+NdXo+td3o/NeXo/te3pANfXpAtf3pBMAXpBsA3pCMBXpCsB3pDMCXpDsC3pEMDXpEsD3pFMEXpFsE3pGMFXpGsF3pHMGXpHsG3pIMHXpIsH3pJMIXpJsI3pKMJXpKsJ3pLMKXpLsK3pMMLXpMsL3pNMMXpNsM3pOMNXpOsN3pPMOXpPsO3pQMPXpQsP3pRMQXpRsQ3pSMRXpSsR3pTMSXpTsS3pUMTXpUsT3pVMUXpVsU3pWMVXpWsV3pXMWXpXsW3pYMXXpYsX3pZMYXpZsY3paMZXpasZ3pbMaXpbsa3pcMbXpcsb3pdMcXpdsc3peMdXpesd3pfMeXpfse3pgMfXpgsf3phMgXphsg3piMhXpish3pjMiXpjsi3pkMjXpksj3plMkXplsk3pmMlXpmsl3pnMmXpnsm3poMnXposn3ppdh+99u2femmyjemoylemqynemsypemuyremwytemyyvem0yxem2yzem4y1em6y3em8y5em+y7enAy9enCy/enEzBenGzDenIzFenKzHenMzJenOzLenQzNenSzPenUzRenWzTenYzVenazXenczZenezbengzdenizfenkzhenmzjenozlenqznenszpenuzrenwztenyzven0zxen2zzen4z1en6z3en8z5en+z7eoAz9eoCz/eoEXqBl6gh9fF6gpeoMfT3eoObxeoQbzeoSb1eoUb3eoWb4vUMN83qGm+r1Djfd6h5vy9RA37eoib+vUSN/3qJm4L1FDcN6ipuK9RY3HeoubkvUYNy3qMm5r1Gjc96jZui9Rw3Teo6bqvUeN13qPm7L1IDdt6kJu69SI3fepGbAvUkNg3qSmwr1JjYd6k5sS9Sg2LepSbGvUqNj3qVmyL1LDZN6lpsq9S42XepebMvUwNm3qYmzr1MjZ96mZtC9TQ2jepqbSvU2Np3qbm1L1ODat6nJta9To2vep2bYvU8Ns3qem2r1Pjbd6n5ty9UA27eqCbevVCNv3qhmgL1RDQN6opoK9UY0HeqOaEvVINC3qkmhr1SjQ96pZoi9Uw0TeqaaKvVONF3qnmjL1UDRt6qJo69VI0feqmaQvVUNI3qqmkr1VjSd6q5pS9Vg0reqyaWvVaNL3qtmmL1XDTN6rppq9V403eq+acvVgNO3qwmnr1YjT96sZqC9WQ1DerKaivVmNR3qzmpL1aDUt6tJqa9Wo1PerWaovVsNU3q2mqr1bjVd6t5qy9XA1beriauvVyNX3q5msL1dDWN6uvbgvfTtQXq7Gs71dzWl6vBrW9Xk1ter0a3vV7NcXq+Gub1fTXV6vxru9X815esAa9vWBNfXrBGv71gzAF6whgG9YUwFesMYDvWHMCXrEGBb1iTA16xRge9YswResYYJvWNMFXrHGC71jzBl6yBg29ZEwdeskYPvWTMIXrKGEb1lTCV6yxhO9ZcwpeswYVvWZMLXrNGF71mzDF6zhhm9Z0w1es8YbvWfMOXrQGHb1oTD160Rh+9aMxBetIYhvWlMRXrTGI71pzEl61BiW9akxNetUYnvWrMUXrWGKb1rTFV61xiu9a8xZetgYtvWxMXXrZGL71szGF62hjG9bUxletsYzvW3MaXrcGNb1uTG163Rje9bsxxet4Y5vW9MdXrfGO71vzHl64Bj29cEx9euEY/vXDMgXriGQb1xTIV64xkO9ccyJeuQZFvXJMjXrlGR71yzJF65hkm9c0yVeucZLvXPMmXroGTb10TJ166Rk+9dMyheuoZRvXVMpXrrGU711zKl67BlW9dkyteu0ZXvXbMsXruGWb13TLV67xlu9d8y5evAZdvXhMvXrxGX714zMF68hmG9eUzFevMZjvXnMyXr0GZb16TM169Rme9eszRevYZpvXtM1Xr3Ga717zNl6+Bm29fEzdevkZvvXzM4Xr6Gcb19TOV6+xnO9fczpevwZ1vX5M7Xr9Gd71+zPF6/hnm9f0z1ev92fb312fb1/zPl4ABn28AEz9eAEZ/vADF4AgvAFH18XgDC8AcfT3eAQN4vAJG83gFDerwCxvd4Bg3xeAaN83gHDfV4B433eAgN+XgIjft4CQ39eAmN/3gKDcF4Co3DeAsNxXgLjcd4DA3JeAyNy3gNDc14DY3PeA4N0XgOjdN4Dw3VeA+N13gQDdl4EI3beBEN3XgRjd94Eg2BeBKNg3gTDYV4E42HeBQNiXgUjYt4FQ2NeBWNj3gWDZF4Fo2TeBcNlXgXjZd4GA2ZeBiNm3gZDZ14GY2feBoNoXgajaN4Gw2leBuNp3gcDal4HI2reB0NrXgdja94Hg2xeB6Ns3gfDbV4H423eCANuXggjbt4IQ29eCGNv3giDQF4Io0DeCMNBXgjjQd4JA0JeCSNC3glDQ14JY0PeCYNEXgmjRN4Jw0VeCeNF3goDRl4KI0beCkNHXgpjR94Kg0heCqNI3grDSV4K40neCwNKXgsjSt4LQ0teC2NL3guDTF4Lo0zeC8NNXgvjTd4MA05eDCNO3gxDT14MY0/eDINQXgyjUN4Mw1FeDONR3g0DUl4NI1LeDUNTXg1jU94Ng1ReDaNU3g3DVV4N41XeDgNWXg4jVt4OQ1deDmNX3g6DWF4Oo1jeDsNZXg79iG99OyjeDwNaXg8jWt4PQ1teD2Nb3g+DXF4Po1zeD8NdXg/jXd4QA15eECNe3hBDX14QY1/eEIMAXhCjAN4QwwFeEOMB3hEDAl4RIwLeEUMDXhFjA94RgwReEaME3hHDBV4R4wXeEgMGXhIjBt4SQwdeEmMH3hKDCF4SowjeEsMJXhLjCd4TAwpeEyMK3hNDC14TYwveE4MMXhOjDN4Tww1eE+MN3hQDDl4UIw7eFEMPXhRjD94UgxBeFKMQ3hTDEV4U4xHeFQMSXhUjEt4VQxNeFWMT3hWDFF4VoxTeFcMVXhXjFd4WAxZeFiMW3hZDF14WYxfeFoMYXhajGN4WwxleFuMZ3hcDGl4XIxreF0MbXhdjG94XgxxeF6Mc3hfDHV4X4x3eGAMeXhgjHt4YQx9eGGMf3hiDIF4YoyDeGMMhXhjjId4ZAyJeGSMi3hlDI14ZYyPeGYMkXhmjJN4ZwyVeGeMl3hoDJl4aIybeGkMnXhpjJ94agyheGqMo3hrDKV4a4yneGwMqXhsjKt4bQyteG2Mr3huDLF4boyzeG8MtXhvjLd4cAy5eHCMu3hxDL14cYy/eHIduy99dkK8OUZhvDmGYrw5xmO8OgZkvDpGZbw6hma8OsZnvDsGaLw7Rmm8O4ZqvDvGa7w8Bmy8PEZtvDyGbrw8xm+8PQZwvD1Gcbw9hnK8PcZzvD4GdLw+RnW8PoZ2vD7Gd7w/Bni8P0Z5vD+Gerw/xnu8QAZ8vEBGfbxAhn68QMZ/vEEC8QULxBg+vi8QcLxCA+nu8QkN4vEKDebxCw3q8QwN7vENDfF4hwb5vEPDfV4iAb7vERDfl4iQb9vETDf14igb/vEVDcF4iwbhvEXDcV4jAbjvEZDcl4jQblvEbDc14jgbnvEdDdF4jwbpvEfDdV4kAbrvEhDdl4kQbtvEjDd14kgbvvElDYF4kwbBvEnDYV4lAbDvEpDYl4lQbFvErDY14lgbHvEtDZF4lwbJvEvDZV4mAbLvExDZl4mQbNvEzDZ14mgbPvE1DaF4mwbRvE3DaV4nAbTvE5Dal4nQbVvE7Da14ngbXvE9DbF4nwbZvE/DbV4oAbbvFBDbl4oQbdvFDDb14ogbfvFFDQF4owaBvFHDQV4pAaD5MUm99DsOXilBoW8UsNDXimBoe8U0NEXinBom8U8NFXioBou8VENGXipBo28VMNHXiqBo+8VUNIXirBpG8VcNJXisBpO8VkNKXitBpW8VsNLXiuBpe8V0NMXivBpm8V8NNXiwBpu8WENOXixBp28WMNPXiyBp+8WUNQXizBqG8WcNRXi0BqO8WkNSXi1BqW8WsNTXi2Bqe8W0NUXi3Bqm8W8NVXi4Bqu8XENWXi5Bq28XMNXXi6Bq+8XUNYXi7BrG8XcNZXi8BrO8XkNaXi9BrW8XsNbXi+Bre8X0NcXi/Brm8X8NdXjABru8YENeXjBBr28YMNfXjCBr+8YUMAXjDBgG8YcMBXjEBgO8YkMCXjFBgW8YsMDXjGBge8Y0MEXjHBgm8Y8MFXjIBgu8ZEMGXjJBg28ZMMHXjKBg+8ZUMIXjLBhG8ZcMJXjMBhO8ZkMKXjNBhW8ZsMLXjOBhe8Z0MMXjPBhm8Z8MNXjQBhu8aEMOXjRBh28aMMPXjSBh+8aUMQXjTHYvvfXZx/2gC+OdCCSSwAPAAAADwAAAAJbA9icKaGDSh0wJgAgAAAARm9sZGVyMVxGb2xkZXIgPz9cMj8/LnR4dABO2w0th2UAbC2HZQIA8CYSGO+7v+S4reaWh+S4reaWh5QGdOCQOQAAAAAAAAAAAAIAAAAARWSGShQwFAAQAAAARm9sZGVyMVxGb2xkZXIgU3BhY2UAsFjVbU9BdOCSPQAAAAAAAAAAAAIAAAAAR2SGShQwGAAQAAAARm9sZGVyMVxGb2xkZXIgPz8ATtgNLYdlAPCsNUv20XTgkCwAAAAAAAAAAAACAAAAADBkhkoUMAcAEAAAAEZvbGRlcjEAsKoVaMQ9ewBABwA=', 'base64')
+// HeaderEnc1234.rar from the same upstream MIT test suite. Its file headers
+// and payloads are encrypted with the deterministic password "1234".
+const HEADER_ENCRYPTED_RAR = Buffer.from('UmFyIRoHAM6Zc4AADQAAAAAAAAAAAAAAAAAAAJPPq+tC7kb+20uYk0gq0MEW0RnMY87mJjVfk2pZ2l1hswZtLi3a3Tttx7+sAOo3yWhEDDlEV4/ZPa5HRtzk4ixxzAUX3NLdvGFtZzwNvrKER1U11CO58cEJYwMAb00mSQAAAAAAAAAAZe5YSqjdugsoKY2ljG5uBLezMVJhXr3/OEQAsi/rqqu2TzNN2+YlsYs7VgvvGm43ULoFeXNCHpwVtn+Ce+97gvXUeBs7k5xe4jIY084mD1tZyoG78cgcVKKhGnVpbN0DAAAAAAAAAACmAnZVHOHZezeKX5/8e6oS0CvlpebpmGzHcMoWvlyhcaDIZ38lgTkb5o2AbvKIpRYV1gIDXx+H2bbpACoTobXN7ge5vwHtUrbs64LyxHHoyjr/KtejMtZ69osAIX1DDpUAAAAAAAAAACQnI+yOgBdTJlP42jhLQRE=', 'base64')
+const FILE_ENCRYPTED_RAR = Buffer.from('UmFyIRoHAM+QcwAADQAAAAAAAABM+HQgkC4ABQAAAAUAAAACGSCKVxahg0odMAkAIAAAADFGaWxlLnR4dADwkOgEMUZpbGXcMHQkljwAIAAAAA8AAAACWwPYnCmhg0odMw8AIAAAADI/Py50eHQAThsyLYdlAiaSyWh4aKAhAPAmEhjfoJzHB5cWF7CjVyDJLLQscUep4830hwRH/3ogjuHVEcKUdCSUNQAQAAAABQAAAAJKlGwtVZ+DSh0zCAAgAAAAM1NlYy50eHT5pxtn2Ow6MACwWMggPeh+dGs0RwexfVSgel2k3cQ9ewBABwA=', 'base64')
+const WASM = zlib.brotliDecompressSync(fs.readFileSync(path.join(__dirname, '..', 'miniprogram', 'file-reader', 'archive', 'vendor', 'unrar', 'unrar.wasm.br')))
+
+test('RAR 解压内核列出目录树并解压 Normal 压缩的真实文件', async () => {
+  const options = { wasmBinary: WASM }
+  const inspection = await inspectRarArchive(COMPRESSED_RAR, options)
+  const compressed = inspection.entries.find(entry => entry.name.endsWith('/long.txt'))
+
+  assert.equal(inspection.title, 'RAR 压缩包')
+  assert.equal(compressed.method, 'Normal')
+  assert.equal(compressed.canOpen, true)
+  assert.deepEqual(inspection.entries.slice(0, 3).map(entry => entry.displayName), ['Folder1/', 'Folder Space/', 'long.txt'])
+
+  const output = await extractRarEntry(COMPRESSED_RAR, compressed, { ...options, maxSize: 2 * 1024 * 1024 })
+  assert.equal(output.length, 1049076)
+  assert.equal(Buffer.from(output.slice(0, 20)).toString(), '11010010001000010000')
+})
+
+test('RAR 解压内核保留中文目录名并打开未压缩条目', async () => {
+  const options = { wasmBinary: WASM }
+  const inspection = await inspectRarArchive(COMPRESSED_RAR, options)
+  const stored = inspection.entries.find(entry => entry.name.endsWith('/2中文.txt'))
+  const output = await extractRarEntry(COMPRESSED_RAR, stored, options)
+
+  assert.equal(stored.displayName, '2中文.txt')
+  assert.equal(stored.method, 'Storing')
+  assert.equal(Buffer.from(output).toString(), '\uFEFF中文中文')
+})
+
+test('RAR 头部加密必须输入密码，并能打开加密后的真实正文', async () => {
+  const options = { wasmBinary: WASM }
+  await assert.rejects(inspectRarArchive(HEADER_ENCRYPTED_RAR, options), error => error.reason === 'ERAR_MISSING_PASSWORD')
+  await assert.rejects(inspectRarArchive(HEADER_ENCRYPTED_RAR, { ...options, password: '错误密码' }))
+
+  const inspection = await inspectRarArchive(HEADER_ENCRYPTED_RAR, { ...options, password: '1234' })
+  const entry = inspection.entries.find(item => item.name === '1File.txt')
+  assert.equal(inspection.passwordRequired, true)
+  assert.equal(inspection.passwordProvided, true)
+  assert.equal(entry.encrypted, true)
+  assert.equal(entry.canOpen, true)
+
+  const output = await extractRarEntry(HEADER_ENCRYPTED_RAR, entry, { ...options, password: '1234' })
+  assert.equal(Buffer.from(output).toString(), '1File')
+})
+
+test('RAR 文件级加密目录可先查看，输入对应密码后打开条目正文', async () => {
+  const options = { wasmBinary: WASM }
+  const locked = await inspectRarArchive(FILE_ENCRYPTED_RAR, options)
+  const lockedEntry = locked.entries.find(item => item.name === '2中文.txt')
+  assert.equal(lockedEntry.encrypted, true)
+  assert.equal(lockedEntry.canOpen, false)
+
+  const unlocked = await inspectRarArchive(FILE_ENCRYPTED_RAR, { ...options, password: '2中文' })
+  const entry = unlocked.entries.find(item => item.name === '2中文.txt')
+  assert.equal(entry.canOpen, true)
+  await assert.rejects(extractRarEntry(FILE_ENCRYPTED_RAR, entry, { ...options, password: '错误密码' }))
+  const output = await extractRarEntry(FILE_ENCRYPTED_RAR, entry, { ...options, password: '2中文' })
+  assert.equal(Buffer.from(output).toString(), '\uFEFF中文中文')
+})

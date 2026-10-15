@@ -1,0 +1,5051 @@
+{
+  "schemaVersion": 1,
+  "version": "1.4.105",
+  "scope": "Container local bounding rectangles, analytic curve extrema, single nested clip coordinate inheritance, use paint inheritance, precise transformed ellipse clip. Not all SVG or physical-device coverage.",
+  "chrome": {
+    "testedAt": "2026-09-05T02:17:53.407Z",
+    "reference": "Native Chrome DOM getBBox plus independent Canvas Path2D paints; pinned WPT reference SVGs",
+    "cases": 55,
+    "exactPixels": 55,
+    "failures": [],
+    "results": [
+      {
+        "name": "container-rect-0",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-1",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 8,
+              "width": 132,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 8,
+              "width": 132,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 8,
+              "width": 132,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 8,
+              "width": 132,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 8,
+              "width": 132,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 8,
+              "width": 132,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-2",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 16,
+              "width": 136,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 16,
+              "width": 136,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 16,
+              "width": 136,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 16,
+              "width": 136,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 16,
+              "width": 136,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 16,
+              "width": 136,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-3",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 0,
+              "width": 140,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 0,
+              "width": 140,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 0,
+              "width": 140,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 0,
+              "width": 140,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 0,
+              "width": 140,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 0,
+              "width": 140,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-4",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 8,
+              "width": 144,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 8,
+              "width": 144,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 8,
+              "width": 144,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 8,
+              "width": 144,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 8,
+              "width": 144,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 8,
+              "width": 144,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-5",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 16,
+              "width": 148,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 16,
+              "width": 148,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 16,
+              "width": 148,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 16,
+              "width": 148,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 16,
+              "width": 148,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 16,
+              "width": 148,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-6",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 0,
+              "width": 152,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 0,
+              "width": 152,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 0,
+              "width": 152,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 0,
+              "width": 152,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 0,
+              "width": 152,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 0,
+              "width": 152,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-7",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 8,
+              "width": 156,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 8,
+              "width": 156,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 8,
+              "width": 156,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 8,
+              "width": 156,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 8,
+              "width": 156,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 8,
+              "width": 156,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-8",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 16,
+              "width": 160,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 16,
+              "width": 160,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 16,
+              "width": 160,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 16,
+              "width": 160,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 16,
+              "width": 160,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 16,
+              "width": 160,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-9",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 0,
+              "width": 164,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 0,
+              "width": 164,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 0,
+              "width": 164,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 0,
+              "width": 164,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 0,
+              "width": 164,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 0,
+              "width": 164,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-10",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 8,
+              "width": 168,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 8,
+              "width": 168,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 8,
+              "width": 168,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 8,
+              "width": 168,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 8,
+              "width": 168,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 8,
+              "width": 168,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-11",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 16,
+              "width": 172,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 16,
+              "width": 172,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 16,
+              "width": 172,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 16,
+              "width": 172,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 16,
+              "width": 172,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 16,
+              "width": 172,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-12",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 176,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 176,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 176,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 176,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 176,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 176,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-13",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 8,
+              "width": 180,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 8,
+              "width": 180,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 8,
+              "width": 180,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 8,
+              "width": 180,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 8,
+              "width": 180,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 8,
+              "width": 180,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-14",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 16,
+              "width": 184,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 16,
+              "width": 184,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 16,
+              "width": 184,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 16,
+              "width": 184,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 16,
+              "width": 184,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 16,
+              "width": 184,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-15",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 0,
+              "width": 188,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 0,
+              "width": 188,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 0,
+              "width": 188,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 0,
+              "width": 188,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 0,
+              "width": 188,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 0,
+              "width": 188,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-16",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 8,
+              "width": 192,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 8,
+              "width": 192,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 8,
+              "width": 192,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 8,
+              "width": 192,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 8,
+              "width": 192,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 8,
+              "width": 192,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-17",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 16,
+              "width": 196,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 16,
+              "width": 196,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 16,
+              "width": 196,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 16,
+              "width": 196,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 16,
+              "width": 196,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 16,
+              "width": 196,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-18",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 0,
+              "width": 200,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 0,
+              "width": 200,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 0,
+              "width": 200,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 0,
+              "width": 200,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 0,
+              "width": 200,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 0,
+              "width": 200,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-19",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 8,
+              "width": 204,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 8,
+              "width": 204,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 8,
+              "width": 204,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 8,
+              "width": 204,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 8,
+              "width": 204,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 8,
+              "width": 204,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-20",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 16,
+              "width": 208,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 16,
+              "width": 208,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 16,
+              "width": 208,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 16,
+              "width": 208,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 16,
+              "width": 208,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 16,
+              "width": 208,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-21",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 0,
+              "width": 212,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 0,
+              "width": 212,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 0,
+              "width": 212,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 0,
+              "width": 212,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 0,
+              "width": 212,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 0,
+              "width": 212,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-22",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 8,
+              "width": 216,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 8,
+              "width": 216,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 8,
+              "width": 216,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 8,
+              "width": 216,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 8,
+              "width": 216,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 8,
+              "width": 216,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-23",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 16,
+              "width": 220,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 16,
+              "width": 220,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 16,
+              "width": 220,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 16,
+              "width": 220,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 16,
+              "width": 220,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 16,
+              "width": 220,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-24",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 224,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 224,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 224,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 224,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 224,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 224,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-25",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 8,
+              "width": 228,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 8,
+              "width": 228,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 8,
+              "width": 228,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 8,
+              "width": 228,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 8,
+              "width": 228,
+              "height": 72
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 8,
+              "width": 228,
+              "height": 72
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-26",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 16,
+              "width": 232,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 16,
+              "width": 232,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 16,
+              "width": 232,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 16,
+              "width": 232,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 16,
+              "width": 232,
+              "height": 80
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 16,
+              "width": 232,
+              "height": 80
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-27",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 0,
+              "width": 236,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 0,
+              "width": 236,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 0,
+              "width": 236,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 0,
+              "width": 236,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 0,
+              "width": 236,
+              "height": 88
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 0,
+              "width": 236,
+              "height": 88
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-28",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 8,
+              "width": 240,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 8,
+              "width": 240,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 8,
+              "width": 240,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 8,
+              "width": 240,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 8,
+              "width": 240,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 8,
+              "width": 240,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-29",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 16,
+              "width": 244,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 16,
+              "width": 244,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 16,
+              "width": 244,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 16,
+              "width": 244,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 4,
+              "y": 16,
+              "width": 244,
+              "height": 104
+            },
+            "actualBox": {
+              "x": 4,
+              "y": 16,
+              "width": 244,
+              "height": 104
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-30",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 0,
+              "width": 248,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 0,
+              "width": 248,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 0,
+              "width": 248,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 0,
+              "width": 248,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 8,
+              "y": 0,
+              "width": 248,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 8,
+              "y": 0,
+              "width": 248,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "container-rect-31",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 8,
+              "width": 252,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 8,
+              "width": 252,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 8,
+              "width": 252,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 8,
+              "width": 252,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 12,
+              "y": 8,
+              "width": 252,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 12,
+              "y": 8,
+              "width": 252,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "hidden",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "transparent",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "no-fill",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "no-display",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "defs-excluded",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "stroke-excluded",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "child-translation",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "use-group",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 12,
+              "width": 128,
+              "height": 128
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "nested-viewport",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 52,
+              "y": 12,
+              "width": 64,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 64,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 52,
+              "y": 12,
+              "width": 64,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 64,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 52,
+              "y": 12,
+              "width": 64,
+              "height": 64
+            },
+            "actualBox": {
+              "x": 52,
+              "y": 12,
+              "width": 64,
+              "height": 64
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "cubic",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 120
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 120
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "cubic-skew",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 30,
+              "y": 38,
+              "width": 152,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 30,
+              "y": 38,
+              "width": 152,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 30,
+              "y": 38,
+              "width": 152,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 30,
+              "y": 38,
+              "width": 152,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 30,
+              "y": 38,
+              "width": 152,
+              "height": 112
+            },
+            "actualBox": {
+              "x": 30,
+              "y": 38,
+              "width": 152,
+              "height": 112
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "quadratic",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 100
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 99.99999999999997
+            },
+            "boundsError": 2.842170943040401e-14,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 100
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 99.99999999999997
+            },
+            "boundsError": 2.842170943040401e-14,
+            "rgbaError": 916,
+            "maxChannelError": 24,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 24,
+            "svgRGBAError": 916,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 100
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 20,
+              "width": 160,
+              "height": 99.99999999999997
+            },
+            "boundsError": 2.842170943040401e-14,
+            "rgbaError": 916,
+            "maxChannelError": 24,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 24,
+            "svgRGBAError": 916,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "quadratic-skew",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 30,
+              "y": 38,
+              "width": 148,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 30,
+              "y": 38,
+              "width": 148,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 30,
+              "y": 38,
+              "width": 148,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 30,
+              "y": 38,
+              "width": 148,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 862,
+            "maxChannelError": 32,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 32,
+            "svgRGBAError": 862,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 30,
+              "y": 38,
+              "width": 148,
+              "height": 96
+            },
+            "actualBox": {
+              "x": 30,
+              "y": 38,
+              "width": 148,
+              "height": 96
+            },
+            "boundsError": 0,
+            "rgbaError": 862,
+            "maxChannelError": 32,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 32,
+            "svgRGBAError": 862,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "smooth",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": -58.76543426513672,
+              "width": 180,
+              "height": 218.76544189453125
+            },
+            "actualBox": {
+              "x": 20,
+              "y": -58.76543209876542,
+              "width": 180,
+              "height": 218.76543209876542
+            },
+            "boundsError": 9.795765834041958e-06,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": -58.76543426513672,
+              "width": 180,
+              "height": 218.76544189453125
+            },
+            "actualBox": {
+              "x": 20,
+              "y": -58.76543209876542,
+              "width": 180,
+              "height": 218.76543209876542
+            },
+            "boundsError": 9.795765834041958e-06,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": -58.76543426513672,
+              "width": 180,
+              "height": 218.76544189453125
+            },
+            "actualBox": {
+              "x": 20,
+              "y": -58.76543209876542,
+              "width": 180,
+              "height": 218.76543209876542
+            },
+            "boundsError": 9.795765834041958e-06,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "smooth-skew",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 14.246912956237793,
+              "y": -25.012348175048828,
+              "width": 187.75308227539062,
+              "height": 193.01234436035156
+            },
+            "actualBox": {
+              "x": 14.246913580246915,
+              "y": -25.01234567901234,
+              "width": 187.7530864197531,
+              "height": 193.01234567901236
+            },
+            "boundsError": 4.14436246387595e-06,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 14.246912956237793,
+              "y": -25.012348175048828,
+              "width": 187.75308227539062,
+              "height": 193.01234436035156
+            },
+            "actualBox": {
+              "x": 14.246913580246915,
+              "y": -25.01234567901234,
+              "width": 187.7530864197531,
+              "height": 193.01234567901236
+            },
+            "boundsError": 4.14436246387595e-06,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 14.246912956237793,
+              "y": -25.012348175048828,
+              "width": 187.75308227539062,
+              "height": 193.01234436035156
+            },
+            "actualBox": {
+              "x": 14.246913580246915,
+              "y": -25.01234567901234,
+              "width": 187.7530864197531,
+              "height": 193.01234567901236
+            },
+            "boundsError": 4.14436246387595e-06,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "arc",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 2.12825608253479,
+              "y": 20.521211624145508,
+              "width": 177.8717498779297,
+              "height": 79.47879028320312
+            },
+            "actualBox": {
+              "x": 2.128247192490944,
+              "y": 20.521208599540145,
+              "width": 177.87175280750907,
+              "height": 79.47879140045985
+            },
+            "boundsError": 8.890043845966034e-06,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 2.12825608253479,
+              "y": 20.521211624145508,
+              "width": 177.8717498779297,
+              "height": 79.47879028320312
+            },
+            "actualBox": {
+              "x": 2.128247192490944,
+              "y": 20.521208599540145,
+              "width": 177.87175280750907,
+              "height": 79.47879140045985
+            },
+            "boundsError": 8.890043845966034e-06,
+            "rgbaError": 4002,
+            "maxChannelError": 60,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 60,
+            "svgRGBAError": 4002,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 2.12825608253479,
+              "y": 20.521211624145508,
+              "width": 177.8717498779297,
+              "height": 79.47879028320312
+            },
+            "actualBox": {
+              "x": 2.128247192490944,
+              "y": 20.521208599540145,
+              "width": 177.87175280750907,
+              "height": 79.47879140045985
+            },
+            "boundsError": 8.890043845966034e-06,
+            "rgbaError": 4002,
+            "maxChannelError": 60,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 60,
+            "svgRGBAError": 4002,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "arc-skew",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 15.80684757232666,
+              "y": 36.62979507446289,
+              "width": 158.19314575195312,
+              "height": 81.37020874023438
+            },
+            "actualBox": {
+              "x": 15.806839473900784,
+              "y": 36.62979159888121,
+              "width": 158.1931605260992,
+              "height": 81.37020840111879
+            },
+            "boundsError": 1.477414608075378e-05,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 15.80684757232666,
+              "y": 36.62979507446289,
+              "width": 158.19314575195312,
+              "height": 81.37020874023438
+            },
+            "actualBox": {
+              "x": 15.806839473900784,
+              "y": 36.62979159888121,
+              "width": 158.1931605260992,
+              "height": 81.37020840111879
+            },
+            "boundsError": 1.477414608075378e-05,
+            "rgbaError": 4218,
+            "maxChannelError": 64,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 64,
+            "svgRGBAError": 4218,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 15.80684757232666,
+              "y": 36.62979507446289,
+              "width": 158.19314575195312,
+              "height": 81.37020874023438
+            },
+            "actualBox": {
+              "x": 15.806839473900784,
+              "y": 36.62979159888121,
+              "width": 158.1931605260992,
+              "height": 81.37020840111879
+            },
+            "boundsError": 1.477414608075378e-05,
+            "rgbaError": 4218,
+            "maxChannelError": 64,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 64,
+            "svgRGBAError": 4218,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "reflected-arc",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 100,
+              "width": 177.87176513671875,
+              "height": 79.47880554199219
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 100,
+              "width": 177.87175280750904,
+              "height": 79.47879140045987
+            },
+            "boundsError": 1.4141532318490135e-05,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 100,
+              "width": 177.87176513671875,
+              "height": 79.47880554199219
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 100,
+              "width": 177.87175280750904,
+              "height": 79.47879140045987
+            },
+            "boundsError": 1.4141532318490135e-05,
+            "rgbaError": 1323,
+            "maxChannelError": 48,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 48,
+            "svgRGBAError": 1323,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 100,
+              "width": 177.87176513671875,
+              "height": 79.47880554199219
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 100,
+              "width": 177.87175280750904,
+              "height": 79.47879140045987
+            },
+            "boundsError": 1.4141532318490135e-05,
+            "rgbaError": 1323,
+            "maxChannelError": 48,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 48,
+            "svgRGBAError": 1323,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "reflected-arc-skew",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 46,
+              "y": 102,
+              "width": 158.19317626953125,
+              "height": 81.37022399902344
+            },
+            "actualBox": {
+              "x": 46,
+              "y": 102,
+              "width": 158.1931605260992,
+              "height": 81.37020840111882
+            },
+            "boundsError": 1.574343204424622e-05,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 46,
+              "y": 102,
+              "width": 158.19317626953125,
+              "height": 81.37022399902344
+            },
+            "actualBox": {
+              "x": 46,
+              "y": 102,
+              "width": 158.1931605260992,
+              "height": 81.37020840111882
+            },
+            "boundsError": 1.574343204424622e-05,
+            "rgbaError": 1006,
+            "maxChannelError": 24,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 24,
+            "svgRGBAError": 1006,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 46,
+              "y": 102,
+              "width": 158.19317626953125,
+              "height": 81.37022399902344
+            },
+            "actualBox": {
+              "x": 46,
+              "y": 102,
+              "width": 158.1931605260992,
+              "height": 81.37020840111882
+            },
+            "boundsError": 1.574343204424622e-05,
+            "rgbaError": 1006,
+            "maxChannelError": 24,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 24,
+            "svgRGBAError": 1006,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "clip-path-content-clip-004.svg",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "clip-path-objectboundingbox-001.svg",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "clip-path-objectboundingbox-002.svg",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "clip-path-objectboundingbox-003.svg",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "actualBox": null,
+            "boundsError": null,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      }
+    ]
+  },
+  "baseline": {
+    "version": "1.4.104",
+    "cases": 55,
+    "exactPixels": 2,
+    "failures": [
+      "container-rect-0",
+      "container-rect-1",
+      "container-rect-2",
+      "container-rect-3",
+      "container-rect-4",
+      "container-rect-5",
+      "container-rect-6",
+      "container-rect-7",
+      "container-rect-8",
+      "container-rect-9",
+      "container-rect-10",
+      "container-rect-11",
+      "container-rect-12",
+      "container-rect-13",
+      "container-rect-14",
+      "container-rect-15",
+      "container-rect-16",
+      "container-rect-17",
+      "container-rect-18",
+      "container-rect-19",
+      "container-rect-20",
+      "container-rect-21",
+      "container-rect-22",
+      "container-rect-23",
+      "container-rect-24",
+      "container-rect-25",
+      "container-rect-26",
+      "container-rect-27",
+      "container-rect-28",
+      "container-rect-29",
+      "container-rect-30",
+      "container-rect-31",
+      "hidden",
+      "transparent",
+      "no-fill",
+      "no-display",
+      "defs-excluded",
+      "stroke-excluded",
+      "child-translation",
+      "use-group",
+      "nested-viewport",
+      "cubic",
+      "cubic-skew",
+      "quadratic",
+      "quadratic-skew",
+      "smooth",
+      "smooth-skew",
+      "arc",
+      "arc-skew",
+      "reflected-arc",
+      "reflected-arc-skew",
+      "clip-path-content-clip-004.svg",
+      "clip-path-objectboundingbox-003.svg"
+    ]
+  },
+  "wechat": {
+    "testedAt": "2026-09-05T02:29:40.181Z",
+    "scope": "Actual reader file import and Canvas pixels; independent Canvas geometry plus Chrome DOM getBBox; DevTools only, not physical devices.",
+    "system": {
+      "platform": "devtools",
+      "SDKVersion": "3.16.2",
+      "version": "8.0.5"
+    },
+    "results": [
+      {
+        "name": "container-rect-0",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 128,
+          "height": 64
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "container-rect-1",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 4,
+          "y": 8,
+          "width": 132,
+          "height": 72
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "hidden",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "transparent",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "no-fill",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "no-display",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "defs-excluded",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "stroke-excluded",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "child-translation",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 20,
+          "y": 12,
+          "width": 128,
+          "height": 128
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "use-group",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 20,
+          "y": 12,
+          "width": 128,
+          "height": 128
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "nested-viewport",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 52,
+          "y": 12,
+          "width": 64,
+          "height": 64
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "cubic",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 20,
+          "y": 20,
+          "width": 160,
+          "height": 120
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "cubic-skew",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 30,
+          "y": 38,
+          "width": 152,
+          "height": 112
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "quadratic",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 20,
+          "y": 20,
+          "width": 160,
+          "height": 99.99999999999997
+        },
+        "boundsError": 2.842170943040401e-14,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "quadratic-skew",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 30,
+          "y": 38,
+          "width": 148,
+          "height": 96
+        },
+        "boundsError": 0,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "smooth",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 20,
+          "y": -58.76543209876542,
+          "width": 180,
+          "height": 218.76543209876542
+        },
+        "boundsError": 9.795765834041958e-06,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "smooth-skew",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 14.246913580246915,
+          "y": -25.01234567901234,
+          "width": 187.7530864197531,
+          "height": 193.01234567901236
+        },
+        "boundsError": 4.14436246387595e-06,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "arc",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 2.128247192490944,
+          "y": 20.521208599540145,
+          "width": 177.87175280750907,
+          "height": 79.47879140045985
+        },
+        "boundsError": 8.890043845966034e-06,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "arc-skew",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 15.806839473900784,
+          "y": 36.62979159888121,
+          "width": 158.1931605260992,
+          "height": 81.37020840111879
+        },
+        "boundsError": 1.477414608075378e-05,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "reflected-arc",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 20,
+          "y": 100,
+          "width": 177.87175280750904,
+          "height": 79.47879140045987
+        },
+        "boundsError": 1.4141532318490135e-05,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "reflected-arc-skew",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 1368900,
+        "width": 1170,
+        "height": 1170,
+        "bbox": {
+          "x": 46,
+          "y": 102,
+          "width": 158.1931605260992,
+          "height": 81.37020840111882
+        },
+        "boundsError": 1.574343204424622e-05,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "clip-path-content-clip-004.svg",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 342225,
+        "width": 1170,
+        "height": 1170,
+        "bbox": null,
+        "boundsError": null,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "clip-path-objectboundingbox-001.svg",
+        "rgbaError": 256,
+        "maxChannelError": 64,
+        "differences": [
+          {
+            "x": 292,
+            "y": 292,
+            "channel": 1,
+            "actual": 128,
+            "expected": 129
+          },
+          {
+            "x": 292,
+            "y": 292,
+            "channel": 3,
+            "actual": 64,
+            "expected": 127
+          },
+          {
+            "x": 877,
+            "y": 292,
+            "channel": 3,
+            "actual": 64,
+            "expected": 128
+          },
+          {
+            "x": 292,
+            "y": 877,
+            "channel": 3,
+            "actual": 64,
+            "expected": 128
+          },
+          {
+            "x": 877,
+            "y": 877,
+            "channel": 1,
+            "actual": 128,
+            "expected": 129
+          },
+          {
+            "x": 877,
+            "y": 877,
+            "channel": 3,
+            "actual": 64,
+            "expected": 127
+          }
+        ],
+        "ink": 343396,
+        "width": 1170,
+        "height": 1170,
+        "bbox": null,
+        "boundsError": null,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "clip-path-objectboundingbox-002.svg",
+        "rgbaError": 192,
+        "maxChannelError": 48,
+        "differences": [
+          {
+            "x": 146,
+            "y": 146,
+            "channel": 3,
+            "actual": 143,
+            "expected": 191
+          },
+          {
+            "x": 438,
+            "y": 146,
+            "channel": 3,
+            "actual": 143,
+            "expected": 191
+          },
+          {
+            "x": 146,
+            "y": 438,
+            "channel": 3,
+            "actual": 143,
+            "expected": 191
+          },
+          {
+            "x": 438,
+            "y": 438,
+            "channel": 3,
+            "actual": 143,
+            "expected": 191
+          }
+        ],
+        "ink": 85849,
+        "width": 1170,
+        "height": 1170,
+        "bbox": null,
+        "boundsError": null,
+        "error": "",
+        "animated": true
+      },
+      {
+        "name": "clip-path-objectboundingbox-003.svg",
+        "rgbaError": 0,
+        "maxChannelError": 0,
+        "differences": [],
+        "ink": 269301,
+        "width": 1170,
+        "height": 1170,
+        "bbox": null,
+        "boundsError": null,
+        "error": "",
+        "animated": true
+      }
+    ]
+  },
+  "wechatExactCases": 23,
+  "wechatPendingPixels": [
+    {
+      "name": "clip-path-objectboundingbox-001.svg",
+      "rgbaError": 256,
+      "maxChannelError": 64,
+      "differences": [
+        {
+          "x": 292,
+          "y": 292,
+          "channel": 1,
+          "actual": 128,
+          "expected": 129
+        },
+        {
+          "x": 292,
+          "y": 292,
+          "channel": 3,
+          "actual": 64,
+          "expected": 127
+        },
+        {
+          "x": 877,
+          "y": 292,
+          "channel": 3,
+          "actual": 64,
+          "expected": 128
+        },
+        {
+          "x": 292,
+          "y": 877,
+          "channel": 3,
+          "actual": 64,
+          "expected": 128
+        },
+        {
+          "x": 877,
+          "y": 877,
+          "channel": 1,
+          "actual": 128,
+          "expected": 129
+        },
+        {
+          "x": 877,
+          "y": 877,
+          "channel": 3,
+          "actual": 64,
+          "expected": 127
+        }
+      ],
+      "ink": 343396,
+      "width": 1170,
+      "height": 1170,
+      "bbox": null,
+      "boundsError": null,
+      "error": "",
+      "animated": true
+    },
+    {
+      "name": "clip-path-objectboundingbox-002.svg",
+      "rgbaError": 192,
+      "maxChannelError": 48,
+      "differences": [
+        {
+          "x": 146,
+          "y": 146,
+          "channel": 3,
+          "actual": 143,
+          "expected": 191
+        },
+        {
+          "x": 438,
+          "y": 146,
+          "channel": 3,
+          "actual": 143,
+          "expected": 191
+        },
+        {
+          "x": 146,
+          "y": 438,
+          "channel": 3,
+          "actual": 143,
+          "expected": 191
+        },
+        {
+          "x": 438,
+          "y": 438,
+          "channel": 3,
+          "actual": 143,
+          "expected": 191
+        }
+      ],
+      "ink": 85849,
+      "width": 1170,
+      "height": 1170,
+      "bbox": null,
+      "boundsError": null,
+      "error": "",
+      "animated": true
+    }
+  ],
+  "userOriginals": {
+    "testedAt": "2026-09-05T02:30:03.995Z",
+    "scope": "Actual WX file read and visible Canvas temporal pixels; simulator only, not physical devices",
+    "system": {
+      "SDKVersion": "3.16.2",
+      "platform": "devtools",
+      "version": "8.0.5"
+    },
+    "results": [
+      {
+        "name": "partridge-bicycle.svg",
+        "bytes": 17410,
+        "sha256": "35842356271fc01cc1e21396fe57ec17956afe212081ba0d0712ccb3a1e771f0",
+        "state": {
+          "name": "partridge-bicycle.svg",
+          "ready": true,
+          "loading": false,
+          "error": "",
+          "notice": ""
+        },
+        "frames": [
+          {
+            "hash": 1248782148,
+            "ink": 1215376,
+            "timeMs": 66.69999999999709,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1040
+          },
+          {
+            "hash": 3548852234,
+            "ink": 1215376,
+            "timeMs": 1350,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1040
+          },
+          {
+            "hash": 1552248357,
+            "ink": 1215453,
+            "timeMs": 2616.199999999997,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1040
+          }
+        ],
+        "paused": [
+          {
+            "hash": 2330466509,
+            "ink": 1215453,
+            "timeMs": 3883.2999999999884,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1040
+          },
+          {
+            "hash": 2330466509,
+            "ink": 1215453,
+            "timeMs": 3883.2999999999884,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1040
+          }
+        ],
+        "replaced": {
+          "hash": 1383609507,
+          "ink": 1215453,
+          "timeMs": 383.3000000000029,
+          "playing": true,
+          "paused": false,
+          "width": 1170,
+          "height": 1040
+        }
+      },
+      {
+        "name": "peacock.svg",
+        "bytes": 354942,
+        "sha256": "bd8e994e06d9bb19544915fe376465d96ad9bbb5d649c26cca53799e26768c8d",
+        "state": {
+          "name": "peacock.svg",
+          "ready": true,
+          "loading": false,
+          "error": "",
+          "notice": ""
+        },
+        "frames": [
+          {
+            "hash": 149583976,
+            "ink": 1230550,
+            "timeMs": 83.30000000000291,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1053
+          },
+          {
+            "hash": 4046133732,
+            "ink": 1230550,
+            "timeMs": 1348.699999999997,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1053
+          },
+          {
+            "hash": 277851082,
+            "ink": 1230630,
+            "timeMs": 2616.600000000006,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1053
+          }
+        ],
+        "paused": [
+          {
+            "hash": 1523523530,
+            "ink": 1230630,
+            "timeMs": 3900,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1053
+          },
+          {
+            "hash": 1523523530,
+            "ink": 1230630,
+            "timeMs": 3900,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1053
+          }
+        ],
+        "replaced": {
+          "hash": 2734499570,
+          "ink": 1230630,
+          "timeMs": 383.29999999998836,
+          "playing": true,
+          "paused": false,
+          "width": 1170,
+          "height": 1053
+        }
+      },
+      {
+        "name": "qin-shi-huang-bicycle.svg",
+        "bytes": 35291,
+        "sha256": "15c86af1181af6c7b46209d7b271c028fba2aa225a1b8436da976d0245494c25",
+        "state": {
+          "name": "qin-shi-huang-bicycle.svg",
+          "ready": true,
+          "loading": false,
+          "error": "",
+          "notice": ""
+        },
+        "frames": [
+          {
+            "hash": 1788306021,
+            "ink": 1245796,
+            "timeMs": 83.29999999998836,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1066
+          },
+          {
+            "hash": 1993873267,
+            "ink": 1245796,
+            "timeMs": 1364.699999999997,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1066
+          },
+          {
+            "hash": 3614257493,
+            "ink": 1245873,
+            "timeMs": 2648.899999999994,
+            "playing": true,
+            "paused": false,
+            "width": 1170,
+            "height": 1066
+          }
+        ],
+        "paused": [
+          {
+            "hash": 2347575699,
+            "ink": 1245873,
+            "timeMs": 3916.600000000006,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1066
+          },
+          {
+            "hash": 2347575699,
+            "ink": 1245873,
+            "timeMs": 3916.600000000006,
+            "playing": false,
+            "paused": true,
+            "width": 1170,
+            "height": 1066
+          }
+        ],
+        "replaced": {
+          "hash": 4118462962,
+          "ink": 1245873,
+          "timeMs": 383.29999999998836,
+          "playing": true,
+          "paused": false,
+          "width": 1170,
+          "height": 1066
+        }
+      }
+    ],
+    "controlledFallback": {
+      "sourceEmpty": true,
+      "notice": "动画暂时无法播放，当前显示静态预览。",
+      "canRetry": true
+    },
+    "recovered": {
+      "ready": true,
+      "notice": ""
+    }
+  },
+  "zeroAreaProbe": {
+    "testedAt": "2026-09-05T02:18:43.656Z",
+    "reference": "Native Chrome DOM getBBox plus independent Canvas Path2D paints; pinned WPT reference SVGs",
+    "cases": 2,
+    "exactPixels": 2,
+    "failures": [],
+    "results": [
+      {
+        "name": "zero-width",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 50,
+              "y": 20,
+              "width": 0,
+              "height": 100
+            },
+            "actualBox": {
+              "x": 50,
+              "y": 20,
+              "width": 0,
+              "height": 100
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 50,
+              "y": 20,
+              "width": 0,
+              "height": 100
+            },
+            "actualBox": {
+              "x": 50,
+              "y": 20,
+              "width": 0,
+              "height": 100
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 50,
+              "y": 20,
+              "width": 0,
+              "height": 100
+            },
+            "actualBox": {
+              "x": 50,
+              "y": 20,
+              "width": 0,
+              "height": 100
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      },
+      {
+        "name": "zero-height",
+        "variants": [
+          {
+            "mode": "native",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 50,
+              "width": 100,
+              "height": 0
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 50,
+              "width": 100,
+              "height": 0
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "fallback",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 50,
+              "width": 100,
+              "height": 0
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 50,
+              "width": 100,
+              "height": 0
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          },
+          {
+            "mode": "factory-throws",
+            "error": null,
+            "bounds": {
+              "x": 20,
+              "y": 50,
+              "width": 100,
+              "height": 0
+            },
+            "actualBox": {
+              "x": 20,
+              "y": 50,
+              "width": 100,
+              "height": 0
+            },
+            "boundsError": 0,
+            "rgbaError": 0,
+            "maxChannelError": 0,
+            "maxAlphaError": 0,
+            "maxPremultipliedError": 0,
+            "svgRGBAError": 0,
+            "fallbackError": 0
+          }
+        ]
+      }
+    ]
+  },
+  "physicalDevices": {
+    "ios": "pending",
+    "android": "pending"
+  },
+  "regressions": {
+    "nativePaths": {
+      "cases": 139,
+      "exact": 138,
+      "existingRadialGradientDelta": "retained"
+    },
+    "curvedClips": {
+      "cases": 53,
+      "exact": 53
+    },
+    "clipUnions": {
+      "cases": 47,
+      "exact": 47
+    },
+    "pathMorph": {
+      "cases": 68,
+      "geometryFailures": []
+    },
+    "animation": "3 generated and 3 private originals passed Chrome temporal pixels"
+  },
+  "limits": {
+    "containerNodesPerFrame": 10000,
+    "nestingDepth": 64,
+    "textBounds": "explicit unsupported error",
+    "globalPeakMemory": null
+  },
+  "next": "runs/2026-09-05-svg-next-viewports.json",
+  "checks": {
+    "nodeTests": 907,
+    "failed": 0,
+    "compatibilityProbes": 141,
+    "production": "pass",
+    "generalChrome": "pass"
+  }
+}

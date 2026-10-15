@@ -1,0 +1,772 @@
+{
+  "testedAt": "2026-09-13T06:18:46.079Z",
+  "scope": "Actual Node host SVG labels compared with fresh ezdxf plain-text output. Unicode/helper disagreements retained; not all differences certified bugs.",
+  "rows": [
+    {
+      "name": "R2000-escaped-braces",
+      "case": "escaped-braces",
+      "sha256": "8eb6f6d4b99641d2a6b82e30ff61462abe75fab86e06ba34ab5c98a9b046b129",
+      "authored": "Before \\{size\\} after",
+      "nativePlain": "Before {size} after",
+      "nativeFast": "Before {size} after",
+      "nativeDecodedHelper": "Before {size} after",
+      "error": "",
+      "readerLabels": [
+        "Before \\{size\\} after"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Before {size} after",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-literal-backslash",
+      "case": "literal-backslash",
+      "sha256": "17b0cef9928b97af63f8a812e3933912d2329f6f453de1cc647c669451dc8501",
+      "authored": "Path C:\\\\temp\\\\file",
+      "nativePlain": "Path C:\\temp\\file",
+      "nativeFast": "Path C:\\temp\\file",
+      "nativeDecodedHelper": "Path C:\\temp\\file",
+      "error": "",
+      "readerLabels": [
+        "Path C:\\\\temp\\\\file"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Path C:\\temp\\file",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-literal-paragraph-code",
+      "case": "literal-paragraph-code",
+      "sha256": "78da447719aa90e647b673a4748382be767bcee15a1a6d52b8c6cb99ce97dc9f",
+      "authored": "Before \\\\P after",
+      "nativePlain": "Before \\P after",
+      "nativeFast": "Before \\P after",
+      "nativeDecodedHelper": "Before \\P after",
+      "error": "",
+      "readerLabels": [
+        "Before \\  after"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Before \\P after",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-nested-color-height",
+      "case": "nested-color-height",
+      "sha256": "77661a48d14fe4a4f279e6c55b7961d4e6fc8f991ea7bcecfdc5226b8e09bb4c",
+      "authored": "Before {\\C1;red {\\H2x;large} red} after",
+      "nativePlain": "Before red large red after",
+      "nativeFast": "Before red large red after",
+      "nativeDecodedHelper": "Before red large red after",
+      "error": "",
+      "readerLabels": [
+        "Before {\\C1;red {\\H2x;large} red} after"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Before red large red after",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-font-metadata",
+      "case": "font-metadata",
+      "sha256": "53a23d6489b87101a60dbdd9a339944b479d005435aca781cf9ffd81ddf4c47a",
+      "authored": "A{\\fArial|b1|i0;Bold}B",
+      "nativePlain": "ABoldB",
+      "nativeFast": "ABoldB",
+      "nativeDecodedHelper": "ABoldB",
+      "error": "",
+      "readerLabels": [
+        "A{\\fArial|b1|i0;Bold}B"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "ABoldB",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-decoration-toggles",
+      "case": "decoration-toggles",
+      "sha256": "87b40db387c5d2e11c838b7e8f3282aa2b661464464206d2a02f94898d541368",
+      "authored": "A\\Lunder\\l \\Oover\\o \\Kstrike\\kZ",
+      "nativePlain": "Aunder over strikeZ",
+      "nativeFast": "Aunder over strikeZ",
+      "nativeDecodedHelper": "Aunder over strikeZ",
+      "error": "",
+      "readerLabels": [
+        "A\\Lunder\\l \\Oover\\o \\Kstrike\\kZ"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Aunder over strikeZ",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-nonbreaking-space",
+      "case": "nonbreaking-space",
+      "sha256": "465e595a6a7f0207f8424580161823a9b5309fd634c1e455f30970036968d688",
+      "authored": "A\\~B",
+      "nativePlain": "A B",
+      "nativeFast": "A\\~B",
+      "nativeDecodedHelper": "A B",
+      "error": "",
+      "readerLabels": [
+        "A\\~B"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "A\u00a0B",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-paragraphs",
+      "case": "paragraphs",
+      "sha256": "c527884cdd9371a478a2ef0f45256b0ce884b648b0dbf9ae776b3b96ed68aaff",
+      "authored": "first\\P\\Pthird",
+      "nativePlain": "first\n\nthird",
+      "nativeFast": "first\n\nthird",
+      "nativeDecodedHelper": "first\n\nthird",
+      "error": "",
+      "readerLabels": [
+        "first  third"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "first\n\nthird",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-fraction-slash",
+      "case": "fraction-slash",
+      "sha256": "29c890516cbc40af77cc43e304934b73a8ee1c20b961020f0c2b80ea3199e037",
+      "authored": "1\\S1/2; units",
+      "nativePlain": "11/2 units",
+      "nativeFast": "11/2 units",
+      "nativeDecodedHelper": "11/2 units",
+      "error": "",
+      "readerLabels": [
+        "1\\S1/2; units"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "11/2 units",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-fraction-diagonal",
+      "case": "fraction-diagonal",
+      "sha256": "d7c257812db3d09b60013ff57dc6c3fe0bd0d5584858621c774d90627602f1fe",
+      "authored": "1\\S1#2; units",
+      "nativePlain": "11#2 units",
+      "nativeFast": "11#2 units",
+      "nativeDecodedHelper": "11#2 units",
+      "error": "",
+      "readerLabels": [
+        "1\\S1#2; units"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "11#2 units",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-tolerance-stack",
+      "case": "tolerance-stack",
+      "sha256": "f9feb4483c34b756098d4964460746e76bdf42a010a4f34297116c59ba7bf28e",
+      "authored": "1.000\\S+0.010^-0.000;",
+      "nativePlain": "1.000+0.010k0.000",
+      "nativeFast": "1.000+0.010k0.000",
+      "nativeDecodedHelper": "1.000+0.010k0.000",
+      "error": "",
+      "readerLabels": [
+        "1.000\\S+0.010^-0.000;"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-percent-symbols",
+      "case": "percent-symbols",
+      "sha256": "4a922f9d4246dd3f50a99c906a66ae71ad893c51afa838a6adfffd5ac0031a32",
+      "authored": "90%%d 10%%p2 %%c5",
+      "nativePlain": "90\u00b0 10\u00b12 \u00d85",
+      "nativeFast": "90\u00b0 10\u00b12 \u00d85",
+      "nativeDecodedHelper": "90\u00b0 10\u00b12 \u00d85",
+      "error": "",
+      "readerLabels": [
+        "90%%d 10%%p2 %%c5"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "90\u00b0 10\u00b12 \u00d85",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-nested-eight",
+      "case": "nested-eight",
+      "sha256": "8d6e363969dde0ed212a41f7664654e502342feac4a9eedebca443f1f4258284",
+      "authored": "{{{{{{{{\\C2;text}}}}}}}}",
+      "nativePlain": "text",
+      "nativeFast": "text",
+      "nativeDecodedHelper": "text",
+      "error": "",
+      "readerLabels": [
+        "{{{{{{{{\\C2;text}}}}}}}}"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "text",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-literal-cif",
+      "case": "literal-cif",
+      "sha256": "13f77300d4762d969de2ce6a1d3ef4e4e4edcd1c42e805ab0ace0229ad86c1fe",
+      "authored": "literal \\\\U+0041",
+      "nativePlain": "literal \\U+0041",
+      "nativeFast": "literal \\U+0041",
+      "nativeDecodedHelper": "literal A",
+      "error": "",
+      "readerLabels": [
+        "literal \\A"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "literal \\U+0041",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-unicode-content",
+      "case": "unicode-content",
+      "sha256": "54ad24885bab167e30dccb033c1abe56e7de1f11102c613ccaa03275bdb77b3a",
+      "authored": "{\\C1;\\U+4E2D\\U+6587}\\Ptail",
+      "nativePlain": "\\U+4E2D\\U+6587\ntail",
+      "nativeFast": "\\U+4E2D\\U+6587\ntail",
+      "nativeDecodedHelper": "\u4e2d\u6587\ntail",
+      "error": "",
+      "readerLabels": [
+        "{\\C1;\u4e2d\u6587} tail"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "\u4e2d\u6587\ntail",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-split-escape",
+      "case": "split-escape",
+      "sha256": "b2bb3fe016c41925c2a51d215f53cad88f5bdf8a8d30402efa4af0f680c3b1d1",
+      "authored": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\U+4E2D tail",
+      "nativePlain": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\U+4E2D tail",
+      "nativeFast": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\U+4E2D tail",
+      "nativeDecodedHelper": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail",
+      "error": "",
+      "readerLabels": [
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail",
+      "contentExact": true,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-unknown-control",
+      "case": "unknown-control",
+      "sha256": "ce3fc7dc9c166fb07ee5139ef8ad09715622b141a98009343afc9e00208d2d22",
+      "authored": "A\\Zunknown;B",
+      "nativePlain": "A\\Zunknown;B",
+      "nativeFast": "AB",
+      "nativeDecodedHelper": "A\\Zunknown;B",
+      "error": "",
+      "readerLabels": [
+        "A\\Zunknown;B"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-unterminated-color",
+      "case": "unterminated-color",
+      "sha256": "77743bbcd0349b206552715b05960a1f8d82873228d48ba1ecc2f43f7525a624",
+      "authored": "A\\C1 visible text",
+      "nativePlain": "A visible text",
+      "nativeFast": "A\\C1 visible text",
+      "nativeDecodedHelper": "A visible text",
+      "error": "",
+      "readerLabels": [
+        "A\\C1 visible text"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-unterminated-stack",
+      "case": "unterminated-stack",
+      "sha256": "3b63b6c7b2660e8dd24b2410f31c0f525c8fa4ecca165156dada066e167219ee",
+      "authored": "A\\S1/2",
+      "nativePlain": "A1/2",
+      "nativeFast": "A1/2\\S1/2",
+      "nativeDecodedHelper": "A1/2",
+      "error": "",
+      "readerLabels": [
+        "A\\S1/2"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2000-trailing-backslash",
+      "case": "trailing-backslash",
+      "sha256": "7d33d2182556b0df5e8f44227a0372f2c3a08b8ddf86e940ac70e144324874be",
+      "authored": "A\\",
+      "nativePlain": "A ",
+      "nativeFast": "A",
+      "nativeDecodedHelper": "A ",
+      "error": "",
+      "readerLabels": [
+        "A\\"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-escaped-braces",
+      "case": "escaped-braces",
+      "sha256": "0c98f4ccaf6cc407529834d4c6745c296b258b721114fab72bdb7d335f9ff1e6",
+      "authored": "Before \\{size\\} after",
+      "nativePlain": "Before {size} after",
+      "nativeFast": "Before {size} after",
+      "nativeDecodedHelper": "Before {size} after",
+      "error": "",
+      "readerLabels": [
+        "Before \\{size\\} after"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Before {size} after",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-literal-backslash",
+      "case": "literal-backslash",
+      "sha256": "632125260a48b6d8bcfdfd43313d23d800d043a4cd9738782a4feb448264bf2e",
+      "authored": "Path C:\\\\temp\\\\file",
+      "nativePlain": "Path C:\\temp\\file",
+      "nativeFast": "Path C:\\temp\\file",
+      "nativeDecodedHelper": "Path C:\\temp\\file",
+      "error": "",
+      "readerLabels": [
+        "Path C:\\\\temp\\\\file"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Path C:\\temp\\file",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-literal-paragraph-code",
+      "case": "literal-paragraph-code",
+      "sha256": "e46e3acab60a3d72c5b009b4c845e43b0c79d3049080085acc5f8dd6c146e193",
+      "authored": "Before \\\\P after",
+      "nativePlain": "Before \\P after",
+      "nativeFast": "Before \\P after",
+      "nativeDecodedHelper": "Before \\P after",
+      "error": "",
+      "readerLabels": [
+        "Before \\  after"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Before \\P after",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-nested-color-height",
+      "case": "nested-color-height",
+      "sha256": "b5aaed2f2af14c936c6b36e257f5c1f0c0ba7f1501f5325cfa8483bce9beebc0",
+      "authored": "Before {\\C1;red {\\H2x;large} red} after",
+      "nativePlain": "Before red large red after",
+      "nativeFast": "Before red large red after",
+      "nativeDecodedHelper": "Before red large red after",
+      "error": "",
+      "readerLabels": [
+        "Before {\\C1;red {\\H2x;large} red} after"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Before red large red after",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-font-metadata",
+      "case": "font-metadata",
+      "sha256": "b10163c6179473cbf78b851c93f91a345c807530135c00ff7b768fc5f038cf29",
+      "authored": "A{\\fArial|b1|i0;Bold}B",
+      "nativePlain": "ABoldB",
+      "nativeFast": "ABoldB",
+      "nativeDecodedHelper": "ABoldB",
+      "error": "",
+      "readerLabels": [
+        "A{\\fArial|b1|i0;Bold}B"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "ABoldB",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-decoration-toggles",
+      "case": "decoration-toggles",
+      "sha256": "e1f02e04b3d11254474541c1159574946cc8528a6b7f3b507f28481b881562ff",
+      "authored": "A\\Lunder\\l \\Oover\\o \\Kstrike\\kZ",
+      "nativePlain": "Aunder over strikeZ",
+      "nativeFast": "Aunder over strikeZ",
+      "nativeDecodedHelper": "Aunder over strikeZ",
+      "error": "",
+      "readerLabels": [
+        "A\\Lunder\\l \\Oover\\o \\Kstrike\\kZ"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "Aunder over strikeZ",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-nonbreaking-space",
+      "case": "nonbreaking-space",
+      "sha256": "2db6f996abc980ac5b4b7581b3a5112f70d3e66bb5d1d59b459bca198829cd76",
+      "authored": "A\\~B",
+      "nativePlain": "A B",
+      "nativeFast": "A\\~B",
+      "nativeDecodedHelper": "A B",
+      "error": "",
+      "readerLabels": [
+        "A\\~B"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "A\u00a0B",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-paragraphs",
+      "case": "paragraphs",
+      "sha256": "3d326bb6ad2fb7885982ea0aa310d83682d7ecd9a288737c5be31cf5510997a9",
+      "authored": "first\\P\\Pthird",
+      "nativePlain": "first\n\nthird",
+      "nativeFast": "first\n\nthird",
+      "nativeDecodedHelper": "first\n\nthird",
+      "error": "",
+      "readerLabels": [
+        "first  third"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "first\n\nthird",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-fraction-slash",
+      "case": "fraction-slash",
+      "sha256": "ca8b931abc67a3ec2a0cc8c2148ed914451fccbd24e36daac573045becfa11e8",
+      "authored": "1\\S1/2; units",
+      "nativePlain": "11/2 units",
+      "nativeFast": "11/2 units",
+      "nativeDecodedHelper": "11/2 units",
+      "error": "",
+      "readerLabels": [
+        "1\\S1/2; units"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "11/2 units",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-fraction-diagonal",
+      "case": "fraction-diagonal",
+      "sha256": "d483917c9ba10a7664c157f42752e1de01ba669998ac9a048bcbaaf3783ad6db",
+      "authored": "1\\S1#2; units",
+      "nativePlain": "11#2 units",
+      "nativeFast": "11#2 units",
+      "nativeDecodedHelper": "11#2 units",
+      "error": "",
+      "readerLabels": [
+        "1\\S1#2; units"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "11#2 units",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-tolerance-stack",
+      "case": "tolerance-stack",
+      "sha256": "2fd4be198dc945081778a4a416e3c81dad1f6252987bde58ae3b0d402ef235b4",
+      "authored": "1.000\\S+0.010^-0.000;",
+      "nativePlain": "1.000+0.010k0.000",
+      "nativeFast": "1.000+0.010k0.000",
+      "nativeDecodedHelper": "1.000+0.010k0.000",
+      "error": "",
+      "readerLabels": [
+        "1.000\\S+0.010^-0.000;"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-percent-symbols",
+      "case": "percent-symbols",
+      "sha256": "a316167608d0840a6bef7a347ded0310552cdaf7eddf55479a26fccdd0a299fc",
+      "authored": "90%%d 10%%p2 %%c5",
+      "nativePlain": "90\u00b0 10\u00b12 \u00d85",
+      "nativeFast": "90\u00b0 10\u00b12 \u00d85",
+      "nativeDecodedHelper": "90\u00b0 10\u00b12 \u00d85",
+      "error": "",
+      "readerLabels": [
+        "90%%d 10%%p2 %%c5"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "90\u00b0 10\u00b12 \u00d85",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-nested-eight",
+      "case": "nested-eight",
+      "sha256": "2afbaa81846575c3ce61d92ef0f901c99f95e76ef808b0c67fec98fc53e1bf81",
+      "authored": "{{{{{{{{\\C2;text}}}}}}}}",
+      "nativePlain": "text",
+      "nativeFast": "text",
+      "nativeDecodedHelper": "text",
+      "error": "",
+      "readerLabels": [
+        "{{{{{{{{\\C2;text}}}}}}}}"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "text",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-literal-cif",
+      "case": "literal-cif",
+      "sha256": "b541fa3665add9173e57eca602d40afcb81576704cae37e63fc2dca9c5e5dbe4",
+      "authored": "literal \\\\U+0041",
+      "nativePlain": "literal \\U+0041",
+      "nativeFast": "literal \\U+0041",
+      "nativeDecodedHelper": "literal A",
+      "error": "",
+      "readerLabels": [
+        "literal \\A"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "literal \\U+0041",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-unicode-content",
+      "case": "unicode-content",
+      "sha256": "0d209c0178807839242bb6c09188522c5bb56a440da6cc1dc957ef93c3ec3cb1",
+      "authored": "{\\C1;\\U+4E2D\\U+6587}\\Ptail",
+      "nativePlain": "\\U+4E2D\\U+6587\ntail",
+      "nativeFast": "\\U+4E2D\\U+6587\ntail",
+      "nativeDecodedHelper": "\u4e2d\u6587\ntail",
+      "error": "",
+      "readerLabels": [
+        "{\\C1;\u4e2d\u6587} tail"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "\u4e2d\u6587\ntail",
+      "contentExact": false,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-split-escape",
+      "case": "split-escape",
+      "sha256": "0ba950e838b445a3462284a17ba8e09e74f5e60f2e03fea85fe5c4d209ca51d5",
+      "authored": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\U+4E2D tail",
+      "nativePlain": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\U+4E2D tail",
+      "nativeFast": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\U+4E2D tail",
+      "nativeDecodedHelper": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail",
+      "error": "",
+      "readerLabels": [
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail"
+      ],
+      "classification": "certified-content-contract",
+      "expectedContent": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u4e2d tail",
+      "contentExact": true,
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-unknown-control",
+      "case": "unknown-control",
+      "sha256": "d79a67211121df28b14167cb50fbc63e1516c2f42687339a392549f15b593974",
+      "authored": "A\\Zunknown;B",
+      "nativePlain": "A\\Zunknown;B",
+      "nativeFast": "AB",
+      "nativeDecodedHelper": "A\\Zunknown;B",
+      "error": "",
+      "readerLabels": [
+        "A\\Zunknown;B"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-unterminated-color",
+      "case": "unterminated-color",
+      "sha256": "7bbdec785e8ab4b857d5621f3448092af1534970f4898f019660b459693cebc1",
+      "authored": "A\\C1 visible text",
+      "nativePlain": "A visible text",
+      "nativeFast": "A\\C1 visible text",
+      "nativeDecodedHelper": "A visible text",
+      "error": "",
+      "readerLabels": [
+        "A\\C1 visible text"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-unterminated-stack",
+      "case": "unterminated-stack",
+      "sha256": "97859a2eefadf31e37afca7b0165178432802950e76a195d138f00486c1e354a",
+      "authored": "A\\S1/2",
+      "nativePlain": "A1/2",
+      "nativeFast": "A1/2\\S1/2",
+      "nativeDecodedHelper": "A1/2",
+      "error": "",
+      "readerLabels": [
+        "A\\S1/2"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    },
+    {
+      "name": "R2007-trailing-backslash",
+      "case": "trailing-backslash",
+      "sha256": "20c90812c1f82ba486dab58ad28518d0d7d1907733edd70353f2d2a9260b15ca",
+      "authored": "A\\",
+      "nativePlain": "A ",
+      "nativeFast": "A",
+      "nativeDecodedHelper": "A ",
+      "error": "",
+      "readerLabels": [
+        "A\\"
+      ],
+      "classification": "oracle-or-invalid-input-policy-review",
+      "source": "tests/fixtures/dxf-mtext/samples.json"
+    }
+  ],
+  "summary": {
+    "originalFiles": 40,
+    "actualHostOpens": 46,
+    "certifiedContentCases": 30,
+    "certifiedContentFailures": 28,
+    "unsettledReferenceOrInputPolicyCases": 10,
+    "supplementalRoleCases": 6,
+    "totalRetainedOriginals": 46
+  },
+  "sources": [
+    "https://help.autodesk.com/cloudhelp/2025/ENU/AutoCAD-Core/files/GUID-7D8BB40F-5C4E-4AE5-BD75-9ED7112E5967.htm",
+    "https://help.autodesk.com/cloudhelp/2026/ENU/OARX-DevGuide-Managed/files/GUID-ECEEF65E-C327-44B8-AFB9-C0ACA2CAEF55.htm"
+  ],
+  "oracleAudit": {
+    "nonbreakingSpace": "Autodesk explicitly requires nonbreaking space; ezdxf plain_text emits ordinary space, fast mode retains control. Expected U+00A0 follows official source.",
+    "unicode": "ezdxf plain_text preserves CIF escapes; decoding helper required for ordinary Unicode content but must not run again on a literal escaped backslash.",
+    "stackCaret": "ezdxf caret_decode consumes ^- before stack parsing. MTextEditor.stack deliberately inserts a space after ^. Autodesk example omits it; retain disagreement and generate editor-authored stack before setting expectations. Fresh MTextEditor export is retained in supplementalRoles; do not conflate flat extraction with actual stack presentation.",
+    "malformed": "Do not remove all strings matching backslash-through-semicolon. Native fast/slow disagree; preserve original text or explicit unsupported status until scoped policy is established."
+  },
+  "supplementalRoles": [
+    {
+      "name": "R2000-literal-paragraph",
+      "sha256": "494976921fbe052789d3d6083a9577014493d3d391178e6cc568e8bf0b4d27d0",
+      "authored": "A\\PB",
+      "nativePlain": "A\\PB",
+      "error": "",
+      "hasContent": true,
+      "readerLabels": [
+        "A B"
+      ]
+    },
+    {
+      "name": "R2000-paragraph",
+      "sha256": "5cb9c45f8b0e1db53cb0919e6c16575fc3b3129afad41c90af1726a65c66fe9d",
+      "authored": "A\\PB",
+      "nativePlain": "A\nB",
+      "error": "",
+      "hasContent": true,
+      "readerLabels": [
+        "A B"
+      ]
+    },
+    {
+      "name": "R2000-editor-tolerance",
+      "sha256": "cf5a1e57512388dcf47e9fec47b703ee892bb1c5323cd5bf2ab66f9a612f83c2",
+      "authored": "1.000\\S+0.010^ -0.000;",
+      "nativePlain": "1.000+0.010^-0.000",
+      "error": "",
+      "hasContent": true,
+      "readerLabels": [
+        "1.000\\S+0.010^ -0.000;"
+      ]
+    },
+    {
+      "name": "R2007-literal-paragraph",
+      "sha256": "de258cfc33939479b8d62ee1fb343a02310a3c57aee027c7fe38510c4f2aa4ce",
+      "authored": "A\\PB",
+      "nativePlain": "A\\PB",
+      "error": "",
+      "hasContent": true,
+      "readerLabels": [
+        "A B"
+      ]
+    },
+    {
+      "name": "R2007-paragraph",
+      "sha256": "98a5e85ae9f89e006f22a15720ed4ab26f089562aa880f5ac0417cc0daa54766",
+      "authored": "A\\PB",
+      "nativePlain": "A\nB",
+      "error": "",
+      "hasContent": true,
+      "readerLabels": [
+        "A B"
+      ]
+    },
+    {
+      "name": "R2007-editor-tolerance",
+      "sha256": "03e99f9b24cea25fabfcbac088d01e16992961d5e69d5dc66666fef7261e269e",
+      "authored": "1.000\\S+0.010^ -0.000;",
+      "nativePlain": "1.000+0.010^-0.000",
+      "error": "",
+      "hasContent": true,
+      "readerLabels": [
+        "1.000\\S+0.010^ -0.000;"
+      ]
+    }
+  ],
+  "generation": "Fixed 20-case main matrix over R2000/R2007 plus6 role/stack originals;40 generated twice with equal SHA-256 under ezdxf fixed metadata.",
+  "drawingReview": {
+    "scope": "Five actual ezdxf SVG drawing exports and actual reader SVGs were decoded/rendered in Chrome; screenshot inspected. This demonstrates content, size/paragraph/stack semantic differences, not pixel-equivalent CAD fidelity.",
+    "image": "outputs/dxf-mtext/comparison.png",
+    "loadedImages": "Chrome dumped document has data-ready=true after all ten images decoded.",
+    "observed": [
+      "Reader displays inline color/height commands while independent drawing renders red text and larger inner word.",
+      "Reader collapses two paragraph controls; independent drawing shows an empty middle line.",
+      "Reader shows stack control strings; independent slash and diagonal fractions have distinct numerator/denominator positions and divider lines.",
+      "No-space tolerance disagreement also appears in independent vector drawing; editor-generated corrected source retained separately."
+    ]
+  },
+  "next": [
+    "Introduce type-scoped MTEXT tokenization with literal/CIF provenance; do not parse produced backslashes a second time.",
+    "Preserve true paragraphs, inline style scope and stacked numerator/denominator semantics in model and SVG bounds; do not just strip controls.",
+    "Audit leading/trailing whitespace across group3/group1 fragments; current physical-value trim can lose content.",
+    "Add related bounded malformed input, all-hidden/recovery and sequential host tests; verify actual returned SVG in browser.",
+    "Keep TAR PR275 release approval pending and avoid version assignment until release sequencing is clear."
+  ]
+}
