@@ -26,13 +26,18 @@ function decodeTextData (input, file, kind = 'text') {
 // evaluate source code, or rewrite the author's file. Whitespace is the only
 // change to JSON lexemes; CSV cells remain literal strings.
 function boundedError (code) { const error = new Error(code); error.code = code; return error }
+// 缩进只服务可读性。按真实深度线性增长时，深度 60、1 万个数字的 48 kB 输入会
+// 放大成 1.2 MB 以上的桥接载荷，再嵌套深一点就越过 maxOutput，连缩进视图都保不住，
+// 只能整体退回原文。超过 MAX_INDENT_DEPTH 后保持同一缩进，让载荷随内容增长而不是
+// 随嵌套深度膨胀；JSON 词元与原文逐字不变。
+const MAX_INDENT_DEPTH = 8
 function formatJson (source, { maxChars = 200000, maxDepth = 64, maxOutput = 2 * 1024 * 1024 } = {}) {
   if (source.length > maxChars) throw boundedError('presentation-limit')
   let offset = 0, length = 0
   const out = []
   const write = text => { length += text.length; if (length > maxOutput) throw boundedError('presentation-limit'); out.push(text) }
   const whitespace = () => { while (/[\x20\t\r\n]/.test(source[offset] || '\0')) offset++ }
-  const newline = depth => write('\n' + '  '.repeat(depth))
+  const newline = depth => write('\n' + '  '.repeat(Math.min(depth, MAX_INDENT_DEPTH)))
   function string () {
     const start = offset++
     while (offset < source.length) {
@@ -134,4 +139,4 @@ document.getElementById('text-data-toggle').addEventListener('click',function(){
 });</script><span id="text-data-label-formatted" style="display:none">${escape(labels.formatted || '')}</span><span id="text-data-label-original" style="display:none">${escape(labels.original || '')}</span>`
   return { html, diagnostic, mode: format, rows: rows?.length }
 }
-module.exports = { decodeTextData, formatJson, parseCsv, renderTextData }
+module.exports = { MAX_INDENT_DEPTH, decodeTextData, formatJson, parseCsv, renderTextData }
