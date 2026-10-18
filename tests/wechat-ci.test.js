@@ -87,10 +87,10 @@ test('微信官方 CI 依赖与小程序主体依赖隔离', () => {
   assert.equal(ciPackage.dependencies['miniprogram-ci'], '2.1.31')
 })
 
-test('README 说明手动发布流程且不包含任何私钥内容', () => {
+test('开发指南说明代码交付边界且公开文档不包含私钥', () => {
   const readme = fs.readFileSync(path.join(root, 'README.md'), 'utf8')
-  assert.match(readme, /均由手动触发/)
-  assert.match(readme, /密钥和本地开发者工具配置不进入仓库/)
-  assert.match(readme, /普通提交不自动上传微信/)
-  assert.doesNotMatch(readme, /-----BEGIN (?:RSA )?PRIVATE KEY-----/)
+  const development = fs.readFileSync(path.join(root, 'docs/development.md'), 'utf8')
+  assert.match(development, /不触发微信开发版上传、体验版、提审或正式发布/)
+  assert.match(development, /不要提交密钥、本地配置或用户私有文件/)
+  assert.doesNotMatch(readme + development, /-----BEGIN (?:RSA )?PRIVATE KEY-----/)
 })

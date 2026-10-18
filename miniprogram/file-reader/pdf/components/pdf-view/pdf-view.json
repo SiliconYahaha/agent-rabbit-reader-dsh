@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "skin-feedback": "/file-reader/skin/feedback/feedback"
+  }
+}

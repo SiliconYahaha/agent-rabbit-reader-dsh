@@ -1,13 +1,13 @@
-.formats-page { padding: 36rpx 36rpx 64rpx; color: var(--reader-ink); }
-.formats-heading { font-size: 38rpx; font-weight: 800; line-height: 1.4; }
-.formats-note { margin: 14rpx 0 24rpx; color: var(--reader-muted); font-size: 24rpx; line-height: 1.6; }
-.format-info-row { display: flex; align-items: flex-start; gap: 18rpx; padding: 20rpx; margin-bottom: 14rpx; border: 2rpx solid rgba(23, 23, 21, .27); border-radius: 20rpx; background: var(--reader-surface); }
-.format-info-icon { display: flex; flex: 0 0 62rpx; width: 62rpx; height: 62rpx; align-items: center; justify-content: center; border-radius: 16rpx; background: #e5efc5; color: var(--reader-ink); font-size: 28rpx; font-weight: 800; }
-.tone-design { background: #ffe3d7; }
-.tone-archive { background: #e6dac6; }
-.tone-text { background: #e4e9d9; }
-.tone-media { background: #dce6e8; }
-.format-info-copy { flex: 1; min-width: 0; }
-.format-extensions { font-size: 26rpx; font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; }
-.format-info-title { margin-top: 4rpx; font-size: 24rpx; font-weight: 650; }
-.format-usage { margin-top: 6rpx; color: var(--reader-muted); font-size: 22rpx; line-height: 1.5; }
+.formats-page{padding:20rpx 32rpx 48rpx;color:var(--reader-ink)}
+.formats-note{margin:4rpx 0 24rpx;color:var(--reader-muted);font-size:24rpx;line-height:1.6}
+.formats-page .format-info-row{width:100%;box-sizing:border-box;margin:0 0 16rpx;padding:24rpx;border:1rpx solid rgba(23,23,21,.18);border-radius:20rpx;background:var(--reader-surface);text-align:left;line-height:1.4}
+.format-info-row::after{border:0}.format-info-row:active{background:#f4f5e9}
+.format-main{display:flex;align-items:center;gap:24rpx}.format-info-copy{flex:1;min-width:0}
+.format-label{font-size:28rpx;font-weight:750}.format-info-title{margin-top:7rpx;font-size:24rpx;color:#625e55}
+.format-badge{display:inline-block;margin-left:12rpx;font-size:19rpx;color:#755a34;background:#f4eddf;padding:3rpx 8rpx;border-radius:6rpx}
+.format-chevron{flex:none;color:#716d65;font-size:26rpx}
+.format-details{border-top:1rpx solid #e7e2d8;margin-top:22rpx;padding-top:18rpx}
+.format-extensions{display:block;font-size:23rpx;font-weight:600;word-break:break-word;line-height:1.6}
+.format-usage{display:block;margin-top:8rpx;font-size:23rpx;color:#716d65;line-height:1.6}
+
+.format-info-title,.format-usage,.format-chevron{font-weight:400}

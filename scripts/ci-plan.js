@@ -29,7 +29,7 @@ function planChanges (files, { full = false, tests, scripts, metadataOnly = [] }
     if (/^(?:miniprogram\/|project\.config\.json$|package(?:-lock)?\.json$)/.test(file)) { upload = true; production = true }
     if (metadataOnly.includes(file)) continue
     if (/^(?:\.github\/|scripts\/ci-[^/]+\.js$|scripts\/wechat-ci-upload\.js$|tests\/(?:ci-[^/]+|wechat-ci)\.test\.js$|tools\/wechat-ci\/)/.test(file)) {
-      selected.add('tests/ci-plan.test.js'); selected.add('tests/wechat-ci.test.js'); continue
+      selected.add('tests/ci-plan.test.js'); selected.add('tests/wechat-ci.test.js'); selected.add('tests/ci-stage-sync.test.js'); continue
     }
     // Only isolated format modules may use narrow routing. Shared renderer,
     // decoding, package dependencies and unrecognised paths fail closed to full.
@@ -55,7 +55,7 @@ function planChanges (files, { full = false, tests, scripts, metadataOnly = [] }
     }
   }
   if (full) return { mode: 'full', install: true, production: true, upload, tests, browser: fullBrowser, reasons }
-  return { mode: selected.size || production ? 'scoped' : 'docs', install: [...selected].some(f => !/^tests\/(?:ci-plan|wechat-ci|compatibility-profiles)\.test\.js$/.test(f)), production, upload, tests: [...selected].sort(), browser: [...browser], reasons: [...families] }
+  return { mode: selected.size || production ? 'scoped' : 'docs', install: [...selected].some(f => !/^tests\/(?:ci-plan|wechat-ci|ci-stage-sync|compatibility-profiles)\.test\.js$/.test(f)), production, upload, tests: [...selected].sort(), browser: [...browser], reasons: [...families] }
 }
 function changedFiles (base, head) {
   if (!/^[a-f0-9]{40}$/.test(base || '') || !/^[a-f0-9]{40}$/.test(head || '')) throw new Error('Exact base and head commit SHAs are required')

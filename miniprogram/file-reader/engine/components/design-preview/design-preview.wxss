@@ -1,17 +1,2 @@
-.preview-page {
-  box-sizing: border-box;
-  min-height: 100%;
-  padding: 24rpx 32rpx 80rpx;
-  color: #171715;
-  background: #fff9f2;
-}
-
-.preview-image {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  border: 3rpx solid #171715;
-  border-radius: 24rpx;
-  background: #e8e5df;
-  box-shadow: 8rpx 8rpx 0 #ff5b43;
-}
+.preview-page{box-sizing:border-box;min-height:100%;color:#171715;background:#fff9f2}
+.preview-image{display:block;box-sizing:border-box;width:100%;border:1rpx solid rgba(23,23,21,.2);border-radius:18rpx;background:#e8e5df}

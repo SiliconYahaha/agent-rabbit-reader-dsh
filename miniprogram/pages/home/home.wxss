@@ -58,7 +58,7 @@
   display: flex;
   align-items: stretch;
   gap: 22rpx;
-  margin-top: 28rpx;
+  margin-top: 44rpx;
 }
 
 .home-page .source-button {
@@ -85,23 +85,6 @@
 
 .source-button:active { color: var(--reader-coral); background: #f3f5e7; }
 
-.home-page .share-button {
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 76rpx;
-  margin: 24rpx 0 0;
-  padding: 0 24rpx;
-  border: 0;
-  color: var(--reader-muted);
-  background: transparent;
-  font-size: 24rpx;
-  font-weight: 650;
-  line-height: 76rpx;
-}
-
-.share-button::after { border: 0; }
-.share-button:active { color: var(--reader-coral); background: #f3f5e7; }
-
 .input-box {
   margin-top: 30rpx;
   padding: 24rpx;
@@ -110,6 +93,11 @@
   background: var(--reader-surface);
   box-shadow: 8rpx 8rpx 0 var(--reader-lime);
 }
+
+.input-heading { display:flex;align-items:center;justify-content:space-between;margin:-12rpx 0 12rpx;font-size:26rpx;font-weight:600; }
+.home-page .close-paste { display:flex;flex:0 0 auto;width:auto;align-items:center;justify-content:center;min-width:108rpx;min-height:88rpx;margin:0;padding:0 12rpx;border:0;background:transparent;color:var(--reader-ink);font-size:26rpx;line-height:1.2; }
+.close-paste::after { border:0; }
+.close-paste:active { background:#f3f5e7; }
 
 .html-input {
   box-sizing: border-box;
@@ -142,7 +130,7 @@
   align-items: center;
   justify-content: center;
   gap: 16rpx;
-  margin: 32rpx 0 0;
+  margin: 88rpx 0 0;
   color: var(--reader-muted);
 }
 
@@ -160,3 +148,7 @@
   font-size: 24rpx;
   line-height: 1.55;
 }
+
+.recent-session { margin-top:24rpx;padding:20rpx;border:1px solid #cec8bb;border-radius:20rpx;background:#fffdf7; }
+.resume-button { padding:0;background:transparent;text-align:left;font-size:28rpx;font-weight:600;line-height:1.6; }.resume-button::after { border:0; }
+.recent-name { display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:24rpx;color:#62605c; }.recent-note { display:flex;align-items:center;justify-content:space-between;margin-top:10rpx;font-size:22rpx;color:#777; }.recent-note button { margin:0;background:transparent;color:#666;font-size:22rpx; }

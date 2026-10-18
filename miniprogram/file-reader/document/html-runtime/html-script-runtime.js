@@ -6,6 +6,7 @@ const { svgHitTest } = require('../svg-hit-test')
 const { parseImageScript } = require('../image-script-budget')
 const { substituteTrustedThree } = require('./trusted-three')
 const { createReactCompatRuntime } = require('./react-compat-runtime')
+const { createAudioRuntime } = require('./audio-runtime')
 const { mediaQueryMatches } = require('../media-query')
 const {
   ShimComment,
@@ -20,6 +21,7 @@ const {
   canvasStateForElement,
   nativeCanvasForElement,
   nativeFrameForElement,
+  observePixelWork,
   createLocation,
   cssEscape,
   dispatchDomClick,
@@ -477,6 +479,7 @@ function createRuntime (html, options = {}) {
   const maxScriptLength = Number(options.maxScriptLength || DEFAULT_MAX_SCRIPT_LENGTH)
   let timerFires = 0
   let executionSteps = 0
+  let pixelWork = null, pixelWorkReset = null
   let trustedBootstrap = false, bootstrapSteps = 0, bootstrapDeadline = 0
   let bootstrapTurnReset = null
   let hostGestureDepth = 0
@@ -510,6 +513,24 @@ function createRuntime (html, options = {}) {
   })
   const document = parsed.document
   document._directCanvasFrames = Boolean(options.directCanvasFrames)
+  // Pixel-processing loops are finite useful work but can exceed the ordinary
+  // 50k loop budget. Grant only from actual bounded buffers, never from page
+  // metadata. Credits share a fixed deadline and cannot be replenished forever.
+  function grantBufferWork (count) {
+    if (destroyed || options.maxExecutionSteps || !Number.isFinite(count) || count < 1) return
+    if (!pixelWork) {
+      pixelWork = { steps: 0, limit: 0, deadline: Date.now() + 1500 }
+      pixelWorkReset = hostSetTimeout(() => { pixelWork = null; pixelWorkReset = null }, 0)
+    }
+    pixelWork.limit = Math.min(600000, pixelWork.limit + Math.ceil(count))
+  }
+  observePixelWork(document, grantBufferWork)
+  const audioRuntime = createAudioRuntime({
+    createContext: options.createAudioContext,
+    grantBufferWork,
+    isGesture: () => hostGestureDepth > 0,
+    call: callback => safeCall(callback, [], 'audio:event')
+  })
 
   function reportError (error, phase = 'script') {
     const item = { phase, message: String(error && error.message || error), stack: String(error && error.stack || '') }
@@ -534,6 +555,8 @@ function createRuntime (html, options = {}) {
         bootstrapTurnReset = hostSetTimeout(() => { bootstrapDeadline = 0; bootstrapTurnReset = null }, 0)
       }
       if (++bootstrapSteps > 2000000 || Date.now() > bootstrapDeadline) throw new Error('HTML Reader stopped a script that exceeded the initialization budget')
+    } else if (pixelWork) {
+      if (++pixelWork.steps > maxExecutionSteps + pixelWork.limit || Date.now() > pixelWork.deadline) throw new Error('HTML Reader stopped a script that exceeded the pixel processing budget')
     } else if (++executionSteps > maxExecutionSteps) throw new Error('HTML Reader stopped a script that exceeded the execution budget')
   }
 
@@ -622,10 +645,11 @@ function createRuntime (html, options = {}) {
         }
       }
       scheduleFlush(); scheduleAnimation()
-    }, 33)
+    }, 16)
   }
   function setVisible (value) {
     visible = Boolean(value)
+    audioRuntime.setVisible(visible)
     document.hidden = !visible; document.visibilityState = visible ? 'visible' : 'hidden'
     if (!visible) { hostClearTimeout(animationTimer); animationTimer = null; document._pointerCaptures.clear() }
     safeCall(() => document.dispatchEvent(new ShimEvent('visibilitychange', { bubbles: false })), [], 'visibilitychange')
@@ -734,6 +758,7 @@ function createRuntime (html, options = {}) {
     crypto, Event: ShimEvent, CustomEvent: ShimCustomEvent, DOMParser,
     EventTarget: ShimNode, Node: ShimNode, Element: ShimElement, HTMLElement: ShimElement, Document: ShimDocument, DocumentFragment: ShimFragment, Text: ShimText, Comment: ShimComment,
     CSS: { escape: cssEscape }, Image: imageConstructor(document), HTMLImageElement: ShimImageElement,
+    Audio: audioRuntime.Audio, AudioContext: audioRuntime.AudioContext, webkitAudioContext: audioRuntime.AudioContext,
     getComputedStyle: (element, pseudo) => {
       // Load after runtime/renderer initialization, not across their CommonJS
       // bootstrap boundary. The shared cascade is used, not inline snapshots.
@@ -930,7 +955,7 @@ function createRuntime (html, options = {}) {
       return true
     } catch (error) { reportError(error, 'event:editable'); return false } finally { scheduleFlush() }
   }
-  function destroy () { destroyed = true; hostClearTimeout(bootstrapTurnReset); hostClearTimeout(animationTimer); animationCallbacks.clear(); document._pointerCaptures.clear(); document._runtimeDisposed = true; disposeRuntimeImages(document); disposeRuntimeCanvases(document); activeTimers.forEach(id => { hostClearTimeout(id); hostClearInterval(id) }); activeTimers.clear() }
+  function destroy () { destroyed = true; audioRuntime.destroy(); hostClearTimeout(pixelWorkReset); hostClearTimeout(bootstrapTurnReset); hostClearTimeout(animationTimer); animationCallbacks.clear(); document._pointerCaptures.clear(); document._runtimeDisposed = true; disposeRuntimeImages(document); disposeRuntimeCanvases(document); activeTimers.forEach(id => { hostClearTimeout(id); hostClearInterval(id) }); activeTimers.clear() }
 
   return { nativeFrame: nid => nativeFrameForElement(byNid(nid)), nativeCanvas: nid => nativeCanvasForElement(byNid(nid)), document, window: sandboxWindow, interpreter, errors, run, flush, scheduleFlush, dispatchTap, dispatchEvent, syncViewportScroll, syncInput, applyEditableText, getNode: byNid, renderState, destroy, setVisible, pointTarget, constants: { DEFAULT_MAX_EXECUTION_STEPS, DEFAULT_MAX_SCRIPT_LENGTH, DEFAULT_MAX_TIMER_FIRES, RECONCILE_SKIPS } }
 }

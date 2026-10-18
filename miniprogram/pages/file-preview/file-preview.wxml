@@ -1,10 +1,16 @@
 <view class="preview-host {{queueCount > 1 ? 'preview-host-with-queue' : ''}}">
-  <design-preview wx:if="{{file}}" id="preview" file="{{file}}"/>
+  <design-preview wx:if="{{file}}" id="preview" bind:nativeviewer="onNativeViewer" file="{{file}}"/>
   <view wx:if="{{error}}" class="error-card">{{error}}</view>
 
+  <view wx:if="{{queueOpen}}" class="queue-backdrop {{queueClosing ? 'queue-closing' : ''}}" bindtap="closeQueue" catchtouchmove="stopQueueTouch"></view>
+  <view wx:if="{{queueOpen}}" class="queue-drawer {{queueClosing ? 'queue-closing' : ''}}">
+    <view class="queue-heading"><text>已选文件</text><button class="queue-close" bindtap="closeQueue" aria-label="收起文件列表">收起⌄</button></view>
+    <input class="queue-search" placeholder="搜索文件名" value="{{queueSearch}}" bindinput="searchQueue" />
+    <scroll-view scroll-y class="queue-list"><button wx:for="{{queueItems}}" wx:key="index" class="queue-item {{item.active ? 'queue-active' : ''}}" data-index="{{item.index}}" bindtap="chooseQueueFile">{{item.index + 1}}. {{item.name}}</button><text wx:if="{{!queueItems.length}}">没有匹配的文件</text></scroll-view>
+  </view>
   <view wx:if="{{queueCount > 1}}" class="file-queue" aria-label="已选择 {{queueCount}} 个文件，当前第 {{queuePosition}} 个">
-    <button size="mini" class="queue-button" disabled="{{!hasPreviousFile}}" bindtap="openPreviousFile">上一份</button>
-    <text class="queue-position">{{queuePosition}}/{{queueCount}}</text>
-    <button size="mini" class="queue-button" disabled="{{!hasNextFile}}" bindtap="openNextFile">下一份</button>
+    <button size="mini" class="queue-button" disabled="{{!hasPreviousFile}}" bindtap="openPreviousFile">‹ 上一个</button>
+    <button class="queue-position" bindtap="toggleQueue" aria-label="查找已选文件">{{queuePosition}}/{{queueCount}} · 目录</button>
+    <button size="mini" class="queue-button" disabled="{{!hasNextFile}}" bindtap="openNextFile">下一个 ›</button>
   </view>
 </view>

@@ -22,8 +22,11 @@ function startFileSession (app, files) {
   const globalData = ensureGlobalData(app)
   if (!globalData) return null
   const queue = (files || []).map(normalizeMaterial)
+  globalData.fileQueueScroll = {}
+  globalData.recentSessionId = null
   globalData.fileQueue = queue
   globalData.fileQueueIndex = queue.length ? 0 : -1
+  require('./recent-session').save(app, queue).catch(() => {})
   return queue[0] || null
 }
 

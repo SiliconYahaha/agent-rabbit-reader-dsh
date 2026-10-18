@@ -54,6 +54,41 @@
         "pages/gallery/gallery",
         "pages/formats/formats"
       ]
+    },
+    {
+      "root": "example-poster",
+      "name": "reader-example-poster",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "file-reader/pdf",
+      "name": "file-reader-pdf",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "pdf-assets",
+      "name": "pdf-assets",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "file-reader/office",
+      "name": "file-reader-office",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
+    },
+    {
+      "root": "file-reader/office-word",
+      "name": "file-reader-office-word",
+      "pages": [
+        "pages/runtime/runtime"
+      ]
     }
   ],
   "window": {

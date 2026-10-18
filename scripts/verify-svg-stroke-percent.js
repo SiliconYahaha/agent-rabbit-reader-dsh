@@ -59,7 +59,7 @@ async function browserRun (inputs, modules, componentSource) {
     throw Error('Unexpected dependency ' + id)
   }, value => { definition = value }, { getWindowInfo: () => ({ pixelRatio: 1 }) })
   const player = { ...definition.methods, data: { ...definition.data, playing: false }, _viewReady: true, _images: new Map(), events: [],
-    setData (patch) { Object.assign(this.data, patch) }, triggerEvent (name, detail) { this.events.push({ name, detail }) },
+    setData (patch, callback) { Object.assign(this.data, patch); if (callback) callback() }, triggerEvent (name, detail) { this.events.push({ name, detail }) },
     createSelectorQuery () { const q = { select: () => q, boundingClientRect: () => q, fields: () => q, exec: cb => cb([{ width: 256 }, { node: canvas, width: 256 }]) }; return q }
   }
   const results = []

@@ -241,6 +241,7 @@ function extractLegacyAiPreview (input, options = {}) {
   const operands = []
   const shapes = []
   const graphicsStack = []
+  const compoundStack = []
   let arrayOperand = null
   let path = []
   let currentPoint = null
@@ -250,6 +251,7 @@ function extractLegacyAiPreview (input, options = {}) {
   let bounds = [Infinity, Infinity, -Infinity, -Infinity]
   let state = {
     fill: '#000000',
+    fillRule: 0,
     stroke: '#000000',
     lineWidth: 1,
     lineCap: 0,
@@ -277,6 +279,13 @@ function extractLegacyAiPreview (input, options = {}) {
   const paint = (fill, stroke, evenOdd, close) => {
     if (close && path.length) path.push('Z')
     if (!path.length || shapes.length >= maxPaths) { path = []; currentPoint = null; return }
+    if (compoundStack.length) {
+      const group = compoundStack[compoundStack.length - 1]
+      if (!group.paint) group.paint = { fill, stroke, evenOdd, state: { ...state, matrix: state.matrix.slice() } }
+      group.path.push(...path)
+      path = []; currentPoint = null
+      return
+    }
     const attributes = [
       `d="${path.join(' ')}"`,
       `fill="${fill ? state.fill : 'none'}"`,
@@ -287,7 +296,7 @@ function extractLegacyAiPreview (input, options = {}) {
       attributes.push(`stroke-linecap="${['butt', 'round', 'square'][state.lineCap] || 'butt'}"`)
       attributes.push(`stroke-linejoin="${['miter', 'round', 'bevel'][state.lineJoin] || 'miter'}"`)
     }
-    if (fill && evenOdd) attributes.push('fill-rule="evenodd"')
+    if (fill && (evenOdd || state.fillRule === 1)) attributes.push('fill-rule="evenodd"')
     shapes.push(`<path ${attributes.join(' ')}/>`)
     path = []
     currentPoint = null
@@ -315,7 +324,23 @@ function extractLegacyAiPreview (input, options = {}) {
     if (token !== 'concat') arrayOperand = null
     commandCount++
     let values
-    if (token === 'm' || token === 'M') {
+    if (token === '*u') {
+      operands.length = 0
+      if (compoundStack.length >= 64) throw new Error('Ai 复合路径嵌套过深')
+      compoundStack.push({ path: [], paint: null })
+    } else if (token === '*U') {
+      operands.length = 0
+      const group = compoundStack.pop()
+      if (!group) throw new Error('Ai 复合路径结束标记不匹配')
+      if (group.paint) {
+        const saved = state
+        path = group.path; state = group.paint.state
+        paint(group.paint.fill, group.paint.stroke, group.paint.evenOdd, false)
+        state = saved
+      }
+    } else if (token === 'XR') {
+      values = take(1); if (values) state.fillRule = values[0] === 1 ? 1 : 0
+    } else if (token === 'm' || token === 'M') {
       values = take(2); if (!values) continue
       currentPoint = addPointCommand('M', values)
     } else if (token === 'l' || token === 'L') {
@@ -395,6 +420,7 @@ function extractLegacyAiPreview (input, options = {}) {
     if (shapes.length >= maxPaths) break
   }
 
+  if (compoundStack.length) throw new Error('Ai 复合路径未闭合')
   if (!shapes.length) throw new Error('没有找到可安全还原的基础矢量路径')
   const contentBounds = bounds.every(Number.isFinite) && bounds[2] > bounds[0] && bounds[3] > bounds[1] ? bounds : null
   const box = declaredBoundingBox || contentBounds

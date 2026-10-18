@@ -1,0 +1,13 @@
+.filebar-space{height:88rpx}
+.filebar{position:fixed;top:0;left:0;right:0;z-index:35;background:#fff9f2;color:#171715;border-bottom:1rpx solid rgba(23,23,21,.12)}
+.filebar-row{height:88rpx;box-sizing:border-box;display:flex;align-items:center;gap:16rpx;padding:12rpx 40rpx}
+.filebar-mark{flex:none;padding:8rpx 10rpx;border-radius:10rpx;background:#e7f2c9;color:#38471c;font-size:19rpx;font-weight:800;line-height:1.3}
+.filebar-name{flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:24rpx}
+.filebar-backdrop{position:fixed;inset:0;z-index:34;background:rgba(23,23,21,.18)}
+.filebar-details{box-sizing:border-box;max-height:55vh;padding:8rpx 32rpx 28rpx;background:#fffdf8;border-top:1rpx solid #e7e2d8}
+.filebar-fullname{display:block;margin:18rpx 0 10rpx;font-size:26rpx;font-weight:600;word-break:break-all}
+.filebar-size{display:block;font-size:22rpx;color:#716d65;margin-bottom:16rpx}
+.filebar-meta{display:flex;justify-content:space-between;gap:24rpx;border-top:1rpx solid #e7e2d8;padding:14rpx 0;font-size:24rpx;line-height:1.5}
+.filebar-meta text:first-child{flex:0 0 110rpx;color:#716d65}
+.filebar-meta text:last-child{min-width:0;word-break:break-all;text-align:right}
+.filebar-message{display:block;margin-top:16rpx;font-size:22rpx;color:#716d65;line-height:1.6}

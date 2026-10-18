@@ -5,6 +5,8 @@
 // 让分包代码路径在测试里也被真实执行。relativePath 相对本文件所在目录 file-reader/engine/core/。
 // 测试桩可以整体替换 load（reader 组件通过 _internals.subpackage 暴露同一个对象）。
 const PACKAGE_NAMES = {
+  '../../office/index.js': 'file-reader-office',
+  '../../office-word/index.js': 'file-reader-office-word',
   '../../document/index.js': 'file-reader-document',
   '../../archive/index.js': 'file-reader-archive',
   '../../image/index.js': 'file-reader-image',
@@ -15,6 +17,8 @@ const PACKAGE_NAMES = {
 const pending = Object.create(null)
 
 function importModule (relativePath) {
+  if (relativePath === '../../office/index.js') return require.async('../../office/index.js')
+  if (relativePath === '../../office-word/index.js') return require.async('../../office-word/index.js')
   // 必须保留字面量路径，确保上传编译器把入口及依赖打入分包。
   if (relativePath === '../../markdown/runtime/index.js') return require.async('../../markdown/runtime/index.js')
   if (relativePath === '../../sevenzip/runtime/7zz.js') return require.async('../../sevenzip/runtime/7zz.js')

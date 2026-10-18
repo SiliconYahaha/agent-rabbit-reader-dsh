@@ -3,12 +3,20 @@
 // 设计文件页只负责产品层：文件队列、分享菜单和路由。
 // Ai/PSD 的读取与画面还原由 /file-reader/engine/components/design-preview 组件完成。
 const { fileSessionState, selectFileAt, stageMaterialRoute, startFileSession } = require('../../utils/file-session')
+const recent = require('../../utils/recent-session')
 const { fileKind } = require('../../file-reader/shared/file-types')
 const { enableShareMenu, shareAppMessage, shareTimeline } = require('../../utils/share')
 
+const nativeViewer = require('../../utils/native-viewer-return')
+
 Page({
+  ...nativeViewer,
   data: {
     file: null,
+    nativeReturned: false,
+    queueOpen: false,
+    queueItems: [],
+    queueSearch: '',
     error: '',
     queueCount: 0,
     queuePosition: 0,
@@ -22,7 +30,6 @@ Page({
       wx.reLaunch({ url: '/pages/home/home' })
       return
     }
-    this._sampleAiPreview = query.example === 'final'
     const app = getApp()
     const material = app && app.globalData && (app.globalData.pendingFilePreview || fileSessionState(app).current)
     if (app && app.globalData) app.globalData.pendingFilePreview = null
@@ -36,20 +43,46 @@ Page({
   },
 
   onShow () {
+    if (this.resumeNativeViewer()) return
     // 从微信文档查看器返回时再次开启分享，避免原生页面改变菜单状态。
     enableShareMenu()
   },
 
   openMaterial (material) {
+    clearTimeout(this._queueCloseTimer)
+    this.setData({ queueClosing: false })
+    this._nativeReturn = null
+    this.setData({ nativeReturned: false, queueOpen: false })
     this._materialRevision = (this._materialRevision || 0) + 1
     const file = { name: material.name, path: material.path, size: Number(material.size || 0), type: material.type || '' }
-    if (this._sampleAiPreview && material.name === '标志的四种形态.ai' && /(?:^|\/)rabbit-example-v1-final\.ai$/.test(material.path)) {
-      file.samplePreview = '/assets/logo-variants-preview.jpg'
-    }
     this.setData({
       error: '',
       file
     })
+  },
+
+  toggleQueue () {
+    if (this.data.queueOpen) { this.closeQueue();return }
+    clearTimeout(this._queueCloseTimer)
+    this.setData({ queueOpen: true, queueClosing: false, nativeReturned: false, queueSearch: '' })
+    this.filterQueue('')
+  },
+  closeQueue () {
+    clearTimeout(this._queueCloseTimer)
+    this.setData({ queueClosing: true, nativeReturned: false })
+    this._queueCloseTimer = setTimeout(() => this.setData({ queueOpen: false, queueClosing: false }), 180)
+  },
+  stopQueueTouch () {},
+  searchQueue (event) { this.filterQueue(event.detail.value) },
+  filterQueue (query) {
+    const state = fileSessionState(getApp()), text = String(query || '').toLowerCase()
+    this.setData({ queueSearch: String(query || ''), queueItems: state.queue.map((file, index) => ({ name: file.name || '未命名文件', index, active: index === state.index })).filter(file => file.name.toLowerCase().includes(text)) })
+  },
+  chooseQueueFile (event) {
+    const index = Number(event.currentTarget.dataset.index)
+    if (index === fileSessionState(getApp()).index) { this.closeQueue();return }
+    this.setData({ queueOpen: false })
+    this.openQueueIndex(index)
   },
 
   syncFileSession () {
@@ -107,7 +140,10 @@ Page({
     if (state.hasNext) this.openQueueIndex(state.index + 1)
   },
 
-  onUnload () {
+  onHide () { this.hideNativeViewer();recent.checkpoint(getApp()) },
+
+  onUnload () { clearTimeout(this._queueCloseTimer);
+    recent.checkpoint(getApp())
     this._queueRouting = null
     this._materialRevision = (this._materialRevision || 0) + 1
   },

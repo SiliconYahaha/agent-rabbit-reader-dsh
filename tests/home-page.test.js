@@ -13,7 +13,7 @@ function loadHomePage (wxOverrides = {}) {
   global.getApp = () => app
   global.wx = {
     setNavigationBarTitle () {},
-    redirectTo: options => { redirectedTo = options.url },
+    navigateTo: options => { redirectedTo = options.url },
     ...wxOverrides
   }
   const pagePath = require.resolve('../miniprogram/pages/home/home')
@@ -97,14 +97,15 @@ test('展开粘贴后定位输入框；空内容不跳转并在输入区提示',
   assert.equal(redirectedTo(), '')
 })
 
-test('首页提供文件、粘贴、示例及分享入口', () => {
+test('首页保留三个文件入口，分享使用微信菜单', () => {
   const home = fs.readFileSync(path.join(__dirname, '../miniprogram/pages/home/home.wxml'), 'utf8')
   const reader = fs.readFileSync(path.join(__dirname, '../miniprogram/pages/index/index.wxml'), 'utf8')
 
   for (const action of ['chooseFile', 'showPaste', 'loadSample']) assert.match(home, new RegExp(`bindtap="${action}"`))
   assert.match(home, /brand-hero-sketch-transparent\.png/)
-  assert.match(home, /open-type="share"/)
-  assert.match(home, /分享兔子阅读器/)
+  assert.doesNotMatch(home, /open-type="share"/)
+  const { page } = loadHomePage()
+  assert.ok(page.onShareAppMessage().path)
   assert.equal(reader.includes('brand-hero-sketch-transparent.png'), false)
 })
 
@@ -149,50 +150,21 @@ test('Markdown 正常后缀直接进入阅读页，不需要选择打开方式',
   }
 })
 
-test('未知显示文件名可以明确按 Markdown 打开，保留原文件名和路径', () => {
-  for (const name of ['攻略', '攻略.md (1)', '攻略.md\u200b']) {
-    const original = { name, path: '/tmp/opaque-id', type: 'file', size: 100 }
-    const { page, app, redirectedTo } = loadHomePage({
-      chooseMessageFile: o => o.success({ tempFiles: [original] }),
-      showActionSheet: o => { assert.deepEqual(o.itemList, ['按 Markdown 打开', '按纯文本打开']); o.success({ tapIndex: 0 }) }
-    })
-    page.chooseFile()
-    assert.deepEqual(app.globalData.pendingMaterial, { ...original, type: 'text/markdown', inlineHtml: undefined })
-    assert.equal(original.type, 'file')
-    assert.equal(redirectedTo(), '/pages/index/index')
-    assert.equal(page.data.error, '')
-  }
+test('未知名称与已知文件一起按原顺序进入阅读器，不弹格式选择', () => {
+  const files = [{ name: '攻略', path: '/tmp/a', type: 'file', size: 100 }, { name: '二.md', path: '/tmp/b', size: 20 }]
+  const { page, app, redirectedTo } = loadHomePage({ chooseMessageFile: o => o.success({ tempFiles: files }), showActionSheet: () => assert.fail('不得弹出格式选择') })
+  page.chooseFile()
+  assert.deepEqual(app.globalData.fileQueue.map(f => f.name), ['攻略', '二.md'])
+  assert.equal(redirectedTo(), '/pages/index/index')
 })
 
-test('混合选择不会静默丢掉未知后缀文件，取消不打开半份队列', () => {
-  let chooseFormat
-  const files = [{ name: 'known.md', path: '/tmp/known' }, { name: 'unknown', path: '/tmp/unknown' }]
-  const { page, app, redirectedTo } = loadHomePage({
-    chooseMessageFile: o => o.success({ tempFiles: files }),
-    showActionSheet: o => { chooseFormat = o }
-  })
-  page.chooseFile()
-  assert.equal(redirectedTo(), '')
-  chooseFormat.success({ tapIndex: 1 })
-  assert.equal(app.globalData.fileQueue.length, 2)
-  assert.equal(app.globalData.fileQueue[1].type, 'text/plain')
-  assert.equal(app.globalData.fileQueue[1].path, '/tmp/unknown')
-  const cancelled = loadHomePage({ chooseMessageFile: o => o.success({ tempFiles: files }), showActionSheet: o => o.fail({ errMsg: 'showActionSheet:fail cancel' }) })
-  cancelled.page.chooseFile()
-  assert.equal(cancelled.redirectedTo(), '')
-  assert.match(cancelled.page.data.error, /已取消/)
-})
-
-test('旧的格式选择回调不能覆盖后来重新选择的文件', () => {
-  let chooseFormat, calls = 0
-  const { page, app } = loadHomePage({
-    chooseMessageFile: o => o.success({ tempFiles: [{ name: ++calls === 1 ? 'unknown' : 'new.md', path: '/tmp/' + calls }] }),
-    showActionSheet: o => { chooseFormat = o }
-  })
-  page.chooseFile()
-  page.chooseFile()
-  chooseFormat.success({ tapIndex: 0 })
-  assert.equal(app.globalData.pendingMaterial.name, 'new.md')
+test('旧文件选择回调不能覆盖新会话', () => {
+  const calls = []
+  const { page, app } = loadHomePage({ chooseMessageFile: o => calls.push(o) })
+  page.chooseFile();page.chooseFile()
+  calls[1].success({ tempFiles: [{ name: '新.html', path: '/tmp/new' }] })
+  calls[0].success({ tempFiles: [{ name: '旧.html', path: '/tmp/old' }] })
+  assert.equal(app.globalData.pendingMaterial.name, '新.html')
 })
 
 test('示例入口进入卡片页，不直接运行综合压力测试页；导航失败可重新点开', () => {

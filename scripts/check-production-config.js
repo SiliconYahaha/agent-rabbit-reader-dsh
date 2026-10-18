@@ -223,8 +223,6 @@ function validateProductionPackage (root = projectRoot) {
     assert.equal(config.glassEaselWebview, true, `${page}.json 缺少 glassEaselWebview`)
   }
 
-  const homeWxml = sources['pages/home/home.wxml'] || ''
-  assert.match(homeWxml, /open-type=["']share["']/, '首页缺少真实微信分享按钮')
   for (const page of ['pages/home/home.js', 'pages/index/index.js', 'pages/file-preview/file-preview.js']) {
     assert.match(sources[page] || '', /onShareAppMessage\s*\(/, `${page} 缺少好友分享回调`)
     assert.match(sources[page] || '', /onShareTimeline\s*\(/, `${page} 缺少朋友圈分享回调`)

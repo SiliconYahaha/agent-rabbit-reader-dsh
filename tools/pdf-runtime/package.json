@@ -1,0 +1,1 @@
+{"name":"rabbit-reader-pdf-build","private":true,"version":"1.0.0","dependencies":{"core-js":"3.50.0","esbuild":"0.25.12","pdfjs-dist":"6.4.299","web-streams-polyfill":"4.2.0"}}

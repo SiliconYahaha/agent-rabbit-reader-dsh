@@ -47,9 +47,9 @@ test('shared runtime, dependencies, unknown files and deleted unknown tests use 
   }
   assert.equal(planChanges([], { full: true }).mode, 'full')
 })
-test('CI changes test policy and upload guards without reinstalling or testing the product', () => {
+test('CI changes test policy, upload guards and stage sync without reinstalling or testing the product', () => {
   const plan = planChanges(['.github/workflows/ci.yml', 'scripts/ci-plan.js', 'scripts/ci-upload-check.js'])
-  assert.deepEqual(plan.tests, ['tests/ci-plan.test.js', 'tests/wechat-ci.test.js'])
+  assert.deepEqual(plan.tests, ['tests/ci-plan.test.js', 'tests/ci-stage-sync.test.js', 'tests/wechat-ci.test.js'])
   assert.equal(plan.mode, 'scoped')
   assert.equal(plan.install, false)
   assert.equal(plan.upload, false)

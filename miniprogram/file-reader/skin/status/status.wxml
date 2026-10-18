@@ -5,5 +5,5 @@
     <text wx:if="{{detail}}" class="loading-detail">{{detail}}</text>
   </view>
 </view>
-<view wx:if="{{error}}" class="error-card">{{error}}<button class="retry-button" wx:if="{{retryable}}" size="mini" bindtap="onRetry">重试</button></view>
+<view wx:if="{{error}}" class="error-card"><text>文件暂不支持</text><button class="retry-button" wx:if="{{retryable}}" size="mini" bindtap="onRetry">重试</button><skin-feedback id="file-feedback"/></view>
 <view wx:if="{{native}}" class="native-status">{{native}}</view>

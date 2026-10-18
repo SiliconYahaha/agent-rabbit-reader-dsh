@@ -140,7 +140,7 @@ function make32BitZipPredictionCompositePsd () {
   return Uint8Array.from([...header, ...sections, ...zlib.deflateSync(Uint8Array.from(rows.flatMap(row => Array.from(row))))])
 }
 
-test('PDF 兼容 AI 会自动复制为 PDF 并直接打开', async () => {
+test('PDF 兼容 AI 在页内渲染原文件，不复制或打开外部查看器', async () => {
   let copied
   let opened
   const page = loadPreviewPage({ name: '画板.ai', path: '/tmp/art.ai', size: 1024, type: 'application/postscript' }, {
@@ -156,17 +156,17 @@ test('PDF 兼容 AI 会自动复制为 PDF 并直接打开', async () => {
   await tick()
   await tick()
 
-  assert.equal(page.data.canOpenPdf, true)
-  assert.equal(copied.srcPath, '/tmp/art.ai')
-  assert.match(copied.destPath, /^\/user-data\/illustrator-preview-\d+-\d+\.pdf$/)
-  assert.equal(opened.fileType, 'pdf')
-  assert.equal(opened.showMenu, true)
+  assert.equal(page.data.canOpenPdf, false)
+  assert.equal(page.data.pdfSessions.length, 1)
+  assert.equal(copied, undefined)
+  assert.equal(opened, undefined)
+  assert.equal(page.data.pdfSessions[0].file.path, '/tmp/art.ai')
 })
 
-test('自带 Ai 示例先显示原画板预览，用户再主动打开内嵌 PDF', async () => {
+test('自带 Ai 示例同样直接渲染内嵌 PDF，不以预制缩略图替代', async () => {
   let copied = false
-  const page = loadPreviewPage({ name: '标志的四种形态.ai', path: '/user-data/rabbit-example-v1-final.ai', size: 220794,
-    type: 'application/pdf', samplePreview: '/assets/logo-variants-preview.jpg' }, {
+  const page = loadPreviewPage({ name: 'Firefox 经典品牌标志.ai', path: '/user-data/rabbit-example-v3-final.ai', size: 231784,
+    type: 'application/pdf', samplePreview: '/assets/firefox-classic-preview.jpg' }, {
     env: { USER_DATA_PATH: '/user-data' },
     getFileSystemManager: () => ({
       readFile: options => options.success({ data: Buffer.from('%PDF-1.6\n') }),
@@ -176,11 +176,11 @@ test('自带 Ai 示例先显示原画板预览，用户再主动打开内嵌 PDF
   })
   page.open()
   await tick()
-  assert.equal(page.data.previewPath, '/assets/logo-variants-preview.jpg')
-  assert.equal(page.data.canOpenPdf, true)
+  assert.equal(page.data.previewPath, '')
+  assert.equal(page.data.canOpenPdf, false)
+  assert.equal(page.data.pdfSessions.length, 1)
   assert.equal(copied, false)
-  page.openAiPdf()
-  assert.equal(copied, true)
+  assert.equal(page.data.pdfSessions[0].file.path, '/user-data/rabbit-example-v3-final.ai')
 })
 
 test('短 Ai 文件按真实字节数读取，不会在真机触发 length out of range', async () => {
@@ -200,7 +200,8 @@ test('短 Ai 文件按真实字节数读取，不会在真机触发 length out o
   assert.equal(reads[0].position, 0)
   assert.equal(reads[0].length, 3482)
   assert.equal(page.data.error, '')
-  assert.equal(page.data.canOpenPdf, true)
+  assert.equal(page.data.canOpenPdf, false)
+  assert.equal(page.data.pdfSessions.length, 1)
   assert.equal(page.data.extensionLabel, 'Ai')
 })
 
@@ -227,7 +228,8 @@ test('文件元数据不准时，Ai 头部长度越界会安全重试短文件�
   assert.equal(reads[0].length, 4096)
   assert.equal(Object.prototype.hasOwnProperty.call(reads[1], 'length'), false)
   assert.equal(page.data.error, '')
-  assert.equal(page.data.canOpenPdf, true)
+  assert.equal(page.data.canOpenPdf, false)
+  assert.equal(page.data.pdfSessions.length, 1)
 })
 
 test('非 PDF 兼容 AI 会解释限制而不是显示空白', async () => {
@@ -539,7 +541,7 @@ test('设计文件预览页从原生查看器返回后会重新开启分享菜�
   assert.deepEqual(reads, ['/tmp/legacy.ai'])
 })
 
-for (const kind of ['epsi', 'composite', 'vector', 'thumbnail', 'pdf']) test(`same-millisecond ${kind} loads: late old writes cannot replace the new file bytes`, async () => {
+for (const kind of ['epsi', 'composite', 'vector', 'thumbnail']) test(`same-millisecond ${kind} loads: late old writes cannot replace the new file bytes`, async () => {
   const { document } = require('./helpers/epsi-lines')
   const { bitmapFixture } = require('./helpers/psd-bitmap')
   let pair
@@ -587,4 +589,37 @@ for (const kind of ['epsi', 'composite', 'vector', 'thumbnail', 'pdf']) test(`sa
     assert.deepEqual(files.get(visible), expected, 'late write left the active file unchanged')
     assert.notDeepEqual(files.get(held.path), expected, 'control images/files really differ')
   } finally { Date.now = originalNow }
+})
+
+for (const scenario of ['missing-size', 'oversize', 'stale']) test(`chat PSD size resolution: ${scenario}`, async () => {
+  const psd = makeRawCompositePsd()
+  let writes = 0
+  const reads = []
+  let completeStat
+  const page = loadPreviewPage({ name: 'chat.psd', path: '/tmp/chat.psd', size: 0 }, {
+    env: { USER_DATA_PATH: '/user-data' },
+    getFileSystemManager: () => ({
+      stat: options => { completeStat = options.success },
+      readFile: options => {
+        reads.push(options.length)
+        const data = psd.slice(options.position || 0, (options.position || 0) + options.length)
+        options.success({ data: data.buffer })
+      },
+      writeFile: options => { writes++; options.success() }
+    })
+  })
+  page.open()
+  await tick()
+  assert.equal(typeof completeStat, 'function')
+  if (scenario === 'stale') page.detached()
+  completeStat({ stats: { size: scenario === 'oversize' ? 41 * 1024 * 1024 : psd.length } })
+  await tick(); await tick()
+  if (scenario === 'missing-size') {
+    assert.match(page.data.previewPath, /psd-composite-/)
+    assert.equal(writes, 1)
+    assert.equal(page.data.metadata.find(item => item.label === '合成预览').value, '2 × 1 px · 8 bit · Raw')
+  } else {
+    assert.equal(writes, 0)
+    assert.equal(reads.includes(psd.length), false)
+  }
 })

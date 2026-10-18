@@ -1,0 +1,16 @@
+<view class="filebar-space"/>
+<view wx:if="{{expanded}}" class="filebar-backdrop" bindtap="close" catchtouchmove="stopTouch"/>
+<view class="filebar">
+  <view class="filebar-row" bindtap="toggle" role="button" aria-label="展开或收起文件详情" aria-expanded="{{expanded}}">
+    <text class="filebar-mark">{{extension}}</text>
+    <text class="filebar-name">{{name || '文件预览'}}</text>
+  </view>
+  <scroll-view wx:if="{{expanded}}" scroll-y class="filebar-details">
+    <text class="filebar-fullname" selectable>{{name}}</text>
+    <text wx:if="{{size}}" class="filebar-size">{{size}}</text>
+    <view wx:for="{{metadata}}" wx:key="label" class="filebar-meta"><text>{{item.label}}</text><text selectable>{{item.value}}</text></view>
+    <text wx:for="{{details}}" wx:key="index" class="filebar-message">{{item}}</text>
+    <text wx:if="{{message}}" class="filebar-message">{{message}}</text>
+    <text class="filebar-message">兔子阅读器 {{build}}</text>
+  </scroll-view>
+</view>

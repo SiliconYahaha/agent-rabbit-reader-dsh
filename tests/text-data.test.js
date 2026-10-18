@@ -1,6 +1,6 @@
 'use strict'
 const assert = require('node:assert/strict'), test = require('node:test')
-const { formatJson, parseCsv, renderTextData, decodeTextData } = require('../miniprogram/file-reader/document/text-data')
+const { formatJson, parseCsv, renderTextData, decodeTextData, MAX_INDENT_DEPTH } = require('../miniprogram/file-reader/document/text-data')
 const { fileKind, textDataFormat, isMarkdownFile, SOURCE_TEXT_EXTENSIONS } = require('../miniprogram/file-reader/shared/file-types')
 const { readerPage, flush } = require('./helpers/reader-host')
 const references = require('./fixtures/text-data/references.json')
@@ -192,4 +192,35 @@ test('native actual byte length enforces limits and stale reads cannot overwrite
     assert.equal(compact(page._htmlRuntime.document.querySelector('pre').textContent), '{"ok":true}')
     page.detached()
   }
+})
+
+// 深嵌套 JSON 的缩进曾按真实深度线性增长：深度 60、1 万个数字的 48 kB 输入会放大成
+// 1.2 MB 以上的桥接载荷，再大一点就越过 maxOutput，连缩进视图都保不住，只能整体退回
+// 原文。缩进只服务可读性，因此上限固定；词元、原文切换与浅嵌套排版都不受影响。
+test('deeply nested JSON keeps its indented view with a payload proportional to content', () => {
+  const nested = (depth, count) => '['.repeat(depth) + Array.from({ length: count }, (_, index) => index).join(',') + ']'.repeat(depth)
+  const source = nested(60, 10000)
+  assert.ok(source.length <= 200000, '样本必须仍在字符上限内，否则测的是另一个限制')
+  const formatted = formatJson(source)
+  assert.equal(compact(formatted), compact(source), '每个 JSON 词元都必须逐字保留')
+  assert.ok(formatted.length < source.length * 8, `载荷应随内容增长而不是随嵌套深度膨胀：${formatted.length} / ${source.length}`)
+  const widest = Math.max(...formatted.split('\n').map(line => line.match(/^ */)[0].length))
+  assert.ok(widest <= MAX_INDENT_DEPTH * 2, `缩进不得超过 ${MAX_INDENT_DEPTH} 层：${widest}`)
+  assert.equal(renderTextData(source, { format: 'json' }).mode, 'json')
+  // 修复前这些体积直接越过 maxOutput 退回原文；现在仍保留缩进视图且词元不变。
+  for (const count of [14000, 18000, 24000]) {
+    const larger = nested(60, count)
+    const result = renderTextData(larger, { format: 'json' })
+    assert.equal(result.mode, 'json', `${larger.length} 字符的深嵌套 JSON 仍应显示缩进视图`)
+    assert.equal(result.diagnostic, '')
+    assert.equal(compact(formatJson(larger)), compact(larger))
+  }
+  // 浅嵌套排版逐字不变，原文切换按钮与两个视图都保留。
+  assert.equal(formatJson('{"a":[1,{"b":2}]}'), '{\n  "a": [\n    1,\n    {\n      "b": 2\n    }\n  ]\n}')
+  assert.equal(formatJson('[1,2,3]'), '[\n  1,\n  2,\n  3\n]')
+  const view = renderTextData('{"a":[1,{"b":2}]}', { format: 'json', labels: { original: '查看原文', formatted: '查看排版' } })
+  assert.ok(view.html.includes('id="text-data-toggle"'))
+  assert.ok(view.html.includes('id="text-data-original"') && view.html.includes('id="text-data-formatted"'))
+  // 超出字符上限仍按原策略明确退回原文，不放行无限放大。
+  assert.throws(() => formatJson(nested(60, 100), { maxChars: 10 }), e => e.code === 'presentation-limit')
 })

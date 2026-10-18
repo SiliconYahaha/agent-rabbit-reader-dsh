@@ -5,16 +5,16 @@ const {svgHitTest}=require('../miniprogram/file-reader/document/svg-hit-test')
 test('animation runs beyond lifetime timer allowance; hide, resume, cancel and destroy stop scheduling',()=>{
  const tasks=new Map();let next=0
  const r=createRuntime('<script>window.frames=0;function tick(){frames++;requestAnimationFrame(tick)}requestAnimationFrame(tick)</script>',{setTimeout:(fn,ms)=>{tasks.set(++next,{fn,ms});return next},clearTimeout:id=>tasks.delete(id)})
- const frame=()=>{const row=[...tasks].find(([,t])=>t.ms===33);assert.ok(row);tasks.delete(row[0]);row[1].fn()}
+ const frame=()=>{const row=[...tasks].find(([,t])=>t.ms===16);assert.ok(row);tasks.delete(row[0]);row[1].fn()}
  r.run();for(let i=0;i<600;i++)frame();assert.equal(r.window.frames,600);assert.deepEqual(r.errors,[])
- r.setVisible(false);assert.equal([...tasks.values()].some(t=>t.ms===33),false)
+ r.setVisible(false);assert.equal([...tasks.values()].some(t=>t.ms===16),false)
  r.setVisible(true);frame();assert.equal(r.window.frames,601)
- r.destroy();assert.equal([...tasks.values()].some(t=>t.ms===33),false)
+ r.destroy();assert.equal([...tasks.values()].some(t=>t.ms===16),false)
 })
 test('animation keeps a per-frame execution guard and bounds queued callbacks',()=>{
  const tasks=new Map();let next=0
  const r=createRuntime('<script>requestAnimationFrame(()=>{requestAnimationFrame(()=>{});while(true){}})</script>',{maxExecutionSteps:100,setTimeout:(fn,ms)=>{tasks.set(++next,{fn,ms});return next},clearTimeout:id=>tasks.delete(id)})
- r.run();const [id,t]=[...tasks].find(([,t])=>t.ms===33);tasks.delete(id);t.fn();assert.match(r.errors[0].message,/execution budget/);assert.equal([...tasks.values()].some(t=>t.ms===33),false);r.destroy()
+ r.run();const [id,t]=[...tasks].find(([,t])=>t.ms===16);tasks.delete(id);t.fn();assert.match(r.errors[0].message,/execution budget/);assert.equal([...tasks.values()].some(t=>t.ms===16),false);r.destroy()
 })
 test('SVG hit routing respects viewBox, translated buttons, overlap and hidden overlays',()=>{
  const r=createRuntime('<svg viewBox="0 0 400 200"><g transform="translate(100 50)"><rect id="button" width="100" height="60"/></g><g display="none"><rect id="hidden" width="400" height="200"/></g></svg>');r.run()

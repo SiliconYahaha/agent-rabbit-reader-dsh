@@ -44,7 +44,7 @@ async function componentRun (inputs, modules, componentSource) {
     throw Error('Unexpected dependency '+id)
   },value=>{definition=value},{getWindowInfo:()=>({pixelRatio:1})})
   const player={...definition.methods,data:{...definition.data,playing:false},_viewReady:true,_images:new Map(),events:[],
-    setData(patch){Object.assign(this.data,patch)},triggerEvent(name,detail){this.events.push({name,detail})},
+    setData(patch,callback){Object.assign(this.data,patch);if(callback)callback()},triggerEvent(name,detail){this.events.push({name,detail})},
     createSelectorQuery(){const q={select:()=>q,boundingClientRect:()=>q,fields:()=>q,exec:callback=>{if(deferred)queries.push(callback);else callback([{width:256},{node:canvas,width:256}])}};return q}
   }
   const difference=(a,b)=>a.reduce((sum,x,i)=>sum+Math.abs(x-b[i]),0)

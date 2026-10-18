@@ -92,3 +92,16 @@ test('late invalid-string reads and detached reads cannot replace a subsequent v
     assert.equal(page.patches.length, patches)
   } finally { page.detached() }
 })
+
+test('Illustrator compound paths retain holes, XR fill rule and nested groups', () => {
+ const source = head + '1 XR\n0 0 0 k\n*u\n0 0 m 30 0 L 30 20 L 0 20 L f\nu\n5 5 m 25 5 L 25 15 L 5 15 L f\nU\n*U\n'
+ const result=extractLegacyAiPreview(Buffer.from(source))
+ assert.equal(result.paths,1)
+ assert.match(result.svg,/fill-rule="evenodd"/)
+ assert.match(result.svg,/M0 0 L30 0 L30 20 L0 20 M5 5 L25 5 L25 15 L5 15/)
+ assert.doesNotMatch(extractLegacyAiPreview(Buffer.from(source.replace('1 XR','0 XR'))).svg,/fill-rule="evenodd"/)
+ assert.throws(()=>extractLegacyAiPreview(Buffer.from(source.replace('*U',''))),/未闭合/)
+ assert.throws(()=>extractLegacyAiPreview(Buffer.from(head+'*U')),/不匹配/)
+ const nested = extractLegacyAiPreview(Buffer.from(source.replace('u\n5','*u\n5').replace('U\n*U','*U\n*U')))
+ assert.equal(nested.paths,1)
+})

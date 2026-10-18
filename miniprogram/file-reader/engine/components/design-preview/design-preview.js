@@ -1,6 +1,8 @@
 'use strict'
 
 const { compositeRgbaOnCheckerboard, extensionOf, extractLegacyAiPreview, extractLegacyAiRasterPreview, extractPsdComposite, extractPsdThumbnail, formatBytes, isPdfCompatibleAi, parsePsdHeader } = require('../../core/design-file')
+const { extractDesignPackage, MAX_PACKAGE_BYTES } = require('../../core/design-package')
+const { extractAiSavedPreview } = require('../../core/ai-saved-preview')
 const skinCopy = require('../../../skin/copy')
 const { mimeTypeOf } = require('../../../shared/file-types')
 const encodeJpeg = require('../../core/vendor/jpeg-encoder')
@@ -50,6 +52,7 @@ Component({
     metadata: [],
     message: '',
     error: '',
+    pdfSessions: [],
     canOpenPdf: false
   },
 
@@ -73,9 +76,11 @@ Component({
         metadata: [],
         message: '',
         error: '',
+        pdfSessions: [],
         canOpenPdf: false
       })
-      if (extension === 'psd' || extension === 'psb' || mimeTypeOf(material) === 'application/x-photoshop') this.loadPsd(material, revision)
+      if (extension === 'fig' || extension === 'sketch') this.loadDesignPackage(material, extension, revision)
+      else if (extension === 'psd' || extension === 'psb' || extension === 'psdt' || mimeTypeOf(material) === 'application/x-photoshop') this.loadPsd(material, revision)
       else this.loadAi(material, revision)
     },
 
@@ -114,6 +119,32 @@ Component({
         success: result => resolve(result.data),
         fail: reject
       }))
+    },
+
+    async loadDesignPackage (material, extension, revision) {
+      try {
+        // Stat actual bytes before reading: providers may omit or misreport size.
+        const info = await new Promise((resolve, reject) => wx.getFileSystemManager().stat({ path: material.path, success: resolve, fail: reject }))
+        if (revision !== this._materialRevision) return
+        if (!info.stats || !Number.isFinite(info.stats.size) || info.stats.size > MAX_PACKAGE_BYTES) throw new Error('设计文件超过 40 MB 或大小无法确认，暂不加载')
+        const input = await this.readWholeBinary(material.path)
+        if (revision !== this._materialRevision) return
+        const result = extractDesignPackage(input, extension)
+        let previewPath = ''
+        if (result.preview) {
+          previewPath = previewFile('design-package-preview', 'png')
+          const bytes = result.preview
+          await new Promise((resolve, reject) => wx.getFileSystemManager().writeFile({ filePath: previewPath, data: bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength), success: resolve, fail: reject }))
+        }
+        if (revision !== this._materialRevision) return
+        this.setData({ loading: false, previewPath, message: result.message, metadata: [
+          { label: '格式', value: result.title },
+          ...(result.preview ? [{ label: '保存的预览', value: `${result.width} × ${result.height} px` }] : []),
+          ...(result.pageCount !== null ? [{ label: '文档页数', value: String(result.pageCount) }] : [])
+        ] })
+      } catch (error) {
+        if (revision === this._materialRevision) this.setData({ loading: false, error: String(error.message || error.errMsg || error) })
+      }
     },
 
     async loadPsd (material, revision) {
@@ -167,8 +198,17 @@ Component({
     },
 
     async loadPsdComposite (material, header, metadata, revision) {
-      const size = Number(material.size || 0)
-      if (!size) return { opened: false, reason: '微信没有提供文件大小' }
+      let size = Number(material.size || 0)
+      if (!Number.isFinite(size) || size <= 0) {
+        // Chat handoff may omit size even though the local file is readable.
+        // Resolve it before applying the same bounded composite path as picking.
+        try {
+          const info = await new Promise((resolve, reject) => wx.getFileSystemManager().stat({ path: material.path, success: resolve, fail: reject }))
+          size = Number(info.stats && info.stats.size)
+        } catch (_) { size = 0 }
+        if (revision !== this._materialRevision) return { opened: false }
+      }
+      if (!Number.isFinite(size) || size <= 0) return { opened: false, reason: '暂时无法读取文件大小' }
       if (size > MAX_COMPOSITE_FILE_BYTES) return { opened: false, reason: `文件超过 ${formatBytes(MAX_COMPOSITE_FILE_BYTES)} 本机合成上限` }
       if (header.width * header.height > MAX_COMPOSITE_PIXELS) return { opened: false, reason: `画布超过 ${MAX_COMPOSITE_PIXELS.toLocaleString()} 像素本机合成上限` }
       try {
@@ -208,25 +248,35 @@ Component({
       }
     },
 
+    async onPdfError (event) {
+      const revision = Number(event.currentTarget.dataset.revision)
+      if (revision !== this._materialRevision) return
+      const material = this.properties.file
+      try {
+        const info = await new Promise((resolve, reject) => wx.getFileSystemManager().stat({ path: material.path, success: resolve, fail: reject }))
+        if (revision !== this._materialRevision || !info.stats || info.stats.size > 25 * 1024 * 1024) return
+        const input = await this.readWholeBinary(material.path)
+        if (revision !== this._materialRevision) return
+        const preview = extractAiSavedPreview(input)
+        if (!preview) return
+        const previewPath = previewFile('illustrator-saved-preview', 'jpg')
+        await new Promise((resolve, reject) => wx.getFileSystemManager().writeFile({ filePath: previewPath, data: preview.jpeg.buffer.slice(preview.jpeg.byteOffset, preview.jpeg.byteOffset + preview.jpeg.byteLength), success: resolve, fail: reject }))
+        if (revision !== this._materialRevision) return
+        this.setData({ loading: false, error: '', pdfSessions: [], previewPath,
+          metadata: [{ label: '格式', value: 'Adobe Illustrator' }, { label: '内嵌缩略图', value: `${preview.width} × ${preview.height} px` }],
+          message: skinCopy.message('design.onPdfError.message.6833f0', {}, '当前显示文件保存的内嵌缩略预览，清晰度有限；完整设计画布暂未能还原。') })
+      } catch (error) { this._aiPreviewDiagnostic = String(error.message || error.errMsg || error) }
+    },
+
     async loadAi (material, revision) {
       try {
         const header = await this.readBinary(material.path, 0, 4096, material.size)
         if (revision !== this._materialRevision) return
         const compatible = isPdfCompatibleAi(header)
         if (compatible) {
-          this.setData({
-            loading: false,
-            canOpenPdf: true,
-            previewPath: material.samplePreview || '',
-            metadata: [
-              { label: skinCopy.message('design.loadAi.label.9d2601', {}, '格式'), value: 'Adobe Illustrator' },
-              { label: skinCopy.message('design.loadAi.label.08be1e', {}, 'PDF 预览'), value: '已内嵌' }
-            ],
-            message: material.samplePreview
-              ? '已显示画板预览，也可打开内嵌 PDF 放大查看。'
-              : skinCopy.message('design.loadAi.message.f16e51', {}, '检测到 Illustrator 内嵌 PDF，可以使用微信文档查看器显示画板。正在直接打开……')
-          })
-          if (!material.samplePreview) this.openAiPdf()
+          this.setData({ loading: false, canOpenPdf: false, previewPath: '',
+            pdfSessions: [{ id: revision, file: material }],
+            metadata: [{ label: '格式', value: 'Adobe Illustrator · 内嵌 PDF' }], message: '' })
           return
         }
 
@@ -306,26 +356,6 @@ Component({
       } catch (error) {
         if (revision === this._materialRevision) this.setData({ loading: false, error: skinCopy.message('design.loadAi.error.c3cc62', { detail: error.errMsg || error.message || error }, `Ai 文件检测失败：${error.errMsg || error.message || error}`) })
       }
-    },
-
-    openAiPdf () {
-      if (!this.material || !this.data.canOpenPdf) return
-      const revision = this._materialRevision
-      const destination = previewFile('illustrator-preview', 'pdf')
-      wx.getFileSystemManager().copyFile({
-        srcPath: this.material.path,
-        destPath: destination,
-        success: () => {
-          if (revision !== this._materialRevision) return
-          wx.openDocument({
-            filePath: destination,
-            fileType: 'pdf',
-            showMenu: true,
-            fail: error => { if (revision === this._materialRevision) this.setData({ error: skinCopy.message('design.openAiPdf.error.7267f9', { detail: error.errMsg || '未知错误' }, `Ai 内嵌 PDF 打开失败：${error.errMsg || '未知错误'}`) }) }
-          })
-        },
-        fail: error => { if (revision === this._materialRevision) this.setData({ error: skinCopy.message('design.openAiPdf.error.4b747c', { detail: error.errMsg || '未知错误' }, `Ai 预览准备失败：${error.errMsg || '未知错误'}`) }) }
-      })
     },
 
     onImageError (event) {

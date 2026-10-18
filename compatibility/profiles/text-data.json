@@ -124,8 +124,8 @@
   "mutationQueue": [
     {
       "id": "deep-json-bridge-payload",
-      "status": "pending",
-      "action": "Own depth60/10000-number input is49kB but emits1.35MB bridge patch in Node. Confirm actual WXML/display limits and preserve full lexemes/layout; do not claim phone success from host binding."
+      "status": "partial",
+      "action": "Node 侧已修：formatJson 缩进上限 8 层后，深度60/1万数字的 48 kB 输入从 1.21 MB 降到约 216 kB，94.7 kB 以上不再因 maxOutput 整体退回原文，JSON 词元逐字不变（tests/text-data.test.js 回归）。仍需确认真机 WXML/显示上限与实际桥接分批表现，不得据宿主绑定推断真机通过。"
     },
     {
       "id": "zip-website-resources",

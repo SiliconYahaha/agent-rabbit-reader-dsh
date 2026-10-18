@@ -9,3 +9,6 @@ tools/sevenzip-native/native-listing.patch -text whitespace=-blank-at-eol,-blank
 *.pdf binary
 # PDF-compatible Illustrator originals are binary even when their headers look textual.
 scripts/assets/example-art/*.ai binary
+
+# Preserve the offline demonstration source exactly, including upstream whitespace.
+scripts/assets/example-art/koi-pond.html -text whitespace=-blank-at-eol

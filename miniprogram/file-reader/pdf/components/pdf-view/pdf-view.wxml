@@ -1,0 +1,10 @@
+<view class="pdf-view {{error ? 'pdf-view-error' : ''}}">
+  <view wx:if="{{error}}" class="pdf-error"><text class="unsupported-title">文件暂不支持</text><text>{{error}}</text><button bindtap="retry">重试</button><skin-feedback id="file-feedback" name="{{file.name}}" diagnostic="{{diagnostic}}"/></view>
+  <view wx:elif="{{needsPassword}}" class="pdf-error"><text>{{passwordMessage}}</text><input password placeholder="文档密码" bindinput="passwordInput" bindconfirm="unlock"/><button bindtap="unlock">打开</button></view>
+  <view wx:else>
+    <view class="pdf-toolbar"><text>{{pageNumber}} / {{pageCount || '…'}} 页</text><button bindtap="zoom" disabled="{{busy}}">{{zoomed ? '适合宽度' : '放大'}}</button></view>
+    <text wx:if="{{busy}}" class="pdf-loading">正在显示页面…</text>
+    <scroll-view scroll-x class="pdf-scroll"><image wx:if="{{imagePath && !busy}}" src="{{imagePath}}" mode="widthFix" style="display:block;width:{{width}}px;height:{{height}}px" aria-label="PDF 第 {{pageNumber}} 页"/></scroll-view><canvas type="2d" id="pdf-canvas" class="pdf-canvas" style="width:{{width}}px;height:{{height}}px;position:{{canvasFallback ? 'relative' : 'fixed'}};left:{{canvasFallback ? '0' : '-10000px'}};top:0" />
+    <view wx:if="{{pageCount > 1}}" class="pdf-pages"><button bindtap="previous" disabled="{{busy || pageNumber <= 1}}">上一页</button><text>{{pageNumber}} / {{pageCount}}</text><button bindtap="next" disabled="{{busy || pageNumber >= pageCount}}">下一页</button></view>
+  </view>
+</view>

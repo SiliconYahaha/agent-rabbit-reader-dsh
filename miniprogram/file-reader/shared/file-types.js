@@ -4,11 +4,11 @@ const { extensionOf } = require('./file-names')
 const { isArchiveVolumeName } = require('./archive-volumes')
 
 const HTML_EXTENSIONS = new Set(['html', 'htm', 'xhtml', 'xht'])
-const DESIGN_EXTENSIONS = new Set(['ai', 'psd', 'psb'])
+const DESIGN_EXTENSIONS = new Set(['ai', 'ait', 'eps', 'psd', 'psb', 'psdt', 'fig', 'sketch'])
 const NATIVE_DOCUMENT_EXTENSIONS = new Set(['pdf', 'doc', 'docx', 'docm', 'xls', 'xlsx', 'xlsm', 'ppt', 'pptx'])
 const IMAGE_EXTENSIONS = new Set(['png', 'jpg', 'jpeg', 'gif', 'webp'])
 const SVG_EXTENSIONS = new Set(['svg'])
-const SOURCE_TEXT_EXTENSIONS = new Set(['json', 'jsonl', 'ndjson', 'yaml', 'yml', 'xml', 'csv', 'tsv', 'log', 'js', 'mjs', 'cjs', 'ts', 'css', 'py', 'sh', 'sql', 'ini', 'toml', 'conf'])
+const SOURCE_TEXT_EXTENSIONS = new Set(['base', 'json', 'jsonl', 'ndjson', 'yaml', 'yml', 'xml', 'csv', 'tsv', 'log', 'js', 'mjs', 'cjs', 'ts', 'css', 'py', 'sh', 'sql', 'ini', 'toml', 'conf'])
 const TEXT_EXTENSIONS = new Set(['txt', 'md', 'markdown', ...SOURCE_TEXT_EXTENSIONS])
 const SOURCE_TEXT_MIME_TYPES = new Set(['application/json', 'application/xml', 'application/yaml', 'application/x-yaml', 'text/xml', 'text/csv', 'text/tab-separated-values', 'text/yaml', 'text/x-yaml', 'text/javascript', 'text/css', 'application/javascript', 'application/x-javascript', 'text/x-python', 'application/sql'])
 const AUDIO_EXTENSIONS = new Set(['flac', 'm4a', 'ogg', 'ape', 'amr', 'wma', 'wav', 'mp3', 'aac', 'aiff', 'aif', 'caf'])
@@ -116,6 +116,7 @@ function isMarkdownFile (file) {
 function textDataFormat (file) {
   const extension = extensionOf(file && file.name)
   const type = mimeTypeOf(file)
+  if (extension === 'base') return 'base'
   if (extension === 'json') return 'json'
   if (extension === 'csv') return 'csv'
   if (extension === 'txt') return 'text'

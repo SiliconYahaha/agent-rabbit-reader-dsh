@@ -1,8 +1,11 @@
 <import src="./dom-tree.wxml"/>
 <!-- 引擎只负责内容：状态卡、音视频抬头、文件检查卡、Ai/PSD 抬头都由宿主的 /file-reader/skin 皮肤组件渲染。 -->
 <view class="reader-page" bindtouchstart="onReaderTouchStart" bindtouchmove="onReaderTouchMove" bindtouchend="onReaderTouchEnd" bindtouchcancel="onReaderTouchCancel">
+  <skin-filebar wx:if="{{!designMode}}" name="{{sourceName || file.name}}" size="{{mediaSizeLabel}}" metadata="{{inspectorMetadata}}" details="{{mediaDetails}}" message="{{inspectorSummary || mediaDiagnostic}}"/>
   <skin-status id="reader-status" loading="{{isLoading}}" label="{{loadingLabel}}" detail="{{loadingDetail}}" error="{{error}}" retryable="{{htmlPresentationRetry || fileLoadRetry}}" native="{{nativeStatus}}" bind:retry="retryReading"/>
 
+  <view wx:for="{{pdfSessions}}" wx:key="id" class="document-preview-inset"><pdf-view id="inline-pdf" file="{{item.file}}" data-revision="{{item.id}}" bind:ready="onPdfReady" bind:error="onPdfError"/></view>
+  <scroll-view wx:if="{{imagePath}}" scroll-x class="image-preview-inset"><image style="width:{{imageZoomed ? 150 : 100}}%;max-width:none" wx:for="{{imageSessions}}" wx:key="id" class="local-image" data-path="{{item.path}}" data-revision="{{item.revision}}" src="{{item.path}}" mode="widthFix" show-menu-by-longpress bindtap="enlargeImage" bindload="onImagePreviewLoad" binderror="onImagePreviewError" /></scroll-view>
   <!-- A fresh keyed host instance keeps late native/custom events bound to the
        old immutable session, including reopening the same path. Skin contracts
        stay unchanged: identity belongs to this engine-owned event target. -->
@@ -42,13 +45,23 @@
     <design-preview id="design-preview" file="{{designFile}}"/>
   </view>
 
-  <view wx:if="{{hasContent && !mediaMode && !inspectorMode && !designMode}}" class="reader-canvas">
+  <view wx:if="{{hasContent && !mediaMode && !inspectorMode && !designMode && !imagePath && !nativeDocumentName && !pdfSessions.length}}" class="reader-canvas">
+    <view wx:if="{{spreadsheet}}" class="spreadsheet-controls">
+      <picker range="{{spreadsheet.sheetNames}}" value="{{spreadsheet.sheetIndex}}" bindchange="selectSpreadsheet"><view class="spreadsheet-picker">{{spreadsheet.sheetNames[spreadsheet.sheetIndex]}} ▾</view></picker>
+      <text>{{spreadsheet.rowLabel}}</text>
+      <view class="spreadsheet-paging"><button size="mini" disabled="{{spreadsheet.pageIndex === 0}}" bindtap="previousSpreadsheetPage">上一段</button><text>{{spreadsheet.pageIndex + 1}} / {{spreadsheet.pageCount}}</text><button size="mini" disabled="{{spreadsheet.pageIndex + 1 >= spreadsheet.pageCount}}" bindtap="nextSpreadsheetPage">下一段</button></view>
+    </view>
     <view wx:if="{{standaloneSvgAnimationNotice}}" class="svg-animation-notice">
       <text>{{standaloneSvgAnimationNotice}}</text>
       <button wx:if="{{standaloneSvgAnimationCanRetry}}" size="mini" bindtap="retryStandaloneSvgAnimation">重试动画</button>
     </view>
-    <svg-view id="standalone-svg-player" wx:if="{{standaloneSvgAnimatedSource}}" class="standalone-svg standalone-svg-animated" source="{{standaloneSvgAnimatedSource}}" bind:ready="onStandaloneSvgAnimatedReady" bind:error="onStandaloneSvgAnimatedError"/>
-    <image wx:elif="{{standaloneSvgSource || standaloneSvgPath}}" class="standalone-svg" src="{{standaloneSvgSource || standaloneSvgPath}}" mode="widthFix" bindload="onStandaloneSvgLoad" binderror="onStandaloneSvgError"/>
+    <!-- Keep the static first frame visible while the async animation component mounts. -->
+    <view wx:if="{{standaloneSvgSource || standaloneSvgPath || standaloneSvgAnimatedSource}}" class="standalone-svg-stage">
+      <view wx:for="{{standaloneSvgSessions}}" wx:key="id">
+        <image wx:if="{{!standaloneSvgAnimationReady && (standaloneSvgSource || standaloneSvgPath)}}" class="standalone-svg" data-revision="{{item.id}}" src="{{standaloneSvgSource || standaloneSvgPath}}" mode="widthFix" bindload="onStandaloneSvgLoad" binderror="onStandaloneSvgError"/>
+        <svg-view id="standalone-svg-player" wx:if="{{standaloneSvgAnimatedSource}}" class="standalone-svg {{standaloneSvgAnimationReady ? '' : 'standalone-svg-pending'}}" data-revision="{{item.id}}" source="{{standaloneSvgAnimatedSource}}" bind:ready="onStandaloneSvgAnimatedReady" bind:error="onStandaloneSvgAnimatedError"/>
+      </view>
+    </view>
     <view wx:elif="{{domMode}}" class="dom-render-clip" style="{{domClipStyle}}">
       <view class="dom-render-frame" style="{{domFrameStyle}}">
         <view class="dom-render-root" style="{{domWrapperStyle}}">
@@ -64,6 +77,7 @@
       scroll-table
       selectable
       use-anchor
+      preview-img="{{false}}"
       copy-link="{{false}}"
       set-title="{{false}}"
       tag-style="{{tagStyle}}"

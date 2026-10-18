@@ -1,0 +1,802 @@
+<!doctype html>
+<!--
+  坦克大战 2026 · 霓虹防线 / 单文件离线游戏
+  直接打开本文件即可游玩。所有可见元素均由内联 SVG 绘制；无 Canvas、无外部资源。
+  音效仅由 Web Audio API 的振荡器与噪声缓存合成。没有网络连接或构建步骤。
+  代码分区：SVG 美术/UI；常量与输入；合成音效；地图/实体；战斗/AI；技能/补给；状态与渲染。
+  物理固定 120Hz，requestAnimationFrame 插值渲染，子弹细分碰撞；粒子有数量上限。
+  修改 LEVELS / CHASSIS / ENEMY / UPGRADES 可以扩展地图、战车、敌军和强化。
+-->
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#070d14"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; media-src 'none'; font-src 'none'; base-uri 'none'"><title>坦克大战 2026 · 霓虹防线</title><style>
+:root{color-scheme:dark}*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#070d14}body{display:grid;place-items:center;overscroll-behavior:none}#arcade{display:block;width:100%;height:100%;height:100dvh;outline:none;user-select:none;-webkit-user-select:none;touch-action:none}svg{fill:#e4eef5}text{font-family:Inter,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;} .mono{font-family:"SFMono-Regular",Consolas,monospace;font-variant-numeric:tabular-nums}.kicker{font-size:11px;letter-spacing:2px;fill:#8297a7;font-weight:600}.small{font-size:12px;fill:#849aa9}.tiny{font-size:10px;fill:#6e8799;letter-spacing:1px}.title{font-weight:700;font-size:17px;letter-spacing:1px}.number{font-family:"SFMono-Regular",Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:-1px}.button{cursor:pointer;outline:none}.button .button-bg{transition:fill .16s,stroke .16s,opacity .16s}.button:hover .button-bg,.button:focus-visible .button-bg{fill:#1b3440;stroke:#66e7c0}.button.primary:hover .button-bg,.button.primary:focus-visible .button-bg{fill:#acffdc;stroke:#c6ffe7}.button.pressed .button-bg{fill:#2c6e60;stroke:#98ffda}.button[aria-disabled="true"]{opacity:.4;cursor:default}.button.selected .button-bg{fill:#132e2a;stroke:#64f4bc}.button.selected .selection-dot{fill:#64f4bc}.button .selection-dot{fill:#304250}.spin{transform-box:fill-box;transform-origin:center;animation:spin 22s linear infinite}.breathe{animation:breathe 2.6s ease-in-out infinite}.waterline{animation:flow 5s linear infinite;stroke-dasharray:14 18}.hazard-ring{animation:breathe .65s linear infinite}.screen-pop{animation:screen-in .25s ease-out}.tracks{stroke-dasharray:2 5}.title-shine{animation:breathe 4s ease-in-out infinite}@keyframes spin{to{transform:rotate(360deg)}}@keyframes breathe{50%{opacity:.45}}@keyframes flow{to{stroke-dashoffset:-64}}@keyframes screen-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.spin,.breathe,.waterline,.hazard-ring,.title-shine,.screen-pop{animation:none}.button .button-bg{transition:none}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}noscript{color:#e4eef5;font:16px sans-serif}
+</style></head><body>
+<svg id="arcade" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 960" tabindex="0" role="application" aria-labelledby="game-title game-description"><title id="game-title">坦克大战 2026 · 霓虹防线</title><desc id="game-description">离线 SVG 坦克游戏。WASD 或方向键移动，空格或鼠标左键开火，鼠标移动可瞄准，再按移动键恢复方向瞄准；Shift 冲刺，E 电磁脉冲，Q 切换武器，P 或 Escape 暂停，R 重新部署，M 静音；触屏使用画面按键。守住基地，击破敌军，选择强化，战胜第三关首领。可选无尽模式。</desc><defs>
+<linearGradient id="page-gradient" x2=".6" y2="1"><stop stop-color="#111d2b"/><stop offset="1" stop-color="#070d14"/></linearGradient>
+<linearGradient id="panel-fill" x2="0" y2="1"><stop stop-color="#12202d"/><stop offset="1" stop-color="#0d1722"/></linearGradient>
+<linearGradient id="hangar-fill" x2="1" y2="1"><stop stop-color="#182d3b"/><stop offset=".5" stop-color="#101e2c"/><stop offset="1" stop-color="#09111c"/></linearGradient>
+<radialGradient id="ground-glow"><stop stop-color="#1c3942"/><stop offset="1" stop-color="#101c28"/></radialGradient>
+<radialGradient id="mint-glow"><stop stop-color="#54efb9" stop-opacity=".25"/><stop offset="1" stop-color="#54efb9" stop-opacity="0"/></radialGradient>
+<linearGradient id="water-fill" x2="1" y2="1"><stop stop-color="#11455b"/><stop offset="1" stop-color="#0d2539"/></linearGradient>
+<linearGradient id="steel-fill" x2="1" y2="1"><stop stop-color="#58737e"/><stop offset=".5" stop-color="#354e60"/><stop offset="1" stop-color="#243848"/></linearGradient>
+<linearGradient id="brick-fill" x2="0" y2="1"><stop stop-color="#a98461"/><stop offset="1" stop-color="#665642"/></linearGradient>
+<linearGradient id="barrel-fill"><stop stop-color="#374e5f"/><stop offset=".3" stop-color="#d5e1e1"/><stop offset=".7" stop-color="#879f9f"/><stop offset="1" stop-color="#334957"/></linearGradient>
+<linearGradient id="amber-bullet" x2="0" y2="1"><stop stop-color="#fff9dc"/><stop offset=".3" stop-color="#ffd18d"/><stop offset="1" stop-color="#ffb96d" stop-opacity="0"/></linearGradient><linearGradient id="bullet-fill" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".25" stop-color="#83ffd7"/><stop offset="1" stop-color="#55efc0" stop-opacity="0"/></linearGradient>
+<linearGradient id="red-bullet" x2="0" y2="1"><stop stop-color="#fff2de"/><stop offset=".2" stop-color="#ffb278"/><stop offset="1" stop-color="#ff7a65" stop-opacity="0"/></linearGradient>
+<linearGradient id="rail-bullet" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".2" stop-color="#beabff"/><stop offset="1" stop-color="#a38cff" stop-opacity="0"/></linearGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#375060" stroke-opacity=".24"/><path d="M22 24h4 M24 22v4" stroke="#526b73" stroke-width=".6" stroke-opacity=".32"/></pattern>
+<pattern id="microgrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#314b5b" stroke-opacity=".2" stroke-width=".6"/></pattern>
+<pattern id="warning-stripe" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(40)"><rect width="4" height="10" fill="#c89b51" fill-opacity=".26"/></pattern>
+<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="hero-shadow" x="-80%" y="-60%" width="260%" height="250%"><feDropShadow dx="3" dy="8" stdDeviation="4" flood-color="#000" flood-opacity=".6"/></filter>
+<symbol id="brick" viewBox="0 0 24 24"><rect x=".6" y="1.2" width="23" height="22" rx="2" fill="#202b30"/><path d="M2 2h20v19H2z" fill="url(#brick-fill)"/><path d="M2 9h20M2 16h20M10 2v7M16 9v7M8 16v5" fill="none" stroke="#3c3c36" stroke-width="1.3"/><path d="M3 3h18M3 10h18M3 17h18" stroke="#dcc29b" stroke-opacity=".36"/><path d="M3 20h18M21 3v17" stroke="#101d24" stroke-opacity=".5"/></symbol>
+<symbol id="steel" viewBox="0 0 24 24"><rect x=".7" y="1" width="22.6" height="22.5" rx="2.4" fill="#122434"/><rect x="1.5" y="1.5" width="21" height="19.5" rx="1.8" fill="url(#steel-fill)" stroke="#789099" stroke-width=".6"/><path d="m4 6 3-2h10l3 2v10l-3 2H7l-3-2z" fill="#172e3c" stroke="#6e868c" stroke-width=".7"/><path d="M7 7h10v8H7z" fill="#455f6c"/><path d="M9 8h6" stroke="#9bb8ba" stroke-opacity=".8"/><path d="M3 20h18" stroke="#273f50"/><circle cx="3.5" cy="3.5" r=".9" fill="#aac8c8"/><circle cx="20.5" cy="19.5" r=".8" fill="#aac8c8"/></symbol>
+<symbol id="water" viewBox="0 0 48 48"><rect width="48" height="48" fill="url(#water-fill)"/><path d="M0 1h48M1 0v48" stroke="#407c8e" stroke-opacity=".3"/><path class="waterline" d="M-10 13H60M-10 34H60" stroke="#429db6" stroke-width="1" opacity=".6"/><path d="M7 22h8m17 22h8M30 4h8" stroke="#63c6ce" opacity=".28"/></symbol>
+<symbol id="grass" viewBox="0 0 48 48"><rect x="2" y="2" width="44" height="44" rx="7" fill="#123c35" fill-opacity=".35"/><path d="m5 42 3-16 4 6 2-19 6 10 6-18 2 25 7-11 3 18 7-13-2 18z" fill="#215847" fill-opacity=".84"/><path d="m8 36 7-6m6 8 6-14m5 9 7-7M9 22l4-6m17-4 4-4" stroke="#40946c" stroke-width="1.6" stroke-linecap="round"/><path d="M5 5h5M5 5v5m33 33h5v-5" fill="none" stroke="#55b28a" stroke-width=".7" opacity=".35"/></symbol>
+<symbol id="base" viewBox="0 0 48 48"><path d="M8 5h32l5 7v27l-6 6H9l-6-7V12z" fill="#091e28" stroke="#3d706d"/><path d="M10 9h28l3 5v22l-5 5H12l-5-5V14z" fill="#234440"/><path d="M12 12h24v24H12z" fill="#0c2029" stroke="#3f8474"/><path d="m24 15 9 5v9l-9 5-9-5v-9z" fill="#4ce9b0" fill-opacity=".22" stroke="#6affca"/><path d="m24 20 4 3v5l-4 2-4-2v-5z" fill="#9bffdd"/><path d="M5 15V9h6m26 0h6v6M5 33v6h6m26 0h6v-6" stroke="#8decd0" fill="none" stroke-width="1.5"/><path d="M18 5h12M18 43h12" stroke="#67f5bc" stroke-width="2"/></symbol>
+<symbol id="base-ruin" viewBox="0 0 48 48"><path d="M8 5h32l5 7v27l-6 6H9l-6-7V12z" fill="#291f29" stroke="#855465"/><path d="m14 14 20 20m0-20L14 34" stroke="#f77485" stroke-width="3"/><path d="m4 39 9-8 3 8 9-3 8 7" stroke="#705b5a" fill="none"/></symbol>
+<symbol id="barrel" viewBox="0 0 48 48"><ellipse cx="24" cy="35" rx="14" ry="6" fill="#030b11" opacity=".5"/><rect x="15" y="11" width="18" height="25" rx="6" fill="#793d31" stroke="#e6a65d"/><path d="M16 17h16M16 29h16" stroke="#402731" stroke-width="3"/><path d="m24 19 4 7h-8z" fill="#ffc67d"/><path d="M21 13h6" stroke="#ffc885"/><path d="M19 14v19" stroke="#f9ac62" stroke-opacity=".4"/></symbol>
+<symbol id="repair" viewBox="0 0 48 48"><rect x="3" y="3" width="42" height="42" rx="7" fill="#125349" fill-opacity=".18" stroke="#57d1ae" stroke-opacity=".5"/><path d="M19 12h10v7h7v10h-7v7H19v-7h-7V19h7z" fill="#74e4bb" fill-opacity=".17" stroke="#71e9bd" stroke-width="1.1"/><path d="M7 12V7h5m24 0h5v5M7 36v5h5m24 0h5v-5" fill="none" stroke="#82ebc6"/></symbol>
+<linearGradient id="armor-vanguard" x2=".8" y2="1"><stop stop-color="#cfebdc"/><stop offset="1" stop-color="#4e7971"/></linearGradient><symbol id="hull-vanguard" viewBox="-25 -30 50 60"><ellipse cx="1.5" cy="5" rx="21" ry="20" fill="#02090e" opacity=".6"/><path d="M-19-15l3-4h7v38h-8l-2-4zM19-15l-3-4H9v38h8l2-4z" fill="#121e29" stroke="#39464c" stroke-width=".8"/><path d="M-15-14v28M15-14v28" stroke="#cfebdc" stroke-width="5" stroke-dasharray="2.4 3.4" opacity=".44"/><path d="M-13-12l5-7H8l5 7v26l-5 5H-8l-5-5z" fill="url(#armor-vanguard)" stroke="#cfebdc" stroke-opacity=".6" stroke-width=".7"/><path d="M-10-11-6-16H6l4 5M-10 12l4 4H6l4-4" fill="none" stroke="#cfebdc" stroke-opacity=".55"/><path d="M-9-11h18v4H-9z" fill="#203a41"/><path d="M-7-10H7" stroke="#64f4bc" stroke-width="2"/><path d="M-9 11h18v4H-9z" fill="#263644"/><path d="M-7 11v4m3-4v4m3-4v4m3-4v4m3-4v4" stroke="#0b1825"/><path d="M-11 6v-9M11 6v-9" stroke="#64f4bc" stroke-width="1.6"/><path d="M-16-16h3M13-16h3" stroke="#e6ffff" stroke-width="1.8"/><path d="M-16 16h3M13 16h3" stroke="#f66e71" stroke-width="1.4"/></symbol><symbol id="turret-vanguard" viewBox="-25 -30 50 60"><path d="m-8-6 4-4H4l5 5v11L4 10H-4l-5-4z" fill="#142a32" opacity=".45" transform="translate(1 2)"/><path d="M-2.4-27h4.8v23h-4.8z" fill="url(#barrel-fill)" stroke="#293d4c" stroke-width=".5"/><path d="M-3.5-27h7v5h-7z" fill="#35515d" stroke="#cfebdc" stroke-width=".6"/><path d="M-2-26h4" stroke="#64f4bc"/><path d="m-8-5 4-4H4l4 4v10L4 9H-4l-4-4z" fill="url(#armor-vanguard)" stroke="#cfebdc" stroke-width=".8"/><path d="M-6-3h12v8H-6z" fill="#4e7971"/><circle r="3.6" cy="1" fill="#243a44" stroke="#cfebdc" stroke-opacity=".6"/><path d="M-1.4-.5h2.8v3h-2.8z" fill="#64f4bc"/><path d="M-9 4v-15" stroke="#9faea5" stroke-width=".65"/><circle cx="-9" cy="-12" r=".85" fill="#64f4bc"/></symbol><symbol id="tank-vanguard" viewBox="-25 -30 50 60"><use href="#hull-vanguard" x="-25" y="-30" width="50" height="60"/><use href="#turret-vanguard" x="-25" y="-30" width="50" height="60"/></symbol><linearGradient id="armor-phantom" x2=".8" y2="1"><stop stop-color="#d2dcff"/><stop offset="1" stop-color="#606894"/></linearGradient><symbol id="hull-phantom" viewBox="-25 -30 50 60"><ellipse cx="1.5" cy="5" rx="21" ry="20" fill="#02090e" opacity=".6"/><path d="M-19-15l3-4h7v38h-8l-2-4zM19-15l-3-4H9v38h8l2-4z" fill="#121e29" stroke="#39464c" stroke-width=".8"/><path d="M-15-14v28M15-14v28" stroke="#d2dcff" stroke-width="5" stroke-dasharray="2.4 3.4" opacity=".44"/><path d="M-13-12l5-7H8l5 7v26l-5 5H-8l-5-5z" fill="url(#armor-phantom)" stroke="#d2dcff" stroke-opacity=".6" stroke-width=".7"/><path d="M-10-11-6-16H6l4 5M-10 12l4 4H6l4-4" fill="none" stroke="#d2dcff" stroke-opacity=".55"/><path d="M-9-11h18v4H-9z" fill="#203a41"/><path d="M-7-10H7" stroke="#ae9dff" stroke-width="2"/><path d="M-9 11h18v4H-9z" fill="#263644"/><path d="M-7 11v4m3-4v4m3-4v4m3-4v4m3-4v4" stroke="#0b1825"/><path d="M-11 6v-9M11 6v-9" stroke="#ae9dff" stroke-width="1.6"/><path d="M-16-16h3M13-16h3" stroke="#e6ffff" stroke-width="1.8"/><path d="M-16 16h3M13 16h3" stroke="#f66e71" stroke-width="1.4"/><path d="m-16 12-5 9h8l3-5m26-4 5 9h-8l-3-5" fill="#4b536d" stroke="#adade6" stroke-width=".7"/></symbol><symbol id="turret-phantom" viewBox="-25 -30 50 60"><path d="m-8-6 4-4H4l5 5v11L4 10H-4l-5-4z" fill="#142a32" opacity=".45" transform="translate(1 2)"/><path d="M-2.4-27h4.8v23h-4.8z" fill="url(#barrel-fill)" stroke="#293d4c" stroke-width=".5"/><path d="M-3.5-27h7v5h-7z" fill="#35515d" stroke="#d2dcff" stroke-width=".6"/><path d="M-2-26h4" stroke="#ae9dff"/><path d="m-8-5 4-4H4l4 4v10L4 9H-4l-4-4z" fill="url(#armor-phantom)" stroke="#d2dcff" stroke-width=".8"/><path d="M-6-3h12v8H-6z" fill="#606894"/><circle r="3.6" cy="1" fill="#243a44" stroke="#d2dcff" stroke-opacity=".6"/><path d="M-1.4-.5h2.8v3h-2.8z" fill="#ae9dff"/><path d="M-9 4v-15" stroke="#9faea5" stroke-width=".65"/><circle cx="-9" cy="-12" r=".85" fill="#ae9dff"/></symbol><symbol id="tank-phantom" viewBox="-25 -30 50 60"><use href="#hull-phantom" x="-25" y="-30" width="50" height="60"/><use href="#turret-phantom" x="-25" y="-30" width="50" height="60"/></symbol><linearGradient id="armor-bastion" x2=".8" y2="1"><stop stop-color="#edd8b4"/><stop offset="1" stop-color="#806c50"/></linearGradient><symbol id="hull-bastion" viewBox="-25 -30 50 60"><ellipse cx="1.5" cy="5" rx="21" ry="20" fill="#02090e" opacity=".6"/><path d="M-19-15l3-4h7v38h-8l-2-4zM19-15l-3-4H9v38h8l2-4z" fill="#121e29" stroke="#39464c" stroke-width=".8"/><path d="M-15-14v28M15-14v28" stroke="#edd8b4" stroke-width="5" stroke-dasharray="2.4 3.4" opacity=".44"/><path d="M-13-12l5-7H8l5 7v26l-5 5H-8l-5-5z" fill="url(#armor-bastion)" stroke="#edd8b4" stroke-opacity=".6" stroke-width=".7"/><path d="M-10-11-6-16H6l4 5M-10 12l4 4H6l4-4" fill="none" stroke="#edd8b4" stroke-opacity=".55"/><path d="M-9-11h18v4H-9z" fill="#203a41"/><path d="M-7-10H7" stroke="#ffca7a" stroke-width="2"/><path d="M-9 11h18v4H-9z" fill="#263644"/><path d="M-7 11v4m3-4v4m3-4v4m3-4v4m3-4v4" stroke="#0b1825"/><path d="M-11 6v-9M11 6v-9" stroke="#ffca7a" stroke-width="1.6"/><path d="M-16-16h3M13-16h3" stroke="#e6ffff" stroke-width="1.8"/><path d="M-16 16h3M13 16h3" stroke="#f66e71" stroke-width="1.4"/><path d="M-21-10h7v22h-7zM14-10h7v22h-7z" fill="#665b48" stroke="#bcb08f" stroke-width=".7"/><path d="M-19-8v18M19-8v18" stroke="#e6d0a2" stroke-width="1.1"/></symbol><symbol id="turret-bastion" viewBox="-25 -30 50 60"><path d="m-8-6 4-4H4l5 5v11L4 10H-4l-5-4z" fill="#142a32" opacity=".45" transform="translate(1 2)"/><path d="M-2.4-27h4.8v23h-4.8z" fill="url(#barrel-fill)" stroke="#293d4c" stroke-width=".5"/><path d="M-3.5-27h7v5h-7z" fill="#35515d" stroke="#edd8b4" stroke-width=".6"/><path d="M-2-26h4" stroke="#ffca7a"/><path d="m-8-5 4-4H4l4 4v10L4 9H-4l-4-4z" fill="url(#armor-bastion)" stroke="#edd8b4" stroke-width=".8"/><path d="M-6-3h12v8H-6z" fill="#806c50"/><circle r="3.6" cy="1" fill="#243a44" stroke="#edd8b4" stroke-opacity=".6"/><path d="M-1.4-.5h2.8v3h-2.8z" fill="#ffca7a"/><path d="M-9 4v-15" stroke="#9faea5" stroke-width=".65"/><circle cx="-9" cy="-12" r=".85" fill="#ffca7a"/></symbol><symbol id="tank-bastion" viewBox="-25 -30 50 60"><use href="#hull-bastion" x="-25" y="-30" width="50" height="60"/><use href="#turret-bastion" x="-25" y="-30" width="50" height="60"/></symbol><linearGradient id="armor-grunt" x2=".8" y2="1"><stop stop-color="#b1c4d0"/><stop offset="1" stop-color="#4d6175"/></linearGradient><symbol id="hull-grunt" viewBox="-25 -30 50 60"><ellipse cx="1.5" cy="5" rx="21" ry="20" fill="#02090e" opacity=".6"/><path d="M-19-15l3-4h7v38h-8l-2-4zM19-15l-3-4H9v38h8l2-4z" fill="#121e29" stroke="#39464c" stroke-width=".8"/><path d="M-15-14v28M15-14v28" stroke="#b1c4d0" stroke-width="5" stroke-dasharray="2.4 3.4" opacity=".44"/><path d="M-13-12l5-7H8l5 7v26l-5 5H-8l-5-5z" fill="url(#armor-grunt)" stroke="#b1c4d0" stroke-opacity=".6" stroke-width=".7"/><path d="M-10-11-6-16H6l4 5M-10 12l4 4H6l4-4" fill="none" stroke="#b1c4d0" stroke-opacity=".55"/><path d="M-9-11h18v4H-9z" fill="#203a41"/><path d="M-7-10H7" stroke="#f2a479" stroke-width="2"/><path d="M-9 11h18v4H-9z" fill="#263644"/><path d="M-7 11v4m3-4v4m3-4v4m3-4v4m3-4v4" stroke="#0b1825"/><path d="M-11 6v-9M11 6v-9" stroke="#f2a479" stroke-width="1.6"/><path d="M-16-16h3M13-16h3" stroke="#e6ffff" stroke-width="1.8"/><path d="M-16 16h3M13 16h3" stroke="#f66e71" stroke-width="1.4"/></symbol><symbol id="turret-grunt" viewBox="-25 -30 50 60"><path d="m-8-6 4-4H4l5 5v11L4 10H-4l-5-4z" fill="#142a32" opacity=".45" transform="translate(1 2)"/><path d="M-2.4-27h4.8v23h-4.8z" fill="url(#barrel-fill)" stroke="#293d4c" stroke-width=".5"/><path d="M-3.5-27h7v5h-7z" fill="#35515d" stroke="#b1c4d0" stroke-width=".6"/><path d="M-2-26h4" stroke="#f2a479"/><path d="m-8-5 4-4H4l4 4v10L4 9H-4l-4-4z" fill="url(#armor-grunt)" stroke="#b1c4d0" stroke-width=".8"/><path d="M-6-3h12v8H-6z" fill="#4d6175"/><circle r="3.6" cy="1" fill="#243a44" stroke="#b1c4d0" stroke-opacity=".6"/><path d="M-1.4-.5h2.8v3h-2.8z" fill="#f2a479"/><path d="M-9 4v-15" stroke="#9faea5" stroke-width=".65"/><circle cx="-9" cy="-12" r=".85" fill="#f2a479"/></symbol><symbol id="tank-grunt" viewBox="-25 -30 50 60"><use href="#hull-grunt" x="-25" y="-30" width="50" height="60"/><use href="#turret-grunt" x="-25" y="-30" width="50" height="60"/></symbol><linearGradient id="armor-scout" x2=".8" y2="1"><stop stop-color="#d4b6ed"/><stop offset="1" stop-color="#645481"/></linearGradient><symbol id="hull-scout" viewBox="-25 -30 50 60"><ellipse cx="1.5" cy="5" rx="21" ry="20" fill="#02090e" opacity=".6"/><path d="M-19-15l3-4h7v38h-8l-2-4zM19-15l-3-4H9v38h8l2-4z" fill="#121e29" stroke="#39464c" stroke-width=".8"/><path d="M-15-14v28M15-14v28" stroke="#d4b6ed" stroke-width="5" stroke-dasharray="2.4 3.4" opacity=".44"/><path d="M-13-12l5-7H8l5 7v26l-5 5H-8l-5-5z" fill="url(#armor-scout)" stroke="#d4b6ed" stroke-opacity=".6" stroke-width=".7"/><path d="M-10-11-6-16H6l4 5M-10 12l4 4H6l4-4" fill="none" stroke="#d4b6ed" stroke-opacity=".55"/><path d="M-9-11h18v4H-9z" fill="#203a41"/><path d="M-7-10H7" stroke="#cd9ffa" stroke-width="2"/><path d="M-9 11h18v4H-9z" fill="#263644"/><path d="M-7 11v4m3-4v4m3-4v4m3-4v4m3-4v4" stroke="#0b1825"/><path d="M-11 6v-9M11 6v-9" stroke="#cd9ffa" stroke-width="1.6"/><path d="M-16-16h3M13-16h3" stroke="#e6ffff" stroke-width="1.8"/><path d="M-16 16h3M13 16h3" stroke="#f66e71" stroke-width="1.4"/><path d="m-19 11-3 10h9l2-6M19 11l3 10h-9l-2-6" fill="#4d4065" stroke="#ae97d8" stroke-width=".7"/><path d="M-8-13 0-19l8 6" fill="none" stroke="#e8c9ff" stroke-width="1.2"/></symbol><symbol id="turret-scout" viewBox="-25 -30 50 60"><path d="m-8-6 4-4H4l5 5v11L4 10H-4l-5-4z" fill="#142a32" opacity=".45" transform="translate(1 2)"/><path d="M-2.4-27h4.8v23h-4.8z" fill="url(#barrel-fill)" stroke="#293d4c" stroke-width=".5"/><path d="M-3.5-27h7v5h-7z" fill="#35515d" stroke="#d4b6ed" stroke-width=".6"/><path d="M-2-26h4" stroke="#cd9ffa"/><path d="m-8-5 4-4H4l4 4v10L4 9H-4l-4-4z" fill="url(#armor-scout)" stroke="#d4b6ed" stroke-width=".8"/><path d="M-6-3h12v8H-6z" fill="#645481"/><circle r="3.6" cy="1" fill="#243a44" stroke="#d4b6ed" stroke-opacity=".6"/><path d="M-1.4-.5h2.8v3h-2.8z" fill="#cd9ffa"/><path d="M-9 4v-15" stroke="#9faea5" stroke-width=".65"/><circle cx="-9" cy="-12" r=".85" fill="#cd9ffa"/></symbol><symbol id="tank-scout" viewBox="-25 -30 50 60"><use href="#hull-scout" x="-25" y="-30" width="50" height="60"/><use href="#turret-scout" x="-25" y="-30" width="50" height="60"/></symbol><linearGradient id="armor-heavy" x2=".8" y2="1"><stop stop-color="#dfb080"/><stop offset="1" stop-color="#745344"/></linearGradient><symbol id="hull-heavy" viewBox="-25 -30 50 60"><ellipse cx="1.5" cy="5" rx="21" ry="20" fill="#02090e" opacity=".6"/><path d="M-19-15l3-4h7v38h-8l-2-4zM19-15l-3-4H9v38h8l2-4z" fill="#121e29" stroke="#39464c" stroke-width=".8"/><path d="M-15-14v28M15-14v28" stroke="#dfb080" stroke-width="5" stroke-dasharray="2.4 3.4" opacity=".44"/><path d="M-13-12l5-7H8l5 7v26l-5 5H-8l-5-5z" fill="url(#armor-heavy)" stroke="#dfb080" stroke-opacity=".6" stroke-width=".7"/><path d="M-10-11-6-16H6l4 5M-10 12l4 4H6l4-4" fill="none" stroke="#dfb080" stroke-opacity=".55"/><path d="M-9-11h18v4H-9z" fill="#203a41"/><path d="M-7-10H7" stroke="#ffa469" stroke-width="2"/><path d="M-9 11h18v4H-9z" fill="#263644"/><path d="M-7 11v4m3-4v4m3-4v4m3-4v4m3-4v4" stroke="#0b1825"/><path d="M-11 6v-9M11 6v-9" stroke="#ffa469" stroke-width="1.6"/><path d="M-16-16h3M13-16h3" stroke="#e6ffff" stroke-width="1.8"/><path d="M-16 16h3M13 16h3" stroke="#f66e71" stroke-width="1.4"/><path d="M-21-12h7V12h-7zM14-12h7V12h-7z" fill="#79563f" stroke="#d7ae83" stroke-width=".8"/><path d="M-20-7h5m-5 7h5m-5 7h5M15-7h5m-5 7h5m-5 7h5" stroke="#d6ac79" stroke-width="1.4"/></symbol><symbol id="turret-heavy" viewBox="-25 -30 50 60"><path d="m-8-6 4-4H4l5 5v11L4 10H-4l-5-4z" fill="#142a32" opacity=".45" transform="translate(1 2)"/><path d="M-2.4-27h4.8v23h-4.8z" fill="url(#barrel-fill)" stroke="#293d4c" stroke-width=".5"/><path d="M-3.5-27h7v5h-7z" fill="#35515d" stroke="#dfb080" stroke-width=".6"/><path d="M-2-26h4" stroke="#ffa469"/><path d="m-8-5 4-4H4l4 4v10L4 9H-4l-4-4z" fill="url(#armor-heavy)" stroke="#dfb080" stroke-width=".8"/><path d="M-6-3h12v8H-6z" fill="#745344"/><circle r="3.6" cy="1" fill="#243a44" stroke="#dfb080" stroke-opacity=".6"/><path d="M-1.4-.5h2.8v3h-2.8z" fill="#ffa469"/><path d="M-9 4v-15" stroke="#9faea5" stroke-width=".65"/><circle cx="-9" cy="-12" r=".85" fill="#ffa469"/><path d="M-7-8h14l4 6v8L7 11H-7l-4-5v-8z" fill="#997249" stroke="#e0b688" stroke-width=".8"/><path d="M-4-21h8v9h-8z" fill="#705348" stroke="#cfb394" stroke-width=".6"/><circle r="3" cy="1" fill="#303842" stroke="#e5aa68"/><path d="M-5 7H5" stroke="#ffe0a8"/></symbol><symbol id="tank-heavy" viewBox="-25 -30 50 60"><use href="#hull-heavy" x="-25" y="-30" width="50" height="60"/><use href="#turret-heavy" x="-25" y="-30" width="50" height="60"/></symbol><linearGradient id="armor-siege" x2=".8" y2="1"><stop stop-color="#c3a4ab"/><stop offset="1" stop-color="#6b4357"/></linearGradient><symbol id="hull-siege" viewBox="-25 -30 50 60"><ellipse cx="1.5" cy="5" rx="21" ry="20" fill="#02090e" opacity=".6"/><path d="M-19-15l3-4h7v38h-8l-2-4zM19-15l-3-4H9v38h8l2-4z" fill="#121e29" stroke="#39464c" stroke-width=".8"/><path d="M-15-14v28M15-14v28" stroke="#c3a4ab" stroke-width="5" stroke-dasharray="2.4 3.4" opacity=".44"/><path d="M-13-12l5-7H8l5 7v26l-5 5H-8l-5-5z" fill="url(#armor-siege)" stroke="#c3a4ab" stroke-opacity=".6" stroke-width=".7"/><path d="M-10-11-6-16H6l4 5M-10 12l4 4H6l4-4" fill="none" stroke="#c3a4ab" stroke-opacity=".55"/><path d="M-9-11h18v4H-9z" fill="#203a41"/><path d="M-7-10H7" stroke="#ff748c" stroke-width="2"/><path d="M-9 11h18v4H-9z" fill="#263644"/><path d="M-7 11v4m3-4v4m3-4v4m3-4v4m3-4v4" stroke="#0b1825"/><path d="M-11 6v-9M11 6v-9" stroke="#ff748c" stroke-width="1.6"/><path d="M-16-16h3M13-16h3" stroke="#e6ffff" stroke-width="1.8"/><path d="M-16 16h3M13 16h3" stroke="#f66e71" stroke-width="1.4"/><rect x="-19" y="-7" width="8" height="22" rx="2" fill="#533649" stroke="#bd8597"/><rect x="11" y="-7" width="8" height="22" rx="2" fill="#533649" stroke="#bd8597"/><path d="M-15-4V12M15-4V12" stroke="#fa8aaa" stroke-width="3" stroke-dasharray="3 3"/></symbol><symbol id="turret-siege" viewBox="-25 -30 50 60"><path d="m-8-6 4-4H4l5 5v11L4 10H-4l-5-4z" fill="#142a32" opacity=".45" transform="translate(1 2)"/><path d="M-2.4-27h4.8v23h-4.8z" fill="url(#barrel-fill)" stroke="#293d4c" stroke-width=".5"/><path d="M-3.5-27h7v5h-7z" fill="#35515d" stroke="#c3a4ab" stroke-width=".6"/><path d="M-2-26h4" stroke="#ff748c"/><path d="m-8-5 4-4H4l4 4v10L4 9H-4l-4-4z" fill="url(#armor-siege)" stroke="#c3a4ab" stroke-width=".8"/><path d="M-6-3h12v8H-6z" fill="#6b4357"/><circle r="3.6" cy="1" fill="#243a44" stroke="#c3a4ab" stroke-opacity=".6"/><path d="M-1.4-.5h2.8v3h-2.8z" fill="#ff748c"/><path d="M-9 4v-15" stroke="#9faea5" stroke-width=".65"/><circle cx="-9" cy="-12" r=".85" fill="#ff748c"/></symbol><symbol id="tank-siege" viewBox="-25 -30 50 60"><use href="#hull-siege" x="-25" y="-30" width="50" height="60"/><use href="#turret-siege" x="-25" y="-30" width="50" height="60"/></symbol><linearGradient id="armor-boss" x2=".8" y2="1"><stop stop-color="#d9abb0"/><stop offset="1" stop-color="#604754"/></linearGradient><symbol id="hull-boss" viewBox="-25 -30 50 60"><ellipse cx="1.5" cy="5" rx="21" ry="20" fill="#02090e" opacity=".6"/><path d="M-19-15l3-4h7v38h-8l-2-4zM19-15l-3-4H9v38h8l2-4z" fill="#121e29" stroke="#39464c" stroke-width=".8"/><path d="M-15-14v28M15-14v28" stroke="#d9abb0" stroke-width="5" stroke-dasharray="2.4 3.4" opacity=".44"/><path d="M-13-12l5-7H8l5 7v26l-5 5H-8l-5-5z" fill="url(#armor-boss)" stroke="#d9abb0" stroke-opacity=".6" stroke-width=".7"/><path d="M-10-11-6-16H6l4 5M-10 12l4 4H6l4-4" fill="none" stroke="#d9abb0" stroke-opacity=".55"/><path d="M-9-11h18v4H-9z" fill="#203a41"/><path d="M-7-10H7" stroke="#ff687d" stroke-width="2"/><path d="M-9 11h18v4H-9z" fill="#263644"/><path d="M-7 11v4m3-4v4m3-4v4m3-4v4m3-4v4" stroke="#0b1825"/><path d="M-11 6v-9M11 6v-9" stroke="#ff687d" stroke-width="1.6"/><path d="M-16-16h3M13-16h3" stroke="#e6ffff" stroke-width="1.8"/><path d="M-16 16h3M13 16h3" stroke="#f66e71" stroke-width="1.4"/><path d="M-22-12h9v29h-9zM13-12h9v29h-9z" fill="#432e3e" stroke="#cf7f96" stroke-width=".7"/><path d="M-18-8v19M18-8v19" stroke="#f19aad" stroke-width="4" stroke-dasharray="4 3"/><path d="M-11-17h22" stroke="#ff9bb1" stroke-width="2"/></symbol><symbol id="turret-boss" viewBox="-25 -30 50 60"><path d="m-8-6 4-4H4l5 5v11L4 10H-4l-5-4z" fill="#142a32" opacity=".45" transform="translate(1 2)"/><path d="M-2.4-27h4.8v23h-4.8z" fill="url(#barrel-fill)" stroke="#293d4c" stroke-width=".5"/><path d="M-3.5-27h7v5h-7z" fill="#35515d" stroke="#d9abb0" stroke-width=".6"/><path d="M-2-26h4" stroke="#ff687d"/><path d="m-8-5 4-4H4l4 4v10L4 9H-4l-4-4z" fill="url(#armor-boss)" stroke="#d9abb0" stroke-width=".8"/><path d="M-6-3h12v8H-6z" fill="#604754"/><circle r="3.6" cy="1" fill="#243a44" stroke="#d9abb0" stroke-opacity=".6"/><path d="M-1.4-.5h2.8v3h-2.8z" fill="#ff687d"/><path d="M-9 4v-15" stroke="#9faea5" stroke-width=".65"/><circle cx="-9" cy="-12" r=".85" fill="#ff687d"/><path d="M-11-24h5v18h-5zM6-24h5v18H6z" fill="url(#barrel-fill)" stroke="#e9b6c2" stroke-width=".6"/><path d="M-11-24h5M6-24h5" stroke="#ff9cb0" stroke-width="2"/><path d="m0-6 6 5-6 5-6-5z" fill="#552c44" stroke="#f6b4c6"/><circle r="1.8" fill="#ff789d"/></symbol><symbol id="tank-boss" viewBox="-25 -30 50 60"><use href="#hull-boss" x="-25" y="-30" width="50" height="60"/><use href="#turret-boss" x="-25" y="-30" width="50" height="60"/></symbol><symbol id="icon-aim" viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M2 12h4m12 0h4M5 7a8 8 0 1 1 0 10M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-dash" viewBox="0 0 24 24"><path d="m3 5 7 7-7 7m8-14 7 7-7 7M21 5v14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-emp" viewBox="0 0 24 24"><path d="m14 2-8 12h6l-2 8 9-13h-6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-shield" viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6zM8 12l3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-cross" viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3zM16 8c4 2 4 6 0 8m3-11c6 4 6 10 0 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-off" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3zM16 8l6 8m0-8-6 8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-restart" viewBox="0 0 24 24"><path d="M5 8a8 8 0 1 1-1 9M5 2v7h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8M6 10v11h12V10M10 21v-7h4v7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-weapon" viewBox="0 0 24 24"><path d="M10 2h4v12h-4zM6 14h12v6H6zM8 22h8M8 8H5v5m11-5h3v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-link" viewBox="0 0 24 24"><path d="m9 15 6-6M8 17l-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2-1 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-skull" viewBox="0 0 24 24"><path d="M5 14a9 9 0 1 1 14 0v6h-4v-4H9v4H5zM7 9h3m4 0h3M11 12h2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 21 3 12C-3 3 7-2 12 5c5-7 15-2 9 7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs>
+<rect id="page-bg" width="1440" height="960" fill="url(#page-gradient)"/><rect id="page-grid" width="1440" height="960" fill="url(#microgrid)" opacity=".4"/>
+<g id="header" transform="translate(36 30)"><path d="M0 7 15 0l15 7v23l-15 8L0 30z" fill="#12362e" stroke="#5eeec0"/><path d="m7 12 8-4 8 4v5l-8-4-8 4zm0 11 8-4 8 4v5l-8-4-8 4z" fill="#77f3c7"/><text x="44" y="19" font-size="22" font-weight="850" letter-spacing="2">TANK<tspan fill="#69f5c0"> / 2026</tspan></text><text x="45" y="37" class="tiny" letter-spacing="3">坦克大战 · 霓虹防线</text></g>
+<g id="desktop-header" transform="translate(525 44)"><text x="0" y="0" class="kicker" style="fill:#b4c4cf">OPERATIONS</text><path d="M0 15h85" stroke="#64f4bc" stroke-width="2"/><text x="122" y="0" class="kicker">NEON FRONTIER</text><circle cx="580" cy="-4" r="3" fill="#64f4bc" class="breathe"/><text x="591" y="0" class="tiny">LOCAL / OFFLINE</text></g>
+<g id="header-tools" transform="translate(1240 28)"><g class="button " transform="translate(0 0)" role="button" tabindex="0" data-action="sound" aria-label="" id="sound-button"><rect class="button-bg" width="48" height="42" rx="10" fill="#111e29" stroke="#2a3c4b"/><use href="#icon-sound" x="16" y="10.0" width="22" height="22"/><text x="24.0" y="26.0" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700"></text></g><g class="button " transform="translate(58 0)" role="button" tabindex="0" data-action="pause" aria-label="" id="pause-button"><rect class="button-bg" width="48" height="42" rx="10" fill="#111e29" stroke="#2a3c4b"/><use href="#icon-pause" x="16" y="10.0" width="22" height="22"/><text x="24.0" y="26.0" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700"></text></g><g class="button " transform="translate(116 0)" role="button" tabindex="0" data-action="home" aria-label="" aria-label="返回机库"><rect class="button-bg" width="48" height="42" rx="10" fill="#111e29" stroke="#2a3c4b"/><use href="#icon-home" x="16" y="10.0" width="22" height="22"/><text x="24.0" y="26.0" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700"></text></g></g><path id="header-line" d="M36 94H1404" stroke="#22323f"/><g id="left-sidebar"><g transform="translate(36 168)"><rect width="236" height="204" rx="14" fill="url(#panel-fill)" stroke="#21303e"/><text x="20" y="30" class="kicker" >当前行动 / MISSION</text><text x="20" y="67" class="number" id="stage-number" font-size="30" fill="#69f5c0">01</text><text x="68" y="63" class="title" id="mission-name">边境接触</text><text x="20" y="94" class="tiny" id="mission-en">SECTOR 01 · INDUSTRIAL</text><path d="M20 114H216" stroke="#283944"/><text x="20" y="141" class="small" id="mission-task">守住核心，清除所有敌军</text><text x="20" y="174" class="small" >敌军信号</text><text x="216" y="177" class="number" id="remaining" font-size="19" text-anchor="end">00 / 08</text><rect x="20" y="189" width="196" height="3" rx="1" fill="#24333c"/><rect id="wave-bar" x="20" y="189" width="0" height="3" rx="1" fill="#64f4bc"/></g><g transform="translate(36 390)"><rect width="236" height="246" rx="14" fill="url(#panel-fill)" stroke="#21303e"/><text x="20" y="30" class="kicker" >战车遥测 / TELEMETRY</text><use id="hud-tank" href="#tank-vanguard" x="17" y="52" width="56" height="68"/><text x="88" y="71" class="" id="chassis-name" font-size="13" font-weight="650">先锋 / VANGUARD</text><text x="88" y="98" class="number" id="hp-number" font-size="28">100</text><text x="150" y="97" class="tiny" >/ 装甲</text><text x="20" y="142" class="small" >装甲完整度</text><rect x="20" y="154" width="196" height="6" rx="3" fill="#29343c"/><rect id="hp-bar" x="20" y="154" width="196" height="6" rx="3" fill="#6cf2c0"/><text x="20" y="190" class="small" >增援储备</text><g id="life-icons" transform="translate(120 176)"></g><text x="20" y="224" class="small" >核心耐久</text><text x="216" y="226" class="number" id="base-status" font-size="16" text-anchor="end">100%</text></g><g transform="translate(36 654)"><rect width="236" height="234" rx="14" fill="url(#panel-fill)" stroke="#21303e"/><text x="20" y="30" class="kicker" >作战记录 / LIVE FEED</text><circle cx="22" cy="57" r="2" fill="#64f4bc"/><text x="32" y="61" class="small" id="feed0">系统就绪</text><text x="20" y="90" class="small" id="feed1">等待部署</text><text x="20" y="117" class="small" id="feed2">数据链已连接</text><path d="M20 136H216" stroke="#263541"/><text x="20" y="161" class="tiny" id="best-label">本机战役最高分</text><text x="20" y="194" class="number" id="high-score" font-size="30">000000</text><text x="20" y="218" class="tiny" >SVG ENGINE / ZERO ASSETS</text></g></g><g id="right-sidebar"><g transform="translate(1068 168)"><rect width="336" height="254" rx="14" fill="url(#panel-fill)" stroke="#21303e"/><text x="22" y="30" class="kicker" >武器系统 / ARSENAL</text><text x="22" y="67" class="title" id="weapon-name">磁轨脉冲炮</text><text x="22" y="92" class="small" id="weapon-desc">稳定、快速、持续火力</text><g id="weapon-art" transform="translate(254 69) rotate(28)"><use href="#turret-vanguard" x="-40" y="-48" width="80" height="96"/></g><path d="M22 112H314" stroke="#273845"/><text x="22" y="138" class="small" >SPACE / 鼠标左键  开火</text><text x="22" y="160" class="tiny" >Q 切换武器 · 同时最多 2 发</text><g id="weapon-buttons" transform="translate(22 179)"><g class="button " transform="translate(0 0)" role="button" tabindex="0" data-action="weapon-0" aria-label="脉冲" data-weapon="0"><rect class="button-bg" width="94" height="48" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="47.0" y="29.0" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">脉冲</text></g><g class="button " transform="translate(99 0)" role="button" tabindex="0" data-action="weapon-1" aria-label="双联" data-weapon="1"><rect class="button-bg" width="94" height="48" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="47.0" y="29.0" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">双联</text></g><g class="button " transform="translate(198 0)" role="button" tabindex="0" data-action="weapon-2" aria-label="穿甲" data-weapon="2"><rect class="button-bg" width="94" height="48" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="47.0" y="29.0" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">穿甲</text></g></g></g><g transform="translate(1068 440)"><rect width="336" height="220" rx="14" fill="url(#panel-fill)" stroke="#21303e"/><text x="22" y="30" class="kicker" >战术能力 / ABILITIES</text><use href="#icon-dash" x="22" y="56" width="30" height="30" style="color:#76f5c5"/><text x="65" y="68" class="" font-size="15" font-weight="600">矢量冲刺</text><text x="65" y="89" class="tiny" >SHIFT · 短暂无敌，不穿墙</text><text x="314" y="69" class="number" id="dash-time" font-size="14" text-anchor="end" fill="#64f4bc">就绪</text><rect x="22" y="102" width="292" height="3" rx="1" fill="#263842"/><rect id="dash-bar" x="22" y="102" width="292" height="3" rx="1" fill="#64f4bc"/><use href="#icon-emp" x="22" y="129" width="30" height="30" style="color:#b3a2ff"/><text x="65" y="141" class="" font-size="15" font-weight="600">电磁脉冲</text><text x="65" y="162" class="tiny" >E · 清弹、瘫痪、范围伤害</text><text x="314" y="142" class="number" id="emp-time" font-size="14" text-anchor="end" fill="#b3a2ff">就绪</text><rect x="22" y="175" width="292" height="3" rx="1" fill="#263842"/><rect id="emp-bar" x="22" y="175" width="292" height="3" rx="1" fill="#b3a2ff"/><text x="22" y="204" class="tiny" >拾取补给可维修装甲或加速技能</text></g><g class="button" data-action="dash" role="button" tabindex="0" aria-label="发动矢量冲刺"><rect x="1084" y="487" width="304" height="66" rx="8" fill="transparent"/></g><g class="button" data-action="emp" role="button" tabindex="0" aria-label="发动电磁脉冲"><rect x="1084" y="564" width="304" height="65" rx="8" fill="transparent"/></g><g transform="translate(1068 678)"><rect width="336" height="210" rx="14" fill="url(#panel-fill)" stroke="#21303e"/><text x="22" y="30" class="kicker" >战场态势 / TACTICAL MAP</text><g transform="translate(22 50)"><rect width="133" height="133" rx="7" fill="#07151e" stroke="#2a414c"/><svg id="radar" x="5" y="5" width="123" height="123" viewBox="0 0 624 624"><rect width="624" height="624" fill="url(#microgrid)"/><g id="radar-terrain"></g><g id="radar-entities"></g></svg></g><circle cx="178" cy="71" r="3" fill="#64f4bc"/><text x="190" y="75" class="small" >我方战车</text><circle cx="178" cy="100" r="3" fill="#fb897b"/><text x="190" y="104" class="small" >敌方信号</text><path d="m178 123 4 4-4 4-4-4z" fill="#b7a0fc"/><text x="190" y="132" class="small" >战场补给</text><text x="177" y="171" class="tiny" >P / ESC 暂停</text><text x="177" y="190" class="tiny" >R 重新部署</text></g></g><g id="field-top" transform="translate(310 129)"><circle cx="5" cy="-4" r="3" fill="#69f5c0" class="breathe"/><text x="18" y="0" class="kicker" id="field-status">LIVE OPERATION / 实时战场</text><text x="500" y="0" class="tiny">SCORE</text><text id="score" x="720" y="3" class="number" text-anchor="end" font-size="29">000000</text></g>
+<g id="battlefield" transform="translate(310 168)"><rect id="field-frame" x="-7" y="-7" width="734" height="734" rx="9" fill="#172837" stroke="#37505d"/><svg id="world" width="720" height="720" viewBox="0 0 624 624" overflow="hidden"><defs><clipPath id="world-clip"><rect width="624" height="624" rx="3"/></clipPath></defs><g clip-path="url(#world-clip)"><g id="camera"><rect width="624" height="624" fill="url(#ground-glow)"/><rect width="624" height="624" fill="url(#grid)"/><g id="decor-layer"></g><g id="terrain-layer"></g><g id="decal-layer" pointer-events="none"></g><g id="props-layer"></g><g id="base-layer"></g><g id="drop-layer"></g><g id="spawn-layer"></g><g id="tank-layer"></g><g id="bullet-layer"></g><g id="grass-layer" pointer-events="none"></g><g id="hazard-layer" pointer-events="none"></g><g id="effect-layer" pointer-events="none"></g><g id="float-layer" pointer-events="none"></g></g><g id="reticle" display="none" pointer-events="none" stroke="#a0ffdf" fill="none" stroke-width=".9"><circle r="10" opacity=".65"/><path d="M-15 0h8m14 0h8M0-15v8m0 14v8"/><circle r="1.5" fill="#a0ffdf"/></g><rect id="damage-flash" width="624" height="624" fill="#ff4968" opacity="0" pointer-events="none"/></g>
+<g id="boss-hud" transform="translate(115 21)" display="none" pointer-events="none"><rect x="-10" y="-10" width="414" height="45" rx="8" fill="#0b1320" fill-opacity=".93" stroke="#76374b"/><text id="boss-title" x="0" y="4" font-size="10" font-weight="650" letter-spacing="2" fill="#ff9cb0">NEMESIS / 重装指挥官</text><rect y="15" width="394" height="5" rx="2" fill="#402638"/><rect id="boss-health" y="15" width="394" height="5" rx="2" fill="#ff748e"/></g>
+<g id="toast" transform="translate(312 574)" display="none" pointer-events="none"><rect x="-222" y="-24" width="444" height="39" rx="8" fill="#081a25" fill-opacity=".94" stroke="#40685f"/><text id="toast-label" y="0" text-anchor="middle" font-size="12" font-weight="600" fill="#baf6df">系统已连接</text></g>
+</svg></g>
+<g id="footer" transform="translate(36 929)"><text class="tiny">WASD / 方向键 移动</text><text x="202" class="tiny">鼠标瞄准可选 · 移动键恢复方向瞄准</text><text x="588" class="tiny">保卫核心 · 战术升级 · 三种战车</text><text x="1368" text-anchor="end" class="tiny">2026 / BUILT ENTIRELY IN SVG</text></g><g id="mobile-hud" display="none"><g transform="translate(24 94)"><rect width="672" height="58" rx="9" fill="#12222f" stroke="#2c4351"/><text x="17" y="23" class="tiny">行动</text><text x="17" y="44" id="mobile-stage" class="number" font-size="20">01 / 03</text><text x="141" y="23" class="tiny">分数</text><text x="141" y="44" id="mobile-score" class="number" font-size="20">000000</text><text x="308" y="23" class="tiny">装甲 / 增援</text><text x="308" y="44" id="mobile-hp" class="number" font-size="20">100 / 3</text><text x="483" y="23" class="tiny">核心 / 敌军</text><text x="483" y="44" id="mobile-enemies" class="number" font-size="20">100 / 08</text></g></g>
+<g id="touch-controls" display="none"><g class="button " transform="translate(24 877)" role="button" tabindex="0" data-action="dash" aria-label="SHIFT / 冲刺" id="touch-dash"><rect class="button-bg" width="213" height="61" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="106.5" y="35.5" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">SHIFT / 冲刺</text></g><g class="button " transform="translate(251 877)" role="button" tabindex="0" data-action="emp" aria-label="E / 电磁脉冲" id="touch-emp"><rect class="button-bg" width="213" height="61" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="106.5" y="35.5" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">E / 电磁脉冲</text></g><g class="button " transform="translate(478 877)" role="button" tabindex="0" data-action="cycle" aria-label="Q / 切换武器" id="touch-weapon"><rect class="button-bg" width="218" height="61" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="109.0" y="35.5" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">Q / 切换武器</text></g><g class="button" data-touch="0" transform="translate(112 965)" role="button" aria-label="向上移动"><rect class="button-bg" width="82" height="82" rx="16" fill="#142c39" stroke="#315567"/><use href="#icon-chevron" x="23" y="23" width="36" height="36" transform="rotate(0 41 41)" style="color:#a5c9d2"/></g><g class="button" data-touch="3" transform="translate(24 1053)" role="button" aria-label="向左移动"><rect class="button-bg" width="82" height="82" rx="16" fill="#142c39" stroke="#315567"/><use href="#icon-chevron" x="23" y="23" width="36" height="36" transform="rotate(-90 41 41)" style="color:#a5c9d2"/></g><g class="button" data-touch="2" transform="translate(112 1053)" role="button" aria-label="向下移动"><rect class="button-bg" width="82" height="82" rx="16" fill="#142c39" stroke="#315567"/><use href="#icon-chevron" x="23" y="23" width="36" height="36" transform="rotate(180 41 41)" style="color:#a5c9d2"/></g><g class="button" data-touch="1" transform="translate(200 1053)" role="button" aria-label="向右移动"><rect class="button-bg" width="82" height="82" rx="16" fill="#142c39" stroke="#315567"/><use href="#icon-chevron" x="23" y="23" width="36" height="36" transform="rotate(90 41 41)" style="color:#a5c9d2"/></g><g id="touch-fire" class="button primary" data-touch="fire" transform="translate(522 983)" role="button" aria-label="长按开火"><rect class="button-bg" width="170" height="170" rx="45" fill="#17493d" stroke="#66e5b5" stroke-width="2"/><use href="#icon-aim" x="52" y="32" width="66" height="66" style="color:#92ffd7"/><text x="85" y="132" text-anchor="middle" font-size="19" font-weight="700" letter-spacing="4" fill="#98ffdb">开火</text></g><g class="button " transform="translate(325 990)" role="button" tabindex="0" data-action="pause" aria-label="暂停" ><rect class="button-bg" width="148" height="59" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="74.0" y="34.5" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">暂停</text></g><g class="button " transform="translate(325 1070)" role="button" tabindex="0" data-action="restart" aria-label="重新部署" ><rect class="button-bg" width="148" height="59" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="74.0" y="34.5" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">重新部署</text></g><text x="360" y="1200" class="small" text-anchor="middle">左手移动，右手开火；冲刺能躲弹，不能穿墙。</text><text x="360" y="1232" class="tiny" text-anchor="middle">脉冲 / 双联 / 穿甲 · 每种武器都能守住防线。</text></g><g id="home-screen"><rect id="home-dim" width="1440" height="960" fill="#060c14" fill-opacity=".78"/><g id="hangar-panel" transform="translate(80 126)"><rect id="hangar-bg" width="1280" height="706" rx="22" fill="url(#hangar-fill)" stroke="#355264"/><rect id="hangar-grid" width="1280" height="706" rx="22" fill="url(#microgrid)" opacity=".5"/><g id="hangar-copy" transform="translate(56 48)"><rect y="0" width="150" height="25" rx="12" fill="#1a493b" stroke="#34725e"/><circle cx="15" cy="12" r="3" fill="#8bffcd" class="breathe"/><text x="28" y="17" font-size="10" fill="#adffda" letter-spacing="2">NEXT-GEN ARCADE</text><text y="108" font-size="64" font-weight="850" letter-spacing="-2">坦克大战</text><text x="-5" y="229" font-size="137" font-weight="900" letter-spacing="-8" fill="#6cf5bc" style="fill:#6cf5bc">2026<tspan font-size="24" dx="18" letter-spacing="3" fill="#82a1ae">霓虹防线</tspan></text><text y="276" font-size="16" fill="#a8bdc9">经典守基地，进化成你的战术战场。</text><text y="309" class="small">矢量冲刺 / 电磁脉冲 / 三套武器 / 精英首领</text><text y="349" class="tiny" id="hangar-tip">WASD 移动 · SPACE 开火 · SHIFT 冲刺 · E 脉冲</text></g>
+<g id="hangar-hero" transform="translate(957 236)"><circle r="207" fill="url(#mint-glow)"/><ellipse cy="60" rx="175" ry="104" fill="#08121e" stroke="#2a514f"/><ellipse cy="60" rx="145" ry="82" fill="url(#microgrid)" stroke="#406a64" stroke-width=".8"/><ellipse cy="60" rx="174" ry="104" fill="none" stroke="#78eac2" stroke-dasharray="58 239" stroke-width="2" opacity=".75"/><path d="M-205 63h39m333 0h38M0-70v25M0 180v30" stroke="#3b6969"/><g id="hero-tank-rot" transform="translate(0 7) rotate(-28) scale(4.5)" filter="url(#hero-shadow)"><use id="hero-hull" href="#hull-vanguard" x="-25" y="-30" width="50" height="60"/><use id="hero-turret" href="#turret-vanguard" x="-25" y="-30" width="50" height="60"/></g><g transform="translate(-184 -102)"><path d="M0 15h57l42 50" stroke="#639987" stroke-width=".8" fill="none"/><text y="0" class="tiny" fill="#8ccbb4">VECTOR DRIVE / 01</text></g><text x="155" y="177" text-anchor="end" class="tiny" id="hero-label">VANGUARD / 先锋</text></g>
+<g id="chassis-cards" transform="translate(56 426)"><g id="chassis-card-0" class="button selected" data-action="chassis-0" role="button" tabindex="0" aria-label="选择先锋" transform="translate(0 0)"><rect class="button-bg chassis-bg" width="368" height="128" rx="12" fill="#10232e" stroke="#64f4bc"/><use href="#tank-vanguard" x="18" y="29" width="47" height="57"/><text x="82" y="32" font-size="19" font-weight="700">先锋<tspan dx="13" font-size="10" letter-spacing="1.6" fill="#7696a6">VANGUARD</tspan></text><text x="82" y="60" class="small">均衡装甲 / 脉冲增幅</text><text x="82" y="94" class="tiny">100 装甲 · 160 速度</text><circle class="selection-dot" cx="343" cy="25" r="4"/></g><g id="chassis-card-1" class="button " data-action="chassis-1" role="button" tabindex="0" aria-label="选择幻影" transform="translate(390 0)"><rect class="button-bg chassis-bg" width="368" height="128" rx="12" fill="#10232e" stroke="#2d4655"/><use href="#tank-phantom" x="18" y="29" width="47" height="57"/><text x="82" y="32" font-size="19" font-weight="700">幻影<tspan dx="13" font-size="10" letter-spacing="1.6" fill="#7696a6">PHANTOM</tspan></text><text x="82" y="60" class="small">高速机动 / 冲刺特化</text><text x="82" y="94" class="tiny">75 装甲 · 188 速度</text><circle class="selection-dot" cx="343" cy="25" r="4"/></g><g id="chassis-card-2" class="button " data-action="chassis-2" role="button" tabindex="0" aria-label="选择壁垒" transform="translate(780 0)"><rect class="button-bg chassis-bg" width="368" height="128" rx="12" fill="#10232e" stroke="#2d4655"/><use href="#tank-bastion" x="18" y="29" width="47" height="57"/><text x="82" y="32" font-size="19" font-weight="700">壁垒<tspan dx="13" font-size="10" letter-spacing="1.6" fill="#7696a6">BASTION</tspan></text><text x="82" y="60" class="small">重装防御 / 核心维修</text><text x="82" y="94" class="tiny">140 装甲 · 136 速度</text><circle class="selection-dot" cx="343" cy="25" r="4"/></g></g><g id="mode-buttons" transform="translate(56 602)"><g class="button " transform="translate(0 0)" role="button" tabindex="0" data-action="mode-campaign" aria-label="战役 / 3 区域" id="mode-campaign"><rect class="button-bg" width="169" height="57" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="84.5" y="33.5" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">战役 / 3 区域</text></g><g class="button " transform="translate(181 0)" role="button" tabindex="0" data-action="mode-endless" aria-label="无尽 / 生存" id="mode-endless"><rect class="button-bg" width="169" height="57" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="84.5" y="33.5" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">无尽 / 生存</text></g></g><g id="deploy-wrap" transform="translate(877 600)"><g class="button primary" transform="translate(0 0)" role="button" tabindex="0" data-action="start" aria-label="部署战车  →" id="deploy-button"><rect class="button-bg" width="349" height="62" rx="10" fill="#64f4bc" stroke="#88ffd1"/><text x="174.5" y="36.0" text-anchor="middle" class="button-text" style="fill:#071913;font-size:14px;font-weight:700">部署战车  →</text></g><text x="174" y="84" class="tiny" text-anchor="middle" id="deploy-hint">ENTER 部署 · 无联网 · 无安装</text></g></g></g><g id="overlay" display="none"><rect id="overlay-dim" width="1440" height="960" fill="#050b13" fill-opacity=".8"/><g id="dialog" transform="translate(420 258)"><rect id="dialog-bg" width="600" height="412" rx="22" fill="url(#hangar-fill)" stroke="#3d5b6b"/><path d="M28 0H168" stroke="#66f2bf" stroke-width="3"/><g transform="translate(265 34)"><circle cx="35" cy="35" r="34" fill="#183a34" stroke="#42866d"/><use id="dialog-icon" href="#icon-shield" x="15" y="15" width="40" height="40" style="color:#89ffce"/></g><text id="overlay-kicker" x="300" y="142" text-anchor="middle" class="kicker">TACTICAL PAUSE</text><text id="overlay-title" x="300" y="190" text-anchor="middle" font-size="35" font-weight="800">战场已暂停</text><text id="overlay-sub" x="300" y="228" text-anchor="middle" font-size="14" fill="#9ab0bd">防线还在，随时继续。</text><text id="overlay-stats" x="300" y="266" text-anchor="middle" class="number" font-size="18" fill="#84f8c7">000000</text><g class="button primary" transform="translate(46 305)" role="button" tabindex="0" data-action="primary" aria-label="继续作战" id="primary-button"><rect class="button-bg" width="314" height="57" rx="10" fill="#64f4bc" stroke="#88ffd1"/><text x="157.0" y="33.5" text-anchor="middle" class="button-text" style="fill:#071913;font-size:14px;font-weight:700">继续作战</text></g><g class="button " transform="translate(376 305)" role="button" tabindex="0" data-action="home" aria-label="返回机库" ><rect class="button-bg" width="178" height="57" rx="10" fill="#111e29" stroke="#2a3c4b"/><text x="89.0" y="33.5" text-anchor="middle" class="button-text" style="fill:#b6c7d5;font-size:14px;font-weight:700">返回机库</text></g><text x="300" y="391" class="tiny" id="overlay-hint" text-anchor="middle">P / ESC / ENTER 继续</text></g></g><g id="upgrade-screen" display="none"><rect id="upgrade-dim" width="1440" height="960" fill="#060d16" fill-opacity=".88"/><g id="upgrade-panel" transform="translate(132 202)"><rect id="upgrade-bg" width="1176" height="540" rx="22" fill="url(#hangar-fill)" stroke="#345366"/><g id="upgrade-heading" transform="translate(42 46)"><text class="kicker" style="fill:#69f5c0">SECTOR SECURED / 区域肃清</text><text y="54" font-size="36" font-weight="800">升级你的下一次出击。</text><text id="upgrade-sub" y="90" font-size="14" fill="#a1b9c6">选择一项永久强化，进入下一区域。</text></g><g id="upgrade-cards" transform="translate(42 177)"></g><text id="upgrade-foot" x="42" y="501" class="tiny">按 1 / 2 / 3 选择 · 战车与核心已维修 · 所有强化持续本局</text></g></g>
+</svg><div id="announcer" class="sr-only" aria-live="polite"></div><noscript>启用 JavaScript 后即可游玩。游戏不需要联网。</noscript><script>
+'use strict';
+(() => {
+  // ━━ 1. 配置、SVG 工具与安全存储 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  const NS='http://www.w3.org/2000/svg', TILE=24, CELL=48, SIZE=624, COLS=26, HALF=16, STEP=1/120;
+  const DIR=[{x:0,y:-1},{x:1,y:0},{x:0,y:1},{x:-1,y:0}];
+  const $=id=>document.getElementById(id);
+  const svg=(tag,attrs={},parent=null)=>{const el=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);if(parent)parent.appendChild(el);return el;};
+  const use=(id,x,y,width,height,parent)=>svg('use',{href:'#'+id,x,y,width,height},parent);
+  const text=(id,v)=>{const el=$(id);if(el&&el.textContent!==String(v))el.textContent=v;};
+  const set=(id,a,v)=>$(id)?.setAttribute(a,v);
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),pad=(n,w=2)=>String(Math.floor(n)).padStart(w,'0');
+  const overlap=(ax,ay,aw,ah,bx,by,bw,bh)=>ax<bx+bw&&ax+aw>bx&&ay<by+bh&&ay+ah>by;
+  const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),angleTo=(a,b)=>Math.atan2(b.x-a.x,a.y-b.y);
+  const shortest=(a,b)=>Math.atan2(Math.sin(b-a),Math.cos(b-a));
+  const safeStore={available:true,get(k,f){try{return localStorage.getItem(k)??f;}catch(_){this.available=false;return f;}},set(k,v){try{localStorage.setItem(k,String(v));}catch(_){this.available=false;}}};
+  const CHASSIS=[
+    {key:'vanguard',name:'先锋',en:'VANGUARD',hp:100,speed:160,dashCD:4.5,empCD:13,empPower:44,color:'#64f4bc'},
+    {key:'phantom',name:'幻影',en:'PHANTOM',hp:75,speed:188,dashCD:3.1,empCD:15,empPower:34,color:'#b3a2ff'},
+    {key:'bastion',name:'壁垒',en:'BASTION',hp:140,speed:136,dashCD:5.5,empCD:14,empPower:38,color:'#ffca7a'}
+  ];
+  const ENEMY={
+    grunt:{hp:26,speed:64,points:100,color:'#edab86',damage:18,cd:1.95},
+    scout:{hp:21,speed:104,points:160,color:'#c7a3fa',damage:15,cd:1.8},
+    heavy:{hp:86,speed:49,points:300,color:'#ffb078',damage:28,cd:2.35},
+    siege:{hp:52,speed:54,points:260,color:'#ff8da4',damage:20,cd:2.5},
+    boss:{hp:660,speed:47,points:2000,color:'#ff748e',damage:26,cd:1.65}
+  };
+  const WEAPONS=[
+    {name:'磁轨脉冲炮',desc:'均衡单发 · 高射速 · 稳定压制',damage:28,speed:485,cd:.23,color:'#8cffe0',style:'bullet-fill'},
+    {name:'双联速射炮',desc:'双弹齐发 · 近距离集中火力',damage:21,speed:440,cd:.38,color:'#ffd899',style:'amber-bullet'},
+    {name:'穿甲轨道炮',desc:'高伤害 · 可贯穿 2 辆敌军和 1 层砖墙',damage:64,speed:780,cd:.67,color:'#c4b4ff',style:'rail-bullet'}
+  ];
+  const LEVELS=[
+    {name:'边境接触',en:'INDUSTRIAL OUTSKIRTS',tag:'工业边境',total:10,active:4,spawn:2.5,types:['grunt','grunt','scout','grunt','heavy','scout','grunt','siege','grunt','heavy'],
+      map:['.............','.##..S.S..##.','.##.......##.','...G.X.X.G...','.S.G.###.G.S.','.....W.W.....','.##..W.W..##.','.....G.G.....','.S.##...##.S.','.....R.R.....','..G.......G..','..##.###.##..','.....#B#.....']},
+    {name:'运河中继',en:'CANAL / UPLINK ZONE',tag:'夺取中继',total:13,active:4,spawn:2.3,types:['scout','grunt','heavy','scout','siege','grunt','heavy','siege','scout','heavy','grunt','scout','siege'],
+      map:['.............','.S.##...##.S.','...##...##...','.G..X...X..G.','.G.WW...WW.G.','...WW...WW...','.....U.......','.#.##...##.#.','...G.W.W.G...','.S.G.W.W.G.S.','...R.....R...','.###.###.###.','.....#B#.....']},
+    {name:'零点要塞',en:'NEMESIS / FINAL ASSAULT',tag:'指挥官决战',total:15,active:5,spawn:2.1,types:['heavy','scout','siege','grunt','scout','heavy','siege','scout','heavy','grunt','siege','scout','heavy','siege','boss'],
+      map:['.............','..S..G.G..S..','.##.......##.','....X...X....','.S..G...G..S.','...W..S..W...','...W.....W...','.##...X...##.','...G.S.S.G...','.S...R.R...S.','.............','..##.###.##..','.....#B#.....']}
+  ];
+  const UPGRADES=[
+    {id:'damage',icon:'icon-weapon',name:'超频弹芯',tag:'FIREPOWER',detail:'所有武器伤害 +25%',note:'叠加生效，让每一发更有分量。'},
+    {id:'armor',icon:'icon-shield',name:'复合装甲',tag:'SURVIVABILITY',detail:'装甲上限 +35，立即回满',note:'生存更久，给防线更多机会。'},
+    {id:'cooling',icon:'icon-emp',name:'量子冷却',tag:'TACTICAL',detail:'技能冷却 ×0.8，射速 +12%',note:'冲刺更频繁，脉冲更主动。'},
+    {id:'repair',icon:'icon-cross',name:'维修纳米群',tag:'RECOVERY',detail:'每次击破恢复 7 点装甲',note:'进攻，就是新的防御。'},
+    {id:'core',icon:'icon-home',name:'核心堡垒',tag:'FORTIFICATION',detail:'核心上限 +35，核心伤害 -20%',note:'维修核心，并重建基地砖墙。'},
+    {id:'mobility',icon:'icon-dash',name:'矢量推进器',tag:'MOBILITY',detail:'移动速度 +14%，冲刺冷却 ×0.8',note:'绕侧、脱离、抢补给，更从容。'}
+  ];
+
+  // ━━ 2. 输入：事件即时采样，移动/开火支持多点触屏 ━━━━━━━━━━━━━━━━━━━
+  class Input {
+    constructor(command){
+      this.held=new Map();this.order=0;this.mouse={x:312,y:312};this.aiming=false;
+      this.directions={ArrowUp:0,KeyW:0,ArrowRight:1,KeyD:1,ArrowDown:2,KeyS:2,ArrowLeft:3,KeyA:3};
+      window.addEventListener('keydown',e=>{
+        if(e.altKey||e.metaKey||e.ctrlKey)return;
+        if(e.code in this.directions||e.code==='Space'){
+          e.preventDefault();if(!this.held.has(e.code))this.held.set(e.code,{value:e.code==='Space'?'fire':this.directions[e.code],order:++this.order});
+          if(e.code in this.directions)this.aiming=false;
+        }else{
+          const actions={Enter:'primary',KeyP:'pause',Escape:'pause',KeyR:'restart',KeyM:'sound',KeyQ:'cycle',KeyE:'emp',ShiftLeft:'dash',ShiftRight:'dash',Digit1:'choose-0',Digit2:'choose-1',Digit3:'choose-2'};
+          if(actions[e.code]){e.preventDefault();if(!e.repeat)command(actions[e.code]);}
+        }
+      });
+      window.addEventListener('keyup',e=>this.held.delete(e.code));
+      document.querySelectorAll('[data-touch]').forEach(el=>{
+        el.addEventListener('pointerdown',e=>{e.preventDefault();this.aiming=false;const v=el.dataset.touch;this.held.set('p'+e.pointerId,{value:v==='fire'?v:Number(v),order:++this.order,el});el.classList.add('pressed');try{el.setPointerCapture(e.pointerId);}catch(_){};});
+        const release=e=>{this.held.delete('p'+e.pointerId);if(![...this.held.values()].some(v=>v.el===el))el.classList.remove('pressed');};
+        ['pointerup','pointercancel','lostpointercapture'].forEach(name=>el.addEventListener(name,release));
+      });
+      const world=$('world');
+      const aim=e=>{const matrix=world.getScreenCTM();if(!matrix)return;const p=new DOMPoint(e.clientX,e.clientY).matrixTransform(matrix.inverse());this.mouse={x:clamp(p.x,0,SIZE),y:clamp(p.y,0,SIZE)};this.aiming=true;};
+      world.addEventListener('pointermove',e=>{if(e.pointerType==='mouse')aim(e);});
+      world.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button===0){e.preventDefault();aim(e);this.held.set('mouse',{value:'fire',order:++this.order});}});
+      window.addEventListener('pointerup',e=>{this.held.delete('mouse');const item=this.held.get('p'+e.pointerId);item?.el.classList.remove('pressed');this.held.delete('p'+e.pointerId);});
+      window.addEventListener('pointercancel',()=>this.clear());
+    }
+    get direction(){let latest=null;for(const v of this.held.values())if(v.value!=='fire'&&(!latest||v.order>latest.order))latest=v;return latest?latest.value:null;}
+    get fire(){for(const v of this.held.values())if(v.value==='fire')return true;return false;}
+    clear(){this.held.clear();document.querySelectorAll('.pressed').forEach(e=>e.classList.remove('pressed'));}
+  }
+
+  // ━━ 3. Web Audio 合成器：不加载任何音频 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  class Sound {
+    constructor() {
+      this.enabled=safeStore.get('tank2026-sound','1')!=='0';
+      this.context=null; this.master=null; this.noise=null; this.last=Object.create(null);
+      this.available=Boolean(window.AudioContext || window.webkitAudioContext);
+    }
+    unlock() {
+      // 浏览器要求先有点击/按键手势；无音频能力时仅静音，不中断游戏。
+      if (!this.available) return;
+      try {
+        if (!this.context) {
+          const AudioContextClass=window.AudioContext || window.webkitAudioContext;
+          this.context=new AudioContextClass();
+          this.master=this.context.createGain(); this.master.gain.value=this.enabled ? .13 : 0;
+          this.master.connect(this.context.destination);
+          this.noise=this.context.createBuffer(1,Math.floor(this.context.sampleRate*.5),this.context.sampleRate);
+          const data=this.noise.getChannelData(0);
+          for (let i=0;i<data.length;i++) data[i]=Math.random()*2-1;
+        }
+        if (this.context.state==='suspended') this.context.resume().catch(()=>{});
+      } catch (_) { this.available=false; }
+    }
+    tone(frequency,end,duration,volume=.2,delay=0,type='square') {
+      const ctx=this.context,t=ctx.currentTime+delay,osc=ctx.createOscillator(),gain=ctx.createGain();
+      osc.type=type; osc.frequency.setValueAtTime(frequency,t);
+      osc.frequency.exponentialRampToValueAtTime(Math.max(20,end),t+duration);
+      gain.gain.setValueAtTime(.0001,t); gain.gain.linearRampToValueAtTime(volume,t+.005);
+      gain.gain.exponentialRampToValueAtTime(.0001,t+duration);
+      osc.connect(gain); gain.connect(this.master); osc.start(t); osc.stop(t+duration+.02);
+      osc.onended=()=>{osc.disconnect();gain.disconnect();};
+    }
+    noiseHit(duration,volume,cutoff=1100) {
+      const ctx=this.context,t=ctx.currentTime,source=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),gain=ctx.createGain();
+      source.buffer=this.noise; filter.type='lowpass'; filter.frequency.setValueAtTime(cutoff,t);
+      filter.frequency.exponentialRampToValueAtTime(90,t+duration);
+      gain.gain.setValueAtTime(volume,t); gain.gain.exponentialRampToValueAtTime(.0001,t+duration);
+      source.connect(filter); filter.connect(gain); gain.connect(this.master); source.start(t); source.stop(t+duration);
+      source.onended=()=>{source.disconnect();filter.disconnect();gain.disconnect();};
+    }
+    play(name) {
+      if (!this.enabled || !this.available || !this.context || this.context.state!=='running') return;
+      const now=this.context.currentTime;
+      if (now-(this.last[name]??-100)<({hit:.07,enemyFire:.08,explosion:.06}[name]??.035)) return;
+      this.last[name]=now;
+      try {
+        switch (name) {
+          case 'fire': this.tone(380,70,.075,.2,0,'triangle'); this.noiseHit(.038,.1,2200); break;
+          case 'dash': this.noiseHit(.16,.23,1900); this.tone(140,620,.18,.12,0,'sine'); break;
+          case 'emp': this.tone(95,680,.3,.23,0,'sine'); this.noiseHit(.35,.28,850); break;
+          case 'pickup': this.tone(650,960,.1,.17,0,'sine'); this.tone(980,1200,.12,.13,.1,'sine'); break;
+          case 'rail': this.tone(1500,100,.17,.18,0,'sawtooth'); break;
+          case 'warning': this.tone(310,310,.18,.17,0,'sine'); this.tone(310,310,.18,.17,.25,'sine'); break;
+          case 'enemyFire': this.tone(190,65,.095,.2,0,'triangle'); break;
+          case 'hit': this.noiseHit(.055,.2,1700); break;
+          case 'explosion': this.noiseHit(.3,.7,1050); this.tone(95,30,.24,.23); break;
+          case 'spawn': this.tone(380,760,.1,.17,0,'triangle'); this.tone(760,1140,.1,.14,.12,'triangle'); break;
+          case 'ui': this.tone(650,810,.065,.16,0,'triangle'); break;
+          case 'start': [262,330,392,523].forEach((n,i)=>this.tone(n,n,.13,.17,i*.10)); break;
+          case 'clear': [392,523,659,784].forEach((n,i)=>this.tone(n,n,.16,.17,i*.12)); break;
+          case 'win': [523,659,784,1047,784,880,988,1047].forEach((n,i)=>this.tone(n,n,i===7?.4:.17,.18,i*.13)); break;
+          case 'lose': [220,175,131,82].forEach((n,i)=>this.tone(n,n*.94,.23,.22,i*.17,'triangle')); break;
+        }
+      } catch (_) { /* 音频设备被切换或回收时不影响物理循环。 */ }
+    }
+    toggle() {
+      this.enabled=!this.enabled; safeStore.set('tank2026-sound',this.enabled?'1':'0');
+      if (this.master) this.master.gain.setTargetAtTime(this.enabled ? .13 : 0,this.context.currentTime,.015);
+      return this.enabled;
+    }
+  }
+
+  // ━━ 4. 游戏、地图、实体与响应式 SVG 界面 ━━━━━━━━━━━━━━━━━━━━━━━━━━
+  class Game {
+    constructor(){
+      this.state='title';this.chassis=clamp(Number(safeStore.get('tank2026-chassis','0'))||0,0,2);this.mode='campaign';
+      this.sound=new Sound();this.input=new Input(a=>this.command(a));
+      this.layers=Object.fromEntries(['decor','terrain','decal','props','base','drop','spawn','tank','bullet','grass','hazard','effect','float'].map(k=>[k,$(k+'-layer')]));
+      this.best=Math.max(0,Number(safeStore.get('tank2026-best','0'))||0);this.uid=0;this.level=0;this.score=0;this.clock=0;this.lives=3;this.totalKills=0;
+      this.lastTime=0;this.accumulator=0;this.hudClock=0;this.renderTime=0;this.feed=[];this.weapon=0;this.dashCD=0;this.empCD=0;this.damageFlash=0;this.shake=0;
+      this.mods={damage:1,armor:0,cooling:1,fireRate:1,speed:1,repair:0,core:0,coreDR:1,dash:1};this.reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      this.bindUI();this.layout();this.loadLevel(0,true);this.selectChassis(this.chassis);this.updateSoundUI();this.updateHUD();this.setOverlay();
+      window.addEventListener('resize',()=>this.layout());
+      const autoPause=()=>{this.input.clear();if(this.state==='playing')this.pause(true);};
+      window.addEventListener('blur',autoPause);document.addEventListener('visibilitychange',()=>{if(document.hidden)autoPause();this.lastTime=0;});
+      requestAnimationFrame(t=>this.frame(t));
+    }
+    bindUI(){
+      $('arcade').addEventListener('contextmenu',e=>e.preventDefault());
+      $('arcade').addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(b){this.command(b.dataset.action);b.blur();if(this.state==='playing')this.focusGame();}});
+      $('arcade').addEventListener('keydown',e=>{const b=e.target.closest('[data-action]');if(b&&(e.code==='Enter'||e.code==='Space')){e.preventDefault();e.stopPropagation();if(!e.repeat)this.command(b.dataset.action);}});
+      for(let i=0;i<3;i++)use('icon-heart',i*31,0,22,22,$('life-icons')).style.color='#65e9b9';
+    }
+    focusGame(){try{$('arcade').focus({preventScroll:true});}catch(_){}}
+    layout(){
+      this.mobile=innerWidth/Math.max(1,innerHeight)<1.08;
+      const m=this.mobile,W=m?720:1440,H=m?1280:960;
+      set('arcade','viewBox',`0 0 ${W} ${H}`);
+      ['page-bg','page-grid','home-dim','overlay-dim','upgrade-dim'].forEach(id=>{set(id,'width',W);set(id,'height',H);});
+      ['left-sidebar','right-sidebar','desktop-header','field-top','footer','header-line'].forEach(id=>set(id,'display',m?'none':'inline'));
+      ['mobile-hud','touch-controls'].forEach(id=>set(id,'display',m?'inline':'none'));
+      set('header','transform',m?'translate(24 25) scale(.88)':'translate(36 30)');
+      set('header-tools','transform',m?'translate(490 22) scale(1.17)':'translate(1240 28)');
+      set('battlefield','transform',m?'translate(24 176)':'translate(310 168)');
+      set('world','width',m?672:720);set('world','height',m?672:720);
+      set('field-frame','width',m?686:734);set('field-frame','height',m?686:734);
+      set('hangar-panel','transform',m?'translate(20 96)':'translate(80 126)');
+      ['hangar-bg','hangar-grid'].forEach(id=>{set(id,'width',m?680:1280);set(id,'height',m?1060:706);});
+      set('hangar-copy','transform',m?'translate(32 38) scale(.72)':'translate(56 48)');
+      set('hangar-hero','transform',m?'translate(510 170) scale(.56)':'translate(957 236)');
+      set('hangar-tip','display',m?'none':'inline');
+      set('chassis-cards','transform',m?'translate(32 325)':'translate(56 426)');
+      for(let i=0;i<3;i++){set('chassis-card-'+i,'transform',m?`translate(0 ${i*148})`:`translate(${i*390} 0)`);const el=$('chassis-card-'+i);el.querySelector('rect').setAttribute('width',m?616:368);el.querySelector('circle').setAttribute('cx',m?590:343);const texts=el.querySelectorAll('text');texts[0].style.fontSize=m?'27px':'19px';texts[1].style.fontSize=m?'20px':'12px';texts[2].style.fontSize=m?'17px':'10px';}
+      set('mode-buttons','transform',m?'translate(32 797) scale(1.75 1.1)':'translate(56 602)');
+      set('deploy-wrap','transform',m?'translate(32 899)':'translate(877 600)');
+      $('deploy-button').querySelector('rect').setAttribute('width',m?616:349);$('deploy-button').querySelector('text').setAttribute('x',m?308:174.5);
+      set('deploy-hint','x',m?308:174);set('dialog','transform',m?'translate(60 365)':'translate(420 258)');
+      set('upgrade-panel','transform',m?'translate(20 110)':'translate(132 202)');set('upgrade-bg','width',m?680:1176);set('upgrade-bg','height',m?1050:540);
+      set('upgrade-heading','transform',m?'translate(30 40) scale(.9)':'translate(42 46)');
+      set('upgrade-cards','transform',m?'translate(30 182)':'translate(42 177)');
+      set('upgrade-foot','x',m?30:42);set('upgrade-foot','y',m?1018:501);
+      if(this.offers)this.renderUpgradeCards();
+    }
+    selectChassis(index){
+      this.chassis=index;safeStore.set('tank2026-chassis',index);const c=CHASSIS[index];
+      for(let i=0;i<3;i++){$('chassis-card-'+i).classList.toggle('selected',i===index);set('chassis-card-'+i,'aria-pressed',String(i===index));}
+      set('hero-hull','href','#hull-'+c.key);set('hero-turret','href','#turret-'+c.key);text('hero-label',c.en+' / '+c.name);
+      if(this.state==='title'){this.loadLevel(0,true);this.updateHUD();}
+    }
+    command(action){
+      this.sound.unlock();
+      if(action.startsWith('chassis-')&&this.state==='title'){this.selectChassis(Number(action.slice(-1)));this.sound.play('ui');return;}
+      if(action.startsWith('mode-')&&this.state==='title'){this.mode=action.slice(5);this.updateHUD();this.sound.play('ui');return;}
+      if(action==='sound'){this.sound.toggle();this.updateSoundUI();return;}
+      if(action==='home'){this.state='title';this.input.clear();this.loadLevel(0,true);this.setOverlay();return;}
+      if(action==='start'||action==='restart'){this.start();return;}
+      if(action==='primary'){
+        if(['title','lost','won'].includes(this.state))this.start();else if(this.state==='paused')this.pause(false);return;
+      }
+      if(action==='pause'){if(this.state==='playing')this.pause(true);else if(this.state==='paused')this.pause(false);return;}
+      if(action.startsWith('choose-')&&this.state==='upgrade'){this.chooseUpgrade(Number(action.slice(-1)));return;}
+      if(this.state!=='playing')return;
+      if(action==='cycle'||action.startsWith('weapon-')){this.weapon=action==='cycle'?(this.weapon+1)%3:Number(action.slice(-1));this.updateHUD();this.sound.play('ui');}
+      if(action==='dash')this.dash();if(action==='emp')this.emp();
+    }
+    start(){
+      this.state='playing';this.overdrive=0;this.level=0;this.score=0;this.clock=0;this.lives=3;this.totalKills=0;this.weapon=0;this.maxCombo=0;this.combo=0;this.comboTimer=0;this.feed=[];this.offers=null;
+      this.mods={damage:1,armor:0,cooling:1,fireRate:1,speed:1,repair:0,core:0,coreDR:1,dash:1};this.dashCD=0;this.empCD=0;this.input.clear();this.input.aiming=false;
+      this.loadLevel(0);this.setOverlay();this.updateHUD();this.focusGame();this.sound.play('start');this.log('战车已部署 · 核心在线');
+    }
+    loadLevel(index,preview=false){
+      this.level=index;const source=LEVELS[index%LEVELS.length];this.config={...source};
+      if(this.mode==='endless'&&!preview){this.config.total=8+index*2;this.config.active=Math.min(7,4+Math.floor(index/3));this.config.spawn=Math.max(1.25,2.5-index*.12);this.config.types=Array.from({length:this.config.total},(_,i)=>(index+1)%3===0&&i===this.config.total-1?'boss':['grunt','scout','heavy','siege'][(i+index)%4]);}
+      this.spawned=0;this.killed=0;this.spawnTimer=1.7;this.baseAlive=true;this.baseHP=100+this.mods.core;this.baseMax=this.baseHP;
+      this.baseShield=4;this.respawnTime=0;this.stageTime=0;this.toastTime=0;this.damageFlash=0;this.shake=0;this.dashCD=0;this.empCD=0;this.padClock=0;
+      for(const l of Object.values(this.layers))l.replaceChildren();
+      this.tiles=Array.from({length:COLS},()=>Array(COLS).fill(null));this.enemies=[];this.bullets=[];this.particles=[];this.floats=[];this.spawns=[];this.drops=[];this.props=[];this.hazards=[];this.decals=[];this.repairPads=[];this.uplink=null;
+      this.config.map.forEach((row,r)=>[...row].forEach((type,c)=>{
+        const x=c*CELL,y=r*CELL;
+        if(type==='G'){use('grass',x,y,48,48,this.layers.grass);return;}
+        if(type==='B'){this.baseNode=use('base',x,y,48,48,this.layers.base);return;}
+        if(type==='R'){const node=use('repair',x,y,48,48,this.layers.decor);this.repairPads.push({x:x+24,y:y+24,cd:0,node});return;}
+        if(type==='U'){this.createUplink(x+24,y+24);return;}
+        if(type==='X'){this.props.push({x:x+24,y:y+24,alive:true,node:use('barrel',x,y,48,48,this.layers.props)});return;}
+        if(!['#','S','W'].includes(type))return;
+        if(type==='W')use('water',x,y,48,48,this.layers.terrain);
+        for(let dy=0;dy<2;dy++)for(let dx=0;dx<2;dx++){
+          const tc=c*2+dx,tr=r*2+dy,node=type==='W'?null:use(type==='#'?'brick':'steel',tc*TILE,tr*TILE,24,24,this.layers.terrain);
+          this.tiles[tr][tc]={type,x:tc*TILE,y:tr*TILE,c:tc,r:tr,node};
+        }
+      }));
+      // 出生区地面标识也完全是 SVG，不参与碰撞。
+      for(const x of [24,312,600]){const g=svg('g',{opacity:'.5'},this.layers.decor);svg('path',{d:`M${x-15} 11h30M${x-15} 37h30`,stroke:'#985f69','stroke-width':1},g);svg('path',{d:`m${x-5} 19 5 6 5-6`,fill:'none',stroke:'#c48483'},g);}
+      const path=svg('path',{d:'M186 600h60 M378 600h60',stroke:'#437f77','stroke-width':1,'stroke-dasharray':'3 4'},this.layers.decor);
+      this.player=this.createTank('player',216,600,0);this.player.shield=3;
+      if(preview){this.createTank('grunt',24,72,2);this.createTank('scout',456,168,3);this.createTank('heavy',600,264,2);}
+      this.buildRadar();set('toast','display','none');set('boss-hud','display','none');
+      if(!preview){this.toast((this.mode==='endless'?'生存波次 '+(index+1):'区域 0'+(index+1))+' · '+source.name,3);this.log(source.tag+' · 行动开始');}
+      this.updateHUD();
+    }
+    createTank(kind,x,y,dir){
+      const player=kind==='player',c=CHASSIS[this.chassis],e=ENEMY[kind],skin=player?c.key:kind;
+      const node=svg('g',{'data-kind':kind},this.layers.tank);const hull=svg('g',{},node);use('hull-'+skin,-25,-30,50,60,hull);
+      const tracks=svg('path',{d:'M-15-13V13M15-13V13',stroke:player?c.color:e.color,'stroke-width':3,'stroke-dasharray':'2 5',opacity:'.25'},hull);
+      const turret=svg('g',{},node);const recoilNode=svg('g',{},turret);use('turret-'+skin,-25,-30,50,60,recoilNode);
+      const shieldNode=svg('g',{display:'none'},node);svg('circle',{r:24,fill:player?c.color:e.color,'fill-opacity':'.04',stroke:player?c.color:e.color,'stroke-width':1,'stroke-opacity':'.75'},shieldNode);svg('path',{d:'M-27-6v-9l8-8M27 6v9l-8 8',fill:'none',stroke:player?c.color:e.color,'stroke-width':2},shieldNode);
+      const health=svg('g',{display:'none'},node);svg('rect',{x:-18,y:-30,width:36,height:3,rx:1,fill:'#132331'},health);const healthFill=svg('rect',{x:-18,y:-30,width:36,height:3,rx:1,fill:player?c.color:e.color},health);
+      const hp=player?c.hp+this.mods.armor:e.hp*(this.mode==='endless'?1+this.level*.075:1);
+      const tank={id:++this.uid,kind,team:player?'player':'enemy',x,y,px:x,py:y,dir,angle:dir*Math.PI/2,drawAngle:dir*Math.PI/2,hullAngle:dir*Math.PI/2,node,hull,turret,recoilNode,tracks,shieldNode,health,healthFill,hp,maxHp:hp,shield:0,stun:0,hitFlash:0,recoil:0,alive:true,cooldown:0,speed:player?c.speed*this.mods.speed:e.speed+Math.min(this.level,10)*2,walk:0,moving:false,blocked:0,waypoint:null,aimPause:0,hunt:!player&&(kind==='scout'||kind==='siege'||this.uid%4===0),dashTime:0,think:0,trail:0,mortarCD:kind==='boss'?4.5:kind==='siege'?5:0};
+      if(kind==='boss'){tank.phase=1;set('boss-hud','display','inline');this.toast('警报 · NEMESIS 指挥官进入战场',3);this.sound.play('warning');this.log('重装指挥官信号锁定');}
+      if(!player)this.enemies.push(tank);return tank;
+    }
+    canOccupy(tank,x,y,ignoreTanks=false){
+      if(x-HALF<0||y-HALF<0||x+HALF>SIZE||y+HALF>SIZE)return false;
+      for(let r=Math.floor((y-HALF)/TILE);r<=Math.floor((y+HALF-.001)/TILE);r++)for(let c=Math.floor((x-HALF)/TILE);c<=Math.floor((x+HALF-.001)/TILE);c++)if(this.tiles[r]?.[c])return false;
+      if(overlap(x-HALF,y-HALF,32,32,290,578,44,44))return false;
+      if(this.props.some(p=>p.alive&&Math.abs(p.x-x)<HALF+10&&Math.abs(p.y-y)<HALF+12))return false;
+      if(!ignoreTanks){for(const other of [this.player,...this.enemies])if(other&&other!==tank&&other.alive&&Math.abs(other.x-x)<32&&Math.abs(other.y-y)<32)return false;}
+      return true;
+    }
+    moveTank(tank,dir,dt,assist=false){
+      tank.dir=dir;const d=DIR[dir],length=tank.speed*dt*(tank.dashTime>0?3.1:1);
+      // 冲刺也细分为不超过 4px 的移动：高速不能穿钢墙、水或基地。
+      const n=Math.max(1,Math.ceil(length/4)),step=length/n;let moved=false;
+      for(let i=0;i<n;i++){
+        const nx=tank.x+d.x*step,ny=tank.y+d.y*step;
+        if(this.canOccupy(tank,nx,ny)){tank.x=nx;tank.y=ny;tank.walk+=step;tank.moving=true;moved=true;continue;}
+        if(assist){const perp=d.x?tank.y:tank.x,center=Math.round((perp-24)/48)*48+24,delta=center-perp;
+          if(Math.abs(delta)>.01&&Math.abs(delta)<=13){const fx=d.x?nx:center,fy=d.x?center:ny;
+            if(this.canOccupy(tank,fx,fy)){const v=Math.sign(delta)*Math.min(Math.abs(delta),step),ax=tank.x+(d.x?0:v),ay=tank.y+(d.x?v:0);if(this.canOccupy(tank,ax,ay)){tank.x=ax;tank.y=ay;tank.moving=true;tank.walk+=Math.abs(v);moved=true;}}
+          }
+        }
+        break;
+      }return moved;
+    }
+    createUplink(x,y){
+      const node=svg('g',{transform:`translate(${x} ${y})`},this.layers.decor);svg('circle',{r:35,fill:'#8466db','fill-opacity':'.08',stroke:'#957adc','stroke-width':1,'stroke-dasharray':'4 6'},node);
+      const ring=svg('circle',{r:28,fill:'none',stroke:'#b3a2ff','stroke-width':3,'stroke-dasharray':'0 176',transform:'rotate(-90)'},node);use('icon-link',-12,-12,24,24,node).style.color='#b3a2ff';
+      this.uplink={x,y,progress:0,captured:false,node,ring};
+    }
+    buildRadar(){
+      $('radar-terrain').replaceChildren();for(let r=0;r<13;r++)for(let c=0;c<13;c++){const type=this.config.map[r][c];if(['S','W','#'].includes(type))svg('rect',{x:c*48+4,y:r*48+4,width:40,height:40,fill:type==='W'?'#265f77':type==='S'?'#577281':'#655c51',opacity:'.55'},$('radar-terrain'));}
+    }
+    updateRadar(){
+      const l=$('radar-entities');l.replaceChildren();svg('rect',{x:299,y:587,width:26,height:26,fill:this.baseAlive?'#9affa9':'#ff556f'},l);
+      for(const e of this.enemies)svg('circle',{cx:e.x,cy:e.y,r:e.kind==='boss'?18:11,fill:e.kind==='boss'?'#ff4e76':'#f79283'},l);
+      if(this.player?.alive)svg('circle',{cx:this.player.x,cy:this.player.y,r:13,fill:'#83ffd5'},l);
+      for(const d of this.drops)svg('circle',{cx:d.x,cy:d.y,r:8,fill:'#bca2ff'},l);
+    }
+    updateHUD(){
+      if(!this.config)return;const c=CHASSIS[this.chassis],p=this.player,w=WEAPONS[this.weapon],remain=Math.max(0,this.config.total-this.killed);
+      text('stage-number',pad(this.level+1));text('mission-name',this.config.name);text('mission-en',this.config.en);text('remaining',pad(this.killed)+' / '+pad(this.config.total));set('wave-bar','width',196*this.killed/this.config.total);
+      text('mission-task',this.uplink&&!this.uplink.captured?'站稳中继 4 秒，获得补给增益':'守住核心，清除所有敌军');
+      text('score',pad(this.score,6));text('high-score',pad(Math.max(this.best,this.score),6));text('best-label',safeStore.available?'本机最高分':'本页最高分');
+      text('hp-number',p?.alive?Math.ceil(p.hp):0);set('hp-bar','width',p?.alive?196*p.hp/p.maxHp:0);text('base-status',Math.ceil(this.baseHP)+' / '+this.baseMax);
+      text('chassis-name',c.name+' / '+c.en);set('hud-tank','href','#tank-'+c.key);
+      [...$('life-icons').children].forEach((el,i)=>el.setAttribute('opacity',i<this.lives?'1':'.15'));
+      text('weapon-name',w.name);text('weapon-desc',this.overdrive>0?'火力过载 '+this.overdrive.toFixed(1)+'s · 伤害与射速提升':w.desc);document.querySelectorAll('[data-weapon]').forEach(el=>el.classList.toggle('selected',Number(el.dataset.weapon)===this.weapon));
+      text('dash-time',this.dashCD>0?this.dashCD.toFixed(1)+'s':'就绪');text('emp-time',this.empCD>0?this.empCD.toFixed(1)+'s':'就绪');
+      set('dash-bar','width',292*(1-clamp(this.dashCD/(c.dashCD*this.mods.cooling*this.mods.dash),0,1)));set('emp-bar','width',292*(1-clamp(this.empCD/(c.empCD*this.mods.cooling),0,1)));
+      text('mobile-stage',pad(this.level+1)+(this.mode==='campaign'?' / 03':' / ∞'));text('mobile-score',pad(this.score,6));text('mobile-hp',(p?.alive?Math.ceil(p.hp):0)+' / '+this.lives);text('mobile-enemies',Math.ceil(this.baseHP)+' / '+pad(remain));
+      $('touch-dash').querySelector('text').textContent=this.dashCD>0?'冲刺 '+this.dashCD.toFixed(1)+'s':'SHIFT / 冲刺';$('touch-emp').querySelector('text').textContent=this.empCD>0?'脉冲 '+this.empCD.toFixed(1)+'s':'E / 电磁脉冲';$('touch-weapon').querySelector('text').textContent=['Q / 脉冲炮','Q / 双联炮','Q / 穿甲炮'][this.weapon];
+      $('mode-campaign').classList.toggle('selected',this.mode==='campaign');$('mode-endless').classList.toggle('selected',this.mode==='endless');
+      set('field-status','fill','#88bbab');text('field-status',this.mode==='endless'?'ENDLESS SURVIVAL / 无尽生存':'LIVE OPERATION / 实时战场');
+      const boss=this.enemies.find(e=>e.kind==='boss'&&e.alive);set('boss-hud','display',boss?'inline':'none');if(boss){set('boss-health','width',394*boss.hp/boss.maxHp);text('boss-title',boss.phase===2?'NEMESIS / 过载阶段 · 警戒三重轰炸':'NEMESIS / 重装指挥官');}
+      this.updateRadar();
+    }
+    updateSoundUI(){const el=$('sound-button');el.querySelector('use').setAttribute('href',this.sound.enabled?'#icon-sound':'#icon-off');el.setAttribute('aria-label',this.sound.enabled?'关闭音效':'开启音效');el.setAttribute('aria-pressed',String(this.sound.enabled));}
+    setOverlay(){
+      set('home-screen','display',this.state==='title'?'inline':'none');set('overlay','display',['paused','lost','won'].includes(this.state)?'inline':'none');set('upgrade-screen','display',this.state==='upgrade'?'inline':'none');
+      // 隐藏在弹层后的按钮不进入 Tab 顺序，键盘焦点不会误落到后台控件。
+      const scope=this.state==='title'?'home-screen':this.state==='upgrade'?'upgrade-screen':['paused','lost','won'].includes(this.state)?'overlay':null;
+      document.querySelectorAll('[data-action]').forEach(b=>{const front=scope?Boolean(b.closest('#'+scope)):!b.closest('#home-screen,#overlay,#upgrade-screen');b.setAttribute('tabindex',front?'0':'-1');});
+      set('pause-button','aria-label',this.state==='paused'?'继续游戏':'暂停游戏');
+      const paused=this.state==='paused',won=this.state==='won';
+      text('overlay-kicker',paused?'TACTICAL PAUSE / 战术暂停':won?'MISSION COMPLETE / 行动完成':'SIGNAL LOST / 行动终止');
+      text('overlay-title',paused?'暂停，不是撤退。':won?'这一次，防线未破。':this.baseAlive?'战车信号丢失':'核心已被摧毁');
+      text('overlay-sub',paused?'切换窗口会自动暂停；返回后手动继续。':won?'三个区域已肃清，NEMESIS 指挥官已被击破。':this.endReason||'重整装备，再次出击。');
+      text('overlay-stats',paused?'当前得分  '+pad(this.score,6):'得分 '+pad(this.score,6)+'  /  击破 '+this.totalKills+' 辆');
+      $('primary-button').querySelector('text').textContent=paused?'继续作战  →':'重新部署  →';
+      text('overlay-hint',paused?'P / ESC / ENTER 继续':'ENTER / R 再战 · 返回机库可更换战车和模式');set('dialog-icon','href',paused?'#icon-pause':won?'#icon-check':'#icon-restart');
+      if(this.state!=='playing')set('toast','display','none');
+    }
+    pause(paused){if(paused&&this.state!=='playing'||!paused&&this.state!=='paused')return;this.state=paused?'paused':'playing';this.input.clear();this.accumulator=0;this.lastTime=0;this.setOverlay();if(!paused)this.focusGame();}
+    log(message){this.feed.unshift(message);this.feed=this.feed.slice(0,3);for(let i=0;i<3;i++)text('feed'+i,this.feed[i]||'—');}
+    announce(message){$('announcer').textContent=message;}
+    toast(message,time=2.2){text('toast-label',message);set('toast','display','inline');this.toastTime=time;this.announce(message);}
+    saveBest(){if(this.score>this.best){this.best=this.score;safeStore.set('tank2026-best',this.best);}}
+
+    // 阶段接口：战斗、技能和关卡系统在下面分别扩展，便于单独维护与测试。
+    updateCombat(dt){}
+    updateSystems(dt){}
+    updateEffects(dt){}
+    dash(){}
+    emp(){}
+    chooseUpgrade(index){}
+    renderUpgradeCards(){}
+    step(dt){
+      if(this.state!=='playing')return;
+      this.clock+=dt;this.stageTime+=dt;this.dashCD=Math.max(0,this.dashCD-dt);this.empCD=Math.max(0,this.empCD-dt);this.baseShield=Math.max(0,this.baseShield-dt);
+      this.comboTimer=Math.max(0,(this.comboTimer||0)-dt);if(this.comboTimer===0)this.combo=0;
+      this.damageFlash=Math.max(0,this.damageFlash-dt*2.5);this.shake=Math.max(0,this.shake-dt*9);
+      for(const t of [this.player,...this.enemies]){if(!t)continue;t.px=t.x;t.py=t.y;t.moving=false;t.cooldown=Math.max(0,t.cooldown-dt);t.shield=Math.max(0,t.shield-dt);t.stun=Math.max(0,t.stun-dt);t.dashTime=Math.max(0,t.dashTime-dt);t.hitFlash=Math.max(0,t.hitFlash-dt);t.recoil=Math.max(0,t.recoil-dt*18);}
+      const p=this.player;if(p?.alive){const dir=this.input.direction;if(dir!==null)this.moveTank(p,p.dashTime>0?p.dashDir:dir,dt,true);else if(p.dashTime>0)this.moveTank(p,p.dashDir,dt,true);p.angle=this.input.aiming?angleTo(p,this.input.mouse):p.dir*Math.PI/2;}
+      this.updateCombat(dt);if(this.state!=='playing')return;this.updateSystems(dt);this.updateEffects(dt);
+      if(this.toastTime>0){this.toastTime-=dt;if(this.toastTime<=0)set('toast','display','none');}
+      this.hudClock+=dt;if(this.hudClock>.08){this.hudClock=0;this.updateHUD();}
+    }
+    frame(now){
+      const elapsed=this.lastTime?Math.min((now-this.lastTime)/1000,.08):0;this.lastTime=now;this.renderTime=now/1000;
+      this.accumulator+=elapsed;let steps=0;while(this.accumulator>=STEP&&steps<10){this.step(STEP);this.accumulator-=STEP;steps++;}
+      this.render(clamp(this.accumulator/STEP,0,1),elapsed);requestAnimationFrame(t=>this.frame(t));
+    }
+    render(alpha,dt){
+      if(this.state!=='playing')alpha=1;
+      for(const t of [this.player,...this.enemies]){
+        if(!t?.alive)continue;const x=t.px+(t.x-t.px)*alpha,y=t.py+(t.y-t.py)*alpha;
+        t.node.setAttribute('transform',`translate(${x.toFixed(2)} ${y.toFixed(2)})`);
+        t.hullAngle+=shortest(t.hullAngle,t.dir*Math.PI/2)*Math.min(1,dt*23);t.drawAngle+=shortest(t.drawAngle,t.angle)*Math.min(1,dt*30);
+        t.hull.setAttribute('transform',`rotate(${t.hullAngle*180/Math.PI})`);t.turret.setAttribute('transform',`rotate(${t.drawAngle*180/Math.PI})`);t.recoilNode.setAttribute('transform',`translate(0 ${t.recoil.toFixed(2)})`);
+        t.tracks.setAttribute('stroke-dashoffset',t.walk%7);t.node.setAttribute('opacity',t.hitFlash>0&&Math.floor(t.hitFlash*28)%2?'.5':'1');
+        t.shieldNode.setAttribute('display',t.shield>0||t.stun>0?'inline':'none');if(t.shield>0||t.stun>0)t.shieldNode.setAttribute('transform',`rotate(${this.clock*60})`);
+        t.health.setAttribute('display',t.hp<t.maxHp?'inline':'none');t.healthFill.setAttribute('width',36*clamp(t.hp/t.maxHp,0,1));
+      }
+      for(const b of this.bullets){const x=b.px+(b.x-b.px)*alpha,y=b.py+(b.y-b.py)*alpha;b.node.setAttribute('transform',`translate(${x.toFixed(2)} ${y.toFixed(2)}) rotate(${b.angle*180/Math.PI})`);}
+      if(this.state==='title'&&!this.reducedMotion){set('hero-tank-rot','transform',`translate(0 ${7+Math.sin(this.renderTime*1.4)*3}) rotate(-28) scale(4.5)`);}
+      set('reticle','display',this.input.aiming&&this.state==='playing'&&!this.mobile?'inline':'none');set('reticle','transform',`translate(${this.input.mouse.x} ${this.input.mouse.y})`);
+      set('damage-flash','opacity',this.damageFlash*.17);set('camera','transform',!this.reducedMotion&&this.shake>0?`translate(${Math.sin(this.clock*107)*this.shake} ${Math.cos(this.clock*131)*this.shake*.7})`:'translate(0 0)');
+      this.renderEffects?.(alpha);
+    }
+  }
+
+  // ━━ 5. 战斗模块：A*、细分弹道、护盾、范围爆炸 ━━━━━━━━━━━━━━━━━━━━━
+  class CombatGame extends Game {
+    cellCost(c,r,tank) {
+      if (c<0 || r<0 || c>=13 || r>=13 || c===6 && r===12) return Infinity;
+      let bricks=0;
+      for (let dy=0;dy<2;dy++) for (let dx=0;dx<2;dx++) {
+        const tile=this.tiles[r*2+dy][c*2+dx];
+        if (tile?.type==='S' || tile?.type==='W') return Infinity;
+        if (tile?.type==='#') bricks++;
+      }
+      let cost=1+bricks*1.05;
+      for (const other of this.enemies) if (other!==tank && other.alive && Math.abs(other.x-(c*48+24))<36 && Math.abs(other.y-(r*48+24))<36) cost+=5;
+      if (tank.avoidCell===r*13+c && tank.avoidUntil>this.clock) cost+=18;
+      return cost;
+    }
+    findNextCell(tank,targetC,targetR) {
+      // A* 只在到达路口或发生堵塞时运行。砖墙有额外代价，钢墙/水面不可通行。
+      const sc=clamp(Math.floor(tank.x/CELL),0,12), sr=clamp(Math.floor(tank.y/CELL),0,12);
+      const start=sr*13+sc, goal=targetR*13+targetC;
+      if (start===goal) return null;
+      const scores=new Float64Array(169); scores.fill(Infinity); scores[start]=0;
+      const previous=new Int16Array(169); previous.fill(-1);
+      const closed=new Uint8Array(169), open=[start];
+      const heuristic=index=>Math.abs(index%13-targetC)+Math.abs(Math.floor(index/13)-targetR);
+      let found=-1;
+      while (open.length) {
+        let best=0;
+        for (let i=1;i<open.length;i++) if (scores[open[i]]+heuristic(open[i])<scores[open[best]]+heuristic(open[best])) best=i;
+        const current=open.splice(best,1)[0];
+        if (current===goal) { found=current; break; }
+        if (closed[current]) continue; closed[current]=1;
+        const c=current%13,r=Math.floor(current/13);
+        // 轮换同代价路线的顺序，避免所有敌军挤在同一条路上。
+        for (let k=0;k<4;k++) {
+          const dir=(k+tank.id)%4, d=DIR[dir], nc=c+d.x,nr=r+d.y;
+          if (nc<0 || nr<0 || nc>=13 || nr>=13) continue;
+          const next=nr*13+nc; if (closed[next]) continue;
+          const cost=this.cellCost(nc,nr,tank); if (!Number.isFinite(cost)) continue;
+          const score=scores[current]+cost+(current===start && dir!==tank.dir ? .06 : 0);
+          if (score<scores[next]) { scores[next]=score; previous[next]=current; open.push(next); }
+        }
+      }
+      if (found<0) return null;
+      let next=found;
+      while (previous[next]!==start && previous[next]>=0) next=previous[next];
+      return {x:(next%13)*48+24,y:Math.floor(next/13)*48+24,c:next%13,r:Math.floor(next/13)};
+    }
+    lineClear(a,b){
+      const length=distance(a,b),dx=(b.x-a.x)/length,dy=(b.y-a.y)/length;
+      for(let s=24;s<length-17;s+=9){const x=a.x+dx*s,y=a.y+dy*s,tile=this.tiles[Math.floor(y/TILE)]?.[Math.floor(x/TILE)];if(tile&&tile.type!=='W')return false;if(this.props.some(p=>p.alive&&Math.abs(p.x-x)<11&&Math.abs(p.y-y)<13))return false;}
+      return true;
+    }
+    directAim(tank){
+      const player=this.player?.alive?this.player:null,base={x:312,y:600};
+      const targets=tank.hunt||tank.kind==='boss'?[player,base]:[base,player];
+      for(const t of targets){if(!t)continue;const range=distance(tank,t);if(range>28&&range<(t===base?680:360)&&this.lineClear(tank,t))return angleTo(tank,t);}
+      return null;
+    }
+    updateEnemy(tank,dt){
+      if(tank.shield>0||tank.stun>0)return;
+      if(tank.kind==='siege'||tank.kind==='boss'){
+        tank.mortarCD-=dt;if(tank.mortarCD<=0){const target=this.player?.alive?this.player:{x:312,y:600};this.addHazard(target.x,target.y,tank.kind==='boss'?48:38,1.4,tank.kind==='boss'?34:26);
+          if(tank.kind==='boss'&&tank.phase===2){this.addHazard(clamp(target.x+78,35,589),clamp(target.y-55,35,589),38,1.75,26);this.addHazard(clamp(target.x-72,35,589),clamp(target.y+45,35,589),38,2.0,26);}
+          tank.mortarCD=tank.kind==='boss'?(tank.phase===2?4.2:5.7):7.0;this.sound.play('warning');
+        }
+      }
+      if(tank.kind==='boss'&&tank.hp<tank.maxHp*.48&&tank.phase===1){tank.phase=2;tank.speed*=1.25;tank.mortarCD=1.2;this.toast('指挥官进入过载阶段 · 注意轰炸预警',3);this.log('NEMESIS：第二阶段启动');}
+      if(tank.aimPause>0){tank.aimPause-=dt;return;}
+      if(tank.cooldown<=0){const aim=this.directAim(tank);if(aim!==null){tank.angle=aim;if(this.fire(tank)){tank.aimPause=tank.kind==='heavy'?.28:.16;return;}}}
+      if(!tank.waypoint){
+        const cx=Math.round((tank.x-24)/48)*48+24,cy=Math.round((tank.y-24)/48)*48+24;
+        if(Math.abs(cx-tank.x)>.25||Math.abs(cy-tank.y)>.25)tank.waypoint={x:cx,y:cy,c:Math.floor(cx/48),r:Math.floor(cy/48)};
+        else{
+          tank.x=cx;tank.y=cy;const target=tank.hunt&&this.player?.alive?{c:Math.floor(this.player.x/48),r:Math.floor(this.player.y/48)}:{c:6,r:11};
+          tank.waypoint=this.findNextCell(tank,target.c,target.r);
+          if(!tank.waypoint){const dx=(tank.hunt&&this.player.alive?this.player.x:312)-tank.x,dy=(tank.hunt&&this.player.alive?this.player.y:600)-tank.y;tank.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?1:3):(dy>0?2:0);}
+        }
+      }
+      if(tank.waypoint){
+        const dx=tank.waypoint.x-tank.x,dy=tank.waypoint.y-tank.y,dir=Math.abs(dx)>.15?(dx>0?1:3):(dy>0?2:0),remaining=Math.abs(dx)>.15?Math.abs(dx):Math.abs(dy);
+        if(remaining<.25){tank.x=tank.waypoint.x;tank.y=tank.waypoint.y;tank.waypoint=null;tank.blocked=0;}
+        else if(this.moveTank(tank,dir,Math.min(dt,remaining/tank.speed)))tank.blocked=0;
+        else{tank.blocked+=dt;const d=DIR[dir];if(tank.blocked>1.1&&this.canOccupy(tank,tank.x+d.x*2,tank.y+d.y*2,true)){tank.avoidCell=tank.waypoint.r*13+tank.waypoint.c;tank.avoidUntil=this.clock+3;tank.waypoint=null;tank.blocked=0;}}
+      }
+      tank.angle=tank.dir*Math.PI/2;
+      if(tank.cooldown<=0)this.fire(tank); // 路线中有砖墙/油桶时朝前射击，主动打通道路。
+    }
+    updateSpawns(dt){
+      this.spawnTimer-=dt;
+      if(this.spawned<this.config.total&&this.enemies.length+this.spawns.length<this.config.active&&this.spawnTimer<=0&&!(this.config.types[this.spawned]==='boss'&&(this.enemies.length||this.spawns.length))){
+        const kind=this.config.types[this.spawned]||'grunt';
+        // 首领压轴，等待其他敌军清空；避免被出生点与小兵夹住。
+        const lanes=[24,312,600],order=(this.spawned+this.level)%3;
+        const x=[lanes[order],lanes[(order+1)%3],lanes[(order+2)%3]].find(x=>this.canOccupy(null,x,24)&&!this.spawns.some(s=>s.x===x));
+        if(x!==undefined){
+          const node=svg('g',{transform:`translate(${x} 24)`},this.layers.spawn);
+          svg('circle',{r:21,fill:'#ff8b83','fill-opacity':'.06',stroke:'#e7929d','stroke-width':1,'stroke-dasharray':'5 5'},node);
+          svg('path',{d:'M-23-8v-15h15M8-23h15v15M23 8v15H8M-8 23h-15V8M-8 0H8M0-8V8',fill:'none',stroke:'#ffc0c2','stroke-width':1.5},node);
+          this.spawns.push({x,y:24,kind,time:1.2,total:1.2,node,wait:0});this.spawned++;this.spawnTimer=this.config.spawn;
+        }else this.spawnTimer=.25;
+      }
+      for(const s of this.spawns){s.time-=dt;if(s.time>0)continue;
+        if(this.canOccupy(null,s.x,s.y)){const e=this.createTank(s.kind,s.x,s.y,2);e.shield=.55;e.cooldown=1.0+Math.random()*.5;s.done=true;s.node.remove();this.burst(s.x,s.y,'spawn');}
+        else{s.wait+=dt;if(s.wait>.8){const alternative=[24,312,600].find(x=>this.canOccupy(null,x,24)&&!this.spawns.some(v=>v!==s&&v.x===x));if(alternative!==undefined){s.x=alternative;s.time=.6;s.wait=0;}}}
+      }
+      this.spawns=this.spawns.filter(s=>!s.done);
+    }
+    fire(tank){
+      if(!tank?.alive||tank.cooldown>0||tank.stun>0)return false;
+      const friendly=tank.team==='player',active=this.bullets.filter(b=>b.alive),w=WEAPONS[this.weapon];
+      let count=1;
+      if(friendly){const slots=2-active.filter(b=>b.team==='player').length;if(slots<=0)return false;count=this.weapon===1?Math.min(2,slots):1;}
+      else{if(active.filter(b=>b.owner===tank.id).length>=(tank.kind==='boss'?2:1)||active.filter(b=>b.team==='enemy').length>=Math.min(14,9+this.level))return false;}
+      for(let i=0;i<count;i++){
+        const off=count===2?(i===0?-5:5):0,angle=tank.angle+(count===2?(i===0?-.017:.017):0),dx=Math.sin(angle),dy=-Math.cos(angle),x=tank.x+dx*24+Math.cos(angle)*off,y=tank.y+dy*24+Math.sin(angle)*off;
+        const rail=friendly&&this.weapon===2,node=svg('g',{},this.layers.bullet),length=rail?36:friendly?22:17;
+        svg('rect',{x:rail?-2:-2.4,y:-5,width:rail?4:4.8,height:length,rx:2,fill:`url(#${friendly?w.style:'red-bullet'})`},node);
+        svg('path',{d:'M0-6v8',stroke:friendly?'#edfff7':'#fff0db','stroke-width':1.6,'stroke-linecap':'round'},node);
+        if(rail)svg('rect',{x:-5,y:-5,width:10,height:30,rx:4,fill:'#a68cff',opacity:'.13'},node);
+        const b={id:++this.uid,owner:tank.id,team:tank.team,x,y,px:x,py:y,angle,dx,dy,speed:friendly?w.speed:(tank.kind==='boss'?260:tank.kind==='heavy'?220:200)+Math.min(this.level,12)*6,damage:friendly?w.damage*this.mods.damage*(this.overdrive>0?1.2:1):ENEMY[tank.kind].damage,rail,pierce:rail?2:1,wallPen:rail?1:0,hitIds:new Set(),alive:true,node};
+        this.bullets.push(b);this.burst(x+dx*3,y+dy*3,'muzzle');
+      }
+      tank.cooldown=friendly?w.cd/this.mods.fireRate*(this.overdrive>0?.66:1):ENEMY[tank.kind].cd*(tank.phase===2?.68:1)+Math.random()*.25;
+      tank.recoil=3.1;this.sound.play(friendly?(this.weapon===2?'rail':'fire'):'enemyFire');return true;
+    }
+    removeBullet(b){if(b.alive){b.alive=false;b.node.remove();}}
+    removeBrick(tile){if(tile?.type==='#'&&this.tiles[tile.r][tile.c]){this.tiles[tile.r][tile.c]=null;tile.node.remove();}}
+    updateBullets(dt){
+      for(const b of this.bullets){
+        if(!b.alive||this.state!=='playing')continue;b.px=b.x;b.py=b.y;
+        const segments=Math.max(1,Math.ceil(b.speed*dt/3)),step=b.speed*dt/segments;
+        for(let i=0;i<segments&&b.alive;i++){
+          b.x+=b.dx*step;b.y+=b.dy*step;const x=b.x,y=b.y,radius=2.5;
+          if(x<-5||y<-5||x>SIZE+5||y>SIZE+5){this.removeBullet(b);break;}
+          const tiles=[];
+          for(let r=Math.floor((y-radius)/TILE);r<=Math.floor((y+radius)/TILE);r++)for(let c=Math.floor((x-radius)/TILE);c<=Math.floor((x+radius)/TILE);c++){const t=this.tiles[r]?.[c];if(t&&t.type!=='W')tiles.push(t);}
+          if(tiles.length){
+            const steel=tiles.some(t=>t.type==='S');tiles.forEach(t=>this.removeBrick(t));this.burst(x,y,steel?'steel':'wall');this.sound.play('hit');
+            if(steel||b.wallPen<=0){this.removeBullet(b);break;}b.wallPen--;
+          }
+          const prop=this.props.find(p=>p.alive&&Math.abs(p.x-x)<12&&Math.abs(p.y-y)<14);
+          if(prop){this.removeBullet(b);this.detonateProp(prop);break;}
+          const other=this.bullets.find(v=>v!==b&&v.alive&&v.team!==b.team&&Math.abs(v.x-x)<6&&Math.abs(v.y-y)<6);
+          if(other){this.removeBullet(other);this.removeBullet(b);this.burst(x,y,'steel');break;}
+          // 基地不承受友军伤害；敌弹需耗尽核心耐久才会导致失败。
+          if(overlap(x-radius,y-radius,5,5,291,579,42,42)){this.removeBullet(b);if(b.team==='enemy')this.damageBase(b.damage);else this.burst(x,y,'shield');break;}
+          const targets=b.team==='player'?this.enemies:(this.player?.alive?[this.player]:[]);
+          const target=targets.find(t=>t.alive&&!b.hitIds.has(t.id)&&Math.abs(t.x-x)<HALF+radius&&Math.abs(t.y-y)<HALF+radius);
+          if(target){b.hitIds.add(target.id);this.damageTank(target,b.damage);b.pierce--;if(b.pierce<=0||target.shield>0){this.removeBullet(b);break;}}
+        }
+      }
+      this.bullets=this.bullets.filter(b=>b.alive);
+    }
+    damageTank(tank,amount){
+      if(!tank?.alive)return false;
+      if(tank.shield>0){this.burst(tank.x,tank.y,'shield');return false;}
+      tank.hp-=amount;tank.hitFlash=.2;this.burst(tank.x,tank.y,'hit');this.sound.play('hit');
+      if(tank.team==='player'){tank.shield=.75;this.damageFlash=.8;this.shake=Math.max(this.shake,1.8);}
+      if(tank.hp<=0)this.destroyTank(tank);else if(tank.team==='enemy')this.floatingText(tank.x,tank.y-18,'−'+Math.round(amount),'#ffc2a4',.55);
+      return true;
+    }
+    destroyTank(tank){
+      if(!tank.alive)return;tank.alive=false;tank.hp=0;tank.node.remove();this.burst(tank.x,tank.y,tank.kind==='boss'?'boss':'tank');this.sound.play('explosion');this.shake=Math.max(this.shake,tank.kind==='boss'?5:2.8);this.addDecal(tank.x,tank.y);
+      if(tank.team==='player'){
+        this.lives--;this.respawnTime=1.0;this.log('战车损毁 · 剩余增援 '+this.lives);
+        if(this.lives<=0)this.finish(false,'增援储备已耗尽，防线失去火力支援。');else this.toast('战车损毁 · 正在部署增援',1.4);
+      }else{
+        this.combo=Math.min(10,(this.comboTimer>0?this.combo:0)+1);this.comboTimer=4;this.maxCombo=Math.max(this.maxCombo,this.combo);
+        const mult=1+Math.floor((this.combo-1)/3)*.25,points=Math.round(ENEMY[tank.kind].points*mult);
+        this.score+=points;this.killed++;this.totalKills++;this.enemies=this.enemies.filter(e=>e.alive);this.saveBest();
+        this.floatingText(tank.x,tank.y-18,'+'+points+(mult>1?' ×'+mult:''),'#96ffcf');
+        if(this.mods.repair&&this.player?.alive)this.player.hp=Math.min(this.player.maxHp,this.player.hp+this.mods.repair);
+        if(this.totalKills%2===0||['heavy','siege','boss'].includes(tank.kind))this.spawnDrop(tank.x,tank.y,['armor','energy','overdrive','shield','core'][this.totalKills%5]);
+        if(tank.kind==='boss')this.log('NEMESIS 指挥官已击破');
+      }
+      this.updateHUD();
+    }
+    damageBase(amount){
+      if(!this.baseAlive)return;if(this.baseShield>0){this.burst(312,600,'shield');return;}
+      this.baseHP=Math.max(0,this.baseHP-amount*this.mods.coreDR);this.baseShield=.4;this.burst(312,600,'hit');this.shake=3;
+      if(this.baseHP<=0){this.baseAlive=false;this.baseNode.setAttribute('href','#base-ruin');this.burst(312,600,'boss');this.finish(false,'核心耐久耗尽，基地已被摧毁。');}
+      else{this.toast('核心受到攻击 · 耐久 '+Math.ceil(this.baseHP),1.7);this.log('核心告警 · 耐久 '+Math.ceil(this.baseHP));this.sound.play('warning');}
+      this.updateHUD();
+    }
+    detonateProp(prop){
+      if(!prop.alive)return;prop.alive=false;prop.node.remove();this.burst(prop.x,prop.y,'barrel');this.sound.play('explosion');this.shake=Math.max(this.shake,3);
+      // 先标记油桶已销毁，再触发连锁，防止递归回到同一个油桶。
+      for(const p of this.props)if(p.alive&&distance(prop,p)<81)this.detonateProp(p);
+      for(const t of [this.player,...this.enemies])if(t?.alive&&distance(prop,t)<80)this.damageTank(t,t.team==='player'?40:76);
+      for(const row of this.tiles)for(const tile of row)if(tile?.type==='#'&&Math.hypot(tile.x+12-prop.x,tile.y+12-prop.y)<71)this.removeBrick(tile);
+      if(distance(prop,{x:312,y:600})<76)this.damageBase(26);
+    }
+    updateCombat(dt){
+      if(this.player?.alive&&this.input.fire)this.fire(this.player);
+      this.updateSpawns(dt);for(const e of [...this.enemies])if(e.alive)this.updateEnemy(e,dt);this.updateBullets(dt);
+      if(this.state!=='playing')return;
+      if(!this.player.alive&&this.lives>0){this.respawnTime-=dt;if(this.respawnTime<=0){const spot=[{x:216,y:600},{x:408,y:600},{x:168,y:600},{x:456,y:600}].find(p=>this.canOccupy(null,p.x,p.y));if(spot){this.player=this.createTank('player',spot.x,spot.y,0);this.player.shield=3;this.burst(spot.x,spot.y,'spawn');this.sound.play('spawn');this.toast('增援就绪 · 3 秒重生护盾',2);this.empCD=Math.max(0,this.empCD-4);}else this.respawnTime=.15;}}
+      if(this.killed>=this.config.total&&this.spawned>=this.config.total&&!this.enemies.length&&!this.spawns.length)this.clearStage();
+    }
+
+    // ━━ 6. 主动技能、拾取物、维修区与中继站 ━━━━━━━━━━━━━━━━━━━━━━━━━
+    dash(){
+      const p=this.player;if(this.state!=='playing'||!p?.alive||this.dashCD>0)return false;
+      p.dashDir=this.input.direction??p.dir;p.dashTime=.23;p.shield=Math.max(p.shield,.28);this.dashCD=CHASSIS[this.chassis].dashCD*this.mods.cooling*this.mods.dash;
+      this.burst(p.x,p.y,'dash');this.sound.play('dash');this.updateHUD();return true;
+    }
+    emp(){
+      const p=this.player;if(this.state!=='playing'||!p?.alive||this.empCD>0)return false;
+      const c=CHASSIS[this.chassis],radius=174;this.empCD=c.empCD*this.mods.cooling*(this.uplink?.captured?.78:1);
+      for(const b of this.bullets)if(b.team==='enemy'&&distance(p,b)<radius)this.removeBullet(b);
+      for(const e of [...this.enemies])if(distance(p,e)<radius){e.stun=e.kind==='boss'?1.1:2.7;this.damageTank(e,c.empPower*this.mods.damage);}
+      for(const h of this.hazards)if(distance(p,h)<radius){h.done=true;h.node.remove();}
+      this.ring(p.x,p.y,radius,'#b9a2ff',.62);this.burst(p.x,p.y,'emp');this.sound.play('emp');this.shake=Math.max(this.shake,1.3);this.floatingText(p.x,p.y-32,'EMP','#c3b6ff');this.updateHUD();return true;
+    }
+    spawnDrop(x,y,kind){
+      const colors={armor:'#79ffd0',energy:'#b6a0ff',overdrive:'#ffcf87',shield:'#81ddff',core:'#ffb4cb'},icons={armor:'icon-cross',energy:'icon-emp',overdrive:'icon-weapon',shield:'icon-shield',core:'icon-home'};
+      const color=colors[kind],node=svg('g',{transform:`translate(${x} ${y})`},this.layers.drop);
+      svg('circle',{r:19,fill:color,'fill-opacity':'.06',stroke:color,'stroke-opacity':'.35','stroke-width':.7},node);svg('path',{d:'M-12-9-9-12H9l3 3V9l-3 3H-9l-3-3z',fill:'#142a35',stroke:color,'stroke-width':1.2},node);use(icons[kind],-8,-8,16,16,node).style.color=color;
+      this.drops.push({x,y,kind,color,node,life:20,age:0});while(this.drops.length>10)this.drops.shift().node.remove();
+    }
+    collectDrop(d){
+      const p=this.player;let label='';
+      if(d.kind==='armor'){p.hp=Math.min(p.maxHp,p.hp+38);label='装甲 +38';}
+      if(d.kind==='energy'){this.empCD=Math.max(0,this.empCD-6);this.dashCD=Math.max(0,this.dashCD-2.5);label='技能充能';}
+      if(d.kind==='overdrive'){this.overdrive=10;label='火力过载 10s';}
+      if(d.kind==='shield'){p.shield=Math.max(p.shield,4);label='护盾 4s';}
+      if(d.kind==='core'){this.baseHP=Math.min(this.baseMax,this.baseHP+22);label='核心维修 +22';}
+      this.floatingText(p.x,p.y-32,label,d.color);this.burst(p.x,p.y,'pickup');this.sound.play('pickup');this.log(label);d.life=0;d.node.remove();this.updateHUD();
+    }
+    addHazard(x,y,radius,time,damage){
+      if(this.hazards.filter(h=>!h.done).length>=9)return;
+      x=clamp(x,radius,SIZE-radius);y=clamp(y,radius,SIZE-radius);
+      const node=svg('g',{transform:`translate(${x} ${y})`},this.layers.hazard);
+      svg('circle',{r:radius,fill:'#f95575','fill-opacity':'.10',stroke:'#ff8494','stroke-width':1,'stroke-dasharray':'4 3',class:'hazard-ring'},node);
+      const fill=svg('circle',{r:radius*.15,fill:'#ff6680','fill-opacity':'.18',stroke:'#ff8091','stroke-width':.6},node);
+      svg('path',{d:'M-8 0H8M0-8V8',stroke:'#ffc2be','stroke-width':1.4},node);
+      this.hazards.push({x,y,radius,time,total:time,damage,node,fill,done:false});
+    }
+    updateSystems(dt){
+      this.overdrive=Math.max(0,(this.overdrive||0)-dt);const p=this.player;
+      for(const d of this.drops){d.age+=dt;d.life-=dt;if(d.life<=0){d.node.remove();continue;}
+        if(p?.alive){const dist=distance(p,d);if(dist<25)this.collectDrop(d);else if(dist<78){d.x+=(p.x-d.x)/dist*115*dt;d.y+=(p.y-d.y)/dist*115*dt;}}
+      }this.drops=this.drops.filter(d=>d.life>0);
+      for(const pad of this.repairPads){pad.cd=Math.max(0,pad.cd-dt);if(p?.alive&&pad.cd===0&&p.hp<p.maxHp&&distance(p,pad)<21){p.hp=Math.min(p.maxHp,p.hp+28);pad.cd=24;this.floatingText(p.x,p.y-29,'维修 +28','#8effd5');this.sound.play('pickup');this.log('现场维修区已使用');}pad.node.setAttribute('opacity',pad.cd>0?'.3':'1');}
+      if(this.uplink&&!this.uplink.captured){const u=this.uplink;if(p?.alive&&distance(p,u)<31){u.progress+=dt;u.ring.setAttribute('stroke-dasharray',`${Math.min(1,u.progress/4)*176} 176`);if(u.progress>=4){u.captured=true;this.score+=350;this.empCD=0;p.hp=p.maxHp;this.lives=Math.min(3,this.lives+1);this.baseHP=Math.min(this.baseMax,this.baseHP+30);this.toast('中继已接管 · 脉冲冷却 -22% · 增援 +1',3);this.log('中继站接管完成 +350');this.ring(u.x,u.y,90,'#a390ff',.7);this.sound.play('clear');this.saveBest();}}
+        else{u.progress=Math.max(0,u.progress-dt*.35);u.ring.setAttribute('stroke-dasharray',`${u.progress/4*176} 176`);}
+      }
+      for(const h of this.hazards){if(h.done)continue;h.time-=dt;if(h.time<=0){h.done=true;h.node.remove();this.burst(h.x,h.y,'barrel');this.ring(h.x,h.y,h.radius,'#ffa397',.35);this.shake=Math.max(this.shake,2);this.sound.play('explosion');if(p?.alive&&distance(p,h)<h.radius+10)this.damageTank(p,h.damage);if(distance({x:312,y:600},h)<h.radius+17)this.damageBase(h.damage);for(const row of this.tiles)for(const t of row)if(t?.type==='#'&&Math.hypot(t.x+12-h.x,t.y+12-h.y)<h.radius)this.removeBrick(t);}}
+      this.hazards=this.hazards.filter(h=>!h.done);
+      // 壁垒战车靠近基地时每 2 秒恢复 2 点核心耐久。
+      this.padClock+=dt;if(this.padClock>=2){this.padClock=0;if(this.chassis===2&&p?.alive&&distance(p,{x:312,y:600})<130)this.baseHP=Math.min(this.baseMax,this.baseHP+2);}
+      if(p?.alive&&p.moving){p.trail-=dt;if(p.trail<=0){p.trail=p.dashTime>0?.025:.065;this.trail(p);}}
+    }
+
+    // ━━ 7. 现代动画：弹焰、轨迹、冲击波、火花、残骸（均有生命周期） ━━━━
+    ring(x,y,radius,color,life=.5){
+      const node=svg('circle',{r:radius,fill:color,'fill-opacity':'.045',stroke:color,'stroke-width':1.3},this.layers.effect);
+      this.particles.push({x,y,vx:0,vy:0,life,total:life,node,kind:'ring',angle:0});
+    }
+    burst(x,y,kind='tank'){
+      const options={
+        tank:{n:19,s:160,t:.6,c:['#ffe2ae','#ffab81','#b76766']},boss:{n:42,s:270,t:1.05,c:['#fff3c3','#ffb586','#ff727e']},barrel:{n:25,s:225,t:.7,c:['#fff2ce','#ffc477','#ef8b6d']},
+        wall:{n:7,s:95,t:.32,c:['#d4bb91','#b19368','#827563']},steel:{n:6,s:140,t:.26,c:['#d8f6ff','#8caac4','#fafbdc']},hit:{n:7,s:92,t:.25,c:['#fff2c8','#f5b18d','#fd8392']},
+        shield:{n:6,s:85,t:.26,c:['#a0ffdf','#6be0cc','#dafdf1']},muzzle:{n:4,s:75,t:.13,c:['#fff7c5','#e3fff2','#99dfd1']},spawn:{n:8,s:70,t:.42,c:['#ffd0c2','#fcbfb9','#9ccae1']},
+        emp:{n:18,s:220,t:.5,c:['#fff','#c0aaff','#89d8ff']},dash:{n:10,s:90,t:.3,c:['#e0fff4','#75f6c1','#63cbd5']},pickup:{n:10,s:75,t:.38,c:['#b5ffe4','#f4fff8','#7abfef']}
+      };
+      const o=options[kind]||options.tank,n=this.reducedMotion?Math.ceil(o.n*.4):o.n;
+      for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=o.s*(.25+Math.random()*.75),life=o.t*(.6+Math.random()*.4),color=o.c[i%o.c.length];let node;
+        if(i%3===0)node=svg('path',{d:'M0 0h'+(3+Math.random()*7),stroke:color,'stroke-width':1.3,'stroke-linecap':'round'},this.layers.effect);
+        else node=svg('circle',{r:(kind==='muzzle'?1:1.4)+Math.random()*1.6,fill:color},this.layers.effect);
+        this.particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life,total:life,node,angle:a*180/Math.PI,kind:'spark'});
+      }
+      if(['tank','boss','barrel'].includes(kind)){this.ring(x,y,kind==='boss'?97:kind==='barrel'?78:49,'#ffc9a0',kind==='boss'?.8:.5);const node=svg('circle',{r:kind==='boss'?38:20,fill:'#fff1cf'},this.layers.effect);this.particles.push({x,y,vx:0,vy:0,life:.13,total:.13,node,kind:'flash',angle:0});}
+      while(this.particles.length>250)this.particles.shift().node.remove();
+    }
+    trail(t){
+      if(this.reducedMotion)return;const dash=t.dashTime>0,color=CHASSIS[this.chassis].color,d=DIR[t.dir];
+      const node=svg('path',{d:'M-13 0v8M13 0v8',stroke:dash?color:'#a8dace','stroke-width':dash?3:1.1,'stroke-linecap':'round',opacity:'.3'},this.layers.decal);
+      this.particles.push({x:t.x-d.x*15,y:t.y-d.y*15,vx:0,vy:0,life:dash?.3:.6,total:dash?.3:.6,node,kind:'trail',angle:t.dir*90});
+    }
+    addDecal(x,y){
+      const node=svg('g',{transform:`translate(${x} ${y})`,opacity:'.35'},this.layers.decal);svg('ellipse',{rx:18,ry:13,fill:'#03090e'},node);svg('path',{d:'m-12 1 7-5 5 3 9-5 3 6-4 6-7-3-8 6z',fill:'#3b3d40'},node);
+      this.decals.push({node,life:18});while(this.decals.length>20)this.decals.shift().node.remove();
+    }
+    floatingText(x,y,message,color='#c0ffdf',life=.85){
+      const node=svg('text',{'text-anchor':'middle','font-size':message.length>9?10:12,'font-weight':700,fill:color,stroke:'#0a1822','stroke-width':3,'paint-order':'stroke'},this.layers.float);node.style.fill=color;node.textContent=message;
+      this.floats.push({x,y,life,total:life,node});while(this.floats.length>15)this.floats.shift().node.remove();
+    }
+    updateEffects(dt){
+      for(const p of this.particles){p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=Math.max(0,1-dt*2);p.vy*=Math.max(0,1-dt*2);if(p.life<=0)p.node.remove();}this.particles=this.particles.filter(p=>p.life>0);
+      for(const f of this.floats){f.life-=dt;f.y-=24*dt;if(f.life<=0)f.node.remove();}this.floats=this.floats.filter(f=>f.life>0);
+      for(const d of this.decals){d.life-=dt;if(d.life<=0)d.node.remove();}this.decals=this.decals.filter(d=>d.life>0);
+    }
+    renderEffects(){
+      for(const p of this.particles){const age=clamp(1-p.life/p.total,0,1);p.node.setAttribute('transform',`translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) ${p.kind==='ring'?`scale(${.07+.93*(1-(1-age)**2)})`:`rotate(${p.angle||0})`}`);p.node.setAttribute('opacity',Math.max(0,Math.min(1,p.life/p.total*(p.kind==='trail'?.42:1.55))).toFixed(2));}
+      for(const f of this.floats){f.node.setAttribute('transform',`translate(${f.x.toFixed(1)} ${f.y.toFixed(1)})`);f.node.setAttribute('opacity',Math.min(1,f.life*3));}
+      for(const s of this.spawns){s.node.setAttribute('transform',`translate(${s.x} ${s.y}) rotate(${(1-clamp(s.time/s.total,0,1))*90}) scale(${.6+.4*(1-clamp(s.time/s.total,0,1))})`);s.node.setAttribute('opacity',.4+.6*Math.abs(Math.sin(this.clock*10)));}
+      for(const d of this.drops){d.node.setAttribute('transform',`translate(${d.x.toFixed(1)} ${(d.y+(this.reducedMotion?0:Math.sin(d.age*4)*2.5)).toFixed(1)})`);d.node.setAttribute('opacity',d.life<3&&Math.floor(d.life*5)%2?'.35':'1');}
+      for(const h of this.hazards)h.fill.setAttribute('r',h.radius*(1-clamp(h.time/h.total,0,1)));
+    }
+    finish(won,reason=''){
+      if(['lost','won'].includes(this.state))return;this.state=won?'won':'lost';this.endReason=reason;this.input.clear();this.saveBest();
+      this.bullets.forEach(b=>this.removeBullet(b));this.bullets=[];this.hazards.forEach(h=>h.node.remove());this.hazards=[];this.setOverlay();this.updateHUD();this.sound.play(won?'win':'lose');this.announce((won?'战役胜利。':'任务失败。')+reason+' 得分 '+this.score+'。');
+    }
+    clearStage(){this.score+=500;this.saveBest();this.finish(true,'区域已肃清。');}
+  }
+
+  // ━━ 8. 状态流转：机库 → 战斗 → 三选一强化 → 下一区域 / 最终结算 ━━━━━
+  class TankBattle extends CombatGame {
+    clearStage(){
+      if(this.state!=='playing')return;
+      const bonus=500+Math.max(0,Math.floor((150-this.stageTime)*3));this.score+=bonus;this.saveBest();
+      this.bullets.forEach(b=>this.removeBullet(b));this.bullets=[];this.hazards.forEach(h=>h.node.remove());this.hazards=[];this.spawns.forEach(s=>s.node.remove());this.spawns=[];
+      if(this.mode==='campaign'&&this.level===LEVELS.length-1){this.finish(true,'三个区域已肃清，核心安全。');return;}
+      this.state='upgrade';this.input.clear();this.lives=Math.min(3,this.lives+1);if(this.player?.alive)this.player.hp=this.player.maxHp;this.baseHP=this.baseMax;
+      // 战斗暂停等玩家选择，不用倒计时催促。不同关卡提供不同战术分支。
+      const indices=this.level%2===0?[0,1,2]:[3,4,5];this.offers=indices.map(i=>UPGRADES[i]);
+      this.renderUpgradeCards();text('upgrade-sub',`区域奖励 +${bonus} 分 · 增援 +1（最多 3）· 选择一项永久强化`);
+      text('upgrade-foot',this.mobile?'按 1 / 2 / 3 选择 · 强化持续本局':'按 1 / 2 / 3 选择 · 战车与核心已维修 · 所有强化持续本局');
+      this.setOverlay();this.updateHUD();this.sound.play('clear');this.announce('区域已肃清。选择一项强化以进入下一关。');
+    }
+    renderUpgradeCards(){
+      if(!this.offers)return;const layer=$('upgrade-cards');layer.replaceChildren();const m=this.mobile,w=m?620:348;
+      this.offers.forEach((o,i)=>{
+        const g=svg('g',{class:'button',role:'button',tabindex:0,'data-action':'choose-'+i,'aria-label':o.name+'，'+o.detail,transform:m?`translate(0 ${i*253})`:`translate(${i*372} 0)`},layer);
+        svg('rect',{class:'button-bg',width:w,height:m?230:280,rx:14,fill:'#112936',stroke:i===0?'#4f997e':'#375369'},g);
+        svg('rect',{x:24,y:24,width:50,height:50,rx:13,fill:['#254c40','#303b51','#383252'][i]},g);use(o.icon,35,35,28,28,g).style.color=['#83ffce','#b0d6ff','#c2aeff'][i];
+        const n=svg('text',{x:w-29,y:41,'text-anchor':'end',class:'number','font-size':15,fill:'#6f95a5'},g);n.textContent='0'+(i+1);
+        const kicker=svg('text',{x:m?96:24,y:m?40:108,class:'kicker'},g);kicker.textContent=o.tag;
+        const name=svg('text',{x:m?96:24,y:m?73:147,'font-size':m?26:25,'font-weight':750},g);name.textContent=o.name;
+        const detail=svg('text',{x:24,y:m?116:185,'font-size':15,fill:'#c6e2e8'},g);detail.textContent=o.detail;
+        const note=svg('text',{x:24,y:m?150:214,'font-size':11.5,fill:'#91aeba'},g);note.textContent=o.note;
+        svg('path',{d:`M24 ${m?173:235}H${w-24}`,stroke:'#294450'},g);
+        const hint=svg('text',{x:24,y:m?204:263,'font-size':12,fill:'#90f9cb'},g);hint.textContent='安装模块  →';
+        const key=svg('text',{x:w-26,y:m?204:263,'text-anchor':'end',class:'tiny'},g);key.textContent='PRESS '+(i+1);
+      });
+    }
+    chooseUpgrade(index){
+      if(this.state!=='upgrade'||!this.offers?.[index])return;const item=this.offers[index];
+      switch(item.id){
+        case 'damage':this.mods.damage*=1.25;break;
+        case 'armor':this.mods.armor+=35;break;
+        case 'cooling':this.mods.cooling=Math.max(.28,this.mods.cooling*.8);this.mods.fireRate=Math.min(2.2,this.mods.fireRate*1.12);break;
+        case 'repair':this.mods.repair+=7;break;
+        case 'core':this.mods.core+=35;this.mods.coreDR=Math.max(.35,this.mods.coreDR*.8);break;
+        case 'mobility':this.mods.speed=Math.min(1.7,this.mods.speed*1.14);this.mods.dash=Math.max(.35,this.mods.dash*.8);break;
+      }
+      this.offers=null;this.state='playing';this.input.clear();this.input.aiming=false;this.loadLevel(this.level+1);this.setOverlay();this.updateHUD();this.focusGame();this.log(item.name+' · 模块已安装');this.sound.play('start');
+    }
+  }
+  const game=new TankBattle();
+  // 显式 ?test=1 时才开放测试入口；正常离线打开不暴露实体。
+  if(new URLSearchParams(location.search).get('test')==='1')Object.defineProperty(window,'__tankTest',{value:{game,LEVELS,CHASSIS,ENEMY,WEAPONS,UPGRADES,STEP,DIR}});
+})();
+
+</script></body></html>

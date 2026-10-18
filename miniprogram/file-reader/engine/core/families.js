@@ -7,6 +7,7 @@ const subpackage = require('./subpackage-loader')
 const kernel = require('./kernel-exports')
 
 const FAMILIES = {
+  office: { path: '../../office/index.js', label: ' Office 文档 ' },
   document: { path: '../../document/index.js', label: ' 文档排版 ' },
   archive: { path: '../../archive/index.js', label: ' 压缩包 ' },
   image: { path: '../../image/index.js', label: ' 图片 ' }

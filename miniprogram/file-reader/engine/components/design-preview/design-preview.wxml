@@ -1,8 +1,9 @@
 <!-- 引擎只出预览图与事实；抬头、状态、元数据卡、按钮由宿主皮肤 /file-reader/skin/design 渲染。 -->
 <skin-design mark="{{skinMark}}" name="{{name}}" size="{{sizeLabel}}" loading="{{loading}}" loading-text="{{skinLoadingText}}"
   metadata-title="{{skinMetadataTitle}}" metadata="{{metadata}}" message="{{message}}" error="{{error}}"
-  can-open-pdf="{{canOpenPdf}}" open-pdf-text="{{skinOpenPdfText}}" bind:openpdf="openAiPdf">
+  has-preview="{{!!previewPath || !!pdfSessions.length}}" can-open-pdf="{{canOpenPdf}}" open-pdf-text="{{skinOpenPdfText}}">
   <view slot="preview" class="preview-page">
+    <pdf-view id="design-inline-pdf" wx:for="{{pdfSessions}}" wx:key="id" file="{{item.file}}" data-revision="{{item.id}}" bind:error="onPdfError"/>
     <image wx:if="{{previewPath}}" class="preview-image" src="{{previewPath}}" mode="widthFix" binderror="onImageError" />
   </view>
 </skin-design>

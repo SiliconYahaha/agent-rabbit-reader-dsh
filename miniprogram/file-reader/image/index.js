@@ -24,8 +24,8 @@ function createSvgScene (source, options = {}) {
     title: doc.title,
     animated: timeline.hasAnimation,
     // 画 t 秒时的一帧
-    draw (ctx, width, height, time = 0) {
-      renderer.render(ctx, width, height, timeline.hasAnimation ? timeline.sample(time) : null)
+    draw (ctx, width, height, time = 0, wallclockNow = Date.now()) {
+      renderer.render(ctx, width, height, timeline.hasAnimation ? timeline.sample(time, wallclockNow) : null)
       return renderer.unsupported
     }
   }

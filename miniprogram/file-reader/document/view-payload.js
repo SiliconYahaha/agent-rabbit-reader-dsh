@@ -8,7 +8,7 @@ const VIEW_ATTRS = new Set([
 ])
 const VIEW_FIELDS = [
   'inputType', 'options', 'selectedIndex', 'displayText', 'percent',
-  'canvasBoxStyle', 'canvasStyle', 'svgFallbackSrc', 'svgHasSmil', 'tapNid', 'imageMode', 'mediaToken',
+  'canvasBoxStyle', 'canvasSizerStyle', 'canvasStyle', 'svgFallbackSrc', 'svgCanvasSource', 'svgHasSmil', 'tapNid', 'imageMode', 'mediaToken',
   'tableScroll', 'tableScrollStyle'
 ]
 const NON_VISUAL_PROPERTIES = /^(?:animation(?:-.+)?|transition(?:-.+)?|cursor|caret-color|user-select|touch-action|scroll-behavior|scrollbar-.+|-webkit-(?:font-smoothing|tap-highlight-color|text-size-adjust|user-select)|-moz-osx-font-smoothing)$/

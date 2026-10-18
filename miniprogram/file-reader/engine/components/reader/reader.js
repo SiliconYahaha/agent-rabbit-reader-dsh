@@ -21,7 +21,7 @@ const FAMILIES_BY_KIND = {
   html: ['document'],
   text: ['document'],
   rtf: ['document'],
-  svg: ['document'],
+  svg: ['document', 'image'],
   archive: ['archive', 'document']
 }
 const FAMILY_LABELS = { document: '文档排版', archive: '压缩包', image: '图片' }
@@ -43,6 +43,8 @@ const {
 } = require('../../core/file-inspector')
 const { decodeText } = require('../../core/text-decoder')
 const { inspectMediaHeader, mediaPlatformCompatibility } = require('../../core/media-inspector')
+
+let imagePreviewSequence = 0
 
 const MAX_FILE_SIZE = 20 * 1024 * 1024
 // Inline documents have no filesystem stat. Count their UTF-8 bytes without
@@ -82,6 +84,11 @@ const PROGRESSIVE_DOM_THRESHOLD_BYTES = 220 * 1024
 const FIXED_CANVAS_SIDE_INSET = 0
 // Markdown 扩展元素的排版兜底；颜色跟随正文，避免覆盖深色主题。
 const MARKDOWN_STYLE = '<style>' +
+  '.markdown-document{font-size:16px;color:#242722}.markdown-document h1{font-size:26px;line-height:1.35;margin:0 0 20px}' +
+  '.markdown-document h2{font-size:21px;line-height:1.4;margin:24px 0 12px}.markdown-document h3{font-size:18px;margin:20px 0 10px}' +
+  '.markdown-document p{margin:10px 0}.markdown-document ul,.markdown-document ol{padding-left:24px;margin:10px 0}.markdown-document li{margin:6px 0}' +
+  '.markdown-document blockquote{margin:16px 0;padding:4px 14px;border-left:3px solid #b9d98a;color:#5d6654;background:#f6f8f0}' +
+  '.markdown-document th,.markdown-document td{padding:10px 12px;border-bottom:1px solid #e3e6dd;text-align:left}' +
   '.md-formula{font-family:"Times New Roman",Georgia,serif;white-space:pre-wrap}' +
   '.md-formula-display{display:block;text-align:center;margin:8px 0}' +
   '.md-formula-block{margin:14px 0;padding:12px 14px;border-radius:10px;background:#f7f7f4;overflow:auto}' +
@@ -241,7 +248,13 @@ function domTreePatch (previous, next) {
 const ARCHIVE_ENTRY_PAGE_SIZE = 500
 
 function archiveEntriesForView (entries) {
-  return (entries || []).slice(0, ARCHIVE_ENTRY_PAGE_SIZE).map(({ zipRawName, nativeName, nativeDuplicateIndex, nativeDuplicateCount, zipCentralIndex, zipHidden, ...entry }) => entry)
+  return (entries || []).slice(0, ARCHIVE_ENTRY_PAGE_SIZE).map(source => {
+    // Avoid a generated object-rest helper: DevTools can omit that helper from
+    // a lazily loaded package during incremental compilation.
+    const entry = Object.assign({}, source)
+    for (const key of ['zipRawName', 'nativeName', 'nativeDuplicateIndex', 'nativeDuplicateCount', 'zipCentralIndex', 'zipHidden']) delete entry[key]
+    return entry
+  })
 }
 
 function archiveEntryPage (entries, requestedPage = 0) {
@@ -310,9 +323,15 @@ Component({
     htmlPresentationRetry: false,
     fileLoadRetry: false,
     nativeStatus: '',
+    nativeDocumentName: '',
+    pdfSessions: [],
+    imagePath: '',
+    imageSessions: [],
     standaloneSvgPath: '',
     standaloneSvgSource: '',
     standaloneSvgAnimatedSource: '',
+    standaloneSvgSessions: [],
+    standaloneSvgAnimationReady: false,
     standaloneSvgAnimationNotice: '',
     standaloneSvgAnimationCanRetry: false,
     mediaMode: '',
@@ -407,6 +426,7 @@ Component({
     },
 
     dispose () {
+      this.releaseImageCopy()
       this._fileOpenRevision = (this._fileOpenRevision || 0) + 1
       clearTimeout(this._loadingSlowTimer)
       clearTimeout(this._loadingTimeoutTimer)
@@ -492,7 +512,7 @@ Component({
         return
       }
       if (kind === 'unsupported') {
-        this.stopLoadingWithError(skinCopy.message('reader.openSelectedFile.error.88db26', {}, '微信没有提供可识别的文件类型。请确认文件扩展名完整后重试。'))
+        this.detectUnknownFile(file, revision)
         return
       }
       // HTML/text bounded readers check the real local size; picker metadata
@@ -506,6 +526,27 @@ Component({
       this.withFamilies(needed, revision, () => this.dispatchSelectedFile(file, kind, volumeSet, revision))
     },
 
+    detectUnknownFile (file, revision) {
+      const fs = wx.getFileSystemManager()
+      const filePath = file.path || file.tempFilePath
+      const fail = () => { if (revision === this._fileOpenRevision) this.stopLoadingWithError(skinCopy.message('reader.detectUnknownFile.error.df191c', {}, '文件读取失败，可重选文件或继续查看下一份。')) }
+      // DevTools pads readFile(length) with zero bytes past EOF. Read only the
+      // real prefix so short text files are not mistaken for binary data.
+      fs.stat({ path: filePath, success: info => {
+        if (revision !== this._fileOpenRevision) return
+        const size = Number(info.stats && info.stats.size)
+        if (!Number.isFinite(size) || size <= 0) { this.stopLoadingWithError(skinCopy.message('reader.detectUnknownFile.error.e1f50f', {}, '这个文件没有可读取的内容，可继续查看下一份。'));return }
+        fs.readFile({ filePath, position: 0, length: Math.min(size, 65536),
+          success: result => {
+            if (revision !== this._fileOpenRevision) return
+            const type = require('../../core/sniff-material').sniffMaterial(result.data)
+            if (!type) { this.stopLoadingWithError(skinCopy.message('reader.detectUnknownFile.error.b67708', {}, '暂未识别这个文件的格式，可继续查看下一份。'));return }
+            this.openSelectedFile({ ...file, type })
+          }, fail
+        })
+      }, fail })
+    },
+
     dispatchSelectedFile (file, kind, volumeSet, revision) {
       if (kind === 'html') {
         if (typeof file.inlineHtml === 'string' && htmlSourceExceedsLimit(file.inlineHtml)) {
@@ -515,7 +556,8 @@ Component({
         if (typeof file.inlineHtml === 'string') this.parseContent(file.inlineHtml, file.name, revision, htmlContentType(file))
         else this.readSafeFile(file, revision)
       } else if (kind === 'design') this.openDesignFile(file)
-      else if (kind === 'document') this.openNativeDocument(file, revision)
+      else if (kind === 'document' && (extensionOf(file.name) === 'pdf' || mimeTypeOf(file) === 'application/pdf')) { this._nativeDocument = file;this.setData({ pdfSessions: [{ id: revision, file }], hasContent: true }) }
+      else if (kind === 'document') this.openOfficeFile(file, revision)
       else if (kind === 'svg') this.readSvgFile(file, revision)
       else if (kind === 'image') this.openImageFile(file, revision)
       else if (kind === 'text') this.readTextFile(file, revision)
@@ -526,8 +568,14 @@ Component({
     },
 
     resetReaderView (sourceName) {
+      this.releaseImageCopy()
+      this._imageFallback = null
       this._standaloneSvgAnimatedOriginal = ''
       this._standaloneSvgAnimation = null
+      this._failedSvgCanvases = new Set()
+      this._nativeDocument = null
+      this._spreadsheetBook = null
+      this.setData({ spreadsheet: null })
       this.disposeMedia()
       this.disposeHtmlRuntime()
       this._inspectorBytes = null
@@ -576,9 +624,16 @@ Component({
         notes: [],
         error: '',
         nativeStatus: '',
+        nativeDocumentName: '',
+        pdfSessions: [],
+        imagePath: '',
+        imageZoomed: false,
+        imageSessions: [],
         standaloneSvgPath: '',
         standaloneSvgSource: '',
         standaloneSvgAnimatedSource: '',
+        standaloneSvgSessions: [],
+        standaloneSvgAnimationReady: false,
         standaloneSvgAnimationNotice: '',
         standaloneSvgAnimationCanRetry: false,
         mediaMode: '',
@@ -665,33 +720,50 @@ Component({
       this.emit('error', { name: this.data.sourceName, message })
     },
 
-    openNativeDocument (file, revision = this._fileOpenRevision) {
-      const filePath = file.path || file.tempFilePath
-      if (!filePath) {
-        this.stopLoadingWithError(skinCopy.message('reader.openNativeDocument.error.039094', {}, '微信没有返回可读取的文档路径，请重新选择。'))
-        return
-      }
-      const extension = extensionOf(file.name)
-      const typeAliases = { docm: 'docx', xlsm: 'xlsx' }
-      const mimeType = mimeTypeOf(file)
-      this.finishLoading()
-      this.setData({ nativeStatus: skinCopy.message('reader.openNativeDocument.status.2cc103', { name: file.name || '文档' }, `${file.name || '文档'} 已交给微信文档查看器打开。返回后可继续查看已选文件。`) })
-      this.emit('handoff', { kind: 'document', name: file.name || '' })
-      wx.openDocument({
-        filePath,
-        fileType: typeAliases[extension] || extension || DOCUMENT_TYPE_BY_MIME[mimeType],
-        showMenu: true,
-        fail: error => {
+    onPdfReady (event) { if (Number(event.currentTarget.dataset.revision) === this._fileOpenRevision) this.finishLoading() },
+    onPdfError (event) { if (Number(event.currentTarget.dataset.revision) === this._fileOpenRevision) this.finishLoading() },
+    async openOfficeFile (file, revision = this._fileOpenRevision) {
+      return this.withFamilies(['office', 'document'], revision, async () => {
+        try {
+          const fs = wx.getFileSystemManager(), path = file.path || file.tempFilePath
+          const info = await new Promise((resolve, reject) => fs.stat({ path, success: resolve, fail: reject }))
           if (revision !== this._fileOpenRevision) return
-          // 微信官方 openDocument 未列出 docm/xlsm，但聊天素材入口会把它们交给
-          // 小程序。先尝试兼容别名，失败后仍可读取其 OOXML ZIP 目录，而非白屏。
-          if (extension === 'docm' || extension === 'xlsm') {
-            this.setData({ nativeStatus: '' })
-            this.inspectLocalFile({ ...file, type: 'application/zip' }, revision)
-          } else this.stopLoadingWithError(skinCopy.message('reader.openNativeDocument.error.b24571', { detail: error.errMsg || '未知错误' }, `文档打开失败：${error.errMsg || '未知错误'}`))
+          const size = Number(info.stats && info.stats.size)
+          if (!Number.isFinite(size) || size <= 0 || size > families.get('office').MAX_BYTES) throw new Error('文档为空或超过 25 MB，暂不能在页内显示。')
+          const data = await new Promise((resolve, reject) => fs.readFile({ filePath: path, success: r => resolve(r.data), fail: reject }))
+          if (revision !== this._fileOpenRevision) return
+          if (!data || data.byteLength !== size) throw new Error('文档读取不完整，请重新选择。')
+          const suffix = extensionOf(file.name)
+          const extension = /^(doc|docx|docm|xls|xlsx|xlsm|ppt|pptx)$/.test(suffix) ? suffix : DOCUMENT_TYPE_BY_MIME[mimeTypeOf(file)]
+          if (/^xls[xm]?$/.test(extension)) {
+            const office = families.get('office')
+            const bytes = new Uint8Array(data)
+            this._spreadsheetBook = office.openSpreadsheet(bytes)
+            this.showSpreadsheetPage(0, 0)
+            return
+          }
+          const html = await families.get('office').render(data, extension)
+          if (revision !== this._fileOpenRevision) return
+          this.parseContent(html, file.name, revision)
+        } catch (error) {
+          if (revision === this._fileOpenRevision) this.stopLoadingWithError(error.message || '这份文档暂时无法显示，可继续查看下一份。')
         }
       })
     },
+
+    showSpreadsheetPage (sheetIndex, pageIndex) {
+      if (!this._spreadsheetBook) return
+      try {
+        const page = families.get('office').spreadsheetPage(this._spreadsheetBook, sheetIndex, pageIndex)
+        this.disposeHtmlRuntime()
+        this.setData({ hasContent: true, domMode: false, domTree: [], error: '', renderedHtml: page.html,
+          spreadsheet: { sheetNames: this._spreadsheetBook.SheetNames, sheetIndex, pageIndex: page.pageIndex, pageCount: page.pageCount, rowLabel: page.rowLabel } })
+        this.finishLoading()
+      } catch (error) { this.stopLoadingWithError(error.message) }
+    },
+    selectSpreadsheet (event) { this.showSpreadsheetPage(Number(event.detail.value), 0) },
+    previousSpreadsheetPage () { const s=this.data.spreadsheet;if(s&&s.pageIndex>0)this.showSpreadsheetPage(s.sheetIndex,s.pageIndex-1) },
+    nextSpreadsheetPage () { const s=this.data.spreadsheet;if(s&&s.pageIndex+1<s.pageCount)this.showSpreadsheetPage(s.sheetIndex,s.pageIndex+1) },
 
     openImageFile (file, revision = this._fileOpenRevision) {
       const filePath = file.path || file.tempFilePath
@@ -699,14 +771,63 @@ Component({
         this.stopLoadingWithError(skinCopy.message('reader.openImageFile.error.41dd2f', {}, '微信没有返回可读取的图片路径，请重新选择。'))
         return
       }
-      this.finishLoading()
-      this.setData({ nativeStatus: skinCopy.message('reader.openImageFile.status.cc915a', { name: file.name || '图片' }, `${file.name || '图片'} 已交给微信图片查看器打开。返回后可继续查看已选文件。`) })
-      this.emit('handoff', { kind: 'image', name: file.name || '' })
-      wx.previewImage({
-        current: filePath,
-        urls: [filePath],
-        fail: error => { if (revision === this._fileOpenRevision) this.stopLoadingWithError(skinCopy.message('reader.openImageFile.error.774cc4', { detail: error.errMsg || '未知错误' }, `图片预览失败：${error.errMsg || '未知错误'}`)) }
-      })
+      this._imageFallback = { file, revision, attempted: false }
+      this.setData({ imagePath: filePath, imageSessions: [{ id: revision, revision, path: filePath }], hasContent: true })
+    },
+
+    enlargeImage () {
+      if (this.data.imagePath) this.setData({ imageZoomed: !this.data.imageZoomed })
+    },
+
+    isCurrentImageEvent (event) {
+      const data = event && event.currentTarget && event.currentTarget.dataset || {}
+      return Boolean(this.data.imagePath && data.path === this.data.imagePath &&
+        (data.revision == null || Number(data.revision) === this._fileOpenRevision))
+    },
+
+    onImagePreviewLoad (event) {
+      if (this.isCurrentImageEvent(event)) this.finishLoading()
+    },
+
+    releaseImageCopy () {
+      const path = this._imagePreviewCopy
+      this._imagePreviewCopy = ''
+      if (path) this.removeImageCopy(path)
+    },
+
+    removeImageCopy (path) {
+      // Only paths created by our fallback are passed here; never the chat original.
+      try { wx.getFileSystemManager().unlink({ filePath: path, fail () {} }) } catch (_) {}
+    },
+
+    onImagePreviewError (event) {
+      if (!this.isCurrentImageEvent(event)) return
+      const fallback = this._imageFallback
+      const root = wx.env && wx.env.USER_DATA_PATH
+      if (fallback && !fallback.attempted && root) {
+        fallback.attempted = true
+        const { file, revision } = fallback
+        const ext = extensionOf(file.name)
+        const mime = mimeTypeOf(file).replace('image/', '').replace('jpeg', 'jpg')
+        const suffix = /^(png|jpg|jpeg|gif|webp|bmp|heic|heif|tif|tiff|avif)$/.test(ext) ? ext
+          : /^(png|jpg|gif|webp|bmp|heic|heif|tif|tiff|avif)$/.test(mime) ? mime : 'img'
+        const path = `${root}/rabbit-image-preview-${Date.now()}-${++imagePreviewSequence}.${suffix}`
+        const fail = () => {
+          this.removeImageCopy(path)
+          if (revision === this._fileOpenRevision) this.stopLoadingWithError(skinCopy.message('reader.onImagePreviewError.error.6d5a17', {}, '这张图片未能显示，请重选或查看下一份。'))
+        }
+        try {
+          wx.getFileSystemManager().copyFile({ srcPath: file.path || file.tempFilePath, destPath: path,
+            success: () => {
+              if (revision !== this._fileOpenRevision) { this.removeImageCopy(path); return }
+              this._imagePreviewCopy = path
+              // Recreate the image node; a late error from the original must not fail this copy.
+              this.setData({ imagePath: path, imageSessions: [{ id: `${revision}-copy`, revision, path }] })
+            }, fail })
+        } catch (_) { fail() }
+        return
+      }
+      this.stopLoadingWithError(skinCopy.message('reader.onImagePreviewError.error.6d5a17', {}, '这张图片未能显示，请重选或查看下一份。'))
     },
 
     openMediaFile (file, kind) {
@@ -1925,6 +2046,8 @@ Component({
             standaloneSvgPath: '',
             standaloneSvgSource: dataUri,
             standaloneSvgAnimatedSource: animatedSource,
+            standaloneSvgSessions: [{ id: revision }],
+            standaloneSvgAnimationReady: false,
             standaloneSvgAnimationNotice: animationNotice,
             standaloneSvgAnimationCanRetry: false,
             error: ''
@@ -1947,6 +2070,8 @@ Component({
               standaloneSvgPath: previewPath,
               standaloneSvgSource: '',
               standaloneSvgAnimatedSource: animatedSource,
+              standaloneSvgSessions: [{ id: revision }],
+              standaloneSvgAnimationReady: false,
               standaloneSvgAnimationNotice: animationNotice,
               standaloneSvgAnimationCanRetry: false,
               error: ''
@@ -1961,7 +2086,13 @@ Component({
       }
     },
 
+    isCurrentSvgEvent (event) {
+      const data = event && event.currentTarget && event.currentTarget.dataset || {}
+      return data.revision == null || Number(data.revision) === this._fileOpenRevision
+    },
+
     onStandaloneSvgError (event) {
+      if (!this.isCurrentSvgEvent(event) || this.data.standaloneSvgAnimationReady) return
       const fallback = this._standaloneSvgFallback
       if (fallback && !fallback.attempted && fallback.revision === this._fileOpenRevision) {
         fallback.attempted = true
@@ -1976,7 +2107,7 @@ Component({
             this.setData({ standaloneSvgSource: '', standaloneSvgPath: previewPath })
           },
           fail: error => {
-            if (fallback.revision === this._fileOpenRevision) this.stopLoadingWithError(skinCopy.message('reader.onStandaloneSvgError.error.351e1a', { detail: error.errMsg || '无法写入本地预览文件' }, `SVG 预览准备失败：${error.errMsg || '无法写入本地预览文件'}`))
+            if (fallback.revision === this._fileOpenRevision && !this.data.standaloneSvgAnimationReady) this.stopLoadingWithError(skinCopy.message('reader.onStandaloneSvgError.error.351e1a', { detail: error.errMsg || '无法写入本地预览文件' }, `SVG 预览准备失败：${error.errMsg || '无法写入本地预览文件'}`))
           }
         })
         return
@@ -1985,32 +2116,35 @@ Component({
       this.stopLoadingWithError(skinCopy.message('reader.onStandaloneSvgError.error.186ad1', { detail: detail || '当前微信内核无法显示该 SVG' }, `SVG 图像解码失败：${detail || '当前微信内核无法显示该 SVG'}。文件已成功读取，但其中可能包含该设备不支持的滤镜或图形。`))
     },
 
-    onStandaloneSvgLoad () {
+    onStandaloneSvgLoad (event) {
+      if (!this.isCurrentSvgEvent(event)) return
       this._standaloneSvgFallback = null
       this.finishLoading()
     },
 
     // <svg-view>（image 分包）就绪：Canvas 已画出首帧
     onStandaloneSvgAnimatedReady (event) {
+      if (!this.isCurrentSvgEvent(event) || !this.data.standaloneSvgAnimatedSource) return
       const detail = event && event.detail
-      this.setData({ standaloneSvgAnimationNotice: '', standaloneSvgAnimationCanRetry: false })
+      this.setData({ error: '', standaloneSvgAnimationReady: true, standaloneSvgAnimationNotice: '', standaloneSvgAnimationCanRetry: false })
       this._standaloneSvgAnimation = detail ? { animated: Boolean(detail.animated), unsupported: detail.unsupported || [] } : null
       this.finishLoading()
     },
 
     // Canvas 播放失败（分包下载失败、解析或绘制异常）：退回静态 <image>，不丢内容
     onStandaloneSvgAnimatedError (event) {
+      if (!this.isCurrentSvgEvent(event)) return
       const message = event && event.detail && event.detail.message
       this._standaloneSvgAnimation = { animated: false, unsupported: [], fallbackReason: message || '' }
       if (this.data.standaloneSvgAnimatedSource) {
-        this.setData({ standaloneSvgAnimatedSource: '', standaloneSvgAnimationNotice: '动画暂时无法播放，当前显示静态预览。', standaloneSvgAnimationCanRetry: true })
+        this.setData({ standaloneSvgAnimatedSource: '', standaloneSvgAnimationReady: false, standaloneSvgAnimationNotice: '动画暂时无法播放，当前显示静态预览。', standaloneSvgAnimationCanRetry: true })
         this.finishLoading()
       }
     },
 
     retryStandaloneSvgAnimation () {
       if (!this._standaloneSvgAnimatedOriginal) return
-      this.setData({ standaloneSvgAnimatedSource: this._standaloneSvgAnimatedOriginal, standaloneSvgAnimationNotice: '', standaloneSvgAnimationCanRetry: false })
+      this.setData({ standaloneSvgAnimatedSource: this._standaloneSvgAnimatedOriginal, standaloneSvgAnimationReady: false, standaloneSvgAnimationNotice: '', standaloneSvgAnimationCanRetry: false })
     },
 
     readerViewportWidth () {
@@ -2127,13 +2261,21 @@ Component({
       }
     },
 
-    parseContent (html, sourceName, revision, contentType = htmlContentType({ name: sourceName })) {
+    parseContent (html, sourceName, revision, contentType = htmlContentType({ name: sourceName }), localResolved = false) {
       const activeRevision = revision == null ? (this._fileOpenRevision || 0) + 1 : revision
       if (revision != null && revision !== this._fileOpenRevision) return false
       if (revision == null) this._fileOpenRevision = activeRevision
       if (!families.get('document')) {
         this.withFamilies(FAMILIES_BY_KIND.html, activeRevision, () => this.parseContent(html, sourceName, activeRevision, contentType))
         return true
+      }
+      if (!localResolved && contentType !== 'application/xhtml+xml') {
+        const resolved = documentFamily().resolveLocalSvgReferences(html, this.data.siblings, typeof wx.getFileSystemManager === 'function' ? wx.getFileSystemManager() : null, () => activeRevision === this._fileOpenRevision)
+        if (resolved) {
+          resolved.then(source => { if(source != null && activeRevision === this._fileOpenRevision)this.parseContent(source,sourceName,activeRevision,contentType,true) })
+            .catch(error => { if(activeRevision === this._fileOpenRevision)this.stopLoadingWithError(error.message) })
+          return true
+        }
       }
       this.disposeHtmlRuntime()
       const documentMeta = extractHtmlDocumentMeta(html)
@@ -2179,6 +2321,9 @@ Component({
           notes: result.notes,
           error: '',
           nativeStatus: '',
+          nativeDocumentName: '',
+          imagePath: '',
+        imageZoomed: false,
           standaloneSvgPath: '',
           standaloneSvgSource: '',
           standaloneSvgAnimatedSource: '',
@@ -2191,13 +2336,17 @@ Component({
             if (activeRevision !== this._fileOpenRevision) return
             try {
               const windowInfo = typeof wx.getWindowInfo === 'function' ? wx.getWindowInfo() : { windowWidth: 375, windowHeight: 667, pixelRatio: 1 }
+              const bottomInset = Math.max(0, (windowInfo.screenHeight || 0) - (windowInfo.safeArea?.bottom || windowInfo.screenHeight || 0))
+              const toolbarHeight = (this.data.designMode ? 0 : 88) * windowInfo.windowWidth / 750
+              const queueHeight = this.data.siblings?.length > 1 ? 112 * windowInfo.windowWidth / 750 : 0
+              const viewportHeight = Math.max(120, Math.floor(windowInfo.windowHeight - toolbarHeight - queueHeight - bottomInset))
               this._documentColorScheme = currentColorScheme()
               this._loadMetrics.runtimeStartedAt = Date.now()
               this._htmlRuntime = documentFamily().createRuntime(html, {
                 contentType,
                 directCanvasFrames: true,
                 viewportWidth: windowInfo.windowWidth,
-                viewportHeight: windowInfo.windowHeight,
+                viewportHeight,
                 devicePixelRatio: windowInfo.pixelRatio,
                 colorScheme: this._documentColorScheme,
                 onRender: state => {
@@ -2207,6 +2356,7 @@ Component({
                 onHostAction: action => this.onDomHostAction(action),
                 onError: error => { this._runtimeErrors = (this._runtimeErrors || []).concat(error) },
                 resolveImageSource: source => this._htmlAssets ? this._htmlAssets.resource(source, true) : source,
+                createAudioContext: typeof wx.createWebAudioContext === 'function' ? () => wx.createWebAudioContext() : undefined,
                 createOffscreenCanvas: typeof wx.createOffscreenCanvas !== 'function' ? undefined : config => {
                   try { return wx.createOffscreenCanvas(config) } catch (_) {
                     try {
@@ -2290,6 +2440,7 @@ Component({
         ? `data:image/svg+xml;base64,${bytesToBase64(utf8Encode(decodeURIComponent(source.slice(source.indexOf(',') + 1))))}` : source
       const collectSvgFallbacks = nodes => (nodes || []).forEach(node => {
         if (node.name === 'img' && node.attrs) node.attrs.src = nativeSvg(node.attrs.src)
+        if (this._failedSvgCanvases && this._failedSvgCanvases.has(String(node.nid))) node.svgCanvasSource = ''
         if (node.svgFallbackSrc) node.svgFallbackSrc = nativeSvg(node.svgFallbackSrc)
         if (node.svgHasSmil) {
           if (this._smilSupport === 'unsupported') node.attrs.src = node.svgFallbackSrc
@@ -2633,6 +2784,20 @@ Component({
       if (!this._htmlRuntime || nid == null) return
       const index = Number(event.detail && event.detail.value || 0)
       this._htmlRuntime.syncInput(nid, { selectedIndex: index }, 'change')
+    },
+
+    onDomSvgReady (event) {
+      const dataset=event.currentTarget && event.currentTarget.dataset || {}
+      if (!this._htmlRuntime || dataset.nid == null || (dataset.mediaToken != null && String(dataset.mediaToken) !== String(this._mediaStateByNid?.[dataset.nid]?.token))) return
+      this._htmlRuntime.dispatchEvent(dataset.nid, 'load', {})
+    },
+
+    onDomSvgError (event) {
+      const dataset=event.currentTarget && event.currentTarget.dataset || {}
+      if (!this._htmlRuntime || dataset.nid == null || (dataset.mediaToken != null && String(dataset.mediaToken) !== String(this._mediaStateByNid?.[dataset.nid]?.token))) return
+      this._failedSvgCanvases = this._failedSvgCanvases || new Set()
+      this._failedSvgCanvases.add(String(dataset.nid))
+      this.renderDomState(this._htmlRuntime.renderState(), this.readerViewportWidth())
     },
 
     onDomMediaError (event) {

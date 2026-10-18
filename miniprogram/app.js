@@ -11,7 +11,11 @@ App({
     pendingFilePreview: null
   },
 
+  onHide () { require('./utils/recent-session').checkpoint(this) },
+
   onShow (options = {}) {
+    require('./utils/recent-session').read()
+    require('./utils/recent-session').prune()
     if (String(options.scene || '') !== '1173') return
     const materials = Array.isArray(options.forwardMaterials) ? options.forwardMaterials : []
     const material = materials.find(isSupportedMaterial)

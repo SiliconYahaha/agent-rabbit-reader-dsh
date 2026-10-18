@@ -1,0 +1,1769 @@
+{
+  "repository": "https://github.com/mdn/learning-area",
+  "commit": "d55e1c2e3ff401519811b64e5b2a7d3643b43d0f",
+  "cases": [
+    {
+      "id": 1,
+      "file": "001.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/css-layout/legacy/html-skeleton-finished.html",
+      "path": "css/css-layout/legacy/html-skeleton-finished.html",
+      "bytes": 1022,
+      "sha256": "9320a4971e55c7ddc65f0c7e411288ccac03217e5fdb08800626ddd2e65f2a3b",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "001.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/css-layout/legacy/normalize.css",
+          "status": "inlined",
+          "sha256": "f4d7e8250f8f124f8b7d087e5e260766a34b079fddc43e7b20d8c18ca1e92e51"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/css-layout/legacy/skeleton.css",
+          "status": "inlined",
+          "sha256": "10207d6db44e2c69bcc0ea046c77074719478331aa6290ed3538034f20f3d308"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 2,
+      "file": "002.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/css-layout/practical-positioning-examples/fixed-info-box.html",
+      "path": "css/css-layout/practical-positioning-examples/fixed-info-box.html",
+      "bytes": 5157,
+      "sha256": "d913a12014e00cc1a3103d169889a2ac45c465659125e461b1d46de07b1379f7",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "002.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/css-layout/practical-positioning-examples/tabs-manual.js",
+          "status": "inlined",
+          "sha256": "a56eb9baa8f3adbf48960cf4cc7b945d198cf820a452edecc15ba5b202b40076"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 3,
+      "file": "003.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/styling-boxes/advanced_box_effects/blend-modes.html",
+      "path": "css/styling-boxes/advanced_box_effects/blend-modes.html",
+      "bytes": 4121,
+      "sha256": "ef56295a04fe2b478a18c8a910b98784045765528013515970b99c16d82bfb2f",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "003.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 4,
+      "file": "004.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/styling-boxes/styling-tables/punk-bands-complete.html",
+      "path": "css/styling-boxes/styling-tables/punk-bands-complete.html",
+      "bytes": 2119,
+      "sha256": "528120ffaa446476bb47aa9a8919d2d98e7b8b7e454cdd2346026cdc57fa74de",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "004.offline.html",
+      "dependencies": [
+        {
+          "url": "https://fonts.googleapis.com/css?family=Rock+Salt",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/styling-boxes/styling-tables/style.css",
+          "status": "inlined",
+          "sha256": "dbfd64d8b0f90b7eeb7ef7b122455dcb7639517f487832b25e4ba76cd21f4173"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 5,
+      "file": "005.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/fonts/cicle_fina-demo.html",
+      "path": "css/web-fonts/fonts/cicle_fina-demo.html",
+      "bytes": 36867,
+      "sha256": "6e52f30e4278da1ed051d38de7ff33720cae2ec0f57ae6281fdd73331807e69c",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "005.offline.html",
+      "dependencies": [
+        {
+          "url": "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/fonts/specimen_files/easytabs.js",
+          "status": "failed",
+          "detail": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/fonts/specimen_files/specimen_stylesheet.css",
+          "status": "inlined",
+          "sha256": "d2f745bd0b23364275d3bf2a249924ffce94597c2a391cbd37bc5ca6974b27c5"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/fonts/stylesheet.css",
+          "status": "inlined",
+          "sha256": "15b7027e129f6ac2cf52ca20fb3e84517a8d62f4653288d72e4a36cd71e937a1"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 6,
+      "file": "006.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/google-font.html",
+      "path": "css/web-fonts/google-font.html",
+      "bytes": 2273,
+      "sha256": "5b7e88863d4b5cbe448c90477ef1581ffd7b24132b13cb9f402b1e618de7ab37",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "006.offline.html",
+      "dependencies": [
+        {
+          "url": "https://fonts.googleapis.com/css?family=Lobster|Raleway",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/google-font.css",
+          "status": "inlined",
+          "sha256": "1742573524817725d78ac1bd1575d5a20e1f00f01d7330cdeb2a37f2f4fd57f8"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 7,
+      "file": "007.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/web-font-finished.html",
+      "path": "css/web-fonts/web-font-finished.html",
+      "bytes": 2224,
+      "sha256": "032c8bae1d4d5e981e5be16469d35ff9f3e4e8092e921ae26d399e99a005a5c5",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "007.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/web-font-finished.css",
+          "status": "inlined",
+          "sha256": "9680f97eb068e789884a0500fc020026736d05fea1bfe7d4e8f31b4c94e81b6f"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 8,
+      "file": "008.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/web-font-start.html",
+      "path": "css/web-fonts/web-font-start.html",
+      "bytes": 2221,
+      "sha256": "7c8b81f1d68bab6632d26125c9c046b05a60c84949ea62ac169e5b90a728cac7",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "008.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/web-font-start.css",
+          "status": "inlined",
+          "sha256": "2b143890f176df37b9f055b729dfff0a3d9cc80d67e995f5b2626e56e17a7ce8"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 9,
+      "file": "009.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/custom-radio-styles/index.html",
+      "path": "html/forms/custom-radio-styles/index.html",
+      "bytes": 1564,
+      "sha256": "77fb195cab1c4bde7bdb338e4704e53f74d503d072f8cb7f723415126ddecc30",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "009.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 10,
+      "file": "010.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/image-type-xy-coords/index.html",
+      "path": "html/forms/image-type-xy-coords/index.html",
+      "bytes": 558,
+      "sha256": "c594dde08c63ee9450cc6ca9def79be56e30c77fd631596fd20312c05db8c3e9",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "010.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 11,
+      "file": "011.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/postcard-example/index.html",
+      "path": "html/forms/postcard-example/index.html",
+      "bytes": 2603,
+      "sha256": "89c96de529c8c631c87702ad45124e1e0843683d67a761660d7691d021e6e15b",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "011.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 12,
+      "file": "012.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/sending-form-data/get-method.html",
+      "path": "html/forms/sending-form-data/get-method.html",
+      "bytes": 916,
+      "sha256": "8a98e5138ded59fdae45a625109061359d56a36249e221ddfae71cfa4a38178e",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "012.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 13,
+      "file": "013.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/toggle-switch-example/index.html",
+      "path": "html/forms/toggle-switch-example/index.html",
+      "bytes": 2746,
+      "sha256": "ccc64e5f5399ba6984a0aa44012a604847a6ba8362c66bbe73e6217a26afd42f",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "013.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 14,
+      "file": "014.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/your-first-HTML-form/first-form-styled.html",
+      "path": "html/forms/your-first-HTML-form/first-form-styled.html",
+      "bytes": 1966,
+      "sha256": "cd7c192dc6e230737064e053f92947a5159e82e72cd8740d2529c4f1a8abad06",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "014.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 15,
+      "file": "015.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/document_and_website_structure/index.html",
+      "path": "html/introduction-to-html/document_and_website_structure/index.html",
+      "bytes": 3525,
+      "sha256": "8623d0ff8d0696128844a2315d8c23840cf839d52fab09fcd06eabb3e5e966ec",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "015.offline.html",
+      "dependencies": [
+        {
+          "url": "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/document_and_website_structure/style.css",
+          "status": "inlined",
+          "sha256": "7da8ec4c700672e169dfd95a03bebacbcb31a6a595189854d91393f6a6dd0ee8"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 16,
+      "file": "016.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/getting-started/index.html",
+      "path": "html/introduction-to-html/getting-started/index.html",
+      "bytes": 224,
+      "sha256": "fd7f1f3a8acffe21225a31986b1af90a267ce5cb1a827ad1e69ab3e961e1ea3c",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "016.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 17,
+      "file": "017.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/html-text-formatting/text-complete.html",
+      "path": "html/introduction-to-html/html-text-formatting/text-complete.html",
+      "bytes": 1876,
+      "sha256": "d20d6f8f830587fdfeaf9330fbab333a3d2997ceed2f20c4909beafaba64cebb",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "017.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 18,
+      "file": "018.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-marked-up/index.html",
+      "path": "html/introduction-to-html/navigation-menu-marked-up/index.html",
+      "bytes": 501,
+      "sha256": "35860e718cd4dc10b13706e6dd22a20842b042e61fb16f4bd7359bb033dc113b",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "018.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 19,
+      "file": "019.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-start/index.html",
+      "path": "html/introduction-to-html/navigation-menu-start/index.html",
+      "bytes": 309,
+      "sha256": "51769ca8a86bacd7848b2f960f6904504c84de84516d34f72410b4f27db00371",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "019.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 20,
+      "file": "020.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/the-html-head/css-and-js.html",
+      "path": "html/introduction-to-html/the-html-head/css-and-js.html",
+      "bytes": 892,
+      "sha256": "ba0452a7b811bea3c900e4b0682a5773d3476aef5c4df951958d2d8398fa3852",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "020.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/the-html-head/style.css",
+          "status": "inlined",
+          "sha256": "4865b3d51a6660bb0252d3fbd7a2863aba15a581637738a4c97a8e3b3eb22fe1"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/the-html-head/script.js",
+          "status": "inlined",
+          "sha256": "ecfeba00046ff746c3a3a3df6bbfc5195f597369d2721b20479fa1905f702986"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 21,
+      "file": "021.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/other-embedding-technologies/iframe-detail.html",
+      "path": "html/multimedia-and-embedding/other-embedding-technologies/iframe-detail.html",
+      "bytes": 533,
+      "sha256": "5d5c488c71bd99848987e9281ad6adbf59bd7a4c20c784d7fd57ae5b15954124",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "021.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 22,
+      "file": "022.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/responsive-images/not-responsive.html",
+      "path": "html/multimedia-and-embedding/responsive-images/not-responsive.html",
+      "bytes": 1911,
+      "sha256": "6dab518d1269aad384d16bf74480839d70200e2e1da9e92ee253aaa2adea6a57",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "022.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 23,
+      "file": "023.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/video-and-audio-content/extra-video-features.html",
+      "path": "html/multimedia-and-embedding/video-and-audio-content/extra-video-features.html",
+      "bytes": 683,
+      "sha256": "bb5bc5b81edf64e9b090abbde30e200a34f117124cb05974b3b7f35448316b14",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "023.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 24,
+      "file": "024.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/items-sold-headers.html",
+      "path": "html/tables/advanced/items-sold-headers.html",
+      "bytes": 3179,
+      "sha256": "596e16d053290d570f90078a7776bee55a1e87a011ed369b1d46f3336823f677",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "024.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/minimal-table.css",
+          "status": "inlined",
+          "sha256": "8d2756230bc7bdfc1f43a6b4c89041447f7aafaf1ba971e9882795fd4ecb517b"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 25,
+      "file": "025.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/basic/blank-template.html",
+      "path": "html/tables/basic/blank-template.html",
+      "bytes": 298,
+      "sha256": "ed12223069f63c71f0e6f4ca427fa6d4031d354dcf1937775847aec4acac941a",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "025.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/basic/minimal-table.css",
+          "status": "inlined",
+          "sha256": "b1949aba473aeab8420a7b1537af074ade4ba6708260f94ea2dd5eb3f3bb6008"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 26,
+      "file": "026.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/planets-data/index.html",
+      "path": "html/tables/planets-data/index.html",
+      "bytes": 4302,
+      "sha256": "c6026ae2b296ecd13926b139d65bbe60aa20efeb542a8d7e0993651c780ea215",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "026.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/planets-data/minimal-table.css",
+          "status": "inlined",
+          "sha256": "b1949aba473aeab8420a7b1537af074ade4ba6708260f94ea2dd5eb3f3bb6008"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 27,
+      "file": "027.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/cache-sw/video-store-offline/index.html",
+      "path": "javascript/apis/client-side-storage/cache-sw/video-store-offline/index.html",
+      "bytes": 548,
+      "sha256": "eeefc560f7b606d29f051baecdedae2b85310ec12d7c108b06177538a26b4462",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "027.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/cache-sw/video-store-offline/style.css",
+          "status": "inlined",
+          "sha256": "7bd968b91f91399d6758b8614db3317d06feada78248780ae006b3abe4109f50"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/cache-sw/video-store-offline/index.js",
+          "status": "inlined",
+          "sha256": "cbee8867f80efce7fc173c096bd61bfe3b28388a0cc1810f2a2faeaf1d0df7aa"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 28,
+      "file": "028.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/document-manipulation/dom-example-manipulated.html",
+      "path": "javascript/apis/document-manipulation/dom-example-manipulated.html",
+      "bytes": 1548,
+      "sha256": "ae3afb3c55950a12683bf6abced9e5669772d9c4a89c227d5a2b97de3a4c07c5",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "028.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 29,
+      "file": "029.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/fetching-data/can-store-xhr/index.html",
+      "path": "javascript/apis/fetching-data/can-store-xhr/index.html",
+      "bytes": 1606,
+      "sha256": "e43832dc0d9a1575bfcf636e9a19e3679a268bdd069b45c47faf92df46ae8e9e",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "029.offline.html",
+      "dependencies": [
+        {
+          "url": "https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/fetching-data/can-store-xhr/can-style.css",
+          "status": "inlined",
+          "sha256": "fab8a4375ea7346fadbfd6741f1219721cab3c6021c7c0bc3d746a1dde8f4dd8"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/fetching-data/can-store-xhr/can-script.js",
+          "status": "inlined",
+          "sha256": "08d630e4e4012690634f41f38065c03cc31412d77de74b5fadc7922d46f08c00"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 30,
+      "file": "030.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/introduction/bouncing-balls.html",
+      "path": "javascript/apis/introduction/bouncing-balls.html",
+      "bytes": 351,
+      "sha256": "dbcaf7356c35cce61101e2f7a2579924c9b85efcf1a2440acf7985c5632ac3f6",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "030.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/introduction/style.css",
+          "status": "inlined",
+          "sha256": "6bc973d6226e10a19b754f35e88a3835f5258b48ed4885cc69918277047b069d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/introduction/main.js",
+          "status": "inlined",
+          "sha256": "9d46c3d80cd5adf96be5ac7dd4421b54462bfc81b82efbaf502418e8bb722ef6"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 31,
+      "file": "031.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/third-party-apis/mapquest/finished/index.html",
+      "path": "javascript/apis/third-party-apis/mapquest/finished/index.html",
+      "bytes": 573,
+      "sha256": "01f167163e033c0ce5e2ae43a1216460c559726b7009ce25c680764fbb9e6a9d",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "031.offline.html",
+      "dependencies": [
+        {
+          "url": "https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/third-party-apis/mapquest/finished/script.js",
+          "status": "inlined",
+          "sha256": "f1504bf90ad859ee9e8a858a1c3c5470e6625e4c65d8f2ac6f37a3de5e7880b9"
+        },
+        {
+          "url": "https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/third-party-apis/mapquest/finished/style.css",
+          "status": "inlined",
+          "sha256": "ece0e201ede5cd3a9682c499fc780b08e5101255aa3d908c3a16cf473124b04c"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 32,
+      "file": "032.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/threejs-video-cube/index.html",
+      "path": "javascript/apis/threejs-video-cube/index.html",
+      "bytes": 371,
+      "sha256": "6fa4f0df181b856a3c73f4e0a33a54a1991c6df6388243c2a939fb70d033f024",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "032.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/threejs-video-cube/three.min.js",
+          "status": "inlined",
+          "sha256": "18495b1f60b875825e6e448c9aac0a994cb00ea96431d00bb64dc371bc940f63"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/threejs-video-cube/script.js",
+          "status": "inlined",
+          "sha256": "107207904a8f64bfc926f78d3009952bbae86a48330835368aaf659e4b326802"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/threejs-video-cube/style/style.css",
+          "status": "failed",
+          "detail": "HTTP Error 404: Not Found"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 33,
+      "file": "033.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/video-audio/finished/index.html",
+      "path": "javascript/apis/video-audio/finished/index.html",
+      "bytes": 1180,
+      "sha256": "9ce5d7730774ea5e29fcf84db61bcfbd21356fb5e2a18c98e242fa792b9c8c95",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "033.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/video-audio/finished/style.css",
+          "status": "inlined",
+          "sha256": "7e3515b98db82e113220cd501afa8e5529063d16cda3e32af006e570013460ed"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/video-audio/finished/custom-player.js",
+          "status": "inlined",
+          "sha256": "dbf7cd7efaccb69767c2082031ae3699e67f5d071f31f64c476733810a29cb94"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 34,
+      "file": "034.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/sequencing-animations/finished/index.html",
+      "path": "javascript/asynchronous/sequencing-animations/finished/index.html",
+      "bytes": 748,
+      "sha256": "c74a6e21e6365f2465dbebb104d64172b1ed81123a0ae951eaed7ffe6c8e44a3",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "034.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/sequencing-animations/finished/main.js",
+          "status": "inlined",
+          "sha256": "343883a4e3c3c8672b54fbfb779eba10c61560428049845d89cbe04969f6205c"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/sequencing-animations/finished/style.css",
+          "status": "inlined",
+          "sha256": "e33a92394d8c13b24c94fd6ab5b2825516f43473d294928c5629a89f038884f7"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 35,
+      "file": "035.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/workers/finished/index.html",
+      "path": "javascript/asynchronous/workers/finished/index.html",
+      "bytes": 677,
+      "sha256": "bced420ffc4fd067aca69618b1ecca29b860aef7ab1fa9abbd028c4c11efb84a",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "035.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/workers/finished/main.js",
+          "status": "inlined",
+          "sha256": "1860085201f9002227c32abc810e287fef0c511383bc646313e08cfeafb1bfcd"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/workers/finished/style.css",
+          "status": "inlined",
+          "sha256": "4c312ed3ff9b8e9c9fc122f17db9c1c98782c364598eca2d4c6480bd555f0628"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 36,
+      "file": "036.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/building-blocks/functions/conflict.html",
+      "path": "javascript/building-blocks/functions/conflict.html",
+      "bytes": 340,
+      "sha256": "0e1aac0c7bb42554d88e2f4e0c7196d610f3a20e3cee630f521033c33605dfce",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "036.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/building-blocks/functions/first.js",
+          "status": "inlined",
+          "sha256": "0f753d2d51cbf9a10d87a7a0da1be727587f19e4ee2df4d6684aad3ba7609c4c"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/building-blocks/functions/second.js",
+          "status": "inlined",
+          "sha256": "9c331fe4cb81d1af9aba339d1823ac6d60ab4903ed0892464f2a4894be8b59c6"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 37,
+      "file": "037.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/building-blocks/preventdefault/index.html",
+      "path": "javascript/building-blocks/preventdefault/index.html",
+      "bytes": 1057,
+      "sha256": "c75ea3e74830d761e1dc9730930a0c15e025a0b16e277c5f670dff7482657b3b",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "037.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 38,
+      "file": "038.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/introduction-to-js-1/first-splash/number-guessing-game-start.html",
+      "path": "javascript/introduction-to-js-1/first-splash/number-guessing-game-start.html",
+      "bytes": 1140,
+      "sha256": "af1e7fd4b07d2cdb91334a0dec2e2fc647f94b7a3aa2dc66c582a648bd6c1f18",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "038.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 39,
+      "file": "039.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/introduction-to-js-1/troubleshooting/number-game-errors.html",
+      "path": "javascript/introduction-to-js-1/troubleshooting/number-game-errors.html",
+      "bytes": 3375,
+      "sha256": "48c0a03948ca2838980ea3a0980032f3a67c6fcd10f70fe4aef8ed83caf1aafb",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "039.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 40,
+      "file": "040.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/assessment/index.html",
+      "path": "javascript/oojs/assessment/index.html",
+      "bytes": 355,
+      "sha256": "112fe1c4bb07fc3cdf342dd9320e250cc8b39afa0da5ab2092ce036547ce0973",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "040.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/assessment/style.css",
+          "status": "inlined",
+          "sha256": "1f761521f5b9dc8ed3079cf1b722d1753778df34beeaa39fd69e83aaec835684"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/assessment/main.js",
+          "status": "inlined",
+          "sha256": "a36ee1e4c31bba151562d7219f2dcc4bd380bd74da96df12e50c2e55aa4a75c7"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 41,
+      "file": "041.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/bouncing-balls/index-finished.html",
+      "path": "javascript/oojs/bouncing-balls/index-finished.html",
+      "bytes": 341,
+      "sha256": "70f6593280a6ef1bd305d2608f7814ecd4ee04dd240d2abed3e8cc1762021d1e",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "041.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/bouncing-balls/style.css",
+          "status": "inlined",
+          "sha256": "6bc973d6226e10a19b754f35e88a3835f5258b48ed4885cc69918277047b069d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/bouncing-balls/main-finished.js",
+          "status": "inlined",
+          "sha256": "b69da83e1f70986a9406dd15b70142513a441c134e907d180885d08358971972"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 42,
+      "file": "042.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/introduction/oojs-class-finished.html",
+      "path": "javascript/oojs/introduction/oojs-class-finished.html",
+      "bytes": 1148,
+      "sha256": "bb688e3175f1005b4852262e1a2805323c05ba3b1f08c5573a941fe21f555ba1",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "042.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 43,
+      "file": "043.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/json/JSONTest.html",
+      "path": "javascript/oojs/json/JSONTest.html",
+      "bytes": 1263,
+      "sha256": "ad8e266b3f0ea6d2867913688967218beffe2e01a13a13c3e38f5b3db6a90dec",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "043.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 44,
+      "file": "044.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/json/json1-download.html",
+      "path": "javascript/oojs/tasks/json/json1-download.html",
+      "bytes": 1133,
+      "sha256": "74c45ad9b788a27e003b478bd0ccce3f37ab80cf523c03a3e1d24e9b1ba29a9c",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "044.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/styles.css",
+          "status": "inlined",
+          "sha256": "7bfeee947b5aa101291c2f499995506345244cc9333afa0b439dd8560d09c22f"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 45,
+      "file": "045.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/css-layout/practical-positioning-examples/hidden-info-panel-start.html",
+      "path": "css/css-layout/practical-positioning-examples/hidden-info-panel-start.html",
+      "bytes": 947,
+      "sha256": "d9a1cb44df030accc337ff45b0baf95f89ebb3ac2ec15942e8650b83abb32e9f",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "045.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 46,
+      "file": "046.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/styling-boxes/advanced_box_effects/filters.html",
+      "path": "css/styling-boxes/advanced_box_effects/filters.html",
+      "bytes": 3654,
+      "sha256": "fc9bda1f08f9f5fbc1ee8d31985431467bc5b787f995ce7e4b3a6d7c0e3f58d7",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "046.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 47,
+      "file": "047.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/styling-boxes/styling-tables/punk-bands-unstyled.html",
+      "path": "css/styling-boxes/styling-tables/punk-bands-unstyled.html",
+      "bytes": 1957,
+      "sha256": "ad94b880e9f585a71d9e4811aed9606a80b8819c55db168c4476415a367eaa01",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "047.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 48,
+      "file": "048.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/fonts/zantroke-demo.html",
+      "path": "css/web-fonts/fonts/zantroke-demo.html",
+      "bytes": 37660,
+      "sha256": "85f3d282c9fe1aea9c0d3ac07952efc8dc68884a4afef27120248144d78ac1fa",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "048.offline.html",
+      "dependencies": [
+        {
+          "url": "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/fonts/specimen_files/easytabs.js",
+          "status": "failed",
+          "detail": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/fonts/specimen_files/specimen_stylesheet.css",
+          "status": "inlined",
+          "sha256": "d2f745bd0b23364275d3bf2a249924ffce94597c2a391cbd37bc5ca6974b27c5"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/web-fonts/fonts/stylesheet.css",
+          "status": "inlined",
+          "sha256": "15b7027e129f6ac2cf52ca20fb3e84517a8d62f4653288d72e4a36cd71e937a1"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 49,
+      "file": "049.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/postcard-example/postcard-start.html",
+      "path": "html/forms/postcard-example/postcard-start.html",
+      "bytes": 226,
+      "sha256": "d1e3bd698f62953f8cb09a34ab502dc8c40ed37759dd6bd6c4ac13891b8facd4",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "049.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 50,
+      "file": "050.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/sending-form-data/php-example.html",
+      "path": "html/forms/sending-form-data/php-example.html",
+      "bytes": 909,
+      "sha256": "b076094e693d7b56dfea6c1d3560d9d17e735b7c7b449ab95abc29be66e9efeb",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "050.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 51,
+      "file": "051.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/your-first-HTML-form/first-form.html",
+      "path": "html/forms/your-first-HTML-form/first-form.html",
+      "bytes": 611,
+      "sha256": "f936ae1ce09defdd1d8494b10777341d2849306d34e3bceecc2005e398a175ac",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "051.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 52,
+      "file": "052.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/html-text-formatting/text-start.html",
+      "path": "html/introduction-to-html/html-text-formatting/text-start.html",
+      "bytes": 1621,
+      "sha256": "78352f627a439bf263a0e6b423d98a600524289b123cb92336a0bb736f12c75d",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "052.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 53,
+      "file": "053.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-marked-up/pictures.html",
+      "path": "html/introduction-to-html/navigation-menu-marked-up/pictures.html",
+      "bytes": 518,
+      "sha256": "a8ca228fa25c6c5b34d06f8dcde817a48b03fc4fcd59075760ffba694ebdd1e0",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "053.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 54,
+      "file": "054.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-start/pictures.html",
+      "path": "html/introduction-to-html/navigation-menu-start/pictures.html",
+      "bytes": 329,
+      "sha256": "c4ef678bed2dbbd38d2adf5d762781becf4c4d6e9f47c293d4aaee31f541ee51",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "054.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 55,
+      "file": "055.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/the-html-head/meta-example.html",
+      "path": "html/introduction-to-html/the-html-head/meta-example.html",
+      "bytes": 796,
+      "sha256": "52b47f566ea8b064bdbd93277bb16306ec320b4e8ce6c70a59d2c7bc95a05d73",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "055.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 56,
+      "file": "056.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/other-embedding-technologies/object-pdf.html",
+      "path": "html/multimedia-and-embedding/other-embedding-technologies/object-pdf.html",
+      "bytes": 441,
+      "sha256": "1fe6e399ca188bee49f8a505ae8e779882e0f11dca8ee8e60a608c35f8d3e07b",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "056.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 57,
+      "file": "057.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/responsive-images/responsive.html",
+      "path": "html/multimedia-and-embedding/responsive-images/responsive.html",
+      "bytes": 2245,
+      "sha256": "4c2ea27d61587e74c0b0dcf5cf3011a0edd93695a71680dadd775b18989d87f0",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "057.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 58,
+      "file": "058.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html",
+      "path": "html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html",
+      "bytes": 537,
+      "sha256": "87425a64856d157a034ea22166ba5f475fc61ebda7a816c9ac054b6551a60c36",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "058.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 59,
+      "file": "059.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/items-sold-scope.html",
+      "path": "html/tables/advanced/items-sold-scope.html",
+      "bytes": 1845,
+      "sha256": "a99ef840137cd1d905c0129cb2e177298f3ee7c59501440b6f160a91bcc22d54",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "059.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/minimal-table.css",
+          "status": "inlined",
+          "sha256": "8d2756230bc7bdfc1f43a6b4c89041447f7aafaf1ba971e9882795fd4ecb517b"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 60,
+      "file": "060.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/indexeddb/notes/index.html",
+      "path": "javascript/apis/client-side-storage/indexeddb/notes/index.html",
+      "bytes": 1043,
+      "sha256": "984f6d2d1d5a60d0e362d8e99ba8c5017a07786af6418d19a57a3451b275cdce",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "060.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/indexeddb/notes/style.css",
+          "status": "inlined",
+          "sha256": "93115e3cb5a55e1d6e82f57cda54a685ba22b1a4943549524ff6c45043ef00ca"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/indexeddb/notes/index.js",
+          "status": "inlined",
+          "sha256": "31563079906327c3f30838e010dbaf751eb5f3c689675b9f72edbcfeb0551231"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 61,
+      "file": "061.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/document-manipulation/dom-example.html",
+      "path": "javascript/apis/document-manipulation/dom-example.html",
+      "bytes": 534,
+      "sha256": "e6200bc14e4a05748ce8656d200b52af421180258550636ae342e4867fc27c94",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "061.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 62,
+      "file": "062.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/fetching-data/can-store/index.html",
+      "path": "javascript/apis/fetching-data/can-store/index.html",
+      "bytes": 1625,
+      "sha256": "782147f341c3370e369d16b03e825f05f90195243bee595866b3d9397104f7dd",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "062.offline.html",
+      "dependencies": [
+        {
+          "url": "https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/fetching-data/can-store/can-style.css",
+          "status": "inlined",
+          "sha256": "a6dde50a5d42c646979de9ea2fcdc218b7fb9e2de1fa5ee5f40f86067b541f87"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/fetching-data/can-store/can-script.js",
+          "status": "inlined",
+          "sha256": "2154dbcacdddc06e43530f2afa4136357f8c23d45a47d0fbc3f29e485cb1e369"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 63,
+      "file": "063.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/introduction/web-audio/index.html",
+      "path": "javascript/apis/introduction/web-audio/index.html",
+      "bytes": 2254,
+      "sha256": "da081b02d06c8923aaddf8f231665af8f9e4b279ce5846b7da0a9b2ac045557b",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "063.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 64,
+      "file": "064.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/accessibility/aria/form-validation-checkbox-disabled.html",
+      "path": "accessibility/aria/form-validation-checkbox-disabled.html",
+      "bytes": 2172,
+      "sha256": "7e126426025f2e721ce07c804f5a47c2f2a85c20dbaef2e63e65b54748d51ba0",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "064.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/accessibility/aria/validation-checkbox-disabled.js",
+          "status": "inlined",
+          "sha256": "388c7e976ea1fb0aeed68e4d133efcdac23ed2471aee49fc74e667a34b9bb421"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 65,
+      "file": "065.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/video-audio/start/index.html",
+      "path": "javascript/apis/video-audio/start/index.html",
+      "bytes": 1177,
+      "sha256": "31f49f988cc9de1e8876c7f04e392ee9ad495a8f6de3be06da308b10befbf021",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "065.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/video-audio/start/style.css",
+          "status": "inlined",
+          "sha256": "7e3515b98db82e113220cd501afa8e5529063d16cda3e32af006e570013460ed"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/video-audio/start/custom-player.js",
+          "status": "failed",
+          "detail": "HTTP Error 404: Not Found"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 66,
+      "file": "066.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/sequencing-animations/start/index.html",
+      "path": "javascript/asynchronous/sequencing-animations/start/index.html",
+      "bytes": 748,
+      "sha256": "4dfbaece56a0a0296388b93eac951654387b3d8e3c16eb1591e8a63d29fe74e7",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "066.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/sequencing-animations/start/main.js",
+          "status": "inlined",
+          "sha256": "e610c2e937040b2c5b923f9ec6317d54cb991dbd6382a69d1ae7d16be0325e7b"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/sequencing-animations/start/style.css",
+          "status": "inlined",
+          "sha256": "e33a92394d8c13b24c94fd6ab5b2825516f43473d294928c5629a89f038884f7"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 67,
+      "file": "067.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/workers/start/index.html",
+      "path": "javascript/asynchronous/workers/start/index.html",
+      "bytes": 674,
+      "sha256": "2c9475376627b9115d5661f20149f2278e3642dce18ea1af6fedc0ecf2d97977",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "067.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/workers/start/main.js",
+          "status": "inlined",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/asynchronous/workers/start/style.css",
+          "status": "inlined",
+          "sha256": "4c312ed3ff9b8e9c9fc122f17db9c1c98782c364598eca2d4c6480bd555f0628"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 68,
+      "file": "068.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/introduction-to-js-1/first-splash/number-guessing-game.html",
+      "path": "javascript/introduction-to-js-1/first-splash/number-guessing-game.html",
+      "bytes": 3515,
+      "sha256": "b1184deef6c8370f58d61dc48d7d06340f70abf788b8c6d2ef0805fa6073ae4c",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "068.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 69,
+      "file": "069.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/bouncing-balls/index.html",
+      "path": "javascript/oojs/bouncing-balls/index.html",
+      "bytes": 331,
+      "sha256": "bbafdc6c9c07417966826b46c8f2026fc4b1c6e846d18e43528da6864b2ba637",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "069.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/bouncing-balls/style.css",
+          "status": "inlined",
+          "sha256": "6bc973d6226e10a19b754f35e88a3835f5258b48ed4885cc69918277047b069d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/bouncing-balls/main.js",
+          "status": "inlined",
+          "sha256": "3fcf2f3da8163749249e778f3f36b11a73726435b5713bee22ac42018603f959"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 70,
+      "file": "070.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/introduction/oojs-class-further-exercises.html",
+      "path": "javascript/oojs/introduction/oojs-class-further-exercises.html",
+      "bytes": 2963,
+      "sha256": "5947d3849d4dcfeb952c1867d4928c4811a4c884720e96c988d40be65620730b",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "070.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 71,
+      "file": "071.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/json/heroes-finished-json-parse.html",
+      "path": "javascript/oojs/json/heroes-finished-json-parse.html",
+      "bytes": 2370,
+      "sha256": "431aaf2ab805bf1fed02356bb14e7db564778ae42cb687ba7ac8dead8e3305b8",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "071.offline.html",
+      "dependencies": [
+        {
+          "url": "https://fonts.googleapis.com/css?family=Faster+One",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/json/style.css",
+          "status": "inlined",
+          "sha256": "b2f3ccc2a8898563b71cd5963b457127541d9a8ebb537fa3e2bff0186f699d85"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 72,
+      "file": "072.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/json/json1.html",
+      "path": "javascript/oojs/tasks/json/json1.html",
+      "bytes": 1296,
+      "sha256": "bb560fd3d3309dc11da61c86fcf5648e7770294f1298abcd9bd3b1d159f753ff",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "072.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/styles.css",
+          "status": "inlined",
+          "sha256": "7bfeee947b5aa101291c2f499995506345244cc9333afa0b439dd8560d09c22f"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/playable.js",
+          "status": "inlined",
+          "sha256": "584353c1ed91f8eabf63b9aa6e54bf0986894c56bd0cf78dadf909ce4ef7197b"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 73,
+      "file": "073.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/css-layout/practical-positioning-examples/hidden-info-panel.html",
+      "path": "css/css-layout/practical-positioning-examples/hidden-info-panel.html",
+      "bytes": 1844,
+      "sha256": "92a6f983dbb6ad1c0de15dc76891ea8a1561a91be384424a7c0eacedf8522002",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "073.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 74,
+      "file": "074.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/sending-form-data/post-method.html",
+      "path": "html/forms/sending-form-data/post-method.html",
+      "bytes": 918,
+      "sha256": "d695f7e69bd983feb5eeceb1f99a3d680ae7b7d8a4da19788129cbaeec0b2043",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "074.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 75,
+      "file": "075.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-marked-up/projects.html",
+      "path": "html/introduction-to-html/navigation-menu-marked-up/projects.html",
+      "bytes": 548,
+      "sha256": "86339182e1020d076500f555aa6ef7dde6c6cfa124b3723682576df70960076e",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "075.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 76,
+      "file": "076.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-start/projects.html",
+      "path": "html/introduction-to-html/navigation-menu-start/projects.html",
+      "bytes": 359,
+      "sha256": "ee35b3871660a54927501d0b77506a30b4c62c2daf7c04bcc2592d70222c66fe",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "076.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 77,
+      "file": "077.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/the-html-head/title-example.html",
+      "path": "html/introduction-to-html/the-html-head/title-example.html",
+      "bytes": 237,
+      "sha256": "47e43594bea6ac6ed5cac0afee1e75256a74f57450364b032e530f0481eba73c",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "077.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 78,
+      "file": "078.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/responsive-images/srcset-resolutions.html",
+      "path": "html/multimedia-and-embedding/responsive-images/srcset-resolutions.html",
+      "bytes": 876,
+      "sha256": "fb87689853dc8c88aedf4b7c29ca27761b1c80f7e60547037d1f0fa547626ed4",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "078.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 79,
+      "file": "079.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats-no-controls.html",
+      "path": "html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats-no-controls.html",
+      "bytes": 534,
+      "sha256": "a2e633eb2804e029854190c19513bd8e7ecd372ac00fc5e5f75dcd7656e33c01",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "079.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 80,
+      "file": "080.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/items-sold.html",
+      "path": "html/tables/advanced/items-sold.html",
+      "bytes": 1657,
+      "sha256": "ad584189485298c446d7b0ef588605d3d90ed0f82a1974104afca2769d615466",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "080.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/minimal-table.css",
+          "status": "inlined",
+          "sha256": "8d2756230bc7bdfc1f43a6b4c89041447f7aafaf1ba971e9882795fd4ecb517b"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 81,
+      "file": "081.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/indexeddb/video-store/index.html",
+      "path": "javascript/apis/client-side-storage/indexeddb/video-store/index.html",
+      "bytes": 528,
+      "sha256": "9abbca8c67a51a52551f8d130fcca0e48ca5b5c341ee293e58c172548ccaec81",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "081.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/indexeddb/video-store/style.css",
+          "status": "inlined",
+          "sha256": "7bd968b91f91399d6758b8614db3317d06feada78248780ae006b3abe4109f50"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/indexeddb/video-store/index.js",
+          "status": "inlined",
+          "sha256": "a13489d798a6820c3d6e0cb898b70d5d1db761733d1a653c202d96308e2fbf71"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 82,
+      "file": "082.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/document-manipulation/shopping-list-finished.html",
+      "path": "javascript/apis/document-manipulation/shopping-list-finished.html",
+      "bytes": 1438,
+      "sha256": "0a48f23009475e60cf5cf1805612ab01dc4280e17e0d0df8bb5cc609428898e4",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "082.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 83,
+      "file": "083.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/fetching-data/fetch-finish.html",
+      "path": "javascript/apis/fetching-data/fetch-finish.html",
+      "bytes": 2761,
+      "sha256": "9f290d092f2611e68176ba3b73634066b9cbba4c5883a4c1fffb47ece7c32ead",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "083.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 84,
+      "file": "084.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/third-party-apis/nytimes/finished/index.html",
+      "path": "javascript/apis/third-party-apis/nytimes/finished/index.html",
+      "bytes": 1261,
+      "sha256": "ffe45a0b9332f3abbb74766462ebc59770c8360f64cf3f4a2fa45deca2a3fcbe",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "084.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/third-party-apis/nytimes/finished/script.js",
+          "status": "inlined",
+          "sha256": "130b9bd0a1b45bb8cb5b60c02d68d9410f5a2d09485dede44746a09f4c60fcb8"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/third-party-apis/nytimes/finished/style.css",
+          "status": "inlined",
+          "sha256": "23011f128dd8a2983ea72d6a8c5e7c007b7f364ef39fb6c586fe52fc73152b77"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 85,
+      "file": "085.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/introduction/oojs-finished.html",
+      "path": "javascript/oojs/introduction/oojs-finished.html",
+      "bytes": 1050,
+      "sha256": "d0cf74d327ec56d5855b6d4c3afa3901e21bedf6b59dbc66c00e987c7120ca77",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "085.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 86,
+      "file": "086.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/json/heroes-finished.html",
+      "path": "javascript/oojs/json/heroes-finished.html",
+      "bytes": 2311,
+      "sha256": "f1467cf0ecceb943e2d2e423d4adb632d35560b36479b971b5e647cb517690b3",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "086.offline.html",
+      "dependencies": [
+        {
+          "url": "https://fonts.googleapis.com/css?family=Faster+One",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/json/style.css",
+          "status": "inlined",
+          "sha256": "b2f3ccc2a8898563b71cd5963b457127541d9a8ebb537fa3e2bff0186f699d85"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 87,
+      "file": "087.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/object-basics/object-basics1-download.html",
+      "path": "javascript/oojs/tasks/object-basics/object-basics1-download.html",
+      "bytes": 983,
+      "sha256": "420bdac267a18b3cad9b2eb1e30391f3118952cb0a1f57d73139fb80a8795137",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "087.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/styles.css",
+          "status": "inlined",
+          "sha256": "7bfeee947b5aa101291c2f499995506345244cc9333afa0b439dd8560d09c22f"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 88,
+      "file": "088.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/css-layout/practical-positioning-examples/tabbed-info-box-start.html",
+      "path": "css/css-layout/practical-positioning-examples/tabbed-info-box-start.html",
+      "bytes": 2512,
+      "sha256": "deb38fccd26901672d16a5440c7ef86a1f87900df970843cb443902f795b8c97",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "088.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/css/css-layout/practical-positioning-examples/tabs-manual.js",
+          "status": "inlined",
+          "sha256": "a56eb9baa8f3adbf48960cf4cc7b945d198cf820a452edecc15ba5b202b40076"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 89,
+      "file": "089.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/sending-form-data/templates/form.html",
+      "path": "html/forms/sending-form-data/templates/form.html",
+      "bytes": 949,
+      "sha256": "31fbbfc2a51058bbda2635b040d6404525b251738440b5c77b5428353dbaf25c",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "089.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 90,
+      "file": "090.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-marked-up/social.html",
+      "path": "html/introduction-to-html/navigation-menu-marked-up/social.html",
+      "bytes": 609,
+      "sha256": "4d3f3c9906f21cfd26d02be454c2100a965647eac332505b67c668b8833aae4e",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "090.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 91,
+      "file": "091.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-start/social.html",
+      "path": "html/introduction-to-html/navigation-menu-start/social.html",
+      "bytes": 418,
+      "sha256": "33c06bb5a6e13c56bdc865a4218e1112d73eeeb4f2cbf39f5511669615d8f698",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "091.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 92,
+      "file": "092.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats.html",
+      "path": "html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats.html",
+      "bytes": 543,
+      "sha256": "c8e5e9e0b238ea864398da91c9c272c69e0177853a4eb8b9aabe90ed9d496cd7",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "092.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 93,
+      "file": "093.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/nested-tables.html",
+      "path": "html/tables/advanced/nested-tables.html",
+      "bytes": 907,
+      "sha256": "8ee2d0e15ae171e9bbab716a6011739fb79eee1943c0855dc848a2b1b5119641",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "093.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/minimal-table.css",
+          "status": "inlined",
+          "sha256": "8d2756230bc7bdfc1f43a6b4c89041447f7aafaf1ba971e9882795fd4ecb517b"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 94,
+      "file": "094.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/client-side-storage/web-storage/index.html",
+      "path": "javascript/apis/client-side-storage/web-storage/index.html",
+      "bytes": 250,
+      "sha256": "a26dc9638765ee7788cf67c1be39bb9790edaab48cd77b375807c8a50b7909c9",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "094.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 95,
+      "file": "095.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/document-manipulation/shopping-list.html",
+      "path": "javascript/apis/document-manipulation/shopping-list.html",
+      "bytes": 633,
+      "sha256": "34f3c53b755e7111ebf27b2a65e4282a94938d76b51b35ac4c3da01aef470804",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "095.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 96,
+      "file": "096.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/fetching-data/fetch-start.html",
+      "path": "javascript/apis/fetching-data/fetch-start.html",
+      "bytes": 1117,
+      "sha256": "14c1e749f71247ebaf05d09af8adb9c679082a82e936b29e41f20541d9ce58d8",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "096.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 97,
+      "file": "097.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/third-party-apis/nytimes/start/index.html",
+      "path": "javascript/apis/third-party-apis/nytimes/start/index.html",
+      "bytes": 1260,
+      "sha256": "eb5d6a72ac4cb9e61b6dcef630a396e55a5e7a3e759c0b9c2dc5f409a10b8650",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "097.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/third-party-apis/nytimes/start/script.js",
+          "status": "inlined",
+          "sha256": "d934d927ed8f28ab92b590ee1232114b2d1d868f0ed48d5cb5a13626a1d98591"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/apis/third-party-apis/nytimes/start/style.css",
+          "status": "inlined",
+          "sha256": "779433b0c471bca440a7ef76f790db569d1367723c0a7079d77b0c22b5e3039d"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 98,
+      "file": "098.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/introduction/oojs.html",
+      "path": "javascript/oojs/introduction/oojs.html",
+      "bytes": 518,
+      "sha256": "a793963efd7e742b761eaa502071f49d1580da82692c9a44d8ad3edfaa438926",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "098.offline.html",
+      "dependencies": [],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 99,
+      "file": "099.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/json/heroes.html",
+      "path": "javascript/oojs/json/heroes.html",
+      "bytes": 379,
+      "sha256": "1bd2aa7473e39725e27439ed5a0b404e86f11bbb594223209991e8a9170b3cd6",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "099.offline.html",
+      "dependencies": [
+        {
+          "url": "https://fonts.googleapis.com/css?family=Faster+One",
+          "status": "external-not-loaded"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/json/style.css",
+          "status": "inlined",
+          "sha256": "b2f3ccc2a8898563b71cd5963b457127541d9a8ebb537fa3e2bff0186f699d85"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    },
+    {
+      "id": 100,
+      "file": "100.html",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/object-basics/object-basics1.html",
+      "path": "javascript/oojs/tasks/object-basics/object-basics1.html",
+      "bytes": 1101,
+      "sha256": "a4be435bf7c1383900fbea25b861ca0fb0ed4c475130b72dd05b851ee5e30f6e",
+      "source": "MDN Learning Area",
+      "status": "downloaded",
+      "prepared": "100.offline.html",
+      "dependencies": [
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/styles.css",
+          "status": "inlined",
+          "sha256": "7bfeee947b5aa101291c2f499995506345244cc9333afa0b439dd8560d09c22f"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/javascript/oojs/tasks/playable.js",
+          "status": "inlined",
+          "sha256": "584353c1ed91f8eabf63b9aa6e54bf0986894c56bd0cf78dadf909ce4ef7197b"
+        }
+      ],
+      "provenance": "MDN community-maintained educational source; individual AI usage not independently verified"
+    }
+  ]
+}

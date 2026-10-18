@@ -1,6 +1,6 @@
 'use strict'
 
-const { fileKind } = require('../../file-reader/shared/file-types')
+const recent = require('../../utils/recent-session')
 const { stageMaterialRoute, startFileSession } = require('../../utils/file-session')
 const { enableShareMenu, shareAppMessage, shareTimeline } = require('../../utils/share')
 
@@ -13,6 +13,7 @@ Page({
     copy: HOME_COPY,
     inputMode: '',
     draftHtml: '',
+    recent: null,
     error: ''
   },
 
@@ -23,6 +24,11 @@ Page({
   onShow () {
     enableShareMenu()
     wx.setNavigationBarTitle({ title: '兔子阅读器' })
+    const saved = recent.read()
+    this.setData({ inputMode: '', error: '', recent: saved ? { count: saved.files.length, name: saved.files[saved.index] && saved.files[saved.index].name || saved.files[0].name } : null }, () => {
+      if (typeof wx.pageScrollTo === 'function') wx.pageScrollTo({ scrollTop: 0, duration: 0 })
+    })
+    if (typeof wx.hideKeyboard === 'function') wx.hideKeyboard({ fail () {} })
   },
 
   chooseFile () {
@@ -51,30 +57,27 @@ Page({
   },
 
   resolvePickedFiles (files, selection) {
-    const prepared = []
-    const next = index => {
+    if (selection !== this._selectionRevision) return
+    this.openFileSession(files)
+  },
+
+  async resumeReading () {
+    if (this._resuming) return
+    this._resuming = true
+    const selection = (this._selectionRevision || 0) + 1
+    this._selectionRevision = selection
+    const app = getApp()
+    try {
+      if (!await recent.restore(app)) { this.setData({ recent: null, error: '上次文件已过期或被清理，请重新选择。' });return }
       if (selection !== this._selectionRevision) return
-      if (index === files.length) { this.openFileSession(prepared); return }
-      const file = files[index]
-      if (fileKind(file) !== 'unsupported') { prepared.push(file); next(index + 1); return }
-      // A picker can supply a display name without a usable extension. Keep
-      // the original path/name, and let the user choose how to read the bytes.
-      this.setData({ error: `无法识别“${file.name || '未命名文件'}”，请选择打开方式。` })
-      wx.showActionSheet({
-        itemList: ['按 Markdown 打开', '按纯文本打开'],
-        success: result => {
-          if (selection !== this._selectionRevision) return
-          if (result.tapIndex !== 0 && result.tapIndex !== 1) return
-          prepared.push({ ...file, type: result.tapIndex === 0 ? 'text/markdown' : 'text/plain' })
-          next(index + 1)
-        },
-        fail: error => {
-          if (selection !== this._selectionRevision) return
-          this.setData({ error: String(error.errMsg || '').includes('cancel') ? '已取消，可重新选文件。' : '无法选择打开方式，请重试。' })
-        }
-      })
-    }
-    next(0)
+      const url = stageMaterialRoute(app, app.globalData.fileQueue[app.globalData.fileQueueIndex])
+      wx.navigateTo({ url, fail: () => this.setData({ error: '未能恢复，请重试。' }) })
+    } finally { this._resuming = false }
+  },
+
+  clearRecent () {
+    recent.clear()
+    this.setData({ recent: null })
   },
 
   loadSample () {
@@ -90,8 +93,13 @@ Page({
 
   showPaste () {
     this.setData({ inputMode: 'paste', error: '' }, () => {
-      wx.pageScrollTo({ selector: '.input-box', duration: 180 })
+      if (this.data.inputMode === 'paste') wx.pageScrollTo({ selector: '.input-box', duration: 180 })
     })
+  },
+
+  closePaste () {
+    this.setData({ inputMode: '', error: '' })
+    if (typeof wx.hideKeyboard === 'function') wx.hideKeyboard({ fail () {} })
   },
 
   onHtmlInput (event) {
@@ -121,7 +129,7 @@ Page({
       return
     }
     this.setData({ error: '' })
-    wx.redirectTo({
+    wx.navigateTo({
       url,
       fail: error => this.setData({ error: `无法打开文件：${error.errMsg || '未知错误'}` })
     })

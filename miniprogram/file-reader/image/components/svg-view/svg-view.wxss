@@ -3,3 +3,9 @@
 
 .svg-view-controls { display: flex; align-items: center; justify-content: space-between; padding: 6px 12px; font-size: 12px; color: #42534c; }
 .svg-view-controls button { margin: 0; font-size: 12px; }
+
+.svg-time-preview { background: #f4f6eb; padding-bottom: 2px; }
+.svg-time-preview slider { margin: 5px 18px 12px; }
+
+.svg-view-controls button { min-width:88px; padding:0 14px; line-height:34px; border-radius:17px; background:#e7f2c9; color:#38471c; font-weight:600; }
+.svg-view-controls button::after { border:0; }

@@ -388,7 +388,8 @@ test('Canvas 节点携带轻量绘制指令和修订号', () => {
   assert.equal(node.canvas.height, 100)
   assert.equal(node.canvas.rev, 2)
   assert.deepEqual(node.canvas.ops.map(operation => operation.name), ['set:fillStyle', 'fillRect'])
-  assert.match(node.canvasBoxStyle, /padding-top:50%/)
+  assert.match(node.canvasSizerStyle, /padding-top:50%/)
+  assert.doesNotMatch(node.canvasBoxStyle, /padding-top/)
 })
 
 test('flex/grid 容器忽略纯空白文本，避免 WXML 把空白当布局项', () => {

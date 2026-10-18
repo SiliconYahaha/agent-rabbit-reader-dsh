@@ -1,7 +1,11 @@
 <view class="svg-view-shell">
-  <view wx:if="{{ready && animated}}" class="svg-view-controls">
-    <text>{{paused ? '动画已暂停' : '动画播放中'}}</text>
-    <button size="mini" bindtap="onTap">{{paused ? '继续播放' : '暂停'}}</button>
+  <view wx:if="{{ready && animated && controls}}" class="svg-view-controls">
+    <text>{{paused ? '已暂停' : hasWallclock ? (previewingTime ? '正在预览时间' : '跟随本机时间') : '播放中'}}</text>
+    <button size="mini" bindtap="onTap">{{paused ? '▶ 继续播放' : 'Ⅱ 暂停'}}</button>
+  </view>
+  <view wx:if="{{ready && hasWallclock && controls}}" class="svg-time-preview">
+    <view class="svg-view-controls"><text>{{previewingTime ? '预览 ' + clockLabel : '拖动时间，看看会发生什么'}}</text><button wx:if="{{previewingTime}}" size="mini" bindtap="onTimeNow">回到当前时间</button></view>
+    <slider min="0" max="1439" step="1" value="{{clockMinute}}" activeColor="#819d42" block-size="18" bindchange="onTimePreview" />
   </view>
   <canvas id="svg-view-canvas" type="2d" class="svg-view-canvas" style="height:{{height}}px"></canvas>
 </view>

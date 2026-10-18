@@ -604,15 +604,15 @@ test('设计文件没有本地路径时直接报错，不显示空白预览', ()
   assert.equal(page.data.isLoading, false)
 })
 
-test('PDF 和 Office 文件会直接交给微信文档查看器', () => {
+test('PDF 始终留在页内且没有外部查看入口', () => {
   let opened
   const { page } = loadPage({ openDocument: options => { opened = options } })
 
   page.openSelectedFile({ name: '方案.pdf', path: '/tmp/plan.pdf', size: 2048 })
 
-  assert.equal(opened.filePath, '/tmp/plan.pdf')
-  assert.equal(opened.fileType, 'pdf')
-  assert.equal(opened.showMenu, true)
+  assert.equal(opened, undefined)
+  assert.equal(page.data.pdfSessions[0].file.path, '/tmp/plan.pdf')
+  assert.equal(page.openDocumentOnRequest, undefined)
 })
 
 test('聊天素材即使没有扩展名也会按 MIME 类型打开文档', () => {
@@ -627,39 +627,35 @@ test('聊天素材即使没有扩展名也会按 MIME 类型打开文档', () =>
     }
   }
   let opened
-  const { host } = loadPage({ openDocument: options => { opened = options } }, app)
+  const { host, page } = loadPage({ openDocument: options => { opened = options } }, app)
 
   host.openForwardedMaterial()
 
   assert.equal(app.globalData.pendingMaterial, null)
-  assert.equal(opened.filePath, '/tmp/document')
-  assert.equal(opened.fileType, 'pdf')
+  assert.equal(opened, undefined)
+  assert.equal(page.data.pdfSessions[0].file.path, '/tmp/document')
+  assert.equal(page.openDocumentOnRequest, undefined)
 })
 
-test('微信原生查看器拒绝 docm/xlsm 时会回退读取 OOXML 目录', async () => {
-  const zip = Buffer.alloc(22)
-  zip.writeUInt32LE(0x06054b50, 0)
-  const { page } = loadPage({
-    openDocument: options => options.fail({ errMsg: 'unsupported file type' }),
-    getFileSystemManager: () => rangedReader(zip)
-  })
-
-  page.openSelectedFile({ name: '宏文档.docm', path: '/tmp/macro.docm', size: zip.length })
+test('损坏的 Office 留在当前页报错，不跳转查看器或伪装为压缩包', async () => {
+  const { page } = loadPage({ openDocument: () => { throw Error('unexpected popup') }, getFileSystemManager: () => ({stat: o => o.success({stats:{size:0}})}) })
+  page.openSelectedFile({ name: '宏文档.docm', path: '/tmp/macro.docm' })
   await flushPromises()
-
-  assert.equal(page.data.inspectorMode, true)
-  assert.equal(page.data.inspectorTitle, 'ZIP 压缩包')
-  assert.equal(page.data.error, '')
+  assert.equal(page.data.inspectorMode, false)
+  assert.match(page.data.error, /文档为空/)
 })
 
-test('图片会直接进入微信图片预览', () => {
+test('图片显示和放大都留在页内', () => {
   let previewed
   const { page } = loadPage({ previewImage: options => { previewed = options } })
 
   page.openSelectedFile({ name: '成品.png', path: '/tmp/final.png', size: 4096 })
 
-  assert.equal(previewed.current, '/tmp/final.png')
-  assert.deepEqual(previewed.urls, ['/tmp/final.png'])
+  assert.equal(previewed, undefined)
+  assert.equal(page.data.imagePath, '/tmp/final.png')
+  page.enlargeImage()
+  assert.equal(previewed, undefined)
+  assert.equal(page.data.imageZoomed, true)
 })
 
 test('文本文件会转义后进入本机阅读页', () => {

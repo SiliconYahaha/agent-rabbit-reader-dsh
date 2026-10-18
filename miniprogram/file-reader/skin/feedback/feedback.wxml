@@ -1,0 +1,5 @@
+<view class="feedback">
+  <button class="feedback-entry" bindtap="contact">私信反馈</button>
+  <button class="feedback-copy" bindtap="copy">复制问题信息</button>
+  <view wx:if="{{expanded}}" class="feedback-guide"><text>暂时无法直接打开公众号。请在微信搜索「椒盐玉兔」，私信说明问题并附上截图。</text></view>
+</view>
