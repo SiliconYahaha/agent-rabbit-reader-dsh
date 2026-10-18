@@ -3,6 +3,7 @@
 .preview-host {
   box-sizing: border-box;
   min-height: 100vh;
+  padding-bottom: calc(40rpx + env(safe-area-inset-bottom));
   color: #171715;
   background: #fff9f2;
 }
@@ -12,7 +13,7 @@
 }
 
 .error-card {
-  margin: 22rpx 32rpx;
+  margin: 32rpx 40rpx;
   padding: 24rpx;
   border: 3rpx solid #171715;
   border-radius: 22rpx;

@@ -1,6 +1,10 @@
 {
   "component": true,
   "usingComponents": {
-    "skin-design": "/file-reader/skin/design/design"
+    "skin-design": "/file-reader/skin/design/design",
+    "pdf-view": "/file-reader/pdf/components/pdf-view/pdf-view"
+  },
+  "componentPlaceholder": {
+    "pdf-view": "view"
   }
 }

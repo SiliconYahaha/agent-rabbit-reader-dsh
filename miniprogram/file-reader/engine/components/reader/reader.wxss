@@ -159,3 +159,20 @@
 
 .svg-animation-notice { padding: 10px 14px; color: #715630; background: #fff4df; font-size: 13px; }
 .svg-animation-notice button { margin-top: 8px; }
+
+.local-image { display:block;width:100%;height:auto; }.native-document-card { margin:20px;padding:20px;border:1px solid #ccc5ba;border-radius:16px;word-break:break-all; }.native-document-card button { margin:18px 0;font-size:16px; }.native-document-note { font-size:13px;color:#666; }
+
+/* Mount animation at full width without hiding the static first frame. */
+.standalone-svg-stage { position: relative; margin:32rpx 40rpx 64rpx; }
+.standalone-svg-pending { position: absolute; top: 0; left: 0; opacity: 0; pointer-events: none; }
+
+/* Authored HTML can have high z-index values; keep it below product controls. */
+.reader-canvas{position:relative;z-index:0}
+
+.spreadsheet-controls{padding:12px 18px;background:#fff9f2;font-size:13px;color:#635f56}
+.spreadsheet-picker{font-size:16px;color:#171715;padding-bottom:8px}
+.spreadsheet-paging{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.spreadsheet-paging button{margin:0}
+
+.document-preview-inset{margin:32rpx 40rpx 64rpx}
+.image-preview-inset{box-sizing:border-box;width:calc(100% - 80rpx);margin:32rpx 40rpx 64rpx}

@@ -39,7 +39,7 @@ async function browserRun (cases, modules, componentSource) {
       throw Error('Unexpected component dependency: ' + name)
     }, value => { definition = value }, { nextTick: callback => queueMicrotask(callback), getWindowInfo: () => ({ pixelRatio: 1 }) })
     const player = { ...definition.methods, data: { ...definition.data, source: '', playing: true },
-      setData (patch) { Object.assign(this.data, patch) }, triggerEvent (name, detail) { events.push({ name, detail }) },
+      setData (patch, callback) { Object.assign(this.data, patch); if (callback) callback() }, triggerEvent (name, detail) { events.push({ name, detail }) },
       createSelectorQuery () { const query = { select: () => query, boundingClientRect: () => query, fields: () => query, exec: callback => callback([{ width: 64 }, { node: canvas, width: 64 }]) }; return query }
     }
     definition.lifetimes.attached.call(player); definition.lifetimes.ready.call(player)

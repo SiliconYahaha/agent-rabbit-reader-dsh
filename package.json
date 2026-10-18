@@ -1,6 +1,6 @@
 {
   "name": "rabbit-reader-dsh",
-  "version": "1.4.148",
+  "version": "1.4.159",
   "description": "在微信中本地查看 HTML、Ai、PSD/PSB、文档、媒体、压缩包和部分工程文件的兔子阅读器",
   "private": true,
   "scripts": {

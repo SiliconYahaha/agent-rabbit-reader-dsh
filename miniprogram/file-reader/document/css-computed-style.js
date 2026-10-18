@@ -1,6 +1,7 @@
 'use strict'
 
 const { cascadeForElement, parseCssRules, parseCssColor, DOM_UA_CSS, ABSOLUTE_UNIT_FACTORS } = require('./document-renderer')
+const { resolveLength } = require('./css-length')
 const names = require('./css-color-names')
 const INHERITED = new Set(['color','font-family','font-size','font-style','font-weight','line-height','letter-spacing','word-spacing','white-space','text-align','text-indent','text-transform','visibility','direction','cursor'])
 const INITIAL = { color:'rgb(0, 0, 0)', 'background-color':'rgba(0, 0, 0, 0)', 'font-family':'"Times New Roman"', 'font-size':'16px', 'font-style':'normal', 'font-weight':'400', 'line-height':'normal', 'letter-spacing':'normal', 'word-spacing':'0px', 'white-space':'normal', 'text-align':'start', 'text-indent':'0px', 'text-transform':'none', visibility:'visible', direction:'ltr', cursor:'auto', display:'inline', position:'static', opacity:'1', 'box-sizing':'content-box', width:'auto', height:'auto', content:'normal', 'overflow-x':'visible', 'overflow-y':'visible' }
@@ -24,12 +25,8 @@ function colorValue (value, current) {
   return color.a===1?`rgb(${rgb})`:`rgba(${rgb}, ${Math.round(color.a*1000)/1000})`
 }
 function length (value, font, root, percent, document) {
-  const m=String(value).trim().match(/^([+-]?(?:\d*\.\d+|\d+))(px|em|rem|%|vw|vh|vmin|vmax|mm|cm|in|pt|pc|q)?$/i)
-  if (!m) return null
-  const unit=(m[2]||'').toLowerCase(), n=Number(m[1]), w=document._viewportWidth,h=document._viewportHeight
-  if (!unit && n!==0) return null
-  const factor=({px:1,em:font,rem:root,'%':percent==null?NaN:percent/100,vw:w/100,vh:h/100,vmin:Math.min(w,h)/100,vmax:Math.max(w,h)/100,'':1,...ABSOLUTE_UNIT_FACTORS})[unit]
-  return Number.isFinite(n*factor)?n*factor:null
+  const w=document._viewportWidth,h=document._viewportHeight
+  return resolveLength(value,{em:font,rem:root,'%':percent==null?NaN:percent/100,vw:w/100,vh:h/100,dvw:w/100,dvh:h/100,svw:w/100,svh:h/100,lvw:w/100,lvh:h/100,vmin:Math.min(w,h)/100,vmax:Math.max(w,h)/100,...ABSOLUTE_UNIT_FACTORS})
 }
 function expanded (input) {
   const styles={...input}
@@ -42,7 +39,7 @@ function expanded (input) {
   if(styles.overflow){const v=styles.overflow.split(/\s+/);styles['overflow-x']??=v[0];styles['overflow-y']??=v[1]||v[0]}
   if(styles.font==='inherit') for(const key of ['font-size','font-family','font-style','font-weight','line-height'])styles[key]??='inherit'
   else if(styles.font) {
-    const match=styles.font.match(/^(.*?)\b([\d.]+(?:px|em|rem|%|pt))(?:\s*\/\s*([^\s]+))?\s+(.+)$/)
+    const match=styles.font.match(/^((?:.*?\s)?)(\d*\.?\d+(?:px|em|rem|%|pt))(?:\s*\/\s*([^\s]+))?\s+(.+)$/)
     if(match){styles['font-size']??=match[2];styles['font-family']??=match[4];styles['line-height']??=match[3]||'normal';styles['font-style']??=/\bitalic\b/.test(match[1])?'italic':'normal';styles['font-weight']??=(match[1].match(/\b(?:bold|[1-9]00)\b/)||['normal'])[0]}
   }
   if(styles.background && colorValue(styles.background,'rgb(0, 0, 0)'))styles['background-color']??=styles.background
@@ -86,7 +83,7 @@ function createComputedStyleReader (document, getStyles, options={}) {
     const current=parent?.styles.color||INITIAL.color
     styles.color=colorValue(styles.color,current)||current
     for(const key of Object.keys(styles))if(key.endsWith('color')&&key!=='color')styles[key]=colorValue(styles[key],styles.color)||INITIAL[key]||styles[key]
-    const parentWidth=parent?.contentWidth??document._viewportWidth,parentHeight=parent?.contentHeight
+    const parentWidth=parent?.contentWidth??document._viewportWidth,parentHeight=parent?.contentHeight??(element===document.documentElement?document._viewportHeight:undefined)
     for(const key of Object.keys(styles)) {
       if(!/^(?:margin-|padding-|border-.*-width$|text-indent$|letter-spacing$|word-spacing$)/.test(key))continue
       const n=length(styles[key],font,root,parentWidth,document);if(n!=null)styles[key]=px(n)

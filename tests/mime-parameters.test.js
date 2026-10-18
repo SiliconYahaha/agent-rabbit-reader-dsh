@@ -40,9 +40,9 @@ test('MIME spelling/parameters select actual ZIP contents and DXF geometry witho
  }
  }
 })
-test('native Office handoff normalizes media type while retaining original headers',()=>{
- const types={'application/pdf':'pdf','application/msword':'doc','application/vnd.openxmlformats-officedocument.wordprocessingml.document':'docx','application/vnd.ms-word.document.macroenabled.12':'docx','application/vnd.ms-excel':'xls','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':'xlsx','application/vnd.ms-excel.sheet.macroenabled.12':'xlsx','application/vnd.ms-powerpoint':'ppt','application/vnd.openxmlformats-officedocument.presentationml.presentation':'pptx'}
- for(const[mime,expected]of Object.entries(types))for(const type of variants(mime)){let args;const page=readerPage({openDocument:o=>{args=o}});const file=Object.freeze({name:'聊天附件',type,path:'/fixture/input'});assert.equal(fileKind(file),'document');page.openSelectedFile(file);assert.equal(args.fileType,expected);assert.equal(file.type,type);page.detached()}
+test('Office MIME routes inline and retains original headers',()=>{
+ const types=['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/vnd.ms-word.document.macroenabled.12','application/vnd.ms-excel','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','application/vnd.ms-excel.sheet.macroenabled.12','application/vnd.ms-powerpoint','application/vnd.openxmlformats-officedocument.presentationml.presentation']
+ for(const mime of types)for(const type of variants(mime)){let office;const page=readerPage({openDocument:()=>{throw Error('external viewer')}});page.openOfficeFile=file=>{office=file};const file=Object.freeze({name:'聊天附件',type,path:'/fixture/input'});assert.equal(fileKind(file),'document');page.openSelectedFile(file);if(mime==='application/pdf')assert.equal(page.data.pdfSessions[0].file.path,file.path);else assert.equal(office,file);assert.equal(file.type,type);page.detached()}
 })
 test('unknown MIME remains metadata with the exact original header',()=>{const type=' Application/Unknown ; name="x;charset=gbk"';const result=inspectFileBytes(Buffer.from('owned bytes'),{name:'attachment',type});assert.equal(result.title,'二进制文件信息');assert.equal(result.metadata.find(m=>m.label==='MIME 类型').value,type)})
 const familyRefs=require('./fixtures/mime-parameters/families.json')

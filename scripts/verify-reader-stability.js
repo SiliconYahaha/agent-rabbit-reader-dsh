@@ -29,7 +29,7 @@ async function main(){
       originals.push({name,sha256:crypto.createHash('sha256').update(source).digest('hex'),nodes:before.length,retained,retainedAfterScroll,images:images.length,originalSvgComparisons,inlineSvgDecodeChecks,scrollRequests:scrollRequests.length,errors:[],wholeTreePatches:p.patches.filter(x=>x.domTree).length})
     }finally{p.host.onUnload()}
   }
-  const queueStyles=['index/index','file-preview/file-preview'].map(name=>fs.readFileSync(path.join(__dirname,'../miniprogram/pages',name+'.wxss'),'utf8'))
+  const queueStyles=['index/index','file-preview/file-preview'].map(name=>require('../tests/helpers/read-wxss')(path.join(__dirname,'../miniprogram/pages',name+'.wxss')))
   async function browserRun(samples,styles){
     const results=[]
     const pixels=async src=>{const i=new Image();i.src=src;await i.decode();const c=document.createElement('canvas');c.width=i.naturalWidth;c.height=i.naturalHeight;const ctx=c.getContext('2d');ctx.drawImage(i,0,0);const data=ctx.getImageData(0,0,c.width,c.height).data,colors=new Set();let visible=0;for(let j=0;j<data.length;j+=4){if(data[j+3]){visible++;if(colors.size<100)colors.add(data[j]+','+data[j+1]+','+data[j+2])}}return{width:c.width,height:c.height,visible,colors:colors.size,hash:Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',data)),b=>b.toString(16).padStart(2,'0')).join('')}}
@@ -38,10 +38,11 @@ async function main(){
     for(let route=0;route<styles.length;route++)for(const width of [320,360,390,430]){
       const frame=document.createElement('iframe');frame.style=`width:${width}px;height:250px;border:0`;
       const css=styles[route].replace(/([\d.]+)rpx/g,(_,n)=>Number(n)*width/750+'px')
-      frame.srcdoc=`<style>body{margin:0}button{width:100%;padding:8px;box-sizing:border-box}button[size=mini]{display:inline-block;width:auto}${css}</style><view class="file-queue"><button size="mini" class="queue-button">上一份</button><text class="queue-position">10/10</text><button size="mini" class="queue-button">下一份</button></view>`
+      frame.srcdoc=`<style>body{margin:0}button{width:100%;padding:8px;box-sizing:border-box}button[size=mini]{display:inline-block;width:auto}${css}</style><view class="file-queue"><button size="mini" class="queue-button">‹ 上一个</button><button class="queue-position">10/10 · 目录</button><button size="mini" class="queue-button">下一个 ›</button></view>`
       await new Promise(resolve=>{frame.onload=resolve;document.body.appendChild(frame)})
-      const d=frame.contentDocument,bar=d.querySelector('.file-queue'),counter=d.querySelector('.queue-position'),buttons=Array.from(d.querySelectorAll('button')),rect=counter.getBoundingClientRect(),font=parseFloat(frame.contentWindow.getComputedStyle(counter).fontSize)
-      queues.push({route,width,oneLine:rect.height<=font*1.2,noOverflow:bar.scrollWidth<=bar.clientWidth,compact:buttons.every(b=>b.getBoundingClientRect().width<width*.25),counterWidth:rect.width});frame.remove()
+      const d=frame.contentDocument,bar=d.querySelector('.file-queue'),counter=d.querySelector('.queue-position'),buttons=Array.from(d.querySelectorAll('.queue-button')),rect=counter.getBoundingClientRect(),font=parseFloat(frame.contentWindow.getComputedStyle(counter).fontSize)
+      const textRange=d.createRange();textRange.selectNodeContents(counter);const textHeight=textRange.getBoundingClientRect().height;
+      queues.push({route,width,oneLine:textHeight<=font*1.5,noOverflow:bar.scrollWidth<=bar.clientWidth,compact:buttons.every(b=>b.getBoundingClientRect().width<width*.25),counterWidth:rect.width});frame.remove()
     }
     document.querySelector('output').setAttribute('data-result',encodeURIComponent(JSON.stringify({pixels:results,queues})))
   }

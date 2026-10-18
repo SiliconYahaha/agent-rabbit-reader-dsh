@@ -5,9 +5,7 @@ on:
 
 permissions:
   contents: read
-  actions: read
 
-# Manual checks for the same branch replace earlier manual checks.
 concurrency:
   group: repository-checks-${{ github.ref }}
   cancel-in-progress: true
@@ -18,25 +16,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Check out exact commit and diff history
+      - name: Check out requested revision
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-      - name: Select checks for changed files
-        id: plan
-        run: node scripts/ci-plan.js
       - name: Set up Node.js
-        if: steps.plan.outputs.install == 'true'
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
           cache: npm
-      - name: Install locked dependencies only when needed
-        if: steps.plan.outputs.install == 'true'
+      - name: Install locked dependencies
         run: npm ci
-      - name: Run selected checks
-        env:
-          HTML_READER_CHROME: google-chrome
-        run: node scripts/ci-run.js
+      - name: Verify generated resources, tests and smoke cases
+        run: npm run check
+      - name: Verify production boundaries
+        run: npm run check:production
       - name: Reject malformed diffs
         run: git diff --check

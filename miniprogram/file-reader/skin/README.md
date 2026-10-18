@@ -2,7 +2,7 @@
 
 这个目录属于宿主小程序，`npm run sync:file-reader` **不会覆盖**它（目标没有时才复制这份默认皮肤当模板）。
 模块只复用功能：识别、读取、解压、排版、动画都在 `engine/` 与各族分包；卡片长什么样、按钮什么颜色、
-文件怎么称呼，全在这里。两个小程序各自维护一份。
+文件怎么称呼，全在这里。每个宿主独立维护自己的皮肤。
 
 | 文件 | 承担 | 引擎给的属性 | 皮肤发出的事件 |
 | --- | --- | --- | --- |
@@ -12,5 +12,5 @@
 | `inspector/` | 文件检查抬头、元数据卡、密码卡、文件名编码、内容清单与翻页 | kicker title summary note metadata needsPassword passwordStatus nameEncoding nameEncodingOptions linkFolder entries entryCount page pages hasPreviousPage hasNextPage；插槽 preview | passwordinput unlock encoding back open prev next |
 | `design/` | Ai / PSD 抬头、状态、元数据、提示、打开内嵌 PDF | mark name size loading loadingText metadataTitle metadata message error canOpenPdf openPdfText；插槽 preview | openpdf |
 
-属性名与事件名是引擎与皮肤之间的契约，改皮肤不要改它们；要加新能力先在 html-reader 里改引擎并更新此表。
+属性名与事件名是引擎与皮肤之间的契约，改皮肤不要改它们；要加新能力先在本仓库里改引擎并更新此表。
 皮肤组件在主包里，引擎分包引用主包组件不需要 componentPlaceholder。

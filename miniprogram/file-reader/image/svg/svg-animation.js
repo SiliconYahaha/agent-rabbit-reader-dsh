@@ -153,7 +153,8 @@ function collectSmil (doc) {
     const hrefTarget = node.attrs.href ? doc.byId[String(node.attrs.href).replace(/^#/, '')] : null
     const target = hrefTarget || record.parent
     if (!target) continue
-    const begin = parseBeginList(node.attrs.begin)
+    const wallclock = parseWallclock(node.attrs.begin)
+    const begin = wallclock == null ? parseBeginList(node.attrs.begin) : 0
     if (begin == null) continue // 事件触发或 indefinite：永不开始
     const dur = parseClock(node.attrs.dur)
     const pathValues = node.attrs.attributeName === 'd' && node.attrs.values != null
@@ -176,6 +177,7 @@ function collectSmil (doc) {
       transformType: node.name === 'animateTransform' ? (node.attrs.type || 'translate') : '',
       additive: node.attrs.additive === 'sum',
       begin,
+      wallclock,
       dur: Number.isFinite(dur) && dur > 0 ? dur : (isSet ? Infinity : NaN),
       repeatCount: node.attrs.repeatCount === 'indefinite' ? Infinity : Number(node.attrs.repeatCount || 1),
       repeatDur: parseClock(node.attrs.repeatDur),
@@ -210,6 +212,15 @@ function collectSmil (doc) {
     animations.push(animation)
   }
   return animations
+}
+
+// Bounded subset of SVG 1.1 wallclock timing: a complete ISO date/time with zone.
+// Do not guess locale dates or execute script/event expressions.
+function parseWallclock (value) {
+  const match = /^wallclock\((\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2}))\)$/.exec(String(value || '').trim())
+  if (!match) return null
+  const time = Date.parse(match[1])
+  return Number.isFinite(time) ? time : null
 }
 
 // begin 支持 "1s; 3s" 这类偏移列表，取最早一个；事件名/indefinite 返回 null
@@ -422,7 +433,7 @@ function createTimeline (doc) {
     loopDuration = Math.max(loopDuration, total)
   }
 
-  function sample (time) {
+  function sample (time, wallclockNow = Date.now()) {
     const overrides = new Map()
     const overrideFor = record => {
       let entry = overrides.get(record)
@@ -434,7 +445,7 @@ function createTimeline (doc) {
       const baseValue = animation.transformType
         ? null
         : animation.attributeName === 'd' ? animation.basePath : classifyValue(record.node.attrs[animation.attributeName] != null ? record.node.attrs[animation.attributeName] : record.style[animation.attributeName])
-      const value = sampleSmil(animation, time, baseValue)
+      const value = sampleSmil(animation, animation.wallclock == null ? time : (wallclockNow - animation.wallclock) / 1000, baseValue)
       if (!value) continue
       const entry = overrideFor(record)
       if (animation.transformType) {
@@ -469,7 +480,7 @@ function createTimeline (doc) {
     return overrides
   }
 
-  return { hasAnimation, loopDuration, smilCount: smil.length, cssCount: css.length, sample }
+  return { hasAnimation, hasWallclock: smil.some(animation => animation.wallclock != null), loopDuration, smilCount: smil.length, cssCount: css.length, sample }
 }
 
 function defaultFor (property) {

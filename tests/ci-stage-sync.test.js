@@ -11,7 +11,6 @@ const {
   inspectStaged,
   pushArguments,
   pushStage,
-  resolveIdentity,
   secretFindings,
   sensitivePath,
   workflowTriggers
@@ -90,12 +89,12 @@ test('只能把 main 同步到独立仓库，分支不符在联网前就拒绝',
   assert.throws(() => pushStage({ remote: 'origin', branch: 'develop', execute: true }), /只允许同步 main 分支/)
 })
 
-test('目标仓库就是本独立仓库，且使用真实 Git 身份', () => {
-  const facts = assertTargetRepository()
-  assert.equal(facts.toplevel, root)
-  assert.equal(facts.branch, 'main')
-  assert.ok(facts.remotes.some(remote => remote.url === 'https://github.com/SiliconYahaha/agent-rabbit-reader-dsh.git' && remote.type === '(push)'))
-  const identity = resolveIdentity()
-  assert.ok(identity.name, '仓库必须配置真实 user.name')
-  assert.match(identity.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/)
+test('目标仓库检查拒绝外部 Git 目录与其他远程，允许独立仓库任务分支', () => {
+  const facts = {
+    toplevel: root, gitDir: path.join(root, '.git'), commonDir: path.join(root, '.git'),
+    branch: 'codex/example', remotes: [{ name: 'origin', url: 'https://github.com/SiliconYahaha/agent-rabbit-reader-dsh.git', type: '(push)' }]
+  }
+  assert.equal(assertTargetRepository(facts), facts)
+  assert.throws(() => assertTargetRepository({ ...facts, commonDir: path.dirname(root) }), /Git 目录越出项目/)
+  assert.throws(() => assertTargetRepository({ ...facts, remotes: [{ name: 'origin', url: 'https://github.com/example/other.git' }] }), /不是本项目独立仓库/)
 })

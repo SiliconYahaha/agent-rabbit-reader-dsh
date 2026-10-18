@@ -48,15 +48,15 @@ test('reader resumes a consumed pending file from its queue; failed design navig
   const app=queueApp();app.globalData.fileQueueIndex=0;app.globalData.pendingFilePreview=null;const routes=[];const p=readerPage({redirectTo:o=>{routes.push(o.url);o.fail({errMsg:'route failure'})}});global.getApp=()=>app;
   try{p.host.onLoad();p.host.onShow();assert.match(p._htmlRuntime.document.body.textContent,/one/);p.host.openNextFile();assert.ok(p.data.error);assert.equal(p.data.isLoading,false);assert.equal(p.host.data.queuePosition,2);p.host.openNextFile();assert.match(p._htmlRuntime.document.body.textContent,/three/);assert.equal(p.host.data.queuePosition,3);assert.deepEqual(routes,[])}finally{p.host.onUnload()}
 })
-test('late native viewer failure cannot overwrite the following HTML',()=>{
-  let fail;const p=readerPage({openDocument:o=>{fail=o.fail}});try{p.openSelectedFile({name:'old.pdf',path:'/old.pdf'});p.openSelectedFile({name:'new.html',inlineHtml:'<p>new</p>'});fail({errMsg:'late'});assert.equal(p.data.error,'');assert.equal(p.data.sourceName,'new.html')}finally{p.host.onUnload()}
+test('late Office read failure cannot overwrite the following HTML',async()=>{
+  let stat;const p=readerPage({getFileSystemManager:()=>({stat:o=>{stat=o}})});try{p.openSelectedFile({name:'old.docx',path:'/old.docx'});await flush();p.openSelectedFile({name:'new.html',inlineHtml:'<p>new</p>'});stat.fail({errMsg:'late'});await flush();assert.equal(p.data.error,'');assert.equal(p.data.sourceName,'new.html')}finally{p.host.onUnload()}
 })
 test('a broken design file error does not survive into the following queue item',()=>{
   const app=queueApp(),p=readerPage({redirectTo:()=>{throw new Error('design files must not leave the reader')}});global.getApp=()=>app;
   try{p.openSelectedFile(app.globalData.fileQueue[1]);assert.match(p.data.error,/设计文件路径/);p.host.openNextFile();assert.equal(p.data.error,'');assert.equal(p.host.data.queuePosition,3);assert.equal(p.data.sourceName,'three.html');assert.match(p._htmlRuntime.document.body.textContent,/three/)}finally{p.host.onUnload()}
 })
 test('both queue bars reserve a non-wrapping counter and explicit compact native buttons',()=>{
-  for(const name of ['index/index','file-preview/file-preview']){const root=path.join(__dirname,'../miniprogram/pages/',name),w=fs.readFileSync(root+'.wxml','utf8'),css=require('./helpers/read-wxss')(root+'.wxss');assert.equal((w.match(/button size="mini" class="queue-button"/g)||[]).length,2);assert.match(w,/\{\{queuePosition\}\}\/\{\{queueCount\}\}/);assert.match(css,/\.queue-position\s*\{[^}]*white-space:\s*nowrap/s);assert.match(css,/\.file-queue \.queue-button\s*\{[^}]*flex:\s*0 0 152rpx/s)}
+  for(const name of ['index/index','file-preview/file-preview']){const root=path.join(__dirname,'../miniprogram/pages/',name),w=fs.readFileSync(root+'.wxml','utf8'),css=require('./helpers/read-wxss')(root+'.wxss');assert.equal((w.match(/button size="mini" class="queue-button"/g)||[]).length,2);assert.match(w,/\{\{queuePosition\}\}\/\{\{queueCount\}\}/);assert.match(css,/\.queue-position\s*\{[^}]*white-space:\s*nowrap/s);assert.match(css,/\.file-queue \.queue-button\s*\{[^}]*flex:\s*0 0 176rpx/s)}
 })
 
 test('embedded SVG uses the same native-safe base64 presentation as standalone SVG, without changing author DOM',()=>{

@@ -134,3 +134,5 @@
   font-size: 22rpx;
   text-align: center;
 }
+
+.media-reader{margin:24rpx 32rpx;padding:24rpx;border:1rpx solid rgba(23,23,21,.18);border-radius:20rpx;box-shadow:none}

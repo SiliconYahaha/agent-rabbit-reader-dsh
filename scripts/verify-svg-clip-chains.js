@@ -18,7 +18,7 @@ async function componentRun(inputs,modules,componentSource,wasm,excessive,names=
     throw Error('Unexpected dependency '+id)
   },v=>{definition=v},{getWindowInfo:()=>({pixelRatio:1})})
   const player={...definition.methods,data:{...definition.data,playing:false},_viewReady:true,_images:new Map(),events:[],
-    setData(patch){Object.assign(this.data,patch)},triggerEvent(name,detail){this.events.push({name,detail})},
+    setData(patch,callback){Object.assign(this.data,patch);if(callback)callback()},triggerEvent(name,detail){this.events.push({name,detail})},
     createSelectorQuery(){const q={select:()=>q,boundingClientRect:()=>q,fields:()=>q,exec:callback=>{if(delayQuery)queries.push(callback);else callback([{width:256},{node:canvas,width:256}])}};return q}}
   const pixels=()=>new Uint8ClampedArray(ctx.getImageData(0,0,256,256).data),difference=(a,b)=>a.reduce((sum,x,i)=>sum+Math.abs(x-b[i]),0)
   async function expected(input){const image=new Image();image.src='data:image/svg+xml,'+encodeURIComponent(input.referenceSource);await image.decode();const c=document.createElement('canvas');c.width=c.height=256;const x=c.getContext('2d');x.drawImage(image,0,0);return x.getImageData(0,0,256,256).data}

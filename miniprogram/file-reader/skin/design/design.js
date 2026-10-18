@@ -14,10 +14,17 @@ Component({
     metadata: { type: Array, value: [] },
     message: { type: String, value: '' },
     error: { type: String, value: '' },
+    hasPreview: { type: Boolean, value: false },
     canOpenPdf: { type: Boolean, value: false },
     openPdfText: { type: String, value: '' }
   },
+  data: { detailsOpen: false, previewNotice: '' },
+  observers: {
+    name () { this.setData({ detailsOpen: false }) },
+    message (message) { this.setData({ previewNotice: /缩略|内嵌预览/.test(message || '') ? '当前显示内嵌预览，清晰度可能有限。' : '当前为兼容预览，部分细节可能与原稿不同。' }) }
+  },
   methods: {
+    toggleDetails () { this.setData({ detailsOpen: !this.data.detailsOpen }) },
     onOpenPdf () { this.triggerEvent('openpdf') }
   }
 })

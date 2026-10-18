@@ -131,6 +131,8 @@ async function uploadFromGitHubActions (env = process.env) {
       version,
       desc: description,
       robot,
+      // Avoid repeated COS transfer stalls on hosted runners. Official direct upload.
+      useCOS: false,
       setting: {
         es6: true,
         minify: true,
@@ -189,7 +191,9 @@ async function main () {
 if (require.main === module) {
   main().catch(error => {
     console.error(error && error.stack || error)
-    process.exitCode = 1
+    // The SDK can leave worker threads alive after a rejected upload.
+    // uploadFromGitHubActions has already completed its private-key cleanup.
+    process.exit(1)
   })
 }
 

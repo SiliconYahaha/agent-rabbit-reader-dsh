@@ -12,18 +12,22 @@
       <image class="button-icon button-icon-light" src="/assets/icons/folder-open.svg" mode="aspectFit" aria-hidden="true" />
       <text>{{copy.open}}</text>
     </button>
-    <view class="file-button-note">
-      <text>{{copy.pickerNote}}</text>
-    </view>
 
+    <view wx:if="{{recent}}" class="recent-session">
+      <button class="resume-button" bindtap="resumeReading">继续上次阅读 · {{recent.count}} 份文件</button>
+      <text class="recent-name">{{recent.name}}</text>
+      <view class="recent-note"><text>仅本机暂存 20 分钟</text><button size="mini" bindtap="clearRecent">清除</button></view>
+    </view>
     <view class="secondary-actions">
       <button class="source-button" bindtap="showPaste"><image class="button-icon" src="/assets/icons/clipboard-text.svg" mode="aspectFit" aria-hidden="true" />{{copy.paste}}</button>
       <button class="source-button" bindtap="loadSample"><image class="button-icon" src="/assets/icons/book-2.svg" mode="aspectFit" aria-hidden="true" />{{copy.sample}}</button>
     </view>
 
-    <button class="share-button" open-type="share" aria-label="分享兔子阅读器给微信好友">{{copy.share}}</button>
-
     <view wx:if="{{inputMode === 'paste'}}" class="input-box">
+      <view class="input-heading">
+        <text>粘贴 HTML</text>
+        <button class="close-paste" bindtap="closePaste" aria-label="关闭粘贴 HTML 输入区">关闭 ×</button>
+      </view>
       <textarea class="html-input" value="{{draftHtml}}" placeholder="{{copy.placeholder}}" maxlength="-1" bindinput="onHtmlInput" />
       <view wx:if="{{error}}" class="input-error" role="alert">{{error}}</view>
       <button class="action-button" bindtap="parseDraft">{{copy.openDraft}}</button>

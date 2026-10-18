@@ -118,12 +118,21 @@ function parseCsv (source, { maxChars = 200000, maxRows = 512, maxCells = 4096 }
 }
 
 const escape = source => String(source).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-const pre = (source, id = '', monospace = true) => `<pre ${id ? `id="${id}"` : ''} style="margin:0;padding:18px;white-space:pre-wrap;word-break:break-word;background:#fff${monospace ? ';font-family:monospace' : ''}">${escape(source)}</pre>`
+const pre = (source, id = '', monospace = true) => `<pre ${id ? `id="${id}"` : ''} style="margin:0;padding:18px;white-space:pre-wrap;word-break:break-word;background:#fff;color:#263238;font-size:14px;line-height:1.65${monospace ? ';font-family:monospace' : ''}">${escape(source)}</pre>`
 function renderTextData (source, { format = 'source', labels = {}, ...limits } = {}) {
   let formatted, diagnostic = '', rows
+  if (format === 'json' || format === 'base') {
+    try {
+      const snapshot = require('./base-snapshot').renderSnapshot(source)
+      if (snapshot) { formatted = snapshot.html; rows = { length: snapshot.rows }; format = 'base' }
+    } catch (error) {
+      formatted = `<p style="padding:18px">已识别压缩表格，但暂时无法展开：${escape(error.message)}。可查看原文。</p>`
+      format = 'base'
+    }
+  }
   try {
-    if (format === 'json') formatted = pre(formatJson(source, limits))
-    else if (format === 'csv') {
+    if (!formatted && format === 'json') formatted = pre(formatJson(source, limits))
+    else if (!formatted && format === 'csv') {
       rows = parseCsv(source, limits)
       formatted = `<table style="border-collapse:collapse">${rows.map(row => `<tr>${(row.length ? row : ['']).map(cell => `<td style="padding:8px;border:1px solid #ddd;white-space:pre-wrap;min-width:100px">${escape(cell)}</td>`).join('')}</tr>`).join('')}</table>`
     }
@@ -131,7 +140,7 @@ function renderTextData (source, { format = 'source', labels = {}, ...limits } =
   if (!formatted) return { html: pre(source, '', format !== 'text'), diagnostic, mode: 'source' }
   // Every piece of file content is escaped. Only this fixed UI handler runs in
   // the existing sandbox; author strings never enter executable script text.
-  const html = `<button id="text-data-toggle">${escape(labels.original || '')}</button><div id="text-data-formatted">${formatted}</div><div id="text-data-original" style="display:none">${pre(source)}</div><script>
+  const html = `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 18px;border-bottom:1px solid #e8e8e3;background:#fafaf7;color:#62645c;font-size:13px"><span>${format.toUpperCase()}</span><button id="text-data-toggle" style="margin:0;padding:6px 12px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#45483a;font-size:13px;line-height:1.5">${escape(labels.original || '')}</button></div><div id="text-data-formatted">${formatted}</div><div id="text-data-original" style="display:none">${pre(source)}</div><script>
 document.getElementById('text-data-toggle').addEventListener('click',function(){
  var a=document.getElementById('text-data-formatted'),b=document.getElementById('text-data-original');
  var raw=b.style.display==='none';a.style.display=raw?'none':'block';b.style.display=raw?'block':'none';

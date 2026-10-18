@@ -1,0 +1,15 @@
+{
+  "files": [
+    {
+      "file": "xlsx.js",
+      "url": "https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js",
+      "sha256": "cc015130aa8521e7f088f88898eba949ccdcbfb38df0bd129b44b7273c3a6f41"
+    },
+    {
+      "file": "doc-to-text.js",
+      "url": "https://raw.githubusercontent.com/Alpaq92/JSDoc/821695a884e0c0bb8592a635d9524bb3e116cd67/src/docToText.js",
+      "sha256": "1480cd409c36b0e8890509516ff6909dffd73a825211e821e1e09b880fc635db"
+    }
+  ],
+  "note": "No macros, remote resources, filesystem or network API is exposed to document content."
+}

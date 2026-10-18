@@ -22,7 +22,7 @@ function selectedHomeRoute (path, overrides = {}) {
   require(target)
   const home = { ...homeDefinition, data: structuredClone(homeDefinition.data), setData (patch) { Object.assign(this.data, patch) } }
   global.wx.chooseMessageFile = options => options.success({ tempFiles: [{ name: 'chosen.html', path, size: 128 }] })
-  global.wx.redirectTo = options => { assert.equal(options.url, '/pages/index/index'); page.host.onLoad(); page.host.onShow() }
+  global.wx.navigateTo = options => { assert.equal(options.url, '/pages/index/index'); page.host.onLoad(); page.host.onShow() }
   home.chooseFile()
   return { page, app, reads }
 }

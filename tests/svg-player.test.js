@@ -19,7 +19,7 @@ function player (loadClipUnion) {
     wx: { nextTick: callback => ticks.push(callback), getWindowInfo: () => ({ pixelRatio: 1 }) }, Map, Date, Array
   })
   const instance = { ...definition.methods, data: { source: sample, playing: true, ...definition.data }, events: [],
-    setData (patch) { Object.assign(this.data, patch) }, triggerEvent (name, detail) { this.events.push({ name, detail }) },
+    setData (patch, callback) { Object.assign(this.data, patch);if(callback)callback() }, triggerEvent (name, detail) { this.events.push({ name, detail }) },
     createSelectorQuery () { const q = { select: () => q, boundingClientRect: () => q, fields: () => q, exec: callback => queries.push(callback) }; return q }
   }
   const mount = (width = 100) => queries.shift()([{ width }, { node: canvas, width }])
@@ -183,4 +183,33 @@ test('rounded SVG host failure falls back across animation frames and later file
   v.load(sample); p.mount(); p.frame(100); p.frame(400)
   assert.equal(v.events.filter(e => e.name === 'error').length, 0)
   p.definition.lifetimes.detached.call(v); assert.equal(p.frames.size, 0)
+})
+
+
+test('wallclock preview is bounded, returns to real time and clears when changing SVG', () => {
+  const p = player(), v = p.instance
+  v.data.source = fs.readFileSync(path.resolve(__dirname, '../scripts/assets/example-art/off-work-radar.svg'), 'utf8')
+  p.definition.lifetimes.attached.call(v); p.definition.lifetimes.ready.call(v); p.mount()
+  assert.equal(v.data.hasWallclock, true)
+  v.onTimePreview({ detail: { value: 1080 } })
+  assert.equal(v._previewMinute, 1080); assert.equal(v.data.clockLabel, '18:00')
+  assert.equal(v.data.previewingTime, true)
+  v.onTimePreview({ detail: { value: NaN } }); assert.equal(v._previewMinute, 1080)
+  v.onTimeNow(); assert.equal(v._previewMinute, null); assert.equal(v.data.previewingTime, false)
+  v.onTimePreview({ detail: { value: 1080 } }); v.load(sample); p.mount()
+  assert.equal(v._previewMinute, null); assert.equal(v.data.hasWallclock, false)
+  v.onTimePreview({ detail: { value: 1080 } }); assert.equal(v._previewMinute, null)
+  p.definition.lifetimes.detached.call(v)
+  assert.equal(p.frames.size, 0)
+})
+
+
+test('Canvas first frame waits for view sizing and ignores a stale layout completion', () => {
+  const p=player(),v=p.instance,pending=[]
+  v.setData=(patch,callback)=>{Object.assign(v.data,patch);if(callback)pending.push(callback)}
+  p.definition.lifetimes.attached.call(v);p.definition.lifetimes.ready.call(v);p.mount()
+  assert.equal(v.events.length,0);assert.equal(p.frames.size,0)
+  v.load(sample);p.mount();pending.shift()()
+  assert.equal(v.events.length,0);assert.equal(p.frames.size,0)
+  pending.shift()();assert.equal(v.events.filter(e=>e.name==='ready').length,1);assert.equal(p.frames.size,1)
 })

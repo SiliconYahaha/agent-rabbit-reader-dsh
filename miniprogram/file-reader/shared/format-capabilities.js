@@ -30,6 +30,11 @@ register(['txt'], {
   visibleResult: '解码后的完整纯文本正文', evidence: 'UTF-8、UTF-16、GBK/GB18030 解码单测',
   outcome: '识别 UTF-8、UTF-16、GBK/GB18030 后显示完整纯文本。', limitations: '超过 5 MB 暂不直接排版。'
 })
+register(['base'], {
+  mode: 'content-preview', level: 'partial-content', contentReady: true,
+  visibleResult: '飞书多维表格快照中的字段、记录、文本与选项名称', evidence: '实际 56 条记录快照与微信开发者工具显示/连续切换，压缩边界与转义回归；真机待验',
+  outcome: '本机解压 gzipSnapshot 并显示只读表格，可查看原文。', limitations: '附件仅显示名称，复杂字段/视图不完整还原；压缩内容约 1 MB、展开 4 MB、1000 行、64 列和 16000 单元格限制，不恢复在线协作。'
+})
 register(['json', 'csv'], {
   mode: 'content-preview', level: 'full-content', contentReady: true,
   visibleResult: 'JSON 保留原始数值与重复键的缩进视图；CSV 字符串单元格表格及原文切换', evidence: 'JSON/CSV 规范和独立 Python 对照、直接文件与压缩包成员入口验证',
@@ -55,25 +60,36 @@ register(['svg'], {
   visibleResult: '净化后的矢量画面', evidence: 'SVG 净化、尺寸和安全图片输出单测',
   outcome: '净化后显示矢量图形。', limitations: '外部资源与危险脚本会被移除，超大 SVG 会拒绝。'
 })
-register(['pdf', 'doc', 'docx', 'docm', 'xls', 'xlsx', 'xlsm', 'ppt', 'pptx'], {
-  mode: 'native-preview', level: 'wechat-native', contentReady: true,
-  visibleResult: '微信原生文档查看器中的正文或页面', evidence: '文件路由与 wx.openDocument 参数自动化；实际解码由微信客户端提供',
-  outcome: '交给微信原生文档查看器显示正文或页面。', limitations: '最终兼容范围由当前微信客户端决定；宏不会执行。'
+register(['pdf'], {
+  mode: 'conditional-preview', level: 'conditional-content', contentReady: true,
+  visibleResult: '本地渲染的 PDF 页面，可翻页和放大', evidence: '中文多页、图文 PDF 的开发者工具画布与切换验证；真机待验',
+  outcome: '在当前阅读页逐页显示 PDF、输入密码、放大和重试；文件切换始终留在小程序内。', limitations: '页内文件上限 25 MB；加密、部分图像编码、复杂色彩效果及超大页面可能受限，不执行 PDF 脚本或表单。'
+})
+register(['doc', 'docx', 'docm', 'xls', 'xlsx', 'xlsm', 'ppt', 'pptx'], {
+  mode: 'conditional-preview', level: 'partial-content', contentReady: false,
+  visibleResult: '当前页中的 Word 正文、表格单元格或演示文稿各页内容', evidence: '公开 Office 原文件与混合队列验证；完整桌面版式不作保证',
+  outcome: '本机读取 Word 正文、表格和内嵌图片；Excel 显示工作表、合并单元格与保存的公式结果；PPTX 按页显示文字图片表格，旧 PPT 显示当前各页正文。', limitations: '单文件 25 MB；Word 复杂版式、Excel 图表、PPT 动画及精确版式未还原，旧 PPT 图片暂未还原。工作表每张最多 1000 行、50 列，总计 40000 单元格；不执行宏或外部链接。'
 })
 register(['png', 'jpg', 'jpeg', 'gif', 'webp'], {
-  mode: 'native-preview', level: 'wechat-native', contentReady: true,
-  visibleResult: '微信图片预览中的原图', evidence: '文件路由与 wx.previewImage 参数自动化；实际解码由微信客户端提供',
-  outcome: '使用微信图片预览显示原图。', limitations: '最终解码能力由当前微信客户端决定。'
+  mode: 'content-preview', level: 'full-content', contentReady: true,
+  visibleResult: '当前阅读页中的图片，可点击放大', evidence: '页内图片、加载失败恢复、连续文件切换验证',
+  outcome: '在当前阅读页显示原图，点击切换放大和适合宽度。', limitations: '实际图片编码解码能力由微信客户端提供。'
 })
-register(['ai'], {
+register(['ai', 'ait', 'eps'], {
   mode: 'conditional-preview', level: 'conditional-content', contentReady: false,
   visibleResult: '内嵌 PDF、旧式基础矢量或 DSC/EPSI 屏幕预览', evidence: 'PDF 兼容数据、PostScript 安全子集与 1/2/4/8-bit EPSI 确定性样本',
   outcome: '优先打开 Ai 内嵌 PDF；旧式 PostScript Illustrator 文件会在本机还原基础矢量路径，路径无法安全还原时继续解码 DSC/EPSI 屏幕预览位图。', limitations: 'EPSI 只是文件内低分辨率屏幕预览；没有 PDF 的现代专有编辑数据，以及旧式文件中的渐变、剪切蒙版、字体、链接图片和专有效果尚不能完整还原。'
 })
-register(['psd', 'psb'], {
+register(['psd', 'psb', 'psdt'], {
   mode: 'conditional-preview', level: 'conditional-content', contentReady: false,
   visibleResult: '内嵌缩略图或从合成通道还原的画面', evidence: 'Raw、RLE、ZIP、ZIP Prediction 与索引色/灰度/RGB/CMYK/Lab 样本',
   outcome: '显示内嵌缩略图；没有缩略图时可从 Raw、PackBits RLE、ZIP 或 ZIP Prediction 合成通道还原画面。8-bit 索引色（含透明索引）、8/16-bit 灰度/RGB/CMYK/Lab 与 32-bit RGB/灰度可生成本机 JPEG。', limitations: 'CMYK 当前使用无配置文件近似预览，Lab 按 D50 转 sRGB；索引色透明区域以棋盘格显示。双色调、多通道、超大画布和复杂独立图层效果尚未完整还原。32-bit CMYK/Lab 缺少可靠格式证据时会拒绝伪造颜色。'
+})
+register(['fig', 'sketch'], {
+  mode: 'conditional-preview', level: 'conditional-content', contentReady: false,
+  visibleResult: '文件保存的 PNG 缩略图或最后编辑页预览', evidence: '公开设计源文件、ZIP CRC/大小/重名/缺失预览及组件切换回归',
+  outcome: '从现代 Figma 本地副本或 Sketch 文档包读取保存的预览图；Sketch 同时显示页数。',
+  limitations: '不还原完整画布、全部画板、原型或图层；不带预览的旧版/二进制源文件需先导出 SVG、PNG 或 PDF。文件上限 40 MB，Figma 画布条目上限 24 MB，预览上限 8 MB / 1600 万像素，不解密。'
 })
 register(['flac', 'm4a', 'ogg', 'ape', 'amr', 'wma', 'wav', 'mp3', 'aac', 'aiff', 'aif', 'caf'], {
   mode: 'conditional-preview', level: 'conditional-content', contentReady: false,

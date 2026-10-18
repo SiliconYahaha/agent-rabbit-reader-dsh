@@ -1,16 +1,9 @@
 <view class="file-inspector">
   <view class="inspector-header">
-    <text class="inspector-kicker">{{kicker}}</text>
     <text class="inspector-title">{{title}}</text>
-    <text class="inspector-summary">{{summary}}</text>
+    <text class="inspector-summary">{{entries.length ? "点文件直接打开" : summary}}</text>
   </view>
   <slot name="preview"/>
-  <view class="metadata-grid">
-    <view wx:for="{{metadata}}" wx:key="label" class="metadata-card">
-      <text class="metadata-label">{{item.label}}</text>
-      <text class="metadata-value" selectable>{{item.value}}</text>
-    </view>
-  </view>
   <view wx:if="{{needsPassword}}" class="archive-password-card">
     <text class="archive-password-title">输入压缩包密码</text>
     <text class="archive-password-copy">密码仅本次使用，换文件即清除，不上传。</text>
@@ -50,5 +43,4 @@
       <button class="entry-page-button" disabled="{{!hasNextPage}}" bindtap="onNext">下一页</button>
     </view>
   </view>
-  <view wx:if="{{note}}" class="local-only-note">{{note}}</view>
 </view>

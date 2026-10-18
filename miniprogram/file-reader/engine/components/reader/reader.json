@@ -6,10 +6,13 @@
     "svg-view": "/file-reader/image/components/svg-view/svg-view",
     "skin-status": "/file-reader/skin/status/status",
     "skin-media": "/file-reader/skin/media/media",
-    "skin-inspector": "/file-reader/skin/inspector/inspector"
+    "skin-inspector": "/file-reader/skin/inspector/inspector",
+    "pdf-view": "/file-reader/pdf/components/pdf-view/pdf-view",
+    "skin-filebar": "/file-reader/skin/filebar/filebar"
   },
   "componentPlaceholder": {
     "svg-view": "view",
-    "mp-html": "view"
+    "mp-html": "view",
+    "pdf-view": "view"
   }
 }

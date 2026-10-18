@@ -47,6 +47,8 @@ const nativeCanvasAllocations = new WeakMap()
 const nativeCanvasDocuments = new WeakMap()
 const imageDataBudgets = new WeakMap()
 const canvasSnapshotDocuments = new WeakMap()
+const pixelWorkObservers = new WeakMap()
+function observePixelWork (document, callback) { pixelWorkObservers.set(document, callback) }
 
 function canvasPixels (width, height) {
   if (![width, height].every(n => Number.isInteger(n) && n >= 0 && n <= 16384) || width * height > 16 * 1024 * 1024) throw new Error('Canvas 尺寸或像素超过安全上限')
@@ -223,6 +225,7 @@ class ShimNode {
   }
 
   get firstChild () { return this.childNodes[0] || null }
+  get parentElement () { return this.parentNode?.nodeType === 1 ? this.parentNode : null }
   get lastChild () { return this.childNodes[this.childNodes.length - 1] || null }
   get nextSibling () {
     if (!this.parentNode) return null
@@ -876,7 +879,12 @@ function appendCanvasOp (element, name, args) {
   element._canvasState.rev++
   element._markDirty()
 }
-function recordCanvasOp (element, name, args) { appendCanvasOp(element, name, Array.from(args || []).map(normalizeCanvasArgument)) }
+function recordCanvasOp (element, name, args) {
+  // Native frames already contain the pixels. Avoid serializing large RGBA
+  // arrays and commands which appendCanvasOp would immediately discard.
+  if (element.ownerDocument._directCanvasFrames && real2dCanvases.has(element)) { markCanvasRevision(element); return }
+  appendCanvasOp(element, name, Array.from(args || []).map(normalizeCanvasArgument))
+}
 
 function resolveCanvasSource (source, document) {
   if (source.ownerDocument._runtimeDisposed || document._runtimeDisposed) throw new Error('Canvas 所属文件已关闭')
@@ -1003,6 +1011,7 @@ function createCanvas2dContext (element) {
       if (width && typeof width === 'object' && height === undefined) { height = width.height; width = width.width }
       const size = imageDataExtent(width, height)
       reserveImageData(element.ownerDocument, size.pixels)
+      pixelWorkObservers.get(element.ownerDocument)?.(size.pixels)
       return { width: size.width, height: size.height, data: new Uint8ClampedArray(size.pixels * 4) }
     },
     getImageData: (x, y, width, height) => {
@@ -1012,11 +1021,24 @@ function createCanvas2dContext (element) {
       reserveImageData(element.ownerDocument, size.pixels)
       const image = native.getImageData(sx, sy, size.w, size.h)
       if (!image || image.width !== size.width || image.height !== size.height || !ArrayBuffer.isView(image.data) || image.data.BYTES_PER_ELEMENT !== 1 || image.data.length !== size.pixels * 4) throw new Error('Canvas 原生像素数据不完整')
+      pixelWorkObservers.get(element.ownerDocument)?.(size.pixels)
       return { width: image.width, height: image.height, data: image.data }
     },
     createLinearGradient: (...args) => gradient('linear', args),
     createRadialGradient: (...args) => gradient('radial', args),
-    createPattern: () => null,
+    roundRect: (...args) => require('./canvas-round-rect').roundRect(api, ...args),
+    createPattern: (source, repetition = 'repeat') => {
+      if (!native || !element.ownerDocument._directCanvasFrames) return null
+      if (element.ownerDocument._runtimeDisposed) throw new Error('Canvas 所属文件已关闭')
+      const image = source instanceof ShimElement && source.localName === 'canvas'
+        ? resolveCanvasSource(source, element.ownerDocument) : runtimeImages.get(source)?.image
+      if (!image) return null
+      const pattern = native.createPattern(image, repetition)
+      if (!pattern) return null
+      const wrapper = Object.freeze(Object.create(null))
+      nativeCanvasValues.set(wrapper, pattern)
+      return wrapper
+    },
     isPointInPath: () => false,
     isPointInStroke: () => false
   }
@@ -1749,6 +1771,7 @@ function createLocation () {
 function cssEscape (value) { return String(value).replace(/[^\w-]/g, char => `\\${char.codePointAt(0).toString(16)} `) }
 
 module.exports = {
+  observePixelWork,
   ShimImageElement,
   imageConstructor,
   disposeRuntimeImages,

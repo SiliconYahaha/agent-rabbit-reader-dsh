@@ -1,17 +1,17 @@
-# file-reader · 小程序万能文件阅读模块
+# file-reader · 小程序文件阅读模块
 
 这是「兔子阅读器」把文件能力从产品界面里完整抽离出来的结果。目录自包含，不读取宿主的
 `getApp()`、不做页面跳转、不改导航标题、不弹分享菜单；宿主只负责选文件、排队列、做品牌。
 
-支持的格式和各自的能力边界见 `shared/format-capabilities.js`（54 个扩展名），
+支持的格式和各自的能力边界见 `shared/format-capabilities.js`（当前登记 80 个扩展名；识别范围不等于完整内容支持），
 简要：HTML/XHTML（本机沙盒运行脚本）、TXT/Markdown（含 front-matter、TeX 公式、脚注、定义列表、diff 高亮、Mermaid 流程/时序/状态/甘特图）/RTF、SVG（含 SMIL 与 CSS 动画的 Canvas 播放）、图片、音视频、PDF/Office
-（交微信原生查看器）、ZIP/RAR/7z（分卷、密码、包内链接、文件名编码切换）、Ai/PSD/PSB、
+（在阅读页内解析与显示；存在格式限制）、ZIP/RAR/7z（分卷、密码、包内链接、文件名编码切换）、Ai/PSD/PSB、Figma/Sketch 保存预览、BASE 快照、
 DXF/STEP（可旋转模型）、CDR、DWG（仅版本识别）。
 
 ## 目录
 
-模块占主包的只有 `index.js` 与 `shared/`（约 30 KB）；内核、各文件类型族、两个 WASM 内核都在分包里，
-所以主包已经贴近 2 MiB 的宿主（AGI Bar）也能接入。所有分包 root 互为兄弟，微信不允许分包嵌套。相似类型共用一个族：
+`index.js`、`shared/` 与宿主皮肤位于主包；PDF 宿主适配也放在 `shared/pdf-runtime/`。
+各格式解析器和大载荷按分包加载，接入时需要对主包与各分包重新做体积校验。所有分包 root 互为兄弟，微信不允许分包嵌套。相似类型共用一个族：
 网页与 Markdown/TXT/RTF 共用 `document`，ZIP/RAR/7z/TAR 共用 `archive`，位图与 SVG 共用 `image`。
 
 ```
@@ -20,7 +20,7 @@ file-reader/
 ├── shared/                  主包·宿主路由前就要用的纯函数（不 require 任何分包文件）
 │   ├── module-root.js       WASM 内核在包内的根路径（目录名不是 file-reader 时用 configure({ root }) 改）
 │   ├── file-names.js        extensionOf / formatBytes
-│   ├── file-types.js        26 个官方 MIME 类别与 54 个扩展名的统一路由
+│   ├── file-types.js        MIME 类别与文件扩展名的统一路由
 │   ├── archive-volumes.js   分卷识别
 │   └── format-capabilities.js  能力表与审计
 ├── engine/                  分包 file-reader-engine（内核，打开任何文件都要）
@@ -43,6 +43,8 @@ file-reader/
 ├── image/                   分包 file-reader-image：SVG 的 Canvas 光栅化与动画（SMIL + CSS @keyframes）
 │   ├── svg/                 xml-parser / svg-path / svg-style / svg-document / svg-animation / svg-rasterizer
 │   └── components/svg-view/ <svg-view source="…"> 用 <canvas type="2d"> 播放动态 SVG，点击暂停/继续
+├── pdf/                     分包 PDF 解析 worker；宿主适配在 shared/pdf-runtime，字体/CMap 在 ../pdf-assets
+├── office/                  分包 Word / Excel / PowerPoint 本地解析
 ├── skin/                    主包·宿主自有皮肤（同步不覆盖）：status / media / inspector / design 四个组件 + copy.js 文案
 ├── sevenzip/                分包 file-reader-sevenzip：纯载荷，7zz.js + 7zz.wasm.br + 原生目录回调
 │   ├── pages/runtime/       分包占位页
@@ -65,7 +67,7 @@ file-reader/
 Canvas、播放器控件、预览图）由引擎放进皮肤的插槽。
 
 - `skin/` 属于宿主：`sync:file-reader` 不覆盖它（目标没有时复制这份默认皮肤当起点），目录指纹也不含它。
-- html-reader 用这份默认皮肤（兔子阅读器风格）；AGI Bar 用自己的 `agi-*` 组件与统一的"文件阅读器"措辞另写一份。
+- 本项目使用兔子阅读器默认皮肤；其他宿主按自己的品牌和界面维护皮肤。
 - 皮肤在主包里，引擎分包引用主包组件不需要 componentPlaceholder；`check:production` 校验四个皮肤组件与 copy.js 存在。
 
 压缩包目录行的 `displayName`、`depth` 和 `indentRpx` 由引擎提供，默认检查卡会显示层级缩进。
@@ -74,7 +76,7 @@ Canvas、播放器控件、预览图）由引擎放进皮肤的插槽。
 ## 接入方式一：手动复制目录
 
 1. 把整个 `file-reader/` 放到 `miniprogramRoot` 下（保持目录名，或者见下文改根路径）。
-2. `app.json` 登记六个分包（`require('/file-reader/index').describe().subPackages` 就是这份清单）：
+2. `app.json` 登记分包。以下是基础阅读模块清单；当前 PDF、Office 与 `pdf-assets` 等额外分包必须一并参考本仓库 `miniprogram/app.json`，不能仅依赖 `describe().subPackages` 的基础清单：
 
    ```json
    {
@@ -106,7 +108,7 @@ Canvas、播放器控件、预览图）由引擎放进皮肤的插槽。
    }
    ```
 
-   页面本身放在引擎分包里也可以，那样就不需要占位。AGI Bar 这类主包已满的宿主用第一种。
+   页面本身放在引擎分包里也可以，那样就不需要占位。主包页面使用组件时也应声明占位。
 
 4. 页面 WXML / JS：
 
@@ -134,21 +136,21 @@ Canvas、播放器控件、预览图）由引擎放进皮肤的插槽。
    并在 `App.onShow` 里把 `options.forwardMaterials` 用 `isSupportedMaterial()` 过滤后交给页面。
    兔子阅读器的 `app.js` / `pages/index/index.js` 就是一份最小实现。
 
-## 接入方式二：从 html-reader 同步到另一个项目（AGI Bar）
+## 接入方式二：同步到另一个宿主
 
-模块不发布 npm，只在自己的两个小程序之间共用。html-reader 是唯一真源，在 html-reader 仓库里运行：
+模块不发布 npm。需要复用时，在本仓库中显式指定目标宿主：
 
 ```bash
-npm run sync:file-reader -- /path/to/agi-bar/apps/miniapp
+npm run sync:file-reader -- /path/to/host/miniprogram
 ```
 
 脚本会把整个 `file-reader/` 复制到目标 `miniprogramRoot` 下，并写入 `file-reader/SOURCE.json`（来源 commit、分支、时间、目录内容的 sha256）。
 再次同步时先比对目标目录当前内容与上次记录的 sha256：不一致说明对方本地改过模块，脚本拒绝覆盖，避免两边分叉；
-确认要丢弃对方改动时加 `--force`。模块的任何修改都应回到 html-reader 提交后再同步。
+确认要丢弃对方改动时加 `--force`。通用能力修改应在模块源码完成并验证后再同步。
 
 如果目标项目把目录放在别的位置（不是 `miniprogramRoot/file-reader`），在 `app.js` 里先调用
 `require('/file-reader/index').configure({ root: '实际目录' })`，两个 WASM 内核才能被找到；
-`app.json` 里三个分包的 root 与 `usingComponents` 路径也要一起改。
+`app.json` 里所有相关分包的 root 与 `usingComponents` 路径也要一起改。
 
 ## `<file-reader>` 组件
 
@@ -168,7 +170,7 @@ npm run sync:file-reader -- /path/to/agi-bar/apps/miniapp
 | `ready` | `{ name }` | 一次读取/解压/排版完成。 |
 | `error` | `{ name, message }` | 打开失败，组件内已显示错误卡片。 |
 | `handoff` | `{ kind: 'document' \| 'image', name }` | 已交给微信原生文档/图片查看器。 |
-| `meta` | `{ name, meta }` | Markdown front-matter 的键值对，或网页 `<meta name>`/`<title>` 的键值对（例如 AGI Bar 的 `agi_bar_version`、`wx_miniapp_path`）；组件不解释，宿主自行决定横幅/跳转。 |
+| `meta` | `{ name, meta }` | Markdown front-matter 的键值对，或网页 `<meta name>`/`<title>` 的键值对（例如宿主自定义的版本或页面路径字段）；组件不解释，宿主自行决定横幅/跳转。 |
 | `theme` | `{ name, background, colorScheme }` | 正文包裹层的背景色（无背景时为空串）变化时触发；宿主可据此 `setNavigationBarColor`。组件自己不改导航栏。 |
 
 组件 `styleIsolation` 为 `apply-shared`：宿主 `app.wxss` 会进入组件，组件样式不外泄。

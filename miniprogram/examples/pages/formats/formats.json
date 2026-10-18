@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "全部格式",
-  "usingComponents": {}
+  "usingComponents": {
+    "format-icon": "/components/format-icon/format-icon"
+  }
 }

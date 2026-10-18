@@ -23,13 +23,13 @@ test('trusted graphics primitives work but user code retains constructor and exe
 test('first animation frame restores the ordinary execution limit after trusted initialization',()=>{
  const tasks=new Map();let next=0
  const r=createRuntime('<script>'+source+'for(let i=0;i<60000;i++){}requestAnimationFrame(()=>{for(let i=0;i<60000;i++){}window.unbounded=true})</script>',{setTimeout:(fn,ms)=>{tasks.set(++next,{fn,ms});return next},clearTimeout:id=>tasks.delete(id)})
- r.run();assert.deepEqual(r.errors,[]);const [id,t]=[...tasks].find(([,t])=>t.ms===33);tasks.delete(id);t.fn();assert.equal(r.window.unbounded,undefined);assert.match(r.errors[0].message,/execution budget/);r.destroy()
+ r.run();assert.deepEqual(r.errors,[]);const [id,t]=[...tasks].find(([,t])=>t.ms===16);tasks.delete(id);t.fn();assert.equal(r.window.unbounded,undefined);assert.match(r.errors[0].message,/execution budget/);r.destroy()
 })
 
 test('explicit host taps can initialize bounded geometry without raising animation or synthetic-click budgets',()=>{
  const tasks=new Map();let next=0
  const r=createRuntime('<button id="go">Go</button><script>'+source+'document.getElementById("go").onclick=()=>{for(let i=0;i<90000;i++){}window.clicked=true};requestAnimationFrame(()=>{})</script>',{setTimeout:(fn,ms)=>{tasks.set(++next,{fn,ms});return next},clearTimeout:id=>tasks.delete(id)})
- r.run();const frame=[...tasks].find(([,t])=>t.ms===33);tasks.delete(frame[0]);frame[1].fn();const n=r.document.getElementById('go')
+ r.run();const frame=[...tasks].find(([,t])=>t.ms===16);tasks.delete(frame[0]);frame[1].fn();const n=r.document.getElementById('go')
  r.dispatchTap(n._nid);assert.equal(r.window.clicked,true);assert.deepEqual(r.errors,[])
  r.window.clicked=false;r.dispatchEvent(n._nid,'click',{});assert.equal(r.window.clicked,false);assert.match(r.errors.at(-1).message,/execution budget/)
  n.onclick=()=>{};r.destroy()

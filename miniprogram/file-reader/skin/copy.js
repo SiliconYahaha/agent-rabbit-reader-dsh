@@ -70,7 +70,6 @@ function design (facts, defaults = {}) {
 // code 由「文件.方法.类别.默认文案哈希」组成，全表见 ../MESSAGES.md；文案一改 code 就变，覆盖要跟着复核。
 // 默认皮肤原样返回默认文案；宿主按 code 覆盖，可用 params 里的 name / detail / count 重新措辞。
 const MESSAGES = {
-  'design.loadAi.message.f16e51': '发现内嵌 PDF，正在打开画板…',
   'design.loadAi.message.f0f1e9': '未能还原矢量，当前显示内嵌位图；可能分辨率较低，不代表完整内容。',
   'design.loadAi.message.4cb97a': '无内嵌 PDF，文件超过 {size} 解析上限。请在 Illustrator 中开启 PDF 兼容后重存。',
   'design.loadAi.message.26eb63': '已显示基础矢量{value}；渐变、蒙版、字体、链接图片和专有效果可能缺失。',
@@ -80,9 +79,6 @@ const MESSAGES = {
   'reader.dispatchSelectedFile.error.5acbff': 'HTML 超过 20 MB，请精简或拆分后打开。',
   'reader.inspectArchiveVolumeSet.summary.e86c40': '缺少分卷：{value}。请一次选齐同组文件。',
   'reader.inspectLocalFile.summary.01ef2b': '文件超过 80 MB，为避免内存不足，本次仅显示文件信息。原文件不上传。',
-  'reader.openImageFile.status.cc915a': '{name} 已用微信打开。返回可继续查看其他文件。',
-  'reader.openNativeDocument.status.2cc103': '{name} 已用微信打开。返回可继续查看其他文件。',
-  'reader.openSelectedFile.error.88db26': '无法识别格式，请检查文件后缀。',
   'reader.openSelectedFile.error.986623': '这是网络链接，请先把文件下载到微信聊天。',
   'reader.readRtfFile.error.907040': 'RTF 超过 5 MB，暂不能排版，请精简后重试。',
   'reader.readTextFile.error.d399e5': '文本超过 5 MB，暂不能排版，请精简后重试。',

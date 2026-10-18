@@ -46,7 +46,7 @@ async function run (inputs, modules, componentSource) {
     throw Error('Unexpected component dependency ' + id)
   }, value => { definition = value }, { getWindowInfo: () => ({ pixelRatio: 1 }) })
   const player = { ...definition.methods, data: { ...definition.data, playing: false }, _viewReady: true, _images: new Map(), events: [],
-    setData (patch) { Object.assign(this.data, patch) }, triggerEvent (name, detail) { this.events.push({ name, detail }) },
+    setData (patch, callback) { Object.assign(this.data, patch); if (callback) callback() }, triggerEvent (name, detail) { this.events.push({ name, detail }) },
     createSelectorQuery () { const q = { select: () => q, boundingClientRect: () => q, fields: () => q, exec: callback => callback([{ width: 256 }, { node: canvas, width: 256 }]) }; return q }
   }
   for (const input of inputs) {

@@ -15,6 +15,7 @@ Component({
   options: { styleIsolation: 'apply-shared' },
   properties: {
     source: { type: String, value: '' },
+    controls: { type: Boolean, value: true },
     // 动画播放；设为 false 停在当前帧
     playing: { type: Boolean, value: true }
   },
@@ -22,7 +23,11 @@ Component({
     height: 0,
     ready: false,
     paused: false,
-    animated: false
+    animated: false,
+    hasWallclock: false,
+    previewingTime: false,
+    clockMinute: 1080,
+    clockLabel: ''
   },
   observers: {
     source (value) { if (this._viewReady) this.load(value) },
@@ -75,6 +80,7 @@ Component({
       }
       this._scene = scene
       this._startedAt = 0
+      this._previewMinute = null
       const revision = this._loadRevision
       if (scene.requiresClipUnion) {
         loadClipUnion().then(union => {
@@ -126,10 +132,15 @@ Component({
         this._ctx = ctx
         this._width = width
         this._height = height
-        this.setData({ height, ready: true, animated: scene.animated })
-        if (!this.drawFrame(0)) return
-        this.triggerEvent('ready', { animated: scene.animated, width, height, unsupported: Array.from(scene.renderer.unsupported) })
-        if (scene.animated && this._playing) this.schedule()
+        const now = new Date()
+        // On phones, updating the displayed Canvas dimensions can clear its
+        // backing surface. Draw only after that layout update has completed.
+        this.setData({ height, ready: true, animated: scene.animated, hasWallclock: scene.timeline.hasWallclock, previewingTime: false, clockMinute: now.getHours() * 60 + now.getMinutes() }, () => {
+          if (!this._viewReady || revision !== this._loadRevision) return
+          if (!this.drawFrame(0)) return
+          this.triggerEvent('ready', { animated: scene.animated, width, height, unsupported: Array.from(scene.renderer.unsupported) })
+          if (scene.animated && this._playing) this.schedule()
+        })
       })
     },
 
@@ -146,7 +157,13 @@ Component({
       const ctx = this._ctx
       if (!scene || !ctx) return false
       try {
-        scene.draw(ctx, this._width, this._height, time)
+        let clockNow = Date.now()
+        if (this._previewMinute != null) {
+          const preview = new Date(clockNow)
+          preview.setHours(Math.floor(this._previewMinute / 60), this._previewMinute % 60, 0, 0)
+          clockNow = preview.getTime()
+        }
+        scene.draw(ctx, this._width, this._height, time, clockNow)
         return true
       } catch (error) {
         this.cancel()
@@ -193,6 +210,23 @@ Component({
       if (this._playing) this.schedule(); else this.cancel()
     },
 
+    onTimePreview (event) {
+      if (!this._scene || !this._scene.timeline.hasWallclock) return
+      const value = Number(event && event.detail && event.detail.value)
+      if (!Number.isFinite(value)) return
+      this._previewMinute = Math.max(0, Math.min(1439, Math.floor(value)))
+      const hour = Math.floor(this._previewMinute / 60), minute = this._previewMinute % 60
+      this.setData({ previewingTime: true, clockMinute: this._previewMinute, clockLabel: `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}` })
+      this.drawFrame((this._pausedAt || 0) / 1000)
+    },
+
+    onTimeNow () {
+      this._previewMinute = null
+      const now = new Date()
+      this.setData({ previewingTime: false, clockMinute: now.getHours() * 60 + now.getMinutes() })
+      this.drawFrame((this._pausedAt || 0) / 1000)
+    },
+
     resolveImage (href) {
       if (!this._canvas || typeof this._canvas.createImage !== 'function') return null
       if (this._images.has(href)) return this._images.get(href).ready ? this._images.get(href).image : null
@@ -213,6 +247,7 @@ Component({
       this._ctx = null
       this._canvas = null
       this._pausedAt = 0
+      this._previewMinute = null
       if (this._images) this._images.clear()
       if (resetData && this.data.ready) this.setData({ ready: false, height: 0, paused: false })
     }

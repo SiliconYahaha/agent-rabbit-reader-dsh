@@ -1,5 +1,6 @@
 'use strict'
 
+const { resolveLength } = require('./css-length')
 const { disabledControl } = require('./html-runtime/form-disabled-state')
 const { _internals: cssCompat } = require('./html-compat')
 const { preprocessCss, parseTextContent, consumeCssEscape } = require('./css-escapes')
@@ -220,12 +221,15 @@ function normalizedControlStyles (styles, inherited = {}) {
 }
 
 function backgroundColorForStyles (styles, inheritedBackground) {
+  // Images and gradients do not have one known background color. Never
+  // recolor their text using an ancestor's unrelated solid surface.
+  if (/(?:gradient|url|image-set)\s*\(/i.test([styles.background, styles['background-image']].join(' '))) return null
   let explicit = null
   for (const name of Object.keys(styles)) if (name === 'background' || name === 'background-color') {
     const color = parseCssColor(styles[name])
     if (color) explicit = color
   }
-  return explicit ? compositeColor(explicit, inheritedBackground) : inheritedBackground
+  return explicit ? (explicit.a < 1 && !inheritedBackground ? null : compositeColor(explicit, inheritedBackground)) : inheritedBackground
 }
 
 function minimumTextContrast (styles) {
@@ -239,9 +243,11 @@ function readableComputedStyles (styles, context, element) {
   const background = backgroundColorForStyles(output, context.effectiveBackground)
   const foregroundSource = output.color || context.effectiveForeground
   const foreground = parseCssColor(foregroundSource)
-  // 作者在浅色页面上使用品牌色时保持原样；真机问题集中在深色画布上，
-  // 仅对深色背景里的不可读文字做最小幅度提亮，避免把整页设计改色。
-  if (foreground && background && relativeLuminance(background) < 0.25 && element.textContent.trim()) {
+  // Dark themes may leave fixed light cards behind. Repair near-invisible light
+  // text there too, without recoloring normal brand colors on light pages.
+  const darkSurface = background && relativeLuminance(background) < 0.25
+  const invisibleLightText = foreground && background && relativeLuminance(background) > 0.7 && relativeLuminance(foreground) > 0.7 && contrastRatio(compositeColor(foreground, background), background) < 1.5
+  if (foreground && background && (darkSurface || invisibleLightText) && element.textContent.trim()) {
     const replacement = readableForeground(foreground, background, minimumTextContrast(output))
     if (replacement) output.color = replacement
   }
@@ -337,7 +343,10 @@ function prepareRendererCss (source, viewportWidth, mediaEnvironment = {}, prese
   css = Array.from(cssRules(css), rule => /^@(?:import|charset|font-face)\b/i.test(rule.prelude) ? '' : css.slice(rule.start, rule.end)).join('\n')
   const remSize = cssCompat.rootRemSize(css)
   css = cssCompat.stripCssResourceUrls(css)
-  if (!preserveUnits) css = cssCompat.convertCssUnits(css, remSize)
+  if (!preserveUnits) {
+    css = cssCompat.convertCssUnits(css, remSize)
+    css = mapCssCode(css, part => part.replace(/(-?\d*\.?\d+)(?:d|s|l)?vh\b/gi, (_, n) => `${Number(n) * (Number(mediaEnvironment.viewportHeight) || 667) / 100}px`))
+  }
   const extracted = cssCompat.extractKeyframeFinalStyles(css)
   return cssCompat.flattenResponsiveCss(cssCompat.applyAnimationFinalStyles(extracted.css, extracted.keyframes), viewportWidth, mediaEnvironment)
 }
@@ -576,7 +585,11 @@ function serializeSvgElement (element, context, stripSmil = false) {
   if (!element || element.nodeType !== 1 || BLOCKED_TAGS.has(element.localName) || stripSmil && SVG_SMIL_TAGS.has(element.localName)) return ''
   const cascade = cascadeForElement(element, context.authorRules, context.variables, context.remSize)
   const tag = SVG_TAG_CASE[element.localName] || element.localName
-  const attrs = sanitizeSvgAttributes(element, cascade.styles)
+  const svgStyles = { ...cascade.styles }
+  // A serialized SVG is a new image document: preserve currentColor inherited
+  // from the HTML button/card instead of silently reverting to black.
+  if (tag === 'svg' && !svgStyles.color && context.effectiveForeground) svgStyles.color = context.effectiveForeground
+  const attrs = sanitizeSvgAttributes(element, svgStyles)
   if (tag === 'svg') attrs.xmlns = 'http://www.w3.org/2000/svg'
   const attrText = Object.keys(attrs).map(name => ` ${name}="${escapeXmlAttribute(attrs[name])}"`).join('')
   const children = element.childNodes.map(child => {
@@ -604,10 +617,11 @@ function encodeSvgDataUri (element, context, stripSmil = false) {
 
 const embeddedSvgCache = new Map()
 
-function sanitizeEmbeddedSvgDataUri (uri, context = {}) {
+function sanitizeEmbeddedSvgDataUri (uri, context = {}, animated = false) {
   const source = String(uri || '')
   if (!/^data:image\/svg\+xml(?:;charset=[^;,]+)?(?:;base64)?,/i.test(source)) return ''
-  if (embeddedSvgCache.has(source)) return embeddedSvgCache.get(source)
+  const cacheKey=(animated?'animated:':'static:')+source
+  if (embeddedSvgCache.has(cacheKey)) return embeddedSvgCache.get(cacheKey)
   try {
     const comma = source.indexOf(',')
     const encoded = source.slice(comma + 1)
@@ -621,16 +635,22 @@ function sanitizeEmbeddedSvgDataUri (uri, context = {}) {
     const prepared = prepareRendererCss(parsed.styles.join('\n'), viewportWidth, context)
     const remSize = cssCompat.rootRemSize(prepared)
     const authorRules = parseCssRules(prepared, { prepared: true, remSize, viewportWidth })
-    const safe = encodeSvgDataUri(svg, {
+    let safe = encodeSvgDataUri(svg, {
       ...context,
       authorRules,
       rules: authorRules,
       variables: {},
       remSize,
       sharedDefNodes: collectSharedDefNodes(parsed.document)
-    }, true)
+    }, !animated)
+    if(animated) {
+      const text=decodeSvgDataUri(safe)
+      safe=/(?:<(?:animate|animateTransform|animateMotion|set)\b|animation(?:-name)?\s*:)/i.test(text)
+        ? text.replace(/(<svg\b[^>]*>)/i,(_,open)=>open+'<style>'+parsed.styles.join('\n').replace(/</g,'\\3c ')+'</style>') : ''
+      if(safe.length>=32000)safe=''
+    }
     if (embeddedSvgCache.size >= 128) embeddedSvgCache.clear()
-    embeddedSvgCache.set(source, safe)
+    embeddedSvgCache.set(cacheKey, safe)
     return safe
   } catch (_) {
     return ''
@@ -665,6 +685,16 @@ function renderElement (element, context) {
   const cascade = cascadeForRender(element, context)
   const readable = readableComputedStyles(cascade.styles, context, element)
   let computedStyles = readable.styles
+  const queryWidth = context.containerWidth || element.ownerDocument._viewportWidth
+  const queryHeight = context.containerHeight || element.ownerDocument._viewportHeight
+  for (const key of Object.keys(computedStyles)) if (/cq(?:[whib]|min|max)\b/i.test(computedStyles[key])) computedStyles[key] = mapCssCode(computedStyles[key], part => part.replace(/(-?\d*\.?\d+)cq(w|h|i|b|min|max)\b/gi, (_, n, axis) => `${Number(n) * ({w:queryWidth,i:queryWidth,h:queryHeight,b:queryHeight,min:Math.min(queryWidth,queryHeight),max:Math.max(queryWidth,queryHeight)}[axis.toLowerCase()]) / 100}px`))
+  let containerWidth = context.containerWidth, containerHeight = context.containerHeight
+  if (/inline-size|size/.test(computedStyles['container-type'] || computedStyles.container || '')) {
+    const w=element.ownerDocument._viewportWidth,h=element.ownerDocument._viewportHeight
+    const units={vw:w/100,vh:h/100,dvw:w/100,dvh:h/100,'%':queryWidth/100,em:16,rem:context.remSize}
+    containerWidth = resolveLength(computedStyles.width, units) || queryWidth
+    containerHeight = resolveLength(computedStyles.height, {...units,'%':queryHeight/100}) || queryHeight
+  }
   const attrs = sanitizeAttributes(element, context)
   // Only the host presentation receives the inherited flag; the author DOM
   // keeps its own attributes and reflected .disabled value.
@@ -676,12 +706,25 @@ function renderElement (element, context) {
   })
   if (element.localName === 'svg') {
     const svgHasSmil = Boolean(element.querySelector('animate,animateTransform,animateMotion,set'))
+    for (const dimension of ['width', 'height']) {
+      const value = element.getAttribute(dimension)
+      if (!computedStyles[dimension] && /^\d+(?:\.\d+)?(?:px|%|em|rem)?$/.test(value || '')) computedStyles[dimension] = /^\d+(?:\.\d+)?$/.test(value) ? value + 'px' : value
+    }
     const style = Object.keys(computedStyles).map(property => `${property}:${computedStyles[property]}`).join(';')
-    return { type: 'element', name: 'img', nid: element._nid, touch: true, attrs: { ...attrs, ...(style ? { style } : {}), src: encodeSvgDataUri(element, context), mode: 'widthFix' }, svgFallbackSrc: encodeSvgDataUri(element, context, true), svgHasSmil, children: [] }
+    const svgUri = encodeSvgDataUri(element, context)
+    let svgCanvasSource = ''
+    const source = decodeSvgDataUri(svgUri)
+    if (svgHasSmil || /animation(?:-name)?\s*:/i.test(source)) {
+      const animated = source.replace(/(<svg\b[^>]*>)/i, (_, open) => open + '<style>' + (context.authorCss || '').replace(/</g, '\\3c ') + '</style>')
+      if (animated.length < 32000) svgCanvasSource = animated
+    }
+    return { type: 'element', name: 'img', nid: element._nid, touch: true, svgCanvasSource, attrs: { ...attrs, ...(style ? { style } : {}), src: svgUri, mode: 'widthFix' }, svgFallbackSrc: svgHasSmil ? encodeSvgDataUri(element, context, true) : svgUri, svgHasSmil, imageMode: computedStyles.height && computedStyles.height !== 'auto' ? 'aspectFit' : 'widthFix', children: [] }
   }
   const hostName = element.ownerDocument._xmlMode && element.namespaceURI === 'http://www.w3.org/1999/xhtml' && element.localName !== element.localName.toLowerCase() ? 'span' : element.localName
   const node = { type: 'element', name: hostName, nid: element._nid, attrs, children: [] }
   if (hostName === 'img') {
+    const source=element.getAttribute('src')||''
+    if(/^data:image\/svg\+xml[;,]/i.test(source))node.svgCanvasSource=sanitizeEmbeddedSvgDataUri(source,context,true)
     const fixedHeight = computedStyles.height && !/^(auto|initial|unset)$/.test(computedStyles.height)
     node.imageMode = fixedHeight ? ({ cover: 'aspectFill', contain: 'aspectFit' }[computedStyles['object-fit']] || 'scaleToFill') : 'widthFix'
   }
@@ -717,7 +760,13 @@ function renderElement (element, context) {
     const maxWidth = cascade.styles['max-width'] || '100%'
     const margins = ['margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left'].filter(name => cascade.styles[name]).map(name => `${name}:${cascade.styles[name]}`).join(';')
     const paint = ['background', 'background-color', 'border', 'border-radius', 'box-shadow', 'opacity'].filter(name => cascade.styles[name]).map(name => `${name}:${cascade.styles[name]}`).join(';')
-    node.canvasBoxStyle = `position:relative;box-sizing:border-box;width:${width};max-width:${maxWidth};height:0;padding-top:${Math.round(ratio * 1000) / 1000}%;overflow:hidden;${margins}`
+    const positioning = ['position', 'top', 'right', 'bottom', 'left', 'inset', 'z-index', 'transform', 'transform-origin', 'pointer-events', 'display', 'visibility'].filter(name => computedStyles[name]).map(name => `${name}:${computedStyles[name]}`).join(';')
+    const authoredHeight = cascade.styles.height
+    const sized = authoredHeight && authoredHeight !== 'auto' && !/^\d+(?:\.\d+)?px$/.test(authoredHeight) || ['absolute', 'fixed'].includes(computedStyles.position)
+    node.canvasBoxStyle = `position:relative;box-sizing:border-box;width:${width};max-width:${maxWidth};overflow:hidden;${margins};${positioning}${sized && authoredHeight ? ';height:' + authoredHeight : ''}`
+    // Percentage padding resolves against the containing block. Put it inside
+    // the width-constrained wrapper so a 240px square stays square on a 390px page.
+    node.canvasSizerStyle = sized && authoredHeight ? 'position:relative;height:100%' : `position:relative;height:0;padding-top:${Math.round(ratio * 1000) / 1000}%`
     node.canvasStyle = `position:absolute;left:0;top:0;width:100%;height:100%;${paint}`
   }
   const style = Object.keys(computedStyles).map(property => `${property}:${computedStyles[property]}`).join(';')
@@ -732,6 +781,7 @@ function renderElement (element, context) {
     ...context,
     withinTable: context.withinTable || element.localName === 'table',
     variables: cascade.variables,
+    containerWidth, containerHeight,
     effectiveBackground: readable.effectiveBackground,
     effectiveForeground: computedStyles.color || readable.effectiveForeground,
     whiteSpace,
@@ -839,15 +889,22 @@ function collectSharedDefNodes (document) {
   return document.querySelectorAll('defs').flatMap(defs => defs.children)
 }
 
+const renderRuleCache = new WeakMap()
 function renderHtmlDomTree (input, options = {}) {
   const viewportWidth = Number(options.viewportWidth || 375)
   const parsed = typeof input === 'string' ? parseHtmlDocument(input, { contentType: options.contentType, viewportWidth, viewportHeight: options.viewportHeight }) : { document: input.document || input, styles: input.styles || [] }
   const document = parsed.document
   const authorCss = options.styles ? options.styles.join('\n') : (parsed.styles || []).join('\n')
   const remSize = cssCompat.rootRemSize(authorCss)
-  const uaRules = parseCssRules(DOM_UA_CSS, { ua: true, prepared: true, remSize, viewportWidth })
-  const authorRules = parseCssRules(authorCss, { ua: false, remSize, viewportWidth, viewportHeight: options.viewportHeight || document._viewportHeight, colorScheme: options.colorScheme, reducedMotion: options.reducedMotion, orderStart: uaRules.length })
-  const rules = uaRules.concat(authorRules)
+  const ruleKey = JSON.stringify([authorCss, remSize, viewportWidth, options.viewportHeight || document._viewportHeight, options.colorScheme, options.reducedMotion])
+  let cached = renderRuleCache.get(document)
+  if (!cached || cached.key !== ruleKey) {
+    const uaRules = parseCssRules(DOM_UA_CSS, { ua: true, prepared: true, remSize, viewportWidth })
+    const authorRules = parseCssRules(authorCss, { ua: false, remSize, viewportWidth, viewportHeight: options.viewportHeight || document._viewportHeight, colorScheme: options.colorScheme, reducedMotion: options.reducedMotion, orderStart: uaRules.length })
+    cached = { key: ruleKey, authorRules, rules: uaRules.concat(authorRules) }
+    renderRuleCache.set(document, cached)
+  }
+  const { authorRules, rules } = cached
   const rootCascade = cascadeForElement(document.documentElement, rules, {}, remSize)
   const bodyCascade = cascadeForElement(document.body, rules, rootCascade.variables, remSize)
   const pageBackground = { r: 255, g: 255, b: 255, a: 1 }
@@ -857,10 +914,20 @@ function renderHtmlDomTree (input, options = {}) {
     effectiveForeground: rootCascade.styles.color || '#000000'
   }, document.body)
   const bodyStyles = bodyReadable.styles
+  // The document lives below a file bar and above an optional queue. Give
+  // authored percentage heights and fixed children their own viewport.
+  const viewportHeight = Number(options.viewportHeight || document._viewportHeight || 667)
+  if (bodyStyles.height === '100%' || /^(?:100(?:d|s|l)?vh|-webkit-fill-available)$/.test(bodyStyles.height || '')) bodyStyles.height = `${viewportHeight}px`
+  if (bodyStyles.position === 'fixed') { bodyStyles.position = 'relative'; delete bodyStyles.inset; delete bodyStyles.top; delete bodyStyles.bottom }
+  bodyStyles['min-height'] ||= `${viewportHeight}px`
+  bodyStyles.position ||= 'relative'
+  // A transform establishes the containing block for position:fixed descendants.
+  bodyStyles.transform ||= 'translateZ(0)'
   const bodyWhiteSpace = bodyStyles['white-space'] || rootCascade.styles['white-space'] || 'normal'
   const context = {
     rules,
     authorRules,
+    authorCss,
     variables: bodyCascade.variables,
     remSize,
     maxWidth: viewportWidth,

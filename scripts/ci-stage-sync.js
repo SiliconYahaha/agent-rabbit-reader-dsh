@@ -35,6 +35,9 @@ function run (command, args, options = {}) {
   const result = spawnSync(command, args, {
     cwd: projectRoot,
     encoding: 'utf8',
+    // Vendored runtimes and offline examples can produce multi-MiB text diffs.
+    // Keep scanning the complete diff; exceeding this bound still fails closed.
+    maxBuffer: 64 * 1024 * 1024,
     env: childEnv(options.env),
     stdio: options.capture ? 'pipe' : 'inherit'
   })
@@ -304,6 +307,7 @@ function remoteHead (remote, branch) {
 }
 
 function pushStage ({ remote = 'origin', branch = PUSH_BRANCH, execute = false }) {
+  assert.equal(branch, PUSH_BRANCH, `只允许同步 ${PUSH_BRANCH} 分支`)
   const facts = assertTargetRepository()
   assert.equal(facts.branch, branch, `只允许同步 ${PUSH_BRANCH} 分支：请求的是 ${branch}，当前分支是 ${facts.branch}`)
   const dryRun = !execute

@@ -1135,7 +1135,9 @@ const test = () =&gt; {
     // 深色模式
     const themeToggle = document.getElementById("themeToggle");
     themeToggle.addEventListener("click", () => {
-      document.documentElement.classList.toggle("theme-dark");
+      const dark = document.documentElement.classList.toggle("theme-dark");
+      themeToggle.textContent = dark ? "切换浅色模式" : "切换深色模式";
+      themeToggle.setAttribute("aria-pressed", String(dark));
     });
 
     // Range

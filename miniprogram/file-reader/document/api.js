@@ -26,6 +26,7 @@ module.exports = {
   readHtmlFileBytes,
   renderHtmlDomTree,
   renderTextData,
+  resolveLocalSvgReferences: require('./local-svg-references').resolveLocalSvgReferences,
   sanitizeStandaloneSvg,
   transformHtml
 }
