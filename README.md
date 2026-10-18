@@ -4,7 +4,7 @@
 
 ![兔子阅读器：收到文件，也读到内容](docs/media/rabbit-reader-banner.png)
 
-[观看 20 秒介绍视频](docs/media/rabbit-reader-demo.mp4) · [支持格式与限制](docs/formats.md) · [示例介绍](docs/format-use-cases/README.md) · [本地开发](docs/development.md)
+[观看 20 秒介绍视频](https://siliconyahaha.github.io/agent-rabbit-reader-dsh/) · [支持格式与限制](docs/formats.md) · [示例介绍](docs/format-use-cases/README.md) · [本地开发](docs/development.md)
 
 ## 它能帮你做什么
 

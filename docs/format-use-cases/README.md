@@ -11,7 +11,7 @@
 | ZIP | 资料包目录：打开包内受支持的条目 |
 | Markdown | 排版笔记、列表、表格和代码 |
 
-[观看产品介绍视频](../media/rabbit-reader-demo.mp4) · [查看全部格式与限制](../formats.md)
+[观看产品介绍视频](https://siliconyahaha.github.io/agent-rabbit-reader-dsh/) · [查看全部格式与限制](../formats.md)
 
 示例的原始文件、制作方式、第三方作者与许可证见 [素材来源](../../scripts/assets/example-art/README.md)。完整示例目录以 `miniprogram/examples/catalog.js` 和 `data/files.js` 为准。某个样本能打开，不代表同后缀的所有文件都能完整还原。
 
