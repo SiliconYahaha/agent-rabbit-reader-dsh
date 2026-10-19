@@ -4,7 +4,7 @@
 
 ![兔子阅读器：收到文件，也读到内容](docs/media/rabbit-reader-banner.png)
 
-[观看 20 秒介绍视频](https://siliconyahaha.github.io/agent-rabbit-reader-dsh/) · [支持格式与限制](docs/formats.md) · [示例介绍](docs/format-use-cases/README.md) · [本地开发](docs/development.md)
+[观看 20 秒介绍视频](https://siliconyahaha.github.io/agent-rabbit-reader-dsh/) · [支持格式与限制](docs/formats.md) · [实际效果](#看看实际效果) · [本地开发](docs/development.md)
 
 ## 它能帮你做什么
 
@@ -21,6 +21,21 @@
 3. 直接阅读内容。想先体验，可从首页 **「支持格式」** 进入内置示例。
 
 本仓库包含小程序源码和可复用的文件阅读模块。仓库代码与线上小程序的发布时间可能不同。
+
+## 看看实际效果
+
+点击预览可放大；下列操作特点对应小程序内的体验，首页动图用于展示。
+
+| 案例 | 展示 | 特点 |
+| --- | --- | --- |
+| **锦鲤唱片机**<br>HTML | <a href="docs/images/cases/koi.gif"><img src="docs/images/cases/koi.gif" width="240" alt="锦鲤唱片机真实操作动图，点击放大"></a> | 添锦鲤<br>拨唱针 |
+| **坦克大战**<br>HTML | <a href="docs/images/cases/tank.gif"><img src="docs/images/cases/tank.gif" width="240" alt="坦克大战真实游戏动图，点击放大"></a> | 移动<br>开火<br>暂停 |
+| **秦始皇骑车**<br>SVG | <a href="docs/images/cases/bicycle.svg"><img src="docs/images/cases/bicycle.svg" width="240" alt="秦始皇骑自行车动态 SVG 预览，点击放大"></a> | 矢量图<br>可暂停 |
+| **搜一搜设计稿**<br>Ai | <a href="docs/images/cases/search-ai.png"><img src="docs/images/cases/search-ai.png" width="240" alt="搜一搜 Ai 设计稿预览，点击放大"></a> | 配色<br>版式 |
+| **彩色海报**<br>PSD | <a href="docs/images/cases/psd-poster.png"><img src="docs/images/cases/psd-poster.png" width="240" alt="Mozilla 吉祥物发布海报 PSD 彩色预览，点击放大"></a> | 看海报<br>看全图 |
+| **周末计划**<br>Markdown | <a href="docs/images/cases/markdown.png"><img src="docs/images/cases/markdown.png" width="240" alt="周末闪现计划 Markdown 文档预览，点击放大"></a> | 标题<br>表格<br>清单 |
+
+锦鲤、坦克和骑车案例可在小程序「支持格式」中体验。锦鲤、坦克动图与 Markdown 画面来自上方演示视频，骑车保留原始 SVG 动画。PSD 为小程序内的 Mozilla 吉祥物发布海报示例；Ai 使用「搜一搜小程序物料源文件.ai」，图中的码为素材占位码。复杂效果可能存在兼容差异，详见 [格式说明](docs/formats.md)。
 
 ## 常用格式
 
